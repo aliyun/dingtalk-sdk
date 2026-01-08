@@ -6060,6 +6060,1586 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>标签分类树查询</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// HrbrainLabelCategoryTreeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainLabelCategoryTreeResponse
+        /// </returns>
+        public HrbrainLabelCategoryTreeResponse HrbrainLabelCategoryTreeWithOptions(HrbrainLabelCategoryTreeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrbrainLabelCategoryTree",
+                Version = "hrbrain_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrbrain/labels/category/list",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrbrainLabelCategoryTreeResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>标签分类树查询</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// HrbrainLabelCategoryTreeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainLabelCategoryTreeResponse
+        /// </returns>
+        public async Task<HrbrainLabelCategoryTreeResponse> HrbrainLabelCategoryTreeWithOptionsAsync(HrbrainLabelCategoryTreeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrbrainLabelCategoryTree",
+                Version = "hrbrain_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrbrain/labels/category/list",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrbrainLabelCategoryTreeResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>标签分类树查询</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// HrbrainLabelCategoryTreeResponse
+        /// </returns>
+        public HrbrainLabelCategoryTreeResponse HrbrainLabelCategoryTree()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrbrainLabelCategoryTreeHeaders headers = new HrbrainLabelCategoryTreeHeaders();
+            return HrbrainLabelCategoryTreeWithOptions(headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>标签分类树查询</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// HrbrainLabelCategoryTreeResponse
+        /// </returns>
+        public async Task<HrbrainLabelCategoryTreeResponse> HrbrainLabelCategoryTreeAsync()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrbrainLabelCategoryTreeHeaders headers = new HrbrainLabelCategoryTreeHeaders();
+            return await HrbrainLabelCategoryTreeWithOptionsAsync(headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>标签分类树更新</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainLabelCategoryUpdateRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainLabelCategoryUpdateHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainLabelCategoryUpdateResponse
+        /// </returns>
+        public HrbrainLabelCategoryUpdateResponse HrbrainLabelCategoryUpdateWithOptions(HrbrainLabelCategoryUpdateRequest request, HrbrainLabelCategoryUpdateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CategoryVo))
+            {
+                body["categoryVo"] = request.CategoryVo;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrbrainLabelCategoryUpdate",
+                Version = "hrbrain_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrbrain/labels/category/update",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrbrainLabelCategoryUpdateResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>标签分类树更新</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainLabelCategoryUpdateRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainLabelCategoryUpdateHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainLabelCategoryUpdateResponse
+        /// </returns>
+        public async Task<HrbrainLabelCategoryUpdateResponse> HrbrainLabelCategoryUpdateWithOptionsAsync(HrbrainLabelCategoryUpdateRequest request, HrbrainLabelCategoryUpdateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CategoryVo))
+            {
+                body["categoryVo"] = request.CategoryVo;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrbrainLabelCategoryUpdate",
+                Version = "hrbrain_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrbrain/labels/category/update",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrbrainLabelCategoryUpdateResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>标签分类树更新</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainLabelCategoryUpdateRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainLabelCategoryUpdateResponse
+        /// </returns>
+        public HrbrainLabelCategoryUpdateResponse HrbrainLabelCategoryUpdate(HrbrainLabelCategoryUpdateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrbrainLabelCategoryUpdateHeaders headers = new HrbrainLabelCategoryUpdateHeaders();
+            return HrbrainLabelCategoryUpdateWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>标签分类树更新</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainLabelCategoryUpdateRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainLabelCategoryUpdateResponse
+        /// </returns>
+        public async Task<HrbrainLabelCategoryUpdateResponse> HrbrainLabelCategoryUpdateAsync(HrbrainLabelCategoryUpdateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrbrainLabelCategoryUpdateHeaders headers = new HrbrainLabelCategoryUpdateHeaders();
+            return await HrbrainLabelCategoryUpdateWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>标签明细删除</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainLabelDataDeleteRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainLabelDataDeleteHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainLabelDataDeleteResponse
+        /// </returns>
+        public HrbrainLabelDataDeleteResponse HrbrainLabelDataDeleteWithOptions(HrbrainLabelDataDeleteRequest request, HrbrainLabelDataDeleteHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Params))
+            {
+                body["params"] = request.Params;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrbrainLabelDataDelete",
+                Version = "hrbrain_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrbrain/label/dataDelete",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrbrainLabelDataDeleteResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>标签明细删除</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainLabelDataDeleteRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainLabelDataDeleteHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainLabelDataDeleteResponse
+        /// </returns>
+        public async Task<HrbrainLabelDataDeleteResponse> HrbrainLabelDataDeleteWithOptionsAsync(HrbrainLabelDataDeleteRequest request, HrbrainLabelDataDeleteHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Params))
+            {
+                body["params"] = request.Params;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrbrainLabelDataDelete",
+                Version = "hrbrain_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrbrain/label/dataDelete",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrbrainLabelDataDeleteResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>标签明细删除</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainLabelDataDeleteRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainLabelDataDeleteResponse
+        /// </returns>
+        public HrbrainLabelDataDeleteResponse HrbrainLabelDataDelete(HrbrainLabelDataDeleteRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrbrainLabelDataDeleteHeaders headers = new HrbrainLabelDataDeleteHeaders();
+            return HrbrainLabelDataDeleteWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>标签明细删除</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainLabelDataDeleteRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainLabelDataDeleteResponse
+        /// </returns>
+        public async Task<HrbrainLabelDataDeleteResponse> HrbrainLabelDataDeleteAsync(HrbrainLabelDataDeleteRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrbrainLabelDataDeleteHeaders headers = new HrbrainLabelDataDeleteHeaders();
+            return await HrbrainLabelDataDeleteWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>标签明细查询</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainLabelDataQueryRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainLabelDataQueryHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainLabelDataQueryResponse
+        /// </returns>
+        public HrbrainLabelDataQueryResponse HrbrainLabelDataQueryWithOptions(HrbrainLabelDataQueryRequest request, HrbrainLabelDataQueryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LabelCode))
+            {
+                body["labelCode"] = request.LabelCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                body["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                body["nextToken"] = request.NextToken;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrbrainLabelDataQuery",
+                Version = "hrbrain_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrbrain/labels/data",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrbrainLabelDataQueryResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>标签明细查询</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainLabelDataQueryRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainLabelDataQueryHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainLabelDataQueryResponse
+        /// </returns>
+        public async Task<HrbrainLabelDataQueryResponse> HrbrainLabelDataQueryWithOptionsAsync(HrbrainLabelDataQueryRequest request, HrbrainLabelDataQueryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LabelCode))
+            {
+                body["labelCode"] = request.LabelCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                body["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                body["nextToken"] = request.NextToken;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrbrainLabelDataQuery",
+                Version = "hrbrain_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrbrain/labels/data",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrbrainLabelDataQueryResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>标签明细查询</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainLabelDataQueryRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainLabelDataQueryResponse
+        /// </returns>
+        public HrbrainLabelDataQueryResponse HrbrainLabelDataQuery(HrbrainLabelDataQueryRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrbrainLabelDataQueryHeaders headers = new HrbrainLabelDataQueryHeaders();
+            return HrbrainLabelDataQueryWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>标签明细查询</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainLabelDataQueryRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainLabelDataQueryResponse
+        /// </returns>
+        public async Task<HrbrainLabelDataQueryResponse> HrbrainLabelDataQueryAsync(HrbrainLabelDataQueryRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrbrainLabelDataQueryHeaders headers = new HrbrainLabelDataQueryHeaders();
+            return await HrbrainLabelDataQueryWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>标签明细更新</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainLabelDataUpsertRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainLabelDataUpsertHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainLabelDataUpsertResponse
+        /// </returns>
+        public HrbrainLabelDataUpsertResponse HrbrainLabelDataUpsertWithOptions(HrbrainLabelDataUpsertRequest request, HrbrainLabelDataUpsertHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Params))
+            {
+                body["params"] = request.Params;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrbrainLabelDataUpsert",
+                Version = "hrbrain_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrbrain/label/dataUpsert",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrbrainLabelDataUpsertResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>标签明细更新</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainLabelDataUpsertRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainLabelDataUpsertHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainLabelDataUpsertResponse
+        /// </returns>
+        public async Task<HrbrainLabelDataUpsertResponse> HrbrainLabelDataUpsertWithOptionsAsync(HrbrainLabelDataUpsertRequest request, HrbrainLabelDataUpsertHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Params))
+            {
+                body["params"] = request.Params;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrbrainLabelDataUpsert",
+                Version = "hrbrain_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrbrain/label/dataUpsert",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrbrainLabelDataUpsertResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>标签明细更新</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainLabelDataUpsertRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainLabelDataUpsertResponse
+        /// </returns>
+        public HrbrainLabelDataUpsertResponse HrbrainLabelDataUpsert(HrbrainLabelDataUpsertRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrbrainLabelDataUpsertHeaders headers = new HrbrainLabelDataUpsertHeaders();
+            return HrbrainLabelDataUpsertWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>标签明细更新</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainLabelDataUpsertRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainLabelDataUpsertResponse
+        /// </returns>
+        public async Task<HrbrainLabelDataUpsertResponse> HrbrainLabelDataUpsertAsync(HrbrainLabelDataUpsertRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrbrainLabelDataUpsertHeaders headers = new HrbrainLabelDataUpsertHeaders();
+            return await HrbrainLabelDataUpsertWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>标签元数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainLabelMetaRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainLabelMetaHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainLabelMetaResponse
+        /// </returns>
+        public HrbrainLabelMetaResponse HrbrainLabelMetaWithOptions(HrbrainLabelMetaRequest request, HrbrainLabelMetaHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CategoryCodes))
+            {
+                body["categoryCodes"] = request.CategoryCodes;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                body["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                body["nextToken"] = request.NextToken;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrbrainLabelMeta",
+                Version = "hrbrain_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrbrain/labels/meta",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrbrainLabelMetaResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>标签元数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainLabelMetaRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainLabelMetaHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainLabelMetaResponse
+        /// </returns>
+        public async Task<HrbrainLabelMetaResponse> HrbrainLabelMetaWithOptionsAsync(HrbrainLabelMetaRequest request, HrbrainLabelMetaHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CategoryCodes))
+            {
+                body["categoryCodes"] = request.CategoryCodes;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                body["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                body["nextToken"] = request.NextToken;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrbrainLabelMeta",
+                Version = "hrbrain_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrbrain/labels/meta",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrbrainLabelMetaResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>标签元数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainLabelMetaRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainLabelMetaResponse
+        /// </returns>
+        public HrbrainLabelMetaResponse HrbrainLabelMeta(HrbrainLabelMetaRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrbrainLabelMetaHeaders headers = new HrbrainLabelMetaHeaders();
+            return HrbrainLabelMetaWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>标签元数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainLabelMetaRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainLabelMetaResponse
+        /// </returns>
+        public async Task<HrbrainLabelMetaResponse> HrbrainLabelMetaAsync(HrbrainLabelMetaRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrbrainLabelMetaHeaders headers = new HrbrainLabelMetaHeaders();
+            return await HrbrainLabelMetaWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>标签元数据状态更新</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainLabelMetaStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainLabelMetaStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainLabelMetaStatusResponse
+        /// </returns>
+        public HrbrainLabelMetaStatusResponse HrbrainLabelMetaStatusWithOptions(HrbrainLabelMetaStatusRequest request, HrbrainLabelMetaStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Codes))
+            {
+                body["codes"] = request.Codes;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OptType))
+            {
+                body["optType"] = request.OptType;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrbrainLabelMetaStatus",
+                Version = "hrbrain_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrbrain/labels/metaStatus",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrbrainLabelMetaStatusResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>标签元数据状态更新</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainLabelMetaStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainLabelMetaStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainLabelMetaStatusResponse
+        /// </returns>
+        public async Task<HrbrainLabelMetaStatusResponse> HrbrainLabelMetaStatusWithOptionsAsync(HrbrainLabelMetaStatusRequest request, HrbrainLabelMetaStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Codes))
+            {
+                body["codes"] = request.Codes;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OptType))
+            {
+                body["optType"] = request.OptType;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrbrainLabelMetaStatus",
+                Version = "hrbrain_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrbrain/labels/metaStatus",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrbrainLabelMetaStatusResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>标签元数据状态更新</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainLabelMetaStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainLabelMetaStatusResponse
+        /// </returns>
+        public HrbrainLabelMetaStatusResponse HrbrainLabelMetaStatus(HrbrainLabelMetaStatusRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrbrainLabelMetaStatusHeaders headers = new HrbrainLabelMetaStatusHeaders();
+            return HrbrainLabelMetaStatusWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>标签元数据状态更新</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainLabelMetaStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainLabelMetaStatusResponse
+        /// </returns>
+        public async Task<HrbrainLabelMetaStatusResponse> HrbrainLabelMetaStatusAsync(HrbrainLabelMetaStatusRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrbrainLabelMetaStatusHeaders headers = new HrbrainLabelMetaStatusHeaders();
+            return await HrbrainLabelMetaStatusWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>标签元数据更新</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainLabelMetaUpdateRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainLabelMetaUpdateHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainLabelMetaUpdateResponse
+        /// </returns>
+        public HrbrainLabelMetaUpdateResponse HrbrainLabelMetaUpdateWithOptions(HrbrainLabelMetaUpdateRequest request, HrbrainLabelMetaUpdateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CategoryCode))
+            {
+                body["categoryCode"] = request.CategoryCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Code))
+            {
+                body["code"] = request.Code;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DataType))
+            {
+                body["dataType"] = request.DataType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
+            {
+                body["description"] = request.Description;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImportantLevel))
+            {
+                body["importantLevel"] = request.ImportantLevel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsSensitive))
+            {
+                body["isSensitive"] = request.IsSensitive;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Options))
+            {
+                body["options"] = request.Options;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Permission))
+            {
+                body["permission"] = request.Permission;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Required))
+            {
+                body["required"] = request.Required;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrbrainLabelMetaUpdate",
+                Version = "hrbrain_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrbrain/labels/metaUpdate",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrbrainLabelMetaUpdateResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>标签元数据更新</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainLabelMetaUpdateRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainLabelMetaUpdateHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainLabelMetaUpdateResponse
+        /// </returns>
+        public async Task<HrbrainLabelMetaUpdateResponse> HrbrainLabelMetaUpdateWithOptionsAsync(HrbrainLabelMetaUpdateRequest request, HrbrainLabelMetaUpdateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CategoryCode))
+            {
+                body["categoryCode"] = request.CategoryCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Code))
+            {
+                body["code"] = request.Code;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DataType))
+            {
+                body["dataType"] = request.DataType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
+            {
+                body["description"] = request.Description;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImportantLevel))
+            {
+                body["importantLevel"] = request.ImportantLevel;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsSensitive))
+            {
+                body["isSensitive"] = request.IsSensitive;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Options))
+            {
+                body["options"] = request.Options;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Permission))
+            {
+                body["permission"] = request.Permission;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Required))
+            {
+                body["required"] = request.Required;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrbrainLabelMetaUpdate",
+                Version = "hrbrain_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrbrain/labels/metaUpdate",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrbrainLabelMetaUpdateResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>标签元数据更新</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainLabelMetaUpdateRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainLabelMetaUpdateResponse
+        /// </returns>
+        public HrbrainLabelMetaUpdateResponse HrbrainLabelMetaUpdate(HrbrainLabelMetaUpdateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrbrainLabelMetaUpdateHeaders headers = new HrbrainLabelMetaUpdateHeaders();
+            return HrbrainLabelMetaUpdateWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>标签元数据更新</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainLabelMetaUpdateRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainLabelMetaUpdateResponse
+        /// </returns>
+        public async Task<HrbrainLabelMetaUpdateResponse> HrbrainLabelMetaUpdateAsync(HrbrainLabelMetaUpdateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrbrainLabelMetaUpdateHeaders headers = new HrbrainLabelMetaUpdateHeaders();
+            return await HrbrainLabelMetaUpdateWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>打标任务生成的标签数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainLabelTaskDataRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainLabelTaskDataHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainLabelTaskDataResponse
+        /// </returns>
+        public HrbrainLabelTaskDataResponse HrbrainLabelTaskDataWithOptions(HrbrainLabelTaskDataRequest request, HrbrainLabelTaskDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OptWorkNo))
+            {
+                query["optWorkNo"] = request.OptWorkNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SessionId))
+            {
+                query["sessionId"] = request.SessionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrbrainLabelTaskData",
+                Version = "hrbrain_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrbrain/labels/task/data",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrbrainLabelTaskDataResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>打标任务生成的标签数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainLabelTaskDataRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainLabelTaskDataHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainLabelTaskDataResponse
+        /// </returns>
+        public async Task<HrbrainLabelTaskDataResponse> HrbrainLabelTaskDataWithOptionsAsync(HrbrainLabelTaskDataRequest request, HrbrainLabelTaskDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OptWorkNo))
+            {
+                query["optWorkNo"] = request.OptWorkNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SessionId))
+            {
+                query["sessionId"] = request.SessionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrbrainLabelTaskData",
+                Version = "hrbrain_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrbrain/labels/task/data",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrbrainLabelTaskDataResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>打标任务生成的标签数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainLabelTaskDataRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainLabelTaskDataResponse
+        /// </returns>
+        public HrbrainLabelTaskDataResponse HrbrainLabelTaskData(HrbrainLabelTaskDataRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrbrainLabelTaskDataHeaders headers = new HrbrainLabelTaskDataHeaders();
+            return HrbrainLabelTaskDataWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>打标任务生成的标签数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainLabelTaskDataRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainLabelTaskDataResponse
+        /// </returns>
+        public async Task<HrbrainLabelTaskDataResponse> HrbrainLabelTaskDataAsync(HrbrainLabelTaskDataRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrbrainLabelTaskDataHeaders headers = new HrbrainLabelTaskDataHeaders();
+            return await HrbrainLabelTaskDataWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>打标任务生成的标签元数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainLabelTaskMetaRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainLabelTaskMetaHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainLabelTaskMetaResponse
+        /// </returns>
+        public HrbrainLabelTaskMetaResponse HrbrainLabelTaskMetaWithOptions(HrbrainLabelTaskMetaRequest request, HrbrainLabelTaskMetaHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OptWorkNo))
+            {
+                query["optWorkNo"] = request.OptWorkNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SessionId))
+            {
+                query["sessionId"] = request.SessionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrbrainLabelTaskMeta",
+                Version = "hrbrain_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrbrain/labels/task/metadata",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrbrainLabelTaskMetaResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>打标任务生成的标签元数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainLabelTaskMetaRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainLabelTaskMetaHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainLabelTaskMetaResponse
+        /// </returns>
+        public async Task<HrbrainLabelTaskMetaResponse> HrbrainLabelTaskMetaWithOptionsAsync(HrbrainLabelTaskMetaRequest request, HrbrainLabelTaskMetaHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OptWorkNo))
+            {
+                query["optWorkNo"] = request.OptWorkNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SessionId))
+            {
+                query["sessionId"] = request.SessionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrbrainLabelTaskMeta",
+                Version = "hrbrain_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrbrain/labels/task/metadata",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrbrainLabelTaskMetaResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>打标任务生成的标签元数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainLabelTaskMetaRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainLabelTaskMetaResponse
+        /// </returns>
+        public HrbrainLabelTaskMetaResponse HrbrainLabelTaskMeta(HrbrainLabelTaskMetaRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrbrainLabelTaskMetaHeaders headers = new HrbrainLabelTaskMetaHeaders();
+            return HrbrainLabelTaskMetaWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>打标任务生成的标签元数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainLabelTaskMetaRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainLabelTaskMetaResponse
+        /// </returns>
+        public async Task<HrbrainLabelTaskMetaResponse> HrbrainLabelTaskMetaAsync(HrbrainLabelTaskMetaRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrbrainLabelTaskMetaHeaders headers = new HrbrainLabelTaskMetaHeaders();
+            return await HrbrainLabelTaskMetaWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>查询人才档案附件照片</para>
         /// </summary>
         /// 
@@ -6356,6 +7936,326 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             HrbrainTalentProfileBasicQueryHeaders headers = new HrbrainTalentProfileBasicQueryHeaders();
             return await HrbrainTalentProfileBasicQueryWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>提交人才搜索任务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainTalentSearchRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainTalentSearchHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainTalentSearchResponse
+        /// </returns>
+        public HrbrainTalentSearchResponse HrbrainTalentSearchWithOptions(HrbrainTalentSearchRequest request, HrbrainTalentSearchHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Query))
+            {
+                query["query"] = request.Query;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SessionId))
+            {
+                query["sessionId"] = request.SessionId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WorkNo))
+            {
+                query["workNo"] = request.WorkNo;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrbrainTalentSearch",
+                Version = "hrbrain_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrbrain/talent/submitEmpSearchTask",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrbrainTalentSearchResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>提交人才搜索任务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainTalentSearchRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainTalentSearchHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainTalentSearchResponse
+        /// </returns>
+        public async Task<HrbrainTalentSearchResponse> HrbrainTalentSearchWithOptionsAsync(HrbrainTalentSearchRequest request, HrbrainTalentSearchHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Query))
+            {
+                query["query"] = request.Query;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SessionId))
+            {
+                query["sessionId"] = request.SessionId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WorkNo))
+            {
+                query["workNo"] = request.WorkNo;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrbrainTalentSearch",
+                Version = "hrbrain_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrbrain/talent/submitEmpSearchTask",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrbrainTalentSearchResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>提交人才搜索任务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainTalentSearchRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainTalentSearchResponse
+        /// </returns>
+        public HrbrainTalentSearchResponse HrbrainTalentSearch(HrbrainTalentSearchRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrbrainTalentSearchHeaders headers = new HrbrainTalentSearchHeaders();
+            return HrbrainTalentSearchWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>提交人才搜索任务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainTalentSearchRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainTalentSearchResponse
+        /// </returns>
+        public async Task<HrbrainTalentSearchResponse> HrbrainTalentSearchAsync(HrbrainTalentSearchRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrbrainTalentSearchHeaders headers = new HrbrainTalentSearchHeaders();
+            return await HrbrainTalentSearchWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取搜索结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainTalentSearchResultRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainTalentSearchResultHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainTalentSearchResultResponse
+        /// </returns>
+        public HrbrainTalentSearchResultResponse HrbrainTalentSearchResultWithOptions(HrbrainTalentSearchResultRequest request, HrbrainTalentSearchResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SessionId))
+            {
+                query["sessionId"] = request.SessionId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WorkNo))
+            {
+                query["workNo"] = request.WorkNo;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrbrainTalentSearchResult",
+                Version = "hrbrain_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrbrain/talent/getEmpSearchTaskResult",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrbrainTalentSearchResultResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取搜索结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainTalentSearchResultRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainTalentSearchResultHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainTalentSearchResultResponse
+        /// </returns>
+        public async Task<HrbrainTalentSearchResultResponse> HrbrainTalentSearchResultWithOptionsAsync(HrbrainTalentSearchResultRequest request, HrbrainTalentSearchResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SessionId))
+            {
+                query["sessionId"] = request.SessionId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WorkNo))
+            {
+                query["workNo"] = request.WorkNo;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrbrainTalentSearchResult",
+                Version = "hrbrain_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrbrain/talent/getEmpSearchTaskResult",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrbrainTalentSearchResultResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取搜索结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainTalentSearchResultRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainTalentSearchResultResponse
+        /// </returns>
+        public HrbrainTalentSearchResultResponse HrbrainTalentSearchResult(HrbrainTalentSearchResultRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrbrainTalentSearchResultHeaders headers = new HrbrainTalentSearchResultHeaders();
+            return HrbrainTalentSearchResultWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取搜索结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainTalentSearchResultRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainTalentSearchResultResponse
+        /// </returns>
+        public async Task<HrbrainTalentSearchResultResponse> HrbrainTalentSearchResultAsync(HrbrainTalentSearchResultRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrbrainTalentSearchResultHeaders headers = new HrbrainTalentSearchResultHeaders();
+            return await HrbrainTalentSearchResultWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

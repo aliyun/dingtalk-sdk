@@ -490,6 +490,154 @@ namespace AlibabaCloud.SDK.Dingtalkdvi_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>获取客户洞察信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetCustomerInsightRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetCustomerInsightHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetCustomerInsightResponse
+        /// </returns>
+        public GetCustomerInsightResponse GetCustomerInsightWithOptions(GetCustomerInsightRequest request, GetCustomerInsightHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CustomerId))
+            {
+                query["customerId"] = request.CustomerId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetCustomerInsight",
+                Version = "dvi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dvi/customers/insights",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetCustomerInsightResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取客户洞察信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetCustomerInsightRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetCustomerInsightHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetCustomerInsightResponse
+        /// </returns>
+        public async Task<GetCustomerInsightResponse> GetCustomerInsightWithOptionsAsync(GetCustomerInsightRequest request, GetCustomerInsightHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CustomerId))
+            {
+                query["customerId"] = request.CustomerId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetCustomerInsight",
+                Version = "dvi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dvi/customers/insights",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetCustomerInsightResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取客户洞察信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetCustomerInsightRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetCustomerInsightResponse
+        /// </returns>
+        public GetCustomerInsightResponse GetCustomerInsight(GetCustomerInsightRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetCustomerInsightHeaders headers = new GetCustomerInsightHeaders();
+            return GetCustomerInsightWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取客户洞察信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetCustomerInsightRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetCustomerInsightResponse
+        /// </returns>
+        public async Task<GetCustomerInsightResponse> GetCustomerInsightAsync(GetCustomerInsightRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetCustomerInsightHeaders headers = new GetCustomerInsightHeaders();
+            return await GetCustomerInsightWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>获取服务章节摘要</para>
         /// </summary>
         /// 
@@ -2782,6 +2930,170 @@ namespace AlibabaCloud.SDK.Dingtalkdvi_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             SubmitAsrTaskHeaders headers = new SubmitAsrTaskHeaders();
             return await SubmitAsrTaskWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>asr离线任务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// VideoCustomerSplitRequest
+        /// </param>
+        /// <param name="headers">
+        /// VideoCustomerSplitHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// VideoCustomerSplitResponse
+        /// </returns>
+        public VideoCustomerSplitResponse VideoCustomerSplitWithOptions(VideoCustomerSplitRequest request, VideoCustomerSplitHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Customer))
+            {
+                body["customer"] = request.Customer;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SegmentId))
+            {
+                body["segmentId"] = request.SegmentId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "VideoCustomerSplit",
+                Version = "dvi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dvi/service/audiosplit",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<VideoCustomerSplitResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>asr离线任务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// VideoCustomerSplitRequest
+        /// </param>
+        /// <param name="headers">
+        /// VideoCustomerSplitHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// VideoCustomerSplitResponse
+        /// </returns>
+        public async Task<VideoCustomerSplitResponse> VideoCustomerSplitWithOptionsAsync(VideoCustomerSplitRequest request, VideoCustomerSplitHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Customer))
+            {
+                body["customer"] = request.Customer;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SegmentId))
+            {
+                body["segmentId"] = request.SegmentId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "VideoCustomerSplit",
+                Version = "dvi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dvi/service/audiosplit",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<VideoCustomerSplitResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>asr离线任务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// VideoCustomerSplitRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// VideoCustomerSplitResponse
+        /// </returns>
+        public VideoCustomerSplitResponse VideoCustomerSplit(VideoCustomerSplitRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            VideoCustomerSplitHeaders headers = new VideoCustomerSplitHeaders();
+            return VideoCustomerSplitWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>asr离线任务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// VideoCustomerSplitRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// VideoCustomerSplitResponse
+        /// </returns>
+        public async Task<VideoCustomerSplitResponse> VideoCustomerSplitAsync(VideoCustomerSplitRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            VideoCustomerSplitHeaders headers = new VideoCustomerSplitHeaders();
+            return await VideoCustomerSplitWithOptionsAsync(request, headers, runtime);
         }
 
     }

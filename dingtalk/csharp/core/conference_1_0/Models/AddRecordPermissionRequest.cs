@@ -29,6 +29,18 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
         [Validation(Required=false)]
         public string OwnerUnionId { get; set; }
 
+        [NameInMap("roleSubResourceIds")]
+        [Validation(Required=false)]
+        public List<string> RoleSubResourceIds { get; set; }
+
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>0</para>
+        /// </summary>
+        [NameInMap("shareScope")]
+        [Validation(Required=false)]
+        public int? ShareScope { get; set; }
+
         /// <summary>
         /// <para>This parameter is required.</para>
         /// 

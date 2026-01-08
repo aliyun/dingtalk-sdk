@@ -103,6 +103,14 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0.Models
         [Validation(Required=false)]
         public string SignStatus { get; set; }
 
+        [NameInMap("source")]
+        [Validation(Required=false)]
+        public string Source { get; set; }
+
+        [NameInMap("status")]
+        [Validation(Required=false)]
+        public string Status { get; set; }
+
     }
 
 }

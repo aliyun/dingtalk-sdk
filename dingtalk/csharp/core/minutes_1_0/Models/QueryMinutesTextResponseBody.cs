@@ -85,6 +85,10 @@ namespace AlibabaCloud.SDK.Dingtalkminutes_1_0.Models
             [Validation(Required=false)]
             public long? StartTime { get; set; }
 
+            [NameInMap("subSpeakerId")]
+            [Validation(Required=false)]
+            public string SubSpeakerId { get; set; }
+
             [NameInMap("unionId")]
             [Validation(Required=false)]
             public string UnionId { get; set; }

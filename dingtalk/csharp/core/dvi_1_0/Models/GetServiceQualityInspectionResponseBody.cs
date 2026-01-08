@@ -29,6 +29,10 @@ namespace AlibabaCloud.SDK.Dingtalkdvi_1_0.Models
                     [Validation(Required=false)]
                     public string IsHit { get; set; }
 
+                    [NameInMap("name")]
+                    [Validation(Required=false)]
+                    public string Name { get; set; }
+
                     [NameInMap("reason")]
                     [Validation(Required=false)]
                     public string Reason { get; set; }

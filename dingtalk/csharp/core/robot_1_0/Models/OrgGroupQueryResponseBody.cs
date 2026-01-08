@@ -29,6 +29,20 @@ namespace AlibabaCloud.SDK.Dingtalkrobot_1_0.Models
         [Validation(Required=false)]
         public List<string> ReadUserIds { get; set; }
 
+        [NameInMap("readUsers")]
+        [Validation(Required=false)]
+        public List<OrgGroupQueryResponseBodyReadUsers> ReadUsers { get; set; }
+        public class OrgGroupQueryResponseBodyReadUsers : TeaModel {
+            [NameInMap("unionId")]
+            [Validation(Required=false)]
+            public string UnionId { get; set; }
+
+            [NameInMap("userId")]
+            [Validation(Required=false)]
+            public string UserId { get; set; }
+
+        }
+
         /// <summary>
         /// <b>Example:</b>
         /// <para>SUCCESS</para>

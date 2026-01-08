@@ -30,7 +30,7 @@ namespace AlibabaCloud.SDK.Dingtalkshangou_1_0.Models
 
         [NameInMap("rating")]
         [Validation(Required=false)]
-        public int? Rating { get; set; }
+        public double? Rating { get; set; }
 
         /// <summary>
         /// <para>This parameter is required.</para>

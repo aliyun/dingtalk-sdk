@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
         [Validation(Required=false)]
         public string AppId { get; set; }
 
+        [NameInMap("blockTemplate")]
+        [Validation(Required=false)]
+        public bool? BlockTemplate { get; set; }
+
         [NameInMap("creatorId")]
         [Validation(Required=false)]
         public string CreatorId { get; set; }

@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
 {
     public class CopyTemplateRequest : TeaModel {
+        [NameInMap("name")]
+        [Validation(Required=false)]
+        public string Name { get; set; }
+
         /// <summary>
         /// <para>This parameter is required.</para>
         /// </summary>

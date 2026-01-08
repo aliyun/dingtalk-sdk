@@ -58,6 +58,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             {
                 body["ownerUnionId"] = request.OwnerUnionId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoleSubResourceIds))
+            {
+                body["roleSubResourceIds"] = request.RoleSubResourceIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShareScope))
+            {
+                body["shareScope"] = request.ShareScope;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
             {
                 body["unionId"] = request.UnionId;
@@ -120,6 +128,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OwnerUnionId))
             {
                 body["ownerUnionId"] = request.OwnerUnionId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoleSubResourceIds))
+            {
+                body["roleSubResourceIds"] = request.RoleSubResourceIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShareScope))
+            {
+                body["shareScope"] = request.ShareScope;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
             {
@@ -650,6 +666,162 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             CohostsHeaders headers = new CohostsHeaders();
             return await CohostsWithOptionsAsync(conferenceId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>生成会议自动登录url</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateAutoLoginUrlRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateAutoLoginUrlHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateAutoLoginUrlResponse
+        /// </returns>
+        public CreateAutoLoginUrlResponse CreateAutoLoginUrlWithOptions(CreateAutoLoginUrlRequest request, CreateAutoLoginUrlHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MeetingUrl))
+            {
+                body["meetingUrl"] = request.MeetingUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                body["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateAutoLoginUrl",
+                Version = "conference_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/conference/videoConferences/createAutoLoginUrl",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateAutoLoginUrlResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>生成会议自动登录url</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateAutoLoginUrlRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateAutoLoginUrlHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateAutoLoginUrlResponse
+        /// </returns>
+        public async Task<CreateAutoLoginUrlResponse> CreateAutoLoginUrlWithOptionsAsync(CreateAutoLoginUrlRequest request, CreateAutoLoginUrlHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MeetingUrl))
+            {
+                body["meetingUrl"] = request.MeetingUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                body["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateAutoLoginUrl",
+                Version = "conference_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/conference/videoConferences/createAutoLoginUrl",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateAutoLoginUrlResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>生成会议自动登录url</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateAutoLoginUrlRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateAutoLoginUrlResponse
+        /// </returns>
+        public CreateAutoLoginUrlResponse CreateAutoLoginUrl(CreateAutoLoginUrlRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateAutoLoginUrlHeaders headers = new CreateAutoLoginUrlHeaders();
+            return CreateAutoLoginUrlWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>生成会议自动登录url</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateAutoLoginUrlRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateAutoLoginUrlResponse
+        /// </returns>
+        public async Task<CreateAutoLoginUrlResponse> CreateAutoLoginUrlAsync(CreateAutoLoginUrlRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateAutoLoginUrlHeaders headers = new CreateAutoLoginUrlHeaders();
+            return await CreateAutoLoginUrlWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

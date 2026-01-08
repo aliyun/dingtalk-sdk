@@ -566,6 +566,10 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateId))
             {
                 body["templateId"] = request.TemplateId;
@@ -621,6 +625,10 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateId))
             {
                 body["templateId"] = request.TemplateId;
@@ -1854,6 +1862,10 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             {
                 body["appId"] = request.AppId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BlockTemplate))
+            {
+                body["blockTemplate"] = request.BlockTemplate;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreatorId))
             {
                 body["creatorId"] = request.CreatorId;
@@ -1924,6 +1936,10 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppId))
             {
                 body["appId"] = request.AppId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BlockTemplate))
+            {
+                body["blockTemplate"] = request.BlockTemplate;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreatorId))
             {

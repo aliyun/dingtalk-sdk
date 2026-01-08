@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
         [Validation(Required=false)]
         public PublishTemplateResponseBodyData Data { get; set; }
         public class PublishTemplateResponseBodyData : TeaModel {
+            [NameInMap("blockTemplate")]
+            [Validation(Required=false)]
+            public bool? BlockTemplate { get; set; }
+
             [NameInMap("commonVariableList")]
             [Validation(Required=false)]
             public object CommonVariableList { get; set; }

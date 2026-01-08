@@ -85,12 +85,20 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0.Models
             [Validation(Required=false)]
             public string IsDimission { get; set; }
 
+            [NameInMap("jobCategory")]
+            [Validation(Required=false)]
+            public string JobCategory { get; set; }
+
             /// <summary>
             /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("jobCodeName")]
             [Validation(Required=false)]
             public string JobCodeName { get; set; }
+
+            [NameInMap("jobFamily")]
+            [Validation(Required=false)]
+            public string JobFamily { get; set; }
 
             [NameInMap("jobLevel")]
             [Validation(Required=false)]

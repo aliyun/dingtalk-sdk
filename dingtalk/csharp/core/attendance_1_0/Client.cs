@@ -6738,6 +6738,170 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>考勤高级排班OEM应用升级</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ProcessHhOemUpdateRequest
+        /// </param>
+        /// <param name="headers">
+        /// ProcessHhOemUpdateHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ProcessHhOemUpdateResponse
+        /// </returns>
+        public ProcessHhOemUpdateResponse ProcessHhOemUpdateWithOptions(ProcessHhOemUpdateRequest request, ProcessHhOemUpdateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BindOemApp))
+            {
+                body["bindOemApp"] = request.BindOemApp;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpIdList))
+            {
+                body["corpIdList"] = request.CorpIdList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UseOemApp))
+            {
+                body["useOemApp"] = request.UseOemApp;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ProcessHhOemUpdate",
+                Version = "attendance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/attendance/oemApps",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ProcessHhOemUpdateResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>考勤高级排班OEM应用升级</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ProcessHhOemUpdateRequest
+        /// </param>
+        /// <param name="headers">
+        /// ProcessHhOemUpdateHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ProcessHhOemUpdateResponse
+        /// </returns>
+        public async Task<ProcessHhOemUpdateResponse> ProcessHhOemUpdateWithOptionsAsync(ProcessHhOemUpdateRequest request, ProcessHhOemUpdateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BindOemApp))
+            {
+                body["bindOemApp"] = request.BindOemApp;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpIdList))
+            {
+                body["corpIdList"] = request.CorpIdList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UseOemApp))
+            {
+                body["useOemApp"] = request.UseOemApp;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ProcessHhOemUpdate",
+                Version = "attendance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/attendance/oemApps",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ProcessHhOemUpdateResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>考勤高级排班OEM应用升级</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ProcessHhOemUpdateRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ProcessHhOemUpdateResponse
+        /// </returns>
+        public ProcessHhOemUpdateResponse ProcessHhOemUpdate(ProcessHhOemUpdateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ProcessHhOemUpdateHeaders headers = new ProcessHhOemUpdateHeaders();
+            return ProcessHhOemUpdateWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>考勤高级排班OEM应用升级</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ProcessHhOemUpdateRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ProcessHhOemUpdateResponse
+        /// </returns>
+        public async Task<ProcessHhOemUpdateResponse> ProcessHhOemUpdateAsync(ProcessHhOemUpdateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ProcessHhOemUpdateHeaders headers = new ProcessHhOemUpdateHeaders();
+            return await ProcessHhOemUpdateWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>扣减员工假期余额</para>
         /// </summary>
         /// 

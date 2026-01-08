@@ -13,6 +13,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
         [Validation(Required=false)]
         public string Code { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>76327xxxxxxx353936325f35</para>
+        /// </summary>
+        [NameInMap("taskUuid")]
+        [Validation(Required=false)]
+        public string TaskUuid { get; set; }
+
     }
 
 }

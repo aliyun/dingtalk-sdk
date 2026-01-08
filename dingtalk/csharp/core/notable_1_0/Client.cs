@@ -30,6 +30,326 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>添加角色成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddRoleMemberRequest
+        /// </param>
+        /// <param name="headers">
+        /// AddRoleMemberHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddRoleMemberResponse
+        /// </returns>
+        public AddRoleMemberResponse AddRoleMemberWithOptions(string baseId, AddRoleMemberRequest request, AddRoleMemberHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoleMemberList))
+            {
+                body["roleMemberList"] = request.RoleMemberList;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddRoleMember",
+                Version = "notable_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/notable/auth/role/member/" + baseId,
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AddRoleMemberResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加角色成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddRoleMemberRequest
+        /// </param>
+        /// <param name="headers">
+        /// AddRoleMemberHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddRoleMemberResponse
+        /// </returns>
+        public async Task<AddRoleMemberResponse> AddRoleMemberWithOptionsAsync(string baseId, AddRoleMemberRequest request, AddRoleMemberHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoleMemberList))
+            {
+                body["roleMemberList"] = request.RoleMemberList;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddRoleMember",
+                Version = "notable_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/notable/auth/role/member/" + baseId,
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AddRoleMemberResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加角色成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddRoleMemberRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddRoleMemberResponse
+        /// </returns>
+        public AddRoleMemberResponse AddRoleMember(string baseId, AddRoleMemberRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddRoleMemberHeaders headers = new AddRoleMemberHeaders();
+            return AddRoleMemberWithOptions(baseId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加角色成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddRoleMemberRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddRoleMemberResponse
+        /// </returns>
+        public async Task<AddRoleMemberResponse> AddRoleMemberAsync(string baseId, AddRoleMemberRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddRoleMemberHeaders headers = new AddRoleMemberHeaders();
+            return await AddRoleMemberWithOptionsAsync(baseId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改高级权限设置开关</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChangeSwitchRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChangeSwitchHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChangeSwitchResponse
+        /// </returns>
+        public ChangeSwitchResponse ChangeSwitchWithOptions(string baseId, ChangeSwitchRequest request, ChangeSwitchHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Value))
+            {
+                body["value"] = request.Value;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ChangeSwitch",
+                Version = "notable_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/notable/auth/" + baseId,
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ChangeSwitchResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改高级权限设置开关</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChangeSwitchRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChangeSwitchHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChangeSwitchResponse
+        /// </returns>
+        public async Task<ChangeSwitchResponse> ChangeSwitchWithOptionsAsync(string baseId, ChangeSwitchRequest request, ChangeSwitchHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Value))
+            {
+                body["value"] = request.Value;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ChangeSwitch",
+                Version = "notable_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/notable/auth/" + baseId,
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ChangeSwitchResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改高级权限设置开关</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChangeSwitchRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChangeSwitchResponse
+        /// </returns>
+        public ChangeSwitchResponse ChangeSwitch(string baseId, ChangeSwitchRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ChangeSwitchHeaders headers = new ChangeSwitchHeaders();
+            return ChangeSwitchWithOptions(baseId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改高级权限设置开关</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChangeSwitchRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChangeSwitchResponse
+        /// </returns>
+        public async Task<ChangeSwitchResponse> ChangeSwitchAsync(string baseId, ChangeSwitchRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ChangeSwitchHeaders headers = new ChangeSwitchHeaders();
+            return await ChangeSwitchWithOptionsAsync(baseId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>新增数据表字段</para>
         /// </summary>
         /// 
@@ -202,6 +522,198 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             CreateFieldHeaders headers = new CreateFieldHeaders();
             return await CreateFieldWithOptionsAsync(baseId, sheetIdOrName, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建角色</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateRoleRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateRoleHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateRoleResponse
+        /// </returns>
+        public CreateRoleResponse CreateRoleWithOptions(string baseId, CreateRoleRequest request, CreateRoleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FlowType))
+            {
+                body["flowType"] = request.FlowType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Id))
+            {
+                body["id"] = request.Id;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoleType))
+            {
+                body["roleType"] = request.RoleType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubRoles))
+            {
+                body["subRoles"] = request.SubRoles;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateRole",
+                Version = "notable_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/notable/auth/role/" + baseId,
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateRoleResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建角色</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateRoleRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateRoleHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateRoleResponse
+        /// </returns>
+        public async Task<CreateRoleResponse> CreateRoleWithOptionsAsync(string baseId, CreateRoleRequest request, CreateRoleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FlowType))
+            {
+                body["flowType"] = request.FlowType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Id))
+            {
+                body["id"] = request.Id;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoleType))
+            {
+                body["roleType"] = request.RoleType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubRoles))
+            {
+                body["subRoles"] = request.SubRoles;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateRole",
+                Version = "notable_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/notable/auth/role/" + baseId,
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateRoleResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建角色</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateRoleRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateRoleResponse
+        /// </returns>
+        public CreateRoleResponse CreateRole(string baseId, CreateRoleRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateRoleHeaders headers = new CreateRoleHeaders();
+            return CreateRoleWithOptions(baseId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建角色</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateRoleRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateRoleResponse
+        /// </returns>
+        public async Task<CreateRoleResponse> CreateRoleAsync(string baseId, CreateRoleRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateRoleHeaders headers = new CreateRoleHeaders();
+            return await CreateRoleWithOptionsAsync(baseId, request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>
@@ -678,6 +1190,166 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             DeleteRecordsHeaders headers = new DeleteRecordsHeaders();
             return await DeleteRecordsWithOptionsAsync(baseId, sheetIdOrName, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除角色</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteRoleRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteRoleHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteRoleResponse
+        /// </returns>
+        public DeleteRoleResponse DeleteRoleWithOptions(string baseId, DeleteRoleRequest request, DeleteRoleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoleId))
+            {
+                body["roleId"] = request.RoleId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteRole",
+                Version = "notable_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/notable/auth/role/" + baseId,
+                Method = "DELETE",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteRoleResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除角色</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteRoleRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteRoleHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteRoleResponse
+        /// </returns>
+        public async Task<DeleteRoleResponse> DeleteRoleWithOptionsAsync(string baseId, DeleteRoleRequest request, DeleteRoleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoleId))
+            {
+                body["roleId"] = request.RoleId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteRole",
+                Version = "notable_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/notable/auth/role/" + baseId,
+                Method = "DELETE",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteRoleResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除角色</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteRoleRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteRoleResponse
+        /// </returns>
+        public DeleteRoleResponse DeleteRole(string baseId, DeleteRoleRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteRoleHeaders headers = new DeleteRoleHeaders();
+            return DeleteRoleWithOptions(baseId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除角色</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteRoleRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteRoleResponse
+        /// </returns>
+        public async Task<DeleteRoleResponse> DeleteRoleAsync(string baseId, DeleteRoleRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteRoleHeaders headers = new DeleteRoleHeaders();
+            return await DeleteRoleWithOptionsAsync(baseId, request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>
@@ -1586,6 +2258,310 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>获取高级权限设置开关</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetSwitchRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetSwitchHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetSwitchResponse
+        /// </returns>
+        public GetSwitchResponse GetSwitchWithOptions(string baseId, GetSwitchRequest request, GetSwitchHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetSwitch",
+                Version = "notable_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/notable/auth/" + baseId,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetSwitchResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取高级权限设置开关</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetSwitchRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetSwitchHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetSwitchResponse
+        /// </returns>
+        public async Task<GetSwitchResponse> GetSwitchWithOptionsAsync(string baseId, GetSwitchRequest request, GetSwitchHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetSwitch",
+                Version = "notable_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/notable/auth/" + baseId,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetSwitchResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取高级权限设置开关</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetSwitchRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetSwitchResponse
+        /// </returns>
+        public GetSwitchResponse GetSwitch(string baseId, GetSwitchRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetSwitchHeaders headers = new GetSwitchHeaders();
+            return GetSwitchWithOptions(baseId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取高级权限设置开关</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetSwitchRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetSwitchResponse
+        /// </returns>
+        public async Task<GetSwitchResponse> GetSwitchAsync(string baseId, GetSwitchRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetSwitchHeaders headers = new GetSwitchHeaders();
+            return await GetSwitchWithOptionsAsync(baseId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取指定用户的高级权限角色配置列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetUserDocRolesRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetUserDocRolesHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetUserDocRolesResponse
+        /// </returns>
+        public GetUserDocRolesResponse GetUserDocRolesWithOptions(string baseId, GetUserDocRolesRequest request, GetUserDocRolesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetUserDocRoles",
+                Version = "notable_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/notable/auth/role/" + baseId,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetUserDocRolesResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取指定用户的高级权限角色配置列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetUserDocRolesRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetUserDocRolesHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetUserDocRolesResponse
+        /// </returns>
+        public async Task<GetUserDocRolesResponse> GetUserDocRolesWithOptionsAsync(string baseId, GetUserDocRolesRequest request, GetUserDocRolesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetUserDocRoles",
+                Version = "notable_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/notable/auth/role/" + baseId,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetUserDocRolesResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取指定用户的高级权限角色配置列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetUserDocRolesRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetUserDocRolesResponse
+        /// </returns>
+        public GetUserDocRolesResponse GetUserDocRoles(string baseId, GetUserDocRolesRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetUserDocRolesHeaders headers = new GetUserDocRolesHeaders();
+            return GetUserDocRolesWithOptions(baseId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取指定用户的高级权限角色配置列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetUserDocRolesRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetUserDocRolesResponse
+        /// </returns>
+        public async Task<GetUserDocRolesResponse> GetUserDocRolesAsync(string baseId, GetUserDocRolesRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetUserDocRolesHeaders headers = new GetUserDocRolesHeaders();
+            return await GetUserDocRolesWithOptionsAsync(baseId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>新增记录</para>
         /// </summary>
         /// 
@@ -2090,6 +3066,322 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>查询文档所有角色和角色成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryDocAllRolesRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryDocAllRolesHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryDocAllRolesResponse
+        /// </returns>
+        public QueryDocAllRolesResponse QueryDocAllRolesWithOptions(string baseId, QueryDocAllRolesRequest request, QueryDocAllRolesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryDocAllRoles",
+                Version = "notable_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/notable/auth/role/member/" + baseId,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryDocAllRolesResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询文档所有角色和角色成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryDocAllRolesRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryDocAllRolesHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryDocAllRolesResponse
+        /// </returns>
+        public async Task<QueryDocAllRolesResponse> QueryDocAllRolesWithOptionsAsync(string baseId, QueryDocAllRolesRequest request, QueryDocAllRolesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryDocAllRoles",
+                Version = "notable_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/notable/auth/role/member/" + baseId,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryDocAllRolesResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询文档所有角色和角色成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryDocAllRolesRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryDocAllRolesResponse
+        /// </returns>
+        public QueryDocAllRolesResponse QueryDocAllRoles(string baseId, QueryDocAllRolesRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryDocAllRolesHeaders headers = new QueryDocAllRolesHeaders();
+            return QueryDocAllRolesWithOptions(baseId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询文档所有角色和角色成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryDocAllRolesRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryDocAllRolesResponse
+        /// </returns>
+        public async Task<QueryDocAllRolesResponse> QueryDocAllRolesAsync(string baseId, QueryDocAllRolesRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryDocAllRolesHeaders headers = new QueryDocAllRolesHeaders();
+            return await QueryDocAllRolesWithOptionsAsync(baseId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>重建角色成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RebuildRoleMembersRequest
+        /// </param>
+        /// <param name="headers">
+        /// RebuildRoleMembersHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// RebuildRoleMembersResponse
+        /// </returns>
+        public RebuildRoleMembersResponse RebuildRoleMembersWithOptions(string baseId, RebuildRoleMembersRequest request, RebuildRoleMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DefaultRoleDTO))
+            {
+                body["defaultRoleDTO"] = request.DefaultRoleDTO;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ToRoleMemberDTOMap))
+            {
+                body["toRoleMemberDTOMap"] = request.ToRoleMemberDTOMap;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "RebuildRoleMembers",
+                Version = "notable_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/notable/auth/role/member/" + baseId,
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<RebuildRoleMembersResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>重建角色成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RebuildRoleMembersRequest
+        /// </param>
+        /// <param name="headers">
+        /// RebuildRoleMembersHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// RebuildRoleMembersResponse
+        /// </returns>
+        public async Task<RebuildRoleMembersResponse> RebuildRoleMembersWithOptionsAsync(string baseId, RebuildRoleMembersRequest request, RebuildRoleMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DefaultRoleDTO))
+            {
+                body["defaultRoleDTO"] = request.DefaultRoleDTO;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ToRoleMemberDTOMap))
+            {
+                body["toRoleMemberDTOMap"] = request.ToRoleMemberDTOMap;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "RebuildRoleMembers",
+                Version = "notable_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/notable/auth/role/member/" + baseId,
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<RebuildRoleMembersResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>重建角色成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RebuildRoleMembersRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// RebuildRoleMembersResponse
+        /// </returns>
+        public RebuildRoleMembersResponse RebuildRoleMembers(string baseId, RebuildRoleMembersRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            RebuildRoleMembersHeaders headers = new RebuildRoleMembersHeaders();
+            return RebuildRoleMembersWithOptions(baseId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>重建角色成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RebuildRoleMembersRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// RebuildRoleMembersResponse
+        /// </returns>
+        public async Task<RebuildRoleMembersResponse> RebuildRoleMembersAsync(string baseId, RebuildRoleMembersRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            RebuildRoleMembersHeaders headers = new RebuildRoleMembersHeaders();
+            return await RebuildRoleMembersWithOptionsAsync(baseId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>更新数据表字段</para>
         /// </summary>
         /// 
@@ -2414,6 +3706,198 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             UpdateRecordsHeaders headers = new UpdateRecordsHeaders();
             return await UpdateRecordsWithOptionsAsync(baseId, sheetIdOrName, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新角色</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateRoleRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateRoleHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateRoleResponse
+        /// </returns>
+        public UpdateRoleResponse UpdateRoleWithOptions(string baseId, UpdateRoleRequest request, UpdateRoleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FlowType))
+            {
+                body["flowType"] = request.FlowType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Id))
+            {
+                body["id"] = request.Id;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoleType))
+            {
+                body["roleType"] = request.RoleType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubRoles))
+            {
+                body["subRoles"] = request.SubRoles;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateRole",
+                Version = "notable_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/notable/auth/role/" + baseId,
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateRoleResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新角色</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateRoleRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateRoleHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateRoleResponse
+        /// </returns>
+        public async Task<UpdateRoleResponse> UpdateRoleWithOptionsAsync(string baseId, UpdateRoleRequest request, UpdateRoleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FlowType))
+            {
+                body["flowType"] = request.FlowType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Id))
+            {
+                body["id"] = request.Id;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoleType))
+            {
+                body["roleType"] = request.RoleType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubRoles))
+            {
+                body["subRoles"] = request.SubRoles;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateRole",
+                Version = "notable_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/notable/auth/role/" + baseId,
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateRoleResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新角色</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateRoleRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateRoleResponse
+        /// </returns>
+        public UpdateRoleResponse UpdateRole(string baseId, UpdateRoleRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateRoleHeaders headers = new UpdateRoleHeaders();
+            return UpdateRoleWithOptions(baseId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新角色</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateRoleRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateRoleResponse
+        /// </returns>
+        public async Task<UpdateRoleResponse> UpdateRoleAsync(string baseId, UpdateRoleRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateRoleHeaders headers = new UpdateRoleHeaders();
+            return await UpdateRoleWithOptionsAsync(baseId, request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>
