@@ -546,6 +546,330 @@ class GetCustomerInfoResponse(TeaModel):
         return self
 
 
+class GetCustomerInsightHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetCustomerInsightRequest(TeaModel):
+    def __init__(
+        self,
+        customer_id: str = None,
+    ):
+        # This parameter is required.
+        self.customer_id = customer_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.customer_id is not None:
+            result['customerId'] = self.customer_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('customerId') is not None:
+            self.customer_id = m.get('customerId')
+        return self
+
+
+class GetCustomerInsightResponseBodyResultIntention(TeaModel):
+    def __init__(
+        self,
+        description: str = None,
+        intention: str = None,
+    ):
+        self.description = description
+        self.intention = intention
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.description is not None:
+            result['description'] = self.description
+        if self.intention is not None:
+            result['intention'] = self.intention
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('intention') is not None:
+            self.intention = m.get('intention')
+        return self
+
+
+class GetCustomerInsightResponseBodyResultTagAiTag(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        name: str = None,
+        value: str = None,
+    ):
+        self.code = code
+        self.name = name
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.name is not None:
+            result['name'] = self.name
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class GetCustomerInsightResponseBodyResultTagUserTag(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        value: str = None,
+    ):
+        self.code = code
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class GetCustomerInsightResponseBodyResultTag(TeaModel):
+    def __init__(
+        self,
+        ai_tag: List[GetCustomerInsightResponseBodyResultTagAiTag] = None,
+        user_tag: List[GetCustomerInsightResponseBodyResultTagUserTag] = None,
+    ):
+        self.ai_tag = ai_tag
+        self.user_tag = user_tag
+
+    def validate(self):
+        if self.ai_tag:
+            for k in self.ai_tag:
+                if k:
+                    k.validate()
+        if self.user_tag:
+            for k in self.user_tag:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['aiTag'] = []
+        if self.ai_tag is not None:
+            for k in self.ai_tag:
+                result['aiTag'].append(k.to_map() if k else None)
+        result['userTag'] = []
+        if self.user_tag is not None:
+            for k in self.user_tag:
+                result['userTag'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.ai_tag = []
+        if m.get('aiTag') is not None:
+            for k in m.get('aiTag'):
+                temp_model = GetCustomerInsightResponseBodyResultTagAiTag()
+                self.ai_tag.append(temp_model.from_map(k))
+        self.user_tag = []
+        if m.get('userTag') is not None:
+            for k in m.get('userTag'):
+                temp_model = GetCustomerInsightResponseBodyResultTagUserTag()
+                self.user_tag.append(temp_model.from_map(k))
+        return self
+
+
+class GetCustomerInsightResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        intention: GetCustomerInsightResponseBodyResultIntention = None,
+        tag: GetCustomerInsightResponseBodyResultTag = None,
+    ):
+        self.intention = intention
+        self.tag = tag
+
+    def validate(self):
+        if self.intention:
+            self.intention.validate()
+        if self.tag:
+            self.tag.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.intention is not None:
+            result['intention'] = self.intention.to_map()
+        if self.tag is not None:
+            result['tag'] = self.tag.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('intention') is not None:
+            temp_model = GetCustomerInsightResponseBodyResultIntention()
+            self.intention = temp_model.from_map(m['intention'])
+        if m.get('tag') is not None:
+            temp_model = GetCustomerInsightResponseBodyResultTag()
+            self.tag = temp_model.from_map(m['tag'])
+        return self
+
+
+class GetCustomerInsightResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: GetCustomerInsightResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = GetCustomerInsightResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class GetCustomerInsightResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetCustomerInsightResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetCustomerInsightResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetServiceChapterSummaryHeaders(TeaModel):
     def __init__(
         self,
@@ -1082,12 +1406,14 @@ class GetServiceQualityInspectionResponseBodyResultGroupListItemList(TeaModel):
         self,
         flow_name: str = None,
         is_hit: str = None,
+        name: str = None,
         reason: str = None,
         score: int = None,
         script: str = None,
     ):
         self.flow_name = flow_name
         self.is_hit = is_hit
+        self.name = name
         self.reason = reason
         self.score = score
         self.script = script
@@ -1105,6 +1431,8 @@ class GetServiceQualityInspectionResponseBodyResultGroupListItemList(TeaModel):
             result['flowName'] = self.flow_name
         if self.is_hit is not None:
             result['isHit'] = self.is_hit
+        if self.name is not None:
+            result['name'] = self.name
         if self.reason is not None:
             result['reason'] = self.reason
         if self.score is not None:
@@ -1119,6 +1447,8 @@ class GetServiceQualityInspectionResponseBodyResultGroupListItemList(TeaModel):
             self.flow_name = m.get('flowName')
         if m.get('isHit') is not None:
             self.is_hit = m.get('isHit')
+        if m.get('name') is not None:
+            self.name = m.get('name')
         if m.get('reason') is not None:
             self.reason = m.get('reason')
         if m.get('score') is not None:
@@ -4201,6 +4531,353 @@ class SubmitAsrTaskResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SubmitAsrTaskResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class VideoCustomerSplitHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class VideoCustomerSplitRequestCustomerCustomersAppearance(TeaModel):
+    def __init__(
+        self,
+        end_time: int = None,
+        start_time: int = None,
+        video_id: str = None,
+    ):
+        # This parameter is required.
+        self.end_time = end_time
+        # This parameter is required.
+        self.start_time = start_time
+        self.video_id = video_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.video_id is not None:
+            result['videoId'] = self.video_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('videoId') is not None:
+            self.video_id = m.get('videoId')
+        return self
+
+
+class VideoCustomerSplitRequestCustomerCustomers(TeaModel):
+    def __init__(
+        self,
+        appearance: VideoCustomerSplitRequestCustomerCustomersAppearance = None,
+        customer_id: str = None,
+    ):
+        # This parameter is required.
+        self.appearance = appearance
+        # This parameter is required.
+        self.customer_id = customer_id
+
+    def validate(self):
+        if self.appearance:
+            self.appearance.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.appearance is not None:
+            result['appearance'] = self.appearance.to_map()
+        if self.customer_id is not None:
+            result['customerId'] = self.customer_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appearance') is not None:
+            temp_model = VideoCustomerSplitRequestCustomerCustomersAppearance()
+            self.appearance = temp_model.from_map(m['appearance'])
+        if m.get('customerId') is not None:
+            self.customer_id = m.get('customerId')
+        return self
+
+
+class VideoCustomerSplitRequestCustomer(TeaModel):
+    def __init__(
+        self,
+        customers: List[VideoCustomerSplitRequestCustomerCustomers] = None,
+    ):
+        # This parameter is required.
+        self.customers = customers
+
+    def validate(self):
+        if self.customers:
+            for k in self.customers:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['customers'] = []
+        if self.customers is not None:
+            for k in self.customers:
+                result['customers'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.customers = []
+        if m.get('customers') is not None:
+            for k in m.get('customers'):
+                temp_model = VideoCustomerSplitRequestCustomerCustomers()
+                self.customers.append(temp_model.from_map(k))
+        return self
+
+
+class VideoCustomerSplitRequest(TeaModel):
+    def __init__(
+        self,
+        customer: VideoCustomerSplitRequestCustomer = None,
+        segment_id: str = None,
+        user_id: str = None,
+    ):
+        # This parameter is required.
+        self.customer = customer
+        # This parameter is required.
+        self.segment_id = segment_id
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        if self.customer:
+            self.customer.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.customer is not None:
+            result['customer'] = self.customer.to_map()
+        if self.segment_id is not None:
+            result['segmentId'] = self.segment_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('customer') is not None:
+            temp_model = VideoCustomerSplitRequestCustomer()
+            self.customer = temp_model.from_map(m['customer'])
+        if m.get('segmentId') is not None:
+            self.segment_id = m.get('segmentId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class VideoCustomerSplitResponseBodyResultCreateServiceRecordResult(TeaModel):
+    def __init__(
+        self,
+        record_ids: List[str] = None,
+        segment_id: str = None,
+    ):
+        self.record_ids = record_ids
+        self.segment_id = segment_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.record_ids is not None:
+            result['recordIds'] = self.record_ids
+        if self.segment_id is not None:
+            result['segmentId'] = self.segment_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('recordIds') is not None:
+            self.record_ids = m.get('recordIds')
+        if m.get('segmentId') is not None:
+            self.segment_id = m.get('segmentId')
+        return self
+
+
+class VideoCustomerSplitResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        create_service_record_result: List[VideoCustomerSplitResponseBodyResultCreateServiceRecordResult] = None,
+    ):
+        self.create_service_record_result = create_service_record_result
+
+    def validate(self):
+        if self.create_service_record_result:
+            for k in self.create_service_record_result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['createServiceRecordResult'] = []
+        if self.create_service_record_result is not None:
+            for k in self.create_service_record_result:
+                result['createServiceRecordResult'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.create_service_record_result = []
+        if m.get('createServiceRecordResult') is not None:
+            for k in m.get('createServiceRecordResult'):
+                temp_model = VideoCustomerSplitResponseBodyResultCreateServiceRecordResult()
+                self.create_service_record_result.append(temp_model.from_map(k))
+        return self
+
+
+class VideoCustomerSplitResponseBody(TeaModel):
+    def __init__(
+        self,
+        error_code: str = None,
+        error_msg: str = None,
+        result: VideoCustomerSplitResponseBodyResult = None,
+        success: str = None,
+    ):
+        self.error_code = error_code
+        self.error_msg = error_msg
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.error_code is not None:
+            result['errorCode'] = self.error_code
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('errorCode') is not None:
+            self.error_code = m.get('errorCode')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('result') is not None:
+            temp_model = VideoCustomerSplitResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class VideoCustomerSplitResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: VideoCustomerSplitResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = VideoCustomerSplitResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

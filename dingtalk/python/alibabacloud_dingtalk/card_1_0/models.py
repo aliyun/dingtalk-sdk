@@ -1145,8 +1145,10 @@ class CopyTemplateHeaders(TeaModel):
 class CopyTemplateRequest(TeaModel):
     def __init__(
         self,
+        name: str = None,
         template_id: str = None,
     ):
+        self.name = name
         # This parameter is required.
         self.template_id = template_id
 
@@ -1159,12 +1161,16 @@ class CopyTemplateRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.name is not None:
+            result['name'] = self.name
         if self.template_id is not None:
             result['templateId'] = self.template_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
         if m.get('templateId') is not None:
             self.template_id = m.get('templateId')
         return self
@@ -5300,12 +5306,14 @@ class CreateTemplateRequest(TeaModel):
     def __init__(
         self,
         app_id: str = None,
+        block_template: bool = None,
         creator_id: str = None,
         extend_type: str = None,
         name: str = None,
         type: str = None,
     ):
         self.app_id = app_id
+        self.block_template = block_template
         self.creator_id = creator_id
         # This parameter is required.
         self.extend_type = extend_type
@@ -5325,6 +5333,8 @@ class CreateTemplateRequest(TeaModel):
         result = dict()
         if self.app_id is not None:
             result['appId'] = self.app_id
+        if self.block_template is not None:
+            result['blockTemplate'] = self.block_template
         if self.creator_id is not None:
             result['creatorId'] = self.creator_id
         if self.extend_type is not None:
@@ -5339,6 +5349,8 @@ class CreateTemplateRequest(TeaModel):
         m = m or dict()
         if m.get('appId') is not None:
             self.app_id = m.get('appId')
+        if m.get('blockTemplate') is not None:
+            self.block_template = m.get('blockTemplate')
         if m.get('creatorId') is not None:
             self.creator_id = m.get('creatorId')
         if m.get('extendType') is not None:
@@ -6596,6 +6608,7 @@ class GetTemplateRequest(TeaModel):
 class GetTemplateResponseBodyData(TeaModel):
     def __init__(
         self,
+        block_template: bool = None,
         common_variable_list: Any = None,
         creator_id: str = None,
         exp_variable_list: Any = None,
@@ -6610,6 +6623,7 @@ class GetTemplateResponseBodyData(TeaModel):
         template_id: str = None,
         type: str = None,
     ):
+        self.block_template = block_template
         self.common_variable_list = common_variable_list
         self.creator_id = creator_id
         self.exp_variable_list = exp_variable_list
@@ -6633,6 +6647,8 @@ class GetTemplateResponseBodyData(TeaModel):
             return _map
 
         result = dict()
+        if self.block_template is not None:
+            result['blockTemplate'] = self.block_template
         if self.common_variable_list is not None:
             result['commonVariableList'] = self.common_variable_list
         if self.creator_id is not None:
@@ -6663,6 +6679,8 @@ class GetTemplateResponseBodyData(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('blockTemplate') is not None:
+            self.block_template = m.get('blockTemplate')
         if m.get('commonVariableList') is not None:
             self.common_variable_list = m.get('commonVariableList')
         if m.get('creatorId') is not None:
@@ -6832,6 +6850,7 @@ class ListTemplateRequest(TeaModel):
 class ListTemplateResponseBodyData(TeaModel):
     def __init__(
         self,
+        block_template: bool = None,
         common_variable_list: Any = None,
         creator_id: str = None,
         exp_variable_list: Any = None,
@@ -6846,6 +6865,7 @@ class ListTemplateResponseBodyData(TeaModel):
         template_id: str = None,
         type: str = None,
     ):
+        self.block_template = block_template
         self.common_variable_list = common_variable_list
         self.creator_id = creator_id
         self.exp_variable_list = exp_variable_list
@@ -6869,6 +6889,8 @@ class ListTemplateResponseBodyData(TeaModel):
             return _map
 
         result = dict()
+        if self.block_template is not None:
+            result['blockTemplate'] = self.block_template
         if self.common_variable_list is not None:
             result['commonVariableList'] = self.common_variable_list
         if self.creator_id is not None:
@@ -6899,6 +6921,8 @@ class ListTemplateResponseBodyData(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('blockTemplate') is not None:
+            self.block_template = m.get('blockTemplate')
         if m.get('commonVariableList') is not None:
             self.common_variable_list = m.get('commonVariableList')
         if m.get('creatorId') is not None:
@@ -7086,6 +7110,7 @@ class PublishTemplateRequest(TeaModel):
 class PublishTemplateResponseBodyData(TeaModel):
     def __init__(
         self,
+        block_template: bool = None,
         common_variable_list: Any = None,
         creator_id: str = None,
         exp_variable_list: Any = None,
@@ -7100,6 +7125,7 @@ class PublishTemplateResponseBodyData(TeaModel):
         template_id: str = None,
         type: str = None,
     ):
+        self.block_template = block_template
         self.common_variable_list = common_variable_list
         self.creator_id = creator_id
         self.exp_variable_list = exp_variable_list
@@ -7123,6 +7149,8 @@ class PublishTemplateResponseBodyData(TeaModel):
             return _map
 
         result = dict()
+        if self.block_template is not None:
+            result['blockTemplate'] = self.block_template
         if self.common_variable_list is not None:
             result['commonVariableList'] = self.common_variable_list
         if self.creator_id is not None:
@@ -7153,6 +7181,8 @@ class PublishTemplateResponseBodyData(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('blockTemplate') is not None:
+            self.block_template = m.get('blockTemplate')
         if m.get('commonVariableList') is not None:
             self.common_variable_list = m.get('commonVariableList')
         if m.get('creatorId') is not None:
@@ -7711,6 +7741,7 @@ class SaveTemplateRequest(TeaModel):
 class SaveTemplateResponseBodyData(TeaModel):
     def __init__(
         self,
+        block_template: bool = None,
         common_variable_list: Any = None,
         creator_id: str = None,
         exp_variable_list: Any = None,
@@ -7725,6 +7756,7 @@ class SaveTemplateResponseBodyData(TeaModel):
         template_id: str = None,
         type: str = None,
     ):
+        self.block_template = block_template
         self.common_variable_list = common_variable_list
         self.creator_id = creator_id
         self.exp_variable_list = exp_variable_list
@@ -7748,6 +7780,8 @@ class SaveTemplateResponseBodyData(TeaModel):
             return _map
 
         result = dict()
+        if self.block_template is not None:
+            result['blockTemplate'] = self.block_template
         if self.common_variable_list is not None:
             result['commonVariableList'] = self.common_variable_list
         if self.creator_id is not None:
@@ -7778,6 +7812,8 @@ class SaveTemplateResponseBodyData(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('blockTemplate') is not None:
+            self.block_template = m.get('blockTemplate')
         if m.get('commonVariableList') is not None:
             self.common_variable_list = m.get('commonVariableList')
         if m.get('creatorId') is not None:

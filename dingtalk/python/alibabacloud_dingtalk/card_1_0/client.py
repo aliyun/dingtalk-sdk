@@ -420,6 +420,8 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
         if not UtilClient.is_unset(request.template_id):
             body['templateId'] = request.template_id
         real_headers = {}
@@ -463,6 +465,8 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
         if not UtilClient.is_unset(request.template_id):
             body['templateId'] = request.template_id
         real_headers = {}
@@ -1264,6 +1268,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.app_id):
             body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.block_template):
+            body['blockTemplate'] = request.block_template
         if not UtilClient.is_unset(request.creator_id):
             body['creatorId'] = request.creator_id
         if not UtilClient.is_unset(request.extend_type):
@@ -1315,6 +1321,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.app_id):
             body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.block_template):
+            body['blockTemplate'] = request.block_template
         if not UtilClient.is_unset(request.creator_id):
             body['creatorId'] = request.creator_id
         if not UtilClient.is_unset(request.extend_type):

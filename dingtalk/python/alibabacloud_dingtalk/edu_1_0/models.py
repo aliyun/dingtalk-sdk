@@ -8622,6 +8622,183 @@ class CreateAppOrderResponse(TeaModel):
         return self
 
 
+class CreateAwaitingCorrectionDataHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateAwaitingCorrectionDataRequest(TeaModel):
+    def __init__(
+        self,
+        all_assignment_pdf_url: str = None,
+        class_name: str = None,
+        corp_id: str = None,
+        print_info: str = None,
+        printer_code: str = None,
+        subject_name: str = None,
+        task_code: str = None,
+        total_pages: int = None,
+    ):
+        # This parameter is required.
+        self.all_assignment_pdf_url = all_assignment_pdf_url
+        self.class_name = class_name
+        # This parameter is required.
+        self.corp_id = corp_id
+        # This parameter is required.
+        self.print_info = print_info
+        # This parameter is required.
+        self.printer_code = printer_code
+        # This parameter is required.
+        self.subject_name = subject_name
+        # This parameter is required.
+        self.task_code = task_code
+        # This parameter is required.
+        self.total_pages = total_pages
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.all_assignment_pdf_url is not None:
+            result['allAssignmentPdfUrl'] = self.all_assignment_pdf_url
+        if self.class_name is not None:
+            result['className'] = self.class_name
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.print_info is not None:
+            result['printInfo'] = self.print_info
+        if self.printer_code is not None:
+            result['printerCode'] = self.printer_code
+        if self.subject_name is not None:
+            result['subjectName'] = self.subject_name
+        if self.task_code is not None:
+            result['taskCode'] = self.task_code
+        if self.total_pages is not None:
+            result['totalPages'] = self.total_pages
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('allAssignmentPdfUrl') is not None:
+            self.all_assignment_pdf_url = m.get('allAssignmentPdfUrl')
+        if m.get('className') is not None:
+            self.class_name = m.get('className')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('printInfo') is not None:
+            self.print_info = m.get('printInfo')
+        if m.get('printerCode') is not None:
+            self.printer_code = m.get('printerCode')
+        if m.get('subjectName') is not None:
+            self.subject_name = m.get('subjectName')
+        if m.get('taskCode') is not None:
+            self.task_code = m.get('taskCode')
+        if m.get('totalPages') is not None:
+            self.total_pages = m.get('totalPages')
+        return self
+
+
+class CreateAwaitingCorrectionDataResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class CreateAwaitingCorrectionDataResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CreateAwaitingCorrectionDataResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CreateAwaitingCorrectionDataResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CreateCollegeContactDeptHeaders(TeaModel):
     def __init__(
         self,
@@ -9238,6 +9415,149 @@ class CreateCollegeContactSceneStruResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateCollegeContactSceneStruResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CreateCorrectionDataHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateCorrectionDataRequest(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        corrected_data_json_url: str = None,
+        task_code: str = None,
+    ):
+        # This parameter is required.
+        self.corp_id = corp_id
+        # This parameter is required.
+        self.corrected_data_json_url = corrected_data_json_url
+        # This parameter is required.
+        self.task_code = task_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.corrected_data_json_url is not None:
+            result['correctedDataJsonUrl'] = self.corrected_data_json_url
+        if self.task_code is not None:
+            result['taskCode'] = self.task_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('correctedDataJsonUrl') is not None:
+            self.corrected_data_json_url = m.get('correctedDataJsonUrl')
+        if m.get('taskCode') is not None:
+            self.task_code = m.get('taskCode')
+        return self
+
+
+class CreateCorrectionDataResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class CreateCorrectionDataResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CreateCorrectionDataResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CreateCorrectionDataResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -35957,6 +36277,449 @@ class QuerySchoolUserFaceResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QuerySchoolUserFaceResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QuerySelfBuildGroupBaseInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QuerySelfBuildGroupBaseInfoRequest(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+    ):
+        # This parameter is required.
+        self.corp_id = corp_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        return self
+
+
+class QuerySelfBuildGroupBaseInfoResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        class_id: int = None,
+        class_name: str = None,
+        corp_id: str = None,
+        grade_level: int = None,
+        group_type: str = None,
+        period_code: str = None,
+        request_id: str = None,
+    ):
+        self.class_id = class_id
+        self.class_name = class_name
+        self.corp_id = corp_id
+        self.grade_level = grade_level
+        self.group_type = group_type
+        self.period_code = period_code
+        self.request_id = request_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.class_id is not None:
+            result['classId'] = self.class_id
+        if self.class_name is not None:
+            result['className'] = self.class_name
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.grade_level is not None:
+            result['gradeLevel'] = self.grade_level
+        if self.group_type is not None:
+            result['groupType'] = self.group_type
+        if self.period_code is not None:
+            result['periodCode'] = self.period_code
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('classId') is not None:
+            self.class_id = m.get('classId')
+        if m.get('className') is not None:
+            self.class_name = m.get('className')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('gradeLevel') is not None:
+            self.grade_level = m.get('gradeLevel')
+        if m.get('groupType') is not None:
+            self.group_type = m.get('groupType')
+        if m.get('periodCode') is not None:
+            self.period_code = m.get('periodCode')
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        return self
+
+
+class QuerySelfBuildGroupBaseInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: QuerySelfBuildGroupBaseInfoResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = QuerySelfBuildGroupBaseInfoResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class QuerySelfBuildGroupBaseInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QuerySelfBuildGroupBaseInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QuerySelfBuildGroupBaseInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QuerySelfBuildGroupUserInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QuerySelfBuildGroupUserInfoRequest(TeaModel):
+    def __init__(
+        self,
+        class_id: int = None,
+        corp_id: str = None,
+        roles: List[str] = None,
+    ):
+        # This parameter is required.
+        self.class_id = class_id
+        # This parameter is required.
+        self.corp_id = corp_id
+        # This parameter is required.
+        self.roles = roles
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.class_id is not None:
+            result['classId'] = self.class_id
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.roles is not None:
+            result['roles'] = self.roles
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('classId') is not None:
+            self.class_id = m.get('classId')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('roles') is not None:
+            self.roles = m.get('roles')
+        return self
+
+
+class QuerySelfBuildGroupUserInfoResponseBodyResultUserList(TeaModel):
+    def __init__(
+        self,
+        role: str = None,
+        user_id: str = None,
+        user_name: str = None,
+    ):
+        self.role = role
+        self.user_id = user_id
+        self.user_name = user_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.role is not None:
+            result['role'] = self.role
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.user_name is not None:
+            result['userName'] = self.user_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('role') is not None:
+            self.role = m.get('role')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('userName') is not None:
+            self.user_name = m.get('userName')
+        return self
+
+
+class QuerySelfBuildGroupUserInfoResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        class_id: int = None,
+        corp_id: str = None,
+        request_id: str = None,
+        user_list: List[QuerySelfBuildGroupUserInfoResponseBodyResultUserList] = None,
+    ):
+        self.class_id = class_id
+        self.corp_id = corp_id
+        self.request_id = request_id
+        self.user_list = user_list
+
+    def validate(self):
+        if self.user_list:
+            for k in self.user_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.class_id is not None:
+            result['classId'] = self.class_id
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        result['userList'] = []
+        if self.user_list is not None:
+            for k in self.user_list:
+                result['userList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('classId') is not None:
+            self.class_id = m.get('classId')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        self.user_list = []
+        if m.get('userList') is not None:
+            for k in m.get('userList'):
+                temp_model = QuerySelfBuildGroupUserInfoResponseBodyResultUserList()
+                self.user_list.append(temp_model.from_map(k))
+        return self
+
+
+class QuerySelfBuildGroupUserInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: QuerySelfBuildGroupUserInfoResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = QuerySelfBuildGroupUserInfoResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class QuerySelfBuildGroupUserInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QuerySelfBuildGroupUserInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QuerySelfBuildGroupUserInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

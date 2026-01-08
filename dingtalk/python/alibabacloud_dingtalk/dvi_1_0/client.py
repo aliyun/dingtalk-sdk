@@ -376,6 +376,120 @@ class Client(OpenApiClient):
         headers = dingtalkdvi__1__0_models.GetCustomerInfoHeaders()
         return await self.get_customer_info_with_options_async(request, headers, runtime)
 
+    def get_customer_insight_with_options(
+        self,
+        request: dingtalkdvi__1__0_models.GetCustomerInsightRequest,
+        headers: dingtalkdvi__1__0_models.GetCustomerInsightHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.GetCustomerInsightResponse:
+        """
+        @summary 获取客户洞察信息
+        
+        @param request: GetCustomerInsightRequest
+        @param headers: GetCustomerInsightHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetCustomerInsightResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.customer_id):
+            query['customerId'] = request.customer_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetCustomerInsight',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/customers/insights',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.GetCustomerInsightResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_customer_insight_with_options_async(
+        self,
+        request: dingtalkdvi__1__0_models.GetCustomerInsightRequest,
+        headers: dingtalkdvi__1__0_models.GetCustomerInsightHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.GetCustomerInsightResponse:
+        """
+        @summary 获取客户洞察信息
+        
+        @param request: GetCustomerInsightRequest
+        @param headers: GetCustomerInsightHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetCustomerInsightResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.customer_id):
+            query['customerId'] = request.customer_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetCustomerInsight',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/customers/insights',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.GetCustomerInsightResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_customer_insight(
+        self,
+        request: dingtalkdvi__1__0_models.GetCustomerInsightRequest,
+    ) -> dingtalkdvi__1__0_models.GetCustomerInsightResponse:
+        """
+        @summary 获取客户洞察信息
+        
+        @param request: GetCustomerInsightRequest
+        @return: GetCustomerInsightResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.GetCustomerInsightHeaders()
+        return self.get_customer_insight_with_options(request, headers, runtime)
+
+    async def get_customer_insight_async(
+        self,
+        request: dingtalkdvi__1__0_models.GetCustomerInsightRequest,
+    ) -> dingtalkdvi__1__0_models.GetCustomerInsightResponse:
+        """
+        @summary 获取客户洞察信息
+        
+        @param request: GetCustomerInsightRequest
+        @return: GetCustomerInsightResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.GetCustomerInsightHeaders()
+        return await self.get_customer_insight_with_options_async(request, headers, runtime)
+
     def get_service_chapter_summary_with_options(
         self,
         request: dingtalkdvi__1__0_models.GetServiceChapterSummaryRequest,
@@ -2083,3 +2197,125 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdvi__1__0_models.SubmitAsrTaskHeaders()
         return await self.submit_asr_task_with_options_async(request, headers, runtime)
+
+    def video_customer_split_with_options(
+        self,
+        request: dingtalkdvi__1__0_models.VideoCustomerSplitRequest,
+        headers: dingtalkdvi__1__0_models.VideoCustomerSplitHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.VideoCustomerSplitResponse:
+        """
+        @summary asr离线任务
+        
+        @param request: VideoCustomerSplitRequest
+        @param headers: VideoCustomerSplitHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: VideoCustomerSplitResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.customer):
+            body['customer'] = request.customer
+        if not UtilClient.is_unset(request.segment_id):
+            body['segmentId'] = request.segment_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='VideoCustomerSplit',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/service/audiosplit',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.VideoCustomerSplitResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def video_customer_split_with_options_async(
+        self,
+        request: dingtalkdvi__1__0_models.VideoCustomerSplitRequest,
+        headers: dingtalkdvi__1__0_models.VideoCustomerSplitHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.VideoCustomerSplitResponse:
+        """
+        @summary asr离线任务
+        
+        @param request: VideoCustomerSplitRequest
+        @param headers: VideoCustomerSplitHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: VideoCustomerSplitResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.customer):
+            body['customer'] = request.customer
+        if not UtilClient.is_unset(request.segment_id):
+            body['segmentId'] = request.segment_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='VideoCustomerSplit',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/service/audiosplit',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.VideoCustomerSplitResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def video_customer_split(
+        self,
+        request: dingtalkdvi__1__0_models.VideoCustomerSplitRequest,
+    ) -> dingtalkdvi__1__0_models.VideoCustomerSplitResponse:
+        """
+        @summary asr离线任务
+        
+        @param request: VideoCustomerSplitRequest
+        @return: VideoCustomerSplitResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.VideoCustomerSplitHeaders()
+        return self.video_customer_split_with_options(request, headers, runtime)
+
+    async def video_customer_split_async(
+        self,
+        request: dingtalkdvi__1__0_models.VideoCustomerSplitRequest,
+    ) -> dingtalkdvi__1__0_models.VideoCustomerSplitResponse:
+        """
+        @summary asr离线任务
+        
+        @param request: VideoCustomerSplitRequest
+        @return: VideoCustomerSplitResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.VideoCustomerSplitHeaders()
+        return await self.video_customer_split_with_options_async(request, headers, runtime)

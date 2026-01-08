@@ -5236,7 +5236,9 @@ class HrbrainImportEmpInfoRequestBody(TeaModel):
         highest_degree: str = None,
         highest_edu_name: str = None,
         is_dimission: str = None,
+        job_category: str = None,
         job_code_name: str = None,
+        job_family: str = None,
         job_level: str = None,
         last_school_name: str = None,
         marriage: str = None,
@@ -5273,8 +5275,10 @@ class HrbrainImportEmpInfoRequestBody(TeaModel):
         self.highest_degree = highest_degree
         self.highest_edu_name = highest_edu_name
         self.is_dimission = is_dimission
+        self.job_category = job_category
         # This parameter is required.
         self.job_code_name = job_code_name
+        self.job_family = job_family
         self.job_level = job_level
         self.last_school_name = last_school_name
         self.marriage = marriage
@@ -5331,8 +5335,12 @@ class HrbrainImportEmpInfoRequestBody(TeaModel):
             result['highestEduName'] = self.highest_edu_name
         if self.is_dimission is not None:
             result['isDimission'] = self.is_dimission
+        if self.job_category is not None:
+            result['jobCategory'] = self.job_category
         if self.job_code_name is not None:
             result['jobCodeName'] = self.job_code_name
+        if self.job_family is not None:
+            result['jobFamily'] = self.job_family
         if self.job_level is not None:
             result['jobLevel'] = self.job_level
         if self.last_school_name is not None:
@@ -5393,8 +5401,12 @@ class HrbrainImportEmpInfoRequestBody(TeaModel):
             self.highest_edu_name = m.get('highestEduName')
         if m.get('isDimission') is not None:
             self.is_dimission = m.get('isDimission')
+        if m.get('jobCategory') is not None:
+            self.job_category = m.get('jobCategory')
         if m.get('jobCodeName') is not None:
             self.job_code_name = m.get('jobCodeName')
+        if m.get('jobFamily') is not None:
+            self.job_family = m.get('jobFamily')
         if m.get('jobLevel') is not None:
             self.job_level = m.get('jobLevel')
         if m.get('lastSchoolName') is not None:
@@ -8543,6 +8555,2260 @@ class HrbrainImportWorkExpResponse(TeaModel):
         return self
 
 
+class HrbrainLabelCategoryTreeHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class HrbrainLabelCategoryTreeResponseBodyContent(TeaModel):
+    def __init__(
+        self,
+        children: List[Dict[str, Any]] = None,
+        code: str = None,
+        current_label_num: int = None,
+        name: str = None,
+        pcode: str = None,
+        sort_size: int = None,
+        total_label_num: int = None,
+    ):
+        self.children = children
+        self.code = code
+        self.current_label_num = current_label_num
+        self.name = name
+        self.pcode = pcode
+        self.sort_size = sort_size
+        self.total_label_num = total_label_num
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.children is not None:
+            result['children'] = self.children
+        if self.code is not None:
+            result['code'] = self.code
+        if self.current_label_num is not None:
+            result['currentLabelNum'] = self.current_label_num
+        if self.name is not None:
+            result['name'] = self.name
+        if self.pcode is not None:
+            result['pcode'] = self.pcode
+        if self.sort_size is not None:
+            result['sortSize'] = self.sort_size
+        if self.total_label_num is not None:
+            result['totalLabelNum'] = self.total_label_num
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('children') is not None:
+            self.children = m.get('children')
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('currentLabelNum') is not None:
+            self.current_label_num = m.get('currentLabelNum')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('pcode') is not None:
+            self.pcode = m.get('pcode')
+        if m.get('sortSize') is not None:
+            self.sort_size = m.get('sortSize')
+        if m.get('totalLabelNum') is not None:
+            self.total_label_num = m.get('totalLabelNum')
+        return self
+
+
+class HrbrainLabelCategoryTreeResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: List[HrbrainLabelCategoryTreeResponseBodyContent] = None,
+        request_id: str = None,
+        result: bool = None,
+        success: bool = None,
+    ):
+        self.content = content
+        self.request_id = request_id
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.content:
+            for k in self.content:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['content'] = []
+        if self.content is not None:
+            for k in self.content:
+                result['content'].append(k.to_map() if k else None)
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.content = []
+        if m.get('content') is not None:
+            for k in m.get('content'):
+                temp_model = HrbrainLabelCategoryTreeResponseBodyContent()
+                self.content.append(temp_model.from_map(k))
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class HrbrainLabelCategoryTreeResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: HrbrainLabelCategoryTreeResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = HrbrainLabelCategoryTreeResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class HrbrainLabelCategoryUpdateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class HrbrainLabelCategoryUpdateRequestCategoryVoCategories(TeaModel):
+    def __init__(
+        self,
+        children: List[Any] = None,
+        code: str = None,
+        name: str = None,
+        p_code: str = None,
+        sort_size: str = None,
+    ):
+        self.children = children
+        self.code = code
+        self.name = name
+        self.p_code = p_code
+        self.sort_size = sort_size
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.children is not None:
+            result['children'] = self.children
+        if self.code is not None:
+            result['code'] = self.code
+        if self.name is not None:
+            result['name'] = self.name
+        if self.p_code is not None:
+            result['pCode'] = self.p_code
+        if self.sort_size is not None:
+            result['sortSize'] = self.sort_size
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('children') is not None:
+            self.children = m.get('children')
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('pCode') is not None:
+            self.p_code = m.get('pCode')
+        if m.get('sortSize') is not None:
+            self.sort_size = m.get('sortSize')
+        return self
+
+
+class HrbrainLabelCategoryUpdateRequestCategoryVo(TeaModel):
+    def __init__(
+        self,
+        categories: List[HrbrainLabelCategoryUpdateRequestCategoryVoCategories] = None,
+    ):
+        self.categories = categories
+
+    def validate(self):
+        if self.categories:
+            for k in self.categories:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['categories'] = []
+        if self.categories is not None:
+            for k in self.categories:
+                result['categories'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.categories = []
+        if m.get('categories') is not None:
+            for k in m.get('categories'):
+                temp_model = HrbrainLabelCategoryUpdateRequestCategoryVoCategories()
+                self.categories.append(temp_model.from_map(k))
+        return self
+
+
+class HrbrainLabelCategoryUpdateRequest(TeaModel):
+    def __init__(
+        self,
+        category_vo: HrbrainLabelCategoryUpdateRequestCategoryVo = None,
+    ):
+        self.category_vo = category_vo
+
+    def validate(self):
+        if self.category_vo:
+            self.category_vo.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.category_vo is not None:
+            result['categoryVo'] = self.category_vo.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('categoryVo') is not None:
+            temp_model = HrbrainLabelCategoryUpdateRequestCategoryVo()
+            self.category_vo = temp_model.from_map(m['categoryVo'])
+        return self
+
+
+class HrbrainLabelCategoryUpdateResponseBody(TeaModel):
+    def __init__(
+        self,
+        request_id: str = None,
+        result: bool = None,
+        success: bool = None,
+    ):
+        self.request_id = request_id
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class HrbrainLabelCategoryUpdateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: HrbrainLabelCategoryUpdateResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = HrbrainLabelCategoryUpdateResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class HrbrainLabelDataDeleteHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class HrbrainLabelDataDeleteRequestParams(TeaModel):
+    def __init__(
+        self,
+        label_codes: List[str] = None,
+        work_no: str = None,
+    ):
+        # This parameter is required.
+        self.label_codes = label_codes
+        self.work_no = work_no
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.label_codes is not None:
+            result['labelCodes'] = self.label_codes
+        if self.work_no is not None:
+            result['workNo'] = self.work_no
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('labelCodes') is not None:
+            self.label_codes = m.get('labelCodes')
+        if m.get('workNo') is not None:
+            self.work_no = m.get('workNo')
+        return self
+
+
+class HrbrainLabelDataDeleteRequest(TeaModel):
+    def __init__(
+        self,
+        params: List[HrbrainLabelDataDeleteRequestParams] = None,
+    ):
+        self.params = params
+
+    def validate(self):
+        if self.params:
+            for k in self.params:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['params'] = []
+        if self.params is not None:
+            for k in self.params:
+                result['params'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.params = []
+        if m.get('params') is not None:
+            for k in m.get('params'):
+                temp_model = HrbrainLabelDataDeleteRequestParams()
+                self.params.append(temp_model.from_map(k))
+        return self
+
+
+class HrbrainLabelDataDeleteResponseBody(TeaModel):
+    def __init__(
+        self,
+        request_id: str = None,
+        result: bool = None,
+        success: bool = None,
+    ):
+        self.request_id = request_id
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class HrbrainLabelDataDeleteResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: HrbrainLabelDataDeleteResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = HrbrainLabelDataDeleteResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class HrbrainLabelDataQueryHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class HrbrainLabelDataQueryRequest(TeaModel):
+    def __init__(
+        self,
+        label_code: str = None,
+        max_results: int = None,
+        next_token: str = None,
+    ):
+        # This parameter is required.
+        self.label_code = label_code
+        self.max_results = max_results
+        self.next_token = next_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.label_code is not None:
+            result['labelCode'] = self.label_code
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('labelCode') is not None:
+            self.label_code = m.get('labelCode')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        return self
+
+
+class HrbrainLabelDataQueryResponseBodyContentLabelDatas(TeaModel):
+    def __init__(
+        self,
+        dept_name: str = None,
+        dept_no: str = None,
+        job_level: str = None,
+        label_title: str = None,
+        label_value: str = None,
+        name: str = None,
+        post_name: str = None,
+        work_no: str = None,
+    ):
+        self.dept_name = dept_name
+        self.dept_no = dept_no
+        self.job_level = job_level
+        self.label_title = label_title
+        self.label_value = label_value
+        self.name = name
+        self.post_name = post_name
+        self.work_no = work_no
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_name is not None:
+            result['deptName'] = self.dept_name
+        if self.dept_no is not None:
+            result['deptNo'] = self.dept_no
+        if self.job_level is not None:
+            result['jobLevel'] = self.job_level
+        if self.label_title is not None:
+            result['labelTitle'] = self.label_title
+        if self.label_value is not None:
+            result['labelValue'] = self.label_value
+        if self.name is not None:
+            result['name'] = self.name
+        if self.post_name is not None:
+            result['postName'] = self.post_name
+        if self.work_no is not None:
+            result['workNo'] = self.work_no
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptName') is not None:
+            self.dept_name = m.get('deptName')
+        if m.get('deptNo') is not None:
+            self.dept_no = m.get('deptNo')
+        if m.get('jobLevel') is not None:
+            self.job_level = m.get('jobLevel')
+        if m.get('labelTitle') is not None:
+            self.label_title = m.get('labelTitle')
+        if m.get('labelValue') is not None:
+            self.label_value = m.get('labelValue')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('postName') is not None:
+            self.post_name = m.get('postName')
+        if m.get('workNo') is not None:
+            self.work_no = m.get('workNo')
+        return self
+
+
+class HrbrainLabelDataQueryResponseBodyContent(TeaModel):
+    def __init__(
+        self,
+        label_datas: List[HrbrainLabelDataQueryResponseBodyContentLabelDatas] = None,
+        max_results: int = None,
+        next_token: str = None,
+        total_count: int = None,
+    ):
+        self.label_datas = label_datas
+        self.max_results = max_results
+        self.next_token = next_token
+        self.total_count = total_count
+
+    def validate(self):
+        if self.label_datas:
+            for k in self.label_datas:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['labelDatas'] = []
+        if self.label_datas is not None:
+            for k in self.label_datas:
+                result['labelDatas'].append(k.to_map() if k else None)
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.label_datas = []
+        if m.get('labelDatas') is not None:
+            for k in m.get('labelDatas'):
+                temp_model = HrbrainLabelDataQueryResponseBodyContentLabelDatas()
+                self.label_datas.append(temp_model.from_map(k))
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class HrbrainLabelDataQueryResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: HrbrainLabelDataQueryResponseBodyContent = None,
+        request_id: str = None,
+        result: bool = None,
+        success: bool = None,
+    ):
+        self.content = content
+        self.request_id = request_id
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.content:
+            self.content.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content.to_map()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            temp_model = HrbrainLabelDataQueryResponseBodyContent()
+            self.content = temp_model.from_map(m['content'])
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class HrbrainLabelDataQueryResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: HrbrainLabelDataQueryResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = HrbrainLabelDataQueryResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class HrbrainLabelDataUpsertHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class HrbrainLabelDataUpsertRequestParamsLabelDatas(TeaModel):
+    def __init__(
+        self,
+        label_code: str = None,
+        label_value: List[str] = None,
+    ):
+        self.label_code = label_code
+        self.label_value = label_value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.label_code is not None:
+            result['labelCode'] = self.label_code
+        if self.label_value is not None:
+            result['labelValue'] = self.label_value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('labelCode') is not None:
+            self.label_code = m.get('labelCode')
+        if m.get('labelValue') is not None:
+            self.label_value = m.get('labelValue')
+        return self
+
+
+class HrbrainLabelDataUpsertRequestParams(TeaModel):
+    def __init__(
+        self,
+        label_datas: List[HrbrainLabelDataUpsertRequestParamsLabelDatas] = None,
+        work_no: str = None,
+    ):
+        # This parameter is required.
+        self.label_datas = label_datas
+        # This parameter is required.
+        self.work_no = work_no
+
+    def validate(self):
+        if self.label_datas:
+            for k in self.label_datas:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['labelDatas'] = []
+        if self.label_datas is not None:
+            for k in self.label_datas:
+                result['labelDatas'].append(k.to_map() if k else None)
+        if self.work_no is not None:
+            result['workNo'] = self.work_no
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.label_datas = []
+        if m.get('labelDatas') is not None:
+            for k in m.get('labelDatas'):
+                temp_model = HrbrainLabelDataUpsertRequestParamsLabelDatas()
+                self.label_datas.append(temp_model.from_map(k))
+        if m.get('workNo') is not None:
+            self.work_no = m.get('workNo')
+        return self
+
+
+class HrbrainLabelDataUpsertRequest(TeaModel):
+    def __init__(
+        self,
+        params: List[HrbrainLabelDataUpsertRequestParams] = None,
+    ):
+        # This parameter is required.
+        self.params = params
+
+    def validate(self):
+        if self.params:
+            for k in self.params:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['params'] = []
+        if self.params is not None:
+            for k in self.params:
+                result['params'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.params = []
+        if m.get('params') is not None:
+            for k in m.get('params'):
+                temp_model = HrbrainLabelDataUpsertRequestParams()
+                self.params.append(temp_model.from_map(k))
+        return self
+
+
+class HrbrainLabelDataUpsertResponseBody(TeaModel):
+    def __init__(
+        self,
+        request_id: str = None,
+        result: bool = None,
+        success: bool = None,
+    ):
+        self.request_id = request_id
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class HrbrainLabelDataUpsertResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: HrbrainLabelDataUpsertResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = HrbrainLabelDataUpsertResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class HrbrainLabelMetaHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class HrbrainLabelMetaRequest(TeaModel):
+    def __init__(
+        self,
+        category_codes: List[str] = None,
+        max_results: int = None,
+        next_token: str = None,
+    ):
+        self.category_codes = category_codes
+        self.max_results = max_results
+        self.next_token = next_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.category_codes is not None:
+            result['categoryCodes'] = self.category_codes
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('categoryCodes') is not None:
+            self.category_codes = m.get('categoryCodes')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        return self
+
+
+class HrbrainLabelMetaResponseBodyContentLabelMetas(TeaModel):
+    def __init__(
+        self,
+        category_code: str = None,
+        category_name: str = None,
+        code: str = None,
+        data_type: str = None,
+        description: str = None,
+        extend_info: Dict[str, Any] = None,
+        gmt_created: int = None,
+        gmt_modified: int = None,
+        important_level: str = None,
+        is_sensitive: bool = None,
+        name: str = None,
+        options: List[Dict[str, Any]] = None,
+        required: bool = None,
+        use_status: str = None,
+    ):
+        self.category_code = category_code
+        self.category_name = category_name
+        self.code = code
+        self.data_type = data_type
+        self.description = description
+        self.extend_info = extend_info
+        self.gmt_created = gmt_created
+        self.gmt_modified = gmt_modified
+        self.important_level = important_level
+        self.is_sensitive = is_sensitive
+        self.name = name
+        self.options = options
+        self.required = required
+        self.use_status = use_status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.category_code is not None:
+            result['categoryCode'] = self.category_code
+        if self.category_name is not None:
+            result['categoryName'] = self.category_name
+        if self.code is not None:
+            result['code'] = self.code
+        if self.data_type is not None:
+            result['dataType'] = self.data_type
+        if self.description is not None:
+            result['description'] = self.description
+        if self.extend_info is not None:
+            result['extendInfo'] = self.extend_info
+        if self.gmt_created is not None:
+            result['gmtCreated'] = self.gmt_created
+        if self.gmt_modified is not None:
+            result['gmtModified'] = self.gmt_modified
+        if self.important_level is not None:
+            result['importantLevel'] = self.important_level
+        if self.is_sensitive is not None:
+            result['isSensitive'] = self.is_sensitive
+        if self.name is not None:
+            result['name'] = self.name
+        if self.options is not None:
+            result['options'] = self.options
+        if self.required is not None:
+            result['required'] = self.required
+        if self.use_status is not None:
+            result['useStatus'] = self.use_status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('categoryCode') is not None:
+            self.category_code = m.get('categoryCode')
+        if m.get('categoryName') is not None:
+            self.category_name = m.get('categoryName')
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('dataType') is not None:
+            self.data_type = m.get('dataType')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('extendInfo') is not None:
+            self.extend_info = m.get('extendInfo')
+        if m.get('gmtCreated') is not None:
+            self.gmt_created = m.get('gmtCreated')
+        if m.get('gmtModified') is not None:
+            self.gmt_modified = m.get('gmtModified')
+        if m.get('importantLevel') is not None:
+            self.important_level = m.get('importantLevel')
+        if m.get('isSensitive') is not None:
+            self.is_sensitive = m.get('isSensitive')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('options') is not None:
+            self.options = m.get('options')
+        if m.get('required') is not None:
+            self.required = m.get('required')
+        if m.get('useStatus') is not None:
+            self.use_status = m.get('useStatus')
+        return self
+
+
+class HrbrainLabelMetaResponseBodyContent(TeaModel):
+    def __init__(
+        self,
+        label_metas: List[HrbrainLabelMetaResponseBodyContentLabelMetas] = None,
+        max_results: int = None,
+        next_token: str = None,
+        total_count: int = None,
+    ):
+        self.label_metas = label_metas
+        self.max_results = max_results
+        self.next_token = next_token
+        self.total_count = total_count
+
+    def validate(self):
+        if self.label_metas:
+            for k in self.label_metas:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['labelMetas'] = []
+        if self.label_metas is not None:
+            for k in self.label_metas:
+                result['labelMetas'].append(k.to_map() if k else None)
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.label_metas = []
+        if m.get('labelMetas') is not None:
+            for k in m.get('labelMetas'):
+                temp_model = HrbrainLabelMetaResponseBodyContentLabelMetas()
+                self.label_metas.append(temp_model.from_map(k))
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class HrbrainLabelMetaResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: HrbrainLabelMetaResponseBodyContent = None,
+        request_id: str = None,
+        result: bool = None,
+        success: bool = None,
+    ):
+        self.content = content
+        self.request_id = request_id
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.content:
+            self.content.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content.to_map()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            temp_model = HrbrainLabelMetaResponseBodyContent()
+            self.content = temp_model.from_map(m['content'])
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class HrbrainLabelMetaResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: HrbrainLabelMetaResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = HrbrainLabelMetaResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class HrbrainLabelMetaStatusHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class HrbrainLabelMetaStatusRequest(TeaModel):
+    def __init__(
+        self,
+        codes: List[str] = None,
+        opt_type: str = None,
+    ):
+        # This parameter is required.
+        self.codes = codes
+        # This parameter is required.
+        self.opt_type = opt_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.codes is not None:
+            result['codes'] = self.codes
+        if self.opt_type is not None:
+            result['optType'] = self.opt_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('codes') is not None:
+            self.codes = m.get('codes')
+        if m.get('optType') is not None:
+            self.opt_type = m.get('optType')
+        return self
+
+
+class HrbrainLabelMetaStatusResponseBody(TeaModel):
+    def __init__(
+        self,
+        request_id: str = None,
+        result: bool = None,
+        success: bool = None,
+    ):
+        self.request_id = request_id
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class HrbrainLabelMetaStatusResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: HrbrainLabelMetaStatusResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = HrbrainLabelMetaStatusResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class HrbrainLabelMetaUpdateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class HrbrainLabelMetaUpdateRequest(TeaModel):
+    def __init__(
+        self,
+        category_code: str = None,
+        code: str = None,
+        data_type: str = None,
+        description: str = None,
+        important_level: str = None,
+        is_sensitive: bool = None,
+        name: str = None,
+        options: List[Dict[str, Any]] = None,
+        permission: Dict[str, Any] = None,
+        required: bool = None,
+    ):
+        self.category_code = category_code
+        # This parameter is required.
+        self.code = code
+        self.data_type = data_type
+        self.description = description
+        self.important_level = important_level
+        self.is_sensitive = is_sensitive
+        self.name = name
+        self.options = options
+        self.permission = permission
+        self.required = required
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.category_code is not None:
+            result['categoryCode'] = self.category_code
+        if self.code is not None:
+            result['code'] = self.code
+        if self.data_type is not None:
+            result['dataType'] = self.data_type
+        if self.description is not None:
+            result['description'] = self.description
+        if self.important_level is not None:
+            result['importantLevel'] = self.important_level
+        if self.is_sensitive is not None:
+            result['isSensitive'] = self.is_sensitive
+        if self.name is not None:
+            result['name'] = self.name
+        if self.options is not None:
+            result['options'] = self.options
+        if self.permission is not None:
+            result['permission'] = self.permission
+        if self.required is not None:
+            result['required'] = self.required
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('categoryCode') is not None:
+            self.category_code = m.get('categoryCode')
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('dataType') is not None:
+            self.data_type = m.get('dataType')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('importantLevel') is not None:
+            self.important_level = m.get('importantLevel')
+        if m.get('isSensitive') is not None:
+            self.is_sensitive = m.get('isSensitive')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('options') is not None:
+            self.options = m.get('options')
+        if m.get('permission') is not None:
+            self.permission = m.get('permission')
+        if m.get('required') is not None:
+            self.required = m.get('required')
+        return self
+
+
+class HrbrainLabelMetaUpdateResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: str = None,
+        request_id: str = None,
+        result: bool = None,
+        success: bool = None,
+    ):
+        self.content = content
+        self.request_id = request_id
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class HrbrainLabelMetaUpdateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: HrbrainLabelMetaUpdateResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = HrbrainLabelMetaUpdateResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class HrbrainLabelTaskDataHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class HrbrainLabelTaskDataRequest(TeaModel):
+    def __init__(
+        self,
+        opt_work_no: str = None,
+        session_id: str = None,
+    ):
+        # This parameter is required.
+        self.opt_work_no = opt_work_no
+        # This parameter is required.
+        self.session_id = session_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.opt_work_no is not None:
+            result['optWorkNo'] = self.opt_work_no
+        if self.session_id is not None:
+            result['sessionId'] = self.session_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('optWorkNo') is not None:
+            self.opt_work_no = m.get('optWorkNo')
+        if m.get('sessionId') is not None:
+            self.session_id = m.get('sessionId')
+        return self
+
+
+class HrbrainLabelTaskDataResponseBodyContentTags(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        description: str = None,
+        name: str = None,
+        values: List[str] = None,
+    ):
+        self.code = code
+        self.description = description
+        self.name = name
+        self.values = values
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.description is not None:
+            result['description'] = self.description
+        if self.name is not None:
+            result['name'] = self.name
+        if self.values is not None:
+            result['values'] = self.values
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('values') is not None:
+            self.values = m.get('values')
+        return self
+
+
+class HrbrainLabelTaskDataResponseBodyContent(TeaModel):
+    def __init__(
+        self,
+        dept_name: str = None,
+        dept_no: str = None,
+        name: str = None,
+        tags: List[HrbrainLabelTaskDataResponseBodyContentTags] = None,
+        work_no: str = None,
+    ):
+        self.dept_name = dept_name
+        self.dept_no = dept_no
+        self.name = name
+        self.tags = tags
+        self.work_no = work_no
+
+    def validate(self):
+        if self.tags:
+            for k in self.tags:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_name is not None:
+            result['deptName'] = self.dept_name
+        if self.dept_no is not None:
+            result['deptNo'] = self.dept_no
+        if self.name is not None:
+            result['name'] = self.name
+        result['tags'] = []
+        if self.tags is not None:
+            for k in self.tags:
+                result['tags'].append(k.to_map() if k else None)
+        if self.work_no is not None:
+            result['workNo'] = self.work_no
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptName') is not None:
+            self.dept_name = m.get('deptName')
+        if m.get('deptNo') is not None:
+            self.dept_no = m.get('deptNo')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        self.tags = []
+        if m.get('tags') is not None:
+            for k in m.get('tags'):
+                temp_model = HrbrainLabelTaskDataResponseBodyContentTags()
+                self.tags.append(temp_model.from_map(k))
+        if m.get('workNo') is not None:
+            self.work_no = m.get('workNo')
+        return self
+
+
+class HrbrainLabelTaskDataResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: List[HrbrainLabelTaskDataResponseBodyContent] = None,
+        request_id: str = None,
+        result: bool = None,
+        success: bool = None,
+    ):
+        self.content = content
+        self.request_id = request_id
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.content:
+            for k in self.content:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['content'] = []
+        if self.content is not None:
+            for k in self.content:
+                result['content'].append(k.to_map() if k else None)
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.content = []
+        if m.get('content') is not None:
+            for k in m.get('content'):
+                temp_model = HrbrainLabelTaskDataResponseBodyContent()
+                self.content.append(temp_model.from_map(k))
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class HrbrainLabelTaskDataResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: HrbrainLabelTaskDataResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = HrbrainLabelTaskDataResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class HrbrainLabelTaskMetaHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class HrbrainLabelTaskMetaRequest(TeaModel):
+    def __init__(
+        self,
+        opt_work_no: str = None,
+        session_id: str = None,
+    ):
+        # This parameter is required.
+        self.opt_work_no = opt_work_no
+        # This parameter is required.
+        self.session_id = session_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.opt_work_no is not None:
+            result['optWorkNo'] = self.opt_work_no
+        if self.session_id is not None:
+            result['sessionId'] = self.session_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('optWorkNo') is not None:
+            self.opt_work_no = m.get('optWorkNo')
+        if m.get('sessionId') is not None:
+            self.session_id = m.get('sessionId')
+        return self
+
+
+class HrbrainLabelTaskMetaResponseBodyContent(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        description: str = None,
+        is_system: str = None,
+        name: str = None,
+        tag_config: Dict[str, Any] = None,
+    ):
+        self.code = code
+        self.description = description
+        self.is_system = is_system
+        self.name = name
+        self.tag_config = tag_config
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.description is not None:
+            result['description'] = self.description
+        if self.is_system is not None:
+            result['isSystem'] = self.is_system
+        if self.name is not None:
+            result['name'] = self.name
+        if self.tag_config is not None:
+            result['tagConfig'] = self.tag_config
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('isSystem') is not None:
+            self.is_system = m.get('isSystem')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('tagConfig') is not None:
+            self.tag_config = m.get('tagConfig')
+        return self
+
+
+class HrbrainLabelTaskMetaResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: List[HrbrainLabelTaskMetaResponseBodyContent] = None,
+        request_id: str = None,
+        result: bool = None,
+        success: bool = None,
+    ):
+        self.content = content
+        self.request_id = request_id
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.content:
+            for k in self.content:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['content'] = []
+        if self.content is not None:
+            for k in self.content:
+                result['content'].append(k.to_map() if k else None)
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.content = []
+        if m.get('content') is not None:
+            for k in m.get('content'):
+                temp_model = HrbrainLabelTaskMetaResponseBodyContent()
+                self.content.append(temp_model.from_map(k))
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class HrbrainLabelTaskMetaResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: HrbrainLabelTaskMetaResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = HrbrainLabelTaskMetaResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class HrbrainTalentProfileAttachmentQueryHeaders(TeaModel):
     def __init__(
         self,
@@ -9096,6 +11362,320 @@ class HrbrainTalentProfileBasicQueryResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = HrbrainTalentProfileBasicQueryResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class HrbrainTalentSearchHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class HrbrainTalentSearchRequest(TeaModel):
+    def __init__(
+        self,
+        query: str = None,
+        session_id: str = None,
+        work_no: str = None,
+    ):
+        # This parameter is required.
+        self.query = query
+        self.session_id = session_id
+        # This parameter is required.
+        self.work_no = work_no
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.query is not None:
+            result['query'] = self.query
+        if self.session_id is not None:
+            result['sessionId'] = self.session_id
+        if self.work_no is not None:
+            result['workNo'] = self.work_no
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('query') is not None:
+            self.query = m.get('query')
+        if m.get('sessionId') is not None:
+            self.session_id = m.get('sessionId')
+        if m.get('workNo') is not None:
+            self.work_no = m.get('workNo')
+        return self
+
+
+class HrbrainTalentSearchResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: str = None,
+        request_id: str = None,
+        result: bool = None,
+        success: bool = None,
+    ):
+        self.content = content
+        self.request_id = request_id
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class HrbrainTalentSearchResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: HrbrainTalentSearchResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = HrbrainTalentSearchResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class HrbrainTalentSearchResultHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class HrbrainTalentSearchResultRequest(TeaModel):
+    def __init__(
+        self,
+        session_id: str = None,
+        work_no: str = None,
+    ):
+        # This parameter is required.
+        self.session_id = session_id
+        # This parameter is required.
+        self.work_no = work_no
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.session_id is not None:
+            result['sessionId'] = self.session_id
+        if self.work_no is not None:
+            result['workNo'] = self.work_no
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('sessionId') is not None:
+            self.session_id = m.get('sessionId')
+        if m.get('workNo') is not None:
+            self.work_no = m.get('workNo')
+        return self
+
+
+class HrbrainTalentSearchResultResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: List[str] = None,
+        request_id: str = None,
+        result: bool = None,
+        success: bool = None,
+    ):
+        self.content = content
+        self.request_id = request_id
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class HrbrainTalentSearchResultResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: HrbrainTalentSearchResultResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = HrbrainTalentSearchResultResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

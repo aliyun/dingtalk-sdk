@@ -4842,6 +4842,128 @@ class Client(OpenApiClient):
         headers = dingtalkattendance__1__0_models.ProcessApproveFinishHeaders()
         return await self.process_approve_finish_with_options_async(request, headers, runtime)
 
+    def process_hh_oem_update_with_options(
+        self,
+        request: dingtalkattendance__1__0_models.ProcessHhOemUpdateRequest,
+        headers: dingtalkattendance__1__0_models.ProcessHhOemUpdateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.ProcessHhOemUpdateResponse:
+        """
+        @summary 考勤高级排班OEM应用升级
+        
+        @param request: ProcessHhOemUpdateRequest
+        @param headers: ProcessHhOemUpdateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ProcessHhOemUpdateResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.bind_oem_app):
+            body['bindOemApp'] = request.bind_oem_app
+        if not UtilClient.is_unset(request.corp_id_list):
+            body['corpIdList'] = request.corp_id_list
+        if not UtilClient.is_unset(request.use_oem_app):
+            body['useOemApp'] = request.use_oem_app
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ProcessHhOemUpdate',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/oemApps',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.ProcessHhOemUpdateResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def process_hh_oem_update_with_options_async(
+        self,
+        request: dingtalkattendance__1__0_models.ProcessHhOemUpdateRequest,
+        headers: dingtalkattendance__1__0_models.ProcessHhOemUpdateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.ProcessHhOemUpdateResponse:
+        """
+        @summary 考勤高级排班OEM应用升级
+        
+        @param request: ProcessHhOemUpdateRequest
+        @param headers: ProcessHhOemUpdateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ProcessHhOemUpdateResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.bind_oem_app):
+            body['bindOemApp'] = request.bind_oem_app
+        if not UtilClient.is_unset(request.corp_id_list):
+            body['corpIdList'] = request.corp_id_list
+        if not UtilClient.is_unset(request.use_oem_app):
+            body['useOemApp'] = request.use_oem_app
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ProcessHhOemUpdate',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/oemApps',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.ProcessHhOemUpdateResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def process_hh_oem_update(
+        self,
+        request: dingtalkattendance__1__0_models.ProcessHhOemUpdateRequest,
+    ) -> dingtalkattendance__1__0_models.ProcessHhOemUpdateResponse:
+        """
+        @summary 考勤高级排班OEM应用升级
+        
+        @param request: ProcessHhOemUpdateRequest
+        @return: ProcessHhOemUpdateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.ProcessHhOemUpdateHeaders()
+        return self.process_hh_oem_update_with_options(request, headers, runtime)
+
+    async def process_hh_oem_update_async(
+        self,
+        request: dingtalkattendance__1__0_models.ProcessHhOemUpdateRequest,
+    ) -> dingtalkattendance__1__0_models.ProcessHhOemUpdateResponse:
+        """
+        @summary 考勤高级排班OEM应用升级
+        
+        @param request: ProcessHhOemUpdateRequest
+        @return: ProcessHhOemUpdateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.ProcessHhOemUpdateHeaders()
+        return await self.process_hh_oem_update_with_options_async(request, headers, runtime)
+
     def reduce_quota_with_leave_record_with_options(
         self,
         union_id: str,

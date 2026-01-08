@@ -26,6 +26,258 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def add_role_member_with_options(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.AddRoleMemberRequest,
+        headers: dingtalknotable__1__0_models.AddRoleMemberHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.AddRoleMemberResponse:
+        """
+        @summary 添加角色成员
+        
+        @param request: AddRoleMemberRequest
+        @param headers: AddRoleMemberHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddRoleMemberResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.role_member_list):
+            body['roleMemberList'] = request.role_member_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddRoleMember',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/auth/role/member/{base_id}',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.AddRoleMemberResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def add_role_member_with_options_async(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.AddRoleMemberRequest,
+        headers: dingtalknotable__1__0_models.AddRoleMemberHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.AddRoleMemberResponse:
+        """
+        @summary 添加角色成员
+        
+        @param request: AddRoleMemberRequest
+        @param headers: AddRoleMemberHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddRoleMemberResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.role_member_list):
+            body['roleMemberList'] = request.role_member_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddRoleMember',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/auth/role/member/{base_id}',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.AddRoleMemberResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def add_role_member(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.AddRoleMemberRequest,
+    ) -> dingtalknotable__1__0_models.AddRoleMemberResponse:
+        """
+        @summary 添加角色成员
+        
+        @param request: AddRoleMemberRequest
+        @return: AddRoleMemberResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.AddRoleMemberHeaders()
+        return self.add_role_member_with_options(base_id, request, headers, runtime)
+
+    async def add_role_member_async(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.AddRoleMemberRequest,
+    ) -> dingtalknotable__1__0_models.AddRoleMemberResponse:
+        """
+        @summary 添加角色成员
+        
+        @param request: AddRoleMemberRequest
+        @return: AddRoleMemberResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.AddRoleMemberHeaders()
+        return await self.add_role_member_with_options_async(base_id, request, headers, runtime)
+
+    def change_switch_with_options(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.ChangeSwitchRequest,
+        headers: dingtalknotable__1__0_models.ChangeSwitchHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.ChangeSwitchResponse:
+        """
+        @summary 修改高级权限设置开关
+        
+        @param request: ChangeSwitchRequest
+        @param headers: ChangeSwitchHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ChangeSwitchResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.value):
+            body['value'] = request.value
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ChangeSwitch',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/auth/{base_id}',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.ChangeSwitchResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def change_switch_with_options_async(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.ChangeSwitchRequest,
+        headers: dingtalknotable__1__0_models.ChangeSwitchHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.ChangeSwitchResponse:
+        """
+        @summary 修改高级权限设置开关
+        
+        @param request: ChangeSwitchRequest
+        @param headers: ChangeSwitchHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ChangeSwitchResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.value):
+            body['value'] = request.value
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ChangeSwitch',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/auth/{base_id}',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.ChangeSwitchResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def change_switch(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.ChangeSwitchRequest,
+    ) -> dingtalknotable__1__0_models.ChangeSwitchResponse:
+        """
+        @summary 修改高级权限设置开关
+        
+        @param request: ChangeSwitchRequest
+        @return: ChangeSwitchResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.ChangeSwitchHeaders()
+        return self.change_switch_with_options(base_id, request, headers, runtime)
+
+    async def change_switch_async(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.ChangeSwitchRequest,
+    ) -> dingtalknotable__1__0_models.ChangeSwitchResponse:
+        """
+        @summary 修改高级权限设置开关
+        
+        @param request: ChangeSwitchRequest
+        @return: ChangeSwitchResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.ChangeSwitchHeaders()
+        return await self.change_switch_with_options_async(base_id, request, headers, runtime)
+
     def create_field_with_options(
         self,
         base_id: str,
@@ -163,6 +415,148 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.CreateFieldHeaders()
         return await self.create_field_with_options_async(base_id, sheet_id_or_name, request, headers, runtime)
+
+    def create_role_with_options(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.CreateRoleRequest,
+        headers: dingtalknotable__1__0_models.CreateRoleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.CreateRoleResponse:
+        """
+        @summary 创建角色
+        
+        @param request: CreateRoleRequest
+        @param headers: CreateRoleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateRoleResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.flow_type):
+            body['flowType'] = request.flow_type
+        if not UtilClient.is_unset(request.id):
+            body['id'] = request.id
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.role_type):
+            body['roleType'] = request.role_type
+        if not UtilClient.is_unset(request.sub_roles):
+            body['subRoles'] = request.sub_roles
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateRole',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/auth/role/{base_id}',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.CreateRoleResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_role_with_options_async(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.CreateRoleRequest,
+        headers: dingtalknotable__1__0_models.CreateRoleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.CreateRoleResponse:
+        """
+        @summary 创建角色
+        
+        @param request: CreateRoleRequest
+        @param headers: CreateRoleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateRoleResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.flow_type):
+            body['flowType'] = request.flow_type
+        if not UtilClient.is_unset(request.id):
+            body['id'] = request.id
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.role_type):
+            body['roleType'] = request.role_type
+        if not UtilClient.is_unset(request.sub_roles):
+            body['subRoles'] = request.sub_roles
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateRole',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/auth/role/{base_id}',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.CreateRoleResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_role(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.CreateRoleRequest,
+    ) -> dingtalknotable__1__0_models.CreateRoleResponse:
+        """
+        @summary 创建角色
+        
+        @param request: CreateRoleRequest
+        @return: CreateRoleResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.CreateRoleHeaders()
+        return self.create_role_with_options(base_id, request, headers, runtime)
+
+    async def create_role_async(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.CreateRoleRequest,
+    ) -> dingtalknotable__1__0_models.CreateRoleResponse:
+        """
+        @summary 创建角色
+        
+        @param request: CreateRoleRequest
+        @return: CreateRoleResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.CreateRoleHeaders()
+        return await self.create_role_with_options_async(base_id, request, headers, runtime)
 
     def create_sheet_with_options(
         self,
@@ -549,6 +943,132 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.DeleteRecordsHeaders()
         return await self.delete_records_with_options_async(base_id, sheet_id_or_name, request, headers, runtime)
+
+    def delete_role_with_options(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.DeleteRoleRequest,
+        headers: dingtalknotable__1__0_models.DeleteRoleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.DeleteRoleResponse:
+        """
+        @summary 删除角色
+        
+        @param request: DeleteRoleRequest
+        @param headers: DeleteRoleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteRoleResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.role_id):
+            body['roleId'] = request.role_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DeleteRole',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/auth/role/{base_id}',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.DeleteRoleResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def delete_role_with_options_async(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.DeleteRoleRequest,
+        headers: dingtalknotable__1__0_models.DeleteRoleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.DeleteRoleResponse:
+        """
+        @summary 删除角色
+        
+        @param request: DeleteRoleRequest
+        @param headers: DeleteRoleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteRoleResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.role_id):
+            body['roleId'] = request.role_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DeleteRole',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/auth/role/{base_id}',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.DeleteRoleResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def delete_role(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.DeleteRoleRequest,
+    ) -> dingtalknotable__1__0_models.DeleteRoleResponse:
+        """
+        @summary 删除角色
+        
+        @param request: DeleteRoleRequest
+        @return: DeleteRoleResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.DeleteRoleHeaders()
+        return self.delete_role_with_options(base_id, request, headers, runtime)
+
+    async def delete_role_async(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.DeleteRoleRequest,
+    ) -> dingtalknotable__1__0_models.DeleteRoleResponse:
+        """
+        @summary 删除角色
+        
+        @param request: DeleteRoleRequest
+        @return: DeleteRoleResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.DeleteRoleHeaders()
+        return await self.delete_role_with_options_async(base_id, request, headers, runtime)
 
     def delete_sheet_with_options(
         self,
@@ -1290,6 +1810,246 @@ class Client(OpenApiClient):
         headers = dingtalknotable__1__0_models.GetSheetHeaders()
         return await self.get_sheet_with_options_async(base_id, sheet_id_or_name, request, headers, runtime)
 
+    def get_switch_with_options(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.GetSwitchRequest,
+        headers: dingtalknotable__1__0_models.GetSwitchHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.GetSwitchResponse:
+        """
+        @summary 获取高级权限设置开关
+        
+        @param request: GetSwitchRequest
+        @param headers: GetSwitchHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSwitchResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetSwitch',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/auth/{base_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.GetSwitchResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_switch_with_options_async(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.GetSwitchRequest,
+        headers: dingtalknotable__1__0_models.GetSwitchHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.GetSwitchResponse:
+        """
+        @summary 获取高级权限设置开关
+        
+        @param request: GetSwitchRequest
+        @param headers: GetSwitchHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSwitchResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetSwitch',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/auth/{base_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.GetSwitchResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_switch(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.GetSwitchRequest,
+    ) -> dingtalknotable__1__0_models.GetSwitchResponse:
+        """
+        @summary 获取高级权限设置开关
+        
+        @param request: GetSwitchRequest
+        @return: GetSwitchResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.GetSwitchHeaders()
+        return self.get_switch_with_options(base_id, request, headers, runtime)
+
+    async def get_switch_async(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.GetSwitchRequest,
+    ) -> dingtalknotable__1__0_models.GetSwitchResponse:
+        """
+        @summary 获取高级权限设置开关
+        
+        @param request: GetSwitchRequest
+        @return: GetSwitchResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.GetSwitchHeaders()
+        return await self.get_switch_with_options_async(base_id, request, headers, runtime)
+
+    def get_user_doc_roles_with_options(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.GetUserDocRolesRequest,
+        headers: dingtalknotable__1__0_models.GetUserDocRolesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.GetUserDocRolesResponse:
+        """
+        @summary 获取指定用户的高级权限角色配置列表
+        
+        @param request: GetUserDocRolesRequest
+        @param headers: GetUserDocRolesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetUserDocRolesResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetUserDocRoles',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/auth/role/{base_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.GetUserDocRolesResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_user_doc_roles_with_options_async(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.GetUserDocRolesRequest,
+        headers: dingtalknotable__1__0_models.GetUserDocRolesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.GetUserDocRolesResponse:
+        """
+        @summary 获取指定用户的高级权限角色配置列表
+        
+        @param request: GetUserDocRolesRequest
+        @param headers: GetUserDocRolesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetUserDocRolesResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetUserDocRoles',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/auth/role/{base_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.GetUserDocRolesResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_user_doc_roles(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.GetUserDocRolesRequest,
+    ) -> dingtalknotable__1__0_models.GetUserDocRolesResponse:
+        """
+        @summary 获取指定用户的高级权限角色配置列表
+        
+        @param request: GetUserDocRolesRequest
+        @return: GetUserDocRolesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.GetUserDocRolesHeaders()
+        return self.get_user_doc_roles_with_options(base_id, request, headers, runtime)
+
+    async def get_user_doc_roles_async(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.GetUserDocRolesRequest,
+    ) -> dingtalknotable__1__0_models.GetUserDocRolesResponse:
+        """
+        @summary 获取指定用户的高级权限角色配置列表
+        
+        @param request: GetUserDocRolesRequest
+        @return: GetUserDocRolesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.GetUserDocRolesHeaders()
+        return await self.get_user_doc_roles_with_options_async(base_id, request, headers, runtime)
+
     def insert_records_with_options(
         self,
         base_id: str,
@@ -1688,6 +2448,254 @@ class Client(OpenApiClient):
         headers = dingtalknotable__1__0_models.PrepareSetRichTextHeaders()
         return await self.prepare_set_rich_text_with_options_async(base_id, request, headers, runtime)
 
+    def query_doc_all_roles_with_options(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.QueryDocAllRolesRequest,
+        headers: dingtalknotable__1__0_models.QueryDocAllRolesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.QueryDocAllRolesResponse:
+        """
+        @summary 查询文档所有角色和角色成员
+        
+        @param request: QueryDocAllRolesRequest
+        @param headers: QueryDocAllRolesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryDocAllRolesResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryDocAllRoles',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/auth/role/member/{base_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.QueryDocAllRolesResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_doc_all_roles_with_options_async(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.QueryDocAllRolesRequest,
+        headers: dingtalknotable__1__0_models.QueryDocAllRolesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.QueryDocAllRolesResponse:
+        """
+        @summary 查询文档所有角色和角色成员
+        
+        @param request: QueryDocAllRolesRequest
+        @param headers: QueryDocAllRolesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryDocAllRolesResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryDocAllRoles',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/auth/role/member/{base_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.QueryDocAllRolesResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_doc_all_roles(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.QueryDocAllRolesRequest,
+    ) -> dingtalknotable__1__0_models.QueryDocAllRolesResponse:
+        """
+        @summary 查询文档所有角色和角色成员
+        
+        @param request: QueryDocAllRolesRequest
+        @return: QueryDocAllRolesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.QueryDocAllRolesHeaders()
+        return self.query_doc_all_roles_with_options(base_id, request, headers, runtime)
+
+    async def query_doc_all_roles_async(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.QueryDocAllRolesRequest,
+    ) -> dingtalknotable__1__0_models.QueryDocAllRolesResponse:
+        """
+        @summary 查询文档所有角色和角色成员
+        
+        @param request: QueryDocAllRolesRequest
+        @return: QueryDocAllRolesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.QueryDocAllRolesHeaders()
+        return await self.query_doc_all_roles_with_options_async(base_id, request, headers, runtime)
+
+    def rebuild_role_members_with_options(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.RebuildRoleMembersRequest,
+        headers: dingtalknotable__1__0_models.RebuildRoleMembersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.RebuildRoleMembersResponse:
+        """
+        @summary 重建角色成员
+        
+        @param request: RebuildRoleMembersRequest
+        @param headers: RebuildRoleMembersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RebuildRoleMembersResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.default_role_dto):
+            body['defaultRoleDTO'] = request.default_role_dto
+        if not UtilClient.is_unset(request.to_role_member_dtomap):
+            body['toRoleMemberDTOMap'] = request.to_role_member_dtomap
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='RebuildRoleMembers',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/auth/role/member/{base_id}',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.RebuildRoleMembersResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def rebuild_role_members_with_options_async(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.RebuildRoleMembersRequest,
+        headers: dingtalknotable__1__0_models.RebuildRoleMembersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.RebuildRoleMembersResponse:
+        """
+        @summary 重建角色成员
+        
+        @param request: RebuildRoleMembersRequest
+        @param headers: RebuildRoleMembersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RebuildRoleMembersResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.default_role_dto):
+            body['defaultRoleDTO'] = request.default_role_dto
+        if not UtilClient.is_unset(request.to_role_member_dtomap):
+            body['toRoleMemberDTOMap'] = request.to_role_member_dtomap
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='RebuildRoleMembers',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/auth/role/member/{base_id}',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.RebuildRoleMembersResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def rebuild_role_members(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.RebuildRoleMembersRequest,
+    ) -> dingtalknotable__1__0_models.RebuildRoleMembersResponse:
+        """
+        @summary 重建角色成员
+        
+        @param request: RebuildRoleMembersRequest
+        @return: RebuildRoleMembersResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.RebuildRoleMembersHeaders()
+        return self.rebuild_role_members_with_options(base_id, request, headers, runtime)
+
+    async def rebuild_role_members_async(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.RebuildRoleMembersRequest,
+    ) -> dingtalknotable__1__0_models.RebuildRoleMembersResponse:
+        """
+        @summary 重建角色成员
+        
+        @param request: RebuildRoleMembersRequest
+        @return: RebuildRoleMembersResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.RebuildRoleMembersHeaders()
+        return await self.rebuild_role_members_with_options_async(base_id, request, headers, runtime)
+
     def update_field_with_options(
         self,
         base_id: str,
@@ -1955,6 +2963,148 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.UpdateRecordsHeaders()
         return await self.update_records_with_options_async(base_id, sheet_id_or_name, request, headers, runtime)
+
+    def update_role_with_options(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.UpdateRoleRequest,
+        headers: dingtalknotable__1__0_models.UpdateRoleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.UpdateRoleResponse:
+        """
+        @summary 更新角色
+        
+        @param request: UpdateRoleRequest
+        @param headers: UpdateRoleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateRoleResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.flow_type):
+            body['flowType'] = request.flow_type
+        if not UtilClient.is_unset(request.id):
+            body['id'] = request.id
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.role_type):
+            body['roleType'] = request.role_type
+        if not UtilClient.is_unset(request.sub_roles):
+            body['subRoles'] = request.sub_roles
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateRole',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/auth/role/{base_id}',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.UpdateRoleResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_role_with_options_async(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.UpdateRoleRequest,
+        headers: dingtalknotable__1__0_models.UpdateRoleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.UpdateRoleResponse:
+        """
+        @summary 更新角色
+        
+        @param request: UpdateRoleRequest
+        @param headers: UpdateRoleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateRoleResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.flow_type):
+            body['flowType'] = request.flow_type
+        if not UtilClient.is_unset(request.id):
+            body['id'] = request.id
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.role_type):
+            body['roleType'] = request.role_type
+        if not UtilClient.is_unset(request.sub_roles):
+            body['subRoles'] = request.sub_roles
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateRole',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/auth/role/{base_id}',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.UpdateRoleResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_role(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.UpdateRoleRequest,
+    ) -> dingtalknotable__1__0_models.UpdateRoleResponse:
+        """
+        @summary 更新角色
+        
+        @param request: UpdateRoleRequest
+        @return: UpdateRoleResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.UpdateRoleHeaders()
+        return self.update_role_with_options(base_id, request, headers, runtime)
+
+    async def update_role_async(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.UpdateRoleRequest,
+    ) -> dingtalknotable__1__0_models.UpdateRoleResponse:
+        """
+        @summary 更新角色
+        
+        @param request: UpdateRoleRequest
+        @return: UpdateRoleResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.UpdateRoleHeaders()
+        return await self.update_role_with_options_async(base_id, request, headers, runtime)
 
     def update_sheet_with_options(
         self,

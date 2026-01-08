@@ -47,6 +47,10 @@ class Client(OpenApiClient):
             body['bizType'] = request.biz_type
         if not UtilClient.is_unset(request.owner_union_id):
             body['ownerUnionId'] = request.owner_union_id
+        if not UtilClient.is_unset(request.role_sub_resource_ids):
+            body['roleSubResourceIds'] = request.role_sub_resource_ids
+        if not UtilClient.is_unset(request.share_scope):
+            body['shareScope'] = request.share_scope
         if not UtilClient.is_unset(request.union_id):
             body['unionId'] = request.union_id
         real_headers = {}
@@ -95,6 +99,10 @@ class Client(OpenApiClient):
             body['bizType'] = request.biz_type
         if not UtilClient.is_unset(request.owner_union_id):
             body['ownerUnionId'] = request.owner_union_id
+        if not UtilClient.is_unset(request.role_sub_resource_ids):
+            body['roleSubResourceIds'] = request.role_sub_resource_ids
+        if not UtilClient.is_unset(request.share_scope):
+            body['shareScope'] = request.share_scope
         if not UtilClient.is_unset(request.union_id):
             body['unionId'] = request.union_id
         real_headers = {}
@@ -509,6 +517,124 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkconference__1__0_models.CohostsHeaders()
         return await self.cohosts_with_options_async(conference_id, request, headers, runtime)
+
+    def create_auto_login_url_with_options(
+        self,
+        request: dingtalkconference__1__0_models.CreateAutoLoginUrlRequest,
+        headers: dingtalkconference__1__0_models.CreateAutoLoginUrlHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.CreateAutoLoginUrlResponse:
+        """
+        @summary 生成会议自动登录url
+        
+        @param request: CreateAutoLoginUrlRequest
+        @param headers: CreateAutoLoginUrlHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateAutoLoginUrlResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.meeting_url):
+            body['meetingUrl'] = request.meeting_url
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateAutoLoginUrl',
+            version='conference_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/conference/videoConferences/createAutoLoginUrl',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.CreateAutoLoginUrlResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_auto_login_url_with_options_async(
+        self,
+        request: dingtalkconference__1__0_models.CreateAutoLoginUrlRequest,
+        headers: dingtalkconference__1__0_models.CreateAutoLoginUrlHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.CreateAutoLoginUrlResponse:
+        """
+        @summary 生成会议自动登录url
+        
+        @param request: CreateAutoLoginUrlRequest
+        @param headers: CreateAutoLoginUrlHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateAutoLoginUrlResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.meeting_url):
+            body['meetingUrl'] = request.meeting_url
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateAutoLoginUrl',
+            version='conference_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/conference/videoConferences/createAutoLoginUrl',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.CreateAutoLoginUrlResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_auto_login_url(
+        self,
+        request: dingtalkconference__1__0_models.CreateAutoLoginUrlRequest,
+    ) -> dingtalkconference__1__0_models.CreateAutoLoginUrlResponse:
+        """
+        @summary 生成会议自动登录url
+        
+        @param request: CreateAutoLoginUrlRequest
+        @return: CreateAutoLoginUrlResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.CreateAutoLoginUrlHeaders()
+        return self.create_auto_login_url_with_options(request, headers, runtime)
+
+    async def create_auto_login_url_async(
+        self,
+        request: dingtalkconference__1__0_models.CreateAutoLoginUrlRequest,
+    ) -> dingtalkconference__1__0_models.CreateAutoLoginUrlResponse:
+        """
+        @summary 生成会议自动登录url
+        
+        @param request: CreateAutoLoginUrlRequest
+        @return: CreateAutoLoginUrlResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.CreateAutoLoginUrlHeaders()
+        return await self.create_auto_login_url_with_options_async(request, headers, runtime)
 
     def create_custom_short_link_with_options(
         self,

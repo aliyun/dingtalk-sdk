@@ -1,7 +1,385 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.model import TeaModel
-from typing import Dict, Any, List
+from typing import Dict, List, Any
+
+
+class ToRoleMemberDTOMapValue(TeaModel):
+    def __init__(
+        self,
+        member_id: str = None,
+        member_type: str = None,
+        member_id_belong_org_id: int = None,
+        avatar: str = None,
+        name: str = None,
+    ):
+        # This parameter is required.
+        self.member_id = member_id
+        # This parameter is required.
+        self.member_type = member_type
+        # This parameter is required.
+        self.member_id_belong_org_id = member_id_belong_org_id
+        self.avatar = avatar
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.member_id is not None:
+            result['memberId'] = self.member_id
+        if self.member_type is not None:
+            result['memberType'] = self.member_type
+        if self.member_id_belong_org_id is not None:
+            result['memberIdBelongOrgId'] = self.member_id_belong_org_id
+        if self.avatar is not None:
+            result['avatar'] = self.avatar
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('memberId') is not None:
+            self.member_id = m.get('memberId')
+        if m.get('memberType') is not None:
+            self.member_type = m.get('memberType')
+        if m.get('memberIdBelongOrgId') is not None:
+            self.member_id_belong_org_id = m.get('memberIdBelongOrgId')
+        if m.get('avatar') is not None:
+            self.avatar = m.get('avatar')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
+class AddRoleMemberHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AddRoleMemberRequestRoleMemberList(TeaModel):
+    def __init__(
+        self,
+        member_id: str = None,
+        member_id_belong_org_id: int = None,
+        member_type: str = None,
+        role_id: str = None,
+    ):
+        self.member_id = member_id
+        self.member_id_belong_org_id = member_id_belong_org_id
+        self.member_type = member_type
+        self.role_id = role_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.member_id is not None:
+            result['memberId'] = self.member_id
+        if self.member_id_belong_org_id is not None:
+            result['memberIdBelongOrgId'] = self.member_id_belong_org_id
+        if self.member_type is not None:
+            result['memberType'] = self.member_type
+        if self.role_id is not None:
+            result['roleId'] = self.role_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('memberId') is not None:
+            self.member_id = m.get('memberId')
+        if m.get('memberIdBelongOrgId') is not None:
+            self.member_id_belong_org_id = m.get('memberIdBelongOrgId')
+        if m.get('memberType') is not None:
+            self.member_type = m.get('memberType')
+        if m.get('roleId') is not None:
+            self.role_id = m.get('roleId')
+        return self
+
+
+class AddRoleMemberRequest(TeaModel):
+    def __init__(
+        self,
+        role_member_list: List[AddRoleMemberRequestRoleMemberList] = None,
+        operator_id: str = None,
+    ):
+        self.role_member_list = role_member_list
+        # This parameter is required.
+        self.operator_id = operator_id
+
+    def validate(self):
+        if self.role_member_list:
+            for k in self.role_member_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['roleMemberList'] = []
+        if self.role_member_list is not None:
+            for k in self.role_member_list:
+                result['roleMemberList'].append(k.to_map() if k else None)
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.role_member_list = []
+        if m.get('roleMemberList') is not None:
+            for k in m.get('roleMemberList'):
+                temp_model = AddRoleMemberRequestRoleMemberList()
+                self.role_member_list.append(temp_model.from_map(k))
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class AddRoleMemberResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class AddRoleMemberResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: AddRoleMemberResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = AddRoleMemberResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ChangeSwitchHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ChangeSwitchRequest(TeaModel):
+    def __init__(
+        self,
+        value: bool = None,
+        operator_id: str = None,
+    ):
+        # This parameter is required.
+        self.value = value
+        # This parameter is required.
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.value is not None:
+            result['value'] = self.value
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class ChangeSwitchResponseBody(TeaModel):
+    def __init__(
+        self,
+        enabled: bool = None,
+    ):
+        self.enabled = enabled
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.enabled is not None:
+            result['enabled'] = self.enabled
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('enabled') is not None:
+            self.enabled = m.get('enabled')
+        return self
+
+
+class ChangeSwitchResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ChangeSwitchResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ChangeSwitchResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
 
 
 class CreateFieldHeaders(TeaModel):
@@ -167,6 +545,310 @@ class CreateFieldResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateFieldResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CreateRoleHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateRoleRequestSubRoles(TeaModel):
+    def __init__(
+        self,
+        auth_level: int = None,
+        biz_type: int = None,
+        config: str = None,
+        gmt_create: int = None,
+        id: str = None,
+    ):
+        self.auth_level = auth_level
+        self.biz_type = biz_type
+        self.config = config
+        self.gmt_create = gmt_create
+        self.id = id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.auth_level is not None:
+            result['authLevel'] = self.auth_level
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.config is not None:
+            result['config'] = self.config
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.id is not None:
+            result['id'] = self.id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('authLevel') is not None:
+            self.auth_level = m.get('authLevel')
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('config') is not None:
+            self.config = m.get('config')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        return self
+
+
+class CreateRoleRequest(TeaModel):
+    def __init__(
+        self,
+        flow_type: str = None,
+        id: int = None,
+        name: str = None,
+        role_type: str = None,
+        sub_roles: List[CreateRoleRequestSubRoles] = None,
+        operator_id: str = None,
+    ):
+        self.flow_type = flow_type
+        self.id = id
+        # This parameter is required.
+        self.name = name
+        # This parameter is required.
+        self.role_type = role_type
+        # This parameter is required.
+        self.sub_roles = sub_roles
+        # This parameter is required.
+        self.operator_id = operator_id
+
+    def validate(self):
+        if self.sub_roles:
+            for k in self.sub_roles:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.flow_type is not None:
+            result['flowType'] = self.flow_type
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.role_type is not None:
+            result['roleType'] = self.role_type
+        result['subRoles'] = []
+        if self.sub_roles is not None:
+            for k in self.sub_roles:
+                result['subRoles'].append(k.to_map() if k else None)
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('flowType') is not None:
+            self.flow_type = m.get('flowType')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('roleType') is not None:
+            self.role_type = m.get('roleType')
+        self.sub_roles = []
+        if m.get('subRoles') is not None:
+            for k in m.get('subRoles'):
+                temp_model = CreateRoleRequestSubRoles()
+                self.sub_roles.append(temp_model.from_map(k))
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class CreateRoleResponseBodySubRoles(TeaModel):
+    def __init__(
+        self,
+        auth_level: int = None,
+        biz_type: int = None,
+        config: str = None,
+        gmt_create: int = None,
+        id: str = None,
+    ):
+        self.auth_level = auth_level
+        self.biz_type = biz_type
+        self.config = config
+        self.gmt_create = gmt_create
+        self.id = id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.auth_level is not None:
+            result['authLevel'] = self.auth_level
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.config is not None:
+            result['config'] = self.config
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.id is not None:
+            result['id'] = self.id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('authLevel') is not None:
+            self.auth_level = m.get('authLevel')
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('config') is not None:
+            self.config = m.get('config')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        return self
+
+
+class CreateRoleResponseBody(TeaModel):
+    def __init__(
+        self,
+        flow_type: str = None,
+        id: int = None,
+        name: str = None,
+        role_type: str = None,
+        sub_roles: List[CreateRoleResponseBodySubRoles] = None,
+    ):
+        self.flow_type = flow_type
+        self.id = id
+        self.name = name
+        self.role_type = role_type
+        self.sub_roles = sub_roles
+
+    def validate(self):
+        if self.sub_roles:
+            for k in self.sub_roles:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.flow_type is not None:
+            result['flowType'] = self.flow_type
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.role_type is not None:
+            result['roleType'] = self.role_type
+        result['subRoles'] = []
+        if self.sub_roles is not None:
+            for k in self.sub_roles:
+                result['subRoles'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('flowType') is not None:
+            self.flow_type = m.get('flowType')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('roleType') is not None:
+            self.role_type = m.get('roleType')
+        self.sub_roles = []
+        if m.get('subRoles') is not None:
+            for k in m.get('subRoles'):
+                temp_model = CreateRoleResponseBodySubRoles()
+                self.sub_roles.append(temp_model.from_map(k))
+        return self
+
+
+class CreateRoleResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CreateRoleResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CreateRoleResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -628,6 +1310,142 @@ class DeleteRecordsResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = DeleteRecordsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DeleteRoleHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeleteRoleRequest(TeaModel):
+    def __init__(
+        self,
+        role_id: int = None,
+        operator_id: str = None,
+    ):
+        # This parameter is required.
+        self.role_id = role_id
+        # This parameter is required.
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.role_id is not None:
+            result['roleId'] = self.role_id
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('roleId') is not None:
+            self.role_id = m.get('roleId')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class DeleteRoleResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class DeleteRoleResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: DeleteRoleResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = DeleteRoleResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -1743,6 +2561,395 @@ class GetSheetResponse(TeaModel):
         return self
 
 
+class GetSwitchHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetSwitchRequest(TeaModel):
+    def __init__(
+        self,
+        operator_id: str = None,
+    ):
+        # This parameter is required.
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class GetSwitchResponseBody(TeaModel):
+    def __init__(
+        self,
+        enabled: bool = None,
+    ):
+        self.enabled = enabled
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.enabled is not None:
+            result['enabled'] = self.enabled
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('enabled') is not None:
+            self.enabled = m.get('enabled')
+        return self
+
+
+class GetSwitchResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetSwitchResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetSwitchResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetUserDocRolesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetUserDocRolesRequest(TeaModel):
+    def __init__(
+        self,
+        operator_id: str = None,
+        union_id: str = None,
+    ):
+        # This parameter is required.
+        self.operator_id = operator_id
+        # This parameter is required.
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class GetUserDocRolesResponseBodyRolesSubRoles(TeaModel):
+    def __init__(
+        self,
+        auth_level: int = None,
+        biz_type: int = None,
+        config: str = None,
+        gmt_create: int = None,
+        id: str = None,
+    ):
+        self.auth_level = auth_level
+        self.biz_type = biz_type
+        self.config = config
+        self.gmt_create = gmt_create
+        self.id = id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.auth_level is not None:
+            result['authLevel'] = self.auth_level
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.config is not None:
+            result['config'] = self.config
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.id is not None:
+            result['id'] = self.id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('authLevel') is not None:
+            self.auth_level = m.get('authLevel')
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('config') is not None:
+            self.config = m.get('config')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        return self
+
+
+class GetUserDocRolesResponseBodyRoles(TeaModel):
+    def __init__(
+        self,
+        flow_type: str = None,
+        id: int = None,
+        name: str = None,
+        role_type: str = None,
+        sub_roles: List[GetUserDocRolesResponseBodyRolesSubRoles] = None,
+    ):
+        self.flow_type = flow_type
+        self.id = id
+        self.name = name
+        self.role_type = role_type
+        self.sub_roles = sub_roles
+
+    def validate(self):
+        if self.sub_roles:
+            for k in self.sub_roles:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.flow_type is not None:
+            result['flowType'] = self.flow_type
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.role_type is not None:
+            result['roleType'] = self.role_type
+        result['subRoles'] = []
+        if self.sub_roles is not None:
+            for k in self.sub_roles:
+                result['subRoles'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('flowType') is not None:
+            self.flow_type = m.get('flowType')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('roleType') is not None:
+            self.role_type = m.get('roleType')
+        self.sub_roles = []
+        if m.get('subRoles') is not None:
+            for k in m.get('subRoles'):
+                temp_model = GetUserDocRolesResponseBodyRolesSubRoles()
+                self.sub_roles.append(temp_model.from_map(k))
+        return self
+
+
+class GetUserDocRolesResponseBody(TeaModel):
+    def __init__(
+        self,
+        enabled: bool = None,
+        roles: List[GetUserDocRolesResponseBodyRoles] = None,
+    ):
+        self.enabled = enabled
+        self.roles = roles
+
+    def validate(self):
+        if self.roles:
+            for k in self.roles:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.enabled is not None:
+            result['enabled'] = self.enabled
+        result['roles'] = []
+        if self.roles is not None:
+            for k in self.roles:
+                result['roles'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('enabled') is not None:
+            self.enabled = m.get('enabled')
+        self.roles = []
+        if m.get('roles') is not None:
+            for k in m.get('roles'):
+                temp_model = GetUserDocRolesResponseBodyRoles()
+                self.roles.append(temp_model.from_map(k))
+        return self
+
+
+class GetUserDocRolesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetUserDocRolesResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetUserDocRolesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class InsertRecordsHeaders(TeaModel):
     def __init__(
         self,
@@ -2512,6 +3719,596 @@ class PrepareSetRichTextResponse(TeaModel):
         return self
 
 
+class QueryDocAllRolesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryDocAllRolesRequest(TeaModel):
+    def __init__(
+        self,
+        operator_id: str = None,
+    ):
+        # This parameter is required.
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class QueryDocAllRolesResponseBodyAllRolesMembers(TeaModel):
+    def __init__(
+        self,
+        avatar: str = None,
+        member_id: str = None,
+        member_id_belong_org_id: int = None,
+        member_type: str = None,
+        name: str = None,
+    ):
+        self.avatar = avatar
+        self.member_id = member_id
+        self.member_id_belong_org_id = member_id_belong_org_id
+        self.member_type = member_type
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.avatar is not None:
+            result['avatar'] = self.avatar
+        if self.member_id is not None:
+            result['memberId'] = self.member_id
+        if self.member_id_belong_org_id is not None:
+            result['memberIdBelongOrgId'] = self.member_id_belong_org_id
+        if self.member_type is not None:
+            result['memberType'] = self.member_type
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('avatar') is not None:
+            self.avatar = m.get('avatar')
+        if m.get('memberId') is not None:
+            self.member_id = m.get('memberId')
+        if m.get('memberIdBelongOrgId') is not None:
+            self.member_id_belong_org_id = m.get('memberIdBelongOrgId')
+        if m.get('memberType') is not None:
+            self.member_type = m.get('memberType')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
+class QueryDocAllRolesResponseBodyAllRolesRoleSubRoles(TeaModel):
+    def __init__(
+        self,
+        auth_level: int = None,
+        biz_type: int = None,
+        config: str = None,
+        gmt_create: int = None,
+        id: str = None,
+    ):
+        self.auth_level = auth_level
+        self.biz_type = biz_type
+        self.config = config
+        self.gmt_create = gmt_create
+        self.id = id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.auth_level is not None:
+            result['authLevel'] = self.auth_level
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.config is not None:
+            result['config'] = self.config
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.id is not None:
+            result['id'] = self.id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('authLevel') is not None:
+            self.auth_level = m.get('authLevel')
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('config') is not None:
+            self.config = m.get('config')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        return self
+
+
+class QueryDocAllRolesResponseBodyAllRolesRole(TeaModel):
+    def __init__(
+        self,
+        flow_type: str = None,
+        id: int = None,
+        name: str = None,
+        role_type: str = None,
+        sub_roles: List[QueryDocAllRolesResponseBodyAllRolesRoleSubRoles] = None,
+    ):
+        self.flow_type = flow_type
+        self.id = id
+        self.name = name
+        self.role_type = role_type
+        self.sub_roles = sub_roles
+
+    def validate(self):
+        if self.sub_roles:
+            for k in self.sub_roles:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.flow_type is not None:
+            result['flowType'] = self.flow_type
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.role_type is not None:
+            result['roleType'] = self.role_type
+        result['subRoles'] = []
+        if self.sub_roles is not None:
+            for k in self.sub_roles:
+                result['subRoles'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('flowType') is not None:
+            self.flow_type = m.get('flowType')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('roleType') is not None:
+            self.role_type = m.get('roleType')
+        self.sub_roles = []
+        if m.get('subRoles') is not None:
+            for k in m.get('subRoles'):
+                temp_model = QueryDocAllRolesResponseBodyAllRolesRoleSubRoles()
+                self.sub_roles.append(temp_model.from_map(k))
+        return self
+
+
+class QueryDocAllRolesResponseBodyAllRoles(TeaModel):
+    def __init__(
+        self,
+        members: List[QueryDocAllRolesResponseBodyAllRolesMembers] = None,
+        role: QueryDocAllRolesResponseBodyAllRolesRole = None,
+    ):
+        self.members = members
+        self.role = role
+
+    def validate(self):
+        if self.members:
+            for k in self.members:
+                if k:
+                    k.validate()
+        if self.role:
+            self.role.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['members'] = []
+        if self.members is not None:
+            for k in self.members:
+                result['members'].append(k.to_map() if k else None)
+        if self.role is not None:
+            result['role'] = self.role.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.members = []
+        if m.get('members') is not None:
+            for k in m.get('members'):
+                temp_model = QueryDocAllRolesResponseBodyAllRolesMembers()
+                self.members.append(temp_model.from_map(k))
+        if m.get('role') is not None:
+            temp_model = QueryDocAllRolesResponseBodyAllRolesRole()
+            self.role = temp_model.from_map(m['role'])
+        return self
+
+
+class QueryDocAllRolesResponseBodyDefaultRole(TeaModel):
+    def __init__(
+        self,
+        mode: int = None,
+        role_id: int = None,
+    ):
+        self.mode = mode
+        self.role_id = role_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.mode is not None:
+            result['mode'] = self.mode
+        if self.role_id is not None:
+            result['roleId'] = self.role_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('mode') is not None:
+            self.mode = m.get('mode')
+        if m.get('roleId') is not None:
+            self.role_id = m.get('roleId')
+        return self
+
+
+class QueryDocAllRolesResponseBody(TeaModel):
+    def __init__(
+        self,
+        all_roles: List[QueryDocAllRolesResponseBodyAllRoles] = None,
+        default_role: QueryDocAllRolesResponseBodyDefaultRole = None,
+        enabled: bool = None,
+        system_roles: List[int] = None,
+    ):
+        self.all_roles = all_roles
+        self.default_role = default_role
+        self.enabled = enabled
+        self.system_roles = system_roles
+
+    def validate(self):
+        if self.all_roles:
+            for k in self.all_roles:
+                if k:
+                    k.validate()
+        if self.default_role:
+            self.default_role.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['allRoles'] = []
+        if self.all_roles is not None:
+            for k in self.all_roles:
+                result['allRoles'].append(k.to_map() if k else None)
+        if self.default_role is not None:
+            result['defaultRole'] = self.default_role.to_map()
+        if self.enabled is not None:
+            result['enabled'] = self.enabled
+        if self.system_roles is not None:
+            result['systemRoles'] = self.system_roles
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.all_roles = []
+        if m.get('allRoles') is not None:
+            for k in m.get('allRoles'):
+                temp_model = QueryDocAllRolesResponseBodyAllRoles()
+                self.all_roles.append(temp_model.from_map(k))
+        if m.get('defaultRole') is not None:
+            temp_model = QueryDocAllRolesResponseBodyDefaultRole()
+            self.default_role = temp_model.from_map(m['defaultRole'])
+        if m.get('enabled') is not None:
+            self.enabled = m.get('enabled')
+        if m.get('systemRoles') is not None:
+            self.system_roles = m.get('systemRoles')
+        return self
+
+
+class QueryDocAllRolesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryDocAllRolesResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryDocAllRolesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class RebuildRoleMembersHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class RebuildRoleMembersRequestDefaultRoleDTO(TeaModel):
+    def __init__(
+        self,
+        mode: int = None,
+        role_id: int = None,
+    ):
+        self.mode = mode
+        self.role_id = role_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.mode is not None:
+            result['mode'] = self.mode
+        if self.role_id is not None:
+            result['roleId'] = self.role_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('mode') is not None:
+            self.mode = m.get('mode')
+        if m.get('roleId') is not None:
+            self.role_id = m.get('roleId')
+        return self
+
+
+class RebuildRoleMembersRequest(TeaModel):
+    def __init__(
+        self,
+        default_role_dto: RebuildRoleMembersRequestDefaultRoleDTO = None,
+        to_role_member_dtomap: Dict[str, List[ToRoleMemberDTOMapValue]] = None,
+        operator_id: str = None,
+    ):
+        # This parameter is required.
+        self.default_role_dto = default_role_dto
+        # This parameter is required.
+        self.to_role_member_dtomap = to_role_member_dtomap
+        # This parameter is required.
+        self.operator_id = operator_id
+
+    def validate(self):
+        if self.default_role_dto:
+            self.default_role_dto.validate()
+        if self.to_role_member_dtomap:
+            for v in self.to_role_member_dtomap.values():
+                for k1 in v:
+                    if k1:
+                        k1.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.default_role_dto is not None:
+            result['defaultRoleDTO'] = self.default_role_dto.to_map()
+        result['toRoleMemberDTOMap'] = {}
+        if self.to_role_member_dtomap is not None:
+            for k, v in self.to_role_member_dtomap.items():
+                l1 = []
+                for k1 in v:
+                    l1.append(k1.to_map() if k1 else None)
+                result['toRoleMemberDTOMap'][k] = l1
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('defaultRoleDTO') is not None:
+            temp_model = RebuildRoleMembersRequestDefaultRoleDTO()
+            self.default_role_dto = temp_model.from_map(m['defaultRoleDTO'])
+        self.to_role_member_dtomap = {}
+        if m.get('toRoleMemberDTOMap') is not None:
+            for k, v in m.get('toRoleMemberDTOMap').items():
+                l1 = []
+                for k1 in v:
+                    temp_model = ToRoleMemberDTOMapValue()
+                    l1.append(temp_model.from_map(k1))
+                self.to_role_member_dtomap['k'] = l1
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class RebuildRoleMembersResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class RebuildRoleMembersResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: RebuildRoleMembersResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = RebuildRoleMembersResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class UpdateFieldHeaders(TeaModel):
     def __init__(
         self,
@@ -2864,6 +4661,311 @@ class UpdateRecordsResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UpdateRecordsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateRoleHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateRoleRequestSubRoles(TeaModel):
+    def __init__(
+        self,
+        auth_level: int = None,
+        biz_type: int = None,
+        config: str = None,
+        gmt_create: int = None,
+        id: str = None,
+    ):
+        self.auth_level = auth_level
+        self.biz_type = biz_type
+        self.config = config
+        self.gmt_create = gmt_create
+        self.id = id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.auth_level is not None:
+            result['authLevel'] = self.auth_level
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.config is not None:
+            result['config'] = self.config
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.id is not None:
+            result['id'] = self.id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('authLevel') is not None:
+            self.auth_level = m.get('authLevel')
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('config') is not None:
+            self.config = m.get('config')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        return self
+
+
+class UpdateRoleRequest(TeaModel):
+    def __init__(
+        self,
+        flow_type: str = None,
+        id: int = None,
+        name: str = None,
+        role_type: str = None,
+        sub_roles: List[UpdateRoleRequestSubRoles] = None,
+        operator_id: str = None,
+    ):
+        self.flow_type = flow_type
+        # This parameter is required.
+        self.id = id
+        # This parameter is required.
+        self.name = name
+        # This parameter is required.
+        self.role_type = role_type
+        # This parameter is required.
+        self.sub_roles = sub_roles
+        # This parameter is required.
+        self.operator_id = operator_id
+
+    def validate(self):
+        if self.sub_roles:
+            for k in self.sub_roles:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.flow_type is not None:
+            result['flowType'] = self.flow_type
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.role_type is not None:
+            result['roleType'] = self.role_type
+        result['subRoles'] = []
+        if self.sub_roles is not None:
+            for k in self.sub_roles:
+                result['subRoles'].append(k.to_map() if k else None)
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('flowType') is not None:
+            self.flow_type = m.get('flowType')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('roleType') is not None:
+            self.role_type = m.get('roleType')
+        self.sub_roles = []
+        if m.get('subRoles') is not None:
+            for k in m.get('subRoles'):
+                temp_model = UpdateRoleRequestSubRoles()
+                self.sub_roles.append(temp_model.from_map(k))
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class UpdateRoleResponseBodySubRoles(TeaModel):
+    def __init__(
+        self,
+        auth_level: int = None,
+        biz_type: int = None,
+        config: str = None,
+        gmt_create: int = None,
+        id: str = None,
+    ):
+        self.auth_level = auth_level
+        self.biz_type = biz_type
+        self.config = config
+        self.gmt_create = gmt_create
+        self.id = id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.auth_level is not None:
+            result['authLevel'] = self.auth_level
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.config is not None:
+            result['config'] = self.config
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.id is not None:
+            result['id'] = self.id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('authLevel') is not None:
+            self.auth_level = m.get('authLevel')
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('config') is not None:
+            self.config = m.get('config')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        return self
+
+
+class UpdateRoleResponseBody(TeaModel):
+    def __init__(
+        self,
+        flow_type: str = None,
+        id: int = None,
+        name: str = None,
+        role_type: str = None,
+        sub_roles: List[UpdateRoleResponseBodySubRoles] = None,
+    ):
+        self.flow_type = flow_type
+        self.id = id
+        self.name = name
+        self.role_type = role_type
+        self.sub_roles = sub_roles
+
+    def validate(self):
+        if self.sub_roles:
+            for k in self.sub_roles:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.flow_type is not None:
+            result['flowType'] = self.flow_type
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.role_type is not None:
+            result['roleType'] = self.role_type
+        result['subRoles'] = []
+        if self.sub_roles is not None:
+            for k in self.sub_roles:
+                result['subRoles'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('flowType') is not None:
+            self.flow_type = m.get('flowType')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('roleType') is not None:
+            self.role_type = m.get('roleType')
+        self.sub_roles = []
+        if m.get('subRoles') is not None:
+            for k in m.get('subRoles'):
+                temp_model = UpdateRoleResponseBodySubRoles()
+                self.sub_roles.append(temp_model.from_map(k))
+        return self
+
+
+class UpdateRoleResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdateRoleResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdateRoleResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

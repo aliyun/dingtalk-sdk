@@ -294,12 +294,16 @@ class AddRecordPermissionRequest(TeaModel):
         self,
         biz_type: str = None,
         owner_union_id: str = None,
+        role_sub_resource_ids: List[str] = None,
+        share_scope: int = None,
         union_id: str = None,
     ):
         # This parameter is required.
         self.biz_type = biz_type
         # This parameter is required.
         self.owner_union_id = owner_union_id
+        self.role_sub_resource_ids = role_sub_resource_ids
+        self.share_scope = share_scope
         # This parameter is required.
         self.union_id = union_id
 
@@ -316,6 +320,10 @@ class AddRecordPermissionRequest(TeaModel):
             result['bizType'] = self.biz_type
         if self.owner_union_id is not None:
             result['ownerUnionId'] = self.owner_union_id
+        if self.role_sub_resource_ids is not None:
+            result['roleSubResourceIds'] = self.role_sub_resource_ids
+        if self.share_scope is not None:
+            result['shareScope'] = self.share_scope
         if self.union_id is not None:
             result['unionId'] = self.union_id
         return result
@@ -326,6 +334,10 @@ class AddRecordPermissionRequest(TeaModel):
             self.biz_type = m.get('bizType')
         if m.get('ownerUnionId') is not None:
             self.owner_union_id = m.get('ownerUnionId')
+        if m.get('roleSubResourceIds') is not None:
+            self.role_sub_resource_ids = m.get('roleSubResourceIds')
+        if m.get('shareScope') is not None:
+            self.share_scope = m.get('shareScope')
         if m.get('unionId') is not None:
             self.union_id = m.get('unionId')
         return self
@@ -335,8 +347,10 @@ class AddRecordPermissionResponseBody(TeaModel):
     def __init__(
         self,
         code: str = None,
+        task_uuid: str = None,
     ):
         self.code = code
+        self.task_uuid = task_uuid
 
     def validate(self):
         pass
@@ -349,12 +363,16 @@ class AddRecordPermissionResponseBody(TeaModel):
         result = dict()
         if self.code is not None:
             result['code'] = self.code
+        if self.task_uuid is not None:
+            result['taskUuid'] = self.task_uuid
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('code') is not None:
             self.code = m.get('code')
+        if m.get('taskUuid') is not None:
+            self.task_uuid = m.get('taskUuid')
         return self
 
 
@@ -839,6 +857,177 @@ class CohostsResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CohostsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CreateAutoLoginUrlHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateAutoLoginUrlRequest(TeaModel):
+    def __init__(
+        self,
+        meeting_url: str = None,
+        union_id: str = None,
+    ):
+        # This parameter is required.
+        self.meeting_url = meeting_url
+        # This parameter is required.
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.meeting_url is not None:
+            result['meetingUrl'] = self.meeting_url
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('meetingUrl') is not None:
+            self.meeting_url = m.get('meetingUrl')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class CreateAutoLoginUrlResponseBodyLoginInfo(TeaModel):
+    def __init__(
+        self,
+        login_url: str = None,
+    ):
+        self.login_url = login_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.login_url is not None:
+            result['loginUrl'] = self.login_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('loginUrl') is not None:
+            self.login_url = m.get('loginUrl')
+        return self
+
+
+class CreateAutoLoginUrlResponseBody(TeaModel):
+    def __init__(
+        self,
+        login_info: CreateAutoLoginUrlResponseBodyLoginInfo = None,
+        success: bool = None,
+    ):
+        self.login_info = login_info
+        self.success = success
+
+    def validate(self):
+        if self.login_info:
+            self.login_info.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.login_info is not None:
+            result['loginInfo'] = self.login_info.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('loginInfo') is not None:
+            temp_model = CreateAutoLoginUrlResponseBodyLoginInfo()
+            self.login_info = temp_model.from_map(m['loginInfo'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class CreateAutoLoginUrlResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CreateAutoLoginUrlResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CreateAutoLoginUrlResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

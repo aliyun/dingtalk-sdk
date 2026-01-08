@@ -4972,6 +4972,148 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.CreateAppOrderHeaders()
         return await self.create_app_order_with_options_async(request, headers, runtime)
 
+    def create_awaiting_correction_data_with_options(
+        self,
+        request: dingtalkedu__1__0_models.CreateAwaitingCorrectionDataRequest,
+        headers: dingtalkedu__1__0_models.CreateAwaitingCorrectionDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CreateAwaitingCorrectionDataResponse:
+        """
+        @summary 作业批改-新增待批改数据
+        
+        @param request: CreateAwaitingCorrectionDataRequest
+        @param headers: CreateAwaitingCorrectionDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateAwaitingCorrectionDataResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.all_assignment_pdf_url):
+            body['allAssignmentPdfUrl'] = request.all_assignment_pdf_url
+        if not UtilClient.is_unset(request.class_name):
+            body['className'] = request.class_name
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.print_info):
+            body['printInfo'] = request.print_info
+        if not UtilClient.is_unset(request.printer_code):
+            body['printerCode'] = request.printer_code
+        if not UtilClient.is_unset(request.subject_name):
+            body['subjectName'] = request.subject_name
+        if not UtilClient.is_unset(request.task_code):
+            body['taskCode'] = request.task_code
+        if not UtilClient.is_unset(request.total_pages):
+            body['totalPages'] = request.total_pages
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateAwaitingCorrectionData',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/assignment/createAwaitingCorrectionData',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CreateAwaitingCorrectionDataResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_awaiting_correction_data_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.CreateAwaitingCorrectionDataRequest,
+        headers: dingtalkedu__1__0_models.CreateAwaitingCorrectionDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CreateAwaitingCorrectionDataResponse:
+        """
+        @summary 作业批改-新增待批改数据
+        
+        @param request: CreateAwaitingCorrectionDataRequest
+        @param headers: CreateAwaitingCorrectionDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateAwaitingCorrectionDataResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.all_assignment_pdf_url):
+            body['allAssignmentPdfUrl'] = request.all_assignment_pdf_url
+        if not UtilClient.is_unset(request.class_name):
+            body['className'] = request.class_name
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.print_info):
+            body['printInfo'] = request.print_info
+        if not UtilClient.is_unset(request.printer_code):
+            body['printerCode'] = request.printer_code
+        if not UtilClient.is_unset(request.subject_name):
+            body['subjectName'] = request.subject_name
+        if not UtilClient.is_unset(request.task_code):
+            body['taskCode'] = request.task_code
+        if not UtilClient.is_unset(request.total_pages):
+            body['totalPages'] = request.total_pages
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateAwaitingCorrectionData',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/assignment/createAwaitingCorrectionData',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CreateAwaitingCorrectionDataResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_awaiting_correction_data(
+        self,
+        request: dingtalkedu__1__0_models.CreateAwaitingCorrectionDataRequest,
+    ) -> dingtalkedu__1__0_models.CreateAwaitingCorrectionDataResponse:
+        """
+        @summary 作业批改-新增待批改数据
+        
+        @param request: CreateAwaitingCorrectionDataRequest
+        @return: CreateAwaitingCorrectionDataResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CreateAwaitingCorrectionDataHeaders()
+        return self.create_awaiting_correction_data_with_options(request, headers, runtime)
+
+    async def create_awaiting_correction_data_async(
+        self,
+        request: dingtalkedu__1__0_models.CreateAwaitingCorrectionDataRequest,
+    ) -> dingtalkedu__1__0_models.CreateAwaitingCorrectionDataResponse:
+        """
+        @summary 作业批改-新增待批改数据
+        
+        @param request: CreateAwaitingCorrectionDataRequest
+        @return: CreateAwaitingCorrectionDataResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CreateAwaitingCorrectionDataHeaders()
+        return await self.create_awaiting_correction_data_with_options_async(request, headers, runtime)
+
     def create_college_contact_dept_with_options(
         self,
         request: dingtalkedu__1__0_models.CreateCollegeContactDeptRequest,
@@ -5311,6 +5453,128 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkedu__1__0_models.CreateCollegeContactSceneStruHeaders()
         return await self.create_college_contact_scene_stru_with_options_async(request, headers, runtime)
+
+    def create_correction_data_with_options(
+        self,
+        request: dingtalkedu__1__0_models.CreateCorrectionDataRequest,
+        headers: dingtalkedu__1__0_models.CreateCorrectionDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CreateCorrectionDataResponse:
+        """
+        @summary 作业批改-新增已批改数据
+        
+        @param request: CreateCorrectionDataRequest
+        @param headers: CreateCorrectionDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateCorrectionDataResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.corrected_data_json_url):
+            body['correctedDataJsonUrl'] = request.corrected_data_json_url
+        if not UtilClient.is_unset(request.task_code):
+            body['taskCode'] = request.task_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateCorrectionData',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/assignment/createCorrectionData',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CreateCorrectionDataResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_correction_data_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.CreateCorrectionDataRequest,
+        headers: dingtalkedu__1__0_models.CreateCorrectionDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CreateCorrectionDataResponse:
+        """
+        @summary 作业批改-新增已批改数据
+        
+        @param request: CreateCorrectionDataRequest
+        @param headers: CreateCorrectionDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateCorrectionDataResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.corrected_data_json_url):
+            body['correctedDataJsonUrl'] = request.corrected_data_json_url
+        if not UtilClient.is_unset(request.task_code):
+            body['taskCode'] = request.task_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateCorrectionData',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/assignment/createCorrectionData',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CreateCorrectionDataResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_correction_data(
+        self,
+        request: dingtalkedu__1__0_models.CreateCorrectionDataRequest,
+    ) -> dingtalkedu__1__0_models.CreateCorrectionDataResponse:
+        """
+        @summary 作业批改-新增已批改数据
+        
+        @param request: CreateCorrectionDataRequest
+        @return: CreateCorrectionDataResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CreateCorrectionDataHeaders()
+        return self.create_correction_data_with_options(request, headers, runtime)
+
+    async def create_correction_data_async(
+        self,
+        request: dingtalkedu__1__0_models.CreateCorrectionDataRequest,
+    ) -> dingtalkedu__1__0_models.CreateCorrectionDataResponse:
+        """
+        @summary 作业批改-新增已批改数据
+        
+        @param request: CreateCorrectionDataRequest
+        @return: CreateCorrectionDataResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CreateCorrectionDataHeaders()
+        return await self.create_correction_data_with_options_async(request, headers, runtime)
 
     def create_course_with_options(
         self,
@@ -20949,6 +21213,242 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkedu__1__0_models.QuerySchoolUserFaceHeaders()
         return await self.query_school_user_face_with_options_async(request, headers, runtime)
+
+    def query_self_build_group_base_info_with_options(
+        self,
+        request: dingtalkedu__1__0_models.QuerySelfBuildGroupBaseInfoRequest,
+        headers: dingtalkedu__1__0_models.QuerySelfBuildGroupBaseInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QuerySelfBuildGroupBaseInfoResponse:
+        """
+        @summary 查询自建群组织和班级信息
+        
+        @param request: QuerySelfBuildGroupBaseInfoRequest
+        @param headers: QuerySelfBuildGroupBaseInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QuerySelfBuildGroupBaseInfoResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QuerySelfBuildGroupBaseInfo',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/self/group/base/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QuerySelfBuildGroupBaseInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_self_build_group_base_info_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.QuerySelfBuildGroupBaseInfoRequest,
+        headers: dingtalkedu__1__0_models.QuerySelfBuildGroupBaseInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QuerySelfBuildGroupBaseInfoResponse:
+        """
+        @summary 查询自建群组织和班级信息
+        
+        @param request: QuerySelfBuildGroupBaseInfoRequest
+        @param headers: QuerySelfBuildGroupBaseInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QuerySelfBuildGroupBaseInfoResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QuerySelfBuildGroupBaseInfo',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/self/group/base/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QuerySelfBuildGroupBaseInfoResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_self_build_group_base_info(
+        self,
+        request: dingtalkedu__1__0_models.QuerySelfBuildGroupBaseInfoRequest,
+    ) -> dingtalkedu__1__0_models.QuerySelfBuildGroupBaseInfoResponse:
+        """
+        @summary 查询自建群组织和班级信息
+        
+        @param request: QuerySelfBuildGroupBaseInfoRequest
+        @return: QuerySelfBuildGroupBaseInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QuerySelfBuildGroupBaseInfoHeaders()
+        return self.query_self_build_group_base_info_with_options(request, headers, runtime)
+
+    async def query_self_build_group_base_info_async(
+        self,
+        request: dingtalkedu__1__0_models.QuerySelfBuildGroupBaseInfoRequest,
+    ) -> dingtalkedu__1__0_models.QuerySelfBuildGroupBaseInfoResponse:
+        """
+        @summary 查询自建群组织和班级信息
+        
+        @param request: QuerySelfBuildGroupBaseInfoRequest
+        @return: QuerySelfBuildGroupBaseInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QuerySelfBuildGroupBaseInfoHeaders()
+        return await self.query_self_build_group_base_info_with_options_async(request, headers, runtime)
+
+    def query_self_build_group_user_info_with_options(
+        self,
+        request: dingtalkedu__1__0_models.QuerySelfBuildGroupUserInfoRequest,
+        headers: dingtalkedu__1__0_models.QuerySelfBuildGroupUserInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QuerySelfBuildGroupUserInfoResponse:
+        """
+        @summary 查询自建群用户信息
+        
+        @param request: QuerySelfBuildGroupUserInfoRequest
+        @param headers: QuerySelfBuildGroupUserInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QuerySelfBuildGroupUserInfoResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.class_id):
+            body['classId'] = request.class_id
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.roles):
+            body['roles'] = request.roles
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QuerySelfBuildGroupUserInfo',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/self/group/user/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QuerySelfBuildGroupUserInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_self_build_group_user_info_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.QuerySelfBuildGroupUserInfoRequest,
+        headers: dingtalkedu__1__0_models.QuerySelfBuildGroupUserInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QuerySelfBuildGroupUserInfoResponse:
+        """
+        @summary 查询自建群用户信息
+        
+        @param request: QuerySelfBuildGroupUserInfoRequest
+        @param headers: QuerySelfBuildGroupUserInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QuerySelfBuildGroupUserInfoResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.class_id):
+            body['classId'] = request.class_id
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.roles):
+            body['roles'] = request.roles
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QuerySelfBuildGroupUserInfo',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/self/group/user/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QuerySelfBuildGroupUserInfoResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_self_build_group_user_info(
+        self,
+        request: dingtalkedu__1__0_models.QuerySelfBuildGroupUserInfoRequest,
+    ) -> dingtalkedu__1__0_models.QuerySelfBuildGroupUserInfoResponse:
+        """
+        @summary 查询自建群用户信息
+        
+        @param request: QuerySelfBuildGroupUserInfoRequest
+        @return: QuerySelfBuildGroupUserInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QuerySelfBuildGroupUserInfoHeaders()
+        return self.query_self_build_group_user_info_with_options(request, headers, runtime)
+
+    async def query_self_build_group_user_info_async(
+        self,
+        request: dingtalkedu__1__0_models.QuerySelfBuildGroupUserInfoRequest,
+    ) -> dingtalkedu__1__0_models.QuerySelfBuildGroupUserInfoResponse:
+        """
+        @summary 查询自建群用户信息
+        
+        @param request: QuerySelfBuildGroupUserInfoRequest
+        @return: QuerySelfBuildGroupUserInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QuerySelfBuildGroupUserInfoHeaders()
+        return await self.query_self_build_group_user_info_with_options_async(request, headers, runtime)
 
     def query_sns_order_with_options(
         self,

@@ -26,6 +26,136 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def add_conv_nav_tab_with_options(
+        self,
+        request: dingtalkim__1__0_models.AddConvNavTabRequest,
+        headers: dingtalkim__1__0_models.AddConvNavTabHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.AddConvNavTabResponse:
+        """
+        @summary 群维度添加群标签页
+        
+        @param request: AddConvNavTabRequest
+        @param headers: AddConvNavTabHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddConvNavTabResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.mobile_url):
+            body['mobileUrl'] = request.mobile_url
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.pc_url):
+            body['pcUrl'] = request.pc_url
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.user_editable):
+            body['userEditable'] = request.user_editable
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddConvNavTab',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/convNavTabs/add',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.AddConvNavTabResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def add_conv_nav_tab_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.AddConvNavTabRequest,
+        headers: dingtalkim__1__0_models.AddConvNavTabHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.AddConvNavTabResponse:
+        """
+        @summary 群维度添加群标签页
+        
+        @param request: AddConvNavTabRequest
+        @param headers: AddConvNavTabHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddConvNavTabResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.mobile_url):
+            body['mobileUrl'] = request.mobile_url
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.pc_url):
+            body['pcUrl'] = request.pc_url
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.user_editable):
+            body['userEditable'] = request.user_editable
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddConvNavTab',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/convNavTabs/add',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.AddConvNavTabResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def add_conv_nav_tab(
+        self,
+        request: dingtalkim__1__0_models.AddConvNavTabRequest,
+    ) -> dingtalkim__1__0_models.AddConvNavTabResponse:
+        """
+        @summary 群维度添加群标签页
+        
+        @param request: AddConvNavTabRequest
+        @return: AddConvNavTabResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.AddConvNavTabHeaders()
+        return self.add_conv_nav_tab_with_options(request, headers, runtime)
+
+    async def add_conv_nav_tab_async(
+        self,
+        request: dingtalkim__1__0_models.AddConvNavTabRequest,
+    ) -> dingtalkim__1__0_models.AddConvNavTabResponse:
+        """
+        @summary 群维度添加群标签页
+        
+        @param request: AddConvNavTabRequest
+        @return: AddConvNavTabResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.AddConvNavTabHeaders()
+        return await self.add_conv_nav_tab_with_options_async(request, headers, runtime)
+
     def add_org_text_emotion_with_options(
         self,
         request: dingtalkim__1__0_models.AddOrgTextEmotionRequest,
@@ -2575,6 +2705,124 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.DebugUnfurlingRegisterHeaders()
         return await self.debug_unfurling_register_with_options_async(request, headers, runtime)
+
+    def delete_conv_nav_tab_with_options(
+        self,
+        request: dingtalkim__1__0_models.DeleteConvNavTabRequest,
+        headers: dingtalkim__1__0_models.DeleteConvNavTabHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.DeleteConvNavTabResponse:
+        """
+        @summary 群维度批量删除群标签页
+        
+        @param request: DeleteConvNavTabRequest
+        @param headers: DeleteConvNavTabHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteConvNavTabResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.tab_ids):
+            body['tabIds'] = request.tab_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DeleteConvNavTab',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/convNavTabs/delete',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.DeleteConvNavTabResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def delete_conv_nav_tab_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.DeleteConvNavTabRequest,
+        headers: dingtalkim__1__0_models.DeleteConvNavTabHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.DeleteConvNavTabResponse:
+        """
+        @summary 群维度批量删除群标签页
+        
+        @param request: DeleteConvNavTabRequest
+        @param headers: DeleteConvNavTabHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteConvNavTabResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.tab_ids):
+            body['tabIds'] = request.tab_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DeleteConvNavTab',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/convNavTabs/delete',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.DeleteConvNavTabResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def delete_conv_nav_tab(
+        self,
+        request: dingtalkim__1__0_models.DeleteConvNavTabRequest,
+    ) -> dingtalkim__1__0_models.DeleteConvNavTabResponse:
+        """
+        @summary 群维度批量删除群标签页
+        
+        @param request: DeleteConvNavTabRequest
+        @return: DeleteConvNavTabResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.DeleteConvNavTabHeaders()
+        return self.delete_conv_nav_tab_with_options(request, headers, runtime)
+
+    async def delete_conv_nav_tab_async(
+        self,
+        request: dingtalkim__1__0_models.DeleteConvNavTabRequest,
+    ) -> dingtalkim__1__0_models.DeleteConvNavTabResponse:
+        """
+        @summary 群维度批量删除群标签页
+        
+        @param request: DeleteConvNavTabRequest
+        @return: DeleteConvNavTabResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.DeleteConvNavTabHeaders()
+        return await self.delete_conv_nav_tab_with_options_async(request, headers, runtime)
 
     def delete_org_text_emotion_with_options(
         self,
@@ -5653,6 +5901,120 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.InteractiveCardCreateInstanceHeaders()
         return await self.interactive_card_create_instance_with_options_async(request, headers, runtime)
+
+    def list_conv_nav_tab_with_options(
+        self,
+        request: dingtalkim__1__0_models.ListConvNavTabRequest,
+        headers: dingtalkim__1__0_models.ListConvNavTabHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.ListConvNavTabResponse:
+        """
+        @summary 获取群维度标签页
+        
+        @param request: ListConvNavTabRequest
+        @param headers: ListConvNavTabHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListConvNavTabResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ListConvNavTab',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/convNavTabs/list',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.ListConvNavTabResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def list_conv_nav_tab_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.ListConvNavTabRequest,
+        headers: dingtalkim__1__0_models.ListConvNavTabHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.ListConvNavTabResponse:
+        """
+        @summary 获取群维度标签页
+        
+        @param request: ListConvNavTabRequest
+        @param headers: ListConvNavTabHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListConvNavTabResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ListConvNavTab',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/convNavTabs/list',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.ListConvNavTabResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def list_conv_nav_tab(
+        self,
+        request: dingtalkim__1__0_models.ListConvNavTabRequest,
+    ) -> dingtalkim__1__0_models.ListConvNavTabResponse:
+        """
+        @summary 获取群维度标签页
+        
+        @param request: ListConvNavTabRequest
+        @return: ListConvNavTabResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.ListConvNavTabHeaders()
+        return self.list_conv_nav_tab_with_options(request, headers, runtime)
+
+    async def list_conv_nav_tab_async(
+        self,
+        request: dingtalkim__1__0_models.ListConvNavTabRequest,
+    ) -> dingtalkim__1__0_models.ListConvNavTabResponse:
+        """
+        @summary 获取群维度标签页
+        
+        @param request: ListConvNavTabRequest
+        @return: ListConvNavTabResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.ListConvNavTabHeaders()
+        return await self.list_conv_nav_tab_with_options_async(request, headers, runtime)
 
     def list_group_templates_by_org_id_with_options(
         self,
@@ -12185,6 +12547,140 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.UpdateClientServiceHeaders()
         return await self.update_client_service_with_options_async(request, headers, runtime)
+
+    def update_conv_nav_tab_with_options(
+        self,
+        request: dingtalkim__1__0_models.UpdateConvNavTabRequest,
+        headers: dingtalkim__1__0_models.UpdateConvNavTabHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.UpdateConvNavTabResponse:
+        """
+        @summary 群维度更新群标签页
+        
+        @param request: UpdateConvNavTabRequest
+        @param headers: UpdateConvNavTabHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateConvNavTabResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.mobile_url):
+            body['mobileUrl'] = request.mobile_url
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.pc_url):
+            body['pcUrl'] = request.pc_url
+        if not UtilClient.is_unset(request.tab_id):
+            body['tabId'] = request.tab_id
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.user_editable):
+            body['userEditable'] = request.user_editable
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateConvNavTab',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/convNavTabs/update',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.UpdateConvNavTabResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_conv_nav_tab_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.UpdateConvNavTabRequest,
+        headers: dingtalkim__1__0_models.UpdateConvNavTabHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.UpdateConvNavTabResponse:
+        """
+        @summary 群维度更新群标签页
+        
+        @param request: UpdateConvNavTabRequest
+        @param headers: UpdateConvNavTabHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateConvNavTabResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.mobile_url):
+            body['mobileUrl'] = request.mobile_url
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.pc_url):
+            body['pcUrl'] = request.pc_url
+        if not UtilClient.is_unset(request.tab_id):
+            body['tabId'] = request.tab_id
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.user_editable):
+            body['userEditable'] = request.user_editable
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateConvNavTab',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/convNavTabs/update',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.UpdateConvNavTabResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_conv_nav_tab(
+        self,
+        request: dingtalkim__1__0_models.UpdateConvNavTabRequest,
+    ) -> dingtalkim__1__0_models.UpdateConvNavTabResponse:
+        """
+        @summary 群维度更新群标签页
+        
+        @param request: UpdateConvNavTabRequest
+        @return: UpdateConvNavTabResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.UpdateConvNavTabHeaders()
+        return self.update_conv_nav_tab_with_options(request, headers, runtime)
+
+    async def update_conv_nav_tab_async(
+        self,
+        request: dingtalkim__1__0_models.UpdateConvNavTabRequest,
+    ) -> dingtalkim__1__0_models.UpdateConvNavTabResponse:
+        """
+        @summary 群维度更新群标签页
+        
+        @param request: UpdateConvNavTabRequest
+        @return: UpdateConvNavTabResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.UpdateConvNavTabHeaders()
+        return await self.update_conv_nav_tab_with_options_async(request, headers, runtime)
 
     def update_group_avatar_with_options(
         self,

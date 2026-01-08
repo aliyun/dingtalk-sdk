@@ -4660,6 +4660,1188 @@ class Client(OpenApiClient):
         headers = dingtalkhrbrain__1__0_models.HrbrainImportWorkExpHeaders()
         return await self.hrbrain_import_work_exp_with_options_async(request, headers, runtime)
 
+    def hrbrain_label_category_tree_with_options(
+        self,
+        headers: dingtalkhrbrain__1__0_models.HrbrainLabelCategoryTreeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainLabelCategoryTreeResponse:
+        """
+        @summary 标签分类树查询
+        
+        @param headers: HrbrainLabelCategoryTreeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainLabelCategoryTreeResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='HrbrainLabelCategoryTree',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/labels/category/list',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainLabelCategoryTreeResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def hrbrain_label_category_tree_with_options_async(
+        self,
+        headers: dingtalkhrbrain__1__0_models.HrbrainLabelCategoryTreeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainLabelCategoryTreeResponse:
+        """
+        @summary 标签分类树查询
+        
+        @param headers: HrbrainLabelCategoryTreeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainLabelCategoryTreeResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='HrbrainLabelCategoryTree',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/labels/category/list',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainLabelCategoryTreeResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def hrbrain_label_category_tree(self) -> dingtalkhrbrain__1__0_models.HrbrainLabelCategoryTreeResponse:
+        """
+        @summary 标签分类树查询
+        
+        @return: HrbrainLabelCategoryTreeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainLabelCategoryTreeHeaders()
+        return self.hrbrain_label_category_tree_with_options(headers, runtime)
+
+    async def hrbrain_label_category_tree_async(self) -> dingtalkhrbrain__1__0_models.HrbrainLabelCategoryTreeResponse:
+        """
+        @summary 标签分类树查询
+        
+        @return: HrbrainLabelCategoryTreeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainLabelCategoryTreeHeaders()
+        return await self.hrbrain_label_category_tree_with_options_async(headers, runtime)
+
+    def hrbrain_label_category_update_with_options(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainLabelCategoryUpdateRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainLabelCategoryUpdateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainLabelCategoryUpdateResponse:
+        """
+        @summary 标签分类树更新
+        
+        @param request: HrbrainLabelCategoryUpdateRequest
+        @param headers: HrbrainLabelCategoryUpdateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainLabelCategoryUpdateResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.category_vo):
+            body['categoryVo'] = request.category_vo
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainLabelCategoryUpdate',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/labels/category/update',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainLabelCategoryUpdateResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def hrbrain_label_category_update_with_options_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainLabelCategoryUpdateRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainLabelCategoryUpdateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainLabelCategoryUpdateResponse:
+        """
+        @summary 标签分类树更新
+        
+        @param request: HrbrainLabelCategoryUpdateRequest
+        @param headers: HrbrainLabelCategoryUpdateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainLabelCategoryUpdateResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.category_vo):
+            body['categoryVo'] = request.category_vo
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainLabelCategoryUpdate',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/labels/category/update',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainLabelCategoryUpdateResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def hrbrain_label_category_update(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainLabelCategoryUpdateRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainLabelCategoryUpdateResponse:
+        """
+        @summary 标签分类树更新
+        
+        @param request: HrbrainLabelCategoryUpdateRequest
+        @return: HrbrainLabelCategoryUpdateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainLabelCategoryUpdateHeaders()
+        return self.hrbrain_label_category_update_with_options(request, headers, runtime)
+
+    async def hrbrain_label_category_update_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainLabelCategoryUpdateRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainLabelCategoryUpdateResponse:
+        """
+        @summary 标签分类树更新
+        
+        @param request: HrbrainLabelCategoryUpdateRequest
+        @return: HrbrainLabelCategoryUpdateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainLabelCategoryUpdateHeaders()
+        return await self.hrbrain_label_category_update_with_options_async(request, headers, runtime)
+
+    def hrbrain_label_data_delete_with_options(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainLabelDataDeleteRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainLabelDataDeleteHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainLabelDataDeleteResponse:
+        """
+        @summary 标签明细删除
+        
+        @param request: HrbrainLabelDataDeleteRequest
+        @param headers: HrbrainLabelDataDeleteHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainLabelDataDeleteResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.params):
+            body['params'] = request.params
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainLabelDataDelete',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/label/dataDelete',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainLabelDataDeleteResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def hrbrain_label_data_delete_with_options_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainLabelDataDeleteRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainLabelDataDeleteHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainLabelDataDeleteResponse:
+        """
+        @summary 标签明细删除
+        
+        @param request: HrbrainLabelDataDeleteRequest
+        @param headers: HrbrainLabelDataDeleteHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainLabelDataDeleteResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.params):
+            body['params'] = request.params
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainLabelDataDelete',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/label/dataDelete',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainLabelDataDeleteResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def hrbrain_label_data_delete(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainLabelDataDeleteRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainLabelDataDeleteResponse:
+        """
+        @summary 标签明细删除
+        
+        @param request: HrbrainLabelDataDeleteRequest
+        @return: HrbrainLabelDataDeleteResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainLabelDataDeleteHeaders()
+        return self.hrbrain_label_data_delete_with_options(request, headers, runtime)
+
+    async def hrbrain_label_data_delete_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainLabelDataDeleteRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainLabelDataDeleteResponse:
+        """
+        @summary 标签明细删除
+        
+        @param request: HrbrainLabelDataDeleteRequest
+        @return: HrbrainLabelDataDeleteResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainLabelDataDeleteHeaders()
+        return await self.hrbrain_label_data_delete_with_options_async(request, headers, runtime)
+
+    def hrbrain_label_data_query_with_options(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainLabelDataQueryRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainLabelDataQueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainLabelDataQueryResponse:
+        """
+        @summary 标签明细查询
+        
+        @param request: HrbrainLabelDataQueryRequest
+        @param headers: HrbrainLabelDataQueryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainLabelDataQueryResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.label_code):
+            body['labelCode'] = request.label_code
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainLabelDataQuery',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/labels/data',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainLabelDataQueryResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def hrbrain_label_data_query_with_options_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainLabelDataQueryRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainLabelDataQueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainLabelDataQueryResponse:
+        """
+        @summary 标签明细查询
+        
+        @param request: HrbrainLabelDataQueryRequest
+        @param headers: HrbrainLabelDataQueryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainLabelDataQueryResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.label_code):
+            body['labelCode'] = request.label_code
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainLabelDataQuery',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/labels/data',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainLabelDataQueryResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def hrbrain_label_data_query(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainLabelDataQueryRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainLabelDataQueryResponse:
+        """
+        @summary 标签明细查询
+        
+        @param request: HrbrainLabelDataQueryRequest
+        @return: HrbrainLabelDataQueryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainLabelDataQueryHeaders()
+        return self.hrbrain_label_data_query_with_options(request, headers, runtime)
+
+    async def hrbrain_label_data_query_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainLabelDataQueryRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainLabelDataQueryResponse:
+        """
+        @summary 标签明细查询
+        
+        @param request: HrbrainLabelDataQueryRequest
+        @return: HrbrainLabelDataQueryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainLabelDataQueryHeaders()
+        return await self.hrbrain_label_data_query_with_options_async(request, headers, runtime)
+
+    def hrbrain_label_data_upsert_with_options(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainLabelDataUpsertRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainLabelDataUpsertHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainLabelDataUpsertResponse:
+        """
+        @summary 标签明细更新
+        
+        @param request: HrbrainLabelDataUpsertRequest
+        @param headers: HrbrainLabelDataUpsertHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainLabelDataUpsertResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.params):
+            body['params'] = request.params
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainLabelDataUpsert',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/label/dataUpsert',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainLabelDataUpsertResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def hrbrain_label_data_upsert_with_options_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainLabelDataUpsertRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainLabelDataUpsertHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainLabelDataUpsertResponse:
+        """
+        @summary 标签明细更新
+        
+        @param request: HrbrainLabelDataUpsertRequest
+        @param headers: HrbrainLabelDataUpsertHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainLabelDataUpsertResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.params):
+            body['params'] = request.params
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainLabelDataUpsert',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/label/dataUpsert',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainLabelDataUpsertResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def hrbrain_label_data_upsert(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainLabelDataUpsertRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainLabelDataUpsertResponse:
+        """
+        @summary 标签明细更新
+        
+        @param request: HrbrainLabelDataUpsertRequest
+        @return: HrbrainLabelDataUpsertResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainLabelDataUpsertHeaders()
+        return self.hrbrain_label_data_upsert_with_options(request, headers, runtime)
+
+    async def hrbrain_label_data_upsert_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainLabelDataUpsertRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainLabelDataUpsertResponse:
+        """
+        @summary 标签明细更新
+        
+        @param request: HrbrainLabelDataUpsertRequest
+        @return: HrbrainLabelDataUpsertResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainLabelDataUpsertHeaders()
+        return await self.hrbrain_label_data_upsert_with_options_async(request, headers, runtime)
+
+    def hrbrain_label_meta_with_options(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainLabelMetaRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainLabelMetaHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainLabelMetaResponse:
+        """
+        @summary 标签元数据
+        
+        @param request: HrbrainLabelMetaRequest
+        @param headers: HrbrainLabelMetaHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainLabelMetaResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.category_codes):
+            body['categoryCodes'] = request.category_codes
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainLabelMeta',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/labels/meta',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainLabelMetaResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def hrbrain_label_meta_with_options_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainLabelMetaRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainLabelMetaHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainLabelMetaResponse:
+        """
+        @summary 标签元数据
+        
+        @param request: HrbrainLabelMetaRequest
+        @param headers: HrbrainLabelMetaHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainLabelMetaResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.category_codes):
+            body['categoryCodes'] = request.category_codes
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainLabelMeta',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/labels/meta',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainLabelMetaResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def hrbrain_label_meta(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainLabelMetaRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainLabelMetaResponse:
+        """
+        @summary 标签元数据
+        
+        @param request: HrbrainLabelMetaRequest
+        @return: HrbrainLabelMetaResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainLabelMetaHeaders()
+        return self.hrbrain_label_meta_with_options(request, headers, runtime)
+
+    async def hrbrain_label_meta_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainLabelMetaRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainLabelMetaResponse:
+        """
+        @summary 标签元数据
+        
+        @param request: HrbrainLabelMetaRequest
+        @return: HrbrainLabelMetaResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainLabelMetaHeaders()
+        return await self.hrbrain_label_meta_with_options_async(request, headers, runtime)
+
+    def hrbrain_label_meta_status_with_options(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainLabelMetaStatusRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainLabelMetaStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainLabelMetaStatusResponse:
+        """
+        @summary 标签元数据状态更新
+        
+        @param request: HrbrainLabelMetaStatusRequest
+        @param headers: HrbrainLabelMetaStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainLabelMetaStatusResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.codes):
+            body['codes'] = request.codes
+        if not UtilClient.is_unset(request.opt_type):
+            body['optType'] = request.opt_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainLabelMetaStatus',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/labels/metaStatus',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainLabelMetaStatusResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def hrbrain_label_meta_status_with_options_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainLabelMetaStatusRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainLabelMetaStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainLabelMetaStatusResponse:
+        """
+        @summary 标签元数据状态更新
+        
+        @param request: HrbrainLabelMetaStatusRequest
+        @param headers: HrbrainLabelMetaStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainLabelMetaStatusResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.codes):
+            body['codes'] = request.codes
+        if not UtilClient.is_unset(request.opt_type):
+            body['optType'] = request.opt_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainLabelMetaStatus',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/labels/metaStatus',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainLabelMetaStatusResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def hrbrain_label_meta_status(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainLabelMetaStatusRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainLabelMetaStatusResponse:
+        """
+        @summary 标签元数据状态更新
+        
+        @param request: HrbrainLabelMetaStatusRequest
+        @return: HrbrainLabelMetaStatusResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainLabelMetaStatusHeaders()
+        return self.hrbrain_label_meta_status_with_options(request, headers, runtime)
+
+    async def hrbrain_label_meta_status_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainLabelMetaStatusRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainLabelMetaStatusResponse:
+        """
+        @summary 标签元数据状态更新
+        
+        @param request: HrbrainLabelMetaStatusRequest
+        @return: HrbrainLabelMetaStatusResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainLabelMetaStatusHeaders()
+        return await self.hrbrain_label_meta_status_with_options_async(request, headers, runtime)
+
+    def hrbrain_label_meta_update_with_options(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainLabelMetaUpdateRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainLabelMetaUpdateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainLabelMetaUpdateResponse:
+        """
+        @summary 标签元数据更新
+        
+        @param request: HrbrainLabelMetaUpdateRequest
+        @param headers: HrbrainLabelMetaUpdateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainLabelMetaUpdateResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.category_code):
+            body['categoryCode'] = request.category_code
+        if not UtilClient.is_unset(request.code):
+            body['code'] = request.code
+        if not UtilClient.is_unset(request.data_type):
+            body['dataType'] = request.data_type
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.important_level):
+            body['importantLevel'] = request.important_level
+        if not UtilClient.is_unset(request.is_sensitive):
+            body['isSensitive'] = request.is_sensitive
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.options):
+            body['options'] = request.options
+        if not UtilClient.is_unset(request.permission):
+            body['permission'] = request.permission
+        if not UtilClient.is_unset(request.required):
+            body['required'] = request.required
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainLabelMetaUpdate',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/labels/metaUpdate',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainLabelMetaUpdateResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def hrbrain_label_meta_update_with_options_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainLabelMetaUpdateRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainLabelMetaUpdateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainLabelMetaUpdateResponse:
+        """
+        @summary 标签元数据更新
+        
+        @param request: HrbrainLabelMetaUpdateRequest
+        @param headers: HrbrainLabelMetaUpdateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainLabelMetaUpdateResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.category_code):
+            body['categoryCode'] = request.category_code
+        if not UtilClient.is_unset(request.code):
+            body['code'] = request.code
+        if not UtilClient.is_unset(request.data_type):
+            body['dataType'] = request.data_type
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.important_level):
+            body['importantLevel'] = request.important_level
+        if not UtilClient.is_unset(request.is_sensitive):
+            body['isSensitive'] = request.is_sensitive
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.options):
+            body['options'] = request.options
+        if not UtilClient.is_unset(request.permission):
+            body['permission'] = request.permission
+        if not UtilClient.is_unset(request.required):
+            body['required'] = request.required
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainLabelMetaUpdate',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/labels/metaUpdate',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainLabelMetaUpdateResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def hrbrain_label_meta_update(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainLabelMetaUpdateRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainLabelMetaUpdateResponse:
+        """
+        @summary 标签元数据更新
+        
+        @param request: HrbrainLabelMetaUpdateRequest
+        @return: HrbrainLabelMetaUpdateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainLabelMetaUpdateHeaders()
+        return self.hrbrain_label_meta_update_with_options(request, headers, runtime)
+
+    async def hrbrain_label_meta_update_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainLabelMetaUpdateRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainLabelMetaUpdateResponse:
+        """
+        @summary 标签元数据更新
+        
+        @param request: HrbrainLabelMetaUpdateRequest
+        @return: HrbrainLabelMetaUpdateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainLabelMetaUpdateHeaders()
+        return await self.hrbrain_label_meta_update_with_options_async(request, headers, runtime)
+
+    def hrbrain_label_task_data_with_options(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainLabelTaskDataRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainLabelTaskDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainLabelTaskDataResponse:
+        """
+        @summary 打标任务生成的标签数据
+        
+        @param request: HrbrainLabelTaskDataRequest
+        @param headers: HrbrainLabelTaskDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainLabelTaskDataResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.opt_work_no):
+            query['optWorkNo'] = request.opt_work_no
+        if not UtilClient.is_unset(request.session_id):
+            query['sessionId'] = request.session_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='HrbrainLabelTaskData',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/labels/task/data',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainLabelTaskDataResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def hrbrain_label_task_data_with_options_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainLabelTaskDataRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainLabelTaskDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainLabelTaskDataResponse:
+        """
+        @summary 打标任务生成的标签数据
+        
+        @param request: HrbrainLabelTaskDataRequest
+        @param headers: HrbrainLabelTaskDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainLabelTaskDataResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.opt_work_no):
+            query['optWorkNo'] = request.opt_work_no
+        if not UtilClient.is_unset(request.session_id):
+            query['sessionId'] = request.session_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='HrbrainLabelTaskData',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/labels/task/data',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainLabelTaskDataResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def hrbrain_label_task_data(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainLabelTaskDataRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainLabelTaskDataResponse:
+        """
+        @summary 打标任务生成的标签数据
+        
+        @param request: HrbrainLabelTaskDataRequest
+        @return: HrbrainLabelTaskDataResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainLabelTaskDataHeaders()
+        return self.hrbrain_label_task_data_with_options(request, headers, runtime)
+
+    async def hrbrain_label_task_data_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainLabelTaskDataRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainLabelTaskDataResponse:
+        """
+        @summary 打标任务生成的标签数据
+        
+        @param request: HrbrainLabelTaskDataRequest
+        @return: HrbrainLabelTaskDataResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainLabelTaskDataHeaders()
+        return await self.hrbrain_label_task_data_with_options_async(request, headers, runtime)
+
+    def hrbrain_label_task_meta_with_options(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainLabelTaskMetaRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainLabelTaskMetaHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainLabelTaskMetaResponse:
+        """
+        @summary 打标任务生成的标签元数据
+        
+        @param request: HrbrainLabelTaskMetaRequest
+        @param headers: HrbrainLabelTaskMetaHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainLabelTaskMetaResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.opt_work_no):
+            query['optWorkNo'] = request.opt_work_no
+        if not UtilClient.is_unset(request.session_id):
+            query['sessionId'] = request.session_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='HrbrainLabelTaskMeta',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/labels/task/metadata',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainLabelTaskMetaResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def hrbrain_label_task_meta_with_options_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainLabelTaskMetaRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainLabelTaskMetaHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainLabelTaskMetaResponse:
+        """
+        @summary 打标任务生成的标签元数据
+        
+        @param request: HrbrainLabelTaskMetaRequest
+        @param headers: HrbrainLabelTaskMetaHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainLabelTaskMetaResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.opt_work_no):
+            query['optWorkNo'] = request.opt_work_no
+        if not UtilClient.is_unset(request.session_id):
+            query['sessionId'] = request.session_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='HrbrainLabelTaskMeta',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/labels/task/metadata',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainLabelTaskMetaResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def hrbrain_label_task_meta(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainLabelTaskMetaRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainLabelTaskMetaResponse:
+        """
+        @summary 打标任务生成的标签元数据
+        
+        @param request: HrbrainLabelTaskMetaRequest
+        @return: HrbrainLabelTaskMetaResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainLabelTaskMetaHeaders()
+        return self.hrbrain_label_task_meta_with_options(request, headers, runtime)
+
+    async def hrbrain_label_task_meta_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainLabelTaskMetaRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainLabelTaskMetaResponse:
+        """
+        @summary 打标任务生成的标签元数据
+        
+        @param request: HrbrainLabelTaskMetaRequest
+        @return: HrbrainLabelTaskMetaResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainLabelTaskMetaHeaders()
+        return await self.hrbrain_label_task_meta_with_options_async(request, headers, runtime)
+
     def hrbrain_talent_profile_attachment_query_with_options(
         self,
         request: dingtalkhrbrain__1__0_models.HrbrainTalentProfileAttachmentQueryRequest,
@@ -4891,6 +6073,246 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrbrain__1__0_models.HrbrainTalentProfileBasicQueryHeaders()
         return await self.hrbrain_talent_profile_basic_query_with_options_async(request, headers, runtime)
+
+    def hrbrain_talent_search_with_options(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainTalentSearchRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainTalentSearchHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainTalentSearchResponse:
+        """
+        @summary 提交人才搜索任务
+        
+        @param request: HrbrainTalentSearchRequest
+        @param headers: HrbrainTalentSearchHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainTalentSearchResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.query):
+            query['query'] = request.query
+        if not UtilClient.is_unset(request.session_id):
+            query['sessionId'] = request.session_id
+        if not UtilClient.is_unset(request.work_no):
+            query['workNo'] = request.work_no
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='HrbrainTalentSearch',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/talent/submitEmpSearchTask',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainTalentSearchResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def hrbrain_talent_search_with_options_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainTalentSearchRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainTalentSearchHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainTalentSearchResponse:
+        """
+        @summary 提交人才搜索任务
+        
+        @param request: HrbrainTalentSearchRequest
+        @param headers: HrbrainTalentSearchHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainTalentSearchResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.query):
+            query['query'] = request.query
+        if not UtilClient.is_unset(request.session_id):
+            query['sessionId'] = request.session_id
+        if not UtilClient.is_unset(request.work_no):
+            query['workNo'] = request.work_no
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='HrbrainTalentSearch',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/talent/submitEmpSearchTask',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainTalentSearchResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def hrbrain_talent_search(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainTalentSearchRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainTalentSearchResponse:
+        """
+        @summary 提交人才搜索任务
+        
+        @param request: HrbrainTalentSearchRequest
+        @return: HrbrainTalentSearchResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainTalentSearchHeaders()
+        return self.hrbrain_talent_search_with_options(request, headers, runtime)
+
+    async def hrbrain_talent_search_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainTalentSearchRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainTalentSearchResponse:
+        """
+        @summary 提交人才搜索任务
+        
+        @param request: HrbrainTalentSearchRequest
+        @return: HrbrainTalentSearchResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainTalentSearchHeaders()
+        return await self.hrbrain_talent_search_with_options_async(request, headers, runtime)
+
+    def hrbrain_talent_search_result_with_options(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainTalentSearchResultRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainTalentSearchResultHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainTalentSearchResultResponse:
+        """
+        @summary 获取搜索结果
+        
+        @param request: HrbrainTalentSearchResultRequest
+        @param headers: HrbrainTalentSearchResultHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainTalentSearchResultResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.session_id):
+            query['sessionId'] = request.session_id
+        if not UtilClient.is_unset(request.work_no):
+            query['workNo'] = request.work_no
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='HrbrainTalentSearchResult',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/talent/getEmpSearchTaskResult',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainTalentSearchResultResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def hrbrain_talent_search_result_with_options_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainTalentSearchResultRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainTalentSearchResultHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainTalentSearchResultResponse:
+        """
+        @summary 获取搜索结果
+        
+        @param request: HrbrainTalentSearchResultRequest
+        @param headers: HrbrainTalentSearchResultHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainTalentSearchResultResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.session_id):
+            query['sessionId'] = request.session_id
+        if not UtilClient.is_unset(request.work_no):
+            query['workNo'] = request.work_no
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='HrbrainTalentSearchResult',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/talent/getEmpSearchTaskResult',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainTalentSearchResultResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def hrbrain_talent_search_result(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainTalentSearchResultRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainTalentSearchResultResponse:
+        """
+        @summary 获取搜索结果
+        
+        @param request: HrbrainTalentSearchResultRequest
+        @return: HrbrainTalentSearchResultResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainTalentSearchResultHeaders()
+        return self.hrbrain_talent_search_result_with_options(request, headers, runtime)
+
+    async def hrbrain_talent_search_result_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainTalentSearchResultRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainTalentSearchResultResponse:
+        """
+        @summary 获取搜索结果
+        
+        @param request: HrbrainTalentSearchResultRequest
+        @return: HrbrainTalentSearchResultResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainTalentSearchResultHeaders()
+        return await self.hrbrain_talent_search_result_with_options_async(request, headers, runtime)
 
     def staff_label_records_query_with_options(
         self,

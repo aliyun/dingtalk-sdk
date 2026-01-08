@@ -6548,6 +6548,124 @@ class Client(OpenApiClient):
         headers = dingtalkexclusive__1__0_models.GetMsgLocationHeaders()
         return await self.get_msg_location_with_options_async(request, headers, runtime)
 
+    def get_msg_record_detail_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.GetMsgRecordDetailRequest,
+        headers: dingtalkexclusive__1__0_models.GetMsgRecordDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetMsgRecordDetailResponse:
+        """
+        @summary 查询群发消息id对应的消息记录详情
+        
+        @param request: GetMsgRecordDetailRequest
+        @param headers: GetMsgRecordDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetMsgRecordDetailResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.task_id):
+            body['task_id'] = request.task_id
+        if not UtilClient.is_unset(request.unionid):
+            body['unionid'] = request.unionid
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetMsgRecordDetail',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/follow/message/getMsgRecordDetail',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetMsgRecordDetailResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_msg_record_detail_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetMsgRecordDetailRequest,
+        headers: dingtalkexclusive__1__0_models.GetMsgRecordDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetMsgRecordDetailResponse:
+        """
+        @summary 查询群发消息id对应的消息记录详情
+        
+        @param request: GetMsgRecordDetailRequest
+        @param headers: GetMsgRecordDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetMsgRecordDetailResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.task_id):
+            body['task_id'] = request.task_id
+        if not UtilClient.is_unset(request.unionid):
+            body['unionid'] = request.unionid
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetMsgRecordDetail',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/follow/message/getMsgRecordDetail',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetMsgRecordDetailResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_msg_record_detail(
+        self,
+        request: dingtalkexclusive__1__0_models.GetMsgRecordDetailRequest,
+    ) -> dingtalkexclusive__1__0_models.GetMsgRecordDetailResponse:
+        """
+        @summary 查询群发消息id对应的消息记录详情
+        
+        @param request: GetMsgRecordDetailRequest
+        @return: GetMsgRecordDetailResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetMsgRecordDetailHeaders()
+        return self.get_msg_record_detail_with_options(request, headers, runtime)
+
+    async def get_msg_record_detail_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetMsgRecordDetailRequest,
+    ) -> dingtalkexclusive__1__0_models.GetMsgRecordDetailResponse:
+        """
+        @summary 查询群发消息id对应的消息记录详情
+        
+        @param request: GetMsgRecordDetailRequest
+        @return: GetMsgRecordDetailResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetMsgRecordDetailHeaders()
+        return await self.get_msg_record_detail_with_options_async(request, headers, runtime)
+
     def get_oa_operator_log_list_with_options(
         self,
         request: dingtalkexclusive__1__0_models.GetOaOperatorLogListRequest,
@@ -12043,6 +12161,144 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkexclusive__1__0_models.QueryExclusiveBenefitsHeaders()
         return await self.query_exclusive_benefits_with_options_async(headers, runtime)
+
+    def query_msg_send_records_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.QueryMsgSendRecordsRequest,
+        headers: dingtalkexclusive__1__0_models.QueryMsgSendRecordsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.QueryMsgSendRecordsResponse:
+        """
+        @summary 分页查询指定UID的服务窗推送记录
+        
+        @param request: QueryMsgSendRecordsRequest
+        @param headers: QueryMsgSendRecordsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryMsgSendRecordsResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.end_time):
+            body['end_time'] = request.end_time
+        if not UtilClient.is_unset(request.msg_type_list):
+            body['msgTypeList'] = request.msg_type_list
+        if not UtilClient.is_unset(request.page_number):
+            body['page_number'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['page_size'] = request.page_size
+        if not UtilClient.is_unset(request.start_time):
+            body['start_time'] = request.start_time
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        if not UtilClient.is_unset(request.unionid):
+            body['unionid'] = request.unionid
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryMsgSendRecords',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/follow/message/queryMsgSendRecords',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.QueryMsgSendRecordsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_msg_send_records_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.QueryMsgSendRecordsRequest,
+        headers: dingtalkexclusive__1__0_models.QueryMsgSendRecordsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.QueryMsgSendRecordsResponse:
+        """
+        @summary 分页查询指定UID的服务窗推送记录
+        
+        @param request: QueryMsgSendRecordsRequest
+        @param headers: QueryMsgSendRecordsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryMsgSendRecordsResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.end_time):
+            body['end_time'] = request.end_time
+        if not UtilClient.is_unset(request.msg_type_list):
+            body['msgTypeList'] = request.msg_type_list
+        if not UtilClient.is_unset(request.page_number):
+            body['page_number'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['page_size'] = request.page_size
+        if not UtilClient.is_unset(request.start_time):
+            body['start_time'] = request.start_time
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        if not UtilClient.is_unset(request.unionid):
+            body['unionid'] = request.unionid
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryMsgSendRecords',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/follow/message/queryMsgSendRecords',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.QueryMsgSendRecordsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_msg_send_records(
+        self,
+        request: dingtalkexclusive__1__0_models.QueryMsgSendRecordsRequest,
+    ) -> dingtalkexclusive__1__0_models.QueryMsgSendRecordsResponse:
+        """
+        @summary 分页查询指定UID的服务窗推送记录
+        
+        @param request: QueryMsgSendRecordsRequest
+        @return: QueryMsgSendRecordsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.QueryMsgSendRecordsHeaders()
+        return self.query_msg_send_records_with_options(request, headers, runtime)
+
+    async def query_msg_send_records_async(
+        self,
+        request: dingtalkexclusive__1__0_models.QueryMsgSendRecordsRequest,
+    ) -> dingtalkexclusive__1__0_models.QueryMsgSendRecordsResponse:
+        """
+        @summary 分页查询指定UID的服务窗推送记录
+        
+        @param request: QueryMsgSendRecordsRequest
+        @return: QueryMsgSendRecordsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.QueryMsgSendRecordsHeaders()
+        return await self.query_msg_send_records_with_options_async(request, headers, runtime)
 
     def query_partner_info_with_options(
         self,

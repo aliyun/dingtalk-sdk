@@ -44,7 +44,7 @@ class AddCateringCommentRequest(TeaModel):
         order_id: str = None,
         rate_content: str = None,
         rated_at: int = None,
-        rating: int = None,
+        rating: float = None,
         shop_id: str = None,
         source: str = None,
         status: int = None,

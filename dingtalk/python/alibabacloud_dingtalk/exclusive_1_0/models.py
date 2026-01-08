@@ -10060,6 +10060,575 @@ class GetMsgLocationResponse(TeaModel):
         return self
 
 
+class GetMsgRecordDetailHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetMsgRecordDetailRequest(TeaModel):
+    def __init__(
+        self,
+        task_id: str = None,
+        unionid: str = None,
+    ):
+        # This parameter is required.
+        self.task_id = task_id
+        # This parameter is required.
+        self.unionid = unionid
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.task_id is not None:
+            result['task_id'] = self.task_id
+        if self.unionid is not None:
+            result['unionid'] = self.unionid
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('task_id') is not None:
+            self.task_id = m.get('task_id')
+        if m.get('unionid') is not None:
+            self.unionid = m.get('unionid')
+        return self
+
+
+class GetMsgRecordDetailResponseBodyResultActionCardButtonList(TeaModel):
+    def __init__(
+        self,
+        action_url: str = None,
+        title: str = None,
+    ):
+        self.action_url = action_url
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action_url is not None:
+            result['action_url'] = self.action_url
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('action_url') is not None:
+            self.action_url = m.get('action_url')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class GetMsgRecordDetailResponseBodyResultActionCard(TeaModel):
+    def __init__(
+        self,
+        bnt_orientation: str = None,
+        button_list: List[GetMsgRecordDetailResponseBodyResultActionCardButtonList] = None,
+        markdown: str = None,
+        single_title: str = None,
+        single_url: str = None,
+        title: str = None,
+    ):
+        self.bnt_orientation = bnt_orientation
+        self.button_list = button_list
+        self.markdown = markdown
+        self.single_title = single_title
+        self.single_url = single_url
+        self.title = title
+
+    def validate(self):
+        if self.button_list:
+            for k in self.button_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.bnt_orientation is not None:
+            result['bnt_orientation'] = self.bnt_orientation
+        result['button_list'] = []
+        if self.button_list is not None:
+            for k in self.button_list:
+                result['button_list'].append(k.to_map() if k else None)
+        if self.markdown is not None:
+            result['markdown'] = self.markdown
+        if self.single_title is not None:
+            result['single_title'] = self.single_title
+        if self.single_url is not None:
+            result['single_url'] = self.single_url
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bnt_orientation') is not None:
+            self.bnt_orientation = m.get('bnt_orientation')
+        self.button_list = []
+        if m.get('button_list') is not None:
+            for k in m.get('button_list'):
+                temp_model = GetMsgRecordDetailResponseBodyResultActionCardButtonList()
+                self.button_list.append(temp_model.from_map(k))
+        if m.get('markdown') is not None:
+            self.markdown = m.get('markdown')
+        if m.get('single_title') is not None:
+            self.single_title = m.get('single_title')
+        if m.get('single_url') is not None:
+            self.single_url = m.get('single_url')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class GetMsgRecordDetailResponseBodyResultArticles(TeaModel):
+    def __init__(
+        self,
+        article_id: int = None,
+        content: str = None,
+        create_time: int = None,
+        digest: str = None,
+        publish_status: int = None,
+        publish_time: int = None,
+        thumb_media_id: str = None,
+        title: str = None,
+        update_time: int = None,
+        url: str = None,
+    ):
+        self.article_id = article_id
+        self.content = content
+        self.create_time = create_time
+        self.digest = digest
+        self.publish_status = publish_status
+        self.publish_time = publish_time
+        self.thumb_media_id = thumb_media_id
+        self.title = title
+        self.update_time = update_time
+        self.url = url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.article_id is not None:
+            result['article_id'] = self.article_id
+        if self.content is not None:
+            result['content'] = self.content
+        if self.create_time is not None:
+            result['create_time'] = self.create_time
+        if self.digest is not None:
+            result['digest'] = self.digest
+        if self.publish_status is not None:
+            result['publish_status'] = self.publish_status
+        if self.publish_time is not None:
+            result['publish_time'] = self.publish_time
+        if self.thumb_media_id is not None:
+            result['thumb_media_id'] = self.thumb_media_id
+        if self.title is not None:
+            result['title'] = self.title
+        if self.update_time is not None:
+            result['update_time'] = self.update_time
+        if self.url is not None:
+            result['url'] = self.url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('article_id') is not None:
+            self.article_id = m.get('article_id')
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('create_time') is not None:
+            self.create_time = m.get('create_time')
+        if m.get('digest') is not None:
+            self.digest = m.get('digest')
+        if m.get('publish_status') is not None:
+            self.publish_status = m.get('publish_status')
+        if m.get('publish_time') is not None:
+            self.publish_time = m.get('publish_time')
+        if m.get('thumb_media_id') is not None:
+            self.thumb_media_id = m.get('thumb_media_id')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('update_time') is not None:
+            self.update_time = m.get('update_time')
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        return self
+
+
+class GetMsgRecordDetailResponseBodyResultLink(TeaModel):
+    def __init__(
+        self,
+        cover_image_media_id: str = None,
+        link_url: str = None,
+        open_type: int = None,
+        summary: str = None,
+        title: str = None,
+    ):
+        self.cover_image_media_id = cover_image_media_id
+        self.link_url = link_url
+        self.open_type = open_type
+        self.summary = summary
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.cover_image_media_id is not None:
+            result['cover_image_media_id'] = self.cover_image_media_id
+        if self.link_url is not None:
+            result['link_url'] = self.link_url
+        if self.open_type is not None:
+            result['open_type'] = self.open_type
+        if self.summary is not None:
+            result['summary'] = self.summary
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cover_image_media_id') is not None:
+            self.cover_image_media_id = m.get('cover_image_media_id')
+        if m.get('link_url') is not None:
+            self.link_url = m.get('link_url')
+        if m.get('open_type') is not None:
+            self.open_type = m.get('open_type')
+        if m.get('summary') is not None:
+            self.summary = m.get('summary')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class GetMsgRecordDetailResponseBodyResultMarkdown(TeaModel):
+    def __init__(
+        self,
+        text: str = None,
+        title: str = None,
+    ):
+        self.text = text
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.text is not None:
+            result['text'] = self.text
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('text') is not None:
+            self.text = m.get('text')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class GetMsgRecordDetailResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        action_card: GetMsgRecordDetailResponseBodyResultActionCard = None,
+        allow_comment: bool = None,
+        allow_forward: bool = None,
+        articles: List[GetMsgRecordDetailResponseBodyResultArticles] = None,
+        create_time: int = None,
+        dep_id_list: List[str] = None,
+        is_to_all: bool = None,
+        link: GetMsgRecordDetailResponseBodyResultLink = None,
+        markdown: GetMsgRecordDetailResponseBodyResultMarkdown = None,
+        media_id: str = None,
+        msg_type: str = None,
+        operator_user_id: str = None,
+        role_id_list: List[str] = None,
+        send_time: int = None,
+        task_id: str = None,
+        text_content: str = None,
+        title: str = None,
+        userid_list: List[str] = None,
+        view_scope_type: str = None,
+    ):
+        self.action_card = action_card
+        self.allow_comment = allow_comment
+        self.allow_forward = allow_forward
+        self.articles = articles
+        self.create_time = create_time
+        self.dep_id_list = dep_id_list
+        # This parameter is required.
+        self.is_to_all = is_to_all
+        self.link = link
+        self.markdown = markdown
+        self.media_id = media_id
+        # This parameter is required.
+        self.msg_type = msg_type
+        self.operator_user_id = operator_user_id
+        self.role_id_list = role_id_list
+        # This parameter is required.
+        self.send_time = send_time
+        # This parameter is required.
+        self.task_id = task_id
+        self.text_content = text_content
+        self.title = title
+        self.userid_list = userid_list
+        self.view_scope_type = view_scope_type
+
+    def validate(self):
+        if self.action_card:
+            self.action_card.validate()
+        if self.articles:
+            for k in self.articles:
+                if k:
+                    k.validate()
+        if self.link:
+            self.link.validate()
+        if self.markdown:
+            self.markdown.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action_card is not None:
+            result['action_card'] = self.action_card.to_map()
+        if self.allow_comment is not None:
+            result['allow_comment'] = self.allow_comment
+        if self.allow_forward is not None:
+            result['allow_forward'] = self.allow_forward
+        result['articles'] = []
+        if self.articles is not None:
+            for k in self.articles:
+                result['articles'].append(k.to_map() if k else None)
+        if self.create_time is not None:
+            result['create_time'] = self.create_time
+        if self.dep_id_list is not None:
+            result['dep_id_list'] = self.dep_id_list
+        if self.is_to_all is not None:
+            result['is_to_all'] = self.is_to_all
+        if self.link is not None:
+            result['link'] = self.link.to_map()
+        if self.markdown is not None:
+            result['markdown'] = self.markdown.to_map()
+        if self.media_id is not None:
+            result['mediaId'] = self.media_id
+        if self.msg_type is not None:
+            result['msg_type'] = self.msg_type
+        if self.operator_user_id is not None:
+            result['operator_user_id'] = self.operator_user_id
+        if self.role_id_list is not None:
+            result['roleIdList'] = self.role_id_list
+        if self.send_time is not None:
+            result['send_time'] = self.send_time
+        if self.task_id is not None:
+            result['task_id'] = self.task_id
+        if self.text_content is not None:
+            result['textContent'] = self.text_content
+        if self.title is not None:
+            result['title'] = self.title
+        if self.userid_list is not None:
+            result['userid_list'] = self.userid_list
+        if self.view_scope_type is not None:
+            result['view_scope_type'] = self.view_scope_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('action_card') is not None:
+            temp_model = GetMsgRecordDetailResponseBodyResultActionCard()
+            self.action_card = temp_model.from_map(m['action_card'])
+        if m.get('allow_comment') is not None:
+            self.allow_comment = m.get('allow_comment')
+        if m.get('allow_forward') is not None:
+            self.allow_forward = m.get('allow_forward')
+        self.articles = []
+        if m.get('articles') is not None:
+            for k in m.get('articles'):
+                temp_model = GetMsgRecordDetailResponseBodyResultArticles()
+                self.articles.append(temp_model.from_map(k))
+        if m.get('create_time') is not None:
+            self.create_time = m.get('create_time')
+        if m.get('dep_id_list') is not None:
+            self.dep_id_list = m.get('dep_id_list')
+        if m.get('is_to_all') is not None:
+            self.is_to_all = m.get('is_to_all')
+        if m.get('link') is not None:
+            temp_model = GetMsgRecordDetailResponseBodyResultLink()
+            self.link = temp_model.from_map(m['link'])
+        if m.get('markdown') is not None:
+            temp_model = GetMsgRecordDetailResponseBodyResultMarkdown()
+            self.markdown = temp_model.from_map(m['markdown'])
+        if m.get('mediaId') is not None:
+            self.media_id = m.get('mediaId')
+        if m.get('msg_type') is not None:
+            self.msg_type = m.get('msg_type')
+        if m.get('operator_user_id') is not None:
+            self.operator_user_id = m.get('operator_user_id')
+        if m.get('roleIdList') is not None:
+            self.role_id_list = m.get('roleIdList')
+        if m.get('send_time') is not None:
+            self.send_time = m.get('send_time')
+        if m.get('task_id') is not None:
+            self.task_id = m.get('task_id')
+        if m.get('textContent') is not None:
+            self.text_content = m.get('textContent')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('userid_list') is not None:
+            self.userid_list = m.get('userid_list')
+        if m.get('view_scope_type') is not None:
+            self.view_scope_type = m.get('view_scope_type')
+        return self
+
+
+class GetMsgRecordDetailResponseBody(TeaModel):
+    def __init__(
+        self,
+        errmsg: str = None,
+        errorcode: str = None,
+        result: GetMsgRecordDetailResponseBodyResult = None,
+    ):
+        self.errmsg = errmsg
+        self.errorcode = errorcode
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.errmsg is not None:
+            result['errmsg'] = self.errmsg
+        if self.errorcode is not None:
+            result['errorcode'] = self.errorcode
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('errmsg') is not None:
+            self.errmsg = m.get('errmsg')
+        if m.get('errorcode') is not None:
+            self.errorcode = m.get('errorcode')
+        if m.get('result') is not None:
+            temp_model = GetMsgRecordDetailResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class GetMsgRecordDetailResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetMsgRecordDetailResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetMsgRecordDetailResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetOaOperatorLogListHeaders(TeaModel):
     def __init__(
         self,
@@ -19917,6 +20486,295 @@ class QueryExclusiveBenefitsResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryExclusiveBenefitsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryMsgSendRecordsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryMsgSendRecordsRequest(TeaModel):
+    def __init__(
+        self,
+        end_time: int = None,
+        msg_type_list: List[str] = None,
+        page_number: int = None,
+        page_size: int = None,
+        start_time: int = None,
+        status: int = None,
+        unionid: str = None,
+    ):
+        self.end_time = end_time
+        self.msg_type_list = msg_type_list
+        # This parameter is required.
+        self.page_number = page_number
+        # This parameter is required.
+        self.page_size = page_size
+        self.start_time = start_time
+        self.status = status
+        # This parameter is required.
+        self.unionid = unionid
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end_time is not None:
+            result['end_time'] = self.end_time
+        if self.msg_type_list is not None:
+            result['msgTypeList'] = self.msg_type_list
+        if self.page_number is not None:
+            result['page_number'] = self.page_number
+        if self.page_size is not None:
+            result['page_size'] = self.page_size
+        if self.start_time is not None:
+            result['start_time'] = self.start_time
+        if self.status is not None:
+            result['status'] = self.status
+        if self.unionid is not None:
+            result['unionid'] = self.unionid
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('end_time') is not None:
+            self.end_time = m.get('end_time')
+        if m.get('msgTypeList') is not None:
+            self.msg_type_list = m.get('msgTypeList')
+        if m.get('page_number') is not None:
+            self.page_number = m.get('page_number')
+        if m.get('page_size') is not None:
+            self.page_size = m.get('page_size')
+        if m.get('start_time') is not None:
+            self.start_time = m.get('start_time')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('unionid') is not None:
+            self.unionid = m.get('unionid')
+        return self
+
+
+class QueryMsgSendRecordsResponseBodyResultItems(TeaModel):
+    def __init__(
+        self,
+        create_time: int = None,
+        msg_type: str = None,
+        operator_user_id: str = None,
+        send_time: int = None,
+        task_id: str = None,
+        title: str = None,
+    ):
+        # This parameter is required.
+        self.create_time = create_time
+        # This parameter is required.
+        self.msg_type = msg_type
+        self.operator_user_id = operator_user_id
+        # This parameter is required.
+        self.send_time = send_time
+        # This parameter is required.
+        self.task_id = task_id
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.create_time is not None:
+            result['create_time'] = self.create_time
+        if self.msg_type is not None:
+            result['msg_type'] = self.msg_type
+        if self.operator_user_id is not None:
+            result['operator_user_id'] = self.operator_user_id
+        if self.send_time is not None:
+            result['send_time'] = self.send_time
+        if self.task_id is not None:
+            result['task_id'] = self.task_id
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('create_time') is not None:
+            self.create_time = m.get('create_time')
+        if m.get('msg_type') is not None:
+            self.msg_type = m.get('msg_type')
+        if m.get('operator_user_id') is not None:
+            self.operator_user_id = m.get('operator_user_id')
+        if m.get('send_time') is not None:
+            self.send_time = m.get('send_time')
+        if m.get('task_id') is not None:
+            self.task_id = m.get('task_id')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class QueryMsgSendRecordsResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        item_count: int = None,
+        items: List[QueryMsgSendRecordsResponseBodyResultItems] = None,
+        total_count: int = None,
+    ):
+        self.item_count = item_count
+        self.items = items
+        self.total_count = total_count
+
+    def validate(self):
+        if self.items:
+            for k in self.items:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.item_count is not None:
+            result['item_count'] = self.item_count
+        result['items'] = []
+        if self.items is not None:
+            for k in self.items:
+                result['items'].append(k.to_map() if k else None)
+        if self.total_count is not None:
+            result['total_count'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('item_count') is not None:
+            self.item_count = m.get('item_count')
+        self.items = []
+        if m.get('items') is not None:
+            for k in m.get('items'):
+                temp_model = QueryMsgSendRecordsResponseBodyResultItems()
+                self.items.append(temp_model.from_map(k))
+        if m.get('total_count') is not None:
+            self.total_count = m.get('total_count')
+        return self
+
+
+class QueryMsgSendRecordsResponseBody(TeaModel):
+    def __init__(
+        self,
+        errmsg: str = None,
+        errorcode: str = None,
+        result: QueryMsgSendRecordsResponseBodyResult = None,
+    ):
+        self.errmsg = errmsg
+        self.errorcode = errorcode
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.errmsg is not None:
+            result['errmsg'] = self.errmsg
+        if self.errorcode is not None:
+            result['errorcode'] = self.errorcode
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('errmsg') is not None:
+            self.errmsg = m.get('errmsg')
+        if m.get('errorcode') is not None:
+            self.errorcode = m.get('errorcode')
+        if m.get('result') is not None:
+            temp_model = QueryMsgSendRecordsResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class QueryMsgSendRecordsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryMsgSendRecordsResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryMsgSendRecordsResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

@@ -1501,21 +1501,59 @@ class OrgGroupQueryRequest(TeaModel):
         return self
 
 
+class OrgGroupQueryResponseBodyReadUsers(TeaModel):
+    def __init__(
+        self,
+        union_id: str = None,
+        user_id: str = None,
+    ):
+        self.union_id = union_id
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
 class OrgGroupQueryResponseBody(TeaModel):
     def __init__(
         self,
         has_more: bool = None,
         next_token: str = None,
         read_user_ids: List[str] = None,
+        read_users: List[OrgGroupQueryResponseBodyReadUsers] = None,
         send_status: str = None,
     ):
         self.has_more = has_more
         self.next_token = next_token
         self.read_user_ids = read_user_ids
+        self.read_users = read_users
         self.send_status = send_status
 
     def validate(self):
-        pass
+        if self.read_users:
+            for k in self.read_users:
+                if k:
+                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -1529,6 +1567,10 @@ class OrgGroupQueryResponseBody(TeaModel):
             result['nextToken'] = self.next_token
         if self.read_user_ids is not None:
             result['readUserIds'] = self.read_user_ids
+        result['readUsers'] = []
+        if self.read_users is not None:
+            for k in self.read_users:
+                result['readUsers'].append(k.to_map() if k else None)
         if self.send_status is not None:
             result['sendStatus'] = self.send_status
         return result
@@ -1541,6 +1583,11 @@ class OrgGroupQueryResponseBody(TeaModel):
             self.next_token = m.get('nextToken')
         if m.get('readUserIds') is not None:
             self.read_user_ids = m.get('readUserIds')
+        self.read_users = []
+        if m.get('readUsers') is not None:
+            for k in m.get('readUsers'):
+                temp_model = OrgGroupQueryResponseBodyReadUsers()
+                self.read_users.append(temp_model.from_map(k))
         if m.get('sendStatus') is not None:
             self.send_status = m.get('sendStatus')
         return self
