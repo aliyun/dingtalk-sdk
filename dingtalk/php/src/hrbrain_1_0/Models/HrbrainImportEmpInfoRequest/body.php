@@ -83,11 +83,21 @@ class body extends Model
     public $isDimission;
 
     /**
+     * @var string
+     */
+    public $jobCategory;
+
+    /**
      * @description This parameter is required.
      *
      * @var string
      */
     public $jobCodeName;
+
+    /**
+     * @var string
+     */
+    public $jobFamily;
 
     /**
      * @var string
@@ -193,7 +203,9 @@ class body extends Model
         'highestDegree' => 'highestDegree',
         'highestEduName' => 'highestEduName',
         'isDimission' => 'isDimission',
+        'jobCategory' => 'jobCategory',
         'jobCodeName' => 'jobCodeName',
+        'jobFamily' => 'jobFamily',
         'jobLevel' => 'jobLevel',
         'lastSchoolName' => 'lastSchoolName',
         'marriage' => 'marriage',
@@ -253,8 +265,14 @@ class body extends Model
         if (null !== $this->isDimission) {
             $res['isDimission'] = $this->isDimission;
         }
+        if (null !== $this->jobCategory) {
+            $res['jobCategory'] = $this->jobCategory;
+        }
         if (null !== $this->jobCodeName) {
             $res['jobCodeName'] = $this->jobCodeName;
+        }
+        if (null !== $this->jobFamily) {
+            $res['jobFamily'] = $this->jobFamily;
         }
         if (null !== $this->jobLevel) {
             $res['jobLevel'] = $this->jobLevel;
@@ -352,8 +370,14 @@ class body extends Model
         if (isset($map['isDimission'])) {
             $model->isDimission = $map['isDimission'];
         }
+        if (isset($map['jobCategory'])) {
+            $model->jobCategory = $map['jobCategory'];
+        }
         if (isset($map['jobCodeName'])) {
             $model->jobCodeName = $map['jobCodeName'];
+        }
+        if (isset($map['jobFamily'])) {
+            $model->jobFamily = $map['jobFamily'];
         }
         if (isset($map['jobLevel'])) {
             $model->jobLevel = $map['jobLevel'];

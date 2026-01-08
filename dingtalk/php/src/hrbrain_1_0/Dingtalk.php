@@ -125,12 +125,47 @@ use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainImportTransferEvalRespo
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainImportWorkExpHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainImportWorkExpRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainImportWorkExpResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainLabelCategoryTreeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainLabelCategoryTreeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainLabelCategoryUpdateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainLabelCategoryUpdateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainLabelCategoryUpdateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainLabelDataDeleteHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainLabelDataDeleteRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainLabelDataDeleteResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainLabelDataQueryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainLabelDataQueryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainLabelDataQueryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainLabelDataUpsertHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainLabelDataUpsertRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainLabelDataUpsertResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainLabelMetaHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainLabelMetaRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainLabelMetaResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainLabelMetaStatusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainLabelMetaStatusRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainLabelMetaStatusResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainLabelMetaUpdateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainLabelMetaUpdateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainLabelMetaUpdateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainLabelTaskDataHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainLabelTaskDataRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainLabelTaskDataResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainLabelTaskMetaHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainLabelTaskMetaRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainLabelTaskMetaResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainTalentProfileAttachmentQueryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainTalentProfileAttachmentQueryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainTalentProfileAttachmentQueryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainTalentProfileBasicQueryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainTalentProfileBasicQueryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainTalentProfileBasicQueryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainTalentSearchHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainTalentSearchRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainTalentSearchResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainTalentSearchResultHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainTalentSearchResultRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainTalentSearchResultResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\StaffLabelRecordsQueryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\StaffLabelRecordsQueryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\StaffLabelRecordsQueryResponse;
@@ -2484,6 +2519,615 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 标签分类树查询
+     *  *
+     * @param HrbrainLabelCategoryTreeHeaders $headers HrbrainLabelCategoryTreeHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
+     *
+     * @return HrbrainLabelCategoryTreeResponse HrbrainLabelCategoryTreeResponse
+     */
+    public function hrbrainLabelCategoryTreeWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action' => 'HrbrainLabelCategoryTree',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/labels/category/list',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return HrbrainLabelCategoryTreeResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 标签分类树查询
+     *  *
+     * @return HrbrainLabelCategoryTreeResponse HrbrainLabelCategoryTreeResponse
+     */
+    public function hrbrainLabelCategoryTree()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new HrbrainLabelCategoryTreeHeaders([]);
+
+        return $this->hrbrainLabelCategoryTreeWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @summary 标签分类树更新
+     *  *
+     * @param HrbrainLabelCategoryUpdateRequest $request HrbrainLabelCategoryUpdateRequest
+     * @param HrbrainLabelCategoryUpdateHeaders $headers HrbrainLabelCategoryUpdateHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
+     *
+     * @return HrbrainLabelCategoryUpdateResponse HrbrainLabelCategoryUpdateResponse
+     */
+    public function hrbrainLabelCategoryUpdateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->categoryVo)) {
+            $body['categoryVo'] = $request->categoryVo;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'HrbrainLabelCategoryUpdate',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/labels/category/update',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return HrbrainLabelCategoryUpdateResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 标签分类树更新
+     *  *
+     * @param HrbrainLabelCategoryUpdateRequest $request HrbrainLabelCategoryUpdateRequest
+     *
+     * @return HrbrainLabelCategoryUpdateResponse HrbrainLabelCategoryUpdateResponse
+     */
+    public function hrbrainLabelCategoryUpdate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new HrbrainLabelCategoryUpdateHeaders([]);
+
+        return $this->hrbrainLabelCategoryUpdateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 标签明细删除
+     *  *
+     * @param HrbrainLabelDataDeleteRequest $request HrbrainLabelDataDeleteRequest
+     * @param HrbrainLabelDataDeleteHeaders $headers HrbrainLabelDataDeleteHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return HrbrainLabelDataDeleteResponse HrbrainLabelDataDeleteResponse
+     */
+    public function hrbrainLabelDataDeleteWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->params)) {
+            $body['params'] = $request->params;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'HrbrainLabelDataDelete',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/label/dataDelete',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return HrbrainLabelDataDeleteResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 标签明细删除
+     *  *
+     * @param HrbrainLabelDataDeleteRequest $request HrbrainLabelDataDeleteRequest
+     *
+     * @return HrbrainLabelDataDeleteResponse HrbrainLabelDataDeleteResponse
+     */
+    public function hrbrainLabelDataDelete($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new HrbrainLabelDataDeleteHeaders([]);
+
+        return $this->hrbrainLabelDataDeleteWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 标签明细查询
+     *  *
+     * @param HrbrainLabelDataQueryRequest $request HrbrainLabelDataQueryRequest
+     * @param HrbrainLabelDataQueryHeaders $headers HrbrainLabelDataQueryHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return HrbrainLabelDataQueryResponse HrbrainLabelDataQueryResponse
+     */
+    public function hrbrainLabelDataQueryWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->labelCode)) {
+            $body['labelCode'] = $request->labelCode;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            $body['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $body['nextToken'] = $request->nextToken;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'HrbrainLabelDataQuery',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/labels/data',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return HrbrainLabelDataQueryResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 标签明细查询
+     *  *
+     * @param HrbrainLabelDataQueryRequest $request HrbrainLabelDataQueryRequest
+     *
+     * @return HrbrainLabelDataQueryResponse HrbrainLabelDataQueryResponse
+     */
+    public function hrbrainLabelDataQuery($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new HrbrainLabelDataQueryHeaders([]);
+
+        return $this->hrbrainLabelDataQueryWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 标签明细更新
+     *  *
+     * @param HrbrainLabelDataUpsertRequest $request HrbrainLabelDataUpsertRequest
+     * @param HrbrainLabelDataUpsertHeaders $headers HrbrainLabelDataUpsertHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return HrbrainLabelDataUpsertResponse HrbrainLabelDataUpsertResponse
+     */
+    public function hrbrainLabelDataUpsertWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->params)) {
+            $body['params'] = $request->params;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'HrbrainLabelDataUpsert',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/label/dataUpsert',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return HrbrainLabelDataUpsertResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 标签明细更新
+     *  *
+     * @param HrbrainLabelDataUpsertRequest $request HrbrainLabelDataUpsertRequest
+     *
+     * @return HrbrainLabelDataUpsertResponse HrbrainLabelDataUpsertResponse
+     */
+    public function hrbrainLabelDataUpsert($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new HrbrainLabelDataUpsertHeaders([]);
+
+        return $this->hrbrainLabelDataUpsertWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 标签元数据
+     *  *
+     * @param HrbrainLabelMetaRequest $request HrbrainLabelMetaRequest
+     * @param HrbrainLabelMetaHeaders $headers HrbrainLabelMetaHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return HrbrainLabelMetaResponse HrbrainLabelMetaResponse
+     */
+    public function hrbrainLabelMetaWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->categoryCodes)) {
+            $body['categoryCodes'] = $request->categoryCodes;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            $body['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $body['nextToken'] = $request->nextToken;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'HrbrainLabelMeta',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/labels/meta',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return HrbrainLabelMetaResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 标签元数据
+     *  *
+     * @param HrbrainLabelMetaRequest $request HrbrainLabelMetaRequest
+     *
+     * @return HrbrainLabelMetaResponse HrbrainLabelMetaResponse
+     */
+    public function hrbrainLabelMeta($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new HrbrainLabelMetaHeaders([]);
+
+        return $this->hrbrainLabelMetaWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 标签元数据状态更新
+     *  *
+     * @param HrbrainLabelMetaStatusRequest $request HrbrainLabelMetaStatusRequest
+     * @param HrbrainLabelMetaStatusHeaders $headers HrbrainLabelMetaStatusHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return HrbrainLabelMetaStatusResponse HrbrainLabelMetaStatusResponse
+     */
+    public function hrbrainLabelMetaStatusWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->codes)) {
+            $body['codes'] = $request->codes;
+        }
+        if (!Utils::isUnset($request->optType)) {
+            $body['optType'] = $request->optType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'HrbrainLabelMetaStatus',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/labels/metaStatus',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return HrbrainLabelMetaStatusResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 标签元数据状态更新
+     *  *
+     * @param HrbrainLabelMetaStatusRequest $request HrbrainLabelMetaStatusRequest
+     *
+     * @return HrbrainLabelMetaStatusResponse HrbrainLabelMetaStatusResponse
+     */
+    public function hrbrainLabelMetaStatus($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new HrbrainLabelMetaStatusHeaders([]);
+
+        return $this->hrbrainLabelMetaStatusWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 标签元数据更新
+     *  *
+     * @param HrbrainLabelMetaUpdateRequest $request HrbrainLabelMetaUpdateRequest
+     * @param HrbrainLabelMetaUpdateHeaders $headers HrbrainLabelMetaUpdateHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return HrbrainLabelMetaUpdateResponse HrbrainLabelMetaUpdateResponse
+     */
+    public function hrbrainLabelMetaUpdateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->categoryCode)) {
+            $body['categoryCode'] = $request->categoryCode;
+        }
+        if (!Utils::isUnset($request->code)) {
+            $body['code'] = $request->code;
+        }
+        if (!Utils::isUnset($request->dataType)) {
+            $body['dataType'] = $request->dataType;
+        }
+        if (!Utils::isUnset($request->description)) {
+            $body['description'] = $request->description;
+        }
+        if (!Utils::isUnset($request->importantLevel)) {
+            $body['importantLevel'] = $request->importantLevel;
+        }
+        if (!Utils::isUnset($request->isSensitive)) {
+            $body['isSensitive'] = $request->isSensitive;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->options)) {
+            $body['options'] = $request->options;
+        }
+        if (!Utils::isUnset($request->permission)) {
+            $body['permission'] = $request->permission;
+        }
+        if (!Utils::isUnset($request->required)) {
+            $body['required'] = $request->required;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'HrbrainLabelMetaUpdate',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/labels/metaUpdate',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return HrbrainLabelMetaUpdateResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 标签元数据更新
+     *  *
+     * @param HrbrainLabelMetaUpdateRequest $request HrbrainLabelMetaUpdateRequest
+     *
+     * @return HrbrainLabelMetaUpdateResponse HrbrainLabelMetaUpdateResponse
+     */
+    public function hrbrainLabelMetaUpdate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new HrbrainLabelMetaUpdateHeaders([]);
+
+        return $this->hrbrainLabelMetaUpdateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 打标任务生成的标签数据
+     *  *
+     * @param HrbrainLabelTaskDataRequest $request HrbrainLabelTaskDataRequest
+     * @param HrbrainLabelTaskDataHeaders $headers HrbrainLabelTaskDataHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
+     *
+     * @return HrbrainLabelTaskDataResponse HrbrainLabelTaskDataResponse
+     */
+    public function hrbrainLabelTaskDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->optWorkNo)) {
+            $query['optWorkNo'] = $request->optWorkNo;
+        }
+        if (!Utils::isUnset($request->sessionId)) {
+            $query['sessionId'] = $request->sessionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'HrbrainLabelTaskData',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/labels/task/data',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return HrbrainLabelTaskDataResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 打标任务生成的标签数据
+     *  *
+     * @param HrbrainLabelTaskDataRequest $request HrbrainLabelTaskDataRequest
+     *
+     * @return HrbrainLabelTaskDataResponse HrbrainLabelTaskDataResponse
+     */
+    public function hrbrainLabelTaskData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new HrbrainLabelTaskDataHeaders([]);
+
+        return $this->hrbrainLabelTaskDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 打标任务生成的标签元数据
+     *  *
+     * @param HrbrainLabelTaskMetaRequest $request HrbrainLabelTaskMetaRequest
+     * @param HrbrainLabelTaskMetaHeaders $headers HrbrainLabelTaskMetaHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
+     *
+     * @return HrbrainLabelTaskMetaResponse HrbrainLabelTaskMetaResponse
+     */
+    public function hrbrainLabelTaskMetaWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->optWorkNo)) {
+            $query['optWorkNo'] = $request->optWorkNo;
+        }
+        if (!Utils::isUnset($request->sessionId)) {
+            $query['sessionId'] = $request->sessionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'HrbrainLabelTaskMeta',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/labels/task/metadata',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return HrbrainLabelTaskMetaResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 打标任务生成的标签元数据
+     *  *
+     * @param HrbrainLabelTaskMetaRequest $request HrbrainLabelTaskMetaRequest
+     *
+     * @return HrbrainLabelTaskMetaResponse HrbrainLabelTaskMetaResponse
+     */
+    public function hrbrainLabelTaskMeta($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new HrbrainLabelTaskMetaHeaders([]);
+
+        return $this->hrbrainLabelTaskMetaWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 查询人才档案附件照片
      *  *
      * @param HrbrainTalentProfileAttachmentQueryRequest $request HrbrainTalentProfileAttachmentQueryRequest
@@ -2597,6 +3241,129 @@ class Dingtalk extends OpenApiClient
         $headers = new HrbrainTalentProfileBasicQueryHeaders([]);
 
         return $this->hrbrainTalentProfileBasicQueryWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 提交人才搜索任务
+     *  *
+     * @param HrbrainTalentSearchRequest $request HrbrainTalentSearchRequest
+     * @param HrbrainTalentSearchHeaders $headers HrbrainTalentSearchHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return HrbrainTalentSearchResponse HrbrainTalentSearchResponse
+     */
+    public function hrbrainTalentSearchWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->query)) {
+            $query['query'] = $request->query;
+        }
+        if (!Utils::isUnset($request->sessionId)) {
+            $query['sessionId'] = $request->sessionId;
+        }
+        if (!Utils::isUnset($request->workNo)) {
+            $query['workNo'] = $request->workNo;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'HrbrainTalentSearch',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/talent/submitEmpSearchTask',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return HrbrainTalentSearchResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 提交人才搜索任务
+     *  *
+     * @param HrbrainTalentSearchRequest $request HrbrainTalentSearchRequest
+     *
+     * @return HrbrainTalentSearchResponse HrbrainTalentSearchResponse
+     */
+    public function hrbrainTalentSearch($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new HrbrainTalentSearchHeaders([]);
+
+        return $this->hrbrainTalentSearchWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取搜索结果
+     *  *
+     * @param HrbrainTalentSearchResultRequest $request HrbrainTalentSearchResultRequest
+     * @param HrbrainTalentSearchResultHeaders $headers HrbrainTalentSearchResultHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return HrbrainTalentSearchResultResponse HrbrainTalentSearchResultResponse
+     */
+    public function hrbrainTalentSearchResultWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->sessionId)) {
+            $query['sessionId'] = $request->sessionId;
+        }
+        if (!Utils::isUnset($request->workNo)) {
+            $query['workNo'] = $request->workNo;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'HrbrainTalentSearchResult',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/talent/getEmpSearchTaskResult',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return HrbrainTalentSearchResultResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取搜索结果
+     *  *
+     * @param HrbrainTalentSearchResultRequest $request HrbrainTalentSearchResultRequest
+     *
+     * @return HrbrainTalentSearchResultResponse HrbrainTalentSearchResultResponse
+     */
+    public function hrbrainTalentSearchResult($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new HrbrainTalentSearchResultHeaders([]);
+
+        return $this->hrbrainTalentSearchResultWithOptions($request, $headers, $runtime);
     }
 
     /**

@@ -5,9 +5,18 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vnotable_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\AddRoleMemberHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\AddRoleMemberRequest;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\AddRoleMemberResponse;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\ChangeSwitchHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\ChangeSwitchRequest;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\ChangeSwitchResponse;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\CreateFieldHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\CreateFieldRequest;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\CreateFieldResponse;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\CreateRoleHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\CreateRoleRequest;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\CreateRoleResponse;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\CreateSheetHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\CreateSheetRequest;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\CreateSheetResponse;
@@ -17,6 +26,9 @@ use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\DeleteFieldResponse;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\DeleteRecordsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\DeleteRecordsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\DeleteRecordsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\DeleteRoleHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\DeleteRoleRequest;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\DeleteRoleResponse;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\DeleteSheetHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\DeleteSheetRequest;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\DeleteSheetResponse;
@@ -35,6 +47,12 @@ use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\GetRecordsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\GetSheetHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\GetSheetRequest;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\GetSheetResponse;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\GetSwitchHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\GetSwitchRequest;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\GetSwitchResponse;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\GetUserDocRolesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\GetUserDocRolesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\GetUserDocRolesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\InsertRecordsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\InsertRecordsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\InsertRecordsResponse;
@@ -44,12 +62,21 @@ use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\ListRecordsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\PrepareSetRichTextHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\PrepareSetRichTextRequest;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\PrepareSetRichTextResponse;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\QueryDocAllRolesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\QueryDocAllRolesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\QueryDocAllRolesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\RebuildRoleMembersHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\RebuildRoleMembersRequest;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\RebuildRoleMembersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\UpdateFieldHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\UpdateFieldRequest;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\UpdateFieldResponse;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\UpdateRecordsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\UpdateRecordsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\UpdateRecordsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\UpdateRoleHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\UpdateRoleRequest;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\UpdateRoleResponse;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\UpdateSheetHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\UpdateSheetRequest;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\UpdateSheetResponse;
@@ -71,6 +98,134 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @summary 添加角色成员
+     *  *
+     * @param string               $baseId
+     * @param AddRoleMemberRequest $request AddRoleMemberRequest
+     * @param AddRoleMemberHeaders $headers AddRoleMemberHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AddRoleMemberResponse AddRoleMemberResponse
+     */
+    public function addRoleMemberWithOptions($baseId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->roleMemberList)) {
+            $body['roleMemberList'] = $request->roleMemberList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'AddRoleMember',
+            'version' => 'notable_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/notable/auth/role/member/' . $baseId . '',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return AddRoleMemberResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 添加角色成员
+     *  *
+     * @param string               $baseId
+     * @param AddRoleMemberRequest $request AddRoleMemberRequest
+     *
+     * @return AddRoleMemberResponse AddRoleMemberResponse
+     */
+    public function addRoleMember($baseId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddRoleMemberHeaders([]);
+
+        return $this->addRoleMemberWithOptions($baseId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 修改高级权限设置开关
+     *  *
+     * @param string              $baseId
+     * @param ChangeSwitchRequest $request ChangeSwitchRequest
+     * @param ChangeSwitchHeaders $headers ChangeSwitchHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ChangeSwitchResponse ChangeSwitchResponse
+     */
+    public function changeSwitchWithOptions($baseId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->value)) {
+            $body['value'] = $request->value;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'ChangeSwitch',
+            'version' => 'notable_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/notable/auth/' . $baseId . '',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return ChangeSwitchResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 修改高级权限设置开关
+     *  *
+     * @param string              $baseId
+     * @param ChangeSwitchRequest $request ChangeSwitchRequest
+     *
+     * @return ChangeSwitchResponse ChangeSwitchResponse
+     */
+    public function changeSwitch($baseId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ChangeSwitchHeaders([]);
+
+        return $this->changeSwitchWithOptions($baseId, $request, $headers, $runtime);
     }
 
     /**
@@ -143,6 +298,82 @@ class Dingtalk extends OpenApiClient
         $headers = new CreateFieldHeaders([]);
 
         return $this->createFieldWithOptions($baseId, $sheetIdOrName, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 创建角色
+     *  *
+     * @param string            $baseId
+     * @param CreateRoleRequest $request CreateRoleRequest
+     * @param CreateRoleHeaders $headers CreateRoleHeaders
+     * @param RuntimeOptions    $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateRoleResponse CreateRoleResponse
+     */
+    public function createRoleWithOptions($baseId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->flowType)) {
+            $body['flowType'] = $request->flowType;
+        }
+        if (!Utils::isUnset($request->id)) {
+            $body['id'] = $request->id;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->roleType)) {
+            $body['roleType'] = $request->roleType;
+        }
+        if (!Utils::isUnset($request->subRoles)) {
+            $body['subRoles'] = $request->subRoles;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'CreateRole',
+            'version' => 'notable_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/notable/auth/role/' . $baseId . '',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CreateRoleResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建角色
+     *  *
+     * @param string            $baseId
+     * @param CreateRoleRequest $request CreateRoleRequest
+     *
+     * @return CreateRoleResponse CreateRoleResponse
+     */
+    public function createRole($baseId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateRoleHeaders([]);
+
+        return $this->createRoleWithOptions($baseId, $request, $headers, $runtime);
     }
 
     /**
@@ -339,6 +570,70 @@ class Dingtalk extends OpenApiClient
         $headers = new DeleteRecordsHeaders([]);
 
         return $this->deleteRecordsWithOptions($baseId, $sheetIdOrName, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 删除角色
+     *  *
+     * @param string            $baseId
+     * @param DeleteRoleRequest $request DeleteRoleRequest
+     * @param DeleteRoleHeaders $headers DeleteRoleHeaders
+     * @param RuntimeOptions    $runtime runtime options for this request RuntimeOptions
+     *
+     * @return DeleteRoleResponse DeleteRoleResponse
+     */
+    public function deleteRoleWithOptions($baseId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->roleId)) {
+            $body['roleId'] = $request->roleId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'DeleteRole',
+            'version' => 'notable_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/notable/auth/role/' . $baseId . '',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return DeleteRoleResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 删除角色
+     *  *
+     * @param string            $baseId
+     * @param DeleteRoleRequest $request DeleteRoleRequest
+     *
+     * @return DeleteRoleResponse DeleteRoleResponse
+     */
+    public function deleteRole($baseId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteRoleHeaders([]);
+
+        return $this->deleteRoleWithOptions($baseId, $request, $headers, $runtime);
     }
 
     /**
@@ -714,6 +1009,127 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取高级权限设置开关
+     *  *
+     * @param string           $baseId
+     * @param GetSwitchRequest $request GetSwitchRequest
+     * @param GetSwitchHeaders $headers GetSwitchHeaders
+     * @param RuntimeOptions   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetSwitchResponse GetSwitchResponse
+     */
+    public function getSwitchWithOptions($baseId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'GetSwitch',
+            'version' => 'notable_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/notable/auth/' . $baseId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetSwitchResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取高级权限设置开关
+     *  *
+     * @param string           $baseId
+     * @param GetSwitchRequest $request GetSwitchRequest
+     *
+     * @return GetSwitchResponse GetSwitchResponse
+     */
+    public function getSwitch($baseId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetSwitchHeaders([]);
+
+        return $this->getSwitchWithOptions($baseId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取指定用户的高级权限角色配置列表
+     *  *
+     * @param string                 $baseId
+     * @param GetUserDocRolesRequest $request GetUserDocRolesRequest
+     * @param GetUserDocRolesHeaders $headers GetUserDocRolesHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetUserDocRolesResponse GetUserDocRolesResponse
+     */
+    public function getUserDocRolesWithOptions($baseId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'GetUserDocRoles',
+            'version' => 'notable_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/notable/auth/role/' . $baseId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetUserDocRolesResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取指定用户的高级权限角色配置列表
+     *  *
+     * @param string                 $baseId
+     * @param GetUserDocRolesRequest $request GetUserDocRolesRequest
+     *
+     * @return GetUserDocRolesResponse GetUserDocRolesResponse
+     */
+    public function getUserDocRoles($baseId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetUserDocRolesHeaders([]);
+
+        return $this->getUserDocRolesWithOptions($baseId, $request, $headers, $runtime);
+    }
+
+    /**
      * @summary 新增记录
      *  *
      * @param string               $baseId
@@ -919,6 +1335,132 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询文档所有角色和角色成员
+     *  *
+     * @param string                  $baseId
+     * @param QueryDocAllRolesRequest $request QueryDocAllRolesRequest
+     * @param QueryDocAllRolesHeaders $headers QueryDocAllRolesHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryDocAllRolesResponse QueryDocAllRolesResponse
+     */
+    public function queryDocAllRolesWithOptions($baseId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'QueryDocAllRoles',
+            'version' => 'notable_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/notable/auth/role/member/' . $baseId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryDocAllRolesResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询文档所有角色和角色成员
+     *  *
+     * @param string                  $baseId
+     * @param QueryDocAllRolesRequest $request QueryDocAllRolesRequest
+     *
+     * @return QueryDocAllRolesResponse QueryDocAllRolesResponse
+     */
+    public function queryDocAllRoles($baseId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryDocAllRolesHeaders([]);
+
+        return $this->queryDocAllRolesWithOptions($baseId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 重建角色成员
+     *  *
+     * @param string                    $baseId
+     * @param RebuildRoleMembersRequest $request RebuildRoleMembersRequest
+     * @param RebuildRoleMembersHeaders $headers RebuildRoleMembersHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return RebuildRoleMembersResponse RebuildRoleMembersResponse
+     */
+    public function rebuildRoleMembersWithOptions($baseId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->defaultRoleDTO)) {
+            $body['defaultRoleDTO'] = $request->defaultRoleDTO;
+        }
+        if (!Utils::isUnset($request->toRoleMemberDTOMap)) {
+            $body['toRoleMemberDTOMap'] = $request->toRoleMemberDTOMap;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'RebuildRoleMembers',
+            'version' => 'notable_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/notable/auth/role/member/' . $baseId . '',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return RebuildRoleMembersResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 重建角色成员
+     *  *
+     * @param string                    $baseId
+     * @param RebuildRoleMembersRequest $request RebuildRoleMembersRequest
+     *
+     * @return RebuildRoleMembersResponse RebuildRoleMembersResponse
+     */
+    public function rebuildRoleMembers($baseId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RebuildRoleMembersHeaders([]);
+
+        return $this->rebuildRoleMembersWithOptions($baseId, $request, $headers, $runtime);
+    }
+
+    /**
      * @summary 更新数据表字段
      *  *
      * @param string             $baseId
@@ -1053,6 +1595,82 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateRecordsHeaders([]);
 
         return $this->updateRecordsWithOptions($baseId, $sheetIdOrName, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更新角色
+     *  *
+     * @param string            $baseId
+     * @param UpdateRoleRequest $request UpdateRoleRequest
+     * @param UpdateRoleHeaders $headers UpdateRoleHeaders
+     * @param RuntimeOptions    $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateRoleResponse UpdateRoleResponse
+     */
+    public function updateRoleWithOptions($baseId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->flowType)) {
+            $body['flowType'] = $request->flowType;
+        }
+        if (!Utils::isUnset($request->id)) {
+            $body['id'] = $request->id;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->roleType)) {
+            $body['roleType'] = $request->roleType;
+        }
+        if (!Utils::isUnset($request->subRoles)) {
+            $body['subRoles'] = $request->subRoles;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'UpdateRole',
+            'version' => 'notable_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/notable/auth/role/' . $baseId . '',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UpdateRoleResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新角色
+     *  *
+     * @param string            $baseId
+     * @param UpdateRoleRequest $request UpdateRoleRequest
+     *
+     * @return UpdateRoleResponse UpdateRoleResponse
+     */
+    public function updateRole($baseId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateRoleHeaders([]);
+
+        return $this->updateRoleWithOptions($baseId, $request, $headers, $runtime);
     }
 
     /**

@@ -105,6 +105,16 @@ class list_ extends Model
     public $signStatus;
 
     /**
+     * @var string
+     */
+    public $source;
+
+    /**
+     * @var string
+     */
+    public $status;
+
+    /**
      * @var bool
      */
     public $supportReceipt;
@@ -128,6 +138,8 @@ class list_ extends Model
         'officialName' => 'officialName',
         'officialNumber' => 'officialNumber',
         'signStatus' => 'signStatus',
+        'source' => 'source',
+        'status' => 'status',
         'supportReceipt' => 'supportReceipt',
         'supportTradeDetail' => 'supportTradeDetail',
     ];
@@ -178,6 +190,12 @@ class list_ extends Model
         }
         if (null !== $this->signStatus) {
             $res['signStatus'] = $this->signStatus;
+        }
+        if (null !== $this->source) {
+            $res['source'] = $this->source;
+        }
+        if (null !== $this->status) {
+            $res['status'] = $this->status;
         }
         if (null !== $this->supportReceipt) {
             $res['supportReceipt'] = $this->supportReceipt;
@@ -238,6 +256,12 @@ class list_ extends Model
         }
         if (isset($map['signStatus'])) {
             $model->signStatus = $map['signStatus'];
+        }
+        if (isset($map['source'])) {
+            $model->source = $map['source'];
+        }
+        if (isset($map['status'])) {
+            $model->status = $map['status'];
         }
         if (isset($map['supportReceipt'])) {
             $model->supportReceipt = $map['supportReceipt'];

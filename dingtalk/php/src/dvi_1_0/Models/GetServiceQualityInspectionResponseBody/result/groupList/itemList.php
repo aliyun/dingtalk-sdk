@@ -21,6 +21,11 @@ class itemList extends Model
     /**
      * @var string
      */
+    public $name;
+
+    /**
+     * @var string
+     */
     public $reason;
 
     /**
@@ -35,6 +40,7 @@ class itemList extends Model
     protected $_name = [
         'flowName' => 'flowName',
         'isHit' => 'isHit',
+        'name' => 'name',
         'reason' => 'reason',
         'score' => 'score',
         'script' => 'script',
@@ -50,6 +56,9 @@ class itemList extends Model
         }
         if (null !== $this->isHit) {
             $res['isHit'] = $this->isHit;
+        }
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
         }
         if (null !== $this->reason) {
             $res['reason'] = $this->reason;
@@ -77,6 +86,9 @@ class itemList extends Model
         }
         if (isset($map['isHit'])) {
             $model->isHit = $map['isHit'];
+        }
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
         }
         if (isset($map['reason'])) {
             $model->reason = $map['reason'];

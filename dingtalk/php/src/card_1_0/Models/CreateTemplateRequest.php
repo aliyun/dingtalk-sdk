@@ -14,6 +14,11 @@ class CreateTemplateRequest extends Model
     public $appId;
 
     /**
+     * @var bool
+     */
+    public $blockTemplate;
+
+    /**
      * @var string
      */
     public $creatorId;
@@ -40,6 +45,7 @@ class CreateTemplateRequest extends Model
     public $type;
     protected $_name = [
         'appId' => 'appId',
+        'blockTemplate' => 'blockTemplate',
         'creatorId' => 'creatorId',
         'extendType' => 'extendType',
         'name' => 'name',
@@ -53,6 +59,9 @@ class CreateTemplateRequest extends Model
         $res = [];
         if (null !== $this->appId) {
             $res['appId'] = $this->appId;
+        }
+        if (null !== $this->blockTemplate) {
+            $res['blockTemplate'] = $this->blockTemplate;
         }
         if (null !== $this->creatorId) {
             $res['creatorId'] = $this->creatorId;
@@ -80,6 +89,9 @@ class CreateTemplateRequest extends Model
         $model = new self();
         if (isset($map['appId'])) {
             $model->appId = $map['appId'];
+        }
+        if (isset($map['blockTemplate'])) {
+            $model->blockTemplate = $map['blockTemplate'];
         }
         if (isset($map['creatorId'])) {
             $model->creatorId = $map['creatorId'];

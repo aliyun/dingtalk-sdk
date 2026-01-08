@@ -107,12 +107,18 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CourseSchedulingComplimentNoticeRe
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateAppOrderHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateAppOrderRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateAppOrderResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateAwaitingCorrectionDataHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateAwaitingCorrectionDataRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateAwaitingCorrectionDataResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCollegeContactDeptHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCollegeContactDeptRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCollegeContactDeptResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCollegeContactSceneStruHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCollegeContactSceneStruRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCollegeContactSceneStruResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCorrectionDataHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCorrectionDataRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCorrectionDataResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCourseHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCourseRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCourseResponse;
@@ -487,6 +493,12 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QuerySchoolUserFaceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QuerySchoolUserFaceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QuerySchoolUserFaceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QuerySelfBuildGroupBaseInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QuerySelfBuildGroupBaseInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QuerySelfBuildGroupBaseInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QuerySelfBuildGroupUserInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QuerySelfBuildGroupUserInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QuerySelfBuildGroupUserInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QuerySnsOrderHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QuerySnsOrderRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QuerySnsOrderResponse;
@@ -3370,6 +3382,84 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 作业批改-新增待批改数据
+     *  *
+     * @param CreateAwaitingCorrectionDataRequest $request CreateAwaitingCorrectionDataRequest
+     * @param CreateAwaitingCorrectionDataHeaders $headers CreateAwaitingCorrectionDataHeaders
+     * @param RuntimeOptions                      $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateAwaitingCorrectionDataResponse CreateAwaitingCorrectionDataResponse
+     */
+    public function createAwaitingCorrectionDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->allAssignmentPdfUrl)) {
+            $body['allAssignmentPdfUrl'] = $request->allAssignmentPdfUrl;
+        }
+        if (!Utils::isUnset($request->className)) {
+            $body['className'] = $request->className;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->printInfo)) {
+            $body['printInfo'] = $request->printInfo;
+        }
+        if (!Utils::isUnset($request->printerCode)) {
+            $body['printerCode'] = $request->printerCode;
+        }
+        if (!Utils::isUnset($request->subjectName)) {
+            $body['subjectName'] = $request->subjectName;
+        }
+        if (!Utils::isUnset($request->taskCode)) {
+            $body['taskCode'] = $request->taskCode;
+        }
+        if (!Utils::isUnset($request->totalPages)) {
+            $body['totalPages'] = $request->totalPages;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'CreateAwaitingCorrectionData',
+            'version' => 'edu_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/edu/assignment/createAwaitingCorrectionData',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CreateAwaitingCorrectionDataResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 作业批改-新增待批改数据
+     *  *
+     * @param CreateAwaitingCorrectionDataRequest $request CreateAwaitingCorrectionDataRequest
+     *
+     * @return CreateAwaitingCorrectionDataResponse CreateAwaitingCorrectionDataResponse
+     */
+    public function createAwaitingCorrectionData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateAwaitingCorrectionDataHeaders([]);
+
+        return $this->createAwaitingCorrectionDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 创建高校通讯录组织单元
      *  *
      * @param CreateCollegeContactDeptRequest $request CreateCollegeContactDeptRequest
@@ -3565,6 +3655,69 @@ class Dingtalk extends OpenApiClient
         $headers = new CreateCollegeContactSceneStruHeaders([]);
 
         return $this->createCollegeContactSceneStruWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 作业批改-新增已批改数据
+     *  *
+     * @param CreateCorrectionDataRequest $request CreateCorrectionDataRequest
+     * @param CreateCorrectionDataHeaders $headers CreateCorrectionDataHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateCorrectionDataResponse CreateCorrectionDataResponse
+     */
+    public function createCorrectionDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->correctedDataJsonUrl)) {
+            $body['correctedDataJsonUrl'] = $request->correctedDataJsonUrl;
+        }
+        if (!Utils::isUnset($request->taskCode)) {
+            $body['taskCode'] = $request->taskCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'CreateCorrectionData',
+            'version' => 'edu_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/edu/assignment/createCorrectionData',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CreateCorrectionDataResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 作业批改-新增已批改数据
+     *  *
+     * @param CreateCorrectionDataRequest $request CreateCorrectionDataRequest
+     *
+     * @return CreateCorrectionDataResponse CreateCorrectionDataResponse
+     */
+    public function createCorrectionData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateCorrectionDataHeaders([]);
+
+        return $this->createCorrectionDataWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -11785,6 +11938,126 @@ class Dingtalk extends OpenApiClient
         $headers = new QuerySchoolUserFaceHeaders([]);
 
         return $this->querySchoolUserFaceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询自建群组织和班级信息
+     *  *
+     * @param QuerySelfBuildGroupBaseInfoRequest $request QuerySelfBuildGroupBaseInfoRequest
+     * @param QuerySelfBuildGroupBaseInfoHeaders $headers QuerySelfBuildGroupBaseInfoHeaders
+     * @param RuntimeOptions                     $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QuerySelfBuildGroupBaseInfoResponse QuerySelfBuildGroupBaseInfoResponse
+     */
+    public function querySelfBuildGroupBaseInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'QuerySelfBuildGroupBaseInfo',
+            'version' => 'edu_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/edu/self/group/base/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QuerySelfBuildGroupBaseInfoResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询自建群组织和班级信息
+     *  *
+     * @param QuerySelfBuildGroupBaseInfoRequest $request QuerySelfBuildGroupBaseInfoRequest
+     *
+     * @return QuerySelfBuildGroupBaseInfoResponse QuerySelfBuildGroupBaseInfoResponse
+     */
+    public function querySelfBuildGroupBaseInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QuerySelfBuildGroupBaseInfoHeaders([]);
+
+        return $this->querySelfBuildGroupBaseInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询自建群用户信息
+     *  *
+     * @param QuerySelfBuildGroupUserInfoRequest $request QuerySelfBuildGroupUserInfoRequest
+     * @param QuerySelfBuildGroupUserInfoHeaders $headers QuerySelfBuildGroupUserInfoHeaders
+     * @param RuntimeOptions                     $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QuerySelfBuildGroupUserInfoResponse QuerySelfBuildGroupUserInfoResponse
+     */
+    public function querySelfBuildGroupUserInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->classId)) {
+            $body['classId'] = $request->classId;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->roles)) {
+            $body['roles'] = $request->roles;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'QuerySelfBuildGroupUserInfo',
+            'version' => 'edu_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/edu/self/group/user/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QuerySelfBuildGroupUserInfoResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询自建群用户信息
+     *  *
+     * @param QuerySelfBuildGroupUserInfoRequest $request QuerySelfBuildGroupUserInfoRequest
+     *
+     * @return QuerySelfBuildGroupUserInfoResponse QuerySelfBuildGroupUserInfoResponse
+     */
+    public function querySelfBuildGroupUserInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QuerySelfBuildGroupUserInfoHeaders([]);
+
+        return $this->querySelfBuildGroupUserInfoWithOptions($request, $headers, $runtime);
     }
 
     /**

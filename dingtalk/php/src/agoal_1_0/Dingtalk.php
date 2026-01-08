@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vagoal_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalBizDataQueryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalBizDataQueryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalBizDataQueryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalCreateProgressHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalCreateProgressRequest;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalCreateProgressResponse;
@@ -102,6 +105,69 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @summary 业务数据开放
+     *  *
+     * @param AgoalBizDataQueryRequest $request AgoalBizDataQueryRequest
+     * @param AgoalBizDataQueryHeaders $headers AgoalBizDataQueryHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AgoalBizDataQueryResponse AgoalBizDataQueryResponse
+     */
+    public function agoalBizDataQueryWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->bizCode)) {
+            $query['bizCode'] = $request->bizCode;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'AgoalBizDataQuery',
+            'version' => 'agoal_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/agoal/bizData/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return AgoalBizDataQueryResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 业务数据开放
+     *  *
+     * @param AgoalBizDataQueryRequest $request AgoalBizDataQueryRequest
+     *
+     * @return AgoalBizDataQueryResponse AgoalBizDataQueryResponse
+     */
+    public function agoalBizDataQuery($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AgoalBizDataQueryHeaders([]);
+
+        return $this->agoalBizDataQueryWithOptions($request, $headers, $runtime);
     }
 
     /**

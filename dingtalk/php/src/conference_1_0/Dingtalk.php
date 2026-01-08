@@ -17,6 +17,9 @@ use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\CloseVideoConferenceRespons
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\CohostsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\CohostsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\CohostsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\CreateAutoLoginUrlHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\CreateAutoLoginUrlRequest;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\CreateAutoLoginUrlResponse;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\CreateCustomShortLinkHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\CreateCustomShortLinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\CreateCustomShortLinkResponse;
@@ -189,6 +192,12 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->ownerUnionId)) {
             $body['ownerUnionId'] = $request->ownerUnionId;
+        }
+        if (!Utils::isUnset($request->roleSubResourceIds)) {
+            $body['roleSubResourceIds'] = $request->roleSubResourceIds;
+        }
+        if (!Utils::isUnset($request->shareScope)) {
+            $body['shareScope'] = $request->shareScope;
         }
         if (!Utils::isUnset($request->unionId)) {
             $body['unionId'] = $request->unionId;
@@ -414,6 +423,66 @@ class Dingtalk extends OpenApiClient
         $headers = new CohostsHeaders([]);
 
         return $this->cohostsWithOptions($conferenceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 生成会议自动登录url
+     *  *
+     * @param CreateAutoLoginUrlRequest $request CreateAutoLoginUrlRequest
+     * @param CreateAutoLoginUrlHeaders $headers CreateAutoLoginUrlHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateAutoLoginUrlResponse CreateAutoLoginUrlResponse
+     */
+    public function createAutoLoginUrlWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->meetingUrl)) {
+            $body['meetingUrl'] = $request->meetingUrl;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $body['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'CreateAutoLoginUrl',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/videoConferences/createAutoLoginUrl',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CreateAutoLoginUrlResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 生成会议自动登录url
+     *  *
+     * @param CreateAutoLoginUrlRequest $request CreateAutoLoginUrlRequest
+     *
+     * @return CreateAutoLoginUrlResponse CreateAutoLoginUrlResponse
+     */
+    public function createAutoLoginUrl($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateAutoLoginUrlHeaders([]);
+
+        return $this->createAutoLoginUrlWithOptions($request, $headers, $runtime);
     }
 
     /**

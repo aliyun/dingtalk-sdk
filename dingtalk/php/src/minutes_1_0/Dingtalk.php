@@ -11,12 +11,18 @@ use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\BatchGetMinutesDetailsResponse
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\CreateMinutesByUploadFileHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\CreateMinutesByUploadFileRequest;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\CreateMinutesByUploadFileResponse;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\CreateSmartDeviceAiSummaryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\CreateSmartDeviceAiSummaryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\CreateSmartDeviceAiSummaryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\DeleteMinutesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\DeleteMinutesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\DeleteMinutesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\ExportMinutesTaskResultHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\ExportMinutesTaskResultRequest;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\ExportMinutesTaskResultResponse;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\GenerateSummaryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\GenerateSummaryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\GenerateSummaryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\OpenQueryMinutesSummaryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\OpenQueryMinutesSummaryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\OpenQueryMinutesSummaryResponse;
@@ -50,12 +56,21 @@ use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryMinutesTodoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryScheduleConfMinutesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryScheduleConfMinutesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryScheduleConfMinutesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QuerySmartDeviceAiSummaryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QuerySmartDeviceAiSummaryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QuerySmartDeviceAiSummaryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QuerySummaryWithTemplateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QuerySummaryWithTemplateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QuerySummaryWithTemplateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryUploadVideoPlayInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryUploadVideoPlayInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryUploadVideoPlayInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\UpdateMinutesTitleHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\UpdateMinutesTitleRequest;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\UpdateMinutesTitleResponse;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\UpdatePermissionHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\UpdatePermissionRequest;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\UpdatePermissionResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\GatewayDingTalk\Client;
@@ -213,6 +228,72 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建DingTalkA1小助理分析
+     *  *
+     * @param CreateSmartDeviceAiSummaryRequest $request CreateSmartDeviceAiSummaryRequest
+     * @param CreateSmartDeviceAiSummaryHeaders $headers CreateSmartDeviceAiSummaryHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateSmartDeviceAiSummaryResponse CreateSmartDeviceAiSummaryResponse
+     */
+    public function createSmartDeviceAiSummaryWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->agentId)) {
+            $body['agentId'] = $request->agentId;
+        }
+        if (!Utils::isUnset($request->instanceId)) {
+            $body['instanceId'] = $request->instanceId;
+        }
+        if (!Utils::isUnset($request->isvContext)) {
+            $body['isvContext'] = $request->isvContext;
+        }
+        if (!Utils::isUnset($request->openFileId)) {
+            $body['openFileId'] = $request->openFileId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'CreateSmartDeviceAiSummary',
+            'version' => 'minutes_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/minutes/smartdevice/aisummary/create',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CreateSmartDeviceAiSummaryResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建DingTalkA1小助理分析
+     *  *
+     * @param CreateSmartDeviceAiSummaryRequest $request CreateSmartDeviceAiSummaryRequest
+     *
+     * @return CreateSmartDeviceAiSummaryResponse CreateSmartDeviceAiSummaryResponse
+     */
+    public function createSmartDeviceAiSummary($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateSmartDeviceAiSummaryHeaders([]);
+
+        return $this->createSmartDeviceAiSummaryWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 删除闪记
      *  *
      * @param string               $taskUuid
@@ -340,6 +421,76 @@ class Dingtalk extends OpenApiClient
         $headers = new ExportMinutesTaskResultHeaders([]);
 
         return $this->exportMinutesTaskResultWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 生成摘要
+     *  *
+     * @param string                 $taskUuid
+     * @param GenerateSummaryRequest $request  GenerateSummaryRequest
+     * @param GenerateSummaryHeaders $headers  GenerateSummaryHeaders
+     * @param RuntimeOptions         $runtime  runtime options for this request RuntimeOptions
+     *
+     * @return GenerateSummaryResponse GenerateSummaryResponse
+     */
+    public function generateSummaryWithOptions($taskUuid, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->diyTemplateVersion)) {
+            $body['diyTemplateVersion'] = $request->diyTemplateVersion;
+        }
+        if (!Utils::isUnset($request->summaryTemplateId)) {
+            $body['summaryTemplateId'] = $request->summaryTemplateId;
+        }
+        if (!Utils::isUnset($request->summaryTemplateType)) {
+            $body['summaryTemplateType'] = $request->summaryTemplateType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'GenerateSummary',
+            'version' => 'minutes_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/minutes/flashMinutes/tasks/' . $taskUuid . '/summary',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GenerateSummaryResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 生成摘要
+     *  *
+     * @param string                 $taskUuid
+     * @param GenerateSummaryRequest $request  GenerateSummaryRequest
+     *
+     * @return GenerateSummaryResponse GenerateSummaryResponse
+     */
+    public function generateSummary($taskUuid, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GenerateSummaryHeaders([]);
+
+        return $this->generateSummaryWithOptions($taskUuid, $request, $headers, $runtime);
     }
 
     /**
@@ -1021,6 +1172,134 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询DingTalkA1小助理分析
+     *  *
+     * @param QuerySmartDeviceAiSummaryRequest $request QuerySmartDeviceAiSummaryRequest
+     * @param QuerySmartDeviceAiSummaryHeaders $headers QuerySmartDeviceAiSummaryHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QuerySmartDeviceAiSummaryResponse QuerySmartDeviceAiSummaryResponse
+     */
+    public function querySmartDeviceAiSummaryWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->agentId)) {
+            $body['agentId'] = $request->agentId;
+        }
+        if (!Utils::isUnset($request->openFileId)) {
+            $body['openFileId'] = $request->openFileId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'QuerySmartDeviceAiSummary',
+            'version' => 'minutes_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/minutes/smartdevice/aisummary',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QuerySmartDeviceAiSummaryResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询DingTalkA1小助理分析
+     *  *
+     * @param QuerySmartDeviceAiSummaryRequest $request QuerySmartDeviceAiSummaryRequest
+     *
+     * @return QuerySmartDeviceAiSummaryResponse QuerySmartDeviceAiSummaryResponse
+     */
+    public function querySmartDeviceAiSummary($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QuerySmartDeviceAiSummaryHeaders([]);
+
+        return $this->querySmartDeviceAiSummaryWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 根据模板id查询摘要
+     *  *
+     * @param string                          $taskUuid
+     * @param QuerySummaryWithTemplateRequest $request  QuerySummaryWithTemplateRequest
+     * @param QuerySummaryWithTemplateHeaders $headers  QuerySummaryWithTemplateHeaders
+     * @param RuntimeOptions                  $runtime  runtime options for this request RuntimeOptions
+     *
+     * @return QuerySummaryWithTemplateResponse QuerySummaryWithTemplateResponse
+     */
+    public function querySummaryWithTemplateWithOptions($taskUuid, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->diyTemplateVersion)) {
+            $query['diyTemplateVersion'] = $request->diyTemplateVersion;
+        }
+        if (!Utils::isUnset($request->summaryTemplateId)) {
+            $query['summaryTemplateId'] = $request->summaryTemplateId;
+        }
+        if (!Utils::isUnset($request->summaryTemplateType)) {
+            $query['summaryTemplateType'] = $request->summaryTemplateType;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'QuerySummaryWithTemplate',
+            'version' => 'minutes_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/minutes/flashMinutes/tasks/' . $taskUuid . '/summary/template',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QuerySummaryWithTemplateResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 根据模板id查询摘要
+     *  *
+     * @param string                          $taskUuid
+     * @param QuerySummaryWithTemplateRequest $request  QuerySummaryWithTemplateRequest
+     *
+     * @return QuerySummaryWithTemplateResponse QuerySummaryWithTemplateResponse
+     */
+    public function querySummaryWithTemplate($taskUuid, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QuerySummaryWithTemplateHeaders([]);
+
+        return $this->querySummaryWithTemplateWithOptions($taskUuid, $request, $headers, $runtime);
+    }
+
+    /**
      * @summary 查询上传视频播放信息
      *  *
      * @param string                          $videoId
@@ -1139,5 +1418,81 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateMinutesTitleHeaders([]);
 
         return $this->updateMinutesTitleWithOptions($taskUuid, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更新闪记权限
+     *  *
+     * @param string                  $taskUuid
+     * @param UpdatePermissionRequest $request  UpdatePermissionRequest
+     * @param UpdatePermissionHeaders $headers  UpdatePermissionHeaders
+     * @param RuntimeOptions          $runtime  runtime options for this request RuntimeOptions
+     *
+     * @return UpdatePermissionResponse UpdatePermissionResponse
+     */
+    public function updatePermissionWithOptions($taskUuid, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->memberInfoList)) {
+            $body['memberInfoList'] = $request->memberInfoList;
+        }
+        if (!Utils::isUnset($request->opType)) {
+            $body['opType'] = $request->opType;
+        }
+        if (!Utils::isUnset($request->roleCode)) {
+            $body['roleCode'] = $request->roleCode;
+        }
+        if (!Utils::isUnset($request->roleSubResourceIds)) {
+            $body['roleSubResourceIds'] = $request->roleSubResourceIds;
+        }
+        if (!Utils::isUnset($request->shareScope)) {
+            $body['shareScope'] = $request->shareScope;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'UpdatePermission',
+            'version' => 'minutes_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/minutes/' . $taskUuid . '/permission',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UpdatePermissionResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新闪记权限
+     *  *
+     * @param string                  $taskUuid
+     * @param UpdatePermissionRequest $request  UpdatePermissionRequest
+     *
+     * @return UpdatePermissionResponse UpdatePermissionResponse
+     */
+    public function updatePermission($taskUuid, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdatePermissionHeaders([]);
+
+        return $this->updatePermissionWithOptions($taskUuid, $request, $headers, $runtime);
     }
 }

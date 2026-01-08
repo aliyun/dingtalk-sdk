@@ -27,6 +27,18 @@ class AddRecordPermissionRequest extends Model
     public $ownerUnionId;
 
     /**
+     * @var string[]
+     */
+    public $roleSubResourceIds;
+
+    /**
+     * @example 0
+     *
+     * @var int
+     */
+    public $shareScope;
+
+    /**
      * @description This parameter is required.
      *
      * @example lJcRnm39OsU4jlFVmRGXXXXX
@@ -37,6 +49,8 @@ class AddRecordPermissionRequest extends Model
     protected $_name = [
         'bizType' => 'bizType',
         'ownerUnionId' => 'ownerUnionId',
+        'roleSubResourceIds' => 'roleSubResourceIds',
+        'shareScope' => 'shareScope',
         'unionId' => 'unionId',
     ];
 
@@ -50,6 +64,12 @@ class AddRecordPermissionRequest extends Model
         }
         if (null !== $this->ownerUnionId) {
             $res['ownerUnionId'] = $this->ownerUnionId;
+        }
+        if (null !== $this->roleSubResourceIds) {
+            $res['roleSubResourceIds'] = $this->roleSubResourceIds;
+        }
+        if (null !== $this->shareScope) {
+            $res['shareScope'] = $this->shareScope;
         }
         if (null !== $this->unionId) {
             $res['unionId'] = $this->unionId;
@@ -71,6 +91,14 @@ class AddRecordPermissionRequest extends Model
         }
         if (isset($map['ownerUnionId'])) {
             $model->ownerUnionId = $map['ownerUnionId'];
+        }
+        if (isset($map['roleSubResourceIds'])) {
+            if (!empty($map['roleSubResourceIds'])) {
+                $model->roleSubResourceIds = $map['roleSubResourceIds'];
+            }
+        }
+        if (isset($map['shareScope'])) {
+            $model->shareScope = $map['shareScope'];
         }
         if (isset($map['unionId'])) {
             $model->unionId = $map['unionId'];

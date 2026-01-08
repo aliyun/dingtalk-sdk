@@ -12,8 +12,16 @@ class AddRecordPermissionResponseBody extends Model
      * @var string
      */
     public $code;
+
+    /**
+     * @example 76327xxxxxxx353936325f35
+     *
+     * @var string
+     */
+    public $taskUuid;
     protected $_name = [
         'code' => 'code',
+        'taskUuid' => 'taskUuid',
     ];
 
     public function validate() {}
@@ -23,6 +31,9 @@ class AddRecordPermissionResponseBody extends Model
         $res = [];
         if (null !== $this->code) {
             $res['code'] = $this->code;
+        }
+        if (null !== $this->taskUuid) {
+            $res['taskUuid'] = $this->taskUuid;
         }
 
         return $res;
@@ -38,6 +49,9 @@ class AddRecordPermissionResponseBody extends Model
         $model = new self();
         if (isset($map['code'])) {
             $model->code = $map['code'];
+        }
+        if (isset($map['taskUuid'])) {
+            $model->taskUuid = $map['taskUuid'];
         }
 
         return $model;

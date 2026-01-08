@@ -9,6 +9,11 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
+     * @var bool
+     */
+    public $blockTemplate;
+
+    /**
      * @var mixed
      */
     public $commonVariableList;
@@ -73,6 +78,7 @@ class data extends Model
      */
     public $type;
     protected $_name = [
+        'blockTemplate' => 'blockTemplate',
         'commonVariableList' => 'commonVariableList',
         'creatorId' => 'creatorId',
         'expVariableList' => 'expVariableList',
@@ -93,6 +99,9 @@ class data extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->blockTemplate) {
+            $res['blockTemplate'] = $this->blockTemplate;
+        }
         if (null !== $this->commonVariableList) {
             $res['commonVariableList'] = $this->commonVariableList;
         }
@@ -144,6 +153,9 @@ class data extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['blockTemplate'])) {
+            $model->blockTemplate = $map['blockTemplate'];
+        }
         if (isset($map['commonVariableList'])) {
             $model->commonVariableList = $map['commonVariableList'];
         }

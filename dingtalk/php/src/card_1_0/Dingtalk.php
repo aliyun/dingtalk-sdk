@@ -299,6 +299,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
         if (!Utils::isUnset($request->templateId)) {
             $body['templateId'] = $request->templateId;
         }
@@ -790,6 +793,9 @@ class Dingtalk extends OpenApiClient
         $body = [];
         if (!Utils::isUnset($request->appId)) {
             $body['appId'] = $request->appId;
+        }
+        if (!Utils::isUnset($request->blockTemplate)) {
+            $body['blockTemplate'] = $request->blockTemplate;
         }
         if (!Utils::isUnset($request->creatorId)) {
             $body['creatorId'] = $request->creatorId;

@@ -160,6 +160,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetMsgConfigResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetMsgLocationHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetMsgLocationRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetMsgLocationResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetMsgRecordDetailHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetMsgRecordDetailRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetMsgRecordDetailResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetOaOperatorLogListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetOaOperatorLogListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetOaOperatorLogListResponse;
@@ -294,6 +297,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryConversationPageRequest
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryConversationPageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryExclusiveBenefitsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryExclusiveBenefitsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryMsgSendRecordsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryMsgSendRecordsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryMsgSendRecordsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryPartnerInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryPartnerInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryTemplateInfoHeaders;
@@ -3800,6 +3806,66 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询群发消息id对应的消息记录详情
+     *  *
+     * @param GetMsgRecordDetailRequest $request GetMsgRecordDetailRequest
+     * @param GetMsgRecordDetailHeaders $headers GetMsgRecordDetailHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetMsgRecordDetailResponse GetMsgRecordDetailResponse
+     */
+    public function getMsgRecordDetailWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->taskId)) {
+            $body['task_id'] = $request->taskId;
+        }
+        if (!Utils::isUnset($request->unionid)) {
+            $body['unionid'] = $request->unionid;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'GetMsgRecordDetail',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/follow/message/getMsgRecordDetail',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetMsgRecordDetailResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询群发消息id对应的消息记录详情
+     *  *
+     * @param GetMsgRecordDetailRequest $request GetMsgRecordDetailRequest
+     *
+     * @return GetMsgRecordDetailResponse GetMsgRecordDetailResponse
+     */
+    public function getMsgRecordDetail($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetMsgRecordDetailHeaders([]);
+
+        return $this->getMsgRecordDetailWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 获取oa后台操作日志记录
      *  *
      * @param GetOaOperatorLogListRequest $request GetOaOperatorLogListRequest
@@ -6650,6 +6716,81 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryExclusiveBenefitsHeaders([]);
 
         return $this->queryExclusiveBenefitsWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @summary 分页查询指定UID的服务窗推送记录
+     *  *
+     * @param QueryMsgSendRecordsRequest $request QueryMsgSendRecordsRequest
+     * @param QueryMsgSendRecordsHeaders $headers QueryMsgSendRecordsHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryMsgSendRecordsResponse QueryMsgSendRecordsResponse
+     */
+    public function queryMsgSendRecordsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->endTime)) {
+            $body['end_time'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->msgTypeList)) {
+            $body['msgTypeList'] = $request->msgTypeList;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            $body['page_number'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $body['page_size'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            $body['start_time'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->status)) {
+            $body['status'] = $request->status;
+        }
+        if (!Utils::isUnset($request->unionid)) {
+            $body['unionid'] = $request->unionid;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'QueryMsgSendRecords',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/follow/message/queryMsgSendRecords',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryMsgSendRecordsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 分页查询指定UID的服务窗推送记录
+     *  *
+     * @param QueryMsgSendRecordsRequest $request QueryMsgSendRecordsRequest
+     *
+     * @return QueryMsgSendRecordsResponse QueryMsgSendRecordsResponse
+     */
+    public function queryMsgSendRecords($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryMsgSendRecordsHeaders([]);
+
+        return $this->queryMsgSendRecordsWithOptions($request, $headers, $runtime);
     }
 
     /**

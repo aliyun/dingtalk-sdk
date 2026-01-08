@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vim_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\AddConvNavTabHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\AddConvNavTabRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\AddConvNavTabResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\AddGroupMemberHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\AddGroupMemberRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\AddGroupMemberResponse;
@@ -67,6 +70,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateStoreGroupConversationRespons
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\DebugUnfurlingRegisterHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\DebugUnfurlingRegisterRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\DebugUnfurlingRegisterResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\DeleteConvNavTabHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\DeleteConvNavTabRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\DeleteConvNavTabResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\DeleteOrgTextEmotionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\DeleteOrgTextEmotionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\DeleteOrgTextEmotionResponse;
@@ -138,6 +144,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InstallRobotToOrgResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InteractiveCardCreateInstanceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InteractiveCardCreateInstanceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InteractiveCardCreateInstanceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ListConvNavTabHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ListConvNavTabRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ListConvNavTabResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ListGroupTemplatesByOrgIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ListGroupTemplatesByOrgIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ListGroupTemplatesByOrgIdResponse;
@@ -305,6 +314,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\TopboxOpenResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateClientServiceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateClientServiceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateClientServiceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateConvNavTabHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateConvNavTabRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateConvNavTabResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateGroupAvatarHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateGroupAvatarRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateGroupAvatarResponse;
@@ -371,6 +383,75 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @summary 群维度添加群标签页
+     *  *
+     * @param AddConvNavTabRequest $request AddConvNavTabRequest
+     * @param AddConvNavTabHeaders $headers AddConvNavTabHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AddConvNavTabResponse AddConvNavTabResponse
+     */
+    public function addConvNavTabWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->mobileUrl)) {
+            $body['mobileUrl'] = $request->mobileUrl;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->pcUrl)) {
+            $body['pcUrl'] = $request->pcUrl;
+        }
+        if (!Utils::isUnset($request->title)) {
+            $body['title'] = $request->title;
+        }
+        if (!Utils::isUnset($request->userEditable)) {
+            $body['userEditable'] = $request->userEditable;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'AddConvNavTab',
+            'version' => 'im_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/im/convNavTabs/add',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return AddConvNavTabResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 群维度添加群标签页
+     *  *
+     * @param AddConvNavTabRequest $request AddConvNavTabRequest
+     *
+     * @return AddConvNavTabResponse AddConvNavTabResponse
+     */
+    public function addConvNavTab($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddConvNavTabHeaders([]);
+
+        return $this->addConvNavTabWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -1709,6 +1790,66 @@ class Dingtalk extends OpenApiClient
         $headers = new DebugUnfurlingRegisterHeaders([]);
 
         return $this->debugUnfurlingRegisterWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 群维度批量删除群标签页
+     *  *
+     * @param DeleteConvNavTabRequest $request DeleteConvNavTabRequest
+     * @param DeleteConvNavTabHeaders $headers DeleteConvNavTabHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return DeleteConvNavTabResponse DeleteConvNavTabResponse
+     */
+    public function deleteConvNavTabWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->tabIds)) {
+            $body['tabIds'] = $request->tabIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'DeleteConvNavTab',
+            'version' => 'im_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/im/convNavTabs/delete',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return DeleteConvNavTabResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 群维度批量删除群标签页
+     *  *
+     * @param DeleteConvNavTabRequest $request DeleteConvNavTabRequest
+     *
+     * @return DeleteConvNavTabResponse DeleteConvNavTabResponse
+     */
+    public function deleteConvNavTab($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteConvNavTabHeaders([]);
+
+        return $this->deleteConvNavTabWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -3338,6 +3479,63 @@ class Dingtalk extends OpenApiClient
         $headers = new InteractiveCardCreateInstanceHeaders([]);
 
         return $this->interactiveCardCreateInstanceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取群维度标签页
+     *  *
+     * @param ListConvNavTabRequest $request ListConvNavTabRequest
+     * @param ListConvNavTabHeaders $headers ListConvNavTabHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ListConvNavTabResponse ListConvNavTabResponse
+     */
+    public function listConvNavTabWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'ListConvNavTab',
+            'version' => 'im_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/im/convNavTabs/list',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return ListConvNavTabResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取群维度标签页
+     *  *
+     * @param ListConvNavTabRequest $request ListConvNavTabRequest
+     *
+     * @return ListConvNavTabResponse ListConvNavTabResponse
+     */
+    public function listConvNavTab($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListConvNavTabHeaders([]);
+
+        return $this->listConvNavTabWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -6733,6 +6931,78 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateClientServiceHeaders([]);
 
         return $this->updateClientServiceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 群维度更新群标签页
+     *  *
+     * @param UpdateConvNavTabRequest $request UpdateConvNavTabRequest
+     * @param UpdateConvNavTabHeaders $headers UpdateConvNavTabHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateConvNavTabResponse UpdateConvNavTabResponse
+     */
+    public function updateConvNavTabWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->mobileUrl)) {
+            $body['mobileUrl'] = $request->mobileUrl;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->pcUrl)) {
+            $body['pcUrl'] = $request->pcUrl;
+        }
+        if (!Utils::isUnset($request->tabId)) {
+            $body['tabId'] = $request->tabId;
+        }
+        if (!Utils::isUnset($request->title)) {
+            $body['title'] = $request->title;
+        }
+        if (!Utils::isUnset($request->userEditable)) {
+            $body['userEditable'] = $request->userEditable;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'UpdateConvNavTab',
+            'version' => 'im_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/im/convNavTabs/update',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UpdateConvNavTabResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 群维度更新群标签页
+     *  *
+     * @param UpdateConvNavTabRequest $request UpdateConvNavTabRequest
+     *
+     * @return UpdateConvNavTabResponse UpdateConvNavTabResponse
+     */
+    public function updateConvNavTab($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateConvNavTabHeaders([]);
+
+        return $this->updateConvNavTabWithOptions($request, $headers, $runtime);
     }
 
     /**

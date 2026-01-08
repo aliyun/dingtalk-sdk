@@ -31,7 +31,7 @@ class AddCateringCommentRequest extends Model
     public $ratedAt;
 
     /**
-     * @var int
+     * @var float
      */
     public $rating;
 

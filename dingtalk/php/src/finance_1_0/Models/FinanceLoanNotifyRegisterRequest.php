@@ -9,99 +9,71 @@ use AlibabaCloud\Tea\Model;
 class FinanceLoanNotifyRegisterRequest extends Model
 {
     /**
-     * @example 2024-06-18 14:53:33
-     *
      * @var string
      */
     public $completeTime;
 
     /**
-     * @example {}
-     *
      * @var string
      */
     public $extension;
 
     /**
-     * @example 330725189509101234
-     *
      * @var string
      */
     public $idCardNo;
 
     /**
-     * @example 中原消费金融
-     *
      * @var string
      */
     public $openChannelName;
 
     /**
-     * @example XFD201909210001
-     *
      * @var string
      */
     public $openProductCode;
 
     /**
-     * @example 员工贷
-     *
      * @var string
      */
     public $openProductName;
 
     /**
-     * @example ZYXJ_XFD
-     *
      * @var string
      */
     public $openProductType;
 
     /**
-     * @example 0
-     *
      * @var string
      */
     public $processingStatus;
 
     /**
-     * @example ZRSB2020
-     *
      * @var string
      */
     public $refuseCode;
 
     /**
-     * @example 进件准入失败
-     *
      * @var string
      */
     public $refuseReason;
 
     /**
-     * @example 2024061814654041710801
-     *
      * @var string
      */
     public $registerNo;
 
     /**
-     * @example 0
-     *
      * @var string
      */
     public $status;
 
     /**
-     * @example 2024-06-18 14:53:33
-     *
      * @var string
      */
     public $submitTime;
 
     /**
-     * @example 18092149430
-     *
      * @var string
      */
     public $userMobile;

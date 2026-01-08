@@ -26,6 +26,9 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BatchQueryPaymentRecallFile
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BatchSyncBankReceiptHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BatchSyncBankReceiptRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BatchSyncBankReceiptResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\CancelSignEnterpriseAccountHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\CancelSignEnterpriseAccountRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\CancelSignEnterpriseAccountResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\CheckVoucherStatusHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\CheckVoucherStatusRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\CheckVoucherStatusResponse;
@@ -38,6 +41,18 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\CreateCollectionOrderRespon
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\CreatePaymentOrderHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\CreatePaymentOrderRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\CreatePaymentOrderResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\DeleteCompanyHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\DeleteCompanyRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\DeleteCompanyResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\DeleteEnterpriseAccountHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\DeleteEnterpriseAccountRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\DeleteEnterpriseAccountResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\EnableCompanyHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\EnableCompanyRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\EnableCompanyResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\EnableEnterpriseAccountHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\EnableEnterpriseAccountRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\EnableEnterpriseAccountResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\GetCategoryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\GetCategoryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\GetCategoryResponse;
@@ -68,6 +83,8 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\LinkCommonInvokeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\OrderBillingHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\OrderBillingRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\OrderBillingResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\PageQueryCorpPayAccountsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\PageQueryCorpPayAccountsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryAccountTradeByPageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryAccountTradeByPageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryAccountTradeByPageResponse;
@@ -632,6 +649,66 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 已签约的企业账户解约
+     *  *
+     * @param CancelSignEnterpriseAccountRequest $request CancelSignEnterpriseAccountRequest
+     * @param CancelSignEnterpriseAccountHeaders $headers CancelSignEnterpriseAccountHeaders
+     * @param RuntimeOptions                     $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CancelSignEnterpriseAccountResponse CancelSignEnterpriseAccountResponse
+     */
+    public function cancelSignEnterpriseAccountWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->accountCode)) {
+            $query['accountCode'] = $request->accountCode;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'CancelSignEnterpriseAccount',
+            'version' => 'bizfinance_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/bizfinance/enterpriseAccounts/cancelSign',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CancelSignEnterpriseAccountResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 已签约的企业账户解约
+     *  *
+     * @param CancelSignEnterpriseAccountRequest $request CancelSignEnterpriseAccountRequest
+     *
+     * @return CancelSignEnterpriseAccountResponse CancelSignEnterpriseAccountResponse
+     */
+    public function cancelSignEnterpriseAccount($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CancelSignEnterpriseAccountHeaders([]);
+
+        return $this->cancelSignEnterpriseAccountWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 查验发票是否生成凭证
      *  *
      * @param CheckVoucherStatusRequest $request CheckVoucherStatusRequest
@@ -920,6 +997,240 @@ class Dingtalk extends OpenApiClient
         $headers = new CreatePaymentOrderHeaders([]);
 
         return $this->createPaymentOrderWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 停用企业主体
+     *  *
+     * @param DeleteCompanyRequest $request DeleteCompanyRequest
+     * @param DeleteCompanyHeaders $headers DeleteCompanyHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return DeleteCompanyResponse DeleteCompanyResponse
+     */
+    public function deleteCompanyWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->companyCode)) {
+            $query['companyCode'] = $request->companyCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'DeleteCompany',
+            'version' => 'bizfinance_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/bizfinance/companies/delete',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return DeleteCompanyResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 停用企业主体
+     *  *
+     * @param DeleteCompanyRequest $request DeleteCompanyRequest
+     *
+     * @return DeleteCompanyResponse DeleteCompanyResponse
+     */
+    public function deleteCompany($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteCompanyHeaders([]);
+
+        return $this->deleteCompanyWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 停用企业账户
+     *  *
+     * @param DeleteEnterpriseAccountRequest $request DeleteEnterpriseAccountRequest
+     * @param DeleteEnterpriseAccountHeaders $headers DeleteEnterpriseAccountHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return DeleteEnterpriseAccountResponse DeleteEnterpriseAccountResponse
+     */
+    public function deleteEnterpriseAccountWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->accountCode)) {
+            $body['accountCode'] = $request->accountCode;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'DeleteEnterpriseAccount',
+            'version' => 'bizfinance_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/bizfinance/enterpriseAccounts/delete',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return DeleteEnterpriseAccountResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 停用企业账户
+     *  *
+     * @param DeleteEnterpriseAccountRequest $request DeleteEnterpriseAccountRequest
+     *
+     * @return DeleteEnterpriseAccountResponse DeleteEnterpriseAccountResponse
+     */
+    public function deleteEnterpriseAccount($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteEnterpriseAccountHeaders([]);
+
+        return $this->deleteEnterpriseAccountWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 启用企业主体
+     *  *
+     * @param EnableCompanyRequest $request EnableCompanyRequest
+     * @param EnableCompanyHeaders $headers EnableCompanyHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return EnableCompanyResponse EnableCompanyResponse
+     */
+    public function enableCompanyWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->companyCode)) {
+            $query['companyCode'] = $request->companyCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'EnableCompany',
+            'version' => 'bizfinance_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/bizfinance/companies/enable',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return EnableCompanyResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 启用企业主体
+     *  *
+     * @param EnableCompanyRequest $request EnableCompanyRequest
+     *
+     * @return EnableCompanyResponse EnableCompanyResponse
+     */
+    public function enableCompany($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new EnableCompanyHeaders([]);
+
+        return $this->enableCompanyWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 启用企业账户
+     *  *
+     * @param EnableEnterpriseAccountRequest $request EnableEnterpriseAccountRequest
+     * @param EnableEnterpriseAccountHeaders $headers EnableEnterpriseAccountHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return EnableEnterpriseAccountResponse EnableEnterpriseAccountResponse
+     */
+    public function enableEnterpriseAccountWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->accountCode)) {
+            $body['accountCode'] = $request->accountCode;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'EnableEnterpriseAccount',
+            'version' => 'bizfinance_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/bizfinance/enterpriseAccounts/enable',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return EnableEnterpriseAccountResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 启用企业账户
+     *  *
+     * @param EnableEnterpriseAccountRequest $request EnableEnterpriseAccountRequest
+     *
+     * @return EnableEnterpriseAccountResponse EnableEnterpriseAccountResponse
+     */
+    public function enableEnterpriseAccount($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new EnableEnterpriseAccountHeaders([]);
+
+        return $this->enableEnterpriseAccountWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -1592,6 +1903,54 @@ class Dingtalk extends OpenApiClient
         $headers = new OrderBillingHeaders([]);
 
         return $this->orderBillingWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询企业支付绑定的付款账户列表
+     *  *
+     * @param PageQueryCorpPayAccountsHeaders $headers PageQueryCorpPayAccountsHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
+     *
+     * @return PageQueryCorpPayAccountsResponse PageQueryCorpPayAccountsResponse
+     */
+    public function pageQueryCorpPayAccountsWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action' => 'PageQueryCorpPayAccounts',
+            'version' => 'bizfinance_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/bizfinance/corpPayAccounts/batch',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return PageQueryCorpPayAccountsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询企业支付绑定的付款账户列表
+     *  *
+     * @return PageQueryCorpPayAccountsResponse PageQueryCorpPayAccountsResponse
+     */
+    public function pageQueryCorpPayAccounts()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PageQueryCorpPayAccountsHeaders([]);
+
+        return $this->pageQueryCorpPayAccountsWithOptions($headers, $runtime);
     }
 
     /**

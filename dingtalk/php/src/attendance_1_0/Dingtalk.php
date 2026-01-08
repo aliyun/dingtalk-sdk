@@ -111,6 +111,9 @@ use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\ProcessApproveCreateRespons
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\ProcessApproveFinishHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\ProcessApproveFinishRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\ProcessApproveFinishResponse;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\ProcessHhOemUpdateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\ProcessHhOemUpdateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\ProcessHhOemUpdateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\ReduceQuotaWithLeaveRecordHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\ReduceQuotaWithLeaveRecordRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\ReduceQuotaWithLeaveRecordResponse;
@@ -2742,6 +2745,69 @@ class Dingtalk extends OpenApiClient
         $headers = new ProcessApproveFinishHeaders([]);
 
         return $this->processApproveFinishWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 考勤高级排班OEM应用升级
+     *  *
+     * @param ProcessHhOemUpdateRequest $request ProcessHhOemUpdateRequest
+     * @param ProcessHhOemUpdateHeaders $headers ProcessHhOemUpdateHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ProcessHhOemUpdateResponse ProcessHhOemUpdateResponse
+     */
+    public function processHhOemUpdateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bindOemApp)) {
+            $body['bindOemApp'] = $request->bindOemApp;
+        }
+        if (!Utils::isUnset($request->corpIdList)) {
+            $body['corpIdList'] = $request->corpIdList;
+        }
+        if (!Utils::isUnset($request->useOemApp)) {
+            $body['useOemApp'] = $request->useOemApp;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'ProcessHhOemUpdate',
+            'version' => 'attendance_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/attendance/oemApps',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return ProcessHhOemUpdateResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 考勤高级排班OEM应用升级
+     *  *
+     * @param ProcessHhOemUpdateRequest $request ProcessHhOemUpdateRequest
+     *
+     * @return ProcessHhOemUpdateResponse ProcessHhOemUpdateResponse
+     */
+    public function processHhOemUpdate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ProcessHhOemUpdateHeaders([]);
+
+        return $this->processHhOemUpdateWithOptions($request, $headers, $runtime);
     }
 
     /**

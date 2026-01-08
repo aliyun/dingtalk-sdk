@@ -1,0 +1,130 @@
+<?php
+
+// This file is auto-generated, don't edit it. Thanks.
+
+namespace AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models;
+
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\UpdateRoleRequest\subRoles;
+use AlibabaCloud\Tea\Model;
+
+class UpdateRoleRequest extends Model
+{
+    /**
+     * @var string
+     */
+    public $flowType;
+
+    /**
+     * @description This parameter is required.
+     *
+     * @var int
+     */
+    public $id;
+
+    /**
+     * @description This parameter is required.
+     *
+     * @var string
+     */
+    public $name;
+
+    /**
+     * @description This parameter is required.
+     *
+     * @var string
+     */
+    public $roleType;
+
+    /**
+     * @description This parameter is required.
+     *
+     * @var subRoles[]
+     */
+    public $subRoles;
+
+    /**
+     * @description This parameter is required.
+     *
+     * @example union_id
+     *
+     * @var string
+     */
+    public $operatorId;
+    protected $_name = [
+        'flowType' => 'flowType',
+        'id' => 'id',
+        'name' => 'name',
+        'roleType' => 'roleType',
+        'subRoles' => 'subRoles',
+        'operatorId' => 'operatorId',
+    ];
+
+    public function validate() {}
+
+    public function toMap()
+    {
+        $res = [];
+        if (null !== $this->flowType) {
+            $res['flowType'] = $this->flowType;
+        }
+        if (null !== $this->id) {
+            $res['id'] = $this->id;
+        }
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
+        }
+        if (null !== $this->roleType) {
+            $res['roleType'] = $this->roleType;
+        }
+        if (null !== $this->subRoles) {
+            $res['subRoles'] = [];
+            if (null !== $this->subRoles && \is_array($this->subRoles)) {
+                $n = 0;
+                foreach ($this->subRoles as $item) {
+                    $res['subRoles'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
+        if (null !== $this->operatorId) {
+            $res['operatorId'] = $this->operatorId;
+        }
+
+        return $res;
+    }
+
+    /**
+     * @param array $map
+     *
+     * @return UpdateRoleRequest
+     */
+    public static function fromMap($map = [])
+    {
+        $model = new self();
+        if (isset($map['flowType'])) {
+            $model->flowType = $map['flowType'];
+        }
+        if (isset($map['id'])) {
+            $model->id = $map['id'];
+        }
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
+        }
+        if (isset($map['roleType'])) {
+            $model->roleType = $map['roleType'];
+        }
+        if (isset($map['subRoles'])) {
+            if (!empty($map['subRoles'])) {
+                $model->subRoles = [];
+                $n = 0;
+                foreach ($map['subRoles'] as $item) {
+                    $model->subRoles[$n++] = null !== $item ? subRoles::fromMap($item) : $item;
+                }
+            }
+        }
+        if (isset($map['operatorId'])) {
+            $model->operatorId = $map['operatorId'];
+        }
+
+        return $model;
+    }
+}

@@ -4,6 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models;
 
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\OrgGroupQueryResponseBody\readUsers;
 use AlibabaCloud\Tea\Model;
 
 class OrgGroupQueryResponseBody extends Model
@@ -28,6 +29,11 @@ class OrgGroupQueryResponseBody extends Model
     public $readUserIds;
 
     /**
+     * @var readUsers[]
+     */
+    public $readUsers;
+
+    /**
      * @example SUCCESS
      *
      * @var string
@@ -37,6 +43,7 @@ class OrgGroupQueryResponseBody extends Model
         'hasMore' => 'hasMore',
         'nextToken' => 'nextToken',
         'readUserIds' => 'readUserIds',
+        'readUsers' => 'readUsers',
         'sendStatus' => 'sendStatus',
     ];
 
@@ -53,6 +60,15 @@ class OrgGroupQueryResponseBody extends Model
         }
         if (null !== $this->readUserIds) {
             $res['readUserIds'] = $this->readUserIds;
+        }
+        if (null !== $this->readUsers) {
+            $res['readUsers'] = [];
+            if (null !== $this->readUsers && \is_array($this->readUsers)) {
+                $n = 0;
+                foreach ($this->readUsers as $item) {
+                    $res['readUsers'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
         if (null !== $this->sendStatus) {
             $res['sendStatus'] = $this->sendStatus;
@@ -78,6 +94,15 @@ class OrgGroupQueryResponseBody extends Model
         if (isset($map['readUserIds'])) {
             if (!empty($map['readUserIds'])) {
                 $model->readUserIds = $map['readUserIds'];
+            }
+        }
+        if (isset($map['readUsers'])) {
+            if (!empty($map['readUsers'])) {
+                $model->readUsers = [];
+                $n = 0;
+                foreach ($map['readUsers'] as $item) {
+                    $model->readUsers[$n++] = null !== $item ? readUsers::fromMap($item) : $item;
+                }
             }
         }
         if (isset($map['sendStatus'])) {

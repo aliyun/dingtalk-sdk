@@ -47,6 +47,11 @@ class paragraphList extends Model
     /**
      * @var string
      */
+    public $subSpeakerId;
+
+    /**
+     * @var string
+     */
     public $unionId;
     protected $_name = [
         'endTime' => 'endTime',
@@ -56,6 +61,7 @@ class paragraphList extends Model
         'recordId' => 'recordId',
         'sentenceList' => 'sentenceList',
         'startTime' => 'startTime',
+        'subSpeakerId' => 'subSpeakerId',
         'unionId' => 'unionId',
     ];
 
@@ -90,6 +96,9 @@ class paragraphList extends Model
         }
         if (null !== $this->startTime) {
             $res['startTime'] = $this->startTime;
+        }
+        if (null !== $this->subSpeakerId) {
+            $res['subSpeakerId'] = $this->subSpeakerId;
         }
         if (null !== $this->unionId) {
             $res['unionId'] = $this->unionId;
@@ -132,6 +141,9 @@ class paragraphList extends Model
         }
         if (isset($map['startTime'])) {
             $model->startTime = $map['startTime'];
+        }
+        if (isset($map['subSpeakerId'])) {
+            $model->subSpeakerId = $map['subSpeakerId'];
         }
         if (isset($map['unionId'])) {
             $model->unionId = $map['unionId'];

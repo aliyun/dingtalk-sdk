@@ -14,6 +14,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetAudioFileInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetCustomerInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetCustomerInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetCustomerInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetCustomerInsightHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetCustomerInsightRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetCustomerInsightResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetServiceChapterSummaryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetServiceChapterSummaryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetServiceChapterSummaryResponse;
@@ -56,6 +59,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\QueryDeviceStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\SubmitAsrTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\SubmitAsrTaskRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\SubmitAsrTaskResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\VideoCustomerSplitHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\VideoCustomerSplitRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\VideoCustomerSplitResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\GatewayDingTalk\Client;
@@ -251,6 +257,63 @@ class Dingtalk extends OpenApiClient
         $headers = new GetCustomerInfoHeaders([]);
 
         return $this->getCustomerInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取客户洞察信息
+     *  *
+     * @param GetCustomerInsightRequest $request GetCustomerInsightRequest
+     * @param GetCustomerInsightHeaders $headers GetCustomerInsightHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetCustomerInsightResponse GetCustomerInsightResponse
+     */
+    public function getCustomerInsightWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->customerId)) {
+            $query['customerId'] = $request->customerId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'GetCustomerInsight',
+            'version' => 'dvi_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/dvi/customers/insights',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetCustomerInsightResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取客户洞察信息
+     *  *
+     * @param GetCustomerInsightRequest $request GetCustomerInsightRequest
+     *
+     * @return GetCustomerInsightResponse GetCustomerInsightResponse
+     */
+    public function getCustomerInsight($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetCustomerInsightHeaders([]);
+
+        return $this->getCustomerInsightWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -1133,5 +1196,68 @@ class Dingtalk extends OpenApiClient
         $headers = new SubmitAsrTaskHeaders([]);
 
         return $this->submitAsrTaskWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary asr离线任务
+     *  *
+     * @param VideoCustomerSplitRequest $request VideoCustomerSplitRequest
+     * @param VideoCustomerSplitHeaders $headers VideoCustomerSplitHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return VideoCustomerSplitResponse VideoCustomerSplitResponse
+     */
+    public function videoCustomerSplitWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->customer)) {
+            $body['customer'] = $request->customer;
+        }
+        if (!Utils::isUnset($request->segmentId)) {
+            $body['segmentId'] = $request->segmentId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'VideoCustomerSplit',
+            'version' => 'dvi_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/dvi/service/audiosplit',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return VideoCustomerSplitResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary asr离线任务
+     *  *
+     * @param VideoCustomerSplitRequest $request VideoCustomerSplitRequest
+     *
+     * @return VideoCustomerSplitResponse VideoCustomerSplitResponse
+     */
+    public function videoCustomerSplit($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new VideoCustomerSplitHeaders([]);
+
+        return $this->videoCustomerSplitWithOptions($request, $headers, $runtime);
     }
 }

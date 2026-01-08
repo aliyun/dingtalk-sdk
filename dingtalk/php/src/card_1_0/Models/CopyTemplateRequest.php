@@ -9,12 +9,18 @@ use AlibabaCloud\Tea\Model;
 class CopyTemplateRequest extends Model
 {
     /**
+     * @var string
+     */
+    public $name;
+
+    /**
      * @description This parameter is required.
      *
      * @var string
      */
     public $templateId;
     protected $_name = [
+        'name' => 'name',
         'templateId' => 'templateId',
     ];
 
@@ -23,6 +29,9 @@ class CopyTemplateRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
+        }
         if (null !== $this->templateId) {
             $res['templateId'] = $this->templateId;
         }
@@ -38,6 +47,9 @@ class CopyTemplateRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
+        }
         if (isset($map['templateId'])) {
             $model->templateId = $map['templateId'];
         }
