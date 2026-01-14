@@ -4,6 +4,12 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class SetRightPanelRequest extends TeaModel {
+    @NameInMap("forceExpand")
+    public Boolean forceExpand;
+
+    @NameInMap("isQtWnd")
+    public Boolean isQtWnd;
+
     /**
      * <p>This parameter is required.</p>
      * 
@@ -55,6 +61,22 @@ public class SetRightPanelRequest extends TeaModel {
     public static SetRightPanelRequest build(java.util.Map<String, ?> map) throws Exception {
         SetRightPanelRequest self = new SetRightPanelRequest();
         return TeaModel.build(map, self);
+    }
+
+    public SetRightPanelRequest setForceExpand(Boolean forceExpand) {
+        this.forceExpand = forceExpand;
+        return this;
+    }
+    public Boolean getForceExpand() {
+        return this.forceExpand;
+    }
+
+    public SetRightPanelRequest setIsQtWnd(Boolean isQtWnd) {
+        this.isQtWnd = isQtWnd;
+        return this;
+    }
+    public Boolean getIsQtWnd() {
+        return this.isQtWnd;
     }
 
     public SetRightPanelRequest setOpenConversationId(String openConversationId) {

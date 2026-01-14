@@ -132,6 +132,78 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>提供给HHO的异步回调接口</p>
+     * 
+     * @param request HhoCallBackRequest
+     * @param headers HhoCallBackHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HhoCallBackResponse
+     */
+    public HhoCallBackResponse hhoCallBackWithOptions(HhoCallBackRequest request, HhoCallBackHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.data)) {
+            body.put("data", request.data);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dtNotificationId)) {
+            body.put("dtNotificationId", request.dtNotificationId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.shopId)) {
+            body.put("shopId", request.shopId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.timestamp)) {
+            body.put("timestamp", request.timestamp);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.type)) {
+            body.put("type", request.type);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "HhoCallBack"),
+            new TeaPair("version", "aiGlobalEC_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/aiGlobalEC/hho/callback"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new HhoCallBackResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>提供给HHO的异步回调接口</p>
+     * 
+     * @param request HhoCallBackRequest
+     * @return HhoCallBackResponse
+     */
+    public HhoCallBackResponse hhoCallBack(HhoCallBackRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        HhoCallBackHeaders headers = new HhoCallBackHeaders();
+        return this.hhoCallBackWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>刊登的对外开放Api</p>
      * 
      * @param request LaunchRequest
@@ -141,35 +213,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
      */
     public LaunchResponse launchWithOptions(LaunchRequest request, LaunchHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.dingAgentId)) {
-            query.put("dingAgentId", request.dingAgentId);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.dingClientId)) {
-            query.put("dingClientId", request.dingClientId);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.dingIsvOrgId)) {
-            query.put("dingIsvOrgId", request.dingIsvOrgId);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.dingOrgId)) {
-            query.put("dingOrgId", request.dingOrgId);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.dingSuiteKey)) {
-            query.put("dingSuiteKey", request.dingSuiteKey);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.dingTokenGrantType)) {
-            query.put("dingTokenGrantType", request.dingTokenGrantType);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.dingUid)) {
-            query.put("dingUid", request.dingUid);
-        }
-
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.description)) {
             body.put("description", request.description);
@@ -214,7 +257,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
-            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(

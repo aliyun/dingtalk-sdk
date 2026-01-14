@@ -136,6 +136,162 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>分页查询组织航班订单信息</p>
+     * 
+     * @param tmpReq QueryTripFlightOrderByPageRequest
+     * @param headers QueryTripFlightOrderByPageHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryTripFlightOrderByPageResponse
+     */
+    public QueryTripFlightOrderByPageResponse queryTripFlightOrderByPageWithOptions(QueryTripFlightOrderByPageRequest tmpReq, QueryTripFlightOrderByPageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(tmpReq);
+        QueryTripFlightOrderByPageShrinkRequest request = new QueryTripFlightOrderByPageShrinkRequest();
+        com.aliyun.openapiutil.Client.convert(tmpReq, request);
+        if (!com.aliyun.teautil.Common.isUnset(tmpReq.orderStatus)) {
+            request.orderStatusShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(tmpReq.orderStatus, "orderStatus", "json");
+        }
+
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.endTime)) {
+            query.put("endTime", request.endTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.orderStatusShrink)) {
+            query.put("orderStatus", request.orderStatusShrink);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageIndex)) {
+            query.put("pageIndex", request.pageIndex);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
+            query.put("pageSize", request.pageSize);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.startTime)) {
+            query.put("startTime", request.startTime);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryTripFlightOrderByPage"),
+            new TeaPair("version", "trip_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/trip/flight/orders"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryTripFlightOrderByPageResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>分页查询组织航班订单信息</p>
+     * 
+     * @param request QueryTripFlightOrderByPageRequest
+     * @return QueryTripFlightOrderByPageResponse
+     */
+    public QueryTripFlightOrderByPageResponse queryTripFlightOrderByPage(QueryTripFlightOrderByPageRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryTripFlightOrderByPageHeaders headers = new QueryTripFlightOrderByPageHeaders();
+        return this.queryTripFlightOrderByPageWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>分页查询组织酒店订单信息</p>
+     * 
+     * @param tmpReq QueryTripHotelOrderByPageRequest
+     * @param headers QueryTripHotelOrderByPageHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryTripHotelOrderByPageResponse
+     */
+    public QueryTripHotelOrderByPageResponse queryTripHotelOrderByPageWithOptions(QueryTripHotelOrderByPageRequest tmpReq, QueryTripHotelOrderByPageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(tmpReq);
+        QueryTripHotelOrderByPageShrinkRequest request = new QueryTripHotelOrderByPageShrinkRequest();
+        com.aliyun.openapiutil.Client.convert(tmpReq, request);
+        if (!com.aliyun.teautil.Common.isUnset(tmpReq.orderStatus)) {
+            request.orderStatusShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(tmpReq.orderStatus, "orderStatus", "json");
+        }
+
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.endTime)) {
+            query.put("endTime", request.endTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.orderStatusShrink)) {
+            query.put("orderStatus", request.orderStatusShrink);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageIndex)) {
+            query.put("pageIndex", request.pageIndex);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
+            query.put("pageSize", request.pageSize);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.startTime)) {
+            query.put("startTime", request.startTime);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryTripHotelOrderByPage"),
+            new TeaPair("version", "trip_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/trip/hotel/orders"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryTripHotelOrderByPageResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>分页查询组织酒店订单信息</p>
+     * 
+     * @param request QueryTripHotelOrderByPageRequest
+     * @return QueryTripHotelOrderByPageResponse
+     */
+    public QueryTripHotelOrderByPageResponse queryTripHotelOrderByPage(QueryTripHotelOrderByPageRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryTripHotelOrderByPageHeaders headers = new QueryTripHotelOrderByPageHeaders();
+        return this.queryTripHotelOrderByPageWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>查询审批套件详情</p>
      * 
      * @param request QueryTripProcessTemplatesRequest
@@ -188,6 +344,84 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryTripProcessTemplatesHeaders headers = new QueryTripProcessTemplatesHeaders();
         return this.queryTripProcessTemplatesWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>分页查询组织火车订单信息</p>
+     * 
+     * @param tmpReq QueryTripTrainOrderByPageRequest
+     * @param headers QueryTripTrainOrderByPageHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryTripTrainOrderByPageResponse
+     */
+    public QueryTripTrainOrderByPageResponse queryTripTrainOrderByPageWithOptions(QueryTripTrainOrderByPageRequest tmpReq, QueryTripTrainOrderByPageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(tmpReq);
+        QueryTripTrainOrderByPageShrinkRequest request = new QueryTripTrainOrderByPageShrinkRequest();
+        com.aliyun.openapiutil.Client.convert(tmpReq, request);
+        if (!com.aliyun.teautil.Common.isUnset(tmpReq.orderStatus)) {
+            request.orderStatusShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(tmpReq.orderStatus, "orderStatus", "json");
+        }
+
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.endTime)) {
+            query.put("endTime", request.endTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.orderStatusShrink)) {
+            query.put("orderStatus", request.orderStatusShrink);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageIndex)) {
+            query.put("pageIndex", request.pageIndex);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
+            query.put("pageSize", request.pageSize);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.startTime)) {
+            query.put("startTime", request.startTime);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryTripTrainOrderByPage"),
+            new TeaPair("version", "trip_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/trip/train/orders"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryTripTrainOrderByPageResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>分页查询组织火车订单信息</p>
+     * 
+     * @param request QueryTripTrainOrderByPageRequest
+     * @return QueryTripTrainOrderByPageResponse
+     */
+    public QueryTripTrainOrderByPageResponse queryTripTrainOrderByPage(QueryTripTrainOrderByPageRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryTripTrainOrderByPageHeaders headers = new QueryTripTrainOrderByPageHeaders();
+        return this.queryTripTrainOrderByPageWithOptions(request, headers, runtime);
     }
 
     /**
@@ -1004,6 +1238,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("endorseFlag", request.endorseFlag);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.enterprisePayAmount)) {
+            body.put("enterprisePayAmount", request.enterprisePayAmount);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.event)) {
             body.put("event", request.event);
         }
@@ -1066,6 +1304,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.orderUrl)) {
             body.put("orderUrl", request.orderUrl);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.personalPayAmount)) {
+            body.put("personalPayAmount", request.personalPayAmount);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.processId)) {

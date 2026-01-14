@@ -220,6 +220,62 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>查询会话内已安装的酷应用</p>
+     * 
+     * @param request QueryInstalledCoolAppsInConversationRequest
+     * @param headers QueryInstalledCoolAppsInConversationHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryInstalledCoolAppsInConversationResponse
+     */
+    public QueryInstalledCoolAppsInConversationResponse queryInstalledCoolAppsInConversationWithOptions(QueryInstalledCoolAppsInConversationRequest request, QueryInstalledCoolAppsInConversationHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
+            body.put("openConversationId", request.openConversationId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryInstalledCoolAppsInConversation"),
+            new TeaPair("version", "coolApp_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/coolApp/installedInConversation/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryInstalledCoolAppsInConversationResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询会话内已安装的酷应用</p>
+     * 
+     * @param request QueryInstalledCoolAppsInConversationRequest
+     * @return QueryInstalledCoolAppsInConversationResponse
+     */
+    public QueryInstalledCoolAppsInConversationResponse queryInstalledCoolAppsInConversation(QueryInstalledCoolAppsInConversationRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryInstalledCoolAppsInConversationHeaders headers = new QueryInstalledCoolAppsInConversationHeaders();
+        return this.queryInstalledCoolAppsInConversationWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>从群内卸载酷应用</p>
      * 
      * @param request UninstallCoolAppFromGroupRequest

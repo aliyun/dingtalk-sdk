@@ -232,11 +232,8 @@ public class QueryAsrTaskResponseBody extends TeaModel {
         @NameInMap("bizKey")
         public String bizKey;
 
-        @NameInMap("errorCode")
-        public String errorCode;
-
-        @NameInMap("errorMessage")
-        public String errorMessage;
+        @NameInMap("nextToken")
+        public String nextToken;
 
         @NameInMap("resultInfo")
         public QueryAsrTaskResponseBodyResultResultInfo resultInfo;
@@ -260,20 +257,12 @@ public class QueryAsrTaskResponseBody extends TeaModel {
             return this.bizKey;
         }
 
-        public QueryAsrTaskResponseBodyResult setErrorCode(String errorCode) {
-            this.errorCode = errorCode;
+        public QueryAsrTaskResponseBodyResult setNextToken(String nextToken) {
+            this.nextToken = nextToken;
             return this;
         }
-        public String getErrorCode() {
-            return this.errorCode;
-        }
-
-        public QueryAsrTaskResponseBodyResult setErrorMessage(String errorMessage) {
-            this.errorMessage = errorMessage;
-            return this;
-        }
-        public String getErrorMessage() {
-            return this.errorMessage;
+        public String getNextToken() {
+            return this.nextToken;
         }
 
         public QueryAsrTaskResponseBodyResult setResultInfo(QueryAsrTaskResponseBodyResultResultInfo resultInfo) {

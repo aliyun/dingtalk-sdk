@@ -405,10 +405,28 @@ public class PremiumGetProcessInstancesResponseBody extends TeaModel {
          * <p>This parameter is required.</p>
          * 
          * <strong>example:</strong>
+         * <p>1635165470201</p>
+         */
+        @NameInMap("createTimeInMills")
+        public Long createTimeInMills;
+
+        /**
+         * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
          * <p>1633795200000</p>
          */
         @NameInMap("finishTime")
         public Long finishTime;
+
+        /**
+         * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>1633795200000</p>
+         */
+        @NameInMap("finishTimeInMills")
+        public Long finishTimeInMills;
 
         /**
          * <p>This parameter is required.</p>
@@ -514,12 +532,28 @@ public class PremiumGetProcessInstancesResponseBody extends TeaModel {
             return this.createTime;
         }
 
+        public PremiumGetProcessInstancesResponseBodyResultList setCreateTimeInMills(Long createTimeInMills) {
+            this.createTimeInMills = createTimeInMills;
+            return this;
+        }
+        public Long getCreateTimeInMills() {
+            return this.createTimeInMills;
+        }
+
         public PremiumGetProcessInstancesResponseBodyResultList setFinishTime(Long finishTime) {
             this.finishTime = finishTime;
             return this;
         }
         public Long getFinishTime() {
             return this.finishTime;
+        }
+
+        public PremiumGetProcessInstancesResponseBodyResultList setFinishTimeInMills(Long finishTimeInMills) {
+            this.finishTimeInMills = finishTimeInMills;
+            return this;
+        }
+        public Long getFinishTimeInMills() {
+            return this.finishTimeInMills;
         }
 
         public PremiumGetProcessInstancesResponseBodyResultList setFormComponentValues(java.util.List<PremiumGetProcessInstancesResponseBodyResultListFormComponentValues> formComponentValues) {

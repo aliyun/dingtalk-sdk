@@ -42,6 +42,16 @@ public class SearchFormDatasRequest extends TeaModel {
     public String dynamicOrder;
 
     /**
+     * <strong>example:</strong>
+     * <p>vpc,sgp_vpc</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
+    @NameInMap("env")
+    public String env;
+
+    /**
      * <p>This parameter is required.</p>
      * 
      * <strong>example:</strong>
@@ -152,6 +162,14 @@ public class SearchFormDatasRequest extends TeaModel {
     }
     public String getDynamicOrder() {
         return this.dynamicOrder;
+    }
+
+    public SearchFormDatasRequest setEnv(String env) {
+        this.env = env;
+        return this;
+    }
+    public String getEnv() {
+        return this.env;
     }
 
     public SearchFormDatasRequest setFormUuid(String formUuid) {

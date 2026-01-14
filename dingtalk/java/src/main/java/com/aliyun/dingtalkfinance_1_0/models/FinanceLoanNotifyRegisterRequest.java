@@ -4,101 +4,45 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class FinanceLoanNotifyRegisterRequest extends TeaModel {
-    /**
-     * <strong>example:</strong>
-     * <p>2024-06-18 14:53:33</p>
-     */
     @NameInMap("completeTime")
     public String completeTime;
 
-    /**
-     * <strong>example:</strong>
-     * <p>{}</p>
-     */
     @NameInMap("extension")
     public String extension;
 
-    /**
-     * <strong>example:</strong>
-     * <p>330725189509101234</p>
-     */
     @NameInMap("idCardNo")
     public String idCardNo;
 
-    /**
-     * <strong>example:</strong>
-     * <p>中原消费金融</p>
-     */
     @NameInMap("openChannelName")
     public String openChannelName;
 
-    /**
-     * <strong>example:</strong>
-     * <p>XFD201909210001</p>
-     */
     @NameInMap("openProductCode")
     public String openProductCode;
 
-    /**
-     * <strong>example:</strong>
-     * <p>员工贷</p>
-     */
     @NameInMap("openProductName")
     public String openProductName;
 
-    /**
-     * <strong>example:</strong>
-     * <p>ZYXJ_XFD</p>
-     */
     @NameInMap("openProductType")
     public String openProductType;
 
-    /**
-     * <strong>example:</strong>
-     * <p>0</p>
-     */
     @NameInMap("processingStatus")
     public String processingStatus;
 
-    /**
-     * <strong>example:</strong>
-     * <p>ZRSB2020</p>
-     */
     @NameInMap("refuseCode")
     public String refuseCode;
 
-    /**
-     * <strong>example:</strong>
-     * <p>进件准入失败</p>
-     */
     @NameInMap("refuseReason")
     public String refuseReason;
 
-    /**
-     * <strong>example:</strong>
-     * <p>2024061814654041710801</p>
-     */
     @NameInMap("registerNo")
     public String registerNo;
 
-    /**
-     * <strong>example:</strong>
-     * <p>0</p>
-     */
     @NameInMap("status")
     public String status;
 
-    /**
-     * <strong>example:</strong>
-     * <p>2024-06-18 14:53:33</p>
-     */
     @NameInMap("submitTime")
     public String submitTime;
 
-    /**
-     * <strong>example:</strong>
-     * <p>18092149430</p>
-     */
     @NameInMap("userMobile")
     public String userMobile;
 

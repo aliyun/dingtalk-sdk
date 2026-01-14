@@ -20,6 +20,78 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>群维度添加群标签页</p>
+     * 
+     * @param request AddConvNavTabRequest
+     * @param headers AddConvNavTabHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AddConvNavTabResponse
+     */
+    public AddConvNavTabResponse addConvNavTabWithOptions(AddConvNavTabRequest request, AddConvNavTabHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.mobileUrl)) {
+            body.put("mobileUrl", request.mobileUrl);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
+            body.put("openConversationId", request.openConversationId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pcUrl)) {
+            body.put("pcUrl", request.pcUrl);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.title)) {
+            body.put("title", request.title);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userEditable)) {
+            body.put("userEditable", request.userEditable);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AddConvNavTab"),
+            new TeaPair("version", "im_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/im/convNavTabs/add"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AddConvNavTabResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>群维度添加群标签页</p>
+     * 
+     * @param request AddConvNavTabRequest
+     * @return AddConvNavTabResponse
+     */
+    public AddConvNavTabResponse addConvNavTab(AddConvNavTabRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AddConvNavTabHeaders headers = new AddConvNavTabHeaders();
+        return this.addConvNavTabWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>添加企业文字表情</p>
      * 
      * @param request AddOrgTextEmotionRequest
@@ -1380,6 +1452,66 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DebugUnfurlingRegisterHeaders headers = new DebugUnfurlingRegisterHeaders();
         return this.debugUnfurlingRegisterWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>群维度批量删除群标签页</p>
+     * 
+     * @param request DeleteConvNavTabRequest
+     * @param headers DeleteConvNavTabHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteConvNavTabResponse
+     */
+    public DeleteConvNavTabResponse deleteConvNavTabWithOptions(DeleteConvNavTabRequest request, DeleteConvNavTabHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
+            body.put("openConversationId", request.openConversationId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.tabIds)) {
+            body.put("tabIds", request.tabIds);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DeleteConvNavTab"),
+            new TeaPair("version", "im_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/im/convNavTabs/delete"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DeleteConvNavTabResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>群维度批量删除群标签页</p>
+     * 
+     * @param request DeleteConvNavTabRequest
+     * @return DeleteConvNavTabResponse
+     */
+    public DeleteConvNavTabResponse deleteConvNavTab(DeleteConvNavTabRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DeleteConvNavTabHeaders headers = new DeleteConvNavTabHeaders();
+        return this.deleteConvNavTabWithOptions(request, headers, runtime);
     }
 
     /**
@@ -2974,6 +3106,94 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>使用小钉发送卡片消息</p>
+     * 
+     * @param request IntelligentSendCardRequest
+     * @param headers IntelligentSendCardHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return IntelligentSendCardResponse
+     */
+    public IntelligentSendCardResponse intelligentSendCardWithOptions(IntelligentSendCardRequest request, IntelligentSendCardHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.atAll)) {
+            body.put("atAll", request.atAll);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.atOpenGroupRoleIds)) {
+            body.put("atOpenGroupRoleIds", request.atOpenGroupRoleIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.atUnionIds)) {
+            body.put("atUnionIds", request.atUnionIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.atUserIds)) {
+            body.put("atUserIds", request.atUserIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.excludeIds)) {
+            body.put("excludeIds", request.excludeIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
+            body.put("openConversationId", request.openConversationId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.outTrackId)) {
+            body.put("outTrackId", request.outTrackId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.receivers)) {
+            body.put("receivers", request.receivers);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.uuid)) {
+            body.put("uuid", request.uuid);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "IntelligentSendCard"),
+            new TeaPair("version", "im_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/im/intelligent/cards/send"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new IntelligentSendCardResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>使用小钉发送卡片消息</p>
+     * 
+     * @param request IntelligentSendCardRequest
+     * @return IntelligentSendCardResponse
+     */
+    public IntelligentSendCardResponse intelligentSendCard(IntelligentSendCardRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        IntelligentSendCardHeaders headers = new IntelligentSendCardHeaders();
+        return this.intelligentSendCardWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>创建可交互式实例</p>
      * 
      * @param request InteractiveCardCreateInstanceRequest
@@ -3070,6 +3290,62 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         InteractiveCardCreateInstanceHeaders headers = new InteractiveCardCreateInstanceHeaders();
         return this.interactiveCardCreateInstanceWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取群维度标签页</p>
+     * 
+     * @param request ListConvNavTabRequest
+     * @param headers ListConvNavTabHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ListConvNavTabResponse
+     */
+    public ListConvNavTabResponse listConvNavTabWithOptions(ListConvNavTabRequest request, ListConvNavTabHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
+            body.put("openConversationId", request.openConversationId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ListConvNavTab"),
+            new TeaPair("version", "im_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/im/convNavTabs/list"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ListConvNavTabResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取群维度标签页</p>
+     * 
+     * @param request ListConvNavTabRequest
+     * @return ListConvNavTabResponse
+     */
+    public ListConvNavTabResponse listConvNavTab(ListConvNavTabRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ListConvNavTabHeaders headers = new ListConvNavTabHeaders();
+        return this.listConvNavTabWithOptions(request, headers, runtime);
     }
 
     /**
@@ -4592,6 +4868,74 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>查询消息已读状态</p>
+     * 
+     * @param request QueryMsgReadStatusRequest
+     * @param headers QueryMsgReadStatusHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryMsgReadStatusResponse
+     */
+    public QueryMsgReadStatusResponse queryMsgReadStatusWithOptions(QueryMsgReadStatusRequest request, QueryMsgReadStatusHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.cursor)) {
+            body.put("cursor", request.cursor);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
+            body.put("openConversationId", request.openConversationId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.openTaskId)) {
+            body.put("openTaskId", request.openTaskId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
+            body.put("pageSize", request.pageSize);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryMsgReadStatus"),
+            new TeaPair("version", "im_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/im/intelligent/messages/readStatuses/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryMsgReadStatusResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询消息已读状态</p>
+     * 
+     * @param request QueryMsgReadStatusRequest
+     * @return QueryMsgReadStatusResponse
+     */
+    public QueryMsgReadStatusResponse queryMsgReadStatus(QueryMsgReadStatusRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryMsgReadStatusHeaders headers = new QueryMsgReadStatusHeaders();
+        return this.queryMsgReadStatusWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>根据单聊会话及发送方获取接收方用户信息</p>
      * 
      * @param request QueryOpenConversationReceiveUserRequest
@@ -5304,6 +5648,66 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ReadPersonalMessageHeaders headers = new ReadPersonalMessageHeaders();
         return this.readPersonalMessageWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>撤回消息</p>
+     * 
+     * @param request RecallMessagesRequest
+     * @param headers RecallMessagesHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return RecallMessagesResponse
+     */
+    public RecallMessagesResponse recallMessagesWithOptions(RecallMessagesRequest request, RecallMessagesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
+            body.put("openConversationId", request.openConversationId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.openTaskId)) {
+            body.put("openTaskId", request.openTaskId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "RecallMessages"),
+            new TeaPair("version", "im_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/im/intelligent/messages/recall"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new RecallMessagesResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>撤回消息</p>
+     * 
+     * @param request RecallMessagesRequest
+     * @return RecallMessagesResponse
+     */
+    public RecallMessagesResponse recallMessages(RecallMessagesRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        RecallMessagesHeaders headers = new RecallMessagesHeaders();
+        return this.recallMessagesWithOptions(request, headers, runtime);
     }
 
     /**
@@ -6106,6 +6510,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public SetRightPanelResponse setRightPanelWithOptions(SetRightPanelRequest request, SetRightPanelHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.forceExpand)) {
+            body.put("forceExpand", request.forceExpand);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.isQtWnd)) {
+            body.put("isQtWnd", request.isQtWnd);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
             body.put("openConversationId", request.openConversationId);
         }
@@ -6528,6 +6940,82 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateClientServiceHeaders headers = new UpdateClientServiceHeaders();
         return this.updateClientServiceWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>群维度更新群标签页</p>
+     * 
+     * @param request UpdateConvNavTabRequest
+     * @param headers UpdateConvNavTabHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateConvNavTabResponse
+     */
+    public UpdateConvNavTabResponse updateConvNavTabWithOptions(UpdateConvNavTabRequest request, UpdateConvNavTabHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.mobileUrl)) {
+            body.put("mobileUrl", request.mobileUrl);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
+            body.put("openConversationId", request.openConversationId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pcUrl)) {
+            body.put("pcUrl", request.pcUrl);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.tabId)) {
+            body.put("tabId", request.tabId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.title)) {
+            body.put("title", request.title);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userEditable)) {
+            body.put("userEditable", request.userEditable);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateConvNavTab"),
+            new TeaPair("version", "im_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/im/convNavTabs/update"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateConvNavTabResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>群维度更新群标签页</p>
+     * 
+     * @param request UpdateConvNavTabRequest
+     * @return UpdateConvNavTabResponse
+     */
+    public UpdateConvNavTabResponse updateConvNavTab(UpdateConvNavTabRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateConvNavTabHeaders headers = new UpdateConvNavTabHeaders();
+        return this.updateConvNavTabWithOptions(request, headers, runtime);
     }
 
     /**

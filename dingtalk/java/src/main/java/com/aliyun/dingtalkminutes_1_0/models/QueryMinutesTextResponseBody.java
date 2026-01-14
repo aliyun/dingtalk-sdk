@@ -168,6 +168,9 @@ public class QueryMinutesTextResponseBody extends TeaModel {
         @NameInMap("startTime")
         public Long startTime;
 
+        @NameInMap("subSpeakerId")
+        public String subSpeakerId;
+
         @NameInMap("unionId")
         public String unionId;
 
@@ -230,6 +233,14 @@ public class QueryMinutesTextResponseBody extends TeaModel {
         }
         public Long getStartTime() {
             return this.startTime;
+        }
+
+        public QueryMinutesTextResponseBodyParagraphList setSubSpeakerId(String subSpeakerId) {
+            this.subSpeakerId = subSpeakerId;
+            return this;
+        }
+        public String getSubSpeakerId() {
+            return this.subSpeakerId;
         }
 
         public QueryMinutesTextResponseBodyParagraphList setUnionId(String unionId) {

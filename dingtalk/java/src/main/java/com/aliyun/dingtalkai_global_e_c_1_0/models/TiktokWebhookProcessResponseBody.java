@@ -4,6 +4,9 @@ package com.aliyun.dingtalkai_global_e_c_1_0.models;
 import com.aliyun.tea.*;
 
 public class TiktokWebhookProcessResponseBody extends TeaModel {
+    @NameInMap("code")
+    public Integer code;
+
     @NameInMap("errorCode")
     public String errorCode;
 
@@ -19,6 +22,14 @@ public class TiktokWebhookProcessResponseBody extends TeaModel {
     public static TiktokWebhookProcessResponseBody build(java.util.Map<String, ?> map) throws Exception {
         TiktokWebhookProcessResponseBody self = new TiktokWebhookProcessResponseBody();
         return TeaModel.build(map, self);
+    }
+
+    public TiktokWebhookProcessResponseBody setCode(Integer code) {
+        this.code = code;
+        return this;
+    }
+    public Integer getCode() {
+        return this.code;
     }
 
     public TiktokWebhookProcessResponseBody setErrorCode(String errorCode) {

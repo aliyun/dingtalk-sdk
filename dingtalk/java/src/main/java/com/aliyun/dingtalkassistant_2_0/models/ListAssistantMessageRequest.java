@@ -1,0 +1,34 @@
+// This file is auto-generated, don't edit it. Thanks.
+package com.aliyun.dingtalkassistant_2_0.models;
+
+import com.aliyun.tea.*;
+
+public class ListAssistantMessageRequest extends TeaModel {
+    @NameInMap("limit")
+    public Integer limit;
+
+    @NameInMap("runId")
+    public String runId;
+
+    public static ListAssistantMessageRequest build(java.util.Map<String, ?> map) throws Exception {
+        ListAssistantMessageRequest self = new ListAssistantMessageRequest();
+        return TeaModel.build(map, self);
+    }
+
+    public ListAssistantMessageRequest setLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+    public Integer getLimit() {
+        return this.limit;
+    }
+
+    public ListAssistantMessageRequest setRunId(String runId) {
+        this.runId = runId;
+        return this;
+    }
+    public String getRunId() {
+        return this.runId;
+    }
+
+}

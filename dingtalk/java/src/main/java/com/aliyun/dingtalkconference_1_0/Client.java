@@ -38,6 +38,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("ownerUnionId", request.ownerUnionId);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.roleSubResourceIds)) {
+            body.put("roleSubResourceIds", request.roleSubResourceIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.shareScope)) {
+            body.put("shareScope", request.shareScope);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
             body.put("unionId", request.unionId);
         }
@@ -256,6 +264,66 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CohostsHeaders headers = new CohostsHeaders();
         return this.cohostsWithOptions(conferenceId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>生成会议自动登录url</p>
+     * 
+     * @param request CreateAutoLoginUrlRequest
+     * @param headers CreateAutoLoginUrlHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateAutoLoginUrlResponse
+     */
+    public CreateAutoLoginUrlResponse createAutoLoginUrlWithOptions(CreateAutoLoginUrlRequest request, CreateAutoLoginUrlHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.meetingUrl)) {
+            body.put("meetingUrl", request.meetingUrl);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            body.put("unionId", request.unionId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateAutoLoginUrl"),
+            new TeaPair("version", "conference_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/conference/videoConferences/createAutoLoginUrl"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateAutoLoginUrlResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>生成会议自动登录url</p>
+     * 
+     * @param request CreateAutoLoginUrlRequest
+     * @return CreateAutoLoginUrlResponse
+     */
+    public CreateAutoLoginUrlResponse createAutoLoginUrl(CreateAutoLoginUrlRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CreateAutoLoginUrlHeaders headers = new CreateAutoLoginUrlHeaders();
+        return this.createAutoLoginUrlWithOptions(request, headers, runtime);
     }
 
     /**
@@ -920,6 +988,70 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetUserMetricDataHeaders headers = new GetUserMetricDataHeaders();
         return this.getUserMetricDataWithOptions(conferenceId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>邀请MCU入会</p>
+     * 
+     * @param request InviteMcuRequest
+     * @param headers InviteMcuHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return InviteMcuResponse
+     */
+    public InviteMcuResponse inviteMcuWithOptions(InviteMcuRequest request, InviteMcuHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.mcuRoomCode)) {
+            body.put("mcuRoomCode", request.mcuRoomCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.roomCode)) {
+            body.put("roomCode", request.roomCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            body.put("unionId", request.unionId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "InviteMcu"),
+            new TeaPair("version", "conference_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/conference/videoConferences/mcus/invite"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new InviteMcuResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>邀请MCU入会</p>
+     * 
+     * @param request InviteMcuRequest
+     * @return InviteMcuResponse
+     */
+    public InviteMcuResponse inviteMcu(InviteMcuRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        InviteMcuHeaders headers = new InviteMcuHeaders();
+        return this.inviteMcuWithOptions(request, headers, runtime);
     }
 
     /**

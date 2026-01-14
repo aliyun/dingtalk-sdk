@@ -35,6 +35,16 @@ public class GetInstancesRequest extends TeaModel {
     public String createToTimeGMT;
 
     /**
+     * <strong>example:</strong>
+     * <p>vpc, sgp_vpc</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
+    @NameInMap("env")
+    public String env;
+
+    /**
      * <p>This parameter is required.</p>
      * 
      * <strong>example:</strong>
@@ -163,6 +173,14 @@ public class GetInstancesRequest extends TeaModel {
     }
     public String getCreateToTimeGMT() {
         return this.createToTimeGMT;
+    }
+
+    public GetInstancesRequest setEnv(String env) {
+        this.env = env;
+        return this;
+    }
+    public String getEnv() {
+        return this.env;
     }
 
     public GetInstancesRequest setFormUuid(String formUuid) {

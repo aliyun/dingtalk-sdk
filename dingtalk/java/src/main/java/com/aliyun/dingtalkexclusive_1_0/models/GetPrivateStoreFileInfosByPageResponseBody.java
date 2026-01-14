@@ -32,6 +32,20 @@ public class GetPrivateStoreFileInfosByPageResponseBody extends TeaModel {
     }
 
     public static class GetPrivateStoreFileInfosByPageResponseBodyFileInfos extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>eg:图片、文档、文本、压缩包、视频、音频</p>
+         */
+        @NameInMap("contentTypeMcms")
+        public String contentTypeMcms;
+
+        /**
+         * <strong>example:</strong>
+         * <p>staff123</p>
+         */
+        @NameInMap("creatorStaffId")
+        public String creatorStaffId;
+
         @NameInMap("dentryId")
         public Long dentryId;
 
@@ -47,6 +61,13 @@ public class GetPrivateStoreFileInfosByPageResponseBody extends TeaModel {
         @NameInMap("fileSize")
         public Long fileSize;
 
+        /**
+         * <strong>example:</strong>
+         * <p>eg:IM, 其他, 个人空间, 企业内共享</p>
+         */
+        @NameInMap("sceneTypeMcms")
+        public String sceneTypeMcms;
+
         @NameInMap("spaceId")
         public Long spaceId;
 
@@ -56,6 +77,22 @@ public class GetPrivateStoreFileInfosByPageResponseBody extends TeaModel {
         public static GetPrivateStoreFileInfosByPageResponseBodyFileInfos build(java.util.Map<String, ?> map) throws Exception {
             GetPrivateStoreFileInfosByPageResponseBodyFileInfos self = new GetPrivateStoreFileInfosByPageResponseBodyFileInfos();
             return TeaModel.build(map, self);
+        }
+
+        public GetPrivateStoreFileInfosByPageResponseBodyFileInfos setContentTypeMcms(String contentTypeMcms) {
+            this.contentTypeMcms = contentTypeMcms;
+            return this;
+        }
+        public String getContentTypeMcms() {
+            return this.contentTypeMcms;
+        }
+
+        public GetPrivateStoreFileInfosByPageResponseBodyFileInfos setCreatorStaffId(String creatorStaffId) {
+            this.creatorStaffId = creatorStaffId;
+            return this;
+        }
+        public String getCreatorStaffId() {
+            return this.creatorStaffId;
         }
 
         public GetPrivateStoreFileInfosByPageResponseBodyFileInfos setDentryId(Long dentryId) {
@@ -96,6 +133,14 @@ public class GetPrivateStoreFileInfosByPageResponseBody extends TeaModel {
         }
         public Long getFileSize() {
             return this.fileSize;
+        }
+
+        public GetPrivateStoreFileInfosByPageResponseBodyFileInfos setSceneTypeMcms(String sceneTypeMcms) {
+            this.sceneTypeMcms = sceneTypeMcms;
+            return this;
+        }
+        public String getSceneTypeMcms() {
+            return this.sceneTypeMcms;
         }
 
         public GetPrivateStoreFileInfosByPageResponseBodyFileInfos setSpaceId(Long spaceId) {

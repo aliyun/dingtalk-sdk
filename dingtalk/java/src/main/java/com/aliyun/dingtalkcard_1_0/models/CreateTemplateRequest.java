@@ -7,6 +7,9 @@ public class CreateTemplateRequest extends TeaModel {
     @NameInMap("appId")
     public String appId;
 
+    @NameInMap("blockTemplate")
+    public Boolean blockTemplate;
+
     @NameInMap("creatorId")
     public String creatorId;
 
@@ -39,6 +42,14 @@ public class CreateTemplateRequest extends TeaModel {
     }
     public String getAppId() {
         return this.appId;
+    }
+
+    public CreateTemplateRequest setBlockTemplate(Boolean blockTemplate) {
+        this.blockTemplate = blockTemplate;
+        return this;
+    }
+    public Boolean getBlockTemplate() {
+        return this.blockTemplate;
     }
 
     public CreateTemplateRequest setCreatorId(String creatorId) {

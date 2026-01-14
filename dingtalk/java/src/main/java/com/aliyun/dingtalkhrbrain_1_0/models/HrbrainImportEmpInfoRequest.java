@@ -95,11 +95,17 @@ public class HrbrainImportEmpInfoRequest extends TeaModel {
         @NameInMap("isDimission")
         public String isDimission;
 
+        @NameInMap("jobCategory")
+        public String jobCategory;
+
         /**
          * <p>This parameter is required.</p>
          */
         @NameInMap("jobCodeName")
         public String jobCodeName;
+
+        @NameInMap("jobFamily")
+        public String jobFamily;
 
         @NameInMap("jobLevel")
         public String jobLevel;
@@ -268,12 +274,28 @@ public class HrbrainImportEmpInfoRequest extends TeaModel {
             return this.isDimission;
         }
 
+        public HrbrainImportEmpInfoRequestBody setJobCategory(String jobCategory) {
+            this.jobCategory = jobCategory;
+            return this;
+        }
+        public String getJobCategory() {
+            return this.jobCategory;
+        }
+
         public HrbrainImportEmpInfoRequestBody setJobCodeName(String jobCodeName) {
             this.jobCodeName = jobCodeName;
             return this;
         }
         public String getJobCodeName() {
             return this.jobCodeName;
+        }
+
+        public HrbrainImportEmpInfoRequestBody setJobFamily(String jobFamily) {
+            this.jobFamily = jobFamily;
+            return this;
+        }
+        public String getJobFamily() {
+            return this.jobFamily;
         }
 
         public HrbrainImportEmpInfoRequestBody setJobLevel(String jobLevel) {

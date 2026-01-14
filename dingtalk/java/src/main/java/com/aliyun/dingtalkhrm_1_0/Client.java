@@ -21,6 +21,110 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>添加自定义花名册字段</p>
+     * 
+     * @param request AddCustomRosterFieldRequest
+     * @param headers AddCustomRosterFieldHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AddCustomRosterFieldResponse
+     */
+    public AddCustomRosterFieldResponse addCustomRosterFieldWithOptions(AddCustomRosterFieldRequest request, AddCustomRosterFieldHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.editFromEmployeeFlag)) {
+            body.put("editFromEmployeeFlag", request.editFromEmployeeFlag);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.fieldName)) {
+            body.put("fieldName", request.fieldName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.fieldType)) {
+            body.put("fieldType", request.fieldType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.groupId)) {
+            body.put("groupId", request.groupId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.hiddenFromEmployeeFlag)) {
+            body.put("hiddenFromEmployeeFlag", request.hiddenFromEmployeeFlag);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.hint)) {
+            body.put("hint", request.hint);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.noWatermark)) {
+            body.put("noWatermark", request.noWatermark);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.numberDecimalPlace)) {
+            body.put("numberDecimalPlace", request.numberDecimalPlace);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.numberFormatType)) {
+            body.put("numberFormatType", request.numberFormatType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.numberValueType)) {
+            body.put("numberValueType", request.numberValueType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.optionText)) {
+            body.put("optionText", request.optionText);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.required)) {
+            body.put("required", request.required);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.visibleByEmp)) {
+            body.put("visibleByEmp", request.visibleByEmp);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AddCustomRosterField"),
+            new TeaPair("version", "hrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrm/customRosterField/add"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AddCustomRosterFieldResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>添加自定义花名册字段</p>
+     * 
+     * @param request AddCustomRosterFieldRequest
+     * @return AddCustomRosterFieldResponse
+     */
+    public AddCustomRosterFieldResponse addCustomRosterField(AddCustomRosterFieldRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AddCustomRosterFieldHeaders headers = new AddCustomRosterFieldHeaders();
+        return this.addCustomRosterFieldWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>新增法人公司</p>
      * 
      * @param request AddHrmLegalEntityRequest
@@ -183,6 +287,66 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>新建花名册字段分组</p>
+     * 
+     * @param request AddRosterFieldFormRequest
+     * @param headers AddRosterFieldFormHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AddRosterFieldFormResponse
+     */
+    public AddRosterFieldFormResponse addRosterFieldFormWithOptions(AddRosterFieldFormRequest request, AddRosterFieldFormHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.detail)) {
+            body.put("detail", request.detail);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
+            body.put("name", request.name);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AddRosterFieldForm"),
+            new TeaPair("version", "hrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrm/rosterFieldForm/add"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AddRosterFieldFormResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>新建花名册字段分组</p>
+     * 
+     * @param request AddRosterFieldFormRequest
+     * @return AddRosterFieldFormResponse
+     */
+    public AddRosterFieldFormResponse addRosterFieldForm(AddRosterFieldFormRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AddRosterFieldFormHeaders headers = new AddRosterFieldFormHeaders();
+        return this.addRosterFieldFormWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>创建电子签签署记录</p>
      * 
      * @param request CreateRecordRequest
@@ -279,6 +443,126 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateRecordHeaders headers = new CreateRecordHeaders();
         return this.createRecordWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除花名册自定义字段</p>
+     * 
+     * @param request DeleteCustomRosterFieldRequest
+     * @param headers DeleteCustomRosterFieldHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteCustomRosterFieldResponse
+     */
+    public DeleteCustomRosterFieldResponse deleteCustomRosterFieldWithOptions(DeleteCustomRosterFieldRequest request, DeleteCustomRosterFieldHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.fieldCode)) {
+            body.put("fieldCode", request.fieldCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.groupId)) {
+            body.put("groupId", request.groupId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DeleteCustomRosterField"),
+            new TeaPair("version", "hrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrm/customRosterField/delete"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DeleteCustomRosterFieldResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除花名册自定义字段</p>
+     * 
+     * @param request DeleteCustomRosterFieldRequest
+     * @return DeleteCustomRosterFieldResponse
+     */
+    public DeleteCustomRosterFieldResponse deleteCustomRosterField(DeleteCustomRosterFieldRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DeleteCustomRosterFieldHeaders headers = new DeleteCustomRosterFieldHeaders();
+        return this.deleteCustomRosterFieldWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除花名册字段分组</p>
+     * 
+     * @param request DeleteRosterFieldFormRequest
+     * @param headers DeleteRosterFieldFormHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteRosterFieldFormResponse
+     */
+    public DeleteRosterFieldFormResponse deleteRosterFieldFormWithOptions(DeleteRosterFieldFormRequest request, DeleteRosterFieldFormHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.formId)) {
+            body.put("formId", request.formId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DeleteRosterFieldForm"),
+            new TeaPair("version", "hrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrm/rosterFieldForm/delete"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DeleteRosterFieldFormResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除花名册字段分组</p>
+     * 
+     * @param request DeleteRosterFieldFormRequest
+     * @return DeleteRosterFieldFormResponse
+     */
+    public DeleteRosterFieldFormResponse deleteRosterFieldForm(DeleteRosterFieldFormRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DeleteRosterFieldFormHeaders headers = new DeleteRosterFieldFormHeaders();
+        return this.deleteRosterFieldFormWithOptions(request, headers, runtime);
     }
 
     /**
@@ -3167,6 +3451,66 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>发送实人认证邀请消息</p>
+     * 
+     * @param request SendRealAuthInviteMessageRequest
+     * @param headers SendRealAuthInviteMessageHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SendRealAuthInviteMessageResponse
+     */
+    public SendRealAuthInviteMessageResponse sendRealAuthInviteMessageWithOptions(SendRealAuthInviteMessageRequest request, SendRealAuthInviteMessageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.inviterId)) {
+            body.put("inviterId", request.inviterId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.onWorkingEmpSearchVO)) {
+            body.put("onWorkingEmpSearchVO", request.onWorkingEmpSearchVO);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SendRealAuthInviteMessage"),
+            new TeaPair("version", "hrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrm/realAuth/send"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SendRealAuthInviteMessageResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>发送实人认证邀请消息</p>
+     * 
+     * @param request SendRealAuthInviteMessageRequest
+     * @return SendRealAuthInviteMessageResponse
+     */
+    public SendRealAuthInviteMessageResponse sendRealAuthInviteMessage(SendRealAuthInviteMessageRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SendRealAuthInviteMessageHeaders headers = new SendRealAuthInviteMessageHeaders();
+        return this.sendRealAuthInviteMessageWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>初始化解决方案任务</p>
      * 
      * @param request SolutionTaskInitRequest
@@ -3517,6 +3861,182 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SyncTaskTemplateHeaders headers = new SyncTaskTemplateHeaders();
         return this.syncTaskTemplateWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新花名册自定义字段</p>
+     * 
+     * @param request UpdateCustomRosterFieldRequest
+     * @param headers UpdateCustomRosterFieldHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateCustomRosterFieldResponse
+     */
+    public UpdateCustomRosterFieldResponse updateCustomRosterFieldWithOptions(UpdateCustomRosterFieldRequest request, UpdateCustomRosterFieldHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.contactClientFlag)) {
+            body.put("contactClientFlag", request.contactClientFlag);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.contactFlag)) {
+            body.put("contactFlag", request.contactFlag);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.contactSource)) {
+            body.put("contactSource", request.contactSource);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.contactSystemFlag)) {
+            body.put("contactSystemFlag", request.contactSystemFlag);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deleted)) {
+            body.put("deleted", request.deleted);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.derived)) {
+            body.put("derived", request.derived);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.disabled)) {
+            body.put("disabled", request.disabled);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.editFromEmployeeFlag)) {
+            body.put("editFromEmployeeFlag", request.editFromEmployeeFlag);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.editableByHr)) {
+            body.put("editableByHr", request.editableByHr);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.fieldCode)) {
+            body.put("fieldCode", request.fieldCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.fieldName)) {
+            body.put("fieldName", request.fieldName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.fieldTip)) {
+            body.put("fieldTip", request.fieldTip);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.fieldType)) {
+            body.put("fieldType", request.fieldType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.groupId)) {
+            body.put("groupId", request.groupId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.hiddenFromEmployeeFlag)) {
+            body.put("hiddenFromEmployeeFlag", request.hiddenFromEmployeeFlag);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.hint)) {
+            body.put("hint", request.hint);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.historyField)) {
+            body.put("historyField", request.historyField);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.index)) {
+            body.put("index", request.index);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.modifyOptions)) {
+            body.put("modifyOptions", request.modifyOptions);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.noWatermark)) {
+            body.put("noWatermark", request.noWatermark);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.numberDecimalPlace)) {
+            body.put("numberDecimalPlace", request.numberDecimalPlace);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.numberFormatType)) {
+            body.put("numberFormatType", request.numberFormatType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.numberValueType)) {
+            body.put("numberValueType", request.numberValueType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.optionText)) {
+            body.put("optionText", request.optionText);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.required)) {
+            body.put("required", request.required);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.sourceFieldCode)) {
+            body.put("sourceFieldCode", request.sourceFieldCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.systemFlag)) {
+            body.put("systemFlag", request.systemFlag);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.textToSelectField)) {
+            body.put("textToSelectField", request.textToSelectField);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.updateUserId)) {
+            body.put("updateUserId", request.updateUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.value)) {
+            body.put("value", request.value);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.visibleByEmp)) {
+            body.put("visibleByEmp", request.visibleByEmp);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateCustomRosterField"),
+            new TeaPair("version", "hrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrm/customRosterField/update"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateCustomRosterFieldResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新花名册自定义字段</p>
+     * 
+     * @param request UpdateCustomRosterFieldRequest
+     * @return UpdateCustomRosterFieldResponse
+     */
+    public UpdateCustomRosterFieldResponse updateCustomRosterField(UpdateCustomRosterFieldRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateCustomRosterFieldHeaders headers = new UpdateCustomRosterFieldHeaders();
+        return this.updateCustomRosterFieldWithOptions(request, headers, runtime);
     }
 
     /**
@@ -3881,6 +4401,74 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateIsvCardMessageHeaders headers = new UpdateIsvCardMessageHeaders();
         return this.updateIsvCardMessageWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新花名册字段分组</p>
+     * 
+     * @param request UpdateRosterFieldFormRequest
+     * @param headers UpdateRosterFieldFormHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateRosterFieldFormResponse
+     */
+    public UpdateRosterFieldFormResponse updateRosterFieldFormWithOptions(UpdateRosterFieldFormRequest request, UpdateRosterFieldFormHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.detail)) {
+            body.put("detail", request.detail);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.formId)) {
+            body.put("formId", request.formId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
+            body.put("name", request.name);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateRosterFieldForm"),
+            new TeaPair("version", "hrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrm/rosterFieldForm/update"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateRosterFieldFormResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新花名册字段分组</p>
+     * 
+     * @param request UpdateRosterFieldFormRequest
+     * @return UpdateRosterFieldFormResponse
+     */
+    public UpdateRosterFieldFormResponse updateRosterFieldForm(UpdateRosterFieldFormRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateRosterFieldFormHeaders headers = new UpdateRosterFieldFormHeaders();
+        return this.updateRosterFieldFormWithOptions(request, headers, runtime);
     }
 
     /**

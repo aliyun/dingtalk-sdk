@@ -36,6 +36,13 @@ public class CreateMeetingRoomRequest extends TeaModel {
     @NameInMap("roomCapacity")
     public Integer roomCapacity;
 
+    /**
+     * <strong>example:</strong>
+     * <p>此处添加对会议室的描述信息</p>
+     */
+    @NameInMap("roomDescription")
+    public String roomDescription;
+
     @NameInMap("roomLabelIds")
     public java.util.List<Long> roomLabelIds;
 
@@ -127,6 +134,14 @@ public class CreateMeetingRoomRequest extends TeaModel {
     }
     public Integer getRoomCapacity() {
         return this.roomCapacity;
+    }
+
+    public CreateMeetingRoomRequest setRoomDescription(String roomDescription) {
+        this.roomDescription = roomDescription;
+        return this;
+    }
+    public String getRoomDescription() {
+        return this.roomDescription;
     }
 
     public CreateMeetingRoomRequest setRoomLabelIds(java.util.List<Long> roomLabelIds) {

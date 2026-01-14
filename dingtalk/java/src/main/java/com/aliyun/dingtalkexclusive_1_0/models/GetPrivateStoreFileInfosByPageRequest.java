@@ -5,6 +5,16 @@ import com.aliyun.tea.*;
 
 public class GetPrivateStoreFileInfosByPageRequest extends TeaModel {
     /**
+     * <strong>example:</strong>
+     * <p>文档文件:document, 视频:video, 代码文件:text, 链接:link, 音频:audio, 图片:image, 压缩文件:archive, 安装包:app, 其他:other</p>
+     */
+    @NameInMap("contentType")
+    public String contentType;
+
+    @NameInMap("deptIds")
+    public java.util.List<Long> deptIds;
+
+    /**
      * <p>This parameter is required.</p>
      * 
      * <strong>example:</strong>
@@ -19,6 +29,9 @@ public class GetPrivateStoreFileInfosByPageRequest extends TeaModel {
     @NameInMap("maxResults")
     public Integer maxResults;
 
+    @NameInMap("name")
+    public String name;
+
     @NameInMap("nextToken")
     public String nextToken;
 
@@ -29,14 +42,40 @@ public class GetPrivateStoreFileInfosByPageRequest extends TeaModel {
     public String order;
 
     /**
+     * <strong>example:</strong>
+     * <p>IM:IM, 其他:OTHER, 个人空间:PERSON, 企业内共享:ORG</p>
+     */
+    @NameInMap("sceneType")
+    public String sceneType;
+
+    /**
      * <p>This parameter is required.</p>
      */
     @NameInMap("targetCorpId")
     public String targetCorpId;
 
+    @NameInMap("userIds")
+    public java.util.List<String> userIds;
+
     public static GetPrivateStoreFileInfosByPageRequest build(java.util.Map<String, ?> map) throws Exception {
         GetPrivateStoreFileInfosByPageRequest self = new GetPrivateStoreFileInfosByPageRequest();
         return TeaModel.build(map, self);
+    }
+
+    public GetPrivateStoreFileInfosByPageRequest setContentType(String contentType) {
+        this.contentType = contentType;
+        return this;
+    }
+    public String getContentType() {
+        return this.contentType;
+    }
+
+    public GetPrivateStoreFileInfosByPageRequest setDeptIds(java.util.List<Long> deptIds) {
+        this.deptIds = deptIds;
+        return this;
+    }
+    public java.util.List<Long> getDeptIds() {
+        return this.deptIds;
     }
 
     public GetPrivateStoreFileInfosByPageRequest setFileCreateTime(Long fileCreateTime) {
@@ -63,6 +102,14 @@ public class GetPrivateStoreFileInfosByPageRequest extends TeaModel {
         return this.maxResults;
     }
 
+    public GetPrivateStoreFileInfosByPageRequest setName(String name) {
+        this.name = name;
+        return this;
+    }
+    public String getName() {
+        return this.name;
+    }
+
     public GetPrivateStoreFileInfosByPageRequest setNextToken(String nextToken) {
         this.nextToken = nextToken;
         return this;
@@ -79,12 +126,28 @@ public class GetPrivateStoreFileInfosByPageRequest extends TeaModel {
         return this.order;
     }
 
+    public GetPrivateStoreFileInfosByPageRequest setSceneType(String sceneType) {
+        this.sceneType = sceneType;
+        return this;
+    }
+    public String getSceneType() {
+        return this.sceneType;
+    }
+
     public GetPrivateStoreFileInfosByPageRequest setTargetCorpId(String targetCorpId) {
         this.targetCorpId = targetCorpId;
         return this;
     }
     public String getTargetCorpId() {
         return this.targetCorpId;
+    }
+
+    public GetPrivateStoreFileInfosByPageRequest setUserIds(java.util.List<String> userIds) {
+        this.userIds = userIds;
+        return this;
+    }
+    public java.util.List<String> getUserIds() {
+        return this.userIds;
     }
 
 }

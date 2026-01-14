@@ -250,6 +250,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("roomCapacity", request.roomCapacity);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.roomDescription)) {
+            body.put("roomDescription", request.roomDescription);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.roomLabelIds)) {
             body.put("roomLabelIds", request.roomLabelIds);
         }
@@ -1382,6 +1386,70 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>发送Rooms中控API信令</p>
+     * 
+     * @param request SendCentralControlRequest
+     * @param headers SendCentralControlHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SendCentralControlResponse
+     */
+    public SendCentralControlResponse sendCentralControlWithOptions(SendCentralControlRequest request, SendCentralControlHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.controlBody)) {
+            body.put("controlBody", request.controlBody);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.roomId)) {
+            body.put("roomId", request.roomId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            body.put("unionId", request.unionId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SendCentralControl"),
+            new TeaPair("version", "rooms_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/rooms/central/control"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SendCentralControlResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>发送Rooms中控API信令</p>
+     * 
+     * @param request SendCentralControlRequest
+     * @return SendCentralControlResponse
+     */
+    public SendCentralControlResponse sendCentralControl(SendCentralControlRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SendCentralControlHeaders headers = new SendCentralControlHeaders();
+        return this.sendCentralControlWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>设置会议室成为高级用户模式。只有设置在白名单里的人员或部门，才能呼叫此会议室。</p>
      * 
      * @param request SetSuperUserMeetingRoomRequest
@@ -1610,6 +1678,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.roomCapacity)) {
             body.put("roomCapacity", request.roomCapacity);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.roomDescription)) {
+            body.put("roomDescription", request.roomDescription);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.roomId)) {

@@ -35,6 +35,13 @@ public class UpdateMeetingRoomRequest extends TeaModel {
     public Integer roomCapacity;
 
     /**
+     * <strong>example:</strong>
+     * <p>此处添加对会议室的描述信息</p>
+     */
+    @NameInMap("roomDescription")
+    public String roomDescription;
+
+    /**
      * <p>This parameter is required.</p>
      * 
      * <strong>example:</strong>
@@ -130,6 +137,14 @@ public class UpdateMeetingRoomRequest extends TeaModel {
     }
     public Integer getRoomCapacity() {
         return this.roomCapacity;
+    }
+
+    public UpdateMeetingRoomRequest setRoomDescription(String roomDescription) {
+        this.roomDescription = roomDescription;
+        return this;
+    }
+    public String getRoomDescription() {
+        return this.roomDescription;
     }
 
     public UpdateMeetingRoomRequest setRoomId(String roomId) {

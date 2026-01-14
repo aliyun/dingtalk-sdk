@@ -57,6 +57,9 @@ public class GetFinanceAccountResponseBody extends TeaModel {
     @NameInMap("bankName")
     public String bankName;
 
+    @NameInMap("companyCode")
+    public String companyCode;
+
     /**
      * <p>This parameter is required.</p>
      * 
@@ -150,6 +153,14 @@ public class GetFinanceAccountResponseBody extends TeaModel {
     }
     public String getBankName() {
         return this.bankName;
+    }
+
+    public GetFinanceAccountResponseBody setCompanyCode(String companyCode) {
+        this.companyCode = companyCode;
+        return this;
+    }
+    public String getCompanyCode() {
+        return this.companyCode;
     }
 
     public GetFinanceAccountResponseBody setCreateTime(Long createTime) {

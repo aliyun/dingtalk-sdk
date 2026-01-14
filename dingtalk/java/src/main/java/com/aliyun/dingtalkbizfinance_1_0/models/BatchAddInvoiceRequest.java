@@ -1008,6 +1008,18 @@ public class BatchAddInvoiceRequest extends TeaModel {
         @NameInMap("amountWithTax")
         public String amountWithTax;
 
+        @NameInMap("aviationTaxRate")
+        public String aviationTaxRate;
+
+        @NameInMap("caacDevelopmentFund")
+        public String caacDevelopmentFund;
+
+        @NameInMap("certificationDate")
+        public String certificationDate;
+
+        @NameInMap("certificationPeriod")
+        public String certificationPeriod;
+
         /**
          * <strong>example:</strong>
          * <p>1111</p>
@@ -1055,6 +1067,9 @@ public class BatchAddInvoiceRequest extends TeaModel {
         @NameInMap("electronicUrl")
         public String electronicUrl;
 
+        @NameInMap("fare")
+        public String fare;
+
         @NameInMap("fileId")
         public String fileId;
 
@@ -1064,6 +1079,9 @@ public class BatchAddInvoiceRequest extends TeaModel {
          */
         @NameInMap("financeType")
         public String financeType;
+
+        @NameInMap("fuelSurcharge")
+        public String fuelSurcharge;
 
         /**
          * <strong>example:</strong>
@@ -1334,6 +1352,38 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.amountWithTax;
         }
 
+        public BatchAddInvoiceRequestGeneralInvoiceVOList setAviationTaxRate(String aviationTaxRate) {
+            this.aviationTaxRate = aviationTaxRate;
+            return this;
+        }
+        public String getAviationTaxRate() {
+            return this.aviationTaxRate;
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOList setCaacDevelopmentFund(String caacDevelopmentFund) {
+            this.caacDevelopmentFund = caacDevelopmentFund;
+            return this;
+        }
+        public String getCaacDevelopmentFund() {
+            return this.caacDevelopmentFund;
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOList setCertificationDate(String certificationDate) {
+            this.certificationDate = certificationDate;
+            return this;
+        }
+        public String getCertificationDate() {
+            return this.certificationDate;
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOList setCertificationPeriod(String certificationPeriod) {
+            this.certificationPeriod = certificationPeriod;
+            return this;
+        }
+        public String getCertificationPeriod() {
+            return this.certificationPeriod;
+        }
+
         public BatchAddInvoiceRequestGeneralInvoiceVOList setCheckCode(String checkCode) {
             this.checkCode = checkCode;
             return this;
@@ -1406,6 +1456,14 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.electronicUrl;
         }
 
+        public BatchAddInvoiceRequestGeneralInvoiceVOList setFare(String fare) {
+            this.fare = fare;
+            return this;
+        }
+        public String getFare() {
+            return this.fare;
+        }
+
         public BatchAddInvoiceRequestGeneralInvoiceVOList setFileId(String fileId) {
             this.fileId = fileId;
             return this;
@@ -1420,6 +1478,14 @@ public class BatchAddInvoiceRequest extends TeaModel {
         }
         public String getFinanceType() {
             return this.financeType;
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOList setFuelSurcharge(String fuelSurcharge) {
+            this.fuelSurcharge = fuelSurcharge;
+            return this;
+        }
+        public String getFuelSurcharge() {
+            return this.fuelSurcharge;
         }
 
         public BatchAddInvoiceRequestGeneralInvoiceVOList setFundType(String fundType) {

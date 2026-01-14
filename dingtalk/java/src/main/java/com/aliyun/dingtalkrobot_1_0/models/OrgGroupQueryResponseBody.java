@@ -21,6 +21,9 @@ public class OrgGroupQueryResponseBody extends TeaModel {
     @NameInMap("readUserIds")
     public java.util.List<String> readUserIds;
 
+    @NameInMap("readUsers")
+    public java.util.List<OrgGroupQueryResponseBodyReadUsers> readUsers;
+
     /**
      * <strong>example:</strong>
      * <p>SUCCESS</p>
@@ -57,12 +60,50 @@ public class OrgGroupQueryResponseBody extends TeaModel {
         return this.readUserIds;
     }
 
+    public OrgGroupQueryResponseBody setReadUsers(java.util.List<OrgGroupQueryResponseBodyReadUsers> readUsers) {
+        this.readUsers = readUsers;
+        return this;
+    }
+    public java.util.List<OrgGroupQueryResponseBodyReadUsers> getReadUsers() {
+        return this.readUsers;
+    }
+
     public OrgGroupQueryResponseBody setSendStatus(String sendStatus) {
         this.sendStatus = sendStatus;
         return this;
     }
     public String getSendStatus() {
         return this.sendStatus;
+    }
+
+    public static class OrgGroupQueryResponseBodyReadUsers extends TeaModel {
+        @NameInMap("unionId")
+        public String unionId;
+
+        @NameInMap("userId")
+        public String userId;
+
+        public static OrgGroupQueryResponseBodyReadUsers build(java.util.Map<String, ?> map) throws Exception {
+            OrgGroupQueryResponseBodyReadUsers self = new OrgGroupQueryResponseBodyReadUsers();
+            return TeaModel.build(map, self);
+        }
+
+        public OrgGroupQueryResponseBodyReadUsers setUnionId(String unionId) {
+            this.unionId = unionId;
+            return this;
+        }
+        public String getUnionId() {
+            return this.unionId;
+        }
+
+        public OrgGroupQueryResponseBodyReadUsers setUserId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+        public String getUserId() {
+            return this.userId;
+        }
+
     }
 
 }

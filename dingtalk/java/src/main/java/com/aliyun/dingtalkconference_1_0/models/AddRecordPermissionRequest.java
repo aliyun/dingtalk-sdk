@@ -22,6 +22,16 @@ public class AddRecordPermissionRequest extends TeaModel {
     @NameInMap("ownerUnionId")
     public String ownerUnionId;
 
+    @NameInMap("roleSubResourceIds")
+    public java.util.List<String> roleSubResourceIds;
+
+    /**
+     * <strong>example:</strong>
+     * <p>0</p>
+     */
+    @NameInMap("shareScope")
+    public Integer shareScope;
+
     /**
      * <p>This parameter is required.</p>
      * 
@@ -50,6 +60,22 @@ public class AddRecordPermissionRequest extends TeaModel {
     }
     public String getOwnerUnionId() {
         return this.ownerUnionId;
+    }
+
+    public AddRecordPermissionRequest setRoleSubResourceIds(java.util.List<String> roleSubResourceIds) {
+        this.roleSubResourceIds = roleSubResourceIds;
+        return this;
+    }
+    public java.util.List<String> getRoleSubResourceIds() {
+        return this.roleSubResourceIds;
+    }
+
+    public AddRecordPermissionRequest setShareScope(Integer shareScope) {
+        this.shareScope = shareScope;
+        return this;
+    }
+    public Integer getShareScope() {
+        return this.shareScope;
     }
 
     public AddRecordPermissionRequest setUnionId(String unionId) {

@@ -125,6 +125,12 @@ public class QueryEnterpriseAccountByPageResponseBody extends TeaModel {
         @NameInMap("signStatus")
         public String signStatus;
 
+        @NameInMap("source")
+        public String source;
+
+        @NameInMap("status")
+        public String status;
+
         @NameInMap("supportReceipt")
         public Boolean supportReceipt;
 
@@ -246,6 +252,22 @@ public class QueryEnterpriseAccountByPageResponseBody extends TeaModel {
         }
         public String getSignStatus() {
             return this.signStatus;
+        }
+
+        public QueryEnterpriseAccountByPageResponseBodyList setSource(String source) {
+            this.source = source;
+            return this;
+        }
+        public String getSource() {
+            return this.source;
+        }
+
+        public QueryEnterpriseAccountByPageResponseBodyList setStatus(String status) {
+            this.status = status;
+            return this;
+        }
+        public String getStatus() {
+            return this.status;
         }
 
         public QueryEnterpriseAccountByPageResponseBodyList setSupportReceipt(Boolean supportReceipt) {

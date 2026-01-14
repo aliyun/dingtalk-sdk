@@ -25,8 +25,20 @@ public class OpenAgoalProgressDTO extends TeaModel {
     /**
      * <p>This parameter is required.</p>
      */
+    @NameInMap("keyResults")
+    public java.util.List<OpenAgoalKeyResultDTO> keyResults;
+
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("modifier")
     public OpenAgoalUserDTO modifier;
+
+    /**
+     * <p>This parameter is required.</p>
+     */
+    @NameInMap("progress")
+    public Integer progress;
 
     /**
      * <p>This parameter is required.</p>
@@ -69,12 +81,28 @@ public class OpenAgoalProgressDTO extends TeaModel {
         return this.htmlContent;
     }
 
+    public OpenAgoalProgressDTO setKeyResults(java.util.List<OpenAgoalKeyResultDTO> keyResults) {
+        this.keyResults = keyResults;
+        return this;
+    }
+    public java.util.List<OpenAgoalKeyResultDTO> getKeyResults() {
+        return this.keyResults;
+    }
+
     public OpenAgoalProgressDTO setModifier(OpenAgoalUserDTO modifier) {
         this.modifier = modifier;
         return this;
     }
     public OpenAgoalUserDTO getModifier() {
         return this.modifier;
+    }
+
+    public OpenAgoalProgressDTO setProgress(Integer progress) {
+        this.progress = progress;
+        return this;
+    }
+    public Integer getProgress() {
+        return this.progress;
     }
 
     public OpenAgoalProgressDTO setProgressId(String progressId) {

@@ -2767,6 +2767,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("createToTimeGMT", request.createToTimeGMT);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.env)) {
+            body.put("env", request.env);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.formUuid)) {
             body.put("formUuid", request.formUuid);
         }
@@ -3210,6 +3214,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.appType)) {
             query.put("appType", request.appType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.env)) {
+            query.put("env", request.env);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.language)) {
@@ -6734,6 +6742,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("dynamicOrder", request.dynamicOrder);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.env)) {
+            body.put("env", request.env);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.formUuid)) {
             body.put("formUuid", request.formUuid);
         }
@@ -7120,6 +7132,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.appType)) {
             body.put("appType", request.appType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.env)) {
+            body.put("env", request.env);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.formInstanceId)) {

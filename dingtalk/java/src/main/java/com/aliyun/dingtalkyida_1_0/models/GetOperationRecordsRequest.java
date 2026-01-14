@@ -15,6 +15,16 @@ public class GetOperationRecordsRequest extends TeaModel {
 
     /**
      * <strong>example:</strong>
+     * <p>vpc,sgp_vpc</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>false</p>
+     */
+    @NameInMap("env")
+    public String env;
+
+    /**
+     * <strong>example:</strong>
      * <p>zh_CN</p>
      */
     @NameInMap("language")
@@ -58,6 +68,14 @@ public class GetOperationRecordsRequest extends TeaModel {
     }
     public String getAppType() {
         return this.appType;
+    }
+
+    public GetOperationRecordsRequest setEnv(String env) {
+        this.env = env;
+        return this;
+    }
+    public String getEnv() {
+        return this.env;
     }
 
     public GetOperationRecordsRequest setLanguage(String language) {

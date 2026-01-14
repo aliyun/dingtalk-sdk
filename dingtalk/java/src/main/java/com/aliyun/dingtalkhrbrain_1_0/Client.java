@@ -20,6 +20,70 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>业务数据开放</p>
+     * 
+     * @param request HrbrainBizDataQueryRequest
+     * @param headers HrbrainBizDataQueryHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HrbrainBizDataQueryResponse
+     */
+    public HrbrainBizDataQueryResponse hrbrainBizDataQueryWithOptions(HrbrainBizDataQueryRequest request, HrbrainBizDataQueryHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizCode)) {
+            query.put("bizCode", request.bizCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
+            query.put("maxResults", request.maxResults);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
+            query.put("nextToken", request.nextToken);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "HrbrainBizDataQuery"),
+            new TeaPair("version", "hrbrain_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrbrain/bizData/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new HrbrainBizDataQueryResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>业务数据开放</p>
+     * 
+     * @param request HrbrainBizDataQueryRequest
+     * @return HrbrainBizDataQueryResponse
+     */
+    public HrbrainBizDataQueryResponse hrbrainBizDataQuery(HrbrainBizDataQueryRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        HrbrainBizDataQueryHeaders headers = new HrbrainBizDataQueryHeaders();
+        return this.hrbrainBizDataQueryWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>删除奖励记录</p>
      * 
      * @param request HrbrainDeleteAwardRecordsRequest
@@ -2251,6 +2315,624 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>标签分类树查询</p>
+     * 
+     * @param headers HrbrainLabelCategoryTreeHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HrbrainLabelCategoryTreeResponse
+     */
+    public HrbrainLabelCategoryTreeResponse hrbrainLabelCategoryTreeWithOptions(HrbrainLabelCategoryTreeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "HrbrainLabelCategoryTree"),
+            new TeaPair("version", "hrbrain_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrbrain/labels/category/list"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new HrbrainLabelCategoryTreeResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>标签分类树查询</p>
+     * @return HrbrainLabelCategoryTreeResponse
+     */
+    public HrbrainLabelCategoryTreeResponse hrbrainLabelCategoryTree() throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        HrbrainLabelCategoryTreeHeaders headers = new HrbrainLabelCategoryTreeHeaders();
+        return this.hrbrainLabelCategoryTreeWithOptions(headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>标签分类树更新</p>
+     * 
+     * @param request HrbrainLabelCategoryUpdateRequest
+     * @param headers HrbrainLabelCategoryUpdateHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HrbrainLabelCategoryUpdateResponse
+     */
+    public HrbrainLabelCategoryUpdateResponse hrbrainLabelCategoryUpdateWithOptions(HrbrainLabelCategoryUpdateRequest request, HrbrainLabelCategoryUpdateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.categoryVo)) {
+            body.put("categoryVo", request.categoryVo);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "HrbrainLabelCategoryUpdate"),
+            new TeaPair("version", "hrbrain_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrbrain/labels/category/update"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new HrbrainLabelCategoryUpdateResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>标签分类树更新</p>
+     * 
+     * @param request HrbrainLabelCategoryUpdateRequest
+     * @return HrbrainLabelCategoryUpdateResponse
+     */
+    public HrbrainLabelCategoryUpdateResponse hrbrainLabelCategoryUpdate(HrbrainLabelCategoryUpdateRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        HrbrainLabelCategoryUpdateHeaders headers = new HrbrainLabelCategoryUpdateHeaders();
+        return this.hrbrainLabelCategoryUpdateWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>标签明细删除</p>
+     * 
+     * @param request HrbrainLabelDataDeleteRequest
+     * @param headers HrbrainLabelDataDeleteHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HrbrainLabelDataDeleteResponse
+     */
+    public HrbrainLabelDataDeleteResponse hrbrainLabelDataDeleteWithOptions(HrbrainLabelDataDeleteRequest request, HrbrainLabelDataDeleteHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.params)) {
+            body.put("params", request.params);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "HrbrainLabelDataDelete"),
+            new TeaPair("version", "hrbrain_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrbrain/label/dataDelete"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new HrbrainLabelDataDeleteResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>标签明细删除</p>
+     * 
+     * @param request HrbrainLabelDataDeleteRequest
+     * @return HrbrainLabelDataDeleteResponse
+     */
+    public HrbrainLabelDataDeleteResponse hrbrainLabelDataDelete(HrbrainLabelDataDeleteRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        HrbrainLabelDataDeleteHeaders headers = new HrbrainLabelDataDeleteHeaders();
+        return this.hrbrainLabelDataDeleteWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>标签明细查询</p>
+     * 
+     * @param request HrbrainLabelDataQueryRequest
+     * @param headers HrbrainLabelDataQueryHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HrbrainLabelDataQueryResponse
+     */
+    public HrbrainLabelDataQueryResponse hrbrainLabelDataQueryWithOptions(HrbrainLabelDataQueryRequest request, HrbrainLabelDataQueryHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.labelCode)) {
+            body.put("labelCode", request.labelCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
+            body.put("maxResults", request.maxResults);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
+            body.put("nextToken", request.nextToken);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "HrbrainLabelDataQuery"),
+            new TeaPair("version", "hrbrain_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrbrain/labels/data"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new HrbrainLabelDataQueryResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>标签明细查询</p>
+     * 
+     * @param request HrbrainLabelDataQueryRequest
+     * @return HrbrainLabelDataQueryResponse
+     */
+    public HrbrainLabelDataQueryResponse hrbrainLabelDataQuery(HrbrainLabelDataQueryRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        HrbrainLabelDataQueryHeaders headers = new HrbrainLabelDataQueryHeaders();
+        return this.hrbrainLabelDataQueryWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>标签明细更新</p>
+     * 
+     * @param request HrbrainLabelDataUpsertRequest
+     * @param headers HrbrainLabelDataUpsertHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HrbrainLabelDataUpsertResponse
+     */
+    public HrbrainLabelDataUpsertResponse hrbrainLabelDataUpsertWithOptions(HrbrainLabelDataUpsertRequest request, HrbrainLabelDataUpsertHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.params)) {
+            body.put("params", request.params);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "HrbrainLabelDataUpsert"),
+            new TeaPair("version", "hrbrain_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrbrain/label/dataUpsert"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new HrbrainLabelDataUpsertResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>标签明细更新</p>
+     * 
+     * @param request HrbrainLabelDataUpsertRequest
+     * @return HrbrainLabelDataUpsertResponse
+     */
+    public HrbrainLabelDataUpsertResponse hrbrainLabelDataUpsert(HrbrainLabelDataUpsertRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        HrbrainLabelDataUpsertHeaders headers = new HrbrainLabelDataUpsertHeaders();
+        return this.hrbrainLabelDataUpsertWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>标签元数据</p>
+     * 
+     * @param request HrbrainLabelMetaRequest
+     * @param headers HrbrainLabelMetaHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HrbrainLabelMetaResponse
+     */
+    public HrbrainLabelMetaResponse hrbrainLabelMetaWithOptions(HrbrainLabelMetaRequest request, HrbrainLabelMetaHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.categoryCodes)) {
+            body.put("categoryCodes", request.categoryCodes);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.labelCode)) {
+            body.put("labelCode", request.labelCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
+            body.put("maxResults", request.maxResults);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
+            body.put("nextToken", request.nextToken);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "HrbrainLabelMeta"),
+            new TeaPair("version", "hrbrain_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrbrain/labels/meta"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new HrbrainLabelMetaResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>标签元数据</p>
+     * 
+     * @param request HrbrainLabelMetaRequest
+     * @return HrbrainLabelMetaResponse
+     */
+    public HrbrainLabelMetaResponse hrbrainLabelMeta(HrbrainLabelMetaRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        HrbrainLabelMetaHeaders headers = new HrbrainLabelMetaHeaders();
+        return this.hrbrainLabelMetaWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>标签元数据状态更新</p>
+     * 
+     * @param request HrbrainLabelMetaStatusRequest
+     * @param headers HrbrainLabelMetaStatusHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HrbrainLabelMetaStatusResponse
+     */
+    public HrbrainLabelMetaStatusResponse hrbrainLabelMetaStatusWithOptions(HrbrainLabelMetaStatusRequest request, HrbrainLabelMetaStatusHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.codes)) {
+            body.put("codes", request.codes);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.optType)) {
+            body.put("optType", request.optType);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "HrbrainLabelMetaStatus"),
+            new TeaPair("version", "hrbrain_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrbrain/labels/metaStatus"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new HrbrainLabelMetaStatusResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>标签元数据状态更新</p>
+     * 
+     * @param request HrbrainLabelMetaStatusRequest
+     * @return HrbrainLabelMetaStatusResponse
+     */
+    public HrbrainLabelMetaStatusResponse hrbrainLabelMetaStatus(HrbrainLabelMetaStatusRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        HrbrainLabelMetaStatusHeaders headers = new HrbrainLabelMetaStatusHeaders();
+        return this.hrbrainLabelMetaStatusWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>标签元数据更新</p>
+     * 
+     * @param request HrbrainLabelMetaUpdateRequest
+     * @param headers HrbrainLabelMetaUpdateHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HrbrainLabelMetaUpdateResponse
+     */
+    public HrbrainLabelMetaUpdateResponse hrbrainLabelMetaUpdateWithOptions(HrbrainLabelMetaUpdateRequest request, HrbrainLabelMetaUpdateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.categoryCode)) {
+            body.put("categoryCode", request.categoryCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.code)) {
+            body.put("code", request.code);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dataType)) {
+            body.put("dataType", request.dataType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.description)) {
+            body.put("description", request.description);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.importantLevel)) {
+            body.put("importantLevel", request.importantLevel);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.isSensitive)) {
+            body.put("isSensitive", request.isSensitive);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
+            body.put("name", request.name);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.options)) {
+            body.put("options", request.options);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.permission)) {
+            body.put("permission", request.permission);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.required)) {
+            body.put("required", request.required);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "HrbrainLabelMetaUpdate"),
+            new TeaPair("version", "hrbrain_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrbrain/labels/metaUpdate"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new HrbrainLabelMetaUpdateResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>标签元数据更新</p>
+     * 
+     * @param request HrbrainLabelMetaUpdateRequest
+     * @return HrbrainLabelMetaUpdateResponse
+     */
+    public HrbrainLabelMetaUpdateResponse hrbrainLabelMetaUpdate(HrbrainLabelMetaUpdateRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        HrbrainLabelMetaUpdateHeaders headers = new HrbrainLabelMetaUpdateHeaders();
+        return this.hrbrainLabelMetaUpdateWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>打标任务生成的标签数据</p>
+     * 
+     * @param request HrbrainLabelTaskDataRequest
+     * @param headers HrbrainLabelTaskDataHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HrbrainLabelTaskDataResponse
+     */
+    public HrbrainLabelTaskDataResponse hrbrainLabelTaskDataWithOptions(HrbrainLabelTaskDataRequest request, HrbrainLabelTaskDataHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.optWorkNo)) {
+            query.put("optWorkNo", request.optWorkNo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.sessionId)) {
+            query.put("sessionId", request.sessionId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "HrbrainLabelTaskData"),
+            new TeaPair("version", "hrbrain_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrbrain/labels/task/data"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new HrbrainLabelTaskDataResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>打标任务生成的标签数据</p>
+     * 
+     * @param request HrbrainLabelTaskDataRequest
+     * @return HrbrainLabelTaskDataResponse
+     */
+    public HrbrainLabelTaskDataResponse hrbrainLabelTaskData(HrbrainLabelTaskDataRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        HrbrainLabelTaskDataHeaders headers = new HrbrainLabelTaskDataHeaders();
+        return this.hrbrainLabelTaskDataWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>打标任务生成的标签元数据</p>
+     * 
+     * @param request HrbrainLabelTaskMetaRequest
+     * @param headers HrbrainLabelTaskMetaHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HrbrainLabelTaskMetaResponse
+     */
+    public HrbrainLabelTaskMetaResponse hrbrainLabelTaskMetaWithOptions(HrbrainLabelTaskMetaRequest request, HrbrainLabelTaskMetaHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.optWorkNo)) {
+            query.put("optWorkNo", request.optWorkNo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.sessionId)) {
+            query.put("sessionId", request.sessionId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "HrbrainLabelTaskMeta"),
+            new TeaPair("version", "hrbrain_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrbrain/labels/task/metadata"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new HrbrainLabelTaskMetaResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>打标任务生成的标签元数据</p>
+     * 
+     * @param request HrbrainLabelTaskMetaRequest
+     * @return HrbrainLabelTaskMetaResponse
+     */
+    public HrbrainLabelTaskMetaResponse hrbrainLabelTaskMeta(HrbrainLabelTaskMetaRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        HrbrainLabelTaskMetaHeaders headers = new HrbrainLabelTaskMetaHeaders();
+        return this.hrbrainLabelTaskMetaWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>查询人才档案附件照片</p>
      * 
      * @param request HrbrainTalentProfileAttachmentQueryRequest
@@ -2361,6 +3043,130 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         HrbrainTalentProfileBasicQueryHeaders headers = new HrbrainTalentProfileBasicQueryHeaders();
         return this.hrbrainTalentProfileBasicQueryWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>提交人才搜索任务</p>
+     * 
+     * @param request HrbrainTalentSearchRequest
+     * @param headers HrbrainTalentSearchHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HrbrainTalentSearchResponse
+     */
+    public HrbrainTalentSearchResponse hrbrainTalentSearchWithOptions(HrbrainTalentSearchRequest request, HrbrainTalentSearchHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.query)) {
+            query.put("query", request.query);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.sessionId)) {
+            query.put("sessionId", request.sessionId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.workNo)) {
+            query.put("workNo", request.workNo);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "HrbrainTalentSearch"),
+            new TeaPair("version", "hrbrain_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrbrain/talent/submitEmpSearchTask"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new HrbrainTalentSearchResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>提交人才搜索任务</p>
+     * 
+     * @param request HrbrainTalentSearchRequest
+     * @return HrbrainTalentSearchResponse
+     */
+    public HrbrainTalentSearchResponse hrbrainTalentSearch(HrbrainTalentSearchRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        HrbrainTalentSearchHeaders headers = new HrbrainTalentSearchHeaders();
+        return this.hrbrainTalentSearchWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取搜索结果</p>
+     * 
+     * @param request HrbrainTalentSearchResultRequest
+     * @param headers HrbrainTalentSearchResultHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return HrbrainTalentSearchResultResponse
+     */
+    public HrbrainTalentSearchResultResponse hrbrainTalentSearchResultWithOptions(HrbrainTalentSearchResultRequest request, HrbrainTalentSearchResultHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.sessionId)) {
+            query.put("sessionId", request.sessionId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.workNo)) {
+            query.put("workNo", request.workNo);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "HrbrainTalentSearchResult"),
+            new TeaPair("version", "hrbrain_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrbrain/talent/getEmpSearchTaskResult"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new HrbrainTalentSearchResultResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取搜索结果</p>
+     * 
+     * @param request HrbrainTalentSearchResultRequest
+     * @return HrbrainTalentSearchResultResponse
+     */
+    public HrbrainTalentSearchResultResponse hrbrainTalentSearchResult(HrbrainTalentSearchResultRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        HrbrainTalentSearchResultHeaders headers = new HrbrainTalentSearchResultHeaders();
+        return this.hrbrainTalentSearchResultWithOptions(request, headers, runtime);
     }
 
     /**

@@ -7,6 +7,24 @@ public class OpenAgoalObjectiveDTO extends TeaModel {
     /**
      * <p>This parameter is required.</p>
      */
+    @NameInMap("approveStatus")
+    public String approveStatus;
+
+    /**
+     * <p>This parameter is required.</p>
+     */
+    @NameInMap("created")
+    public Long created;
+
+    /**
+     * <p>This parameter is required.</p>
+     */
+    @NameInMap("downAlignObjectIds")
+    public java.util.List<String> downAlignObjectIds;
+
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("executor")
     public OpenAgoalUserDTO executor;
 
@@ -62,7 +80,7 @@ public class OpenAgoalObjectiveDTO extends TeaModel {
      * <p>This parameter is required.</p>
      */
     @NameInMap("relatedUsers")
-    public OpenAgoalUserDTO relatedUsers;
+    public java.util.List<OpenAgoalUserDTO> relatedUsers;
 
     /**
      * <p>This parameter is required.</p>
@@ -90,6 +108,18 @@ public class OpenAgoalObjectiveDTO extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     */
+    @NameInMap("upAlignObjectIds")
+    public java.util.List<String> upAlignObjectIds;
+
+    /**
+     * <p>This parameter is required.</p>
+     */
+    @NameInMap("updated")
+    public Long updated;
+
+    /**
+     * <p>This parameter is required.</p>
      * 
      * <strong>example:</strong>
      * <p>30</p>
@@ -100,6 +130,30 @@ public class OpenAgoalObjectiveDTO extends TeaModel {
     public static OpenAgoalObjectiveDTO build(java.util.Map<String, ?> map) throws Exception {
         OpenAgoalObjectiveDTO self = new OpenAgoalObjectiveDTO();
         return TeaModel.build(map, self);
+    }
+
+    public OpenAgoalObjectiveDTO setApproveStatus(String approveStatus) {
+        this.approveStatus = approveStatus;
+        return this;
+    }
+    public String getApproveStatus() {
+        return this.approveStatus;
+    }
+
+    public OpenAgoalObjectiveDTO setCreated(Long created) {
+        this.created = created;
+        return this;
+    }
+    public Long getCreated() {
+        return this.created;
+    }
+
+    public OpenAgoalObjectiveDTO setDownAlignObjectIds(java.util.List<String> downAlignObjectIds) {
+        this.downAlignObjectIds = downAlignObjectIds;
+        return this;
+    }
+    public java.util.List<String> getDownAlignObjectIds() {
+        return this.downAlignObjectIds;
     }
 
     public OpenAgoalObjectiveDTO setExecutor(OpenAgoalUserDTO executor) {
@@ -166,11 +220,11 @@ public class OpenAgoalObjectiveDTO extends TeaModel {
         return this.progress;
     }
 
-    public OpenAgoalObjectiveDTO setRelatedUsers(OpenAgoalUserDTO relatedUsers) {
+    public OpenAgoalObjectiveDTO setRelatedUsers(java.util.List<OpenAgoalUserDTO> relatedUsers) {
         this.relatedUsers = relatedUsers;
         return this;
     }
-    public OpenAgoalUserDTO getRelatedUsers() {
+    public java.util.List<OpenAgoalUserDTO> getRelatedUsers() {
         return this.relatedUsers;
     }
 
@@ -196,6 +250,22 @@ public class OpenAgoalObjectiveDTO extends TeaModel {
     }
     public String getTitle() {
         return this.title;
+    }
+
+    public OpenAgoalObjectiveDTO setUpAlignObjectIds(java.util.List<String> upAlignObjectIds) {
+        this.upAlignObjectIds = upAlignObjectIds;
+        return this;
+    }
+    public java.util.List<String> getUpAlignObjectIds() {
+        return this.upAlignObjectIds;
+    }
+
+    public OpenAgoalObjectiveDTO setUpdated(Long updated) {
+        this.updated = updated;
+        return this;
+    }
+    public Long getUpdated() {
+        return this.updated;
     }
 
     public OpenAgoalObjectiveDTO setWeight(Double weight) {

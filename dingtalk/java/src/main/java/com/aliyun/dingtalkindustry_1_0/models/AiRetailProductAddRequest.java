@@ -64,6 +64,15 @@ public class AiRetailProductAddRequest extends TeaModel {
     @NameInMap("productName")
     public String productName;
 
+    @NameInMap("tag1")
+    public String tag1;
+
+    @NameInMap("tag2")
+    public String tag2;
+
+    @NameInMap("tag3")
+    public String tag3;
+
     public static AiRetailProductAddRequest build(java.util.Map<String, ?> map) throws Exception {
         AiRetailProductAddRequest self = new AiRetailProductAddRequest();
         return TeaModel.build(map, self);
@@ -171,6 +180,30 @@ public class AiRetailProductAddRequest extends TeaModel {
     }
     public String getProductName() {
         return this.productName;
+    }
+
+    public AiRetailProductAddRequest setTag1(String tag1) {
+        this.tag1 = tag1;
+        return this;
+    }
+    public String getTag1() {
+        return this.tag1;
+    }
+
+    public AiRetailProductAddRequest setTag2(String tag2) {
+        this.tag2 = tag2;
+        return this;
+    }
+    public String getTag2() {
+        return this.tag2;
+    }
+
+    public AiRetailProductAddRequest setTag3(String tag3) {
+        this.tag3 = tag3;
+        return this;
+    }
+    public String getTag3() {
+        return this.tag3;
     }
 
 }

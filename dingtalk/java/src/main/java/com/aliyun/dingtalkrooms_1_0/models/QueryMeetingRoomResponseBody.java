@@ -487,6 +487,13 @@ public class QueryMeetingRoomResponseBody extends TeaModel {
         @NameInMap("roomCapacity")
         public Integer roomCapacity;
 
+        /**
+         * <strong>example:</strong>
+         * <p>此处添加对会议室的描述信息</p>
+         */
+        @NameInMap("roomDescription")
+        public String roomDescription;
+
         @NameInMap("roomGroup")
         public QueryMeetingRoomResponseBodyResultRoomGroup roomGroup;
 
@@ -597,6 +604,14 @@ public class QueryMeetingRoomResponseBody extends TeaModel {
         }
         public Integer getRoomCapacity() {
             return this.roomCapacity;
+        }
+
+        public QueryMeetingRoomResponseBodyResult setRoomDescription(String roomDescription) {
+            this.roomDescription = roomDescription;
+            return this;
+        }
+        public String getRoomDescription() {
+            return this.roomDescription;
         }
 
         public QueryMeetingRoomResponseBodyResult setRoomGroup(QueryMeetingRoomResponseBodyResultRoomGroup roomGroup) {

@@ -35,6 +35,12 @@ public class GetResourceDownloadInfoResponseBody extends TeaModel {
         @NameInMap("downloadUrl")
         public String downloadUrl;
 
+        @NameInMap("resourceName")
+        public String resourceName;
+
+        @NameInMap("size")
+        public Long size;
+
         public static GetResourceDownloadInfoResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             GetResourceDownloadInfoResponseBodyResult self = new GetResourceDownloadInfoResponseBodyResult();
             return TeaModel.build(map, self);
@@ -46,6 +52,22 @@ public class GetResourceDownloadInfoResponseBody extends TeaModel {
         }
         public String getDownloadUrl() {
             return this.downloadUrl;
+        }
+
+        public GetResourceDownloadInfoResponseBodyResult setResourceName(String resourceName) {
+            this.resourceName = resourceName;
+            return this;
+        }
+        public String getResourceName() {
+            return this.resourceName;
+        }
+
+        public GetResourceDownloadInfoResponseBodyResult setSize(Long size) {
+            this.size = size;
+            return this;
+        }
+        public Long getSize() {
+            return this.size;
         }
 
     }

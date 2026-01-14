@@ -20,6 +20,130 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>添加角色成员</p>
+     * 
+     * @param request AddRoleMemberRequest
+     * @param headers AddRoleMemberHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AddRoleMemberResponse
+     */
+    public AddRoleMemberResponse addRoleMemberWithOptions(String baseId, AddRoleMemberRequest request, AddRoleMemberHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.roleMemberList)) {
+            body.put("roleMemberList", request.roleMemberList);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AddRoleMember"),
+            new TeaPair("version", "notable_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/notable/auth/role/member/" + baseId + ""),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AddRoleMemberResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>添加角色成员</p>
+     * 
+     * @param request AddRoleMemberRequest
+     * @return AddRoleMemberResponse
+     */
+    public AddRoleMemberResponse addRoleMember(String baseId, AddRoleMemberRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AddRoleMemberHeaders headers = new AddRoleMemberHeaders();
+        return this.addRoleMemberWithOptions(baseId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>修改高级权限设置开关</p>
+     * 
+     * @param request ChangeSwitchRequest
+     * @param headers ChangeSwitchHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ChangeSwitchResponse
+     */
+    public ChangeSwitchResponse changeSwitchWithOptions(String baseId, ChangeSwitchRequest request, ChangeSwitchHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.value)) {
+            body.put("value", request.value);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ChangeSwitch"),
+            new TeaPair("version", "notable_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/notable/auth/" + baseId + ""),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ChangeSwitchResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>修改高级权限设置开关</p>
+     * 
+     * @param request ChangeSwitchRequest
+     * @return ChangeSwitchResponse
+     */
+    public ChangeSwitchResponse changeSwitch(String baseId, ChangeSwitchRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ChangeSwitchHeaders headers = new ChangeSwitchHeaders();
+        return this.changeSwitchWithOptions(baseId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>新增数据表字段</p>
      * 
      * @param request CreateFieldRequest
@@ -86,6 +210,84 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateFieldHeaders headers = new CreateFieldHeaders();
         return this.createFieldWithOptions(baseId, sheetIdOrName, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>创建角色</p>
+     * 
+     * @param request CreateRoleRequest
+     * @param headers CreateRoleHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateRoleResponse
+     */
+    public CreateRoleResponse createRoleWithOptions(String baseId, CreateRoleRequest request, CreateRoleHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.flowType)) {
+            body.put("flowType", request.flowType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.id)) {
+            body.put("id", request.id);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
+            body.put("name", request.name);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.roleType)) {
+            body.put("roleType", request.roleType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.subRoles)) {
+            body.put("subRoles", request.subRoles);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateRole"),
+            new TeaPair("version", "notable_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/notable/auth/role/" + baseId + ""),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateRoleResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>创建角色</p>
+     * 
+     * @param request CreateRoleRequest
+     * @return CreateRoleResponse
+     */
+    public CreateRoleResponse createRole(String baseId, CreateRoleRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CreateRoleHeaders headers = new CreateRoleHeaders();
+        return this.createRoleWithOptions(baseId, request, headers, runtime);
     }
 
     /**
@@ -270,6 +472,68 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DeleteRecordsHeaders headers = new DeleteRecordsHeaders();
         return this.deleteRecordsWithOptions(baseId, sheetIdOrName, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除角色</p>
+     * 
+     * @param request DeleteRoleRequest
+     * @param headers DeleteRoleHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteRoleResponse
+     */
+    public DeleteRoleResponse deleteRoleWithOptions(String baseId, DeleteRoleRequest request, DeleteRoleHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.roleId)) {
+            body.put("roleId", request.roleId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DeleteRole"),
+            new TeaPair("version", "notable_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/notable/auth/role/" + baseId + ""),
+            new TeaPair("method", "DELETE"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DeleteRoleResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除角色</p>
+     * 
+     * @param request DeleteRoleRequest
+     * @return DeleteRoleResponse
+     */
+    public DeleteRoleResponse deleteRole(String baseId, DeleteRoleRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DeleteRoleHeaders headers = new DeleteRoleHeaders();
+        return this.deleteRoleWithOptions(baseId, request, headers, runtime);
     }
 
     /**
@@ -618,6 +882,122 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>获取高级权限设置开关</p>
+     * 
+     * @param request GetSwitchRequest
+     * @param headers GetSwitchHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetSwitchResponse
+     */
+    public GetSwitchResponse getSwitchWithOptions(String baseId, GetSwitchRequest request, GetSwitchHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetSwitch"),
+            new TeaPair("version", "notable_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/notable/auth/" + baseId + ""),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetSwitchResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取高级权限设置开关</p>
+     * 
+     * @param request GetSwitchRequest
+     * @return GetSwitchResponse
+     */
+    public GetSwitchResponse getSwitch(String baseId, GetSwitchRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetSwitchHeaders headers = new GetSwitchHeaders();
+        return this.getSwitchWithOptions(baseId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取指定用户的高级权限角色配置列表</p>
+     * 
+     * @param request GetUserDocRolesRequest
+     * @param headers GetUserDocRolesHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetUserDocRolesResponse
+     */
+    public GetUserDocRolesResponse getUserDocRolesWithOptions(String baseId, GetUserDocRolesRequest request, GetUserDocRolesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            query.put("unionId", request.unionId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetUserDocRoles"),
+            new TeaPair("version", "notable_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/notable/auth/role/" + baseId + ""),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetUserDocRolesResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取指定用户的高级权限角色配置列表</p>
+     * 
+     * @param request GetUserDocRolesRequest
+     * @return GetUserDocRolesResponse
+     */
+    public GetUserDocRolesResponse getUserDocRoles(String baseId, GetUserDocRolesRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetUserDocRolesHeaders headers = new GetUserDocRolesHeaders();
+        return this.getUserDocRolesWithOptions(baseId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>新增记录</p>
      * 
      * @param request InsertRecordsRequest
@@ -816,6 +1196,128 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>查询文档所有角色和角色成员</p>
+     * 
+     * @param request QueryDocAllRolesRequest
+     * @param headers QueryDocAllRolesHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryDocAllRolesResponse
+     */
+    public QueryDocAllRolesResponse queryDocAllRolesWithOptions(String baseId, QueryDocAllRolesRequest request, QueryDocAllRolesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryDocAllRoles"),
+            new TeaPair("version", "notable_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/notable/auth/role/member/" + baseId + ""),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryDocAllRolesResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询文档所有角色和角色成员</p>
+     * 
+     * @param request QueryDocAllRolesRequest
+     * @return QueryDocAllRolesResponse
+     */
+    public QueryDocAllRolesResponse queryDocAllRoles(String baseId, QueryDocAllRolesRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryDocAllRolesHeaders headers = new QueryDocAllRolesHeaders();
+        return this.queryDocAllRolesWithOptions(baseId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>重建角色成员</p>
+     * 
+     * @param request RebuildRoleMembersRequest
+     * @param headers RebuildRoleMembersHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return RebuildRoleMembersResponse
+     */
+    public RebuildRoleMembersResponse rebuildRoleMembersWithOptions(String baseId, RebuildRoleMembersRequest request, RebuildRoleMembersHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.defaultRoleDTO)) {
+            body.put("defaultRoleDTO", request.defaultRoleDTO);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.toRoleMemberDTOMap)) {
+            body.put("toRoleMemberDTOMap", request.toRoleMemberDTOMap);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "RebuildRoleMembers"),
+            new TeaPair("version", "notable_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/notable/auth/role/member/" + baseId + ""),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new RebuildRoleMembersResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>重建角色成员</p>
+     * 
+     * @param request RebuildRoleMembersRequest
+     * @return RebuildRoleMembersResponse
+     */
+    public RebuildRoleMembersResponse rebuildRoleMembers(String baseId, RebuildRoleMembersRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        RebuildRoleMembersHeaders headers = new RebuildRoleMembersHeaders();
+        return this.rebuildRoleMembersWithOptions(baseId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>更新数据表字段</p>
      * 
      * @param request UpdateFieldRequest
@@ -940,6 +1442,84 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateRecordsHeaders headers = new UpdateRecordsHeaders();
         return this.updateRecordsWithOptions(baseId, sheetIdOrName, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新角色</p>
+     * 
+     * @param request UpdateRoleRequest
+     * @param headers UpdateRoleHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateRoleResponse
+     */
+    public UpdateRoleResponse updateRoleWithOptions(String baseId, UpdateRoleRequest request, UpdateRoleHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.flowType)) {
+            body.put("flowType", request.flowType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.id)) {
+            body.put("id", request.id);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
+            body.put("name", request.name);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.roleType)) {
+            body.put("roleType", request.roleType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.subRoles)) {
+            body.put("subRoles", request.subRoles);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateRole"),
+            new TeaPair("version", "notable_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/notable/auth/role/" + baseId + ""),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateRoleResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新角色</p>
+     * 
+     * @param request UpdateRoleRequest
+     * @return UpdateRoleResponse
+     */
+    public UpdateRoleResponse updateRole(String baseId, UpdateRoleRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateRoleHeaders headers = new UpdateRoleHeaders();
+        return this.updateRoleWithOptions(baseId, request, headers, runtime);
     }
 
     /**

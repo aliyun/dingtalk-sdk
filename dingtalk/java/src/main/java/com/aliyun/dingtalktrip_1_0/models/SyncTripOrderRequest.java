@@ -47,6 +47,13 @@ public class SyncTripOrderRequest extends TeaModel {
     public Boolean endorseFlag;
 
     /**
+     * <strong>example:</strong>
+     * <p>100.00</p>
+     */
+    @NameInMap("enterprisePayAmount")
+    public String enterprisePayAmount;
+
+    /**
      * <p>This parameter is required.</p>
      */
     @NameInMap("event")
@@ -138,6 +145,13 @@ public class SyncTripOrderRequest extends TeaModel {
      */
     @NameInMap("orderUrl")
     public String orderUrl;
+
+    /**
+     * <strong>example:</strong>
+     * <p>100.00</p>
+     */
+    @NameInMap("personalPayAmount")
+    public String personalPayAmount;
 
     @NameInMap("processId")
     public String processId;
@@ -249,6 +263,14 @@ public class SyncTripOrderRequest extends TeaModel {
     }
     public Boolean getEndorseFlag() {
         return this.endorseFlag;
+    }
+
+    public SyncTripOrderRequest setEnterprisePayAmount(String enterprisePayAmount) {
+        this.enterprisePayAmount = enterprisePayAmount;
+        return this;
+    }
+    public String getEnterprisePayAmount() {
+        return this.enterprisePayAmount;
     }
 
     public SyncTripOrderRequest setEvent(SyncTripOrderRequestEvent event) {
@@ -377,6 +399,14 @@ public class SyncTripOrderRequest extends TeaModel {
     }
     public String getOrderUrl() {
         return this.orderUrl;
+    }
+
+    public SyncTripOrderRequest setPersonalPayAmount(String personalPayAmount) {
+        this.personalPayAmount = personalPayAmount;
+        return this;
+    }
+    public String getPersonalPayAmount() {
+        return this.personalPayAmount;
     }
 
     public SyncTripOrderRequest setProcessId(String processId) {

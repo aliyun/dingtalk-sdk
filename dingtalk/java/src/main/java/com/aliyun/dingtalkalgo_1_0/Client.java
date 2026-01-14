@@ -157,4 +157,136 @@ public class Client extends com.aliyun.teaopenapi.Client {
         OkrOpenRecommendHeaders headers = new OkrOpenRecommendHeaders();
         return this.okrOpenRecommendWithOptions(request, headers, runtime);
     }
+
+    /**
+     * <b>summary</b> : 
+     * <p>魏桥铝原料预测任务查询</p>
+     * 
+     * @param request WeiqiaoAluminumQueryRequest
+     * @param headers WeiqiaoAluminumQueryHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return WeiqiaoAluminumQueryResponse
+     */
+    public WeiqiaoAluminumQueryResponse weiqiaoAluminumQueryWithOptions(WeiqiaoAluminumQueryRequest request, WeiqiaoAluminumQueryHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.taskId)) {
+            body.put("task_id", request.taskId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "WeiqiaoAluminumQuery"),
+            new TeaPair("version", "algo_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/algo/industry/weiqiao/aluminum/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new WeiqiaoAluminumQueryResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>魏桥铝原料预测任务查询</p>
+     * 
+     * @param request WeiqiaoAluminumQueryRequest
+     * @return WeiqiaoAluminumQueryResponse
+     */
+    public WeiqiaoAluminumQueryResponse weiqiaoAluminumQuery(WeiqiaoAluminumQueryRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        WeiqiaoAluminumQueryHeaders headers = new WeiqiaoAluminumQueryHeaders();
+        return this.weiqiaoAluminumQueryWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>魏桥铝原料预测任务提交</p>
+     * 
+     * @param request WeiqiaoAluminumSubmitRequest
+     * @param headers WeiqiaoAluminumSubmitHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return WeiqiaoAluminumSubmitResponse
+     */
+    public WeiqiaoAluminumSubmitResponse weiqiaoAluminumSubmitWithOptions(WeiqiaoAluminumSubmitRequest request, WeiqiaoAluminumSubmitHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.currentFurnace)) {
+            body.put("current_furnace", request.currentFurnace);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dilutionConfig)) {
+            body.put("dilution_config", request.dilutionConfig);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.historyFurnace)) {
+            body.put("history_furnace", request.historyFurnace);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.rawMaterials)) {
+            body.put("raw_materials", request.rawMaterials);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.target)) {
+            body.put("target", request.target);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.targetRanges)) {
+            body.put("target_ranges", request.targetRanges);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "WeiqiaoAluminumSubmit"),
+            new TeaPair("version", "algo_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/algo/industry/weiqiao/aluminum/submit"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new WeiqiaoAluminumSubmitResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>魏桥铝原料预测任务提交</p>
+     * 
+     * @param request WeiqiaoAluminumSubmitRequest
+     * @return WeiqiaoAluminumSubmitResponse
+     */
+    public WeiqiaoAluminumSubmitResponse weiqiaoAluminumSubmit(WeiqiaoAluminumSubmitRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        WeiqiaoAluminumSubmitHeaders headers = new WeiqiaoAluminumSubmitHeaders();
+        return this.weiqiaoAluminumSubmitWithOptions(request, headers, runtime);
+    }
 }

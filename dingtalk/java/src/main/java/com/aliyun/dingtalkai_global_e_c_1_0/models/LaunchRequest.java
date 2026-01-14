@@ -28,27 +28,6 @@ public class LaunchRequest extends TeaModel {
     @NameInMap("videoUrls")
     public java.util.List<String> videoUrls;
 
-    @NameInMap("dingAgentId")
-    public Long dingAgentId;
-
-    @NameInMap("dingClientId")
-    public String dingClientId;
-
-    @NameInMap("dingIsvOrgId")
-    public Long dingIsvOrgId;
-
-    @NameInMap("dingOrgId")
-    public Long dingOrgId;
-
-    @NameInMap("dingSuiteKey")
-    public String dingSuiteKey;
-
-    @NameInMap("dingTokenGrantType")
-    public Integer dingTokenGrantType;
-
-    @NameInMap("dingUid")
-    public Long dingUid;
-
     public static LaunchRequest build(java.util.Map<String, ?> map) throws Exception {
         LaunchRequest self = new LaunchRequest();
         return TeaModel.build(map, self);
@@ -116,62 +95,6 @@ public class LaunchRequest extends TeaModel {
     }
     public java.util.List<String> getVideoUrls() {
         return this.videoUrls;
-    }
-
-    public LaunchRequest setDingAgentId(Long dingAgentId) {
-        this.dingAgentId = dingAgentId;
-        return this;
-    }
-    public Long getDingAgentId() {
-        return this.dingAgentId;
-    }
-
-    public LaunchRequest setDingClientId(String dingClientId) {
-        this.dingClientId = dingClientId;
-        return this;
-    }
-    public String getDingClientId() {
-        return this.dingClientId;
-    }
-
-    public LaunchRequest setDingIsvOrgId(Long dingIsvOrgId) {
-        this.dingIsvOrgId = dingIsvOrgId;
-        return this;
-    }
-    public Long getDingIsvOrgId() {
-        return this.dingIsvOrgId;
-    }
-
-    public LaunchRequest setDingOrgId(Long dingOrgId) {
-        this.dingOrgId = dingOrgId;
-        return this;
-    }
-    public Long getDingOrgId() {
-        return this.dingOrgId;
-    }
-
-    public LaunchRequest setDingSuiteKey(String dingSuiteKey) {
-        this.dingSuiteKey = dingSuiteKey;
-        return this;
-    }
-    public String getDingSuiteKey() {
-        return this.dingSuiteKey;
-    }
-
-    public LaunchRequest setDingTokenGrantType(Integer dingTokenGrantType) {
-        this.dingTokenGrantType = dingTokenGrantType;
-        return this;
-    }
-    public Integer getDingTokenGrantType() {
-        return this.dingTokenGrantType;
-    }
-
-    public LaunchRequest setDingUid(Long dingUid) {
-        this.dingUid = dingUid;
-        return this;
-    }
-    public Long getDingUid() {
-        return this.dingUid;
     }
 
     public static class LaunchRequestVariantsOptionValues extends TeaModel {

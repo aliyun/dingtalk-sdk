@@ -8,7 +8,7 @@ public class OpenAgoalObjectiveDimensionDTO extends TeaModel {
      * <p>This parameter is required.</p>
      */
     @NameInMap("children")
-    public java.util.List<OpenAgoalObjectiveDimensionDTO> children;
+    public java.util.List<OpenAgoalObjectiveDimensionDTOChildren> children;
 
     /**
      * <p>This parameter is required.</p>
@@ -54,11 +54,11 @@ public class OpenAgoalObjectiveDimensionDTO extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public OpenAgoalObjectiveDimensionDTO setChildren(java.util.List<OpenAgoalObjectiveDimensionDTO> children) {
+    public OpenAgoalObjectiveDimensionDTO setChildren(java.util.List<OpenAgoalObjectiveDimensionDTOChildren> children) {
         this.children = children;
         return this;
     }
-    public java.util.List<OpenAgoalObjectiveDimensionDTO> getChildren() {
+    public java.util.List<OpenAgoalObjectiveDimensionDTOChildren> getChildren() {
         return this.children;
     }
 
@@ -100,6 +100,65 @@ public class OpenAgoalObjectiveDimensionDTO extends TeaModel {
     }
     public Double getWeight() {
         return this.weight;
+    }
+
+    public static class OpenAgoalObjectiveDimensionDTOChildren extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>662e006fe4b0f57ccbcxxxxx</p>
+         */
+        @NameInMap("dimensionId")
+        public String dimensionId;
+
+        /**
+         * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>这是子维度标题</p>
+         */
+        @NameInMap("title")
+        public String title;
+
+        /**
+         * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>100</p>
+         */
+        @NameInMap("weight")
+        public Double weight;
+
+        public static OpenAgoalObjectiveDimensionDTOChildren build(java.util.Map<String, ?> map) throws Exception {
+            OpenAgoalObjectiveDimensionDTOChildren self = new OpenAgoalObjectiveDimensionDTOChildren();
+            return TeaModel.build(map, self);
+        }
+
+        public OpenAgoalObjectiveDimensionDTOChildren setDimensionId(String dimensionId) {
+            this.dimensionId = dimensionId;
+            return this;
+        }
+        public String getDimensionId() {
+            return this.dimensionId;
+        }
+
+        public OpenAgoalObjectiveDimensionDTOChildren setTitle(String title) {
+            this.title = title;
+            return this;
+        }
+        public String getTitle() {
+            return this.title;
+        }
+
+        public OpenAgoalObjectiveDimensionDTOChildren setWeight(Double weight) {
+            this.weight = weight;
+            return this;
+        }
+        public Double getWeight() {
+            return this.weight;
+        }
+
     }
 
 }

@@ -32,6 +32,9 @@ public class SaveTemplateResponseBody extends TeaModel {
     }
 
     public static class SaveTemplateResponseBodyData extends TeaModel {
+        @NameInMap("blockTemplate")
+        public Boolean blockTemplate;
+
         @NameInMap("commonVariableList")
         public Object commonVariableList;
 
@@ -74,6 +77,14 @@ public class SaveTemplateResponseBody extends TeaModel {
         public static SaveTemplateResponseBodyData build(java.util.Map<String, ?> map) throws Exception {
             SaveTemplateResponseBodyData self = new SaveTemplateResponseBodyData();
             return TeaModel.build(map, self);
+        }
+
+        public SaveTemplateResponseBodyData setBlockTemplate(Boolean blockTemplate) {
+            this.blockTemplate = blockTemplate;
+            return this;
+        }
+        public Boolean getBlockTemplate() {
+            return this.blockTemplate;
         }
 
         public SaveTemplateResponseBodyData setCommonVariableList(Object commonVariableList) {

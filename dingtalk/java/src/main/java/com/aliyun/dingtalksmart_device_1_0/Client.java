@@ -132,6 +132,74 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>创建导出设备数据任务</p>
+     * 
+     * @param request CreateExportDeviceStatisticTaskRequest
+     * @param headers CreateExportDeviceStatisticTaskHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateExportDeviceStatisticTaskResponse
+     */
+    public CreateExportDeviceStatisticTaskResponse createExportDeviceStatisticTaskWithOptions(CreateExportDeviceStatisticTaskRequest request, CreateExportDeviceStatisticTaskHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.aiSheetTemplateId)) {
+            body.put("aiSheetTemplateId", request.aiSheetTemplateId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.creatorCorpId)) {
+            body.put("creatorCorpId", request.creatorCorpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.creatorUnionId)) {
+            body.put("creatorUnionId", request.creatorUnionId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.taskName)) {
+            body.put("taskName", request.taskName);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateExportDeviceStatisticTask"),
+            new TeaPair("version", "smartDevice_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/smartDevice/statistic/create"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateExportDeviceStatisticTaskResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>创建导出设备数据任务</p>
+     * 
+     * @param request CreateExportDeviceStatisticTaskRequest
+     * @return CreateExportDeviceStatisticTaskResponse
+     */
+    public CreateExportDeviceStatisticTaskResponse createExportDeviceStatisticTask(CreateExportDeviceStatisticTaskRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CreateExportDeviceStatisticTaskHeaders headers = new CreateExportDeviceStatisticTaskHeaders();
+        return this.createExportDeviceStatisticTaskWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>基于企业员工照片为终端提取人脸识别特征</p>
      * 
      * @param request ExtractFacialFeatureRequest
@@ -502,6 +570,74 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         TextToImageHeaders headers = new TextToImageHeaders();
         return this.textToImageWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新导出设备数据</p>
+     * 
+     * @param request UpdateExportDeviceStatisticRequest
+     * @param headers UpdateExportDeviceStatisticHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateExportDeviceStatisticResponse
+     */
+    public UpdateExportDeviceStatisticResponse updateExportDeviceStatisticWithOptions(UpdateExportDeviceStatisticRequest request, UpdateExportDeviceStatisticHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.creatorCorpId)) {
+            body.put("creatorCorpId", request.creatorCorpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.creatorUnionId)) {
+            body.put("creatorUnionId", request.creatorUnionId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.records)) {
+            body.put("records", request.records);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.taskId)) {
+            body.put("taskId", request.taskId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateExportDeviceStatistic"),
+            new TeaPair("version", "smartDevice_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/smartDevice/statistic"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateExportDeviceStatisticResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新导出设备数据</p>
+     * 
+     * @param request UpdateExportDeviceStatisticRequest
+     * @return UpdateExportDeviceStatisticResponse
+     */
+    public UpdateExportDeviceStatisticResponse updateExportDeviceStatistic(UpdateExportDeviceStatisticRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateExportDeviceStatisticHeaders headers = new UpdateExportDeviceStatisticHeaders();
+        return this.updateExportDeviceStatisticWithOptions(request, headers, runtime);
     }
 
     /**

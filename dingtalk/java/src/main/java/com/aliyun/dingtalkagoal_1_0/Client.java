@@ -20,6 +20,70 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>业务数据开放</p>
+     * 
+     * @param request AgoalBizDataQueryRequest
+     * @param headers AgoalBizDataQueryHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AgoalBizDataQueryResponse
+     */
+    public AgoalBizDataQueryResponse agoalBizDataQueryWithOptions(AgoalBizDataQueryRequest request, AgoalBizDataQueryHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizCode)) {
+            query.put("bizCode", request.bizCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
+            query.put("maxResults", request.maxResults);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
+            query.put("nextToken", request.nextToken);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AgoalBizDataQuery"),
+            new TeaPair("version", "agoal_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/agoal/bizData/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AgoalBizDataQueryResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>业务数据开放</p>
+     * 
+     * @param request AgoalBizDataQueryRequest
+     * @return AgoalBizDataQueryResponse
+     */
+    public AgoalBizDataQueryResponse agoalBizDataQuery(AgoalBizDataQueryRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AgoalBizDataQueryHeaders headers = new AgoalBizDataQueryHeaders();
+        return this.agoalBizDataQueryWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>创建目标进展</p>
      * 
      * @param request AgoalCreateProgressRequest
@@ -260,6 +324,128 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>通过指标编码批量查询指标列表</p>
+     * 
+     * @param tmpReq AgoalIndicatorBatchQueryRequest
+     * @param headers AgoalIndicatorBatchQueryHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AgoalIndicatorBatchQueryResponse
+     */
+    public AgoalIndicatorBatchQueryResponse agoalIndicatorBatchQueryWithOptions(AgoalIndicatorBatchQueryRequest tmpReq, AgoalIndicatorBatchQueryHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(tmpReq);
+        AgoalIndicatorBatchQueryShrinkRequest request = new AgoalIndicatorBatchQueryShrinkRequest();
+        com.aliyun.openapiutil.Client.convert(tmpReq, request);
+        if (!com.aliyun.teautil.Common.isUnset(tmpReq.codeList)) {
+            request.codeListShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(tmpReq.codeList, "codeList", "json");
+        }
+
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.codeListShrink)) {
+            query.put("codeList", request.codeListShrink);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AgoalIndicatorBatchQuery"),
+            new TeaPair("version", "agoal_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/agoal/indicator/batch/query"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AgoalIndicatorBatchQueryResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>通过指标编码批量查询指标列表</p>
+     * 
+     * @param request AgoalIndicatorBatchQueryRequest
+     * @return AgoalIndicatorBatchQueryResponse
+     */
+    public AgoalIndicatorBatchQueryResponse agoalIndicatorBatchQuery(AgoalIndicatorBatchQueryRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AgoalIndicatorBatchQueryHeaders headers = new AgoalIndicatorBatchQueryHeaders();
+        return this.agoalIndicatorBatchQueryWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>通过指标编码推送指标时间维度数据</p>
+     * 
+     * @param request AgoalIndicatorDataPushRequest
+     * @param headers AgoalIndicatorDataPushHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AgoalIndicatorDataPushResponse
+     */
+    public AgoalIndicatorDataPushResponse agoalIndicatorDataPushWithOptions(AgoalIndicatorDataPushRequest request, AgoalIndicatorDataPushHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.code)) {
+            body.put("code", request.code);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.data)) {
+            body.put("data", request.data);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AgoalIndicatorDataPush"),
+            new TeaPair("version", "agoal_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/agoal/indicator/data/push"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AgoalIndicatorDataPushResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>通过指标编码推送指标时间维度数据</p>
+     * 
+     * @param request AgoalIndicatorDataPushRequest
+     * @return AgoalIndicatorDataPushResponse
+     */
+    public AgoalIndicatorDataPushResponse agoalIndicatorDataPush(AgoalIndicatorDataPushRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AgoalIndicatorDataPushHeaders headers = new AgoalIndicatorDataPushHeaders();
+        return this.agoalIndicatorDataPushWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>获取Agoal指定目标或者关键结果关联的关键行动</p>
      * 
      * @param request AgoalObjectiveKeyActionListRequest
@@ -320,6 +506,130 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         AgoalObjectiveKeyActionListHeaders headers = new AgoalObjectiveKeyActionListHeaders();
         return this.agoalObjectiveKeyActionListWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询企业下指定个人目标的所有进展</p>
+     * 
+     * @param request AgoalObjectiveProgressListRequest
+     * @param headers AgoalObjectiveProgressListHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AgoalObjectiveProgressListResponse
+     */
+    public AgoalObjectiveProgressListResponse agoalObjectiveProgressListWithOptions(AgoalObjectiveProgressListRequest request, AgoalObjectiveProgressListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.objectiveId)) {
+            query.put("objectiveId", request.objectiveId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {
+            query.put("pageNumber", request.pageNumber);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
+            query.put("pageSize", request.pageSize);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AgoalObjectiveProgressList"),
+            new TeaPair("version", "agoal_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/agoal/objectives/progresses/lists"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AgoalObjectiveProgressListResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询企业下指定个人目标的所有进展</p>
+     * 
+     * @param request AgoalObjectiveProgressListRequest
+     * @return AgoalObjectiveProgressListResponse
+     */
+    public AgoalObjectiveProgressListResponse agoalObjectiveProgressList(AgoalObjectiveProgressListRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AgoalObjectiveProgressListHeaders headers = new AgoalObjectiveProgressListHeaders();
+        return this.agoalObjectiveProgressListWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询企业下目标规则列表</p>
+     * 
+     * @param request AgoalObjectiveRuleListRequest
+     * @param headers AgoalObjectiveRuleListHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AgoalObjectiveRuleListResponse
+     */
+    public AgoalObjectiveRuleListResponse agoalObjectiveRuleListWithOptions(AgoalObjectiveRuleListRequest request, AgoalObjectiveRuleListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {
+            query.put("pageNumber", request.pageNumber);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
+            query.put("pageSize", request.pageSize);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AgoalObjectiveRuleList"),
+            new TeaPair("version", "agoal_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/agoal/objectiveRuleLists/query"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AgoalObjectiveRuleListResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询企业下目标规则列表</p>
+     * 
+     * @param request AgoalObjectiveRuleListRequest
+     * @return AgoalObjectiveRuleListResponse
+     */
+    public AgoalObjectiveRuleListResponse agoalObjectiveRuleList(AgoalObjectiveRuleListRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AgoalObjectiveRuleListHeaders headers = new AgoalObjectiveRuleListHeaders();
+        return this.agoalObjectiveRuleListWithOptions(request, headers, runtime);
     }
 
     /**
@@ -546,6 +856,130 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         AgoalOrgObjectiveRuleListHeaders headers = new AgoalOrgObjectiveRuleListHeaders();
         return this.agoalOrgObjectiveRuleListWithOptions(headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询某个考核计划的部门得分</p>
+     * 
+     * @param request AgoalOrgPerfDocQueryRequest
+     * @param headers AgoalOrgPerfDocQueryHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AgoalOrgPerfDocQueryResponse
+     */
+    public AgoalOrgPerfDocQueryResponse agoalOrgPerfDocQueryWithOptions(AgoalOrgPerfDocQueryRequest request, AgoalOrgPerfDocQueryHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {
+            query.put("pageNumber", request.pageNumber);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
+            query.put("pageSize", request.pageSize);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.planId)) {
+            query.put("planId", request.planId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AgoalOrgPerfDocQuery"),
+            new TeaPair("version", "agoal_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/agoal/org_perf/documents/query"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AgoalOrgPerfDocQueryResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询某个考核计划的部门得分</p>
+     * 
+     * @param request AgoalOrgPerfDocQueryRequest
+     * @return AgoalOrgPerfDocQueryResponse
+     */
+    public AgoalOrgPerfDocQueryResponse agoalOrgPerfDocQuery(AgoalOrgPerfDocQueryRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AgoalOrgPerfDocQueryHeaders headers = new AgoalOrgPerfDocQueryHeaders();
+        return this.agoalOrgPerfDocQueryWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询企业下的所有考核计划</p>
+     * 
+     * @param request AgoalOrgPerfPlanQueryRequest
+     * @param headers AgoalOrgPerfPlanQueryHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AgoalOrgPerfPlanQueryResponse
+     */
+    public AgoalOrgPerfPlanQueryResponse agoalOrgPerfPlanQueryWithOptions(AgoalOrgPerfPlanQueryRequest request, AgoalOrgPerfPlanQueryHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {
+            query.put("pageNumber", request.pageNumber);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
+            query.put("pageSize", request.pageSize);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AgoalOrgPerfPlanQuery"),
+            new TeaPair("version", "agoal_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/agoal/org_perf/plans/query"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AgoalOrgPerfPlanQueryResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询企业下的所有考核计划</p>
+     * 
+     * @param request AgoalOrgPerfPlanQueryRequest
+     * @return AgoalOrgPerfPlanQueryResponse
+     */
+    public AgoalOrgPerfPlanQueryResponse agoalOrgPerfPlanQuery(AgoalOrgPerfPlanQueryRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AgoalOrgPerfPlanQueryHeaders headers = new AgoalOrgPerfPlanQueryHeaders();
+        return this.agoalOrgPerfPlanQueryWithOptions(request, headers, runtime);
     }
 
     /**
@@ -1068,5 +1502,117 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetIndicatorDetailHeaders headers = new GetIndicatorDetailHeaders();
         return this.getIndicatorDetailWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询企业下个人目标详情</p>
+     * 
+     * @param request GetObjectiveDetailRequest
+     * @param headers GetObjectiveDetailHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetObjectiveDetailResponse
+     */
+    public GetObjectiveDetailResponse getObjectiveDetailWithOptions(GetObjectiveDetailRequest request, GetObjectiveDetailHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.objectiveId)) {
+            query.put("objectiveId", request.objectiveId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetObjectiveDetail"),
+            new TeaPair("version", "agoal_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/agoal/objectives/details"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetObjectiveDetailResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询企业下个人目标详情</p>
+     * 
+     * @param request GetObjectiveDetailRequest
+     * @return GetObjectiveDetailResponse
+     */
+    public GetObjectiveDetailResponse getObjectiveDetail(GetObjectiveDetailRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetObjectiveDetailHeaders headers = new GetObjectiveDetailHeaders();
+        return this.getObjectiveDetailWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询企业下单个目标规则详情</p>
+     * 
+     * @param request GetObjectiveRuleDetailRequest
+     * @param headers GetObjectiveRuleDetailHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetObjectiveRuleDetailResponse
+     */
+    public GetObjectiveRuleDetailResponse getObjectiveRuleDetailWithOptions(GetObjectiveRuleDetailRequest request, GetObjectiveRuleDetailHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.objectiveRuleId)) {
+            query.put("objectiveRuleId", request.objectiveRuleId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetObjectiveRuleDetail"),
+            new TeaPair("version", "agoal_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/agoal/objectiveRules/details"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetObjectiveRuleDetailResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询企业下单个目标规则详情</p>
+     * 
+     * @param request GetObjectiveRuleDetailRequest
+     * @return GetObjectiveRuleDetailResponse
+     */
+    public GetObjectiveRuleDetailResponse getObjectiveRuleDetail(GetObjectiveRuleDetailRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetObjectiveRuleDetailHeaders headers = new GetObjectiveRuleDetailHeaders();
+        return this.getObjectiveRuleDetailWithOptions(request, headers, runtime);
     }
 }

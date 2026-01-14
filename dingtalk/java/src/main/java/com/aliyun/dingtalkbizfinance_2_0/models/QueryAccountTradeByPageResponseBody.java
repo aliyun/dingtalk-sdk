@@ -167,6 +167,9 @@ public class QueryAccountTradeByPageResponseBody extends TeaModel {
         @NameInMap("tradeType")
         public String tradeType;
 
+        @NameInMap("usage")
+        public String usage;
+
         public static QueryAccountTradeByPageResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             QueryAccountTradeByPageResponseBodyResult self = new QueryAccountTradeByPageResponseBodyResult();
             return TeaModel.build(map, self);
@@ -274,6 +277,14 @@ public class QueryAccountTradeByPageResponseBody extends TeaModel {
         }
         public String getTradeType() {
             return this.tradeType;
+        }
+
+        public QueryAccountTradeByPageResponseBodyResult setUsage(String usage) {
+            this.usage = usage;
+            return this;
+        }
+        public String getUsage() {
+            return this.usage;
         }
 
     }
