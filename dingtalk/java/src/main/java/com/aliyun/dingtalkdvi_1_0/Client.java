@@ -20,6 +20,180 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>设备录音启停控制</p>
+     * 
+     * @param request ControlRecordingRequest
+     * @param headers ControlRecordingHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ControlRecordingResponse
+     */
+    public ControlRecordingResponse controlRecordingWithOptions(ControlRecordingRequest request, ControlRecordingHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.action)) {
+            body.put("action", request.action);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.agree)) {
+            body.put("agree", request.agree);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.teamCode)) {
+            body.put("teamCode", request.teamCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ControlRecording"),
+            new TeaPair("version", "dvi_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/dvi/devices/recording/control"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ControlRecordingResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>设备录音启停控制</p>
+     * 
+     * @param request ControlRecordingRequest
+     * @return ControlRecordingResponse
+     */
+    public ControlRecordingResponse controlRecording(ControlRecordingRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ControlRecordingHeaders headers = new ControlRecordingHeaders();
+        return this.controlRecordingWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>创建录制计划</p>
+     * 
+     * @param request CreateRecordingScheduleRequest
+     * @param headers CreateRecordingScheduleHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateRecordingScheduleResponse
+     */
+    public CreateRecordingScheduleResponse createRecordingScheduleWithOptions(CreateRecordingScheduleRequest request, CreateRecordingScheduleHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.schedules)) {
+            body.put("schedules", request.schedules);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.sn)) {
+            body.put("sn", request.sn);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateRecordingSchedule"),
+            new TeaPair("version", "dvi_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/dvi/devices/recording/schedules"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateRecordingScheduleResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>创建录制计划</p>
+     * 
+     * @param request CreateRecordingScheduleRequest
+     * @return CreateRecordingScheduleResponse
+     */
+    public CreateRecordingScheduleResponse createRecordingSchedule(CreateRecordingScheduleRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CreateRecordingScheduleHeaders headers = new CreateRecordingScheduleHeaders();
+        return this.createRecordingScheduleWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除录制计划</p>
+     * 
+     * @param headers DeleteRecordingScheduleHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteRecordingScheduleResponse
+     */
+    public DeleteRecordingScheduleResponse deleteRecordingScheduleWithOptions(String taskId, DeleteRecordingScheduleHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DeleteRecordingSchedule"),
+            new TeaPair("version", "dvi_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/dvi/devices/recording/schedules/" + taskId + ""),
+            new TeaPair("method", "DELETE"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DeleteRecordingScheduleResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除录制计划</p>
+     * @return DeleteRecordingScheduleResponse
+     */
+    public DeleteRecordingScheduleResponse deleteRecordingSchedule(String taskId) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DeleteRecordingScheduleHeaders headers = new DeleteRecordingScheduleHeaders();
+        return this.deleteRecordingScheduleWithOptions(taskId, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>获取音频文件下载地址</p>
      * 
      * @param request GetAudioFileDownloadInfoRequest
@@ -248,6 +422,52 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetCustomerInsightHeaders headers = new GetCustomerInsightHeaders();
         return this.getCustomerInsightWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取录制计划</p>
+     * 
+     * @param headers GetRecordingScheduleHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetRecordingScheduleResponse
+     */
+    public GetRecordingScheduleResponse getRecordingScheduleWithOptions(String taskId, GetRecordingScheduleHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetRecordingSchedule"),
+            new TeaPair("version", "dvi_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/dvi/devices/recording/schedules/" + taskId + ""),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetRecordingScheduleResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取录制计划</p>
+     * @return GetRecordingScheduleResponse
+     */
+    public GetRecordingScheduleResponse getRecordingSchedule(String taskId) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetRecordingScheduleHeaders headers = new GetRecordingScheduleHeaders();
+        return this.getRecordingScheduleWithOptions(taskId, headers, runtime);
     }
 
     /**
@@ -608,6 +828,86 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ListCustomerHeaders headers = new ListCustomerHeaders();
         return this.listCustomerWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>分页查询设备录音时长</p>
+     * 
+     * @param request ListDeviceRecordingDurationRequest
+     * @param headers ListDeviceRecordingDurationHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ListDeviceRecordingDurationResponse
+     */
+    public ListDeviceRecordingDurationResponse listDeviceRecordingDurationWithOptions(ListDeviceRecordingDurationRequest request, ListDeviceRecordingDurationHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.endTime)) {
+            query.put("endTime", request.endTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
+            query.put("maxResults", request.maxResults);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
+            query.put("nextToken", request.nextToken);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.sn)) {
+            query.put("sn", request.sn);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.startTime)) {
+            query.put("startTime", request.startTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.teamCode)) {
+            query.put("teamCode", request.teamCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ListDeviceRecordingDuration"),
+            new TeaPair("version", "dvi_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/dvi/devices/recording-durations"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ListDeviceRecordingDurationResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>分页查询设备录音时长</p>
+     * 
+     * @param request ListDeviceRecordingDurationRequest
+     * @return ListDeviceRecordingDurationResponse
+     */
+    public ListDeviceRecordingDurationResponse listDeviceRecordingDuration(ListDeviceRecordingDurationRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ListDeviceRecordingDurationHeaders headers = new ListDeviceRecordingDurationHeaders();
+        return this.listDeviceRecordingDurationWithOptions(request, headers, runtime);
     }
 
     /**
@@ -1144,6 +1444,138 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SubmitAsrTaskHeaders headers = new SubmitAsrTaskHeaders();
         return this.submitAsrTaskWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新设备绑定关系</p>
+     * 
+     * @param request UpdateDeviceBindingRequest
+     * @param headers UpdateDeviceBindingHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateDeviceBindingResponse
+     */
+    public UpdateDeviceBindingResponse updateDeviceBindingWithOptions(UpdateDeviceBindingRequest request, UpdateDeviceBindingHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.action)) {
+            body.put("action", request.action);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.sn)) {
+            body.put("sn", request.sn);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.teamCode)) {
+            body.put("teamCode", request.teamCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateDeviceBinding"),
+            new TeaPair("version", "dvi_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/dvi/devices/binding/update"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateDeviceBindingResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新设备绑定关系</p>
+     * 
+     * @param request UpdateDeviceBindingRequest
+     * @return UpdateDeviceBindingResponse
+     */
+    public UpdateDeviceBindingResponse updateDeviceBinding(UpdateDeviceBindingRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateDeviceBindingHeaders headers = new UpdateDeviceBindingHeaders();
+        return this.updateDeviceBindingWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新录制计划</p>
+     * 
+     * @param request UpdateRecordingScheduleRequest
+     * @param headers UpdateRecordingScheduleHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateRecordingScheduleResponse
+     */
+    public UpdateRecordingScheduleResponse updateRecordingScheduleWithOptions(UpdateRecordingScheduleRequest request, UpdateRecordingScheduleHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.endTime)) {
+            body.put("endTime", request.endTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.startTime)) {
+            body.put("startTime", request.startTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.taskId)) {
+            body.put("taskId", request.taskId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateRecordingSchedule"),
+            new TeaPair("version", "dvi_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/dvi/devices/recording/schedules"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateRecordingScheduleResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新录制计划</p>
+     * 
+     * @param request UpdateRecordingScheduleRequest
+     * @return UpdateRecordingScheduleResponse
+     */
+    public UpdateRecordingScheduleResponse updateRecordingSchedule(UpdateRecordingScheduleRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateRecordingScheduleHeaders headers = new UpdateRecordingScheduleHeaders();
+        return this.updateRecordingScheduleWithOptions(request, headers, runtime);
     }
 
     /**

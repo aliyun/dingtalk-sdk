@@ -10,6 +10,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
         super(config);
         com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
         this._spi = gatewayClient;
+        this._signatureAlgorithm = "v2";
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -148,6 +149,65 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         BatchQueryRolesHeaders headers = new BatchQueryRolesHeaders();
         return this.batchQueryRolesWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>企业文件管理——删除文件接口</p>
+     * 
+     * @param request CleanFileRequest
+     * @param headers map
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CleanFileResponse
+     */
+    public CleanFileResponse cleanFileWithOptions(CleanFileRequest request, java.util.Map<String, String> headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.cleanReason)) {
+            body.put("cleanReason", request.cleanReason);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dentryId)) {
+            body.put("dentryId", request.dentryId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            body.put("operatorId", request.operatorId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.spaceId)) {
+            body.put("spaceId", request.spaceId);
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", headers),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CleanFile"),
+            new TeaPair("version", "storage_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/storage/filemanager/clean"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "Anonymous"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CleanFileResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>企业文件管理——删除文件接口</p>
+     * 
+     * @param request CleanFileRequest
+     * @return CleanFileResponse
+     */
+    public CleanFileResponse cleanFile(CleanFileRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        java.util.Map<String, String> headers = new java.util.HashMap<>();
+        return this.cleanFileWithOptions(request, headers, runtime);
     }
 
     /**

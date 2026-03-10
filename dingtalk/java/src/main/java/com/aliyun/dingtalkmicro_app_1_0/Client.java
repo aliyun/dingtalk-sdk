@@ -954,24 +954,13 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
-     * <p>获取企业内部H5应用</p>
+     * <p>获取企业内部应用</p>
      * 
-     * @param request GetInnerAppRequest
      * @param headers GetInnerAppHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetInnerAppResponse
      */
-    public GetInnerAppResponse getInnerAppWithOptions(String agentId, GetInnerAppRequest request, GetInnerAppHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
-        com.aliyun.teautil.Common.validateModel(request);
-        java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.ecologicalCorpId)) {
-            query.put("ecologicalCorpId", request.ecologicalCorpId);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.opUnionId)) {
-            query.put("opUnionId", request.opUnionId);
-        }
-
+    public GetInnerAppResponse getInnerAppWithOptions(String agentId, GetInnerAppHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -982,14 +971,13 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
-            new TeaPair("headers", realHeaders),
-            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+            new TeaPair("headers", realHeaders)
         ));
         com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
             new TeaPair("action", "GetInnerApp"),
             new TeaPair("version", "microApp_1.0"),
             new TeaPair("protocol", "HTTP"),
-            new TeaPair("pathname", "/v1.0/microApp/apps/" + agentId + ""),
+            new TeaPair("pathname", "/v1.0/microApp/apps/inner/" + agentId + ""),
             new TeaPair("method", "GET"),
             new TeaPair("authType", "AK"),
             new TeaPair("style", "ROA"),
@@ -1001,15 +989,59 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
-     * <p>获取企业内部H5应用</p>
-     * 
-     * @param request GetInnerAppRequest
+     * <p>获取企业内部应用</p>
      * @return GetInnerAppResponse
      */
-    public GetInnerAppResponse getInnerApp(String agentId, GetInnerAppRequest request) throws Exception {
+    public GetInnerAppResponse getInnerApp(String agentId) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetInnerAppHeaders headers = new GetInnerAppHeaders();
-        return this.getInnerAppWithOptions(agentId, request, headers, runtime);
+        return this.getInnerAppWithOptions(agentId, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取企业内部应用信息</p>
+     * 
+     * @param headers GetInnerAppInfoHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetInnerAppInfoResponse
+     */
+    public GetInnerAppInfoResponse getInnerAppInfoWithOptions(String agentId, GetInnerAppInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetInnerAppInfo"),
+            new TeaPair("version", "microApp_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/microApp/apps/innerapps/" + agentId + ""),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetInnerAppInfoResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取企业内部应用信息</p>
+     * @return GetInnerAppInfoResponse
+     */
+    public GetInnerAppInfoResponse getInnerAppInfo(String agentId) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetInnerAppInfoHeaders headers = new GetInnerAppInfoHeaders();
+        return this.getInnerAppInfoWithOptions(agentId, headers, runtime);
     }
 
     /**

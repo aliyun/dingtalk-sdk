@@ -28,6 +28,9 @@ public class BatchQueryGroupMemberResponseBody extends TeaModel {
     @NameInMap("success")
     public Boolean success;
 
+    @NameInMap("unionIdList")
+    public java.util.List<String> unionIdList;
+
     public static BatchQueryGroupMemberResponseBody build(java.util.Map<String, ?> map) throws Exception {
         BatchQueryGroupMemberResponseBody self = new BatchQueryGroupMemberResponseBody();
         return TeaModel.build(map, self);
@@ -63,6 +66,14 @@ public class BatchQueryGroupMemberResponseBody extends TeaModel {
     }
     public Boolean getSuccess() {
         return this.success;
+    }
+
+    public BatchQueryGroupMemberResponseBody setUnionIdList(java.util.List<String> unionIdList) {
+        this.unionIdList = unionIdList;
+        return this;
+    }
+    public java.util.List<String> getUnionIdList() {
+        return this.unionIdList;
     }
 
 }

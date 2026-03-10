@@ -4,6 +4,9 @@ package com.aliyun.dingtalkagoal_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetIndicatorDetailRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("indicatorId")
     public String indicatorId;
 

@@ -52,6 +52,13 @@ public class ListPermissionsResponseBody extends TeaModel {
 
         /**
          * <strong>example:</strong>
+         * <p>member_name</p>
+         */
+        @NameInMap("name")
+        public String name;
+
+        /**
+         * <strong>example:</strong>
          * <p>USER</p>
          */
         @NameInMap("type")
@@ -76,6 +83,14 @@ public class ListPermissionsResponseBody extends TeaModel {
         }
         public String getId() {
             return this.id;
+        }
+
+        public ListPermissionsResponseBodyPermissionsMember setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
         }
 
         public ListPermissionsResponseBodyPermissionsMember setType(String type) {

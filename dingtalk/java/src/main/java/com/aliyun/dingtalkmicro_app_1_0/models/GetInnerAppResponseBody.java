@@ -4,73 +4,41 @@ package com.aliyun.dingtalkmicro_app_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetInnerAppResponseBody extends TeaModel {
-    /**
-     * <strong>example:</strong>
-     * <p>1</p>
-     */
     @NameInMap("agentId")
     public Long agentId;
 
-    /**
-     * <strong>example:</strong>
-     * <p>aooxxx</p>
-     */
-    @NameInMap("appKey")
-    public String appKey;
+    @NameInMap("appName")
+    public String appName;
 
-    /**
-     * <p>This parameter is required.</p>
-     * 
-     * <strong>example:</strong>
-     * <p>aaaxxxxx</p>
-     */
-    @NameInMap("appSecret")
-    public String appSecret;
+    @NameInMap("customerAppId")
+    public String customerAppId;
 
-    /**
-     * <strong>example:</strong>
-     * <p>desc</p>
-     */
-    @NameInMap("desc")
-    public String desc;
+    @NameInMap("mobileLoginAddressKey")
+    public String mobileLoginAddressKey;
 
-    /**
-     * <strong>example:</strong>
-     * <p><a href="https://www.dingtalk.com">https://www.dingtalk.com</a></p>
-     */
-    @NameInMap("homepageLink")
-    public String homepageLink;
+    @NameInMap("mobileLoginLoginUrl")
+    public String mobileLoginLoginUrl;
 
-    /**
-     * <strong>example:</strong>
-     * <p>icon</p>
-     */
-    @NameInMap("icon")
-    public String icon;
+    @NameInMap("mobileOriginalHomepageUrl")
+    public String mobileOriginalHomepageUrl;
 
-    @NameInMap("ipWhiteList")
-    public java.util.List<String> ipWhiteList;
+    @NameInMap("mobileTransferUrl")
+    public String mobileTransferUrl;
 
-    /**
-     * <strong>example:</strong>
-     * <p>name</p>
-     */
-    @NameInMap("name")
-    public String name;
+    @NameInMap("pcEffectiveHomepageUrl")
+    public String pcEffectiveHomepageUrl;
 
-    /**
-     * <strong>example:</strong>
-     * <p><a href="https://www.dingtalk.com">https://www.dingtalk.com</a></p>
-     */
-    @NameInMap("ompLink")
-    public String ompLink;
+    @NameInMap("pcLoginAddressKey")
+    public String pcLoginAddressKey;
 
-    /**
-     * <strong>example:</strong>
-     * <p><a href="https://www.dingtalk.com">https://www.dingtalk.com</a></p>
-     */
-    @NameInMap("pcHomepageLink")
-    public String pcHomepageLink;
+    @NameInMap("pcLoginLoginUrl")
+    public String pcLoginLoginUrl;
+
+    @NameInMap("pcOriginalHomepageUrl")
+    public String pcOriginalHomepageUrl;
+
+    @NameInMap("pcTransferUrl")
+    public String pcTransferUrl;
 
     public static GetInnerAppResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetInnerAppResponseBody self = new GetInnerAppResponseBody();
@@ -85,76 +53,92 @@ public class GetInnerAppResponseBody extends TeaModel {
         return this.agentId;
     }
 
-    public GetInnerAppResponseBody setAppKey(String appKey) {
-        this.appKey = appKey;
+    public GetInnerAppResponseBody setAppName(String appName) {
+        this.appName = appName;
         return this;
     }
-    public String getAppKey() {
-        return this.appKey;
+    public String getAppName() {
+        return this.appName;
     }
 
-    public GetInnerAppResponseBody setAppSecret(String appSecret) {
-        this.appSecret = appSecret;
+    public GetInnerAppResponseBody setCustomerAppId(String customerAppId) {
+        this.customerAppId = customerAppId;
         return this;
     }
-    public String getAppSecret() {
-        return this.appSecret;
+    public String getCustomerAppId() {
+        return this.customerAppId;
     }
 
-    public GetInnerAppResponseBody setDesc(String desc) {
-        this.desc = desc;
+    public GetInnerAppResponseBody setMobileLoginAddressKey(String mobileLoginAddressKey) {
+        this.mobileLoginAddressKey = mobileLoginAddressKey;
         return this;
     }
-    public String getDesc() {
-        return this.desc;
+    public String getMobileLoginAddressKey() {
+        return this.mobileLoginAddressKey;
     }
 
-    public GetInnerAppResponseBody setHomepageLink(String homepageLink) {
-        this.homepageLink = homepageLink;
+    public GetInnerAppResponseBody setMobileLoginLoginUrl(String mobileLoginLoginUrl) {
+        this.mobileLoginLoginUrl = mobileLoginLoginUrl;
         return this;
     }
-    public String getHomepageLink() {
-        return this.homepageLink;
+    public String getMobileLoginLoginUrl() {
+        return this.mobileLoginLoginUrl;
     }
 
-    public GetInnerAppResponseBody setIcon(String icon) {
-        this.icon = icon;
+    public GetInnerAppResponseBody setMobileOriginalHomepageUrl(String mobileOriginalHomepageUrl) {
+        this.mobileOriginalHomepageUrl = mobileOriginalHomepageUrl;
         return this;
     }
-    public String getIcon() {
-        return this.icon;
+    public String getMobileOriginalHomepageUrl() {
+        return this.mobileOriginalHomepageUrl;
     }
 
-    public GetInnerAppResponseBody setIpWhiteList(java.util.List<String> ipWhiteList) {
-        this.ipWhiteList = ipWhiteList;
+    public GetInnerAppResponseBody setMobileTransferUrl(String mobileTransferUrl) {
+        this.mobileTransferUrl = mobileTransferUrl;
         return this;
     }
-    public java.util.List<String> getIpWhiteList() {
-        return this.ipWhiteList;
+    public String getMobileTransferUrl() {
+        return this.mobileTransferUrl;
     }
 
-    public GetInnerAppResponseBody setName(String name) {
-        this.name = name;
+    public GetInnerAppResponseBody setPcEffectiveHomepageUrl(String pcEffectiveHomepageUrl) {
+        this.pcEffectiveHomepageUrl = pcEffectiveHomepageUrl;
         return this;
     }
-    public String getName() {
-        return this.name;
+    public String getPcEffectiveHomepageUrl() {
+        return this.pcEffectiveHomepageUrl;
     }
 
-    public GetInnerAppResponseBody setOmpLink(String ompLink) {
-        this.ompLink = ompLink;
+    public GetInnerAppResponseBody setPcLoginAddressKey(String pcLoginAddressKey) {
+        this.pcLoginAddressKey = pcLoginAddressKey;
         return this;
     }
-    public String getOmpLink() {
-        return this.ompLink;
+    public String getPcLoginAddressKey() {
+        return this.pcLoginAddressKey;
     }
 
-    public GetInnerAppResponseBody setPcHomepageLink(String pcHomepageLink) {
-        this.pcHomepageLink = pcHomepageLink;
+    public GetInnerAppResponseBody setPcLoginLoginUrl(String pcLoginLoginUrl) {
+        this.pcLoginLoginUrl = pcLoginLoginUrl;
         return this;
     }
-    public String getPcHomepageLink() {
-        return this.pcHomepageLink;
+    public String getPcLoginLoginUrl() {
+        return this.pcLoginLoginUrl;
+    }
+
+    public GetInnerAppResponseBody setPcOriginalHomepageUrl(String pcOriginalHomepageUrl) {
+        this.pcOriginalHomepageUrl = pcOriginalHomepageUrl;
+        return this;
+    }
+    public String getPcOriginalHomepageUrl() {
+        return this.pcOriginalHomepageUrl;
+    }
+
+    public GetInnerAppResponseBody setPcTransferUrl(String pcTransferUrl) {
+        this.pcTransferUrl = pcTransferUrl;
+        return this;
+    }
+    public String getPcTransferUrl() {
+        return this.pcTransferUrl;
     }
 
 }

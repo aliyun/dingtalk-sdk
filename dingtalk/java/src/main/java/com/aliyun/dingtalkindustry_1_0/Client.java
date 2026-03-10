@@ -7008,6 +7008,62 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>获取转换结果</p>
+     * 
+     * @param request GetConvertResultRequest
+     * @param headers GetConvertResultHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetConvertResultResponse
+     */
+    public GetConvertResultResponse getConvertResultWithOptions(GetConvertResultRequest request, GetConvertResultHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.taskBizId)) {
+            body.put("taskBizId", request.taskBizId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetConvertResult"),
+            new TeaPair("version", "industry_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/industry/order/convert/get"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetConvertResultResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取转换结果</p>
+     * 
+     * @param request GetConvertResultRequest
+     * @return GetConvertResultResponse
+     */
+    public GetConvertResultResponse getConvertResult(GetConvertResultRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetConvertResultHeaders headers = new GetConvertResultHeaders();
+        return this.getConvertResultWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>getTaskPackageResult</p>
      * 
      * @param request GetTaskPackageResultRequest
@@ -8880,6 +8936,70 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>查询订单转换结果</p>
+     * 
+     * @param request OrderConvertRequest
+     * @param headers OrderConvertHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return OrderConvertResponse
+     */
+    public OrderConvertResponse orderConvertWithOptions(OrderConvertRequest request, OrderConvertHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.attachments)) {
+            body.put("attachments", request.attachments);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operateUserId)) {
+            body.put("operateUserId", request.operateUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.ruleBizId)) {
+            body.put("ruleBizId", request.ruleBizId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "OrderConvert"),
+            new TeaPair("version", "industry_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/industry/order/convert/execute"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new OrderConvertResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询订单转换结果</p>
+     * 
+     * @param request OrderConvertRequest
+     * @return OrderConvertResponse
+     */
+    public OrderConvertResponse orderConvert(OrderConvertRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        OrderConvertHeaders headers = new OrderConvertHeaders();
+        return this.orderConvertWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>提供text和card两种形式工作通知消息</p>
      * 
      * @param request PushDingMessageRequest
@@ -9456,6 +9576,70 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>查询订单转换规则</p>
+     * 
+     * @param request QueryConvertRulesRequest
+     * @param headers QueryConvertRulesHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryConvertRulesResponse
+     */
+    public QueryConvertRulesResponse queryConvertRulesWithOptions(QueryConvertRulesRequest request, QueryConvertRulesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.keyword)) {
+            body.put("keyword", request.keyword);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageNo)) {
+            body.put("pageNo", request.pageNo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
+            body.put("pageSize", request.pageSize);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryConvertRules"),
+            new TeaPair("version", "industry_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/industry/order/rule/page"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryConvertRulesResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询订单转换规则</p>
+     * 
+     * @param request QueryConvertRulesRequest
+     * @return QueryConvertRulesResponse
+     */
+    public QueryConvertRulesResponse queryConvertRules(QueryConvertRulesRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryConvertRulesHeaders headers = new QueryConvertRulesHeaders();
+        return this.queryConvertRulesWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>查询科室和医疗组的扩展信息</p>
      * 
      * @param request QueryDepartmentExtendInfoRequest
@@ -9964,6 +10148,90 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryMedicalEventsHeaders headers = new QueryMedicalEventsHeaders();
         return this.queryMedicalEventsWithOptions(headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询订单转换结果</p>
+     * 
+     * @param request QueryOrderConvertResultRequest
+     * @param headers QueryOrderConvertResultHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryOrderConvertResultResponse
+     */
+    public QueryOrderConvertResultResponse queryOrderConvertResultWithOptions(QueryOrderConvertResultRequest request, QueryOrderConvertResultHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.contentSearch)) {
+            body.put("contentSearch", request.contentSearch);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.createTimeEnd)) {
+            body.put("createTimeEnd", request.createTimeEnd);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.createTimeStart)) {
+            body.put("createTimeStart", request.createTimeStart);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageNo)) {
+            body.put("pageNo", request.pageNo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
+            body.put("pageSize", request.pageSize);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.status)) {
+            body.put("status", request.status);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.title)) {
+            body.put("title", request.title);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryOrderConvertResult"),
+            new TeaPair("version", "industry_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/industry/order/convert/list"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryOrderConvertResultResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询订单转换结果</p>
+     * 
+     * @param request QueryOrderConvertResultRequest
+     * @return QueryOrderConvertResultResponse
+     */
+    public QueryOrderConvertResultResponse queryOrderConvertResult(QueryOrderConvertResultRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryOrderConvertResultHeaders headers = new QueryOrderConvertResultHeaders();
+        return this.queryOrderConvertResultWithOptions(request, headers, runtime);
     }
 
     /**

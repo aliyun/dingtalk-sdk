@@ -431,6 +431,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("leaveCode", request.leaveCode);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.timeZoneId)) {
+            body.put("timeZoneId", request.timeZoneId);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.toTime)) {
             body.put("toTime", request.toTime);
         }

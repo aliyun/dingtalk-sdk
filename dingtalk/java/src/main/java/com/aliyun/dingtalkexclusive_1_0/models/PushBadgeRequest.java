@@ -25,6 +25,13 @@ public class PushBadgeRequest extends TeaModel {
     @NameInMap("pushType")
     public String pushType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1767225600000</p>
+     */
+    @NameInMap("version")
+    public Long version;
+
     public static PushBadgeRequest build(java.util.Map<String, ?> map) throws Exception {
         PushBadgeRequest self = new PushBadgeRequest();
         return TeaModel.build(map, self);
@@ -52,6 +59,14 @@ public class PushBadgeRequest extends TeaModel {
     }
     public String getPushType() {
         return this.pushType;
+    }
+
+    public PushBadgeRequest setVersion(Long version) {
+        this.version = version;
+        return this;
+    }
+    public Long getVersion() {
+        return this.version;
     }
 
     public static class PushBadgeRequestBadgeItems extends TeaModel {

@@ -49,6 +49,9 @@ public class GetPublicDevicesRequest extends TeaModel {
     @NameInMap("serialNumber")
     public String serialNumber;
 
+    @NameInMap("serialNumberList")
+    public java.util.List<String> serialNumberList;
+
     /**
      * <strong>example:</strong>
      * <p>1671767361000</p>
@@ -122,6 +125,14 @@ public class GetPublicDevicesRequest extends TeaModel {
     }
     public String getSerialNumber() {
         return this.serialNumber;
+    }
+
+    public GetPublicDevicesRequest setSerialNumberList(java.util.List<String> serialNumberList) {
+        this.serialNumberList = serialNumberList;
+        return this;
+    }
+    public java.util.List<String> getSerialNumberList() {
+        return this.serialNumberList;
     }
 
     public GetPublicDevicesRequest setStartTime(Long startTime) {

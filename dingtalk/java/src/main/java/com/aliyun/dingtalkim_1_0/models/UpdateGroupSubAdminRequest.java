@@ -19,9 +19,9 @@ public class UpdateGroupSubAdminRequest extends TeaModel {
     @NameInMap("role")
     public Long role;
 
-    /**
-     * <p>This parameter is required.</p>
-     */
+    @NameInMap("unionIds")
+    public java.util.List<String> unionIds;
+
     @NameInMap("userIds")
     public java.util.List<String> userIds;
 
@@ -44,6 +44,14 @@ public class UpdateGroupSubAdminRequest extends TeaModel {
     }
     public Long getRole() {
         return this.role;
+    }
+
+    public UpdateGroupSubAdminRequest setUnionIds(java.util.List<String> unionIds) {
+        this.unionIds = unionIds;
+        return this;
+    }
+    public java.util.List<String> getUnionIds() {
+        return this.unionIds;
     }
 
     public UpdateGroupSubAdminRequest setUserIds(java.util.List<String> userIds) {

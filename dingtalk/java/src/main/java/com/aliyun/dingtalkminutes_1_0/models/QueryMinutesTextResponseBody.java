@@ -146,6 +146,36 @@ public class QueryMinutesTextResponseBody extends TeaModel {
 
     }
 
+    public static class QueryMinutesTextResponseBodyParagraphListSpeakerDisplay extends TeaModel {
+        @NameInMap("avatarUrl")
+        public String avatarUrl;
+
+        @NameInMap("nickName")
+        public String nickName;
+
+        public static QueryMinutesTextResponseBodyParagraphListSpeakerDisplay build(java.util.Map<String, ?> map) throws Exception {
+            QueryMinutesTextResponseBodyParagraphListSpeakerDisplay self = new QueryMinutesTextResponseBodyParagraphListSpeakerDisplay();
+            return TeaModel.build(map, self);
+        }
+
+        public QueryMinutesTextResponseBodyParagraphListSpeakerDisplay setAvatarUrl(String avatarUrl) {
+            this.avatarUrl = avatarUrl;
+            return this;
+        }
+        public String getAvatarUrl() {
+            return this.avatarUrl;
+        }
+
+        public QueryMinutesTextResponseBodyParagraphListSpeakerDisplay setNickName(String nickName) {
+            this.nickName = nickName;
+            return this;
+        }
+        public String getNickName() {
+            return this.nickName;
+        }
+
+    }
+
     public static class QueryMinutesTextResponseBodyParagraphList extends TeaModel {
         @NameInMap("endTime")
         public Long endTime;
@@ -164,6 +194,9 @@ public class QueryMinutesTextResponseBody extends TeaModel {
 
         @NameInMap("sentenceList")
         public java.util.List<QueryMinutesTextResponseBodyParagraphListSentenceList> sentenceList;
+
+        @NameInMap("speakerDisplay")
+        public QueryMinutesTextResponseBodyParagraphListSpeakerDisplay speakerDisplay;
 
         @NameInMap("startTime")
         public Long startTime;
@@ -225,6 +258,14 @@ public class QueryMinutesTextResponseBody extends TeaModel {
         }
         public java.util.List<QueryMinutesTextResponseBodyParagraphListSentenceList> getSentenceList() {
             return this.sentenceList;
+        }
+
+        public QueryMinutesTextResponseBodyParagraphList setSpeakerDisplay(QueryMinutesTextResponseBodyParagraphListSpeakerDisplay speakerDisplay) {
+            this.speakerDisplay = speakerDisplay;
+            return this;
+        }
+        public QueryMinutesTextResponseBodyParagraphListSpeakerDisplay getSpeakerDisplay() {
+            return this.speakerDisplay;
         }
 
         public QueryMinutesTextResponseBodyParagraphList setStartTime(Long startTime) {

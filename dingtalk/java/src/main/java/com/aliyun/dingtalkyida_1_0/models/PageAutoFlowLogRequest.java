@@ -22,7 +22,7 @@ public class PageAutoFlowLogRequest extends TeaModel {
 
     /**
      * <strong>example:</strong>
-     * <p>2021-01-01</p>
+     * <p>1770189343</p>
      */
     @NameInMap("endTimeGMT")
     public Long endTimeGMT;
@@ -62,6 +62,10 @@ public class PageAutoFlowLogRequest extends TeaModel {
     @NameInMap("processCode")
     public String processCode;
 
+    /**
+     * <strong>example:</strong>
+     * <p>1770189343</p>
+     */
     @NameInMap("startTimeGMT")
     public Long startTimeGMT;
 

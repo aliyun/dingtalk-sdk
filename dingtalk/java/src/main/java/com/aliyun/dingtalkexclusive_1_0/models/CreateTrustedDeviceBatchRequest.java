@@ -11,8 +11,6 @@ public class CreateTrustedDeviceBatchRequest extends TeaModel {
     public java.util.List<String> macAddressList;
 
     /**
-     * <p>This parameter is required.</p>
-     * 
      * <strong>example:</strong>
      * <p>Win</p>
      */
@@ -20,8 +18,6 @@ public class CreateTrustedDeviceBatchRequest extends TeaModel {
     public String platform;
 
     /**
-     * <p>This parameter is required.</p>
-     * 
      * <strong>example:</strong>
      * <p>123</p>
      */
@@ -66,18 +62,38 @@ public class CreateTrustedDeviceBatchRequest extends TeaModel {
     }
 
     public static class CreateTrustedDeviceBatchRequestDetailList extends TeaModel {
+        @NameInMap("did")
+        public String did;
+
         @NameInMap("macAddress")
         public String macAddress;
+
+        @NameInMap("platform")
+        public String platform;
 
         @NameInMap("serialNumber")
         public String serialNumber;
 
+        @NameInMap("status")
+        public Long status;
+
         @NameInMap("title")
         public String title;
+
+        @NameInMap("userId")
+        public String userId;
 
         public static CreateTrustedDeviceBatchRequestDetailList build(java.util.Map<String, ?> map) throws Exception {
             CreateTrustedDeviceBatchRequestDetailList self = new CreateTrustedDeviceBatchRequestDetailList();
             return TeaModel.build(map, self);
+        }
+
+        public CreateTrustedDeviceBatchRequestDetailList setDid(String did) {
+            this.did = did;
+            return this;
+        }
+        public String getDid() {
+            return this.did;
         }
 
         public CreateTrustedDeviceBatchRequestDetailList setMacAddress(String macAddress) {
@@ -88,6 +104,14 @@ public class CreateTrustedDeviceBatchRequest extends TeaModel {
             return this.macAddress;
         }
 
+        public CreateTrustedDeviceBatchRequestDetailList setPlatform(String platform) {
+            this.platform = platform;
+            return this;
+        }
+        public String getPlatform() {
+            return this.platform;
+        }
+
         public CreateTrustedDeviceBatchRequestDetailList setSerialNumber(String serialNumber) {
             this.serialNumber = serialNumber;
             return this;
@@ -96,12 +120,28 @@ public class CreateTrustedDeviceBatchRequest extends TeaModel {
             return this.serialNumber;
         }
 
+        public CreateTrustedDeviceBatchRequestDetailList setStatus(Long status) {
+            this.status = status;
+            return this;
+        }
+        public Long getStatus() {
+            return this.status;
+        }
+
         public CreateTrustedDeviceBatchRequestDetailList setTitle(String title) {
             this.title = title;
             return this;
         }
         public String getTitle() {
             return this.title;
+        }
+
+        public CreateTrustedDeviceBatchRequestDetailList setUserId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+        public String getUserId() {
+            return this.userId;
         }
 
     }

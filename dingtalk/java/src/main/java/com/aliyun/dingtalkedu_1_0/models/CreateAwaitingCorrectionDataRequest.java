@@ -34,6 +34,12 @@ public class CreateAwaitingCorrectionDataRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     */
+    @NameInMap("paperName")
+    public String paperName;
+
+    /**
+     * <p>This parameter is required.</p>
      * 
      * <strong>example:</strong>
      * <p>{&quot;paperSize&quot;:&quot;A4&quot;,&quot;duplex&quot;:false,&quot;color&quot;:true}</p>
@@ -52,6 +58,12 @@ public class CreateAwaitingCorrectionDataRequest extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     */
+    @NameInMap("scanFileOssSaveTime")
+    public Long scanFileOssSaveTime;
+
+    /**
+     * <p>This parameter is required.</p>
      * 
      * <strong>example:</strong>
      * <p>数学</p>
@@ -67,6 +79,12 @@ public class CreateAwaitingCorrectionDataRequest extends TeaModel {
      */
     @NameInMap("taskCode")
     public String taskCode;
+
+    /**
+     * <p>This parameter is required.</p>
+     */
+    @NameInMap("totalAssignments")
+    public Integer totalAssignments;
 
     /**
      * <p>This parameter is required.</p>
@@ -106,6 +124,14 @@ public class CreateAwaitingCorrectionDataRequest extends TeaModel {
         return this.corpId;
     }
 
+    public CreateAwaitingCorrectionDataRequest setPaperName(String paperName) {
+        this.paperName = paperName;
+        return this;
+    }
+    public String getPaperName() {
+        return this.paperName;
+    }
+
     public CreateAwaitingCorrectionDataRequest setPrintInfo(String printInfo) {
         this.printInfo = printInfo;
         return this;
@@ -122,6 +148,14 @@ public class CreateAwaitingCorrectionDataRequest extends TeaModel {
         return this.printerCode;
     }
 
+    public CreateAwaitingCorrectionDataRequest setScanFileOssSaveTime(Long scanFileOssSaveTime) {
+        this.scanFileOssSaveTime = scanFileOssSaveTime;
+        return this;
+    }
+    public Long getScanFileOssSaveTime() {
+        return this.scanFileOssSaveTime;
+    }
+
     public CreateAwaitingCorrectionDataRequest setSubjectName(String subjectName) {
         this.subjectName = subjectName;
         return this;
@@ -136,6 +170,14 @@ public class CreateAwaitingCorrectionDataRequest extends TeaModel {
     }
     public String getTaskCode() {
         return this.taskCode;
+    }
+
+    public CreateAwaitingCorrectionDataRequest setTotalAssignments(Integer totalAssignments) {
+        this.totalAssignments = totalAssignments;
+        return this;
+    }
+    public Integer getTotalAssignments() {
+        return this.totalAssignments;
     }
 
     public CreateAwaitingCorrectionDataRequest setTotalPages(Integer totalPages) {

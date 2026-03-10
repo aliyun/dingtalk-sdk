@@ -31,9 +31,9 @@ public class UpdateMemberBanWordsRequest extends TeaModel {
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    /**
-     * <p>This parameter is required.</p>
-     */
+    @NameInMap("unionIds")
+    public java.util.List<String> unionIds;
+
     @NameInMap("userIdList")
     public java.util.List<String> userIdList;
 
@@ -64,6 +64,14 @@ public class UpdateMemberBanWordsRequest extends TeaModel {
     }
     public String getOpenConversationId() {
         return this.openConversationId;
+    }
+
+    public UpdateMemberBanWordsRequest setUnionIds(java.util.List<String> unionIds) {
+        this.unionIds = unionIds;
+        return this;
+    }
+    public java.util.List<String> getUnionIds() {
+        return this.unionIds;
     }
 
     public UpdateMemberBanWordsRequest setUserIdList(java.util.List<String> userIdList) {

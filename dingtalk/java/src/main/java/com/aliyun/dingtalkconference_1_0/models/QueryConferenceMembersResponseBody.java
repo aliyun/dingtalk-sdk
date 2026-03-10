@@ -74,6 +74,9 @@ public class QueryConferenceMembersResponseBody extends TeaModel {
         @NameInMap("host")
         public Boolean host;
 
+        @NameInMap("jobNumber")
+        public String jobNumber;
+
         @NameInMap("joinTime")
         public Long joinTime;
 
@@ -143,6 +146,14 @@ public class QueryConferenceMembersResponseBody extends TeaModel {
         }
         public Boolean getHost() {
             return this.host;
+        }
+
+        public QueryConferenceMembersResponseBodyMemberModels setJobNumber(String jobNumber) {
+            this.jobNumber = jobNumber;
+            return this;
+        }
+        public String getJobNumber() {
+            return this.jobNumber;
         }
 
         public QueryConferenceMembersResponseBodyMemberModels setJoinTime(Long joinTime) {

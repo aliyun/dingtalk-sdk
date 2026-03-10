@@ -4,6 +4,9 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteTrustedDeviceRequest extends TeaModel {
+    @NameInMap("did")
+    public String did;
+
     @NameInMap("id")
     public Long id;
 
@@ -35,6 +38,14 @@ public class DeleteTrustedDeviceRequest extends TeaModel {
     public static DeleteTrustedDeviceRequest build(java.util.Map<String, ?> map) throws Exception {
         DeleteTrustedDeviceRequest self = new DeleteTrustedDeviceRequest();
         return TeaModel.build(map, self);
+    }
+
+    public DeleteTrustedDeviceRequest setDid(String did) {
+        this.did = did;
+        return this;
+    }
+    public String getDid() {
+        return this.did;
     }
 
     public DeleteTrustedDeviceRequest setId(Long id) {

@@ -1974,6 +1974,76 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>拉取企业内插件列表</p>
+     * 
+     * @param headers ListOrgPluginsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ListOrgPluginsResponse
+     */
+    public ListOrgPluginsResponse listOrgPluginsWithOptions(ListOrgPluginsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.dingAccessTokenType)) {
+            realHeaders.put("dingAccessTokenType", com.aliyun.teautil.Common.toJSONString(headers.dingAccessTokenType));
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.dingClientId)) {
+            realHeaders.put("dingClientId", com.aliyun.teautil.Common.toJSONString(headers.dingClientId));
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.dingIsvOrgId)) {
+            realHeaders.put("dingIsvOrgId", com.aliyun.teautil.Common.toJSONString(headers.dingIsvOrgId));
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.dingOpenAppOrgId)) {
+            realHeaders.put("dingOpenAppOrgId", com.aliyun.teautil.Common.toJSONString(headers.dingOpenAppOrgId));
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.dingOrgId)) {
+            realHeaders.put("dingOrgId", com.aliyun.teautil.Common.toJSONString(headers.dingOrgId));
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.dingSuiteKey)) {
+            realHeaders.put("dingSuiteKey", com.aliyun.teautil.Common.toJSONString(headers.dingSuiteKey));
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ListOrgPlugins"),
+            new TeaPair("version", "calendar_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/calendar/plugins"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ListOrgPluginsResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>拉取企业内插件列表</p>
+     * @return ListOrgPluginsResponse
+     */
+    public ListOrgPluginsResponse listOrgPlugins() throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ListOrgPluginsHeaders headers = new ListOrgPluginsHeaders();
+        return this.listOrgPluginsWithOptions(headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>设置会议室在日程中的响应状态</p>
      * 
      * @param request MeetingRoomRespondRequest
@@ -2590,6 +2660,66 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UnsubscribeCalendarHeaders headers = new UnsubscribeCalendarHeaders();
         return this.unsubscribeCalendarWithOptions(userId, calendarId, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新插件订阅人群</p>
+     * 
+     * @param request UpdateOrgPluginSubscribersRequest
+     * @param headers UpdateOrgPluginSubscribersHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateOrgPluginSubscribersResponse
+     */
+    public UpdateOrgPluginSubscribersResponse updateOrgPluginSubscribersWithOptions(String pluginId, UpdateOrgPluginSubscribersRequest request, UpdateOrgPluginSubscribersHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.deptIds)) {
+            body.put("deptIds", request.deptIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.unionIds)) {
+            body.put("unionIds", request.unionIds);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateOrgPluginSubscribers"),
+            new TeaPair("version", "calendar_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/calendar/plugins/" + pluginId + "/subscribers"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateOrgPluginSubscribersResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新插件订阅人群</p>
+     * 
+     * @param request UpdateOrgPluginSubscribersRequest
+     * @return UpdateOrgPluginSubscribersResponse
+     */
+    public UpdateOrgPluginSubscribersResponse updateOrgPluginSubscribers(String pluginId, UpdateOrgPluginSubscribersRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateOrgPluginSubscribersHeaders headers = new UpdateOrgPluginSubscribersHeaders();
+        return this.updateOrgPluginSubscribersWithOptions(pluginId, request, headers, runtime);
     }
 
     /**

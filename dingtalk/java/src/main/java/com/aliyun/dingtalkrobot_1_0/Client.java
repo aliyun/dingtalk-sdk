@@ -1236,6 +1236,158 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>机器人撤回贴表情</p>
+     * 
+     * @param request RobotRecallEmotionRequest
+     * @param headers RobotRecallEmotionHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return RobotRecallEmotionResponse
+     */
+    public RobotRecallEmotionResponse robotRecallEmotionWithOptions(RobotRecallEmotionRequest request, RobotRecallEmotionHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.emotionName)) {
+            body.put("emotionName", request.emotionName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.emotionType)) {
+            body.put("emotionType", request.emotionType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
+            body.put("openConversationId", request.openConversationId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.openMsgId)) {
+            body.put("openMsgId", request.openMsgId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.robotCode)) {
+            body.put("robotCode", request.robotCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.textEmotion)) {
+            body.put("textEmotion", request.textEmotion);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "RobotRecallEmotion"),
+            new TeaPair("version", "robot_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/robot/emotion/recall"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new RobotRecallEmotionResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>机器人撤回贴表情</p>
+     * 
+     * @param request RobotRecallEmotionRequest
+     * @return RobotRecallEmotionResponse
+     */
+    public RobotRecallEmotionResponse robotRecallEmotion(RobotRecallEmotionRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        RobotRecallEmotionHeaders headers = new RobotRecallEmotionHeaders();
+        return this.robotRecallEmotionWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>机器人贴表情</p>
+     * 
+     * @param request RobotReplyEmotionRequest
+     * @param headers RobotReplyEmotionHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return RobotReplyEmotionResponse
+     */
+    public RobotReplyEmotionResponse robotReplyEmotionWithOptions(RobotReplyEmotionRequest request, RobotReplyEmotionHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.emotionName)) {
+            body.put("emotionName", request.emotionName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.emotionType)) {
+            body.put("emotionType", request.emotionType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
+            body.put("openConversationId", request.openConversationId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.openMsgId)) {
+            body.put("openMsgId", request.openMsgId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.robotCode)) {
+            body.put("robotCode", request.robotCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.textEmotion)) {
+            body.put("textEmotion", request.textEmotion);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "RobotReplyEmotion"),
+            new TeaPair("version", "robot_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/robot/emotion/reply"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new RobotReplyEmotionResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>机器人贴表情</p>
+     * 
+     * @param request RobotReplyEmotionRequest
+     * @return RobotReplyEmotionResponse
+     */
+    public RobotReplyEmotionResponse robotReplyEmotion(RobotReplyEmotionRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        RobotReplyEmotionHeaders headers = new RobotReplyEmotionHeaders();
+        return this.robotReplyEmotionWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>发送DING消息</p>
      * 
      * @param request RobotSendDingRequest

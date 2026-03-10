@@ -66,6 +66,9 @@ public class GetTrustDeviceListRequest extends TeaModel {
     @NameInMap("serialNumber")
     public String serialNumber;
 
+    @NameInMap("serialNumberList")
+    public java.util.List<String> serialNumberList;
+
     @NameInMap("status")
     public Integer status;
 
@@ -155,6 +158,14 @@ public class GetTrustDeviceListRequest extends TeaModel {
     }
     public String getSerialNumber() {
         return this.serialNumber;
+    }
+
+    public GetTrustDeviceListRequest setSerialNumberList(java.util.List<String> serialNumberList) {
+        this.serialNumberList = serialNumberList;
+        return this;
+    }
+    public java.util.List<String> getSerialNumberList() {
+        return this.serialNumberList;
     }
 
     public GetTrustDeviceListRequest setStatus(Integer status) {

@@ -42,12 +42,86 @@ public class ListTeamResponseBody extends TeaModel {
         return this.totalCount;
     }
 
+    public static class ListTeamResponseBodyResultTagListValueList extends TeaModel {
+        @NameInMap("code")
+        public String code;
+
+        @NameInMap("name")
+        public String name;
+
+        public static ListTeamResponseBodyResultTagListValueList build(java.util.Map<String, ?> map) throws Exception {
+            ListTeamResponseBodyResultTagListValueList self = new ListTeamResponseBodyResultTagListValueList();
+            return TeaModel.build(map, self);
+        }
+
+        public ListTeamResponseBodyResultTagListValueList setCode(String code) {
+            this.code = code;
+            return this;
+        }
+        public String getCode() {
+            return this.code;
+        }
+
+        public ListTeamResponseBodyResultTagListValueList setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
+        }
+
+    }
+
+    public static class ListTeamResponseBodyResultTagList extends TeaModel {
+        @NameInMap("code")
+        public String code;
+
+        @NameInMap("name")
+        public String name;
+
+        @NameInMap("valueList")
+        public java.util.List<ListTeamResponseBodyResultTagListValueList> valueList;
+
+        public static ListTeamResponseBodyResultTagList build(java.util.Map<String, ?> map) throws Exception {
+            ListTeamResponseBodyResultTagList self = new ListTeamResponseBodyResultTagList();
+            return TeaModel.build(map, self);
+        }
+
+        public ListTeamResponseBodyResultTagList setCode(String code) {
+            this.code = code;
+            return this;
+        }
+        public String getCode() {
+            return this.code;
+        }
+
+        public ListTeamResponseBodyResultTagList setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
+        }
+
+        public ListTeamResponseBodyResultTagList setValueList(java.util.List<ListTeamResponseBodyResultTagListValueList> valueList) {
+            this.valueList = valueList;
+            return this;
+        }
+        public java.util.List<ListTeamResponseBodyResultTagListValueList> getValueList() {
+            return this.valueList;
+        }
+
+    }
+
     public static class ListTeamResponseBodyResult extends TeaModel {
         @NameInMap("code")
         public String code;
 
         @NameInMap("name")
         public String name;
+
+        @NameInMap("tagList")
+        public java.util.List<ListTeamResponseBodyResultTagList> tagList;
 
         public static ListTeamResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             ListTeamResponseBodyResult self = new ListTeamResponseBodyResult();
@@ -68,6 +142,14 @@ public class ListTeamResponseBody extends TeaModel {
         }
         public String getName() {
             return this.name;
+        }
+
+        public ListTeamResponseBodyResult setTagList(java.util.List<ListTeamResponseBodyResultTagList> tagList) {
+            this.tagList = tagList;
+            return this;
+        }
+        public java.util.List<ListTeamResponseBodyResultTagList> getTagList() {
+            return this.tagList;
         }
 
     }

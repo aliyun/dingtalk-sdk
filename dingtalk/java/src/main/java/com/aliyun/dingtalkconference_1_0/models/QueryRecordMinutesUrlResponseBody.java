@@ -24,6 +24,9 @@ public class QueryRecordMinutesUrlResponseBody extends TeaModel {
         @NameInMap("recordMinutesUrl")
         public String recordMinutesUrl;
 
+        @NameInMap("taskUuid")
+        public String taskUuid;
+
         public static QueryRecordMinutesUrlResponseBodyRecordMinutesUrls build(java.util.Map<String, ?> map) throws Exception {
             QueryRecordMinutesUrlResponseBodyRecordMinutesUrls self = new QueryRecordMinutesUrlResponseBodyRecordMinutesUrls();
             return TeaModel.build(map, self);
@@ -35,6 +38,14 @@ public class QueryRecordMinutesUrlResponseBody extends TeaModel {
         }
         public String getRecordMinutesUrl() {
             return this.recordMinutesUrl;
+        }
+
+        public QueryRecordMinutesUrlResponseBodyRecordMinutesUrls setTaskUuid(String taskUuid) {
+            this.taskUuid = taskUuid;
+            return this;
+        }
+        public String getTaskUuid() {
+            return this.taskUuid;
         }
 
     }

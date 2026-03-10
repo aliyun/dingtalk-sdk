@@ -225,6 +225,19 @@ public class UpdateScheduleConfSettingsRequest extends TeaModel {
         @NameInMap("minutesOwnerUnionId")
         public String minutesOwnerUnionId;
 
+        /**
+         * <strong>example:</strong>
+         * <p>1</p>
+         */
+        @NameInMap("minutesSummaryDiyTemplateVersion")
+        public String minutesSummaryDiyTemplateVersion;
+
+        @NameInMap("minutesSummaryTemplateId")
+        public String minutesSummaryTemplateId;
+
+        @NameInMap("minutesSummaryTemplateType")
+        public String minutesSummaryTemplateType;
+
         @NameInMap("moziConfExtensionAppSettings")
         public java.util.List<UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings> moziConfExtensionAppSettings;
 
@@ -303,6 +316,30 @@ public class UpdateScheduleConfSettingsRequest extends TeaModel {
         }
         public String getMinutesOwnerUnionId() {
             return this.minutesOwnerUnionId;
+        }
+
+        public UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSetting setMinutesSummaryDiyTemplateVersion(String minutesSummaryDiyTemplateVersion) {
+            this.minutesSummaryDiyTemplateVersion = minutesSummaryDiyTemplateVersion;
+            return this;
+        }
+        public String getMinutesSummaryDiyTemplateVersion() {
+            return this.minutesSummaryDiyTemplateVersion;
+        }
+
+        public UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSetting setMinutesSummaryTemplateId(String minutesSummaryTemplateId) {
+            this.minutesSummaryTemplateId = minutesSummaryTemplateId;
+            return this;
+        }
+        public String getMinutesSummaryTemplateId() {
+            return this.minutesSummaryTemplateId;
+        }
+
+        public UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSetting setMinutesSummaryTemplateType(String minutesSummaryTemplateType) {
+            this.minutesSummaryTemplateType = minutesSummaryTemplateType;
+            return this;
+        }
+        public String getMinutesSummaryTemplateType() {
+            return this.minutesSummaryTemplateType;
         }
 
         public UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSetting setMoziConfExtensionAppSettings(java.util.List<UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings> moziConfExtensionAppSettings) {

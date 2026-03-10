@@ -43,6 +43,9 @@ public class QueryAudioFileResponseBody extends TeaModel {
     }
 
     public static class QueryAudioFileResponseBodyResult extends TeaModel {
+        @NameInMap("attributes")
+        public java.util.Map<String, ?> attributes;
+
         @NameInMap("createTime")
         public Long createTime;
 
@@ -64,6 +67,14 @@ public class QueryAudioFileResponseBody extends TeaModel {
         public static QueryAudioFileResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             QueryAudioFileResponseBodyResult self = new QueryAudioFileResponseBodyResult();
             return TeaModel.build(map, self);
+        }
+
+        public QueryAudioFileResponseBodyResult setAttributes(java.util.Map<String, ?> attributes) {
+            this.attributes = attributes;
+            return this;
+        }
+        public java.util.Map<String, ?> getAttributes() {
+            return this.attributes;
         }
 
         public QueryAudioFileResponseBodyResult setCreateTime(Long createTime) {

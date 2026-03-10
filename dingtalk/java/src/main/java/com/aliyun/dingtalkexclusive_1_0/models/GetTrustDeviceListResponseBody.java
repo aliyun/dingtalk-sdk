@@ -67,6 +67,9 @@ public class GetTrustDeviceListResponseBody extends TeaModel {
         @NameInMap("deviceUuid")
         public String deviceUuid;
 
+        @NameInMap("did")
+        public String did;
+
         @NameInMap("id")
         public Long id;
 
@@ -135,6 +138,14 @@ public class GetTrustDeviceListResponseBody extends TeaModel {
         }
         public String getDeviceUuid() {
             return this.deviceUuid;
+        }
+
+        public GetTrustDeviceListResponseBodyData setDid(String did) {
+            this.did = did;
+            return this;
+        }
+        public String getDid() {
+            return this.did;
         }
 
         public GetTrustDeviceListResponseBodyData setId(Long id) {

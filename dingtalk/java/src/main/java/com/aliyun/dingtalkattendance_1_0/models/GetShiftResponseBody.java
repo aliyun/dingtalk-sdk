@@ -492,6 +492,9 @@ public class GetShiftResponseBody extends TeaModel {
         @NameInMap("owner")
         public String owner;
 
+        @NameInMap("ownerList")
+        public java.util.List<String> ownerList;
+
         @NameInMap("sections")
         public java.util.List<GetShiftResponseBodyResultSections> sections;
 
@@ -543,6 +546,14 @@ public class GetShiftResponseBody extends TeaModel {
         }
         public String getOwner() {
             return this.owner;
+        }
+
+        public GetShiftResponseBodyResult setOwnerList(java.util.List<String> ownerList) {
+            this.ownerList = ownerList;
+            return this;
+        }
+        public java.util.List<String> getOwnerList() {
+            return this.ownerList;
         }
 
         public GetShiftResponseBodyResult setSections(java.util.List<GetShiftResponseBodyResultSections> sections) {

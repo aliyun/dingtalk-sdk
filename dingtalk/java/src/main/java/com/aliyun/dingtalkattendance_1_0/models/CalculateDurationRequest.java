@@ -41,6 +41,13 @@ public class CalculateDurationRequest extends TeaModel {
 
     /**
      * <strong>example:</strong>
+     * <p>America/Los_Angeles</p>
+     */
+    @NameInMap("timeZoneId")
+    public String timeZoneId;
+
+    /**
+     * <strong>example:</strong>
      * <p>2019-08-15</p>
      */
     @NameInMap("toTime")
@@ -96,6 +103,14 @@ public class CalculateDurationRequest extends TeaModel {
     }
     public String getLeaveCode() {
         return this.leaveCode;
+    }
+
+    public CalculateDurationRequest setTimeZoneId(String timeZoneId) {
+        this.timeZoneId = timeZoneId;
+        return this;
+    }
+    public String getTimeZoneId() {
+        return this.timeZoneId;
     }
 
     public CalculateDurationRequest setToTime(String toTime) {

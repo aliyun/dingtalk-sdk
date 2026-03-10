@@ -86,6 +86,13 @@ public class AddPermissionRequest extends TeaModel {
         public String id;
 
         /**
+         * <strong>example:</strong>
+         * <p>member_name</p>
+         */
+        @NameInMap("name")
+        public String name;
+
+        /**
          * <p>This parameter is required.</p>
          * 
          * <strong>example:</strong>
@@ -113,6 +120,14 @@ public class AddPermissionRequest extends TeaModel {
         }
         public String getId() {
             return this.id;
+        }
+
+        public AddPermissionRequestMembers setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
         }
 
         public AddPermissionRequestMembers setType(String type) {
