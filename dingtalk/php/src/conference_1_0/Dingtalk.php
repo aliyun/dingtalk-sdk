@@ -68,6 +68,10 @@ use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\MuteAllResponse;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\MuteMembersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\MuteMembersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\MuteMembersResponse;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\OptRecordWhiteAccountHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\OptRecordWhiteAccountRequest;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\OptRecordWhiteAccountResponse;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\OptRecordWhiteAccountShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryCloudRecordTextHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryCloudRecordTextRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryCloudRecordTextResponse;
@@ -1516,6 +1520,68 @@ class Dingtalk extends OpenApiClient
         $headers = new MuteMembersHeaders([]);
 
         return $this->muteMembersWithOptions($conferenceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 操作云/本地录制白名单企业设置
+     *  *
+     * @param OptRecordWhiteAccountRequest $tmpReq  OptRecordWhiteAccountRequest
+     * @param OptRecordWhiteAccountHeaders $headers OptRecordWhiteAccountHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return OptRecordWhiteAccountResponse OptRecordWhiteAccountResponse
+     */
+    public function optRecordWhiteAccountWithOptions($tmpReq, $headers, $runtime)
+    {
+        Utils::validateModel($tmpReq);
+        $request = new OptRecordWhiteAccountShrinkRequest([]);
+        OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->requestBody)) {
+            $request->requestBodyShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->requestBody, 'requestBody', 'json');
+        }
+        $query = [];
+        if (!Utils::isUnset($request->requestBodyShrink)) {
+            $query['requestBody'] = $request->requestBodyShrink;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'OptRecordWhiteAccount',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/videoConferences/enterpriseSetting/record/whiteAccount',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return OptRecordWhiteAccountResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 操作云/本地录制白名单企业设置
+     *  *
+     * @param OptRecordWhiteAccountRequest $request OptRecordWhiteAccountRequest
+     *
+     * @return OptRecordWhiteAccountResponse OptRecordWhiteAccountResponse
+     */
+    public function optRecordWhiteAccount($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new OptRecordWhiteAccountHeaders([]);
+
+        return $this->optRecordWhiteAccountWithOptions($request, $headers, $runtime);
     }
 
     /**

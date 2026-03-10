@@ -33,11 +33,17 @@ class BatchQueryGroupMemberResponseBody extends Model
      * @var bool
      */
     public $success;
+
+    /**
+     * @var string[]
+     */
+    public $unionIdList;
     protected $_name = [
         'hasMore' => 'hasMore',
         'memberUserIds' => 'memberUserIds',
         'nextToken' => 'nextToken',
         'success' => 'success',
+        'unionIdList' => 'unionIdList',
     ];
 
     public function validate() {}
@@ -56,6 +62,9 @@ class BatchQueryGroupMemberResponseBody extends Model
         }
         if (null !== $this->success) {
             $res['success'] = $this->success;
+        }
+        if (null !== $this->unionIdList) {
+            $res['unionIdList'] = $this->unionIdList;
         }
 
         return $res;
@@ -82,6 +91,11 @@ class BatchQueryGroupMemberResponseBody extends Model
         }
         if (isset($map['success'])) {
             $model->success = $map['success'];
+        }
+        if (isset($map['unionIdList'])) {
+            if (!empty($map['unionIdList'])) {
+                $model->unionIdList = $map['unionIdList'];
+            }
         }
 
         return $model;

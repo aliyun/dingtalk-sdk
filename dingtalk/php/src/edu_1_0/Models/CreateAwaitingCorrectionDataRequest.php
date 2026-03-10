@@ -36,6 +36,13 @@ class CreateAwaitingCorrectionDataRequest extends Model
     /**
      * @description This parameter is required.
      *
+     * @var string
+     */
+    public $paperName;
+
+    /**
+     * @description This parameter is required.
+     *
      * @example {\"paperSize\":\"A4\",\"duplex\":false,\"color\":true}
      *
      * @var string
@@ -50,6 +57,13 @@ class CreateAwaitingCorrectionDataRequest extends Model
      * @var string
      */
     public $printerCode;
+
+    /**
+     * @description This parameter is required.
+     *
+     * @var int
+     */
+    public $scanFileOssSaveTime;
 
     /**
      * @description This parameter is required.
@@ -72,6 +86,13 @@ class CreateAwaitingCorrectionDataRequest extends Model
     /**
      * @description This parameter is required.
      *
+     * @var int
+     */
+    public $totalAssignments;
+
+    /**
+     * @description This parameter is required.
+     *
      * @example 80
      *
      * @var int
@@ -81,10 +102,13 @@ class CreateAwaitingCorrectionDataRequest extends Model
         'allAssignmentPdfUrl' => 'allAssignmentPdfUrl',
         'className' => 'className',
         'corpId' => 'corpId',
+        'paperName' => 'paperName',
         'printInfo' => 'printInfo',
         'printerCode' => 'printerCode',
+        'scanFileOssSaveTime' => 'scanFileOssSaveTime',
         'subjectName' => 'subjectName',
         'taskCode' => 'taskCode',
+        'totalAssignments' => 'totalAssignments',
         'totalPages' => 'totalPages',
     ];
 
@@ -102,17 +126,26 @@ class CreateAwaitingCorrectionDataRequest extends Model
         if (null !== $this->corpId) {
             $res['corpId'] = $this->corpId;
         }
+        if (null !== $this->paperName) {
+            $res['paperName'] = $this->paperName;
+        }
         if (null !== $this->printInfo) {
             $res['printInfo'] = $this->printInfo;
         }
         if (null !== $this->printerCode) {
             $res['printerCode'] = $this->printerCode;
         }
+        if (null !== $this->scanFileOssSaveTime) {
+            $res['scanFileOssSaveTime'] = $this->scanFileOssSaveTime;
+        }
         if (null !== $this->subjectName) {
             $res['subjectName'] = $this->subjectName;
         }
         if (null !== $this->taskCode) {
             $res['taskCode'] = $this->taskCode;
+        }
+        if (null !== $this->totalAssignments) {
+            $res['totalAssignments'] = $this->totalAssignments;
         }
         if (null !== $this->totalPages) {
             $res['totalPages'] = $this->totalPages;
@@ -138,17 +171,26 @@ class CreateAwaitingCorrectionDataRequest extends Model
         if (isset($map['corpId'])) {
             $model->corpId = $map['corpId'];
         }
+        if (isset($map['paperName'])) {
+            $model->paperName = $map['paperName'];
+        }
         if (isset($map['printInfo'])) {
             $model->printInfo = $map['printInfo'];
         }
         if (isset($map['printerCode'])) {
             $model->printerCode = $map['printerCode'];
         }
+        if (isset($map['scanFileOssSaveTime'])) {
+            $model->scanFileOssSaveTime = $map['scanFileOssSaveTime'];
+        }
         if (isset($map['subjectName'])) {
             $model->subjectName = $map['subjectName'];
         }
         if (isset($map['taskCode'])) {
             $model->taskCode = $map['taskCode'];
+        }
+        if (isset($map['totalAssignments'])) {
+            $model->totalAssignments = $map['totalAssignments'];
         }
         if (isset($map['totalPages'])) {
             $model->totalPages = $map['totalPages'];

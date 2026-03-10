@@ -551,6 +551,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->leaveCode)) {
             $body['leaveCode'] = $request->leaveCode;
         }
+        if (!Utils::isUnset($request->timeZoneId)) {
+            $body['timeZoneId'] = $request->timeZoneId;
+        }
         if (!Utils::isUnset($request->toTime)) {
             $body['toTime'] = $request->toTime;
         }

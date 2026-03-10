@@ -4,6 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\ListTeamResponseBody;
 
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\ListTeamResponseBody\result\tagList;
 use AlibabaCloud\Tea\Model;
 
 class result extends Model
@@ -17,9 +18,15 @@ class result extends Model
      * @var string
      */
     public $name;
+
+    /**
+     * @var tagList[]
+     */
+    public $tagList;
     protected $_name = [
         'code' => 'code',
         'name' => 'name',
+        'tagList' => 'tagList',
     ];
 
     public function validate() {}
@@ -32,6 +39,15 @@ class result extends Model
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
+        }
+        if (null !== $this->tagList) {
+            $res['tagList'] = [];
+            if (null !== $this->tagList && \is_array($this->tagList)) {
+                $n = 0;
+                foreach ($this->tagList as $item) {
+                    $res['tagList'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
 
         return $res;
@@ -50,6 +66,15 @@ class result extends Model
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];
+        }
+        if (isset($map['tagList'])) {
+            if (!empty($map['tagList'])) {
+                $model->tagList = [];
+                $n = 0;
+                foreach ($map['tagList'] as $item) {
+                    $model->tagList[$n++] = null !== $item ? tagList::fromMap($item) : $item;
+                }
+            }
         }
 
         return $model;

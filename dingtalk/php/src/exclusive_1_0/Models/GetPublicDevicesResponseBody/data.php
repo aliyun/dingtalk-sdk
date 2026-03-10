@@ -39,6 +39,11 @@ class data extends Model
     public $deviceUuid;
 
     /**
+     * @var string
+     */
+    public $did;
+
+    /**
      * @example 1671767361000
      *
      * @var int
@@ -95,6 +100,7 @@ class data extends Model
         'deviceScopeType' => 'deviceScopeType',
         'deviceStaffs' => 'deviceStaffs',
         'deviceUuid' => 'deviceUuid',
+        'did' => 'did',
         'gmtCreate' => 'gmtCreate',
         'gmtModified' => 'gmtModified',
         'macAddress' => 'macAddress',
@@ -142,6 +148,9 @@ class data extends Model
         }
         if (null !== $this->deviceUuid) {
             $res['deviceUuid'] = $this->deviceUuid;
+        }
+        if (null !== $this->did) {
+            $res['did'] = $this->did;
         }
         if (null !== $this->gmtCreate) {
             $res['gmtCreate'] = $this->gmtCreate;
@@ -211,6 +220,9 @@ class data extends Model
         }
         if (isset($map['deviceUuid'])) {
             $model->deviceUuid = $map['deviceUuid'];
+        }
+        if (isset($map['did'])) {
+            $model->did = $map['did'];
         }
         if (isset($map['gmtCreate'])) {
             $model->gmtCreate = $map['gmtCreate'];

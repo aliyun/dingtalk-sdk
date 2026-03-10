@@ -14,6 +14,11 @@ class HrbrainLabelMetaRequest extends Model
     public $categoryCodes;
 
     /**
+     * @var string
+     */
+    public $labelCode;
+
+    /**
      * @var int
      */
     public $maxResults;
@@ -24,6 +29,7 @@ class HrbrainLabelMetaRequest extends Model
     public $nextToken;
     protected $_name = [
         'categoryCodes' => 'categoryCodes',
+        'labelCode' => 'labelCode',
         'maxResults' => 'maxResults',
         'nextToken' => 'nextToken',
     ];
@@ -35,6 +41,9 @@ class HrbrainLabelMetaRequest extends Model
         $res = [];
         if (null !== $this->categoryCodes) {
             $res['categoryCodes'] = $this->categoryCodes;
+        }
+        if (null !== $this->labelCode) {
+            $res['labelCode'] = $this->labelCode;
         }
         if (null !== $this->maxResults) {
             $res['maxResults'] = $this->maxResults;
@@ -58,6 +67,9 @@ class HrbrainLabelMetaRequest extends Model
             if (!empty($map['categoryCodes'])) {
                 $model->categoryCodes = $map['categoryCodes'];
             }
+        }
+        if (isset($map['labelCode'])) {
+            $model->labelCode = $map['labelCode'];
         }
         if (isset($map['maxResults'])) {
             $model->maxResults = $map['maxResults'];

@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vai_global_e_c_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vai_global_e_c_1_0\Models\BusinessCodeCallbackHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vai_global_e_c_1_0\Models\BusinessCodeCallbackRequest;
+use AlibabaCloud\SDK\Dingtalk\Vai_global_e_c_1_0\Models\BusinessCodeCallbackResponse;
 use AlibabaCloud\SDK\Dingtalk\Vai_global_e_c_1_0\Models\ConnectionOmniChannelTiktokMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vai_global_e_c_1_0\Models\ConnectionOmniChannelTiktokMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vai_global_e_c_1_0\Models\ConnectionOmniChannelTiktokMessageResponse;
@@ -17,6 +20,9 @@ use AlibabaCloud\SDK\Dingtalk\Vai_global_e_c_1_0\Models\HhoCallBackResponse;
 use AlibabaCloud\SDK\Dingtalk\Vai_global_e_c_1_0\Models\LaunchHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vai_global_e_c_1_0\Models\LaunchRequest;
 use AlibabaCloud\SDK\Dingtalk\Vai_global_e_c_1_0\Models\LaunchResponse;
+use AlibabaCloud\SDK\Dingtalk\Vai_global_e_c_1_0\Models\QueryBusinessCodeInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vai_global_e_c_1_0\Models\QueryBusinessCodeInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vai_global_e_c_1_0\Models\QueryBusinessCodeInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vai_global_e_c_1_0\Models\QueryNotableInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vai_global_e_c_1_0\Models\QueryNotableInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vai_global_e_c_1_0\Models\QueryNotableInfoResponse;
@@ -44,6 +50,69 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @summary 业务code回调
+     *  *
+     * @param BusinessCodeCallbackRequest $request BusinessCodeCallbackRequest
+     * @param BusinessCodeCallbackHeaders $headers BusinessCodeCallbackHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
+     *
+     * @return BusinessCodeCallbackResponse BusinessCodeCallbackResponse
+     */
+    public function businessCodeCallbackWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->businessCode)) {
+            $body['businessCode'] = $request->businessCode;
+        }
+        if (!Utils::isUnset($request->eventType)) {
+            $body['eventType'] = $request->eventType;
+        }
+        if (!Utils::isUnset($request->status)) {
+            $body['status'] = $request->status;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'BusinessCodeCallback',
+            'version' => 'aiGlobalEC_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/aiGlobalEC/businessCode/callback',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return BusinessCodeCallbackResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 业务code回调
+     *  *
+     * @param BusinessCodeCallbackRequest $request BusinessCodeCallbackRequest
+     *
+     * @return BusinessCodeCallbackResponse BusinessCodeCallbackResponse
+     */
+    public function businessCodeCallback($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BusinessCodeCallbackHeaders([]);
+
+        return $this->businessCodeCallbackWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -305,6 +374,69 @@ class Dingtalk extends OpenApiClient
         $headers = new LaunchHeaders([]);
 
         return $this->launchWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 根据businessCode查询商品图片信息
+     *  *
+     * @param QueryBusinessCodeInfoRequest $request QueryBusinessCodeInfoRequest
+     * @param QueryBusinessCodeInfoHeaders $headers QueryBusinessCodeInfoHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryBusinessCodeInfoResponse QueryBusinessCodeInfoResponse
+     */
+    public function queryBusinessCodeInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->businessCode)) {
+            $body['businessCode'] = $request->businessCode;
+        }
+        if (!Utils::isUnset($request->eventType)) {
+            $body['eventType'] = $request->eventType;
+        }
+        if (!Utils::isUnset($request->status)) {
+            $body['status'] = $request->status;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'QueryBusinessCodeInfo',
+            'version' => 'aiGlobalEC_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/aiGlobalEC/businessCode/queryInfo',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryBusinessCodeInfoResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 根据businessCode查询商品图片信息
+     *  *
+     * @param QueryBusinessCodeInfoRequest $request QueryBusinessCodeInfoRequest
+     *
+     * @return QueryBusinessCodeInfoResponse QueryBusinessCodeInfoResponse
+     */
+    public function queryBusinessCodeInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryBusinessCodeInfoHeaders([]);
+
+        return $this->queryBusinessCodeInfoWithOptions($request, $headers, $runtime);
     }
 
     /**

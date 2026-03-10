@@ -11,6 +11,8 @@ use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\AddPermissionResponse;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\BatchQueryRolesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\BatchQueryRolesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\BatchQueryRolesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\CleanFileRequest;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\CleanFileResponse;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\CommitFileHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\CommitFileRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\CommitFileResponse;
@@ -70,6 +72,7 @@ class Dingtalk extends OpenApiClient
         parent::__construct($config);
         $gatewayClient = new Client();
         $this->_spi = $gatewayClient;
+        $this->_signatureAlgorithm = 'v2';
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -206,6 +209,65 @@ class Dingtalk extends OpenApiClient
         $headers = new BatchQueryRolesHeaders([]);
 
         return $this->batchQueryRolesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 企业文件管理——删除文件接口
+     *  *
+     * @param CleanFileRequest $request CleanFileRequest
+     * @param string[]         $headers map
+     * @param RuntimeOptions   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CleanFileResponse CleanFileResponse
+     */
+    public function cleanFileWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->cleanReason)) {
+            $body['cleanReason'] = $request->cleanReason;
+        }
+        if (!Utils::isUnset($request->dentryId)) {
+            $body['dentryId'] = $request->dentryId;
+        }
+        if (!Utils::isUnset($request->operatorId)) {
+            $body['operatorId'] = $request->operatorId;
+        }
+        if (!Utils::isUnset($request->spaceId)) {
+            $body['spaceId'] = $request->spaceId;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $headers,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'CleanFile',
+            'version' => 'storage_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/storage/filemanager/clean',
+            'method' => 'POST',
+            'authType' => 'Anonymous',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CleanFileResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 企业文件管理——删除文件接口
+     *  *
+     * @param CleanFileRequest $request CleanFileRequest
+     *
+     * @return CleanFileResponse CleanFileResponse
+     */
+    public function cleanFile($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = [];
+
+        return $this->cleanFileWithOptions($request, $headers, $runtime);
     }
 
     /**

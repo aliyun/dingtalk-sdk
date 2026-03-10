@@ -11,7 +11,17 @@ class detailList extends Model
     /**
      * @var string
      */
+    public $did;
+
+    /**
+     * @var string
+     */
     public $macAddress;
+
+    /**
+     * @var string
+     */
+    public $platform;
 
     /**
      * @var string
@@ -19,13 +29,27 @@ class detailList extends Model
     public $serialNumber;
 
     /**
+     * @var int
+     */
+    public $status;
+
+    /**
      * @var string
      */
     public $title;
+
+    /**
+     * @var string
+     */
+    public $userId;
     protected $_name = [
+        'did' => 'did',
         'macAddress' => 'macAddress',
+        'platform' => 'platform',
         'serialNumber' => 'serialNumber',
+        'status' => 'status',
         'title' => 'title',
+        'userId' => 'userId',
     ];
 
     public function validate() {}
@@ -33,14 +57,26 @@ class detailList extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->did) {
+            $res['did'] = $this->did;
+        }
         if (null !== $this->macAddress) {
             $res['macAddress'] = $this->macAddress;
+        }
+        if (null !== $this->platform) {
+            $res['platform'] = $this->platform;
         }
         if (null !== $this->serialNumber) {
             $res['serialNumber'] = $this->serialNumber;
         }
+        if (null !== $this->status) {
+            $res['status'] = $this->status;
+        }
         if (null !== $this->title) {
             $res['title'] = $this->title;
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -54,14 +90,26 @@ class detailList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['did'])) {
+            $model->did = $map['did'];
+        }
         if (isset($map['macAddress'])) {
             $model->macAddress = $map['macAddress'];
+        }
+        if (isset($map['platform'])) {
+            $model->platform = $map['platform'];
         }
         if (isset($map['serialNumber'])) {
             $model->serialNumber = $map['serialNumber'];
         }
+        if (isset($map['status'])) {
+            $model->status = $map['status'];
+        }
         if (isset($map['title'])) {
             $model->title = $map['title'];
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

@@ -5,6 +5,7 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryMinutesTextResponseBody;
 
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryMinutesTextResponseBody\paragraphList\sentenceList;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryMinutesTextResponseBody\paragraphList\speakerDisplay;
 use AlibabaCloud\Tea\Model;
 
 class paragraphList extends Model
@@ -40,6 +41,11 @@ class paragraphList extends Model
     public $sentenceList;
 
     /**
+     * @var speakerDisplay
+     */
+    public $speakerDisplay;
+
+    /**
      * @var int
      */
     public $startTime;
@@ -60,6 +66,7 @@ class paragraphList extends Model
         'paragraphId' => 'paragraphId',
         'recordId' => 'recordId',
         'sentenceList' => 'sentenceList',
+        'speakerDisplay' => 'speakerDisplay',
         'startTime' => 'startTime',
         'subSpeakerId' => 'subSpeakerId',
         'unionId' => 'unionId',
@@ -93,6 +100,9 @@ class paragraphList extends Model
                     $res['sentenceList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->speakerDisplay) {
+            $res['speakerDisplay'] = null !== $this->speakerDisplay ? $this->speakerDisplay->toMap() : null;
         }
         if (null !== $this->startTime) {
             $res['startTime'] = $this->startTime;
@@ -138,6 +148,9 @@ class paragraphList extends Model
                     $model->sentenceList[$n++] = null !== $item ? sentenceList::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['speakerDisplay'])) {
+            $model->speakerDisplay = speakerDisplay::fromMap($map['speakerDisplay']);
         }
         if (isset($map['startTime'])) {
             $model->startTime = $map['startTime'];

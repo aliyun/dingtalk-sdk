@@ -27,6 +27,9 @@ use AlibabaCloud\SDK\Dingtalk\Voauth2_1_0\Models\GetTokenRequest;
 use AlibabaCloud\SDK\Dingtalk\Voauth2_1_0\Models\GetTokenResponse;
 use AlibabaCloud\SDK\Dingtalk\Voauth2_1_0\Models\GetUserTokenRequest;
 use AlibabaCloud\SDK\Dingtalk\Voauth2_1_0\Models\GetUserTokenResponse;
+use AlibabaCloud\SDK\Dingtalk\Voauth2_1_0\Models\KickoffByDeviceIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Voauth2_1_0\Models\KickoffByDeviceIdRequest;
+use AlibabaCloud\SDK\Dingtalk\Voauth2_1_0\Models\KickoffByDeviceIdResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\GatewayDingTalk\Client;
@@ -597,5 +600,65 @@ class Dingtalk extends OpenApiClient
         $headers = [];
 
         return $this->getUserTokenWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 根据 deviceId 将设备踢出登录
+     *  *
+     * @param KickoffByDeviceIdRequest $request KickoffByDeviceIdRequest
+     * @param KickoffByDeviceIdHeaders $headers KickoffByDeviceIdHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return KickoffByDeviceIdResponse KickoffByDeviceIdResponse
+     */
+    public function kickoffByDeviceIdWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openDeviceId)) {
+            $body['openDeviceId'] = $request->openDeviceId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'KickoffByDeviceId',
+            'version' => 'oauth2_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/oauth2/kickoffByDeviceId',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return KickoffByDeviceIdResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 根据 deviceId 将设备踢出登录
+     *  *
+     * @param KickoffByDeviceIdRequest $request KickoffByDeviceIdRequest
+     *
+     * @return KickoffByDeviceIdResponse KickoffByDeviceIdResponse
+     */
+    public function kickoffByDeviceId($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new KickoffByDeviceIdHeaders([]);
+
+        return $this->kickoffByDeviceIdWithOptions($request, $headers, $runtime);
     }
 }

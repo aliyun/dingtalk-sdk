@@ -14,6 +14,9 @@ use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\CreateFlashMeetingRespons
 use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\ExportShanhuiToDocHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\ExportShanhuiToDocRequest;
 use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\ExportShanhuiToDocResponse;
+use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\GetShanhuiAttachmentsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\GetShanhuiAttachmentsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\GetShanhuiAttachmentsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\GetShanhuiByCalendarHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\GetShanhuiByCalendarRequest;
 use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\GetShanhuiByCalendarResponse;
@@ -238,6 +241,66 @@ class Dingtalk extends OpenApiClient
         $headers = new ExportShanhuiToDocHeaders([]);
 
         return $this->exportShanhuiToDocWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取闪会内上传的附件
+     *  *
+     * @param GetShanhuiAttachmentsRequest $request GetShanhuiAttachmentsRequest
+     * @param GetShanhuiAttachmentsHeaders $headers GetShanhuiAttachmentsHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetShanhuiAttachmentsResponse GetShanhuiAttachmentsResponse
+     */
+    public function getShanhuiAttachmentsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->shanhuiKey)) {
+            $body['shanhuiKey'] = $request->shanhuiKey;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'GetShanhuiAttachments',
+            'version' => 'flashmeeting_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/flashmeeting/meetings/getShanhuiAttachments',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetShanhuiAttachmentsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取闪会内上传的附件
+     *  *
+     * @param GetShanhuiAttachmentsRequest $request GetShanhuiAttachmentsRequest
+     *
+     * @return GetShanhuiAttachmentsResponse GetShanhuiAttachmentsResponse
+     */
+    public function getShanhuiAttachments($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetShanhuiAttachmentsHeaders([]);
+
+        return $this->getShanhuiAttachmentsWithOptions($request, $headers, $runtime);
     }
 
     /**

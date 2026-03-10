@@ -39,6 +39,11 @@ class result extends Model
     public $owner;
 
     /**
+     * @var string[]
+     */
+    public $ownerList;
+
+    /**
      * @var sections[]
      */
     public $sections;
@@ -64,6 +69,7 @@ class result extends Model
         'id' => 'id',
         'name' => 'name',
         'owner' => 'owner',
+        'ownerList' => 'ownerList',
         'sections' => 'sections',
         'shiftGroupId' => 'shiftGroupId',
         'shiftGroupName' => 'shiftGroupName',
@@ -86,6 +92,9 @@ class result extends Model
         }
         if (null !== $this->owner) {
             $res['owner'] = $this->owner;
+        }
+        if (null !== $this->ownerList) {
+            $res['ownerList'] = $this->ownerList;
         }
         if (null !== $this->sections) {
             $res['sections'] = [];
@@ -128,6 +137,11 @@ class result extends Model
         }
         if (isset($map['owner'])) {
             $model->owner = $map['owner'];
+        }
+        if (isset($map['ownerList'])) {
+            if (!empty($map['ownerList'])) {
+                $model->ownerList = $map['ownerList'];
+            }
         }
         if (isset($map['sections'])) {
             if (!empty($map['sections'])) {

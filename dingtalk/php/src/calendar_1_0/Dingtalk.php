@@ -89,6 +89,8 @@ use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListEventsViewResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListInstancesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListInstancesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListInstancesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListOrgPluginsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListOrgPluginsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\MeetingRoomRespondHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\MeetingRoomRespondRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\MeetingRoomRespondResponse;
@@ -115,6 +117,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\TransferEventRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\TransferEventResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\UnsubscribeCalendarHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\UnsubscribeCalendarResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\UpdateOrgPluginSubscribersHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\UpdateOrgPluginSubscribersRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\UpdateOrgPluginSubscribersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\UpdateSubscribedCalendarsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\UpdateSubscribedCalendarsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\UpdateSubscribedCalendarsResponse;
@@ -2193,6 +2198,72 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 拉取企业内插件列表
+     *  *
+     * @param ListOrgPluginsHeaders $headers ListOrgPluginsHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ListOrgPluginsResponse ListOrgPluginsResponse
+     */
+    public function listOrgPluginsWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->dingAccessTokenType)) {
+            $realHeaders['dingAccessTokenType'] = Utils::toJSONString($headers->dingAccessTokenType);
+        }
+        if (!Utils::isUnset($headers->dingClientId)) {
+            $realHeaders['dingClientId'] = Utils::toJSONString($headers->dingClientId);
+        }
+        if (!Utils::isUnset($headers->dingIsvOrgId)) {
+            $realHeaders['dingIsvOrgId'] = Utils::toJSONString($headers->dingIsvOrgId);
+        }
+        if (!Utils::isUnset($headers->dingOpenAppOrgId)) {
+            $realHeaders['dingOpenAppOrgId'] = Utils::toJSONString($headers->dingOpenAppOrgId);
+        }
+        if (!Utils::isUnset($headers->dingOrgId)) {
+            $realHeaders['dingOrgId'] = Utils::toJSONString($headers->dingOrgId);
+        }
+        if (!Utils::isUnset($headers->dingSuiteKey)) {
+            $realHeaders['dingSuiteKey'] = Utils::toJSONString($headers->dingSuiteKey);
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action' => 'ListOrgPlugins',
+            'version' => 'calendar_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/calendar/plugins',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return ListOrgPluginsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 拉取企业内插件列表
+     *  *
+     * @return ListOrgPluginsResponse ListOrgPluginsResponse
+     */
+    public function listOrgPlugins()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListOrgPluginsHeaders([]);
+
+        return $this->listOrgPluginsWithOptions($headers, $runtime);
+    }
+
+    /**
      * @summary 设置会议室在日程中的响应状态
      *  *
      * @param string                    $calendarId
@@ -2861,6 +2932,68 @@ class Dingtalk extends OpenApiClient
         $headers = new UnsubscribeCalendarHeaders([]);
 
         return $this->unsubscribeCalendarWithOptions($userId, $calendarId, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更新插件订阅人群
+     *  *
+     * @param string                            $pluginId
+     * @param UpdateOrgPluginSubscribersRequest $request  UpdateOrgPluginSubscribersRequest
+     * @param UpdateOrgPluginSubscribersHeaders $headers  UpdateOrgPluginSubscribersHeaders
+     * @param RuntimeOptions                    $runtime  runtime options for this request RuntimeOptions
+     *
+     * @return UpdateOrgPluginSubscribersResponse UpdateOrgPluginSubscribersResponse
+     */
+    public function updateOrgPluginSubscribersWithOptions($pluginId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->deptIds)) {
+            $body['deptIds'] = $request->deptIds;
+        }
+        if (!Utils::isUnset($request->unionIds)) {
+            $body['unionIds'] = $request->unionIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'UpdateOrgPluginSubscribers',
+            'version' => 'calendar_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/calendar/plugins/' . $pluginId . '/subscribers',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UpdateOrgPluginSubscribersResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新插件订阅人群
+     *  *
+     * @param string                            $pluginId
+     * @param UpdateOrgPluginSubscribersRequest $request  UpdateOrgPluginSubscribersRequest
+     *
+     * @return UpdateOrgPluginSubscribersResponse UpdateOrgPluginSubscribersResponse
+     */
+    public function updateOrgPluginSubscribers($pluginId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateOrgPluginSubscribersHeaders([]);
+
+        return $this->updateOrgPluginSubscribersWithOptions($pluginId, $request, $headers, $runtime);
     }
 
     /**

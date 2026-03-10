@@ -21,6 +21,11 @@ class data extends Model
     public $deviceUuid;
 
     /**
+     * @var string
+     */
+    public $did;
+
+    /**
      * @var int
      */
     public $id;
@@ -79,6 +84,7 @@ class data extends Model
     protected $_name = [
         'createTime' => 'createTime',
         'deviceUuid' => 'deviceUuid',
+        'did' => 'did',
         'id' => 'id',
         'macAddress' => 'macAddress',
         'model' => 'model',
@@ -100,6 +106,9 @@ class data extends Model
         }
         if (null !== $this->deviceUuid) {
             $res['deviceUuid'] = $this->deviceUuid;
+        }
+        if (null !== $this->did) {
+            $res['did'] = $this->did;
         }
         if (null !== $this->id) {
             $res['id'] = $this->id;
@@ -145,6 +154,9 @@ class data extends Model
         }
         if (isset($map['deviceUuid'])) {
             $model->deviceUuid = $map['deviceUuid'];
+        }
+        if (isset($map['did'])) {
+            $model->did = $map['did'];
         }
         if (isset($map['id'])) {
             $model->id = $map['id'];

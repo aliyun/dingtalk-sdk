@@ -32,6 +32,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CopyWorkspaceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CreateDentryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CreateDentryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CreateDentryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CreateShortcutForMigrateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CreateShortcutForMigrateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CreateShortcutForMigrateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CreateShortcutHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CreateShortcutRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CreateShortcutResponse;
@@ -866,6 +869,78 @@ class Dingtalk extends OpenApiClient
         $headers = new CreateShortcutHeaders([]);
 
         return $this->createShortcutWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 创建快捷方式V2版(顺丰迁移使用)
+     *  *
+     * @param CreateShortcutForMigrateRequest $request CreateShortcutForMigrateRequest
+     * @param CreateShortcutForMigrateHeaders $headers CreateShortcutForMigrateHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateShortcutForMigrateResponse CreateShortcutForMigrateResponse
+     */
+    public function createShortcutForMigrateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $body['operatorId'] = $request->operatorId;
+        }
+        if (!Utils::isUnset($request->sourceResourceId)) {
+            $body['sourceResourceId'] = $request->sourceResourceId;
+        }
+        if (!Utils::isUnset($request->sourceResourceType)) {
+            $body['sourceResourceType'] = $request->sourceResourceType;
+        }
+        if (!Utils::isUnset($request->targetResourceId)) {
+            $body['targetResourceId'] = $request->targetResourceId;
+        }
+        if (!Utils::isUnset($request->targetResourceName)) {
+            $body['targetResourceName'] = $request->targetResourceName;
+        }
+        if (!Utils::isUnset($request->targetResourceType)) {
+            $body['targetResourceType'] = $request->targetResourceType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'CreateShortcutForMigrate',
+            'version' => 'doc_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/doc/resource/shortcut/createV2',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CreateShortcutForMigrateResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建快捷方式V2版(顺丰迁移使用)
+     *  *
+     * @param CreateShortcutForMigrateRequest $request CreateShortcutForMigrateRequest
+     *
+     * @return CreateShortcutForMigrateResponse CreateShortcutForMigrateResponse
+     */
+    public function createShortcutForMigrate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateShortcutForMigrateHeaders([]);
+
+        return $this->createShortcutForMigrateWithOptions($request, $headers, $runtime);
     }
 
     /**

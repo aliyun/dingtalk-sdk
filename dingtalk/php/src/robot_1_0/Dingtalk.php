@@ -62,6 +62,12 @@ use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\RobotMessageFileDownloadResponse
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\RobotRecallDingHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\RobotRecallDingRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\RobotRecallDingResponse;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\RobotRecallEmotionHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\RobotRecallEmotionRequest;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\RobotRecallEmotionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\RobotReplyEmotionHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\RobotReplyEmotionRequest;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\RobotReplyEmotionResponse;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\RobotSendDingHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\RobotSendDingRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\RobotSendDingResponse;
@@ -1289,6 +1295,150 @@ class Dingtalk extends OpenApiClient
         $headers = new RobotRecallDingHeaders([]);
 
         return $this->robotRecallDingWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 机器人撤回贴表情
+     *  *
+     * @param RobotRecallEmotionRequest $request RobotRecallEmotionRequest
+     * @param RobotRecallEmotionHeaders $headers RobotRecallEmotionHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return RobotRecallEmotionResponse RobotRecallEmotionResponse
+     */
+    public function robotRecallEmotionWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->emotionName)) {
+            $body['emotionName'] = $request->emotionName;
+        }
+        if (!Utils::isUnset($request->emotionType)) {
+            $body['emotionType'] = $request->emotionType;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->openMsgId)) {
+            $body['openMsgId'] = $request->openMsgId;
+        }
+        if (!Utils::isUnset($request->robotCode)) {
+            $body['robotCode'] = $request->robotCode;
+        }
+        if (!Utils::isUnset($request->textEmotion)) {
+            $body['textEmotion'] = $request->textEmotion;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'RobotRecallEmotion',
+            'version' => 'robot_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/robot/emotion/recall',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return RobotRecallEmotionResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 机器人撤回贴表情
+     *  *
+     * @param RobotRecallEmotionRequest $request RobotRecallEmotionRequest
+     *
+     * @return RobotRecallEmotionResponse RobotRecallEmotionResponse
+     */
+    public function robotRecallEmotion($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RobotRecallEmotionHeaders([]);
+
+        return $this->robotRecallEmotionWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 机器人贴表情
+     *  *
+     * @param RobotReplyEmotionRequest $request RobotReplyEmotionRequest
+     * @param RobotReplyEmotionHeaders $headers RobotReplyEmotionHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return RobotReplyEmotionResponse RobotReplyEmotionResponse
+     */
+    public function robotReplyEmotionWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->emotionName)) {
+            $body['emotionName'] = $request->emotionName;
+        }
+        if (!Utils::isUnset($request->emotionType)) {
+            $body['emotionType'] = $request->emotionType;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->openMsgId)) {
+            $body['openMsgId'] = $request->openMsgId;
+        }
+        if (!Utils::isUnset($request->robotCode)) {
+            $body['robotCode'] = $request->robotCode;
+        }
+        if (!Utils::isUnset($request->textEmotion)) {
+            $body['textEmotion'] = $request->textEmotion;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'RobotReplyEmotion',
+            'version' => 'robot_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/robot/emotion/reply',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return RobotReplyEmotionResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 机器人贴表情
+     *  *
+     * @param RobotReplyEmotionRequest $request RobotReplyEmotionRequest
+     *
+     * @return RobotReplyEmotionResponse RobotReplyEmotionResponse
+     */
+    public function robotReplyEmotion($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RobotReplyEmotionHeaders([]);
+
+        return $this->robotReplyEmotionWithOptions($request, $headers, $runtime);
     }
 
     /**

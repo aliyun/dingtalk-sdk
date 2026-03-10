@@ -141,6 +141,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ImportMessageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InstallRobotToOrgHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InstallRobotToOrgRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InstallRobotToOrgResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\IntelligentSendCardHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\IntelligentSendCardRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\IntelligentSendCardResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InteractiveCardCreateInstanceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InteractiveCardCreateInstanceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InteractiveCardCreateInstanceResponse;
@@ -188,6 +191,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\OpenUserSendCardMessageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\PersonalSendCardMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\PersonalSendCardMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\PersonalSendCardMessageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\PutMsgCardTopByIntelligentHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\PutMsgCardTopByIntelligentRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\PutMsgCardTopByIntelligentResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryGroupInfoByAppCidsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryGroupInfoByAppCidsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryGroupInfoByAppCidsResponse;
@@ -221,6 +227,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryMembersOfGroupRoleResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryMessageSendResultHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryMessageSendResultRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryMessageSendResultResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryMsgReadStatusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryMsgReadStatusRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryMsgReadStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryOpenConversationReceiveUserHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryOpenConversationReceiveUserRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryOpenConversationReceiveUserResponse;
@@ -251,12 +260,18 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryUnReadMessageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryUserGroupAliasTitleHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryUserGroupAliasTitleRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryUserGroupAliasTitleResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryUserGroupRolesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryUserGroupRolesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryUserGroupRolesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryUserViewGroupLastMessageTimeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryUserViewGroupLastMessageTimeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryUserViewGroupLastMessageTimeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ReadPersonalMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ReadPersonalMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ReadPersonalMessageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\RecallMessagesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\RecallMessagesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\RecallMessagesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\RecallPersonalMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\RecallPersonalMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\RecallPersonalMessageResponse;
@@ -299,6 +314,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendTemplateInteractiveCardResponse
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SetRightPanelHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SetRightPanelRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SetRightPanelResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SortConvNavTabHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SortConvNavTabRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SortConvNavTabResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SuperAdminApplyTemplateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SuperAdminApplyTemplateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SuperAdminApplyTemplateResponse;
@@ -3392,6 +3410,87 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 使用小钉发送卡片消息
+     *  *
+     * @param IntelligentSendCardRequest $request IntelligentSendCardRequest
+     * @param IntelligentSendCardHeaders $headers IntelligentSendCardHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return IntelligentSendCardResponse IntelligentSendCardResponse
+     */
+    public function intelligentSendCardWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->atAll)) {
+            $body['atAll'] = $request->atAll;
+        }
+        if (!Utils::isUnset($request->atOpenGroupRoleIds)) {
+            $body['atOpenGroupRoleIds'] = $request->atOpenGroupRoleIds;
+        }
+        if (!Utils::isUnset($request->atUnionIds)) {
+            $body['atUnionIds'] = $request->atUnionIds;
+        }
+        if (!Utils::isUnset($request->atUserIds)) {
+            $body['atUserIds'] = $request->atUserIds;
+        }
+        if (!Utils::isUnset($request->excludeIds)) {
+            $body['excludeIds'] = $request->excludeIds;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->outTrackId)) {
+            $body['outTrackId'] = $request->outTrackId;
+        }
+        if (!Utils::isUnset($request->receivers)) {
+            $body['receivers'] = $request->receivers;
+        }
+        if (!Utils::isUnset($request->uuid)) {
+            $body['uuid'] = $request->uuid;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'IntelligentSendCard',
+            'version' => 'im_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/im/intelligent/cards/send',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return IntelligentSendCardResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 使用小钉发送卡片消息
+     *  *
+     * @param IntelligentSendCardRequest $request IntelligentSendCardRequest
+     *
+     * @return IntelligentSendCardResponse IntelligentSendCardResponse
+     */
+    public function intelligentSendCard($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new IntelligentSendCardHeaders([]);
+
+        return $this->intelligentSendCardWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 创建可交互式实例
      *  *
      * @param InteractiveCardCreateInstanceRequest $request InteractiveCardCreateInstanceRequest
@@ -4402,6 +4501,66 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 以小钉身份将小钉发送的卡片消息置顶
+     *  *
+     * @param PutMsgCardTopByIntelligentRequest $request PutMsgCardTopByIntelligentRequest
+     * @param PutMsgCardTopByIntelligentHeaders $headers PutMsgCardTopByIntelligentHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
+     *
+     * @return PutMsgCardTopByIntelligentResponse PutMsgCardTopByIntelligentResponse
+     */
+    public function putMsgCardTopByIntelligentWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->openTaskId)) {
+            $body['openTaskId'] = $request->openTaskId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'PutMsgCardTopByIntelligent',
+            'version' => 'im_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/im/intelligent/cards/putTop',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return PutMsgCardTopByIntelligentResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 以小钉身份将小钉发送的卡片消息置顶
+     *  *
+     * @param PutMsgCardTopByIntelligentRequest $request PutMsgCardTopByIntelligentRequest
+     *
+     * @return PutMsgCardTopByIntelligentResponse PutMsgCardTopByIntelligentResponse
+     */
+    public function putMsgCardTopByIntelligent($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PutMsgCardTopByIntelligentHeaders([]);
+
+        return $this->putMsgCardTopByIntelligentWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 根据IM会话Cid查询群信息
      *  *
      * @param QueryGroupInfoByAppCidsRequest $request QueryGroupInfoByAppCidsRequest
@@ -5053,6 +5212,72 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询消息已读状态
+     *  *
+     * @param QueryMsgReadStatusRequest $request QueryMsgReadStatusRequest
+     * @param QueryMsgReadStatusHeaders $headers QueryMsgReadStatusHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryMsgReadStatusResponse QueryMsgReadStatusResponse
+     */
+    public function queryMsgReadStatusWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->cursor)) {
+            $body['cursor'] = $request->cursor;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->openTaskId)) {
+            $body['openTaskId'] = $request->openTaskId;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $body['pageSize'] = $request->pageSize;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'QueryMsgReadStatus',
+            'version' => 'im_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/im/intelligent/messages/readStatuses/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryMsgReadStatusResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询消息已读状态
+     *  *
+     * @param QueryMsgReadStatusRequest $request QueryMsgReadStatusRequest
+     *
+     * @return QueryMsgReadStatusResponse QueryMsgReadStatusResponse
+     */
+    public function queryMsgReadStatus($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryMsgReadStatusHeaders([]);
+
+        return $this->queryMsgReadStatusWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary  根据单聊会话及发送方获取接收方用户信息
      *  *
      * @param QueryOpenConversationReceiveUserRequest $request QueryOpenConversationReceiveUserRequest
@@ -5656,6 +5881,69 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询群内用户的群身份
+     *  *
+     * @param QueryUserGroupRolesRequest $request QueryUserGroupRolesRequest
+     * @param QueryUserGroupRolesHeaders $headers QueryUserGroupRolesHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryUserGroupRolesResponse QueryUserGroupRolesResponse
+     */
+    public function queryUserGroupRolesWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->viewedUserId)) {
+            $body['viewedUserId'] = $request->viewedUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'QueryUserGroupRoles',
+            'version' => 'im_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/im/groupRoles/users/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryUserGroupRolesResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询群内用户的群身份
+     *  *
+     * @param QueryUserGroupRolesRequest $request QueryUserGroupRolesRequest
+     *
+     * @return QueryUserGroupRolesResponse QueryUserGroupRolesResponse
+     */
+    public function queryUserGroupRoles($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryUserGroupRolesHeaders([]);
+
+        return $this->queryUserGroupRolesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 查询群主视角群LastMessage时间
      *  *
      * @param QueryUserViewGroupLastMessageTimeRequest $request QueryUserViewGroupLastMessageTimeRequest
@@ -5767,6 +6055,66 @@ class Dingtalk extends OpenApiClient
         $headers = new ReadPersonalMessageHeaders([]);
 
         return $this->readPersonalMessageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 撤回消息
+     *  *
+     * @param RecallMessagesRequest $request RecallMessagesRequest
+     * @param RecallMessagesHeaders $headers RecallMessagesHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return RecallMessagesResponse RecallMessagesResponse
+     */
+    public function recallMessagesWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->openTaskId)) {
+            $body['openTaskId'] = $request->openTaskId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'RecallMessages',
+            'version' => 'im_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/im/intelligent/messages/recall',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return RecallMessagesResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 撤回消息
+     *  *
+     * @param RecallMessagesRequest $request RecallMessagesRequest
+     *
+     * @return RecallMessagesResponse RecallMessagesResponse
+     */
+    public function recallMessages($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RecallMessagesHeaders([]);
+
+        return $this->recallMessagesWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -6589,6 +6937,66 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 群维度对群标签页进行排序
+     *  *
+     * @param SortConvNavTabRequest $request SortConvNavTabRequest
+     * @param SortConvNavTabHeaders $headers SortConvNavTabHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SortConvNavTabResponse SortConvNavTabResponse
+     */
+    public function sortConvNavTabWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->sortedIds)) {
+            $body['sortedIds'] = $request->sortedIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'SortConvNavTab',
+            'version' => 'im_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/im/convNavTabs/sort',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return SortConvNavTabResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 群维度对群标签页进行排序
+     *  *
+     * @param SortConvNavTabRequest $request SortConvNavTabRequest
+     *
+     * @return SortConvNavTabResponse SortConvNavTabResponse
+     */
+    public function sortConvNavTab($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SortConvNavTabHeaders([]);
+
+        return $this->sortConvNavTabWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 启用群模板(超管接口)
      *  *
      * @param SuperAdminApplyTemplateRequest $request SuperAdminApplyTemplateRequest
@@ -7207,6 +7615,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->role)) {
             $body['role'] = $request->role;
         }
+        if (!Utils::isUnset($request->unionIds)) {
+            $body['unionIds'] = $request->unionIds;
+        }
         if (!Utils::isUnset($request->userIds)) {
             $body['userIds'] = $request->userIds;
         }
@@ -7341,6 +7752,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->openConversationId)) {
             $body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->unionIds)) {
+            $body['unionIds'] = $request->unionIds;
         }
         if (!Utils::isUnset($request->userIdList)) {
             $body['userIdList'] = $request->userIdList;

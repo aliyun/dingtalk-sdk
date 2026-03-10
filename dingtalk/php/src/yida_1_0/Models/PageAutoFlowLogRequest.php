@@ -25,7 +25,7 @@ class PageAutoFlowLogRequest extends Model
     public $corpId;
 
     /**
-     * @example 2021-01-01
+     * @example 1770189343
      *
      * @var int
      */
@@ -69,6 +69,8 @@ class PageAutoFlowLogRequest extends Model
     public $processCode;
 
     /**
+     * @example 1770189343
+     *
      * @var int
      */
     public $startTimeGMT;

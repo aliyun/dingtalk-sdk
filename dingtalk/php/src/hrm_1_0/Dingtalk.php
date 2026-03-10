@@ -17,6 +17,9 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AddHrmPreentryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AddRosterFieldFormHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AddRosterFieldFormRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AddRosterFieldFormResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\ConvertUnionIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\ConvertUnionIdRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\ConvertUnionIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\CreateRecordHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\CreateRecordRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\CreateRecordResponse;
@@ -42,6 +45,9 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\EsignRollbackRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\EsignRollbackResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetAllDismissionReasonsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetAllDismissionReasonsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetDismissionRecordHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetDismissionRecordRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetDismissionRecordResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetEmployeeRosterByFieldHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetEmployeeRosterByFieldRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetEmployeeRosterByFieldResponse;
@@ -519,6 +525,66 @@ class Dingtalk extends OpenApiClient
         $headers = new AddRosterFieldFormHeaders([]);
 
         return $this->addRosterFieldFormWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 用于提供给独立部署的一方应用转换unionId（白名单策略）
+     *  *
+     * @param ConvertUnionIdRequest $request ConvertUnionIdRequest
+     * @param ConvertUnionIdHeaders $headers ConvertUnionIdHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ConvertUnionIdResponse ConvertUnionIdResponse
+     */
+    public function convertUnionIdWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->unionIdList)) {
+            $body['unionIdList'] = $request->unionIdList;
+        }
+        if (!Utils::isUnset($request->userIdList)) {
+            $body['userIdList'] = $request->userIdList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'ConvertUnionId',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/isv/convertUnionId',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return ConvertUnionIdResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 用于提供给独立部署的一方应用转换unionId（白名单策略）
+     *  *
+     * @param ConvertUnionIdRequest $request ConvertUnionIdRequest
+     *
+     * @return ConvertUnionIdResponse ConvertUnionIdResponse
+     */
+    public function convertUnionId($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ConvertUnionIdHeaders([]);
+
+        return $this->convertUnionIdWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -1125,6 +1191,66 @@ class Dingtalk extends OpenApiClient
         $headers = new GetAllDismissionReasonsHeaders([]);
 
         return $this->getAllDismissionReasonsWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @summary 获取离职记录
+     *  *
+     * @param GetDismissionRecordRequest $request GetDismissionRecordRequest
+     * @param GetDismissionRecordHeaders $headers GetDismissionRecordHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetDismissionRecordResponse GetDismissionRecordResponse
+     */
+    public function getDismissionRecordWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->size)) {
+            $query['size'] = $request->size;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'GetDismissionRecord',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/dismission/record/get',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetDismissionRecordResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取离职记录
+     *  *
+     * @param GetDismissionRecordRequest $request GetDismissionRecordRequest
+     *
+     * @return GetDismissionRecordResponse GetDismissionRecordResponse
+     */
+    public function getDismissionRecord($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetDismissionRecordHeaders([]);
+
+        return $this->getDismissionRecordWithOptions($request, $headers, $runtime);
     }
 
     /**

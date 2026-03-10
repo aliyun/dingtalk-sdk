@@ -9,85 +9,77 @@ use AlibabaCloud\Tea\Model;
 class GetInnerAppResponseBody extends Model
 {
     /**
-     * @example 1
-     *
      * @var int
      */
     public $agentId;
 
     /**
-     * @example aooxxx
-     *
      * @var string
      */
-    public $appKey;
+    public $appName;
 
     /**
-     * @description This parameter is required.
-     *
-     * @example aaaxxxxx
-     *
      * @var string
      */
-    public $appSecret;
+    public $customerAppId;
 
     /**
-     * @example desc
-     *
      * @var string
      */
-    public $desc;
+    public $mobileLoginAddressKey;
 
     /**
-     * @example https://www.dingtalk.com
-     *
      * @var string
      */
-    public $homepageLink;
+    public $mobileLoginLoginUrl;
 
     /**
-     * @example icon
-     *
      * @var string
      */
-    public $icon;
+    public $mobileOriginalHomepageUrl;
 
     /**
-     * @var string[]
-     */
-    public $ipWhiteList;
-
-    /**
-     * @example name
-     *
      * @var string
      */
-    public $name;
+    public $mobileTransferUrl;
 
     /**
-     * @example https://www.dingtalk.com
-     *
      * @var string
      */
-    public $ompLink;
+    public $pcEffectiveHomepageUrl;
 
     /**
-     * @example https://www.dingtalk.com
-     *
      * @var string
      */
-    public $pcHomepageLink;
+    public $pcLoginAddressKey;
+
+    /**
+     * @var string
+     */
+    public $pcLoginLoginUrl;
+
+    /**
+     * @var string
+     */
+    public $pcOriginalHomepageUrl;
+
+    /**
+     * @var string
+     */
+    public $pcTransferUrl;
     protected $_name = [
         'agentId' => 'agentId',
-        'appKey' => 'appKey',
-        'appSecret' => 'appSecret',
-        'desc' => 'desc',
-        'homepageLink' => 'homepageLink',
-        'icon' => 'icon',
-        'ipWhiteList' => 'ipWhiteList',
-        'name' => 'name',
-        'ompLink' => 'ompLink',
-        'pcHomepageLink' => 'pcHomepageLink',
+        'appName' => 'appName',
+        'customerAppId' => 'customerAppId',
+        'mobileLoginAddressKey' => 'mobileLoginAddressKey',
+        'mobileLoginLoginUrl' => 'mobileLoginLoginUrl',
+        'mobileOriginalHomepageUrl' => 'mobileOriginalHomepageUrl',
+        'mobileTransferUrl' => 'mobileTransferUrl',
+        'pcEffectiveHomepageUrl' => 'pcEffectiveHomepageUrl',
+        'pcLoginAddressKey' => 'pcLoginAddressKey',
+        'pcLoginLoginUrl' => 'pcLoginLoginUrl',
+        'pcOriginalHomepageUrl' => 'pcOriginalHomepageUrl',
+        'pcTransferUrl' => 'pcTransferUrl',
     ];
 
     public function validate() {}
@@ -98,32 +90,38 @@ class GetInnerAppResponseBody extends Model
         if (null !== $this->agentId) {
             $res['agentId'] = $this->agentId;
         }
-        if (null !== $this->appKey) {
-            $res['appKey'] = $this->appKey;
+        if (null !== $this->appName) {
+            $res['appName'] = $this->appName;
         }
-        if (null !== $this->appSecret) {
-            $res['appSecret'] = $this->appSecret;
+        if (null !== $this->customerAppId) {
+            $res['customerAppId'] = $this->customerAppId;
         }
-        if (null !== $this->desc) {
-            $res['desc'] = $this->desc;
+        if (null !== $this->mobileLoginAddressKey) {
+            $res['mobileLoginAddressKey'] = $this->mobileLoginAddressKey;
         }
-        if (null !== $this->homepageLink) {
-            $res['homepageLink'] = $this->homepageLink;
+        if (null !== $this->mobileLoginLoginUrl) {
+            $res['mobileLoginLoginUrl'] = $this->mobileLoginLoginUrl;
         }
-        if (null !== $this->icon) {
-            $res['icon'] = $this->icon;
+        if (null !== $this->mobileOriginalHomepageUrl) {
+            $res['mobileOriginalHomepageUrl'] = $this->mobileOriginalHomepageUrl;
         }
-        if (null !== $this->ipWhiteList) {
-            $res['ipWhiteList'] = $this->ipWhiteList;
+        if (null !== $this->mobileTransferUrl) {
+            $res['mobileTransferUrl'] = $this->mobileTransferUrl;
         }
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
+        if (null !== $this->pcEffectiveHomepageUrl) {
+            $res['pcEffectiveHomepageUrl'] = $this->pcEffectiveHomepageUrl;
         }
-        if (null !== $this->ompLink) {
-            $res['ompLink'] = $this->ompLink;
+        if (null !== $this->pcLoginAddressKey) {
+            $res['pcLoginAddressKey'] = $this->pcLoginAddressKey;
         }
-        if (null !== $this->pcHomepageLink) {
-            $res['pcHomepageLink'] = $this->pcHomepageLink;
+        if (null !== $this->pcLoginLoginUrl) {
+            $res['pcLoginLoginUrl'] = $this->pcLoginLoginUrl;
+        }
+        if (null !== $this->pcOriginalHomepageUrl) {
+            $res['pcOriginalHomepageUrl'] = $this->pcOriginalHomepageUrl;
+        }
+        if (null !== $this->pcTransferUrl) {
+            $res['pcTransferUrl'] = $this->pcTransferUrl;
         }
 
         return $res;
@@ -140,34 +138,38 @@ class GetInnerAppResponseBody extends Model
         if (isset($map['agentId'])) {
             $model->agentId = $map['agentId'];
         }
-        if (isset($map['appKey'])) {
-            $model->appKey = $map['appKey'];
+        if (isset($map['appName'])) {
+            $model->appName = $map['appName'];
         }
-        if (isset($map['appSecret'])) {
-            $model->appSecret = $map['appSecret'];
+        if (isset($map['customerAppId'])) {
+            $model->customerAppId = $map['customerAppId'];
         }
-        if (isset($map['desc'])) {
-            $model->desc = $map['desc'];
+        if (isset($map['mobileLoginAddressKey'])) {
+            $model->mobileLoginAddressKey = $map['mobileLoginAddressKey'];
         }
-        if (isset($map['homepageLink'])) {
-            $model->homepageLink = $map['homepageLink'];
+        if (isset($map['mobileLoginLoginUrl'])) {
+            $model->mobileLoginLoginUrl = $map['mobileLoginLoginUrl'];
         }
-        if (isset($map['icon'])) {
-            $model->icon = $map['icon'];
+        if (isset($map['mobileOriginalHomepageUrl'])) {
+            $model->mobileOriginalHomepageUrl = $map['mobileOriginalHomepageUrl'];
         }
-        if (isset($map['ipWhiteList'])) {
-            if (!empty($map['ipWhiteList'])) {
-                $model->ipWhiteList = $map['ipWhiteList'];
-            }
+        if (isset($map['mobileTransferUrl'])) {
+            $model->mobileTransferUrl = $map['mobileTransferUrl'];
         }
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
+        if (isset($map['pcEffectiveHomepageUrl'])) {
+            $model->pcEffectiveHomepageUrl = $map['pcEffectiveHomepageUrl'];
         }
-        if (isset($map['ompLink'])) {
-            $model->ompLink = $map['ompLink'];
+        if (isset($map['pcLoginAddressKey'])) {
+            $model->pcLoginAddressKey = $map['pcLoginAddressKey'];
         }
-        if (isset($map['pcHomepageLink'])) {
-            $model->pcHomepageLink = $map['pcHomepageLink'];
+        if (isset($map['pcLoginLoginUrl'])) {
+            $model->pcLoginLoginUrl = $map['pcLoginLoginUrl'];
+        }
+        if (isset($map['pcOriginalHomepageUrl'])) {
+            $model->pcOriginalHomepageUrl = $map['pcOriginalHomepageUrl'];
+        }
+        if (isset($map['pcTransferUrl'])) {
+            $model->pcTransferUrl = $map['pcTransferUrl'];
         }
 
         return $model;

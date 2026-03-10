@@ -66,6 +66,12 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ExchangeMainAdminResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ExclusiveCreateDingPortalHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ExclusiveCreateDingPortalRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ExclusiveCreateDingPortalResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ExclusivePcAlertHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ExclusivePcAlertRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ExclusivePcAlertResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ExclusivePopupHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ExclusivePopupRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ExclusivePopupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\FileEncryptCallbackHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\FileEncryptCallbackRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\FileEncryptCallbackResponse;
@@ -192,6 +198,7 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPrivateStoreTaskFileInfos
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPublicDevicesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPublicDevicesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPublicDevicesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPublicDevicesShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPublisherSummaryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPublisherSummaryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPublisherSummaryResponse;
@@ -1473,6 +1480,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->did)) {
+            $body['did'] = $request->did;
+        }
         if (!Utils::isUnset($request->id)) {
             $body['id'] = $request->id;
         }
@@ -1785,6 +1795,138 @@ class Dingtalk extends OpenApiClient
         $headers = new ExclusiveCreateDingPortalHeaders([]);
 
         return $this->exclusiveCreateDingPortalWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 智能运营桌面端弹窗
+     *  *
+     * @param ExclusivePcAlertRequest $request ExclusivePcAlertRequest
+     * @param ExclusivePcAlertHeaders $headers ExclusivePcAlertHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ExclusivePcAlertResponse ExclusivePcAlertResponse
+     */
+    public function exclusivePcAlertWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->imageMediaId)) {
+            $body['imageMediaId'] = $request->imageMediaId;
+        }
+        if (!Utils::isUnset($request->openLink)) {
+            $body['openLink'] = $request->openLink;
+        }
+        if (!Utils::isUnset($request->userList)) {
+            $body['userList'] = $request->userList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'ExclusivePcAlert',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/customize/marketing/pcAlert',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return ExclusivePcAlertResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 智能运营桌面端弹窗
+     *  *
+     * @param ExclusivePcAlertRequest $request ExclusivePcAlertRequest
+     *
+     * @return ExclusivePcAlertResponse ExclusivePcAlertResponse
+     */
+    public function exclusivePcAlert($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ExclusivePcAlertHeaders([]);
+
+        return $this->exclusivePcAlertWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 智能运营移动端首页弹窗
+     *  *
+     * @param ExclusivePopupRequest $request ExclusivePopupRequest
+     * @param ExclusivePopupHeaders $headers ExclusivePopupHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ExclusivePopupResponse ExclusivePopupResponse
+     */
+    public function exclusivePopupWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->endTime)) {
+            $body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->imageMediaId)) {
+            $body['imageMediaId'] = $request->imageMediaId;
+        }
+        if (!Utils::isUnset($request->openLink)) {
+            $body['openLink'] = $request->openLink;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            $body['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->userList)) {
+            $body['userList'] = $request->userList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'ExclusivePopup',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/customize/marketing/popup',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return ExclusivePopupResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 智能运营移动端首页弹窗
+     *  *
+     * @param ExclusivePopupRequest $request ExclusivePopupRequest
+     *
+     * @return ExclusivePopupResponse ExclusivePopupResponse
+     */
+    public function exclusivePopup($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ExclusivePopupHeaders([]);
+
+        return $this->exclusivePopupWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -4444,15 +4586,20 @@ class Dingtalk extends OpenApiClient
     /**
      * @summary 获取公共设备列表。
      *  *
-     * @param GetPublicDevicesRequest $request GetPublicDevicesRequest
+     * @param GetPublicDevicesRequest $tmpReq  GetPublicDevicesRequest
      * @param GetPublicDevicesHeaders $headers GetPublicDevicesHeaders
      * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
      *
      * @return GetPublicDevicesResponse GetPublicDevicesResponse
      */
-    public function getPublicDevicesWithOptions($request, $headers, $runtime)
+    public function getPublicDevicesWithOptions($tmpReq, $headers, $runtime)
     {
-        Utils::validateModel($request);
+        Utils::validateModel($tmpReq);
+        $request = new GetPublicDevicesShrinkRequest([]);
+        OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->serialNumberList)) {
+            $request->serialNumberListShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->serialNumberList, 'serialNumberList', 'json');
+        }
         $query = [];
         if (!Utils::isUnset($request->deviceUuid)) {
             $query['deviceUuid'] = $request->deviceUuid;
@@ -4474,6 +4621,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->serialNumber)) {
             $query['serialNumber'] = $request->serialNumber;
+        }
+        if (!Utils::isUnset($request->serialNumberListShrink)) {
+            $query['serialNumberList'] = $request->serialNumberListShrink;
         }
         if (!Utils::isUnset($request->startTime)) {
             $query['startTime'] = $request->startTime;
@@ -4962,6 +5112,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->serialNumber)) {
             $body['serialNumber'] = $request->serialNumber;
+        }
+        if (!Utils::isUnset($request->serialNumberList)) {
+            $body['serialNumberList'] = $request->serialNumberList;
         }
         if (!Utils::isUnset($request->status)) {
             $body['status'] = $request->status;
@@ -6445,6 +6598,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->pushType)) {
             $body['pushType'] = $request->pushType;
+        }
+        if (!Utils::isUnset($request->version)) {
+            $body['version'] = $request->version;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {

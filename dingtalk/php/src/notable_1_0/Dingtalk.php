@@ -1214,9 +1214,6 @@ class Dingtalk extends OpenApiClient
             $query['operatorId'] = $request->operatorId;
         }
         $body = [];
-        if (!Utils::isUnset($request->calcFields)) {
-            $body['calcFields'] = $request->calcFields;
-        }
         if (!Utils::isUnset($request->filter)) {
             $body['filter'] = $request->filter;
         }

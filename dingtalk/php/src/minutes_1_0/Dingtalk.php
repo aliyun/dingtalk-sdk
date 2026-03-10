@@ -35,6 +35,9 @@ use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryCreateMinutesListResponse
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryMinutesBasicInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryMinutesBasicInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryMinutesBasicInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryMinutesChaptersHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryMinutesChaptersRequest;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryMinutesChaptersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryMinutesKeywordHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryMinutesKeywordRequest;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryMinutesKeywordResponse;
@@ -53,6 +56,9 @@ use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryMinutesTextResponse;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryMinutesTodoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryMinutesTodoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryMinutesTodoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryOrgDiyTemplatesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryOrgDiyTemplatesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryOrgDiyTemplatesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryScheduleConfMinutesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryScheduleConfMinutesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryScheduleConfMinutesResponse;
@@ -65,6 +71,20 @@ use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QuerySummaryWithTemplateRespon
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryUploadVideoPlayInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryUploadVideoPlayInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryUploadVideoPlayInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryUserAvailableDiyTemplatesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryUserAvailableDiyTemplatesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryUserAvailableDiyTemplatesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryUserMinutesPermissionHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryUserMinutesPermissionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\SetDetailPageCustomTabHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\SetDetailPageCustomTabRequest;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\SetDetailPageCustomTabResponse;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\SetInProgressCustomTabsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\SetInProgressCustomTabsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\SetInProgressCustomTabsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\SetMinutesTodosVisibleHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\SetMinutesTodosVisibleRequest;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\SetMinutesTodosVisibleResponse;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\UpdateMinutesTitleHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\UpdateMinutesTitleRequest;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\UpdateMinutesTitleResponse;
@@ -740,6 +760,65 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询听记智能章节列表
+     *  *
+     * @param string                      $taskUuid
+     * @param QueryMinutesChaptersRequest $request  QueryMinutesChaptersRequest
+     * @param QueryMinutesChaptersHeaders $headers  QueryMinutesChaptersHeaders
+     * @param RuntimeOptions              $runtime  runtime options for this request RuntimeOptions
+     *
+     * @return QueryMinutesChaptersResponse QueryMinutesChaptersResponse
+     */
+    public function queryMinutesChaptersWithOptions($taskUuid, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'QueryMinutesChapters',
+            'version' => 'minutes_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/minutes/flashMinutes/' . $taskUuid . '/chapters',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryMinutesChaptersResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询听记智能章节列表
+     *  *
+     * @param string                      $taskUuid
+     * @param QueryMinutesChaptersRequest $request  QueryMinutesChaptersRequest
+     *
+     * @return QueryMinutesChaptersResponse QueryMinutesChaptersResponse
+     */
+    public function queryMinutesChapters($taskUuid, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryMinutesChaptersHeaders([]);
+
+        return $this->queryMinutesChaptersWithOptions($taskUuid, $request, $headers, $runtime);
+    }
+
+    /**
      * @summary 查询闪记关键字
      *  *
      * @param string                     $taskUuid
@@ -1110,6 +1189,69 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询企业所有自定义纪要模板列表
+     *  *
+     * @param QueryOrgDiyTemplatesRequest $request QueryOrgDiyTemplatesRequest
+     * @param QueryOrgDiyTemplatesHeaders $headers QueryOrgDiyTemplatesHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryOrgDiyTemplatesResponse QueryOrgDiyTemplatesResponse
+     */
+    public function queryOrgDiyTemplatesWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'QueryOrgDiyTemplates',
+            'version' => 'minutes_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/minutes/flashMinutes/diyTemplates/orgDeclared',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryOrgDiyTemplatesResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询企业所有自定义纪要模板列表
+     *  *
+     * @param QueryOrgDiyTemplatesRequest $request QueryOrgDiyTemplatesRequest
+     *
+     * @return QueryOrgDiyTemplatesResponse QueryOrgDiyTemplatesResponse
+     */
+    public function queryOrgDiyTemplates($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryOrgDiyTemplatesHeaders([]);
+
+        return $this->queryOrgDiyTemplatesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 查询预约会议闪记列表
      *  *
      * @param string                          $scheduleConferenceId
@@ -1356,6 +1498,312 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryUploadVideoPlayInfoHeaders([]);
 
         return $this->queryUploadVideoPlayInfoWithOptions($videoId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询用户可见的企业自定义纪要模版列表
+     *  *
+     * @param QueryUserAvailableDiyTemplatesRequest $request QueryUserAvailableDiyTemplatesRequest
+     * @param QueryUserAvailableDiyTemplatesHeaders $headers QueryUserAvailableDiyTemplatesHeaders
+     * @param RuntimeOptions                        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryUserAvailableDiyTemplatesResponse QueryUserAvailableDiyTemplatesResponse
+     */
+    public function queryUserAvailableDiyTemplatesWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'QueryUserAvailableDiyTemplates',
+            'version' => 'minutes_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/minutes/flashMinutes/diyTemplates/userAvailable',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryUserAvailableDiyTemplatesResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询用户可见的企业自定义纪要模版列表
+     *  *
+     * @param QueryUserAvailableDiyTemplatesRequest $request QueryUserAvailableDiyTemplatesRequest
+     *
+     * @return QueryUserAvailableDiyTemplatesResponse QueryUserAvailableDiyTemplatesResponse
+     */
+    public function queryUserAvailableDiyTemplates($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryUserAvailableDiyTemplatesHeaders([]);
+
+        return $this->queryUserAvailableDiyTemplatesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询指定用户对某篇听记的权限
+     *  *
+     * @param string                            $taskUuid
+     * @param string                            $unionId
+     * @param QueryUserMinutesPermissionHeaders $headers  QueryUserMinutesPermissionHeaders
+     * @param RuntimeOptions                    $runtime  runtime options for this request RuntimeOptions
+     *
+     * @return QueryUserMinutesPermissionResponse QueryUserMinutesPermissionResponse
+     */
+    public function queryUserMinutesPermissionWithOptions($taskUuid, $unionId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action' => 'QueryUserMinutesPermission',
+            'version' => 'minutes_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/minutes/flashMinutes/tasks/' . $taskUuid . '/permissions/' . $unionId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryUserMinutesPermissionResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询指定用户对某篇听记的权限
+     *  *
+     * @param string $taskUuid
+     * @param string $unionId
+     *
+     * @return QueryUserMinutesPermissionResponse QueryUserMinutesPermissionResponse
+     */
+    public function queryUserMinutesPermission($taskUuid, $unionId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryUserMinutesPermissionHeaders([]);
+
+        return $this->queryUserMinutesPermissionWithOptions($taskUuid, $unionId, $headers, $runtime);
+    }
+
+    /**
+     * @summary 自定义听记详情页tab
+     *  *
+     * @param string                        $taskUuid
+     * @param SetDetailPageCustomTabRequest $request  SetDetailPageCustomTabRequest
+     * @param SetDetailPageCustomTabHeaders $headers  SetDetailPageCustomTabHeaders
+     * @param RuntimeOptions                $runtime  runtime options for this request RuntimeOptions
+     *
+     * @return SetDetailPageCustomTabResponse SetDetailPageCustomTabResponse
+     */
+    public function setDetailPageCustomTabWithOptions($taskUuid, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->customTabList)) {
+            $body['customTabList'] = $request->customTabList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'SetDetailPageCustomTab',
+            'version' => 'minutes_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/minutes/flashMinutes/tasks/' . $taskUuid . '/customTabs',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return SetDetailPageCustomTabResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 自定义听记详情页tab
+     *  *
+     * @param string                        $taskUuid
+     * @param SetDetailPageCustomTabRequest $request  SetDetailPageCustomTabRequest
+     *
+     * @return SetDetailPageCustomTabResponse SetDetailPageCustomTabResponse
+     */
+    public function setDetailPageCustomTab($taskUuid, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SetDetailPageCustomTabHeaders([]);
+
+        return $this->setDetailPageCustomTabWithOptions($taskUuid, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 配置应用在听记录制页的自定义Tab
+     *  *
+     * @param SetInProgressCustomTabsRequest $request SetInProgressCustomTabsRequest
+     * @param SetInProgressCustomTabsHeaders $headers SetInProgressCustomTabsHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SetInProgressCustomTabsResponse SetInProgressCustomTabsResponse
+     */
+    public function setInProgressCustomTabsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->customTabList)) {
+            $body['customTabList'] = $request->customTabList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'SetInProgressCustomTabs',
+            'version' => 'minutes_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/minutes/apps/settings/inProgressTabs',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return SetInProgressCustomTabsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 配置应用在听记录制页的自定义Tab
+     *  *
+     * @param SetInProgressCustomTabsRequest $request SetInProgressCustomTabsRequest
+     *
+     * @return SetInProgressCustomTabsResponse SetInProgressCustomTabsResponse
+     */
+    public function setInProgressCustomTabs($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SetInProgressCustomTabsHeaders([]);
+
+        return $this->setInProgressCustomTabsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 设置AI纪要待办模块可见性
+     *  *
+     * @param string                        $taskUuid
+     * @param SetMinutesTodosVisibleRequest $request  SetMinutesTodosVisibleRequest
+     * @param SetMinutesTodosVisibleHeaders $headers  SetMinutesTodosVisibleHeaders
+     * @param RuntimeOptions                $runtime  runtime options for this request RuntimeOptions
+     *
+     * @return SetMinutesTodosVisibleResponse SetMinutesTodosVisibleResponse
+     */
+    public function setMinutesTodosVisibleWithOptions($taskUuid, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->todosVisible)) {
+            $body['todosVisible'] = $request->todosVisible;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'SetMinutesTodosVisible',
+            'version' => 'minutes_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/minutes/flashMinutes/tasks/' . $taskUuid . '/todosVisible',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return SetMinutesTodosVisibleResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 设置AI纪要待办模块可见性
+     *  *
+     * @param string                        $taskUuid
+     * @param SetMinutesTodosVisibleRequest $request  SetMinutesTodosVisibleRequest
+     *
+     * @return SetMinutesTodosVisibleResponse SetMinutesTodosVisibleResponse
+     */
+    public function setMinutesTodosVisible($taskUuid, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SetMinutesTodosVisibleHeaders([]);
+
+        return $this->setMinutesTodosVisibleWithOptions($taskUuid, $request, $headers, $runtime);
     }
 
     /**

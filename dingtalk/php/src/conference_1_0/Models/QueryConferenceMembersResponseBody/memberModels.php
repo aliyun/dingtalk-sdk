@@ -38,6 +38,11 @@ class memberModels extends Model
     public $host;
 
     /**
+     * @var string
+     */
+    public $jobNumber;
+
+    /**
      * @var int
      */
     public $joinTime;
@@ -76,6 +81,7 @@ class memberModels extends Model
         'conferenceId' => 'conferenceId',
         'duration' => 'duration',
         'host' => 'host',
+        'jobNumber' => 'jobNumber',
         'joinTime' => 'joinTime',
         'leaveTime' => 'leaveTime',
         'outerOrgMember' => 'outerOrgMember',
@@ -103,6 +109,9 @@ class memberModels extends Model
         }
         if (null !== $this->host) {
             $res['host'] = $this->host;
+        }
+        if (null !== $this->jobNumber) {
+            $res['jobNumber'] = $this->jobNumber;
         }
         if (null !== $this->joinTime) {
             $res['joinTime'] = $this->joinTime;
@@ -148,6 +157,9 @@ class memberModels extends Model
         }
         if (isset($map['host'])) {
             $model->host = $map['host'];
+        }
+        if (isset($map['jobNumber'])) {
+            $model->jobNumber = $map['jobNumber'];
         }
         if (isset($map['joinTime'])) {
             $model->joinTime = $map['joinTime'];

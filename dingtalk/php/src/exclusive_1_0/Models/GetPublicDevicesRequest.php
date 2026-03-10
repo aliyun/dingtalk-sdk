@@ -56,6 +56,11 @@ class GetPublicDevicesRequest extends Model
     public $serialNumber;
 
     /**
+     * @var string[]
+     */
+    public $serialNumberList;
+
+    /**
      * @example 1671767361000
      *
      * @var int
@@ -76,6 +81,7 @@ class GetPublicDevicesRequest extends Model
         'pageSize' => 'pageSize',
         'platform' => 'platform',
         'serialNumber' => 'serialNumber',
+        'serialNumberList' => 'serialNumberList',
         'startTime' => 'startTime',
         'title' => 'title',
     ];
@@ -105,6 +111,9 @@ class GetPublicDevicesRequest extends Model
         }
         if (null !== $this->serialNumber) {
             $res['serialNumber'] = $this->serialNumber;
+        }
+        if (null !== $this->serialNumberList) {
+            $res['serialNumberList'] = $this->serialNumberList;
         }
         if (null !== $this->startTime) {
             $res['startTime'] = $this->startTime;
@@ -144,6 +153,11 @@ class GetPublicDevicesRequest extends Model
         }
         if (isset($map['serialNumber'])) {
             $model->serialNumber = $map['serialNumber'];
+        }
+        if (isset($map['serialNumberList'])) {
+            if (!empty($map['serialNumberList'])) {
+                $model->serialNumberList = $map['serialNumberList'];
+            }
         }
         if (isset($map['startTime'])) {
             $model->startTime = $map['startTime'];

@@ -1,0 +1,61 @@
+<?php
+
+// This file is auto-generated, don't edit it. Thanks.
+
+namespace AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models;
+
+use AlibabaCloud\Tea\Model;
+
+class SortConvNavTabRequest extends Model
+{
+    /**
+     * @example cidc4iLyQBuHFQRvzxznz204Q
+     *
+     * @var string
+     */
+    public $openConversationId;
+
+    /**
+     * @var string[]
+     */
+    public $sortedIds;
+    protected $_name = [
+        'openConversationId' => 'openConversationId',
+        'sortedIds' => 'sortedIds',
+    ];
+
+    public function validate() {}
+
+    public function toMap()
+    {
+        $res = [];
+        if (null !== $this->openConversationId) {
+            $res['openConversationId'] = $this->openConversationId;
+        }
+        if (null !== $this->sortedIds) {
+            $res['sortedIds'] = $this->sortedIds;
+        }
+
+        return $res;
+    }
+
+    /**
+     * @param array $map
+     *
+     * @return SortConvNavTabRequest
+     */
+    public static function fromMap($map = [])
+    {
+        $model = new self();
+        if (isset($map['openConversationId'])) {
+            $model->openConversationId = $map['openConversationId'];
+        }
+        if (isset($map['sortedIds'])) {
+            if (!empty($map['sortedIds'])) {
+                $model->sortedIds = $map['sortedIds'];
+            }
+        }
+
+        return $model;
+    }
+}

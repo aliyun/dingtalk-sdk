@@ -25,6 +25,13 @@ class members extends Model
     public $id;
 
     /**
+     * @example member_name
+     *
+     * @var string
+     */
+    public $name;
+
+    /**
      * @description This parameter is required.
      *
      * @example USER
@@ -35,6 +42,7 @@ class members extends Model
     protected $_name = [
         'corpId' => 'corpId',
         'id' => 'id',
+        'name' => 'name',
         'type' => 'type',
     ];
 
@@ -48,6 +56,9 @@ class members extends Model
         }
         if (null !== $this->id) {
             $res['id'] = $this->id;
+        }
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
         }
         if (null !== $this->type) {
             $res['type'] = $this->type;
@@ -69,6 +80,9 @@ class members extends Model
         }
         if (isset($map['id'])) {
             $model->id = $map['id'];
+        }
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
         }
         if (isset($map['type'])) {
             $model->type = $map['type'];

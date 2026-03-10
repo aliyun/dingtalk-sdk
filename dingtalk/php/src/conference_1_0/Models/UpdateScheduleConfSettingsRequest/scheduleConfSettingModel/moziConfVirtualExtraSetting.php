@@ -59,6 +59,23 @@ class moziConfVirtualExtraSetting extends Model
     public $minutesOwnerUnionId;
 
     /**
+     * @example 1
+     *
+     * @var string
+     */
+    public $minutesSummaryDiyTemplateVersion;
+
+    /**
+     * @var string
+     */
+    public $minutesSummaryTemplateId;
+
+    /**
+     * @var string
+     */
+    public $minutesSummaryTemplateType;
+
+    /**
      * @var moziConfExtensionAppSettings[]
      */
     public $moziConfExtensionAppSettings;
@@ -92,6 +109,9 @@ class moziConfVirtualExtraSetting extends Model
         'lockMediaStatusMicMute' => 'lockMediaStatusMicMute',
         'lockNick' => 'lockNick',
         'minutesOwnerUnionId' => 'minutesOwnerUnionId',
+        'minutesSummaryDiyTemplateVersion' => 'minutesSummaryDiyTemplateVersion',
+        'minutesSummaryTemplateId' => 'minutesSummaryTemplateId',
+        'minutesSummaryTemplateType' => 'minutesSummaryTemplateType',
         'moziConfExtensionAppSettings' => 'moziConfExtensionAppSettings',
         'pushAllMeetingRecords' => 'pushAllMeetingRecords',
         'pushCloudRecordCard' => 'pushCloudRecordCard',
@@ -124,6 +144,15 @@ class moziConfVirtualExtraSetting extends Model
         }
         if (null !== $this->minutesOwnerUnionId) {
             $res['minutesOwnerUnionId'] = $this->minutesOwnerUnionId;
+        }
+        if (null !== $this->minutesSummaryDiyTemplateVersion) {
+            $res['minutesSummaryDiyTemplateVersion'] = $this->minutesSummaryDiyTemplateVersion;
+        }
+        if (null !== $this->minutesSummaryTemplateId) {
+            $res['minutesSummaryTemplateId'] = $this->minutesSummaryTemplateId;
+        }
+        if (null !== $this->minutesSummaryTemplateType) {
+            $res['minutesSummaryTemplateType'] = $this->minutesSummaryTemplateType;
         }
         if (null !== $this->moziConfExtensionAppSettings) {
             $res['moziConfExtensionAppSettings'] = [];
@@ -178,6 +207,15 @@ class moziConfVirtualExtraSetting extends Model
         }
         if (isset($map['minutesOwnerUnionId'])) {
             $model->minutesOwnerUnionId = $map['minutesOwnerUnionId'];
+        }
+        if (isset($map['minutesSummaryDiyTemplateVersion'])) {
+            $model->minutesSummaryDiyTemplateVersion = $map['minutesSummaryDiyTemplateVersion'];
+        }
+        if (isset($map['minutesSummaryTemplateId'])) {
+            $model->minutesSummaryTemplateId = $map['minutesSummaryTemplateId'];
+        }
+        if (isset($map['minutesSummaryTemplateType'])) {
+            $model->minutesSummaryTemplateType = $map['minutesSummaryTemplateType'];
         }
         if (isset($map['moziConfExtensionAppSettings'])) {
             if (!empty($map['moziConfExtensionAppSettings'])) {

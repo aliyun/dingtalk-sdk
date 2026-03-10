@@ -9,6 +9,11 @@ use AlibabaCloud\Tea\Model;
 class DeleteTrustedDeviceRequest extends Model
 {
     /**
+     * @var string
+     */
+    public $did;
+
+    /**
      * @var int
      */
     public $id;
@@ -38,6 +43,7 @@ class DeleteTrustedDeviceRequest extends Model
      */
     public $userId;
     protected $_name = [
+        'did' => 'did',
         'id' => 'id',
         'kickOff' => 'kickOff',
         'macAddress' => 'macAddress',
@@ -49,6 +55,9 @@ class DeleteTrustedDeviceRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->did) {
+            $res['did'] = $this->did;
+        }
         if (null !== $this->id) {
             $res['id'] = $this->id;
         }
@@ -73,6 +82,9 @@ class DeleteTrustedDeviceRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['did'])) {
+            $model->did = $map['did'];
+        }
         if (isset($map['id'])) {
             $model->id = $map['id'];
         }

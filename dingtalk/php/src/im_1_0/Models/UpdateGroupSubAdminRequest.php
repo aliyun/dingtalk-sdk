@@ -25,14 +25,18 @@ class UpdateGroupSubAdminRequest extends Model
     public $role;
 
     /**
-     * @description This parameter is required.
-     *
+     * @var string[]
+     */
+    public $unionIds;
+
+    /**
      * @var string[]
      */
     public $userIds;
     protected $_name = [
         'openConversationId' => 'openConversationId',
         'role' => 'role',
+        'unionIds' => 'unionIds',
         'userIds' => 'userIds',
     ];
 
@@ -46,6 +50,9 @@ class UpdateGroupSubAdminRequest extends Model
         }
         if (null !== $this->role) {
             $res['role'] = $this->role;
+        }
+        if (null !== $this->unionIds) {
+            $res['unionIds'] = $this->unionIds;
         }
         if (null !== $this->userIds) {
             $res['userIds'] = $this->userIds;
@@ -67,6 +74,11 @@ class UpdateGroupSubAdminRequest extends Model
         }
         if (isset($map['role'])) {
             $model->role = $map['role'];
+        }
+        if (isset($map['unionIds'])) {
+            if (!empty($map['unionIds'])) {
+                $model->unionIds = $map['unionIds'];
+            }
         }
         if (isset($map['userIds'])) {
             if (!empty($map['userIds'])) {

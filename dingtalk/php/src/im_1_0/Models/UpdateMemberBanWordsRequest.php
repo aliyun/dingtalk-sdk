@@ -36,8 +36,11 @@ class UpdateMemberBanWordsRequest extends Model
     public $openConversationId;
 
     /**
-     * @description This parameter is required.
-     *
+     * @var string[]
+     */
+    public $unionIds;
+
+    /**
      * @var string[]
      */
     public $userIdList;
@@ -45,6 +48,7 @@ class UpdateMemberBanWordsRequest extends Model
         'muteDuration' => 'muteDuration',
         'muteStatus' => 'muteStatus',
         'openConversationId' => 'openConversationId',
+        'unionIds' => 'unionIds',
         'userIdList' => 'userIdList',
     ];
 
@@ -61,6 +65,9 @@ class UpdateMemberBanWordsRequest extends Model
         }
         if (null !== $this->openConversationId) {
             $res['openConversationId'] = $this->openConversationId;
+        }
+        if (null !== $this->unionIds) {
+            $res['unionIds'] = $this->unionIds;
         }
         if (null !== $this->userIdList) {
             $res['userIdList'] = $this->userIdList;
@@ -85,6 +92,11 @@ class UpdateMemberBanWordsRequest extends Model
         }
         if (isset($map['openConversationId'])) {
             $model->openConversationId = $map['openConversationId'];
+        }
+        if (isset($map['unionIds'])) {
+            if (!empty($map['unionIds'])) {
+                $model->unionIds = $map['unionIds'];
+            }
         }
         if (isset($map['userIdList'])) {
             if (!empty($map['userIdList'])) {

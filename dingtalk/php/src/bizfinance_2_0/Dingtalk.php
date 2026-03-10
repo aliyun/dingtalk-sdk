@@ -47,6 +47,12 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\DeleteCompanyResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\DeleteEnterpriseAccountHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\DeleteEnterpriseAccountRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\DeleteEnterpriseAccountResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\DeleteProcessInstanceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\DeleteProcessInstanceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\DeleteProcessInstanceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\DeleteWorkflowInstanceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\DeleteWorkflowInstanceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\DeleteWorkflowInstanceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\EnableCompanyHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\EnableCompanyRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\EnableCompanyResponse;
@@ -132,6 +138,9 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryPaymentOrderDetailShri
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryPaymentRecallFileHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryPaymentRecallFileRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryPaymentRecallFileResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryPaymentRecallFileVTwoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryPaymentRecallFileVTwoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryPaymentRecallFileVTwoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryPaymentStatusHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryPaymentStatusRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryPaymentStatusResponse;
@@ -1114,6 +1123,126 @@ class Dingtalk extends OpenApiClient
         $headers = new DeleteEnterpriseAccountHeaders([]);
 
         return $this->deleteEnterpriseAccountWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 删除智能财务OA审批单，有权限控制
+     *  *
+     * @param DeleteProcessInstanceRequest $request DeleteProcessInstanceRequest
+     * @param DeleteProcessInstanceHeaders $headers DeleteProcessInstanceHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return DeleteProcessInstanceResponse DeleteProcessInstanceResponse
+     */
+    public function deleteProcessInstanceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->instanceId)) {
+            $query['instanceId'] = $request->instanceId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'DeleteProcessInstance',
+            'version' => 'bizfinance_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/bizfinance/processInstance/delete',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return DeleteProcessInstanceResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 删除智能财务OA审批单，有权限控制
+     *  *
+     * @param DeleteProcessInstanceRequest $request DeleteProcessInstanceRequest
+     *
+     * @return DeleteProcessInstanceResponse DeleteProcessInstanceResponse
+     */
+    public function deleteProcessInstance($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteProcessInstanceHeaders([]);
+
+        return $this->deleteProcessInstanceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 删除工作流流程实例
+     *  *
+     * @param DeleteWorkflowInstanceRequest $request DeleteWorkflowInstanceRequest
+     * @param DeleteWorkflowInstanceHeaders $headers DeleteWorkflowInstanceHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return DeleteWorkflowInstanceResponse DeleteWorkflowInstanceResponse
+     */
+    public function deleteWorkflowInstanceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->instanceId)) {
+            $query['instanceId'] = $request->instanceId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'DeleteWorkflowInstance',
+            'version' => 'bizfinance_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/bizfinance/workflowInstance/delete',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return DeleteWorkflowInstanceResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 删除工作流流程实例
+     *  *
+     * @param DeleteWorkflowInstanceRequest $request DeleteWorkflowInstanceRequest
+     *
+     * @return DeleteWorkflowInstanceResponse DeleteWorkflowInstanceResponse
+     */
+    public function deleteWorkflowInstance($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteWorkflowInstanceHeaders([]);
+
+        return $this->deleteWorkflowInstanceWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -2852,6 +2981,65 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryPaymentRecallFileHeaders([]);
 
         return $this->queryPaymentRecallFileWithOptions($instanceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询支付回单信息，权限集与QueryPaymentRecallFile不同
+     *  *
+     * @param string                            $instanceId
+     * @param QueryPaymentRecallFileVTwoRequest $request    QueryPaymentRecallFileVTwoRequest
+     * @param QueryPaymentRecallFileVTwoHeaders $headers    QueryPaymentRecallFileVTwoHeaders
+     * @param RuntimeOptions                    $runtime    runtime options for this request RuntimeOptions
+     *
+     * @return QueryPaymentRecallFileVTwoResponse QueryPaymentRecallFileVTwoResponse
+     */
+    public function queryPaymentRecallFileVTwoWithOptions($instanceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'QueryPaymentRecallFileVTwo',
+            'version' => 'bizfinance_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/bizfinance/payments/recallFilesV2/' . $instanceId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryPaymentRecallFileVTwoResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询支付回单信息，权限集与QueryPaymentRecallFile不同
+     *  *
+     * @param string                            $instanceId
+     * @param QueryPaymentRecallFileVTwoRequest $request    QueryPaymentRecallFileVTwoRequest
+     *
+     * @return QueryPaymentRecallFileVTwoResponse QueryPaymentRecallFileVTwoResponse
+     */
+    public function queryPaymentRecallFileVTwo($instanceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryPaymentRecallFileVTwoHeaders([]);
+
+        return $this->queryPaymentRecallFileVTwoWithOptions($instanceId, $request, $headers, $runtime);
     }
 
     /**

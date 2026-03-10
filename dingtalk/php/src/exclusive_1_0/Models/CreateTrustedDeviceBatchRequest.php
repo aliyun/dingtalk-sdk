@@ -20,8 +20,6 @@ class CreateTrustedDeviceBatchRequest extends Model
     public $macAddressList;
 
     /**
-     * @description This parameter is required.
-     *
      * @example Win
      *
      * @var string
@@ -29,8 +27,6 @@ class CreateTrustedDeviceBatchRequest extends Model
     public $platform;
 
     /**
-     * @description This parameter is required.
-     *
      * @example 123
      *
      * @var string

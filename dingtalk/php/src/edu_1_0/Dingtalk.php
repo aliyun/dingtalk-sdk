@@ -62,6 +62,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\BatchInvalidCourseResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\BatchOrgCreateHWHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\BatchOrgCreateHWRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\BatchOrgCreateHWResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CallMultimodalModelHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CallMultimodalModelRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CallMultimodalModelResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CancelKitTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CancelKitTaskRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CancelKitTaskResponse;
@@ -131,6 +134,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCustomDeptResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateEduAssetSpaceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateEduAssetSpaceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateEduAssetSpaceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateEduLlmModelReqHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateEduLlmModelReqRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateEduLlmModelReqResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateFulfilRecordHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateFulfilRecordRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateFulfilRecordResponse;
@@ -456,6 +462,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryDeviceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryEduAssetSpacesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryEduAssetSpacesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryEduAssetSpacesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryEduLlmModelResponseHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryEduLlmModelResponseRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryEduLlmModelResponseResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryGroupIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryGroupIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryGroupIdResponse;
@@ -529,6 +538,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryUserFaceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryUserPayInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryUserPayInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryUserPayInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\RecordActionPointHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\RecordActionPointRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\RecordActionPointResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\RemoveDeviceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\RemoveDeviceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\RemoveDeviceResponse;
@@ -607,6 +619,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCollegeContactUserResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCollegeUserEmpTypeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCollegeUserEmpTypeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCollegeUserEmpTypeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCorrectingDataHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCorrectingDataRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCorrectingDataResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCoursesOfClassHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCoursesOfClassRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCoursesOfClassResponse;
@@ -2239,6 +2254,90 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 调用多模态模型
+     *  *
+     * @param CallMultimodalModelRequest $request CallMultimodalModelRequest
+     * @param CallMultimodalModelHeaders $headers CallMultimodalModelHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CallMultimodalModelResponse CallMultimodalModelResponse
+     */
+    public function callMultimodalModelWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->chatMessageModelList)) {
+            $body['chatMessageModelList'] = $request->chatMessageModelList;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->enableThinking)) {
+            $body['enableThinking'] = $request->enableThinking;
+        }
+        if (!Utils::isUnset($request->maxTokens)) {
+            $body['maxTokens'] = $request->maxTokens;
+        }
+        if (!Utils::isUnset($request->model)) {
+            $body['model'] = $request->model;
+        }
+        if (!Utils::isUnset($request->reqLlmModelParamUrl)) {
+            $body['reqLlmModelParamUrl'] = $request->reqLlmModelParamUrl;
+        }
+        if (!Utils::isUnset($request->responseFormat)) {
+            $body['responseFormat'] = $request->responseFormat;
+        }
+        if (!Utils::isUnset($request->taskCode)) {
+            $body['taskCode'] = $request->taskCode;
+        }
+        if (!Utils::isUnset($request->temperature)) {
+            $body['temperature'] = $request->temperature;
+        }
+        if (!Utils::isUnset($request->topP)) {
+            $body['topP'] = $request->topP;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'CallMultimodalModel',
+            'version' => 'edu_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/edu/multimodal/model/call',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CallMultimodalModelResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 调用多模态模型
+     *  *
+     * @param CallMultimodalModelRequest $request CallMultimodalModelRequest
+     *
+     * @return CallMultimodalModelResponse CallMultimodalModelResponse
+     */
+    public function callMultimodalModel($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CallMultimodalModelHeaders([]);
+
+        return $this->callMultimodalModelWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 套件-取消套件任务
      *  *
      * @param CancelKitTaskRequest $request CancelKitTaskRequest
@@ -3403,17 +3502,26 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->corpId)) {
             $body['corpId'] = $request->corpId;
         }
+        if (!Utils::isUnset($request->paperName)) {
+            $body['paperName'] = $request->paperName;
+        }
         if (!Utils::isUnset($request->printInfo)) {
             $body['printInfo'] = $request->printInfo;
         }
         if (!Utils::isUnset($request->printerCode)) {
             $body['printerCode'] = $request->printerCode;
         }
+        if (!Utils::isUnset($request->scanFileOssSaveTime)) {
+            $body['scanFileOssSaveTime'] = $request->scanFileOssSaveTime;
+        }
         if (!Utils::isUnset($request->subjectName)) {
             $body['subjectName'] = $request->subjectName;
         }
         if (!Utils::isUnset($request->taskCode)) {
             $body['taskCode'] = $request->taskCode;
+        }
+        if (!Utils::isUnset($request->totalAssignments)) {
+            $body['totalAssignments'] = $request->totalAssignments;
         }
         if (!Utils::isUnset($request->totalPages)) {
             $body['totalPages'] = $request->totalPages;
@@ -4039,6 +4147,90 @@ class Dingtalk extends OpenApiClient
         $headers = new CreateEduAssetSpaceHeaders([]);
 
         return $this->createEduAssetSpaceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 作业批改-新增模型批改请求
+     *  *
+     * @param CreateEduLlmModelReqRequest $request CreateEduLlmModelReqRequest
+     * @param CreateEduLlmModelReqHeaders $headers CreateEduLlmModelReqHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateEduLlmModelReqResponse CreateEduLlmModelReqResponse
+     */
+    public function createEduLlmModelReqWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->chatMessageModelList)) {
+            $body['chatMessageModelList'] = $request->chatMessageModelList;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->enableThinking)) {
+            $body['enableThinking'] = $request->enableThinking;
+        }
+        if (!Utils::isUnset($request->maxTokens)) {
+            $body['maxTokens'] = $request->maxTokens;
+        }
+        if (!Utils::isUnset($request->model)) {
+            $body['model'] = $request->model;
+        }
+        if (!Utils::isUnset($request->reqLlmModelParamUrl)) {
+            $body['reqLlmModelParamUrl'] = $request->reqLlmModelParamUrl;
+        }
+        if (!Utils::isUnset($request->responseFormat)) {
+            $body['responseFormat'] = $request->responseFormat;
+        }
+        if (!Utils::isUnset($request->taskCode)) {
+            $body['taskCode'] = $request->taskCode;
+        }
+        if (!Utils::isUnset($request->temperature)) {
+            $body['temperature'] = $request->temperature;
+        }
+        if (!Utils::isUnset($request->topP)) {
+            $body['topP'] = $request->topP;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'CreateEduLlmModelReq',
+            'version' => 'edu_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/edu/assignment/createEduLlmModelReq',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CreateEduLlmModelReqResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 作业批改-新增模型批改请求
+     *  *
+     * @param CreateEduLlmModelReqRequest $request CreateEduLlmModelReqRequest
+     *
+     * @return CreateEduLlmModelReqResponse CreateEduLlmModelReqResponse
+     */
+    public function createEduLlmModelReq($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateEduLlmModelReqHeaders([]);
+
+        return $this->createEduLlmModelReqWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -11203,6 +11395,69 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 作业批改-查询模型返回结果
+     *  *
+     * @param QueryEduLlmModelResponseRequest $request QueryEduLlmModelResponseRequest
+     * @param QueryEduLlmModelResponseHeaders $headers QueryEduLlmModelResponseHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryEduLlmModelResponseResponse QueryEduLlmModelResponseResponse
+     */
+    public function queryEduLlmModelResponseWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->reqId)) {
+            $body['reqId'] = $request->reqId;
+        }
+        if (!Utils::isUnset($request->taskCode)) {
+            $body['taskCode'] = $request->taskCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'QueryEduLlmModelResponse',
+            'version' => 'edu_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/edu/assignment/queryEduLlmModelResponse',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryEduLlmModelResponseResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 作业批改-查询模型返回结果
+     *  *
+     * @param QueryEduLlmModelResponseRequest $request QueryEduLlmModelResponseRequest
+     *
+     * @return QueryEduLlmModelResponseResponse QueryEduLlmModelResponseResponse
+     */
+    public function queryEduLlmModelResponse($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryEduLlmModelResponseHeaders([]);
+
+        return $this->queryEduLlmModelResponseWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 根据设备SN信息查询学校人脸库
      *  *
      * @param QueryGroupIdRequest $request QueryGroupIdRequest
@@ -12699,6 +12954,72 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryUserPayInfoHeaders([]);
 
         return $this->queryUserPayInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 作业批改-记录行动点
+     *  *
+     * @param RecordActionPointRequest $request RecordActionPointRequest
+     * @param RecordActionPointHeaders $headers RecordActionPointHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return RecordActionPointResponse RecordActionPointResponse
+     */
+    public function recordActionPointWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->actionCode)) {
+            $body['actionCode'] = $request->actionCode;
+        }
+        if (!Utils::isUnset($request->actionTime)) {
+            $body['actionTime'] = $request->actionTime;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->taskCode)) {
+            $body['taskCode'] = $request->taskCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'RecordActionPoint',
+            'version' => 'edu_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/edu/assignment/recordActionPoint',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return RecordActionPointResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 作业批改-记录行动点
+     *  *
+     * @param RecordActionPointRequest $request RecordActionPointRequest
+     *
+     * @return RecordActionPointResponse RecordActionPointResponse
+     */
+    public function recordActionPoint($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RecordActionPointHeaders([]);
+
+        return $this->recordActionPointWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -14711,6 +15032,72 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateCollegeUserEmpTypeHeaders([]);
 
         return $this->updateCollegeUserEmpTypeWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 作业批改-更新批改中数据
+     *  *
+     * @param UpdateCorrectingDataRequest $request UpdateCorrectingDataRequest
+     * @param UpdateCorrectingDataHeaders $headers UpdateCorrectingDataHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateCorrectingDataResponse UpdateCorrectingDataResponse
+     */
+    public function updateCorrectingDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->dataDetail)) {
+            $body['dataDetail'] = $request->dataDetail;
+        }
+        if (!Utils::isUnset($request->dataType)) {
+            $body['dataType'] = $request->dataType;
+        }
+        if (!Utils::isUnset($request->taskCode)) {
+            $body['taskCode'] = $request->taskCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'UpdateCorrectingData',
+            'version' => 'edu_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/edu/assignment/updateCorrectingData',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UpdateCorrectingDataResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 作业批改-更新批改中数据
+     *  *
+     * @param UpdateCorrectingDataRequest $request UpdateCorrectingDataRequest
+     *
+     * @return UpdateCorrectingDataResponse UpdateCorrectingDataResponse
+     */
+    public function updateCorrectingData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateCorrectingDataHeaders([]);
+
+        return $this->updateCorrectingDataWithOptions($request, $headers, $runtime);
     }
 
     /**

@@ -5,6 +5,14 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vdvi_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\ControlRecordingHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\ControlRecordingRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\ControlRecordingResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\CreateRecordingScheduleHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\CreateRecordingScheduleRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\CreateRecordingScheduleResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\DeleteRecordingScheduleHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\DeleteRecordingScheduleResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetAudioFileDownloadInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetAudioFileDownloadInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetAudioFileDownloadInfoResponse;
@@ -17,6 +25,8 @@ use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetCustomerInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetCustomerInsightHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetCustomerInsightRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetCustomerInsightResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetRecordingScheduleHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetRecordingScheduleResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetServiceChapterSummaryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetServiceChapterSummaryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetServiceChapterSummaryResponse;
@@ -35,6 +45,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetTranscriptSummaryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\ListCustomerHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\ListCustomerRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\ListCustomerResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\ListDeviceRecordingDurationHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\ListDeviceRecordingDurationRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\ListDeviceRecordingDurationResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\ListServiceRecordHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\ListServiceRecordRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\ListServiceRecordResponse;
@@ -59,6 +72,12 @@ use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\QueryDeviceStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\SubmitAsrTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\SubmitAsrTaskRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\SubmitAsrTaskResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\UpdateDeviceBindingHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\UpdateDeviceBindingRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\UpdateDeviceBindingResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\UpdateRecordingScheduleHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\UpdateRecordingScheduleRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\UpdateRecordingScheduleResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\VideoCustomerSplitHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\VideoCustomerSplitRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\VideoCustomerSplitResponse;
@@ -80,6 +99,183 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @summary 设备录音启停控制
+     *  *
+     * @param ControlRecordingRequest $request ControlRecordingRequest
+     * @param ControlRecordingHeaders $headers ControlRecordingHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ControlRecordingResponse ControlRecordingResponse
+     */
+    public function controlRecordingWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->action)) {
+            $body['action'] = $request->action;
+        }
+        if (!Utils::isUnset($request->agree)) {
+            $body['agree'] = $request->agree;
+        }
+        if (!Utils::isUnset($request->teamCode)) {
+            $body['teamCode'] = $request->teamCode;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'ControlRecording',
+            'version' => 'dvi_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/dvi/devices/recording/control',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return ControlRecordingResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 设备录音启停控制
+     *  *
+     * @param ControlRecordingRequest $request ControlRecordingRequest
+     *
+     * @return ControlRecordingResponse ControlRecordingResponse
+     */
+    public function controlRecording($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ControlRecordingHeaders([]);
+
+        return $this->controlRecordingWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 创建录制计划
+     *  *
+     * @param CreateRecordingScheduleRequest $request CreateRecordingScheduleRequest
+     * @param CreateRecordingScheduleHeaders $headers CreateRecordingScheduleHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateRecordingScheduleResponse CreateRecordingScheduleResponse
+     */
+    public function createRecordingScheduleWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->schedules)) {
+            $body['schedules'] = $request->schedules;
+        }
+        if (!Utils::isUnset($request->sn)) {
+            $body['sn'] = $request->sn;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'CreateRecordingSchedule',
+            'version' => 'dvi_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/dvi/devices/recording/schedules',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CreateRecordingScheduleResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建录制计划
+     *  *
+     * @param CreateRecordingScheduleRequest $request CreateRecordingScheduleRequest
+     *
+     * @return CreateRecordingScheduleResponse CreateRecordingScheduleResponse
+     */
+    public function createRecordingSchedule($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateRecordingScheduleHeaders([]);
+
+        return $this->createRecordingScheduleWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 删除录制计划
+     *  *
+     * @param string                         $taskId
+     * @param DeleteRecordingScheduleHeaders $headers DeleteRecordingScheduleHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return DeleteRecordingScheduleResponse DeleteRecordingScheduleResponse
+     */
+    public function deleteRecordingScheduleWithOptions($taskId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action' => 'DeleteRecordingSchedule',
+            'version' => 'dvi_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/dvi/devices/recording/schedules/' . $taskId . '',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return DeleteRecordingScheduleResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 删除录制计划
+     *  *
+     * @param string $taskId
+     *
+     * @return DeleteRecordingScheduleResponse DeleteRecordingScheduleResponse
+     */
+    public function deleteRecordingSchedule($taskId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteRecordingScheduleHeaders([]);
+
+        return $this->deleteRecordingScheduleWithOptions($taskId, $headers, $runtime);
     }
 
     /**
@@ -314,6 +510,57 @@ class Dingtalk extends OpenApiClient
         $headers = new GetCustomerInsightHeaders([]);
 
         return $this->getCustomerInsightWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取录制计划
+     *  *
+     * @param string                      $taskId
+     * @param GetRecordingScheduleHeaders $headers GetRecordingScheduleHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetRecordingScheduleResponse GetRecordingScheduleResponse
+     */
+    public function getRecordingScheduleWithOptions($taskId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action' => 'GetRecordingSchedule',
+            'version' => 'dvi_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/dvi/devices/recording/schedules/' . $taskId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetRecordingScheduleResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取录制计划
+     *  *
+     * @param string $taskId
+     *
+     * @return GetRecordingScheduleResponse GetRecordingScheduleResponse
+     */
+    public function getRecordingSchedule($taskId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetRecordingScheduleHeaders([]);
+
+        return $this->getRecordingScheduleWithOptions($taskId, $headers, $runtime);
     }
 
     /**
@@ -674,6 +921,81 @@ class Dingtalk extends OpenApiClient
         $headers = new ListCustomerHeaders([]);
 
         return $this->listCustomerWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 分页查询设备录音时长
+     *  *
+     * @param ListDeviceRecordingDurationRequest $request ListDeviceRecordingDurationRequest
+     * @param ListDeviceRecordingDurationHeaders $headers ListDeviceRecordingDurationHeaders
+     * @param RuntimeOptions                     $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ListDeviceRecordingDurationResponse ListDeviceRecordingDurationResponse
+     */
+    public function listDeviceRecordingDurationWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->endTime)) {
+            $query['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->sn)) {
+            $query['sn'] = $request->sn;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            $query['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->teamCode)) {
+            $query['teamCode'] = $request->teamCode;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'ListDeviceRecordingDuration',
+            'version' => 'dvi_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/dvi/devices/recording-durations',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return ListDeviceRecordingDurationResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 分页查询设备录音时长
+     *  *
+     * @param ListDeviceRecordingDurationRequest $request ListDeviceRecordingDurationRequest
+     *
+     * @return ListDeviceRecordingDurationResponse ListDeviceRecordingDurationResponse
+     */
+    public function listDeviceRecordingDuration($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListDeviceRecordingDurationHeaders([]);
+
+        return $this->listDeviceRecordingDurationWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -1196,6 +1518,135 @@ class Dingtalk extends OpenApiClient
         $headers = new SubmitAsrTaskHeaders([]);
 
         return $this->submitAsrTaskWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更新设备绑定关系
+     *  *
+     * @param UpdateDeviceBindingRequest $request UpdateDeviceBindingRequest
+     * @param UpdateDeviceBindingHeaders $headers UpdateDeviceBindingHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateDeviceBindingResponse UpdateDeviceBindingResponse
+     */
+    public function updateDeviceBindingWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->action)) {
+            $body['action'] = $request->action;
+        }
+        if (!Utils::isUnset($request->sn)) {
+            $body['sn'] = $request->sn;
+        }
+        if (!Utils::isUnset($request->teamCode)) {
+            $body['teamCode'] = $request->teamCode;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'UpdateDeviceBinding',
+            'version' => 'dvi_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/dvi/devices/binding/update',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UpdateDeviceBindingResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新设备绑定关系
+     *  *
+     * @param UpdateDeviceBindingRequest $request UpdateDeviceBindingRequest
+     *
+     * @return UpdateDeviceBindingResponse UpdateDeviceBindingResponse
+     */
+    public function updateDeviceBinding($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateDeviceBindingHeaders([]);
+
+        return $this->updateDeviceBindingWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更新录制计划
+     *  *
+     * @param UpdateRecordingScheduleRequest $request UpdateRecordingScheduleRequest
+     * @param UpdateRecordingScheduleHeaders $headers UpdateRecordingScheduleHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateRecordingScheduleResponse UpdateRecordingScheduleResponse
+     */
+    public function updateRecordingScheduleWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->endTime)) {
+            $body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            $body['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->taskId)) {
+            $body['taskId'] = $request->taskId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'UpdateRecordingSchedule',
+            'version' => 'dvi_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/dvi/devices/recording/schedules',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UpdateRecordingScheduleResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新录制计划
+     *  *
+     * @param UpdateRecordingScheduleRequest $request UpdateRecordingScheduleRequest
+     *
+     * @return UpdateRecordingScheduleResponse UpdateRecordingScheduleResponse
+     */
+    public function updateRecordingSchedule($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateRecordingScheduleHeaders([]);
+
+        return $this->updateRecordingScheduleWithOptions($request, $headers, $runtime);
     }
 
     /**

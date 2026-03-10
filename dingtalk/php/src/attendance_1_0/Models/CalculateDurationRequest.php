@@ -44,6 +44,13 @@ class CalculateDurationRequest extends Model
     public $leaveCode;
 
     /**
+     * @example America/Los_Angeles
+     *
+     * @var string
+     */
+    public $timeZoneId;
+
+    /**
      * @example 2019-08-15
      *
      * @var string
@@ -62,6 +69,7 @@ class CalculateDurationRequest extends Model
         'durationUnit' => 'durationUnit',
         'fromTime' => 'fromTime',
         'leaveCode' => 'leaveCode',
+        'timeZoneId' => 'timeZoneId',
         'toTime' => 'toTime',
         'userId' => 'userId',
     ];
@@ -85,6 +93,9 @@ class CalculateDurationRequest extends Model
         }
         if (null !== $this->leaveCode) {
             $res['leaveCode'] = $this->leaveCode;
+        }
+        if (null !== $this->timeZoneId) {
+            $res['timeZoneId'] = $this->timeZoneId;
         }
         if (null !== $this->toTime) {
             $res['toTime'] = $this->toTime;
@@ -118,6 +129,9 @@ class CalculateDurationRequest extends Model
         }
         if (isset($map['leaveCode'])) {
             $model->leaveCode = $map['leaveCode'];
+        }
+        if (isset($map['timeZoneId'])) {
+            $model->timeZoneId = $map['timeZoneId'];
         }
         if (isset($map['toTime'])) {
             $model->toTime = $map['toTime'];

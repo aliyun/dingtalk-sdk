@@ -42,7 +42,8 @@ use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetAppResourceUseInfoRespons
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetAppRoleScopeByRoleIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetAppRoleScopeByRoleIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetInnerAppHeaders;
-use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetInnerAppRequest;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetInnerAppInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetInnerAppInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetInnerAppResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetMicroAppScopeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetMicroAppScopeResponse;
@@ -1091,25 +1092,16 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 获取企业内部H5应用
+     * @summary 获取企业内部应用
      *  *
      * @param string             $agentId
-     * @param GetInnerAppRequest $request GetInnerAppRequest
      * @param GetInnerAppHeaders $headers GetInnerAppHeaders
      * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
      *
      * @return GetInnerAppResponse GetInnerAppResponse
      */
-    public function getInnerAppWithOptions($agentId, $request, $headers, $runtime)
+    public function getInnerAppWithOptions($agentId, $headers, $runtime)
     {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->ecologicalCorpId)) {
-            $query['ecologicalCorpId'] = $request->ecologicalCorpId;
-        }
-        if (!Utils::isUnset($request->opUnionId)) {
-            $query['opUnionId'] = $request->opUnionId;
-        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -1119,13 +1111,12 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
             'action' => 'GetInnerApp',
             'version' => 'microApp_1.0',
             'protocol' => 'HTTP',
-            'pathname' => '/v1.0/microApp/apps/' . $agentId . '',
+            'pathname' => '/v1.0/microApp/apps/inner/' . $agentId . '',
             'method' => 'GET',
             'authType' => 'AK',
             'style' => 'ROA',
@@ -1137,19 +1128,69 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 获取企业内部H5应用
+     * @summary 获取企业内部应用
      *  *
-     * @param string             $agentId
-     * @param GetInnerAppRequest $request GetInnerAppRequest
+     * @param string $agentId
      *
      * @return GetInnerAppResponse GetInnerAppResponse
      */
-    public function getInnerApp($agentId, $request)
+    public function getInnerApp($agentId)
     {
         $runtime = new RuntimeOptions([]);
         $headers = new GetInnerAppHeaders([]);
 
-        return $this->getInnerAppWithOptions($agentId, $request, $headers, $runtime);
+        return $this->getInnerAppWithOptions($agentId, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取企业内部应用信息
+     *  *
+     * @param string                 $agentId
+     * @param GetInnerAppInfoHeaders $headers GetInnerAppInfoHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetInnerAppInfoResponse GetInnerAppInfoResponse
+     */
+    public function getInnerAppInfoWithOptions($agentId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action' => 'GetInnerAppInfo',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/apps/innerapps/' . $agentId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetInnerAppInfoResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取企业内部应用信息
+     *  *
+     * @param string $agentId
+     *
+     * @return GetInnerAppInfoResponse GetInnerAppInfoResponse
+     */
+    public function getInnerAppInfo($agentId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetInnerAppInfoHeaders([]);
+
+        return $this->getInnerAppInfoWithOptions($agentId, $headers, $runtime);
     }
 
     /**

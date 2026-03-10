@@ -31,10 +31,18 @@ class PushBadgeRequest extends Model
      * @var string
      */
     public $pushType;
+
+    /**
+     * @example 1767225600000
+     *
+     * @var int
+     */
+    public $version;
     protected $_name = [
         'agentId' => 'agentId',
         'badgeItems' => 'badgeItems',
         'pushType' => 'pushType',
+        'version' => 'version',
     ];
 
     public function validate() {}
@@ -56,6 +64,9 @@ class PushBadgeRequest extends Model
         }
         if (null !== $this->pushType) {
             $res['pushType'] = $this->pushType;
+        }
+        if (null !== $this->version) {
+            $res['version'] = $this->version;
         }
 
         return $res;
@@ -83,6 +94,9 @@ class PushBadgeRequest extends Model
         }
         if (isset($map['pushType'])) {
             $model->pushType = $map['pushType'];
+        }
+        if (isset($map['version'])) {
+            $model->version = $map['version'];
         }
 
         return $model;

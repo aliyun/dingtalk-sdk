@@ -26,6 +26,9 @@ use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\QueryTripTrainOrderByPageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\QueryTripTrainOrderByPageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\QueryTripTrainOrderByPageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\QueryTripTrainOrderByPageShrinkRequest;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SubmitTripApprovalProcessHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SubmitTripApprovalProcessRequest;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SubmitTripApprovalProcessResponse;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncBusinessSignInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncBusinessSignInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\SyncBusinessSignInfoResponse;
@@ -480,6 +483,72 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryTripTrainOrderByPageHeaders([]);
 
         return $this->queryTripTrainOrderByPageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 提交差旅出差申请单
+     *  *
+     * @param SubmitTripApprovalProcessRequest $request SubmitTripApprovalProcessRequest
+     * @param SubmitTripApprovalProcessHeaders $headers SubmitTripApprovalProcessHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SubmitTripApprovalProcessResponse SubmitTripApprovalProcessResponse
+     */
+    public function submitTripApprovalProcessWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->itineraries)) {
+            $body['itineraries'] = $request->itineraries;
+        }
+        if (!Utils::isUnset($request->processCode)) {
+            $body['processCode'] = $request->processCode;
+        }
+        if (!Utils::isUnset($request->reason)) {
+            $body['reason'] = $request->reason;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'SubmitTripApprovalProcess',
+            'version' => 'trip_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/trip/approvals',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return SubmitTripApprovalProcessResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 提交差旅出差申请单
+     *  *
+     * @param SubmitTripApprovalProcessRequest $request SubmitTripApprovalProcessRequest
+     *
+     * @return SubmitTripApprovalProcessResponse SubmitTripApprovalProcessResponse
+     */
+    public function submitTripApprovalProcess($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SubmitTripApprovalProcessHeaders([]);
+
+        return $this->submitTripApprovalProcessWithOptions($request, $headers, $runtime);
     }
 
     /**

@@ -32,6 +32,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ChangeDingTalkIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ChangeMainAdminHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ChangeMainAdminRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ChangeMainAdminResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ChangeMainOrgHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ChangeMainOrgRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ChangeMainOrgResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CourseFinishCourseHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CourseFinishCourseRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CourseFinishCourseResponse;
@@ -203,6 +206,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SignOutResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SortUserHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SortUserRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SortUserResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SubmitHandoverResourceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SubmitHandoverResourceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SubmitHandoverResourceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TransformToExclusiveAccountHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TransformToExclusiveAccountRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TransformToExclusiveAccountResponse;
@@ -928,6 +934,66 @@ class Dingtalk extends OpenApiClient
         $headers = new ChangeMainAdminHeaders([]);
 
         return $this->changeMainAdminWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 企业账号修改主企业
+     *  *
+     * @param ChangeMainOrgRequest $request ChangeMainOrgRequest
+     * @param ChangeMainOrgHeaders $headers ChangeMainOrgHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ChangeMainOrgResponse ChangeMainOrgResponse
+     */
+    public function changeMainOrgWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->newMainCorpId)) {
+            $body['newMainCorpId'] = $request->newMainCorpId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'ChangeMainOrg',
+            'version' => 'contact_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contact/orgAccounts/mainOrgs/change',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return ChangeMainOrgResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 企业账号修改主企业
+     *  *
+     * @param ChangeMainOrgRequest $request ChangeMainOrgRequest
+     *
+     * @return ChangeMainOrgResponse ChangeMainOrgResponse
+     */
+    public function changeMainOrg($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ChangeMainOrgHeaders([]);
+
+        return $this->changeMainOrgWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -4567,6 +4633,66 @@ class Dingtalk extends OpenApiClient
         $headers = new SortUserHeaders([]);
 
         return $this->sortUserWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 提交资源转交
+     *  *
+     * @param SubmitHandoverResourceRequest $request SubmitHandoverResourceRequest
+     * @param SubmitHandoverResourceHeaders $headers SubmitHandoverResourceHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SubmitHandoverResourceResponse SubmitHandoverResourceResponse
+     */
+    public function submitHandoverResourceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->tasks)) {
+            $body['tasks'] = $request->tasks;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'SubmitHandoverResource',
+            'version' => 'contact_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contact/assets/submitHandoverResource',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return SubmitHandoverResourceResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 提交资源转交
+     *  *
+     * @param SubmitHandoverResourceRequest $request SubmitHandoverResourceRequest
+     *
+     * @return SubmitHandoverResourceResponse SubmitHandoverResourceResponse
+     */
+    public function submitHandoverResource($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SubmitHandoverResourceHeaders([]);
+
+        return $this->submitHandoverResourceWithOptions($request, $headers, $runtime);
     }
 
     /**

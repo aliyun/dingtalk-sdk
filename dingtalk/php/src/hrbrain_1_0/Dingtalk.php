@@ -2816,6 +2816,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->categoryCodes)) {
             $body['categoryCodes'] = $request->categoryCodes;
         }
+        if (!Utils::isUnset($request->labelCode)) {
+            $body['labelCode'] = $request->labelCode;
+        }
         if (!Utils::isUnset($request->maxResults)) {
             $body['maxResults'] = $request->maxResults;
         }

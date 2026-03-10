@@ -9,6 +9,11 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
+     * @var mixed[]
+     */
+    public $attributes;
+
+    /**
      * @var int
      */
     public $createTime;
@@ -38,6 +43,7 @@ class result extends Model
      */
     public $fileSize;
     protected $_name = [
+        'attributes' => 'attributes',
         'createTime' => 'createTime',
         'creatorUserId' => 'creatorUserId',
         'duration' => 'duration',
@@ -51,6 +57,9 @@ class result extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->attributes) {
+            $res['attributes'] = $this->attributes;
+        }
         if (null !== $this->createTime) {
             $res['createTime'] = $this->createTime;
         }
@@ -81,6 +90,9 @@ class result extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['attributes'])) {
+            $model->attributes = $map['attributes'];
+        }
         if (isset($map['createTime'])) {
             $model->createTime = $map['createTime'];
         }

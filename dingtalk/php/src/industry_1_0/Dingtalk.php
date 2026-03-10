@@ -329,6 +329,9 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ExternalQueryExternalBelongMa
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ExternalQueryExternalOrgsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ExternalQueryExternalOrgsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ExternalQueryExternalOrgsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\GetConvertResultHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\GetConvertResultRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\GetConvertResultResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\GetTaskPackageResultHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\GetTaskPackageResultRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\GetTaskPackageResultResponse;
@@ -380,6 +383,9 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryManufactureMesTeamMgm
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryMmanufactureMaterialCostGetHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryMmanufactureMaterialCostGetRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryMmanufactureMaterialCostGetResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\OrderConvertHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\OrderConvertRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\OrderConvertResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\PushDingMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\PushDingMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\PushDingMessageResponse;
@@ -407,6 +413,9 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryBizOptLogResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryChatAIOXMInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryChatAIOXMInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryChatAIOXMInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryConvertRulesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryConvertRulesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryConvertRulesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryDepartmentExtendInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryDepartmentExtendInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryDepartmentExtendInfoResponse;
@@ -431,6 +440,9 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryJobStatusCodeDictionaryH
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryJobStatusCodeDictionaryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryMedicalEventsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryMedicalEventsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryOrderConvertResultHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryOrderConvertResultRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryOrderConvertResultResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryUserCredentialsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryUserCredentialsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryUserCredentialsResponse;
@@ -7435,6 +7447,63 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取转换结果
+     *  *
+     * @param GetConvertResultRequest $request GetConvertResultRequest
+     * @param GetConvertResultHeaders $headers GetConvertResultHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetConvertResultResponse GetConvertResultResponse
+     */
+    public function getConvertResultWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->taskBizId)) {
+            $body['taskBizId'] = $request->taskBizId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'GetConvertResult',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/order/convert/get',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetConvertResultResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取转换结果
+     *  *
+     * @param GetConvertResultRequest $request GetConvertResultRequest
+     *
+     * @return GetConvertResultResponse GetConvertResultResponse
+     */
+    public function getConvertResult($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetConvertResultHeaders([]);
+
+        return $this->getConvertResultWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary getTaskPackageResult
      *  *
      * @param GetTaskPackageResultRequest $request GetTaskPackageResultRequest
@@ -9094,6 +9163,69 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询订单转换结果
+     *  *
+     * @param OrderConvertRequest $request OrderConvertRequest
+     * @param OrderConvertHeaders $headers OrderConvertHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
+     *
+     * @return OrderConvertResponse OrderConvertResponse
+     */
+    public function orderConvertWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->attachments)) {
+            $body['attachments'] = $request->attachments;
+        }
+        if (!Utils::isUnset($request->operateUserId)) {
+            $body['operateUserId'] = $request->operateUserId;
+        }
+        if (!Utils::isUnset($request->ruleBizId)) {
+            $body['ruleBizId'] = $request->ruleBizId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'OrderConvert',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/order/convert/execute',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return OrderConvertResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询订单转换结果
+     *  *
+     * @param OrderConvertRequest $request OrderConvertRequest
+     *
+     * @return OrderConvertResponse OrderConvertResponse
+     */
+    public function orderConvert($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new OrderConvertHeaders([]);
+
+        return $this->orderConvertWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 提供text和card两种形式工作通知消息
      *  *
      * @param PushDingMessageRequest $request PushDingMessageRequest
@@ -9667,6 +9799,69 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询订单转换规则
+     *  *
+     * @param QueryConvertRulesRequest $request QueryConvertRulesRequest
+     * @param QueryConvertRulesHeaders $headers QueryConvertRulesHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryConvertRulesResponse QueryConvertRulesResponse
+     */
+    public function queryConvertRulesWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->keyword)) {
+            $body['keyword'] = $request->keyword;
+        }
+        if (!Utils::isUnset($request->pageNo)) {
+            $body['pageNo'] = $request->pageNo;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $body['pageSize'] = $request->pageSize;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'QueryConvertRules',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/order/rule/page',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryConvertRulesResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询订单转换规则
+     *  *
+     * @param QueryConvertRulesRequest $request QueryConvertRulesRequest
+     *
+     * @return QueryConvertRulesResponse QueryConvertRulesResponse
+     */
+    public function queryConvertRules($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryConvertRulesHeaders([]);
+
+        return $this->queryConvertRulesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 查询科室和医疗组的扩展信息
      *  *
      * @param QueryDepartmentExtendInfoRequest $request QueryDepartmentExtendInfoRequest
@@ -10197,6 +10392,84 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryMedicalEventsHeaders([]);
 
         return $this->queryMedicalEventsWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @summary 查询订单转换结果
+     *  *
+     * @param QueryOrderConvertResultRequest $request QueryOrderConvertResultRequest
+     * @param QueryOrderConvertResultHeaders $headers QueryOrderConvertResultHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryOrderConvertResultResponse QueryOrderConvertResultResponse
+     */
+    public function queryOrderConvertResultWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->contentSearch)) {
+            $body['contentSearch'] = $request->contentSearch;
+        }
+        if (!Utils::isUnset($request->createTimeEnd)) {
+            $body['createTimeEnd'] = $request->createTimeEnd;
+        }
+        if (!Utils::isUnset($request->createTimeStart)) {
+            $body['createTimeStart'] = $request->createTimeStart;
+        }
+        if (!Utils::isUnset($request->pageNo)) {
+            $body['pageNo'] = $request->pageNo;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->status)) {
+            $body['status'] = $request->status;
+        }
+        if (!Utils::isUnset($request->title)) {
+            $body['title'] = $request->title;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'QueryOrderConvertResult',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/order/convert/list',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryOrderConvertResultResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询订单转换结果
+     *  *
+     * @param QueryOrderConvertResultRequest $request QueryOrderConvertResultRequest
+     *
+     * @return QueryOrderConvertResultResponse QueryOrderConvertResultResponse
+     */
+    public function queryOrderConvertResult($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryOrderConvertResultHeaders([]);
+
+        return $this->queryOrderConvertResultWithOptions($request, $headers, $runtime);
     }
 
     /**
