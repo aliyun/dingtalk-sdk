@@ -2344,6 +2344,274 @@ class Client(OpenApiClient):
         headers = dingtalkrobot__1__0_models.RobotRecallDingHeaders()
         return await self.robot_recall_ding_with_options_async(request, headers, runtime)
 
+    def robot_recall_emotion_with_options(
+        self,
+        request: dingtalkrobot__1__0_models.RobotRecallEmotionRequest,
+        headers: dingtalkrobot__1__0_models.RobotRecallEmotionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.RobotRecallEmotionResponse:
+        """
+        @summary 机器人撤回贴表情
+        
+        @param request: RobotRecallEmotionRequest
+        @param headers: RobotRecallEmotionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RobotRecallEmotionResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.emotion_name):
+            body['emotionName'] = request.emotion_name
+        if not UtilClient.is_unset(request.emotion_type):
+            body['emotionType'] = request.emotion_type
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_msg_id):
+            body['openMsgId'] = request.open_msg_id
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        if not UtilClient.is_unset(request.text_emotion):
+            body['textEmotion'] = request.text_emotion
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='RobotRecallEmotion',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/emotion/recall',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.RobotRecallEmotionResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def robot_recall_emotion_with_options_async(
+        self,
+        request: dingtalkrobot__1__0_models.RobotRecallEmotionRequest,
+        headers: dingtalkrobot__1__0_models.RobotRecallEmotionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.RobotRecallEmotionResponse:
+        """
+        @summary 机器人撤回贴表情
+        
+        @param request: RobotRecallEmotionRequest
+        @param headers: RobotRecallEmotionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RobotRecallEmotionResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.emotion_name):
+            body['emotionName'] = request.emotion_name
+        if not UtilClient.is_unset(request.emotion_type):
+            body['emotionType'] = request.emotion_type
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_msg_id):
+            body['openMsgId'] = request.open_msg_id
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        if not UtilClient.is_unset(request.text_emotion):
+            body['textEmotion'] = request.text_emotion
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='RobotRecallEmotion',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/emotion/recall',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.RobotRecallEmotionResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def robot_recall_emotion(
+        self,
+        request: dingtalkrobot__1__0_models.RobotRecallEmotionRequest,
+    ) -> dingtalkrobot__1__0_models.RobotRecallEmotionResponse:
+        """
+        @summary 机器人撤回贴表情
+        
+        @param request: RobotRecallEmotionRequest
+        @return: RobotRecallEmotionResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.RobotRecallEmotionHeaders()
+        return self.robot_recall_emotion_with_options(request, headers, runtime)
+
+    async def robot_recall_emotion_async(
+        self,
+        request: dingtalkrobot__1__0_models.RobotRecallEmotionRequest,
+    ) -> dingtalkrobot__1__0_models.RobotRecallEmotionResponse:
+        """
+        @summary 机器人撤回贴表情
+        
+        @param request: RobotRecallEmotionRequest
+        @return: RobotRecallEmotionResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.RobotRecallEmotionHeaders()
+        return await self.robot_recall_emotion_with_options_async(request, headers, runtime)
+
+    def robot_reply_emotion_with_options(
+        self,
+        request: dingtalkrobot__1__0_models.RobotReplyEmotionRequest,
+        headers: dingtalkrobot__1__0_models.RobotReplyEmotionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.RobotReplyEmotionResponse:
+        """
+        @summary 机器人贴表情
+        
+        @param request: RobotReplyEmotionRequest
+        @param headers: RobotReplyEmotionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RobotReplyEmotionResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.emotion_name):
+            body['emotionName'] = request.emotion_name
+        if not UtilClient.is_unset(request.emotion_type):
+            body['emotionType'] = request.emotion_type
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_msg_id):
+            body['openMsgId'] = request.open_msg_id
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        if not UtilClient.is_unset(request.text_emotion):
+            body['textEmotion'] = request.text_emotion
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='RobotReplyEmotion',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/emotion/reply',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.RobotReplyEmotionResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def robot_reply_emotion_with_options_async(
+        self,
+        request: dingtalkrobot__1__0_models.RobotReplyEmotionRequest,
+        headers: dingtalkrobot__1__0_models.RobotReplyEmotionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.RobotReplyEmotionResponse:
+        """
+        @summary 机器人贴表情
+        
+        @param request: RobotReplyEmotionRequest
+        @param headers: RobotReplyEmotionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RobotReplyEmotionResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.emotion_name):
+            body['emotionName'] = request.emotion_name
+        if not UtilClient.is_unset(request.emotion_type):
+            body['emotionType'] = request.emotion_type
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_msg_id):
+            body['openMsgId'] = request.open_msg_id
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        if not UtilClient.is_unset(request.text_emotion):
+            body['textEmotion'] = request.text_emotion
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='RobotReplyEmotion',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/emotion/reply',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.RobotReplyEmotionResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def robot_reply_emotion(
+        self,
+        request: dingtalkrobot__1__0_models.RobotReplyEmotionRequest,
+    ) -> dingtalkrobot__1__0_models.RobotReplyEmotionResponse:
+        """
+        @summary 机器人贴表情
+        
+        @param request: RobotReplyEmotionRequest
+        @return: RobotReplyEmotionResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.RobotReplyEmotionHeaders()
+        return self.robot_reply_emotion_with_options(request, headers, runtime)
+
+    async def robot_reply_emotion_async(
+        self,
+        request: dingtalkrobot__1__0_models.RobotReplyEmotionRequest,
+    ) -> dingtalkrobot__1__0_models.RobotReplyEmotionResponse:
+        """
+        @summary 机器人贴表情
+        
+        @param request: RobotReplyEmotionRequest
+        @return: RobotReplyEmotionResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.RobotReplyEmotionHeaders()
+        return await self.robot_reply_emotion_with_options_async(request, headers, runtime)
+
     def robot_send_ding_with_options(
         self,
         request: dingtalkrobot__1__0_models.RobotSendDingRequest,

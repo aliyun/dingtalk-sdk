@@ -1959,13 +1959,21 @@ class CreateTrustedDeviceBatchHeaders(TeaModel):
 class CreateTrustedDeviceBatchRequestDetailList(TeaModel):
     def __init__(
         self,
+        did: str = None,
         mac_address: str = None,
+        platform: str = None,
         serial_number: str = None,
+        status: int = None,
         title: str = None,
+        user_id: str = None,
     ):
+        self.did = did
         self.mac_address = mac_address
+        self.platform = platform
         self.serial_number = serial_number
+        self.status = status
         self.title = title
+        self.user_id = user_id
 
     def validate(self):
         pass
@@ -1976,22 +1984,38 @@ class CreateTrustedDeviceBatchRequestDetailList(TeaModel):
             return _map
 
         result = dict()
+        if self.did is not None:
+            result['did'] = self.did
         if self.mac_address is not None:
             result['macAddress'] = self.mac_address
+        if self.platform is not None:
+            result['platform'] = self.platform
         if self.serial_number is not None:
             result['serialNumber'] = self.serial_number
+        if self.status is not None:
+            result['status'] = self.status
         if self.title is not None:
             result['title'] = self.title
+        if self.user_id is not None:
+            result['userId'] = self.user_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('did') is not None:
+            self.did = m.get('did')
         if m.get('macAddress') is not None:
             self.mac_address = m.get('macAddress')
+        if m.get('platform') is not None:
+            self.platform = m.get('platform')
         if m.get('serialNumber') is not None:
             self.serial_number = m.get('serialNumber')
+        if m.get('status') is not None:
+            self.status = m.get('status')
         if m.get('title') is not None:
             self.title = m.get('title')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
         return self
 
 
@@ -2005,9 +2029,7 @@ class CreateTrustedDeviceBatchRequest(TeaModel):
     ):
         self.detail_list = detail_list
         self.mac_address_list = mac_address_list
-        # This parameter is required.
         self.platform = platform
-        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -2635,11 +2657,13 @@ class DeleteTrustedDeviceHeaders(TeaModel):
 class DeleteTrustedDeviceRequest(TeaModel):
     def __init__(
         self,
+        did: str = None,
         id: int = None,
         kick_off: bool = None,
         mac_address: str = None,
         user_id: str = None,
     ):
+        self.did = did
         self.id = id
         # This parameter is required.
         self.kick_off = kick_off
@@ -2656,6 +2680,8 @@ class DeleteTrustedDeviceRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.did is not None:
+            result['did'] = self.did
         if self.id is not None:
             result['id'] = self.id
         if self.kick_off is not None:
@@ -2668,6 +2694,8 @@ class DeleteTrustedDeviceRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('did') is not None:
+            self.did = m.get('did')
         if m.get('id') is not None:
             self.id = m.get('id')
         if m.get('kickOff') is not None:
@@ -3335,6 +3363,316 @@ class ExclusiveCreateDingPortalResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ExclusiveCreateDingPortalResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ExclusivePcAlertHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ExclusivePcAlertRequest(TeaModel):
+    def __init__(
+        self,
+        image_media_id: str = None,
+        open_link: str = None,
+        user_list: List[str] = None,
+    ):
+        # This parameter is required.
+        self.image_media_id = image_media_id
+        self.open_link = open_link
+        # This parameter is required.
+        self.user_list = user_list
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.image_media_id is not None:
+            result['imageMediaId'] = self.image_media_id
+        if self.open_link is not None:
+            result['openLink'] = self.open_link
+        if self.user_list is not None:
+            result['userList'] = self.user_list
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('imageMediaId') is not None:
+            self.image_media_id = m.get('imageMediaId')
+        if m.get('openLink') is not None:
+            self.open_link = m.get('openLink')
+        if m.get('userList') is not None:
+            self.user_list = m.get('userList')
+        return self
+
+
+class ExclusivePcAlertResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class ExclusivePcAlertResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ExclusivePcAlertResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ExclusivePcAlertResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ExclusivePopupHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ExclusivePopupRequest(TeaModel):
+    def __init__(
+        self,
+        end_time: int = None,
+        image_media_id: str = None,
+        open_link: str = None,
+        start_time: int = None,
+        user_list: List[str] = None,
+    ):
+        # This parameter is required.
+        self.end_time = end_time
+        # This parameter is required.
+        self.image_media_id = image_media_id
+        self.open_link = open_link
+        # This parameter is required.
+        self.start_time = start_time
+        # This parameter is required.
+        self.user_list = user_list
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.image_media_id is not None:
+            result['imageMediaId'] = self.image_media_id
+        if self.open_link is not None:
+            result['openLink'] = self.open_link
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.user_list is not None:
+            result['userList'] = self.user_list
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('imageMediaId') is not None:
+            self.image_media_id = m.get('imageMediaId')
+        if m.get('openLink') is not None:
+            self.open_link = m.get('openLink')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('userList') is not None:
+            self.user_list = m.get('userList')
+        return self
+
+
+class ExclusivePopupResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class ExclusivePopupResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ExclusivePopupResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ExclusivePopupResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -12624,6 +12962,7 @@ class GetPublicDevicesRequest(TeaModel):
         page_size: int = None,
         platform: str = None,
         serial_number: str = None,
+        serial_number_list: List[str] = None,
         start_time: int = None,
         title: str = None,
     ):
@@ -12634,6 +12973,7 @@ class GetPublicDevicesRequest(TeaModel):
         self.page_size = page_size
         self.platform = platform
         self.serial_number = serial_number
+        self.serial_number_list = serial_number_list
         self.start_time = start_time
         self.title = title
 
@@ -12660,6 +13000,8 @@ class GetPublicDevicesRequest(TeaModel):
             result['platform'] = self.platform
         if self.serial_number is not None:
             result['serialNumber'] = self.serial_number
+        if self.serial_number_list is not None:
+            result['serialNumberList'] = self.serial_number_list
         if self.start_time is not None:
             result['startTime'] = self.start_time
         if self.title is not None:
@@ -12682,6 +13024,89 @@ class GetPublicDevicesRequest(TeaModel):
             self.platform = m.get('platform')
         if m.get('serialNumber') is not None:
             self.serial_number = m.get('serialNumber')
+        if m.get('serialNumberList') is not None:
+            self.serial_number_list = m.get('serialNumberList')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class GetPublicDevicesShrinkRequest(TeaModel):
+    def __init__(
+        self,
+        device_uuid: str = None,
+        end_time: int = None,
+        mac_address: str = None,
+        page_number: int = None,
+        page_size: int = None,
+        platform: str = None,
+        serial_number: str = None,
+        serial_number_list_shrink: str = None,
+        start_time: int = None,
+        title: str = None,
+    ):
+        self.device_uuid = device_uuid
+        self.end_time = end_time
+        self.mac_address = mac_address
+        self.page_number = page_number
+        self.page_size = page_size
+        self.platform = platform
+        self.serial_number = serial_number
+        self.serial_number_list_shrink = serial_number_list_shrink
+        self.start_time = start_time
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.device_uuid is not None:
+            result['deviceUuid'] = self.device_uuid
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.mac_address is not None:
+            result['macAddress'] = self.mac_address
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.platform is not None:
+            result['platform'] = self.platform
+        if self.serial_number is not None:
+            result['serialNumber'] = self.serial_number
+        if self.serial_number_list_shrink is not None:
+            result['serialNumberList'] = self.serial_number_list_shrink
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deviceUuid') is not None:
+            self.device_uuid = m.get('deviceUuid')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('macAddress') is not None:
+            self.mac_address = m.get('macAddress')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('platform') is not None:
+            self.platform = m.get('platform')
+        if m.get('serialNumber') is not None:
+            self.serial_number = m.get('serialNumber')
+        if m.get('serialNumberList') is not None:
+            self.serial_number_list_shrink = m.get('serialNumberList')
         if m.get('startTime') is not None:
             self.start_time = m.get('startTime')
         if m.get('title') is not None:
@@ -12796,6 +13221,7 @@ class GetPublicDevicesResponseBodyData(TeaModel):
         device_scope_type: int = None,
         device_staffs: List[GetPublicDevicesResponseBodyDataDeviceStaffs] = None,
         device_uuid: str = None,
+        did: str = None,
         gmt_create: int = None,
         gmt_modified: int = None,
         mac_address: str = None,
@@ -12810,6 +13236,7 @@ class GetPublicDevicesResponseBodyData(TeaModel):
         self.device_scope_type = device_scope_type
         self.device_staffs = device_staffs
         self.device_uuid = device_uuid
+        self.did = did
         self.gmt_create = gmt_create
         self.gmt_modified = gmt_modified
         self.mac_address = mac_address
@@ -12855,6 +13282,8 @@ class GetPublicDevicesResponseBodyData(TeaModel):
                 result['deviceStaffs'].append(k.to_map() if k else None)
         if self.device_uuid is not None:
             result['deviceUuid'] = self.device_uuid
+        if self.did is not None:
+            result['did'] = self.did
         if self.gmt_create is not None:
             result['gmtCreate'] = self.gmt_create
         if self.gmt_modified is not None:
@@ -12894,6 +13323,8 @@ class GetPublicDevicesResponseBodyData(TeaModel):
                 self.device_staffs.append(temp_model.from_map(k))
         if m.get('deviceUuid') is not None:
             self.device_uuid = m.get('deviceUuid')
+        if m.get('did') is not None:
+            self.did = m.get('did')
         if m.get('gmtCreate') is not None:
             self.gmt_create = m.get('gmtCreate')
         if m.get('gmtModified') is not None:
@@ -14444,6 +14875,7 @@ class GetTrustDeviceListRequest(TeaModel):
         page_size: int = None,
         platform: str = None,
         serial_number: str = None,
+        serial_number_list: List[str] = None,
         status: int = None,
         user_ids: List[str] = None,
     ):
@@ -14457,6 +14889,7 @@ class GetTrustDeviceListRequest(TeaModel):
         self.page_size = page_size
         self.platform = platform
         self.serial_number = serial_number
+        self.serial_number_list = serial_number_list
         self.status = status
         self.user_ids = user_ids
 
@@ -14489,6 +14922,8 @@ class GetTrustDeviceListRequest(TeaModel):
             result['platform'] = self.platform
         if self.serial_number is not None:
             result['serialNumber'] = self.serial_number
+        if self.serial_number_list is not None:
+            result['serialNumberList'] = self.serial_number_list
         if self.status is not None:
             result['status'] = self.status
         if self.user_ids is not None:
@@ -14517,6 +14952,8 @@ class GetTrustDeviceListRequest(TeaModel):
             self.platform = m.get('platform')
         if m.get('serialNumber') is not None:
             self.serial_number = m.get('serialNumber')
+        if m.get('serialNumberList') is not None:
+            self.serial_number_list = m.get('serialNumberList')
         if m.get('status') is not None:
             self.status = m.get('status')
         if m.get('userIds') is not None:
@@ -14529,6 +14966,7 @@ class GetTrustDeviceListResponseBodyData(TeaModel):
         self,
         create_time: int = None,
         device_uuid: str = None,
+        did: str = None,
         id: int = None,
         mac_address: str = None,
         model: str = None,
@@ -14541,6 +14979,7 @@ class GetTrustDeviceListResponseBodyData(TeaModel):
     ):
         self.create_time = create_time
         self.device_uuid = device_uuid
+        self.did = did
         self.id = id
         self.mac_address = mac_address
         self.model = model
@@ -14565,6 +15004,8 @@ class GetTrustDeviceListResponseBodyData(TeaModel):
             result['createTime'] = self.create_time
         if self.device_uuid is not None:
             result['deviceUuid'] = self.device_uuid
+        if self.did is not None:
+            result['did'] = self.did
         if self.id is not None:
             result['id'] = self.id
         if self.mac_address is not None:
@@ -14591,6 +15032,8 @@ class GetTrustDeviceListResponseBodyData(TeaModel):
             self.create_time = m.get('createTime')
         if m.get('deviceUuid') is not None:
             self.device_uuid = m.get('deviceUuid')
+        if m.get('did') is not None:
+            self.did = m.get('did')
         if m.get('id') is not None:
             self.id = m.get('id')
         if m.get('macAddress') is not None:
@@ -19597,12 +20040,14 @@ class PushBadgeRequest(TeaModel):
         agent_id: str = None,
         badge_items: List[PushBadgeRequestBadgeItems] = None,
         push_type: str = None,
+        version: int = None,
     ):
         # This parameter is required.
         self.agent_id = agent_id
         self.badge_items = badge_items
         # This parameter is required.
         self.push_type = push_type
+        self.version = version
 
     def validate(self):
         if self.badge_items:
@@ -19624,6 +20069,8 @@ class PushBadgeRequest(TeaModel):
                 result['badgeItems'].append(k.to_map() if k else None)
         if self.push_type is not None:
             result['pushType'] = self.push_type
+        if self.version is not None:
+            result['version'] = self.version
         return result
 
     def from_map(self, m: dict = None):
@@ -19637,6 +20084,8 @@ class PushBadgeRequest(TeaModel):
                 self.badge_items.append(temp_model.from_map(k))
         if m.get('pushType') is not None:
             self.push_type = m.get('pushType')
+        if m.get('version') is not None:
+            self.version = m.get('version')
         return self
 
 

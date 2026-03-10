@@ -3088,6 +3088,422 @@ class RobotRecallDingResponse(TeaModel):
         return self
 
 
+class RobotRecallEmotionHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class RobotRecallEmotionRequestTextEmotion(TeaModel):
+    def __init__(
+        self,
+        background_id: str = None,
+        emotion_id: str = None,
+        emotion_name: str = None,
+        text: str = None,
+    ):
+        self.background_id = background_id
+        self.emotion_id = emotion_id
+        self.emotion_name = emotion_name
+        self.text = text
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.background_id is not None:
+            result['backgroundId'] = self.background_id
+        if self.emotion_id is not None:
+            result['emotionId'] = self.emotion_id
+        if self.emotion_name is not None:
+            result['emotionName'] = self.emotion_name
+        if self.text is not None:
+            result['text'] = self.text
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('backgroundId') is not None:
+            self.background_id = m.get('backgroundId')
+        if m.get('emotionId') is not None:
+            self.emotion_id = m.get('emotionId')
+        if m.get('emotionName') is not None:
+            self.emotion_name = m.get('emotionName')
+        if m.get('text') is not None:
+            self.text = m.get('text')
+        return self
+
+
+class RobotRecallEmotionRequest(TeaModel):
+    def __init__(
+        self,
+        emotion_name: str = None,
+        emotion_type: int = None,
+        open_conversation_id: str = None,
+        open_msg_id: str = None,
+        robot_code: str = None,
+        text_emotion: RobotRecallEmotionRequestTextEmotion = None,
+    ):
+        self.emotion_name = emotion_name
+        self.emotion_type = emotion_type
+        # This parameter is required.
+        self.open_conversation_id = open_conversation_id
+        # This parameter is required.
+        self.open_msg_id = open_msg_id
+        # This parameter is required.
+        self.robot_code = robot_code
+        self.text_emotion = text_emotion
+
+    def validate(self):
+        if self.text_emotion:
+            self.text_emotion.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.emotion_name is not None:
+            result['emotionName'] = self.emotion_name
+        if self.emotion_type is not None:
+            result['emotionType'] = self.emotion_type
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.open_msg_id is not None:
+            result['openMsgId'] = self.open_msg_id
+        if self.robot_code is not None:
+            result['robotCode'] = self.robot_code
+        if self.text_emotion is not None:
+            result['textEmotion'] = self.text_emotion.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('emotionName') is not None:
+            self.emotion_name = m.get('emotionName')
+        if m.get('emotionType') is not None:
+            self.emotion_type = m.get('emotionType')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('openMsgId') is not None:
+            self.open_msg_id = m.get('openMsgId')
+        if m.get('robotCode') is not None:
+            self.robot_code = m.get('robotCode')
+        if m.get('textEmotion') is not None:
+            temp_model = RobotRecallEmotionRequestTextEmotion()
+            self.text_emotion = temp_model.from_map(m['textEmotion'])
+        return self
+
+
+class RobotRecallEmotionResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class RobotRecallEmotionResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: RobotRecallEmotionResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = RobotRecallEmotionResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class RobotReplyEmotionHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class RobotReplyEmotionRequestTextEmotion(TeaModel):
+    def __init__(
+        self,
+        background_id: str = None,
+        emotion_id: str = None,
+        emotion_name: str = None,
+        text: str = None,
+    ):
+        self.background_id = background_id
+        self.emotion_id = emotion_id
+        self.emotion_name = emotion_name
+        self.text = text
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.background_id is not None:
+            result['backgroundId'] = self.background_id
+        if self.emotion_id is not None:
+            result['emotionId'] = self.emotion_id
+        if self.emotion_name is not None:
+            result['emotionName'] = self.emotion_name
+        if self.text is not None:
+            result['text'] = self.text
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('backgroundId') is not None:
+            self.background_id = m.get('backgroundId')
+        if m.get('emotionId') is not None:
+            self.emotion_id = m.get('emotionId')
+        if m.get('emotionName') is not None:
+            self.emotion_name = m.get('emotionName')
+        if m.get('text') is not None:
+            self.text = m.get('text')
+        return self
+
+
+class RobotReplyEmotionRequest(TeaModel):
+    def __init__(
+        self,
+        emotion_name: str = None,
+        emotion_type: int = None,
+        open_conversation_id: str = None,
+        open_msg_id: str = None,
+        robot_code: str = None,
+        text_emotion: RobotReplyEmotionRequestTextEmotion = None,
+    ):
+        self.emotion_name = emotion_name
+        self.emotion_type = emotion_type
+        # This parameter is required.
+        self.open_conversation_id = open_conversation_id
+        # This parameter is required.
+        self.open_msg_id = open_msg_id
+        # This parameter is required.
+        self.robot_code = robot_code
+        self.text_emotion = text_emotion
+
+    def validate(self):
+        if self.text_emotion:
+            self.text_emotion.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.emotion_name is not None:
+            result['emotionName'] = self.emotion_name
+        if self.emotion_type is not None:
+            result['emotionType'] = self.emotion_type
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.open_msg_id is not None:
+            result['openMsgId'] = self.open_msg_id
+        if self.robot_code is not None:
+            result['robotCode'] = self.robot_code
+        if self.text_emotion is not None:
+            result['textEmotion'] = self.text_emotion.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('emotionName') is not None:
+            self.emotion_name = m.get('emotionName')
+        if m.get('emotionType') is not None:
+            self.emotion_type = m.get('emotionType')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('openMsgId') is not None:
+            self.open_msg_id = m.get('openMsgId')
+        if m.get('robotCode') is not None:
+            self.robot_code = m.get('robotCode')
+        if m.get('textEmotion') is not None:
+            temp_model = RobotReplyEmotionRequestTextEmotion()
+            self.text_emotion = temp_model.from_map(m['textEmotion'])
+        return self
+
+
+class RobotReplyEmotionResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class RobotReplyEmotionResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: RobotReplyEmotionResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = RobotReplyEmotionResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class RobotSendDingHeaders(TeaModel):
     def __init__(
         self,

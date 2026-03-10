@@ -1246,6 +1246,124 @@ class Client(OpenApiClient):
         headers = dingtalkcontact__1__0_models.ChangeMainAdminHeaders()
         return await self.change_main_admin_with_options_async(request, headers, runtime)
 
+    def change_main_org_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.ChangeMainOrgRequest,
+        headers: dingtalkcontact__1__0_models.ChangeMainOrgHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.ChangeMainOrgResponse:
+        """
+        @summary 企业账号修改主企业
+        
+        @param request: ChangeMainOrgRequest
+        @param headers: ChangeMainOrgHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ChangeMainOrgResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.new_main_corp_id):
+            body['newMainCorpId'] = request.new_main_corp_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ChangeMainOrg',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/orgAccounts/mainOrgs/change',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.ChangeMainOrgResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def change_main_org_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.ChangeMainOrgRequest,
+        headers: dingtalkcontact__1__0_models.ChangeMainOrgHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.ChangeMainOrgResponse:
+        """
+        @summary 企业账号修改主企业
+        
+        @param request: ChangeMainOrgRequest
+        @param headers: ChangeMainOrgHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ChangeMainOrgResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.new_main_corp_id):
+            body['newMainCorpId'] = request.new_main_corp_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ChangeMainOrg',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/orgAccounts/mainOrgs/change',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.ChangeMainOrgResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def change_main_org(
+        self,
+        request: dingtalkcontact__1__0_models.ChangeMainOrgRequest,
+    ) -> dingtalkcontact__1__0_models.ChangeMainOrgResponse:
+        """
+        @summary 企业账号修改主企业
+        
+        @param request: ChangeMainOrgRequest
+        @return: ChangeMainOrgResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.ChangeMainOrgHeaders()
+        return self.change_main_org_with_options(request, headers, runtime)
+
+    async def change_main_org_async(
+        self,
+        request: dingtalkcontact__1__0_models.ChangeMainOrgRequest,
+    ) -> dingtalkcontact__1__0_models.ChangeMainOrgResponse:
+        """
+        @summary 企业账号修改主企业
+        
+        @param request: ChangeMainOrgRequest
+        @return: ChangeMainOrgResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.ChangeMainOrgHeaders()
+        return await self.change_main_org_with_options_async(request, headers, runtime)
+
     def course_finish_course_with_options(
         self,
         request: dingtalkcontact__1__0_models.CourseFinishCourseRequest,
@@ -8355,6 +8473,124 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcontact__1__0_models.SortUserHeaders()
         return await self.sort_user_with_options_async(request, headers, runtime)
+
+    def submit_handover_resource_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.SubmitHandoverResourceRequest,
+        headers: dingtalkcontact__1__0_models.SubmitHandoverResourceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.SubmitHandoverResourceResponse:
+        """
+        @summary 提交资源转交
+        
+        @param request: SubmitHandoverResourceRequest
+        @param headers: SubmitHandoverResourceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SubmitHandoverResourceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.tasks):
+            body['tasks'] = request.tasks
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SubmitHandoverResource',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/assets/submitHandoverResource',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.SubmitHandoverResourceResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def submit_handover_resource_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.SubmitHandoverResourceRequest,
+        headers: dingtalkcontact__1__0_models.SubmitHandoverResourceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.SubmitHandoverResourceResponse:
+        """
+        @summary 提交资源转交
+        
+        @param request: SubmitHandoverResourceRequest
+        @param headers: SubmitHandoverResourceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SubmitHandoverResourceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.tasks):
+            body['tasks'] = request.tasks
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SubmitHandoverResource',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/assets/submitHandoverResource',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.SubmitHandoverResourceResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def submit_handover_resource(
+        self,
+        request: dingtalkcontact__1__0_models.SubmitHandoverResourceRequest,
+    ) -> dingtalkcontact__1__0_models.SubmitHandoverResourceResponse:
+        """
+        @summary 提交资源转交
+        
+        @param request: SubmitHandoverResourceRequest
+        @return: SubmitHandoverResourceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.SubmitHandoverResourceHeaders()
+        return self.submit_handover_resource_with_options(request, headers, runtime)
+
+    async def submit_handover_resource_async(
+        self,
+        request: dingtalkcontact__1__0_models.SubmitHandoverResourceRequest,
+    ) -> dingtalkcontact__1__0_models.SubmitHandoverResourceResponse:
+        """
+        @summary 提交资源转交
+        
+        @param request: SubmitHandoverResourceRequest
+        @return: SubmitHandoverResourceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.SubmitHandoverResourceHeaders()
+        return await self.submit_handover_resource_with_options_async(request, headers, runtime)
 
     def transform_to_exclusive_account_with_options(
         self,

@@ -9700,10 +9700,12 @@ class HrbrainLabelMetaRequest(TeaModel):
     def __init__(
         self,
         category_codes: List[str] = None,
+        label_code: str = None,
         max_results: int = None,
         next_token: str = None,
     ):
         self.category_codes = category_codes
+        self.label_code = label_code
         self.max_results = max_results
         self.next_token = next_token
 
@@ -9718,6 +9720,8 @@ class HrbrainLabelMetaRequest(TeaModel):
         result = dict()
         if self.category_codes is not None:
             result['categoryCodes'] = self.category_codes
+        if self.label_code is not None:
+            result['labelCode'] = self.label_code
         if self.max_results is not None:
             result['maxResults'] = self.max_results
         if self.next_token is not None:
@@ -9728,6 +9732,8 @@ class HrbrainLabelMetaRequest(TeaModel):
         m = m or dict()
         if m.get('categoryCodes') is not None:
             self.category_codes = m.get('categoryCodes')
+        if m.get('labelCode') is not None:
+            self.label_code = m.get('labelCode')
         if m.get('maxResults') is not None:
             self.max_results = m.get('maxResults')
         if m.get('nextToken') is not None:

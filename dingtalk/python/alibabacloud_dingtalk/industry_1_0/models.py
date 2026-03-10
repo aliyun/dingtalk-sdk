@@ -19844,6 +19844,271 @@ class ExternalQueryExternalOrgsResponse(TeaModel):
         return self
 
 
+class GetConvertResultHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetConvertResultRequest(TeaModel):
+    def __init__(
+        self,
+        task_biz_id: str = None,
+    ):
+        # This parameter is required.
+        self.task_biz_id = task_biz_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.task_biz_id is not None:
+            result['taskBizId'] = self.task_biz_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('taskBizId') is not None:
+            self.task_biz_id = m.get('taskBizId')
+        return self
+
+
+class GetConvertResultResponseBodyResultOutputInfo(TeaModel):
+    def __init__(
+        self,
+        content: str = None,
+        file_name: str = None,
+        file_size: float = None,
+        file_type: str = None,
+        file_url: str = None,
+    ):
+        self.content = content
+        self.file_name = file_name
+        self.file_size = file_size
+        self.file_type = file_type
+        self.file_url = file_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.file_size is not None:
+            result['fileSize'] = self.file_size
+        if self.file_type is not None:
+            result['fileType'] = self.file_type
+        if self.file_url is not None:
+            result['fileUrl'] = self.file_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('fileSize') is not None:
+            self.file_size = m.get('fileSize')
+        if m.get('fileType') is not None:
+            self.file_type = m.get('fileType')
+        if m.get('fileUrl') is not None:
+            self.file_url = m.get('fileUrl')
+        return self
+
+
+class GetConvertResultResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        create_time: float = None,
+        creator_name: str = None,
+        output_info: GetConvertResultResponseBodyResultOutputInfo = None,
+        status: str = None,
+        task_biz_id: str = None,
+        title: str = None,
+    ):
+        self.corp_id = corp_id
+        self.create_time = create_time
+        self.creator_name = creator_name
+        self.output_info = output_info
+        self.status = status
+        self.task_biz_id = task_biz_id
+        self.title = title
+
+    def validate(self):
+        if self.output_info:
+            self.output_info.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.creator_name is not None:
+            result['creatorName'] = self.creator_name
+        if self.output_info is not None:
+            result['outputInfo'] = self.output_info.to_map()
+        if self.status is not None:
+            result['status'] = self.status
+        if self.task_biz_id is not None:
+            result['taskBizId'] = self.task_biz_id
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('creatorName') is not None:
+            self.creator_name = m.get('creatorName')
+        if m.get('outputInfo') is not None:
+            temp_model = GetConvertResultResponseBodyResultOutputInfo()
+            self.output_info = temp_model.from_map(m['outputInfo'])
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('taskBizId') is not None:
+            self.task_biz_id = m.get('taskBizId')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class GetConvertResultResponseBody(TeaModel):
+    def __init__(
+        self,
+        ding_open_errcode: int = None,
+        error_msg: str = None,
+        result: GetConvertResultResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.ding_open_errcode = ding_open_errcode
+        self.error_msg = error_msg
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_open_errcode is not None:
+            result['dingOpenErrcode'] = self.ding_open_errcode
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingOpenErrcode') is not None:
+            self.ding_open_errcode = m.get('dingOpenErrcode')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('result') is not None:
+            temp_model = GetConvertResultResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class GetConvertResultResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetConvertResultResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetConvertResultResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetTaskPackageResultHeaders(TeaModel):
     def __init__(
         self,
@@ -25423,6 +25688,209 @@ class IndustryMmanufactureMaterialCostGetResponse(TeaModel):
         return self
 
 
+class OrderConvertHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class OrderConvertRequestAttachments(TeaModel):
+    def __init__(
+        self,
+        file_name: str = None,
+        file_url: str = None,
+    ):
+        # This parameter is required.
+        self.file_name = file_name
+        # This parameter is required.
+        self.file_url = file_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.file_url is not None:
+            result['fileUrl'] = self.file_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('fileUrl') is not None:
+            self.file_url = m.get('fileUrl')
+        return self
+
+
+class OrderConvertRequest(TeaModel):
+    def __init__(
+        self,
+        attachments: List[OrderConvertRequestAttachments] = None,
+        operate_user_id: str = None,
+        rule_biz_id: str = None,
+    ):
+        self.attachments = attachments
+        # This parameter is required.
+        self.operate_user_id = operate_user_id
+        # This parameter is required.
+        self.rule_biz_id = rule_biz_id
+
+    def validate(self):
+        if self.attachments:
+            for k in self.attachments:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['attachments'] = []
+        if self.attachments is not None:
+            for k in self.attachments:
+                result['attachments'].append(k.to_map() if k else None)
+        if self.operate_user_id is not None:
+            result['operateUserId'] = self.operate_user_id
+        if self.rule_biz_id is not None:
+            result['ruleBizId'] = self.rule_biz_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.attachments = []
+        if m.get('attachments') is not None:
+            for k in m.get('attachments'):
+                temp_model = OrderConvertRequestAttachments()
+                self.attachments.append(temp_model.from_map(k))
+        if m.get('operateUserId') is not None:
+            self.operate_user_id = m.get('operateUserId')
+        if m.get('ruleBizId') is not None:
+            self.rule_biz_id = m.get('ruleBizId')
+        return self
+
+
+class OrderConvertResponseBody(TeaModel):
+    def __init__(
+        self,
+        ding_open_errcode: int = None,
+        error_msg: str = None,
+        result: str = None,
+        success: bool = None,
+    ):
+        self.ding_open_errcode = ding_open_errcode
+        self.error_msg = error_msg
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_open_errcode is not None:
+            result['dingOpenErrcode'] = self.ding_open_errcode
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingOpenErrcode') is not None:
+            self.ding_open_errcode = m.get('dingOpenErrcode')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class OrderConvertResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: OrderConvertResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = OrderConvertResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class PushDingMessageHeaders(TeaModel):
     def __init__(
         self,
@@ -27797,6 +28265,415 @@ class QueryChatAIOXMInfoResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryChatAIOXMInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryConvertRulesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryConvertRulesRequest(TeaModel):
+    def __init__(
+        self,
+        keyword: str = None,
+        page_no: int = None,
+        page_size: int = None,
+    ):
+        self.keyword = keyword
+        # This parameter is required.
+        self.page_no = page_no
+        # This parameter is required.
+        self.page_size = page_size
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.keyword is not None:
+            result['keyword'] = self.keyword
+        if self.page_no is not None:
+            result['pageNo'] = self.page_no
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('keyword') is not None:
+            self.keyword = m.get('keyword')
+        if m.get('pageNo') is not None:
+            self.page_no = m.get('pageNo')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        return self
+
+
+class QueryConvertRulesResponseBodyResultItemsSourceFiles(TeaModel):
+    def __init__(
+        self,
+        file_name: str = None,
+        file_size: float = None,
+        file_tag: str = None,
+        media_id: str = None,
+        preview_url: str = None,
+    ):
+        self.file_name = file_name
+        self.file_size = file_size
+        self.file_tag = file_tag
+        self.media_id = media_id
+        self.preview_url = preview_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.file_size is not None:
+            result['fileSize'] = self.file_size
+        if self.file_tag is not None:
+            result['fileTag'] = self.file_tag
+        if self.media_id is not None:
+            result['mediaId'] = self.media_id
+        if self.preview_url is not None:
+            result['previewUrl'] = self.preview_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('fileSize') is not None:
+            self.file_size = m.get('fileSize')
+        if m.get('fileTag') is not None:
+            self.file_tag = m.get('fileTag')
+        if m.get('mediaId') is not None:
+            self.media_id = m.get('mediaId')
+        if m.get('previewUrl') is not None:
+            self.preview_url = m.get('previewUrl')
+        return self
+
+
+class QueryConvertRulesResponseBodyResultItemsTargetFiles(TeaModel):
+    def __init__(
+        self,
+        file_name: str = None,
+        file_size: float = None,
+        file_tag: str = None,
+        media_id: str = None,
+        preview_url: str = None,
+    ):
+        self.file_name = file_name
+        self.file_size = file_size
+        self.file_tag = file_tag
+        self.media_id = media_id
+        self.preview_url = preview_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.file_size is not None:
+            result['fileSize'] = self.file_size
+        if self.file_tag is not None:
+            result['fileTag'] = self.file_tag
+        if self.media_id is not None:
+            result['mediaId'] = self.media_id
+        if self.preview_url is not None:
+            result['previewUrl'] = self.preview_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('fileSize') is not None:
+            self.file_size = m.get('fileSize')
+        if m.get('fileTag') is not None:
+            self.file_tag = m.get('fileTag')
+        if m.get('mediaId') is not None:
+            self.media_id = m.get('mediaId')
+        if m.get('previewUrl') is not None:
+            self.preview_url = m.get('previewUrl')
+        return self
+
+
+class QueryConvertRulesResponseBodyResultItems(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        description: str = None,
+        gmt_create: float = None,
+        gmt_modified: float = None,
+        name: str = None,
+        rule_biz_id: str = None,
+        source_files: List[QueryConvertRulesResponseBodyResultItemsSourceFiles] = None,
+        target_files: List[QueryConvertRulesResponseBodyResultItemsTargetFiles] = None,
+    ):
+        self.corp_id = corp_id
+        self.description = description
+        self.gmt_create = gmt_create
+        self.gmt_modified = gmt_modified
+        self.name = name
+        self.rule_biz_id = rule_biz_id
+        self.source_files = source_files
+        self.target_files = target_files
+
+    def validate(self):
+        if self.source_files:
+            for k in self.source_files:
+                if k:
+                    k.validate()
+        if self.target_files:
+            for k in self.target_files:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.description is not None:
+            result['description'] = self.description
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.gmt_modified is not None:
+            result['gmtModified'] = self.gmt_modified
+        if self.name is not None:
+            result['name'] = self.name
+        if self.rule_biz_id is not None:
+            result['ruleBizId'] = self.rule_biz_id
+        result['sourceFiles'] = []
+        if self.source_files is not None:
+            for k in self.source_files:
+                result['sourceFiles'].append(k.to_map() if k else None)
+        result['targetFiles'] = []
+        if self.target_files is not None:
+            for k in self.target_files:
+                result['targetFiles'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('gmtModified') is not None:
+            self.gmt_modified = m.get('gmtModified')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('ruleBizId') is not None:
+            self.rule_biz_id = m.get('ruleBizId')
+        self.source_files = []
+        if m.get('sourceFiles') is not None:
+            for k in m.get('sourceFiles'):
+                temp_model = QueryConvertRulesResponseBodyResultItemsSourceFiles()
+                self.source_files.append(temp_model.from_map(k))
+        self.target_files = []
+        if m.get('targetFiles') is not None:
+            for k in m.get('targetFiles'):
+                temp_model = QueryConvertRulesResponseBodyResultItemsTargetFiles()
+                self.target_files.append(temp_model.from_map(k))
+        return self
+
+
+class QueryConvertRulesResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        items: List[QueryConvertRulesResponseBodyResultItems] = None,
+        page_no: float = None,
+        page_size: float = None,
+        total_count: float = None,
+        total_pages: float = None,
+    ):
+        self.items = items
+        self.page_no = page_no
+        self.page_size = page_size
+        self.total_count = total_count
+        self.total_pages = total_pages
+
+    def validate(self):
+        if self.items:
+            for k in self.items:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['items'] = []
+        if self.items is not None:
+            for k in self.items:
+                result['items'].append(k.to_map() if k else None)
+        if self.page_no is not None:
+            result['pageNo'] = self.page_no
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        if self.total_pages is not None:
+            result['totalPages'] = self.total_pages
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.items = []
+        if m.get('items') is not None:
+            for k in m.get('items'):
+                temp_model = QueryConvertRulesResponseBodyResultItems()
+                self.items.append(temp_model.from_map(k))
+        if m.get('pageNo') is not None:
+            self.page_no = m.get('pageNo')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        if m.get('totalPages') is not None:
+            self.total_pages = m.get('totalPages')
+        return self
+
+
+class QueryConvertRulesResponseBody(TeaModel):
+    def __init__(
+        self,
+        ding_open_errcode: int = None,
+        error_msg: str = None,
+        result: QueryConvertRulesResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.ding_open_errcode = ding_open_errcode
+        self.error_msg = error_msg
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_open_errcode is not None:
+            result['dingOpenErrcode'] = self.ding_open_errcode
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingOpenErrcode') is not None:
+            self.ding_open_errcode = m.get('dingOpenErrcode')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('result') is not None:
+            temp_model = QueryConvertRulesResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class QueryConvertRulesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryConvertRulesResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryConvertRulesResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -30276,6 +31153,373 @@ class QueryMedicalEventsResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryMedicalEventsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryOrderConvertResultHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryOrderConvertResultRequest(TeaModel):
+    def __init__(
+        self,
+        content_search: str = None,
+        create_time_end: int = None,
+        create_time_start: int = None,
+        page_no: int = None,
+        page_size: int = None,
+        status: str = None,
+        title: str = None,
+        user_id: str = None,
+    ):
+        self.content_search = content_search
+        self.create_time_end = create_time_end
+        self.create_time_start = create_time_start
+        # This parameter is required.
+        self.page_no = page_no
+        # This parameter is required.
+        self.page_size = page_size
+        self.status = status
+        self.title = title
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content_search is not None:
+            result['contentSearch'] = self.content_search
+        if self.create_time_end is not None:
+            result['createTimeEnd'] = self.create_time_end
+        if self.create_time_start is not None:
+            result['createTimeStart'] = self.create_time_start
+        if self.page_no is not None:
+            result['pageNo'] = self.page_no
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.status is not None:
+            result['status'] = self.status
+        if self.title is not None:
+            result['title'] = self.title
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('contentSearch') is not None:
+            self.content_search = m.get('contentSearch')
+        if m.get('createTimeEnd') is not None:
+            self.create_time_end = m.get('createTimeEnd')
+        if m.get('createTimeStart') is not None:
+            self.create_time_start = m.get('createTimeStart')
+        if m.get('pageNo') is not None:
+            self.page_no = m.get('pageNo')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class QueryOrderConvertResultResponseBodyResultItemsOutputInfo(TeaModel):
+    def __init__(
+        self,
+        content: str = None,
+        file_name: str = None,
+        file_size: str = None,
+        file_type: str = None,
+        file_url: str = None,
+    ):
+        self.content = content
+        self.file_name = file_name
+        self.file_size = file_size
+        self.file_type = file_type
+        self.file_url = file_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.file_size is not None:
+            result['fileSize'] = self.file_size
+        if self.file_type is not None:
+            result['fileType'] = self.file_type
+        if self.file_url is not None:
+            result['fileUrl'] = self.file_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('fileSize') is not None:
+            self.file_size = m.get('fileSize')
+        if m.get('fileType') is not None:
+            self.file_type = m.get('fileType')
+        if m.get('fileUrl') is not None:
+            self.file_url = m.get('fileUrl')
+        return self
+
+
+class QueryOrderConvertResultResponseBodyResultItems(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        create_time: int = None,
+        creator_name: str = None,
+        output_info: QueryOrderConvertResultResponseBodyResultItemsOutputInfo = None,
+        status: str = None,
+        task_biz_id: str = None,
+        title: str = None,
+    ):
+        self.corp_id = corp_id
+        self.create_time = create_time
+        self.creator_name = creator_name
+        self.output_info = output_info
+        self.status = status
+        self.task_biz_id = task_biz_id
+        self.title = title
+
+    def validate(self):
+        if self.output_info:
+            self.output_info.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.creator_name is not None:
+            result['creatorName'] = self.creator_name
+        if self.output_info is not None:
+            result['outputInfo'] = self.output_info.to_map()
+        if self.status is not None:
+            result['status'] = self.status
+        if self.task_biz_id is not None:
+            result['taskBizId'] = self.task_biz_id
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('creatorName') is not None:
+            self.creator_name = m.get('creatorName')
+        if m.get('outputInfo') is not None:
+            temp_model = QueryOrderConvertResultResponseBodyResultItemsOutputInfo()
+            self.output_info = temp_model.from_map(m['outputInfo'])
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('taskBizId') is not None:
+            self.task_biz_id = m.get('taskBizId')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class QueryOrderConvertResultResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        items: List[QueryOrderConvertResultResponseBodyResultItems] = None,
+        page_no: float = None,
+        page_size: float = None,
+        total_count: float = None,
+        total_pages: float = None,
+    ):
+        self.items = items
+        self.page_no = page_no
+        self.page_size = page_size
+        self.total_count = total_count
+        self.total_pages = total_pages
+
+    def validate(self):
+        if self.items:
+            for k in self.items:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['items'] = []
+        if self.items is not None:
+            for k in self.items:
+                result['items'].append(k.to_map() if k else None)
+        if self.page_no is not None:
+            result['pageNo'] = self.page_no
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        if self.total_pages is not None:
+            result['totalPages'] = self.total_pages
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.items = []
+        if m.get('items') is not None:
+            for k in m.get('items'):
+                temp_model = QueryOrderConvertResultResponseBodyResultItems()
+                self.items.append(temp_model.from_map(k))
+        if m.get('pageNo') is not None:
+            self.page_no = m.get('pageNo')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        if m.get('totalPages') is not None:
+            self.total_pages = m.get('totalPages')
+        return self
+
+
+class QueryOrderConvertResultResponseBody(TeaModel):
+    def __init__(
+        self,
+        ding_open_errcode: int = None,
+        error_msg: str = None,
+        result: QueryOrderConvertResultResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.ding_open_errcode = ding_open_errcode
+        self.error_msg = error_msg
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_open_errcode is not None:
+            result['dingOpenErrcode'] = self.ding_open_errcode
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingOpenErrcode') is not None:
+            self.ding_open_errcode = m.get('dingOpenErrcode')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('result') is not None:
+            temp_model = QueryOrderConvertResultResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class QueryOrderConvertResultResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryOrderConvertResultResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryOrderConvertResultResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

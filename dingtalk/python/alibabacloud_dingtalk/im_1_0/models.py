@@ -1253,11 +1253,13 @@ class BatchQueryGroupMemberResponseBody(TeaModel):
         member_user_ids: List[str] = None,
         next_token: str = None,
         success: bool = None,
+        union_id_list: List[str] = None,
     ):
         self.has_more = has_more
         self.member_user_ids = member_user_ids
         self.next_token = next_token
         self.success = success
+        self.union_id_list = union_id_list
 
     def validate(self):
         pass
@@ -1276,6 +1278,8 @@ class BatchQueryGroupMemberResponseBody(TeaModel):
             result['nextToken'] = self.next_token
         if self.success is not None:
             result['success'] = self.success
+        if self.union_id_list is not None:
+            result['unionIdList'] = self.union_id_list
         return result
 
     def from_map(self, m: dict = None):
@@ -1288,6 +1292,8 @@ class BatchQueryGroupMemberResponseBody(TeaModel):
             self.next_token = m.get('nextToken')
         if m.get('success') is not None:
             self.success = m.get('success')
+        if m.get('unionIdList') is not None:
+            self.union_id_list = m.get('unionIdList')
         return self
 
 
@@ -8039,6 +8045,217 @@ class InstallRobotToOrgResponse(TeaModel):
         return self
 
 
+class IntelligentSendCardHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class IntelligentSendCardRequest(TeaModel):
+    def __init__(
+        self,
+        at_all: bool = None,
+        at_open_group_role_ids: List[str] = None,
+        at_union_ids: List[str] = None,
+        at_user_ids: List[str] = None,
+        exclude_ids: List[str] = None,
+        open_conversation_id: str = None,
+        out_track_id: str = None,
+        receivers: List[str] = None,
+        uuid: str = None,
+    ):
+        self.at_all = at_all
+        self.at_open_group_role_ids = at_open_group_role_ids
+        self.at_union_ids = at_union_ids
+        self.at_user_ids = at_user_ids
+        self.exclude_ids = exclude_ids
+        self.open_conversation_id = open_conversation_id
+        self.out_track_id = out_track_id
+        self.receivers = receivers
+        self.uuid = uuid
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.at_all is not None:
+            result['atAll'] = self.at_all
+        if self.at_open_group_role_ids is not None:
+            result['atOpenGroupRoleIds'] = self.at_open_group_role_ids
+        if self.at_union_ids is not None:
+            result['atUnionIds'] = self.at_union_ids
+        if self.at_user_ids is not None:
+            result['atUserIds'] = self.at_user_ids
+        if self.exclude_ids is not None:
+            result['excludeIds'] = self.exclude_ids
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.out_track_id is not None:
+            result['outTrackId'] = self.out_track_id
+        if self.receivers is not None:
+            result['receivers'] = self.receivers
+        if self.uuid is not None:
+            result['uuid'] = self.uuid
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('atAll') is not None:
+            self.at_all = m.get('atAll')
+        if m.get('atOpenGroupRoleIds') is not None:
+            self.at_open_group_role_ids = m.get('atOpenGroupRoleIds')
+        if m.get('atUnionIds') is not None:
+            self.at_union_ids = m.get('atUnionIds')
+        if m.get('atUserIds') is not None:
+            self.at_user_ids = m.get('atUserIds')
+        if m.get('excludeIds') is not None:
+            self.exclude_ids = m.get('excludeIds')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('outTrackId') is not None:
+            self.out_track_id = m.get('outTrackId')
+        if m.get('receivers') is not None:
+            self.receivers = m.get('receivers')
+        if m.get('uuid') is not None:
+            self.uuid = m.get('uuid')
+        return self
+
+
+class IntelligentSendCardResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        open_task_id: str = None,
+    ):
+        self.open_task_id = open_task_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_task_id is not None:
+            result['openTaskId'] = self.open_task_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openTaskId') is not None:
+            self.open_task_id = m.get('openTaskId')
+        return self
+
+
+class IntelligentSendCardResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: IntelligentSendCardResponseBodyResult = None,
+        success: str = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = IntelligentSendCardResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class IntelligentSendCardResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: IntelligentSendCardResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = IntelligentSendCardResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class InteractiveCardCreateInstanceHeaders(TeaModel):
     def __init__(
         self,
@@ -11211,6 +11428,140 @@ class PersonalSendCardMessageResponse(TeaModel):
         return self
 
 
+class PutMsgCardTopByIntelligentHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class PutMsgCardTopByIntelligentRequest(TeaModel):
+    def __init__(
+        self,
+        open_conversation_id: str = None,
+        open_task_id: str = None,
+    ):
+        self.open_conversation_id = open_conversation_id
+        self.open_task_id = open_task_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.open_task_id is not None:
+            result['openTaskId'] = self.open_task_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('openTaskId') is not None:
+            self.open_task_id = m.get('openTaskId')
+        return self
+
+
+class PutMsgCardTopByIntelligentResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: str = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class PutMsgCardTopByIntelligentResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: PutMsgCardTopByIntelligentResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = PutMsgCardTopByIntelligentResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryGroupInfoByAppCidsHeaders(TeaModel):
     def __init__(
         self,
@@ -13256,6 +13607,217 @@ class QueryMessageSendResultResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryMessageSendResultResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryMsgReadStatusHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryMsgReadStatusRequest(TeaModel):
+    def __init__(
+        self,
+        cursor: int = None,
+        open_conversation_id: str = None,
+        open_task_id: str = None,
+        page_size: int = None,
+    ):
+        self.cursor = cursor
+        self.open_conversation_id = open_conversation_id
+        self.open_task_id = open_task_id
+        self.page_size = page_size
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.cursor is not None:
+            result['cursor'] = self.cursor
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.open_task_id is not None:
+            result['openTaskId'] = self.open_task_id
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cursor') is not None:
+            self.cursor = m.get('cursor')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('openTaskId') is not None:
+            self.open_task_id = m.get('openTaskId')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        return self
+
+
+class QueryMsgReadStatusResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        next_cursor: int = None,
+        open_message_id: str = None,
+        read_union_ids: List[str] = None,
+        read_user_ids: List[str] = None,
+        status: str = None,
+    ):
+        self.has_more = has_more
+        self.next_cursor = next_cursor
+        self.open_message_id = open_message_id
+        self.read_union_ids = read_union_ids
+        self.read_user_ids = read_user_ids
+        self.status = status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        if self.next_cursor is not None:
+            result['nextCursor'] = self.next_cursor
+        if self.open_message_id is not None:
+            result['openMessageId'] = self.open_message_id
+        if self.read_union_ids is not None:
+            result['readUnionIds'] = self.read_union_ids
+        if self.read_user_ids is not None:
+            result['readUserIds'] = self.read_user_ids
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        if m.get('nextCursor') is not None:
+            self.next_cursor = m.get('nextCursor')
+        if m.get('openMessageId') is not None:
+            self.open_message_id = m.get('openMessageId')
+        if m.get('readUnionIds') is not None:
+            self.read_union_ids = m.get('readUnionIds')
+        if m.get('readUserIds') is not None:
+            self.read_user_ids = m.get('readUserIds')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class QueryMsgReadStatusResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: QueryMsgReadStatusResponseBodyResult = None,
+        success: str = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = QueryMsgReadStatusResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class QueryMsgReadStatusResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryMsgReadStatusResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryMsgReadStatusResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -15376,6 +15938,222 @@ class QueryUserGroupAliasTitleResponse(TeaModel):
         return self
 
 
+class QueryUserGroupRolesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryUserGroupRolesRequest(TeaModel):
+    def __init__(
+        self,
+        open_conversation_id: str = None,
+        user_id: str = None,
+        viewed_user_id: str = None,
+    ):
+        self.open_conversation_id = open_conversation_id
+        self.user_id = user_id
+        self.viewed_user_id = viewed_user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.viewed_user_id is not None:
+            result['viewedUserId'] = self.viewed_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('viewedUserId') is not None:
+            self.viewed_user_id = m.get('viewedUserId')
+        return self
+
+
+class QueryUserGroupRolesResponseBodyResultGroupRoles(TeaModel):
+    def __init__(
+        self,
+        open_role_id: str = None,
+        role_name: str = None,
+    ):
+        self.open_role_id = open_role_id
+        self.role_name = role_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_role_id is not None:
+            result['openRoleId'] = self.open_role_id
+        if self.role_name is not None:
+            result['roleName'] = self.role_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openRoleId') is not None:
+            self.open_role_id = m.get('openRoleId')
+        if m.get('roleName') is not None:
+            self.role_name = m.get('roleName')
+        return self
+
+
+class QueryUserGroupRolesResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        group_roles: List[QueryUserGroupRolesResponseBodyResultGroupRoles] = None,
+    ):
+        self.group_roles = group_roles
+
+    def validate(self):
+        if self.group_roles:
+            for k in self.group_roles:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['groupRoles'] = []
+        if self.group_roles is not None:
+            for k in self.group_roles:
+                result['groupRoles'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.group_roles = []
+        if m.get('groupRoles') is not None:
+            for k in m.get('groupRoles'):
+                temp_model = QueryUserGroupRolesResponseBodyResultGroupRoles()
+                self.group_roles.append(temp_model.from_map(k))
+        return self
+
+
+class QueryUserGroupRolesResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: QueryUserGroupRolesResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = QueryUserGroupRolesResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class QueryUserGroupRolesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryUserGroupRolesResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryUserGroupRolesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryUserViewGroupLastMessageTimeHeaders(TeaModel):
     def __init__(
         self,
@@ -15708,6 +16486,140 @@ class ReadPersonalMessageResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ReadPersonalMessageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class RecallMessagesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class RecallMessagesRequest(TeaModel):
+    def __init__(
+        self,
+        open_conversation_id: str = None,
+        open_task_id: str = None,
+    ):
+        self.open_conversation_id = open_conversation_id
+        self.open_task_id = open_task_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.open_task_id is not None:
+            result['openTaskId'] = self.open_task_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('openTaskId') is not None:
+            self.open_task_id = m.get('openTaskId')
+        return self
+
+
+class RecallMessagesResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: str = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class RecallMessagesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: RecallMessagesResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = RecallMessagesResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -17964,6 +18876,140 @@ class SetRightPanelResponse(TeaModel):
         return self
 
 
+class SortConvNavTabHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SortConvNavTabRequest(TeaModel):
+    def __init__(
+        self,
+        open_conversation_id: str = None,
+        sorted_ids: List[str] = None,
+    ):
+        self.open_conversation_id = open_conversation_id
+        self.sorted_ids = sorted_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.sorted_ids is not None:
+            result['sortedIds'] = self.sorted_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('sortedIds') is not None:
+            self.sorted_ids = m.get('sortedIds')
+        return self
+
+
+class SortConvNavTabResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: str = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class SortConvNavTabResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: SortConvNavTabResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = SortConvNavTabResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class SuperAdminApplyTemplateHeaders(TeaModel):
     def __init__(
         self,
@@ -19272,13 +20318,14 @@ class UpdateGroupSubAdminRequest(TeaModel):
         self,
         open_conversation_id: str = None,
         role: int = None,
+        union_ids: List[str] = None,
         user_ids: List[str] = None,
     ):
         # This parameter is required.
         self.open_conversation_id = open_conversation_id
         # This parameter is required.
         self.role = role
-        # This parameter is required.
+        self.union_ids = union_ids
         self.user_ids = user_ids
 
     def validate(self):
@@ -19294,6 +20341,8 @@ class UpdateGroupSubAdminRequest(TeaModel):
             result['openConversationId'] = self.open_conversation_id
         if self.role is not None:
             result['role'] = self.role
+        if self.union_ids is not None:
+            result['unionIds'] = self.union_ids
         if self.user_ids is not None:
             result['userIds'] = self.user_ids
         return result
@@ -19304,6 +20353,8 @@ class UpdateGroupSubAdminRequest(TeaModel):
             self.open_conversation_id = m.get('openConversationId')
         if m.get('role') is not None:
             self.role = m.get('role')
+        if m.get('unionIds') is not None:
+            self.union_ids = m.get('unionIds')
         if m.get('userIds') is not None:
             self.user_ids = m.get('userIds')
         return self
@@ -19649,6 +20700,7 @@ class UpdateMemberBanWordsRequest(TeaModel):
         mute_duration: int = None,
         mute_status: int = None,
         open_conversation_id: str = None,
+        union_ids: List[str] = None,
         user_id_list: List[str] = None,
     ):
         # This parameter is required.
@@ -19657,7 +20709,7 @@ class UpdateMemberBanWordsRequest(TeaModel):
         self.mute_status = mute_status
         # This parameter is required.
         self.open_conversation_id = open_conversation_id
-        # This parameter is required.
+        self.union_ids = union_ids
         self.user_id_list = user_id_list
 
     def validate(self):
@@ -19675,6 +20727,8 @@ class UpdateMemberBanWordsRequest(TeaModel):
             result['muteStatus'] = self.mute_status
         if self.open_conversation_id is not None:
             result['openConversationId'] = self.open_conversation_id
+        if self.union_ids is not None:
+            result['unionIds'] = self.union_ids
         if self.user_id_list is not None:
             result['userIdList'] = self.user_id_list
         return result
@@ -19687,6 +20741,8 @@ class UpdateMemberBanWordsRequest(TeaModel):
             self.mute_status = m.get('muteStatus')
         if m.get('openConversationId') is not None:
             self.open_conversation_id = m.get('openConversationId')
+        if m.get('unionIds') is not None:
+            self.union_ids = m.get('unionIds')
         if m.get('userIdList') is not None:
             self.user_id_list = m.get('userIdList')
         return self

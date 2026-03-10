@@ -1,7 +1,496 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.model import TeaModel
-from typing import Dict, List
+from typing import Dict, List, Any
+
+
+class ControlRecordingHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ControlRecordingRequest(TeaModel):
+    def __init__(
+        self,
+        action: str = None,
+        agree: bool = None,
+        team_code: str = None,
+        user_id: str = None,
+    ):
+        # This parameter is required.
+        self.action = action
+        # This parameter is required.
+        self.agree = agree
+        self.team_code = team_code
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action is not None:
+            result['action'] = self.action
+        if self.agree is not None:
+            result['agree'] = self.agree
+        if self.team_code is not None:
+            result['teamCode'] = self.team_code
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('action') is not None:
+            self.action = m.get('action')
+        if m.get('agree') is not None:
+            self.agree = m.get('agree')
+        if m.get('teamCode') is not None:
+            self.team_code = m.get('teamCode')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class ControlRecordingResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class ControlRecordingResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ControlRecordingResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ControlRecordingResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CreateRecordingScheduleHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateRecordingScheduleRequestSchedules(TeaModel):
+    def __init__(
+        self,
+        business_order: str = None,
+        end_time: int = None,
+        start_time: int = None,
+    ):
+        # This parameter is required.
+        self.business_order = business_order
+        # This parameter is required.
+        self.end_time = end_time
+        # This parameter is required.
+        self.start_time = start_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.business_order is not None:
+            result['businessOrder'] = self.business_order
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('businessOrder') is not None:
+            self.business_order = m.get('businessOrder')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        return self
+
+
+class CreateRecordingScheduleRequest(TeaModel):
+    def __init__(
+        self,
+        schedules: List[CreateRecordingScheduleRequestSchedules] = None,
+        sn: str = None,
+    ):
+        # This parameter is required.
+        self.schedules = schedules
+        # This parameter is required.
+        self.sn = sn
+
+    def validate(self):
+        if self.schedules:
+            for k in self.schedules:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['schedules'] = []
+        if self.schedules is not None:
+            for k in self.schedules:
+                result['schedules'].append(k.to_map() if k else None)
+        if self.sn is not None:
+            result['sn'] = self.sn
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.schedules = []
+        if m.get('schedules') is not None:
+            for k in m.get('schedules'):
+                temp_model = CreateRecordingScheduleRequestSchedules()
+                self.schedules.append(temp_model.from_map(k))
+        if m.get('sn') is not None:
+            self.sn = m.get('sn')
+        return self
+
+
+class CreateRecordingScheduleResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        business_order: str = None,
+        end_time: int = None,
+        start_time: int = None,
+        task_id: str = None,
+    ):
+        self.business_order = business_order
+        self.end_time = end_time
+        self.start_time = start_time
+        self.task_id = task_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.business_order is not None:
+            result['businessOrder'] = self.business_order
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('businessOrder') is not None:
+            self.business_order = m.get('businessOrder')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        return self
+
+
+class CreateRecordingScheduleResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[CreateRecordingScheduleResponseBodyResult] = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = CreateRecordingScheduleResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class CreateRecordingScheduleResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CreateRecordingScheduleResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CreateRecordingScheduleResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DeleteRecordingScheduleHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeleteRecordingScheduleResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class DeleteRecordingScheduleResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: DeleteRecordingScheduleResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = DeleteRecordingScheduleResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
 
 
 class GetAudioFileDownloadInfoHeaders(TeaModel):
@@ -240,6 +729,7 @@ class GetAudioFileInfoRequest(TeaModel):
 class GetAudioFileInfoResponseBodyResult(TeaModel):
     def __init__(
         self,
+        attributes: Dict[str, Any] = None,
         create_time: int = None,
         creator_user_id: str = None,
         duration: int = None,
@@ -247,6 +737,7 @@ class GetAudioFileInfoResponseBodyResult(TeaModel):
         file_name: str = None,
         file_size: int = None,
     ):
+        self.attributes = attributes
         self.create_time = create_time
         self.creator_user_id = creator_user_id
         self.duration = duration
@@ -263,6 +754,8 @@ class GetAudioFileInfoResponseBodyResult(TeaModel):
             return _map
 
         result = dict()
+        if self.attributes is not None:
+            result['attributes'] = self.attributes
         if self.create_time is not None:
             result['createTime'] = self.create_time
         if self.creator_user_id is not None:
@@ -279,6 +772,8 @@ class GetAudioFileInfoResponseBodyResult(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('attributes') is not None:
+            self.attributes = m.get('attributes')
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
         if m.get('creatorUserId') is not None:
@@ -866,6 +1361,166 @@ class GetCustomerInsightResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetCustomerInsightResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetRecordingScheduleHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetRecordingScheduleResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        business_order: str = None,
+        end_time: int = None,
+        sn: str = None,
+        start_time: int = None,
+        status: int = None,
+        task_id: str = None,
+    ):
+        self.business_order = business_order
+        self.end_time = end_time
+        self.sn = sn
+        self.start_time = start_time
+        self.status = status
+        self.task_id = task_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.business_order is not None:
+            result['businessOrder'] = self.business_order
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.sn is not None:
+            result['sn'] = self.sn
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.status is not None:
+            result['status'] = self.status
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('businessOrder') is not None:
+            self.business_order = m.get('businessOrder')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('sn') is not None:
+            self.sn = m.get('sn')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        return self
+
+
+class GetRecordingScheduleResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: GetRecordingScheduleResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = GetRecordingScheduleResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class GetRecordingScheduleResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetRecordingScheduleResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetRecordingScheduleResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -2340,6 +2995,237 @@ class ListCustomerResponse(TeaModel):
         return self
 
 
+class ListDeviceRecordingDurationHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListDeviceRecordingDurationRequest(TeaModel):
+    def __init__(
+        self,
+        end_time: int = None,
+        max_results: int = None,
+        next_token: str = None,
+        sn: str = None,
+        start_time: int = None,
+        team_code: str = None,
+        user_id: str = None,
+    ):
+        # This parameter is required.
+        self.end_time = end_time
+        self.max_results = max_results
+        self.next_token = next_token
+        self.sn = sn
+        # This parameter is required.
+        self.start_time = start_time
+        self.team_code = team_code
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.sn is not None:
+            result['sn'] = self.sn
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.team_code is not None:
+            result['teamCode'] = self.team_code
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('sn') is not None:
+            self.sn = m.get('sn')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('teamCode') is not None:
+            self.team_code = m.get('teamCode')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class ListDeviceRecordingDurationResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        duration: str = None,
+        end_timestamp: int = None,
+        record_id: str = None,
+        start_timestamp: int = None,
+    ):
+        self.duration = duration
+        self.end_timestamp = end_timestamp
+        self.record_id = record_id
+        self.start_timestamp = start_timestamp
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.duration is not None:
+            result['duration'] = self.duration
+        if self.end_timestamp is not None:
+            result['endTimestamp'] = self.end_timestamp
+        if self.record_id is not None:
+            result['recordId'] = self.record_id
+        if self.start_timestamp is not None:
+            result['startTimestamp'] = self.start_timestamp
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('duration') is not None:
+            self.duration = m.get('duration')
+        if m.get('endTimestamp') is not None:
+            self.end_timestamp = m.get('endTimestamp')
+        if m.get('recordId') is not None:
+            self.record_id = m.get('recordId')
+        if m.get('startTimestamp') is not None:
+            self.start_timestamp = m.get('startTimestamp')
+        return self
+
+
+class ListDeviceRecordingDurationResponseBody(TeaModel):
+    def __init__(
+        self,
+        next_token: str = None,
+        result: List[ListDeviceRecordingDurationResponseBodyResult] = None,
+        total_count: int = None,
+    ):
+        self.next_token = next_token
+        self.result = result
+        self.total_count = total_count
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = ListDeviceRecordingDurationResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class ListDeviceRecordingDurationResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ListDeviceRecordingDurationResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ListDeviceRecordingDurationResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class ListServiceRecordHeaders(TeaModel):
     def __init__(
         self,
@@ -2965,7 +3851,7 @@ class ListTeamRequest(TeaModel):
         return self
 
 
-class ListTeamResponseBodyResult(TeaModel):
+class ListTeamResponseBodyResultTagListValueList(TeaModel):
     def __init__(
         self,
         code: str = None,
@@ -2995,6 +3881,100 @@ class ListTeamResponseBodyResult(TeaModel):
             self.code = m.get('code')
         if m.get('name') is not None:
             self.name = m.get('name')
+        return self
+
+
+class ListTeamResponseBodyResultTagList(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        name: str = None,
+        value_list: List[ListTeamResponseBodyResultTagListValueList] = None,
+    ):
+        self.code = code
+        self.name = name
+        self.value_list = value_list
+
+    def validate(self):
+        if self.value_list:
+            for k in self.value_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.name is not None:
+            result['name'] = self.name
+        result['valueList'] = []
+        if self.value_list is not None:
+            for k in self.value_list:
+                result['valueList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        self.value_list = []
+        if m.get('valueList') is not None:
+            for k in m.get('valueList'):
+                temp_model = ListTeamResponseBodyResultTagListValueList()
+                self.value_list.append(temp_model.from_map(k))
+        return self
+
+
+class ListTeamResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        name: str = None,
+        tag_list: List[ListTeamResponseBodyResultTagList] = None,
+    ):
+        self.code = code
+        self.name = name
+        self.tag_list = tag_list
+
+    def validate(self):
+        if self.tag_list:
+            for k in self.tag_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.name is not None:
+            result['name'] = self.name
+        result['tagList'] = []
+        if self.tag_list is not None:
+            for k in self.tag_list:
+                result['tagList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        self.tag_list = []
+        if m.get('tagList') is not None:
+            for k in m.get('tagList'):
+                temp_model = ListTeamResponseBodyResultTagList()
+                self.tag_list.append(temp_model.from_map(k))
         return self
 
 
@@ -3587,6 +4567,7 @@ class QueryAudioFileRequest(TeaModel):
 class QueryAudioFileResponseBodyResult(TeaModel):
     def __init__(
         self,
+        attributes: Dict[str, Any] = None,
         create_time: int = None,
         creator_user_id: str = None,
         duration: int = None,
@@ -3594,6 +4575,7 @@ class QueryAudioFileResponseBodyResult(TeaModel):
         file_name: str = None,
         file_size: int = None,
     ):
+        self.attributes = attributes
         self.create_time = create_time
         self.creator_user_id = creator_user_id
         self.duration = duration
@@ -3610,6 +4592,8 @@ class QueryAudioFileResponseBodyResult(TeaModel):
             return _map
 
         result = dict()
+        if self.attributes is not None:
+            result['attributes'] = self.attributes
         if self.create_time is not None:
             result['createTime'] = self.create_time
         if self.creator_user_id is not None:
@@ -3626,6 +4610,8 @@ class QueryAudioFileResponseBodyResult(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('attributes') is not None:
+            self.attributes = m.get('attributes')
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
         if m.get('creatorUserId') is not None:
@@ -4531,6 +5517,297 @@ class SubmitAsrTaskResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SubmitAsrTaskResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateDeviceBindingHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateDeviceBindingRequest(TeaModel):
+    def __init__(
+        self,
+        action: str = None,
+        sn: str = None,
+        team_code: str = None,
+        user_id: str = None,
+    ):
+        # This parameter is required.
+        self.action = action
+        # This parameter is required.
+        self.sn = sn
+        # This parameter is required.
+        self.team_code = team_code
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action is not None:
+            result['action'] = self.action
+        if self.sn is not None:
+            result['sn'] = self.sn
+        if self.team_code is not None:
+            result['teamCode'] = self.team_code
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('action') is not None:
+            self.action = m.get('action')
+        if m.get('sn') is not None:
+            self.sn = m.get('sn')
+        if m.get('teamCode') is not None:
+            self.team_code = m.get('teamCode')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class UpdateDeviceBindingResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class UpdateDeviceBindingResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdateDeviceBindingResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdateDeviceBindingResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateRecordingScheduleHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateRecordingScheduleRequest(TeaModel):
+    def __init__(
+        self,
+        end_time: int = None,
+        start_time: int = None,
+        task_id: str = None,
+    ):
+        self.end_time = end_time
+        self.start_time = start_time
+        # This parameter is required.
+        self.task_id = task_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        return self
+
+
+class UpdateRecordingScheduleResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class UpdateRecordingScheduleResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdateRecordingScheduleResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdateRecordingScheduleResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

@@ -2163,64 +2163,34 @@ class GetInnerAppHeaders(TeaModel):
         return self
 
 
-class GetInnerAppRequest(TeaModel):
-    def __init__(
-        self,
-        ecological_corp_id: str = None,
-        op_union_id: str = None,
-    ):
-        self.ecological_corp_id = ecological_corp_id
-        self.op_union_id = op_union_id
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.ecological_corp_id is not None:
-            result['ecologicalCorpId'] = self.ecological_corp_id
-        if self.op_union_id is not None:
-            result['opUnionId'] = self.op_union_id
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('ecologicalCorpId') is not None:
-            self.ecological_corp_id = m.get('ecologicalCorpId')
-        if m.get('opUnionId') is not None:
-            self.op_union_id = m.get('opUnionId')
-        return self
-
-
 class GetInnerAppResponseBody(TeaModel):
     def __init__(
         self,
         agent_id: int = None,
-        app_key: str = None,
-        app_secret: str = None,
-        desc: str = None,
-        homepage_link: str = None,
-        icon: str = None,
-        ip_white_list: List[str] = None,
-        name: str = None,
-        omp_link: str = None,
-        pc_homepage_link: str = None,
+        app_name: str = None,
+        customer_app_id: str = None,
+        mobile_login_address_key: str = None,
+        mobile_login_login_url: str = None,
+        mobile_original_homepage_url: str = None,
+        mobile_transfer_url: str = None,
+        pc_effective_homepage_url: str = None,
+        pc_login_address_key: str = None,
+        pc_login_login_url: str = None,
+        pc_original_homepage_url: str = None,
+        pc_transfer_url: str = None,
     ):
         self.agent_id = agent_id
-        self.app_key = app_key
-        # This parameter is required.
-        self.app_secret = app_secret
-        self.desc = desc
-        self.homepage_link = homepage_link
-        self.icon = icon
-        self.ip_white_list = ip_white_list
-        self.name = name
-        self.omp_link = omp_link
-        self.pc_homepage_link = pc_homepage_link
+        self.app_name = app_name
+        self.customer_app_id = customer_app_id
+        self.mobile_login_address_key = mobile_login_address_key
+        self.mobile_login_login_url = mobile_login_login_url
+        self.mobile_original_homepage_url = mobile_original_homepage_url
+        self.mobile_transfer_url = mobile_transfer_url
+        self.pc_effective_homepage_url = pc_effective_homepage_url
+        self.pc_login_address_key = pc_login_address_key
+        self.pc_login_login_url = pc_login_login_url
+        self.pc_original_homepage_url = pc_original_homepage_url
+        self.pc_transfer_url = pc_transfer_url
 
     def validate(self):
         pass
@@ -2233,48 +2203,56 @@ class GetInnerAppResponseBody(TeaModel):
         result = dict()
         if self.agent_id is not None:
             result['agentId'] = self.agent_id
-        if self.app_key is not None:
-            result['appKey'] = self.app_key
-        if self.app_secret is not None:
-            result['appSecret'] = self.app_secret
-        if self.desc is not None:
-            result['desc'] = self.desc
-        if self.homepage_link is not None:
-            result['homepageLink'] = self.homepage_link
-        if self.icon is not None:
-            result['icon'] = self.icon
-        if self.ip_white_list is not None:
-            result['ipWhiteList'] = self.ip_white_list
-        if self.name is not None:
-            result['name'] = self.name
-        if self.omp_link is not None:
-            result['ompLink'] = self.omp_link
-        if self.pc_homepage_link is not None:
-            result['pcHomepageLink'] = self.pc_homepage_link
+        if self.app_name is not None:
+            result['appName'] = self.app_name
+        if self.customer_app_id is not None:
+            result['customerAppId'] = self.customer_app_id
+        if self.mobile_login_address_key is not None:
+            result['mobileLoginAddressKey'] = self.mobile_login_address_key
+        if self.mobile_login_login_url is not None:
+            result['mobileLoginLoginUrl'] = self.mobile_login_login_url
+        if self.mobile_original_homepage_url is not None:
+            result['mobileOriginalHomepageUrl'] = self.mobile_original_homepage_url
+        if self.mobile_transfer_url is not None:
+            result['mobileTransferUrl'] = self.mobile_transfer_url
+        if self.pc_effective_homepage_url is not None:
+            result['pcEffectiveHomepageUrl'] = self.pc_effective_homepage_url
+        if self.pc_login_address_key is not None:
+            result['pcLoginAddressKey'] = self.pc_login_address_key
+        if self.pc_login_login_url is not None:
+            result['pcLoginLoginUrl'] = self.pc_login_login_url
+        if self.pc_original_homepage_url is not None:
+            result['pcOriginalHomepageUrl'] = self.pc_original_homepage_url
+        if self.pc_transfer_url is not None:
+            result['pcTransferUrl'] = self.pc_transfer_url
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('agentId') is not None:
             self.agent_id = m.get('agentId')
-        if m.get('appKey') is not None:
-            self.app_key = m.get('appKey')
-        if m.get('appSecret') is not None:
-            self.app_secret = m.get('appSecret')
-        if m.get('desc') is not None:
-            self.desc = m.get('desc')
-        if m.get('homepageLink') is not None:
-            self.homepage_link = m.get('homepageLink')
-        if m.get('icon') is not None:
-            self.icon = m.get('icon')
-        if m.get('ipWhiteList') is not None:
-            self.ip_white_list = m.get('ipWhiteList')
-        if m.get('name') is not None:
-            self.name = m.get('name')
-        if m.get('ompLink') is not None:
-            self.omp_link = m.get('ompLink')
-        if m.get('pcHomepageLink') is not None:
-            self.pc_homepage_link = m.get('pcHomepageLink')
+        if m.get('appName') is not None:
+            self.app_name = m.get('appName')
+        if m.get('customerAppId') is not None:
+            self.customer_app_id = m.get('customerAppId')
+        if m.get('mobileLoginAddressKey') is not None:
+            self.mobile_login_address_key = m.get('mobileLoginAddressKey')
+        if m.get('mobileLoginLoginUrl') is not None:
+            self.mobile_login_login_url = m.get('mobileLoginLoginUrl')
+        if m.get('mobileOriginalHomepageUrl') is not None:
+            self.mobile_original_homepage_url = m.get('mobileOriginalHomepageUrl')
+        if m.get('mobileTransferUrl') is not None:
+            self.mobile_transfer_url = m.get('mobileTransferUrl')
+        if m.get('pcEffectiveHomepageUrl') is not None:
+            self.pc_effective_homepage_url = m.get('pcEffectiveHomepageUrl')
+        if m.get('pcLoginAddressKey') is not None:
+            self.pc_login_address_key = m.get('pcLoginAddressKey')
+        if m.get('pcLoginLoginUrl') is not None:
+            self.pc_login_login_url = m.get('pcLoginLoginUrl')
+        if m.get('pcOriginalHomepageUrl') is not None:
+            self.pc_original_homepage_url = m.get('pcOriginalHomepageUrl')
+        if m.get('pcTransferUrl') is not None:
+            self.pc_transfer_url = m.get('pcTransferUrl')
         return self
 
 
@@ -2315,6 +2293,185 @@ class GetInnerAppResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetInnerAppResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetInnerAppInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetInnerAppInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        agent_id: int = None,
+        app_name: str = None,
+        customer_app_id: str = None,
+        mobile_login_address_key: str = None,
+        mobile_login_login_url: str = None,
+        mobile_login_request_method: str = None,
+        mobile_original_homepage_url: str = None,
+        mobile_transfer_url: str = None,
+        pc_effective_homepage_url: str = None,
+        pc_login_address_key: str = None,
+        pc_login_login_url: str = None,
+        pc_login_request_method: str = None,
+        pc_original_homepage_url: str = None,
+        pc_transfer_url: str = None,
+    ):
+        self.agent_id = agent_id
+        self.app_name = app_name
+        self.customer_app_id = customer_app_id
+        self.mobile_login_address_key = mobile_login_address_key
+        self.mobile_login_login_url = mobile_login_login_url
+        self.mobile_login_request_method = mobile_login_request_method
+        self.mobile_original_homepage_url = mobile_original_homepage_url
+        self.mobile_transfer_url = mobile_transfer_url
+        self.pc_effective_homepage_url = pc_effective_homepage_url
+        self.pc_login_address_key = pc_login_address_key
+        self.pc_login_login_url = pc_login_login_url
+        self.pc_login_request_method = pc_login_request_method
+        self.pc_original_homepage_url = pc_original_homepage_url
+        self.pc_transfer_url = pc_transfer_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.agent_id is not None:
+            result['agentId'] = self.agent_id
+        if self.app_name is not None:
+            result['appName'] = self.app_name
+        if self.customer_app_id is not None:
+            result['customerAppId'] = self.customer_app_id
+        if self.mobile_login_address_key is not None:
+            result['mobileLoginAddressKey'] = self.mobile_login_address_key
+        if self.mobile_login_login_url is not None:
+            result['mobileLoginLoginUrl'] = self.mobile_login_login_url
+        if self.mobile_login_request_method is not None:
+            result['mobileLoginRequestMethod'] = self.mobile_login_request_method
+        if self.mobile_original_homepage_url is not None:
+            result['mobileOriginalHomepageUrl'] = self.mobile_original_homepage_url
+        if self.mobile_transfer_url is not None:
+            result['mobileTransferUrl'] = self.mobile_transfer_url
+        if self.pc_effective_homepage_url is not None:
+            result['pcEffectiveHomepageUrl'] = self.pc_effective_homepage_url
+        if self.pc_login_address_key is not None:
+            result['pcLoginAddressKey'] = self.pc_login_address_key
+        if self.pc_login_login_url is not None:
+            result['pcLoginLoginUrl'] = self.pc_login_login_url
+        if self.pc_login_request_method is not None:
+            result['pcLoginRequestMethod'] = self.pc_login_request_method
+        if self.pc_original_homepage_url is not None:
+            result['pcOriginalHomepageUrl'] = self.pc_original_homepage_url
+        if self.pc_transfer_url is not None:
+            result['pcTransferUrl'] = self.pc_transfer_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('agentId') is not None:
+            self.agent_id = m.get('agentId')
+        if m.get('appName') is not None:
+            self.app_name = m.get('appName')
+        if m.get('customerAppId') is not None:
+            self.customer_app_id = m.get('customerAppId')
+        if m.get('mobileLoginAddressKey') is not None:
+            self.mobile_login_address_key = m.get('mobileLoginAddressKey')
+        if m.get('mobileLoginLoginUrl') is not None:
+            self.mobile_login_login_url = m.get('mobileLoginLoginUrl')
+        if m.get('mobileLoginRequestMethod') is not None:
+            self.mobile_login_request_method = m.get('mobileLoginRequestMethod')
+        if m.get('mobileOriginalHomepageUrl') is not None:
+            self.mobile_original_homepage_url = m.get('mobileOriginalHomepageUrl')
+        if m.get('mobileTransferUrl') is not None:
+            self.mobile_transfer_url = m.get('mobileTransferUrl')
+        if m.get('pcEffectiveHomepageUrl') is not None:
+            self.pc_effective_homepage_url = m.get('pcEffectiveHomepageUrl')
+        if m.get('pcLoginAddressKey') is not None:
+            self.pc_login_address_key = m.get('pcLoginAddressKey')
+        if m.get('pcLoginLoginUrl') is not None:
+            self.pc_login_login_url = m.get('pcLoginLoginUrl')
+        if m.get('pcLoginRequestMethod') is not None:
+            self.pc_login_request_method = m.get('pcLoginRequestMethod')
+        if m.get('pcOriginalHomepageUrl') is not None:
+            self.pc_original_homepage_url = m.get('pcOriginalHomepageUrl')
+        if m.get('pcTransferUrl') is not None:
+            self.pc_transfer_url = m.get('pcTransferUrl')
+        return self
+
+
+class GetInnerAppInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetInnerAppInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetInnerAppInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

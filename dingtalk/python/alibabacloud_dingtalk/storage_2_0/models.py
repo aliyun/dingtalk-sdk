@@ -114,11 +114,13 @@ class AddPermissionRequestMembers(TeaModel):
         self,
         corp_id: str = None,
         id: str = None,
+        name: str = None,
         type: str = None,
     ):
         self.corp_id = corp_id
         # This parameter is required.
         self.id = id
+        self.name = name
         # This parameter is required.
         self.type = type
 
@@ -135,6 +137,8 @@ class AddPermissionRequestMembers(TeaModel):
             result['corpId'] = self.corp_id
         if self.id is not None:
             result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
         if self.type is not None:
             result['type'] = self.type
         return result
@@ -145,6 +149,8 @@ class AddPermissionRequestMembers(TeaModel):
             self.corp_id = m.get('corpId')
         if m.get('id') is not None:
             self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
         if m.get('type') is not None:
             self.type = m.get('type')
         return self
@@ -451,6 +457,125 @@ class BatchQueryRolesResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = BatchQueryRolesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CleanFileRequest(TeaModel):
+    def __init__(
+        self,
+        clean_reason: str = None,
+        dentry_id: int = None,
+        operator_id: str = None,
+        space_id: int = None,
+    ):
+        self.clean_reason = clean_reason
+        self.dentry_id = dentry_id
+        self.operator_id = operator_id
+        self.space_id = space_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.clean_reason is not None:
+            result['cleanReason'] = self.clean_reason
+        if self.dentry_id is not None:
+            result['dentryId'] = self.dentry_id
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cleanReason') is not None:
+            self.clean_reason = m.get('cleanReason')
+        if m.get('dentryId') is not None:
+            self.dentry_id = m.get('dentryId')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        return self
+
+
+class CleanFileResponseBody(TeaModel):
+    def __init__(
+        self,
+        failure_ids: List[int] = None,
+        success_ids: List[int] = None,
+    ):
+        self.failure_ids = failure_ids
+        self.success_ids = success_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.failure_ids is not None:
+            result['failureIds'] = self.failure_ids
+        if self.success_ids is not None:
+            result['successIds'] = self.success_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('failureIds') is not None:
+            self.failure_ids = m.get('failureIds')
+        if m.get('successIds') is not None:
+            self.success_ids = m.get('successIds')
+        return self
+
+
+class CleanFileResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CleanFileResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CleanFileResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -2024,10 +2149,12 @@ class ListPermissionsHeaders(TeaModel):
 class ListPermissionsRequestOption(TeaModel):
     def __init__(
         self,
+        filter_member_types: List[str] = None,
         filter_role_ids: List[str] = None,
         max_results: int = None,
         next_token: str = None,
     ):
+        self.filter_member_types = filter_member_types
         self.filter_role_ids = filter_role_ids
         self.max_results = max_results
         self.next_token = next_token
@@ -2041,6 +2168,8 @@ class ListPermissionsRequestOption(TeaModel):
             return _map
 
         result = dict()
+        if self.filter_member_types is not None:
+            result['filterMemberTypes'] = self.filter_member_types
         if self.filter_role_ids is not None:
             result['filterRoleIds'] = self.filter_role_ids
         if self.max_results is not None:
@@ -2051,6 +2180,8 @@ class ListPermissionsRequestOption(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('filterMemberTypes') is not None:
+            self.filter_member_types = m.get('filterMemberTypes')
         if m.get('filterRoleIds') is not None:
             self.filter_role_ids = m.get('filterRoleIds')
         if m.get('maxResults') is not None:
@@ -2101,10 +2232,12 @@ class ListPermissionsResponseBodyPermissionsMember(TeaModel):
         self,
         corp_id: str = None,
         id: str = None,
+        name: str = None,
         type: str = None,
     ):
         self.corp_id = corp_id
         self.id = id
+        self.name = name
         self.type = type
 
     def validate(self):
@@ -2120,6 +2253,8 @@ class ListPermissionsResponseBodyPermissionsMember(TeaModel):
             result['corpId'] = self.corp_id
         if self.id is not None:
             result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
         if self.type is not None:
             result['type'] = self.type
         return result
@@ -2130,6 +2265,8 @@ class ListPermissionsResponseBodyPermissionsMember(TeaModel):
             self.corp_id = m.get('corpId')
         if m.get('id') is not None:
             self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
         if m.get('type') is not None:
             self.type = m.get('type')
         return self

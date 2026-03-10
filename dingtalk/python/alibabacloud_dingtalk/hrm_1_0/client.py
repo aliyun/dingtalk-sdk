@@ -588,6 +588,124 @@ class Client(OpenApiClient):
         headers = dingtalkhrm__1__0_models.AddRosterFieldFormHeaders()
         return await self.add_roster_field_form_with_options_async(request, headers, runtime)
 
+    def convert_union_id_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.ConvertUnionIdRequest,
+        headers: dingtalkhrm__1__0_models.ConvertUnionIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.ConvertUnionIdResponse:
+        """
+        @summary 用于提供给独立部署的一方应用转换unionId（白名单策略）
+        
+        @param request: ConvertUnionIdRequest
+        @param headers: ConvertUnionIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ConvertUnionIdResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.union_id_list):
+            body['unionIdList'] = request.union_id_list
+        if not UtilClient.is_unset(request.user_id_list):
+            body['userIdList'] = request.user_id_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ConvertUnionId',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/isv/convertUnionId',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.ConvertUnionIdResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def convert_union_id_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.ConvertUnionIdRequest,
+        headers: dingtalkhrm__1__0_models.ConvertUnionIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.ConvertUnionIdResponse:
+        """
+        @summary 用于提供给独立部署的一方应用转换unionId（白名单策略）
+        
+        @param request: ConvertUnionIdRequest
+        @param headers: ConvertUnionIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ConvertUnionIdResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.union_id_list):
+            body['unionIdList'] = request.union_id_list
+        if not UtilClient.is_unset(request.user_id_list):
+            body['userIdList'] = request.user_id_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ConvertUnionId',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/isv/convertUnionId',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.ConvertUnionIdResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def convert_union_id(
+        self,
+        request: dingtalkhrm__1__0_models.ConvertUnionIdRequest,
+    ) -> dingtalkhrm__1__0_models.ConvertUnionIdResponse:
+        """
+        @summary 用于提供给独立部署的一方应用转换unionId（白名单策略）
+        
+        @param request: ConvertUnionIdRequest
+        @return: ConvertUnionIdResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.ConvertUnionIdHeaders()
+        return self.convert_union_id_with_options(request, headers, runtime)
+
+    async def convert_union_id_async(
+        self,
+        request: dingtalkhrm__1__0_models.ConvertUnionIdRequest,
+    ) -> dingtalkhrm__1__0_models.ConvertUnionIdResponse:
+        """
+        @summary 用于提供给独立部署的一方应用转换unionId（白名单策略）
+        
+        @param request: ConvertUnionIdRequest
+        @return: ConvertUnionIdResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.ConvertUnionIdHeaders()
+        return await self.convert_union_id_with_options_async(request, headers, runtime)
+
     def create_record_with_options(
         self,
         request: dingtalkhrm__1__0_models.CreateRecordRequest,
@@ -1745,6 +1863,124 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrm__1__0_models.GetAllDismissionReasonsHeaders()
         return await self.get_all_dismission_reasons_with_options_async(headers, runtime)
+
+    def get_dismission_record_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.GetDismissionRecordRequest,
+        headers: dingtalkhrm__1__0_models.GetDismissionRecordHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.GetDismissionRecordResponse:
+        """
+        @summary 获取离职记录
+        
+        @param request: GetDismissionRecordRequest
+        @param headers: GetDismissionRecordHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetDismissionRecordResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.size):
+            query['size'] = request.size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetDismissionRecord',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/dismission/record/get',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.GetDismissionRecordResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_dismission_record_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.GetDismissionRecordRequest,
+        headers: dingtalkhrm__1__0_models.GetDismissionRecordHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.GetDismissionRecordResponse:
+        """
+        @summary 获取离职记录
+        
+        @param request: GetDismissionRecordRequest
+        @param headers: GetDismissionRecordHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetDismissionRecordResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.size):
+            query['size'] = request.size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetDismissionRecord',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/dismission/record/get',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.GetDismissionRecordResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_dismission_record(
+        self,
+        request: dingtalkhrm__1__0_models.GetDismissionRecordRequest,
+    ) -> dingtalkhrm__1__0_models.GetDismissionRecordResponse:
+        """
+        @summary 获取离职记录
+        
+        @param request: GetDismissionRecordRequest
+        @return: GetDismissionRecordResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.GetDismissionRecordHeaders()
+        return self.get_dismission_record_with_options(request, headers, runtime)
+
+    async def get_dismission_record_async(
+        self,
+        request: dingtalkhrm__1__0_models.GetDismissionRecordRequest,
+    ) -> dingtalkhrm__1__0_models.GetDismissionRecordResponse:
+        """
+        @summary 获取离职记录
+        
+        @param request: GetDismissionRecordRequest
+        @return: GetDismissionRecordResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.GetDismissionRecordHeaders()
+        return await self.get_dismission_record_with_options_async(request, headers, runtime)
 
     def get_employee_roster_by_field_with_options(
         self,

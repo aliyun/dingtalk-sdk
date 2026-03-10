@@ -4287,6 +4287,254 @@ class MuteMembersResponse(TeaModel):
         return self
 
 
+class OptRecordWhiteAccountHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class OptRecordWhiteAccountRequestRequestBodySettingRangeList(TeaModel):
+    def __init__(
+        self,
+        setting_range_id: str = None,
+        setting_range_type: int = None,
+    ):
+        # This parameter is required.
+        self.setting_range_id = setting_range_id
+        # This parameter is required.
+        self.setting_range_type = setting_range_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.setting_range_id is not None:
+            result['settingRangeId'] = self.setting_range_id
+        if self.setting_range_type is not None:
+            result['settingRangeType'] = self.setting_range_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('settingRangeId') is not None:
+            self.setting_range_id = m.get('settingRangeId')
+        if m.get('settingRangeType') is not None:
+            self.setting_range_type = m.get('settingRangeType')
+        return self
+
+
+class OptRecordWhiteAccountRequestRequestBody(TeaModel):
+    def __init__(
+        self,
+        biz_type: str = None,
+        operation: int = None,
+        setting_range_list: List[OptRecordWhiteAccountRequestRequestBodySettingRangeList] = None,
+        union_id: str = None,
+    ):
+        # This parameter is required.
+        self.biz_type = biz_type
+        # This parameter is required.
+        self.operation = operation
+        self.setting_range_list = setting_range_list
+        # This parameter is required.
+        self.union_id = union_id
+
+    def validate(self):
+        if self.setting_range_list:
+            for k in self.setting_range_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.operation is not None:
+            result['operation'] = self.operation
+        result['settingRangeList'] = []
+        if self.setting_range_list is not None:
+            for k in self.setting_range_list:
+                result['settingRangeList'].append(k.to_map() if k else None)
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('operation') is not None:
+            self.operation = m.get('operation')
+        self.setting_range_list = []
+        if m.get('settingRangeList') is not None:
+            for k in m.get('settingRangeList'):
+                temp_model = OptRecordWhiteAccountRequestRequestBodySettingRangeList()
+                self.setting_range_list.append(temp_model.from_map(k))
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class OptRecordWhiteAccountRequest(TeaModel):
+    def __init__(
+        self,
+        request_body: OptRecordWhiteAccountRequestRequestBody = None,
+    ):
+        self.request_body = request_body
+
+    def validate(self):
+        if self.request_body:
+            self.request_body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.request_body is not None:
+            result['requestBody'] = self.request_body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('requestBody') is not None:
+            temp_model = OptRecordWhiteAccountRequestRequestBody()
+            self.request_body = temp_model.from_map(m['requestBody'])
+        return self
+
+
+class OptRecordWhiteAccountShrinkRequest(TeaModel):
+    def __init__(
+        self,
+        request_body_shrink: str = None,
+    ):
+        self.request_body_shrink = request_body_shrink
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.request_body_shrink is not None:
+            result['requestBody'] = self.request_body_shrink
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('requestBody') is not None:
+            self.request_body_shrink = m.get('requestBody')
+        return self
+
+
+class OptRecordWhiteAccountResponseBody(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+    ):
+        self.code = code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        return self
+
+
+class OptRecordWhiteAccountResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: OptRecordWhiteAccountResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = OptRecordWhiteAccountResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryCloudRecordTextHeaders(TeaModel):
     def __init__(
         self,
@@ -5902,6 +6150,7 @@ class QueryConferenceMembersResponseBodyMemberModels(TeaModel):
         conference_id: str = None,
         duration: int = None,
         host: bool = None,
+        job_number: str = None,
         join_time: int = None,
         leave_time: int = None,
         outer_org_member: bool = None,
@@ -5914,6 +6163,7 @@ class QueryConferenceMembersResponseBodyMemberModels(TeaModel):
         self.conference_id = conference_id
         self.duration = duration
         self.host = host
+        self.job_number = job_number
         self.join_time = join_time
         self.leave_time = leave_time
         self.outer_org_member = outer_org_member
@@ -5940,6 +6190,8 @@ class QueryConferenceMembersResponseBodyMemberModels(TeaModel):
             result['duration'] = self.duration
         if self.host is not None:
             result['host'] = self.host
+        if self.job_number is not None:
+            result['jobNumber'] = self.job_number
         if self.join_time is not None:
             result['joinTime'] = self.join_time
         if self.leave_time is not None:
@@ -5966,6 +6218,8 @@ class QueryConferenceMembersResponseBodyMemberModels(TeaModel):
             self.duration = m.get('duration')
         if m.get('host') is not None:
             self.host = m.get('host')
+        if m.get('jobNumber') is not None:
+            self.job_number = m.get('jobNumber')
         if m.get('joinTime') is not None:
             self.join_time = m.get('joinTime')
         if m.get('leaveTime') is not None:
@@ -7770,8 +8024,10 @@ class QueryRecordMinutesUrlResponseBodyRecordMinutesUrls(TeaModel):
     def __init__(
         self,
         record_minutes_url: str = None,
+        task_uuid: str = None,
     ):
         self.record_minutes_url = record_minutes_url
+        self.task_uuid = task_uuid
 
     def validate(self):
         pass
@@ -7784,12 +8040,16 @@ class QueryRecordMinutesUrlResponseBodyRecordMinutesUrls(TeaModel):
         result = dict()
         if self.record_minutes_url is not None:
             result['recordMinutesUrl'] = self.record_minutes_url
+        if self.task_uuid is not None:
+            result['taskUuid'] = self.task_uuid
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('recordMinutesUrl') is not None:
             self.record_minutes_url = m.get('recordMinutesUrl')
+        if m.get('taskUuid') is not None:
+            self.task_uuid = m.get('taskUuid')
         return self
 
 
@@ -9816,6 +10076,9 @@ class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualEx
         lock_media_status_mic_mute: int = None,
         lock_nick: int = None,
         minutes_owner_union_id: str = None,
+        minutes_summary_diy_template_version: str = None,
+        minutes_summary_template_id: str = None,
+        minutes_summary_template_type: str = None,
         mozi_conf_extension_app_settings: List[UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings] = None,
         push_all_meeting_records: bool = None,
         push_cloud_record_card: bool = None,
@@ -9829,6 +10092,9 @@ class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualEx
         self.lock_media_status_mic_mute = lock_media_status_mic_mute
         self.lock_nick = lock_nick
         self.minutes_owner_union_id = minutes_owner_union_id
+        self.minutes_summary_diy_template_version = minutes_summary_diy_template_version
+        self.minutes_summary_template_id = minutes_summary_template_id
+        self.minutes_summary_template_type = minutes_summary_template_type
         self.mozi_conf_extension_app_settings = mozi_conf_extension_app_settings
         self.push_all_meeting_records = push_all_meeting_records
         self.push_cloud_record_card = push_cloud_record_card
@@ -9861,6 +10127,12 @@ class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualEx
             result['lockNick'] = self.lock_nick
         if self.minutes_owner_union_id is not None:
             result['minutesOwnerUnionId'] = self.minutes_owner_union_id
+        if self.minutes_summary_diy_template_version is not None:
+            result['minutesSummaryDiyTemplateVersion'] = self.minutes_summary_diy_template_version
+        if self.minutes_summary_template_id is not None:
+            result['minutesSummaryTemplateId'] = self.minutes_summary_template_id
+        if self.minutes_summary_template_type is not None:
+            result['minutesSummaryTemplateType'] = self.minutes_summary_template_type
         result['moziConfExtensionAppSettings'] = []
         if self.mozi_conf_extension_app_settings is not None:
             for k in self.mozi_conf_extension_app_settings:
@@ -9891,6 +10163,12 @@ class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualEx
             self.lock_nick = m.get('lockNick')
         if m.get('minutesOwnerUnionId') is not None:
             self.minutes_owner_union_id = m.get('minutesOwnerUnionId')
+        if m.get('minutesSummaryDiyTemplateVersion') is not None:
+            self.minutes_summary_diy_template_version = m.get('minutesSummaryDiyTemplateVersion')
+        if m.get('minutesSummaryTemplateId') is not None:
+            self.minutes_summary_template_id = m.get('minutesSummaryTemplateId')
+        if m.get('minutesSummaryTemplateType') is not None:
+            self.minutes_summary_template_type = m.get('minutesSummaryTemplateType')
         self.mozi_conf_extension_app_settings = []
         if m.get('moziConfExtensionAppSettings') is not None:
             for k in m.get('moziConfExtensionAppSettings'):

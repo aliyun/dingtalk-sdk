@@ -3810,6 +3810,223 @@ class CreateShortcutResponse(TeaModel):
         return self
 
 
+class CreateShortcutForMigrateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateShortcutForMigrateRequest(TeaModel):
+    def __init__(
+        self,
+        operator_id: str = None,
+        source_resource_id: str = None,
+        source_resource_type: str = None,
+        target_resource_id: str = None,
+        target_resource_name: str = None,
+        target_resource_type: str = None,
+    ):
+        self.operator_id = operator_id
+        self.source_resource_id = source_resource_id
+        self.source_resource_type = source_resource_type
+        self.target_resource_id = target_resource_id
+        self.target_resource_name = target_resource_name
+        self.target_resource_type = target_resource_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        if self.source_resource_id is not None:
+            result['sourceResourceId'] = self.source_resource_id
+        if self.source_resource_type is not None:
+            result['sourceResourceType'] = self.source_resource_type
+        if self.target_resource_id is not None:
+            result['targetResourceId'] = self.target_resource_id
+        if self.target_resource_name is not None:
+            result['targetResourceName'] = self.target_resource_name
+        if self.target_resource_type is not None:
+            result['targetResourceType'] = self.target_resource_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        if m.get('sourceResourceId') is not None:
+            self.source_resource_id = m.get('sourceResourceId')
+        if m.get('sourceResourceType') is not None:
+            self.source_resource_type = m.get('sourceResourceType')
+        if m.get('targetResourceId') is not None:
+            self.target_resource_id = m.get('targetResourceId')
+        if m.get('targetResourceName') is not None:
+            self.target_resource_name = m.get('targetResourceName')
+        if m.get('targetResourceType') is not None:
+            self.target_resource_type = m.get('targetResourceType')
+        return self
+
+
+class CreateShortcutForMigrateResponseBodyOpenDentryInfo(TeaModel):
+    def __init__(
+        self,
+        dentry_uuid: str = None,
+        drive_dentry_id: str = None,
+        drive_space_id: str = None,
+        extension: str = None,
+        name: str = None,
+        url: str = None,
+    ):
+        self.dentry_uuid = dentry_uuid
+        self.drive_dentry_id = drive_dentry_id
+        self.drive_space_id = drive_space_id
+        self.extension = extension
+        self.name = name
+        self.url = url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dentry_uuid is not None:
+            result['dentryUuid'] = self.dentry_uuid
+        if self.drive_dentry_id is not None:
+            result['driveDentryId'] = self.drive_dentry_id
+        if self.drive_space_id is not None:
+            result['driveSpaceId'] = self.drive_space_id
+        if self.extension is not None:
+            result['extension'] = self.extension
+        if self.name is not None:
+            result['name'] = self.name
+        if self.url is not None:
+            result['url'] = self.url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dentryUuid') is not None:
+            self.dentry_uuid = m.get('dentryUuid')
+        if m.get('driveDentryId') is not None:
+            self.drive_dentry_id = m.get('driveDentryId')
+        if m.get('driveSpaceId') is not None:
+            self.drive_space_id = m.get('driveSpaceId')
+        if m.get('extension') is not None:
+            self.extension = m.get('extension')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        return self
+
+
+class CreateShortcutForMigrateResponseBody(TeaModel):
+    def __init__(
+        self,
+        open_dentry_info: CreateShortcutForMigrateResponseBodyOpenDentryInfo = None,
+    ):
+        self.open_dentry_info = open_dentry_info
+
+    def validate(self):
+        if self.open_dentry_info:
+            self.open_dentry_info.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_dentry_info is not None:
+            result['openDentryInfo'] = self.open_dentry_info.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openDentryInfo') is not None:
+            temp_model = CreateShortcutForMigrateResponseBodyOpenDentryInfo()
+            self.open_dentry_info = temp_model.from_map(m['openDentryInfo'])
+        return self
+
+
+class CreateShortcutForMigrateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CreateShortcutForMigrateResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CreateShortcutForMigrateResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CreateSpaceHeaders(TeaModel):
     def __init__(
         self,

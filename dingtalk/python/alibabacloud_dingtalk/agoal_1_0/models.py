@@ -6018,6 +6018,7 @@ class GetIndicatorDetailRequest(TeaModel):
         indicator_id: str = None,
         month_num: int = None,
     ):
+        # This parameter is required.
         self.indicator_id = indicator_id
         self.month_num = month_num
 

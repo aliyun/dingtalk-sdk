@@ -4,6 +4,147 @@ from Tea.model import TeaModel
 from typing import Dict, List
 
 
+class BusinessCodeCallbackHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class BusinessCodeCallbackRequest(TeaModel):
+    def __init__(
+        self,
+        business_code: str = None,
+        event_type: str = None,
+        status: str = None,
+    ):
+        # This parameter is required.
+        self.business_code = business_code
+        self.event_type = event_type
+        self.status = status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.business_code is not None:
+            result['businessCode'] = self.business_code
+        if self.event_type is not None:
+            result['eventType'] = self.event_type
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('businessCode') is not None:
+            self.business_code = m.get('businessCode')
+        if m.get('eventType') is not None:
+            self.event_type = m.get('eventType')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class BusinessCodeCallbackResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class BusinessCodeCallbackResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: BusinessCodeCallbackResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = BusinessCodeCallbackResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class ConnectionOmniChannelTiktokMessageHeaders(TeaModel):
     def __init__(
         self,
@@ -767,6 +908,212 @@ class LaunchResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = LaunchResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryBusinessCodeInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryBusinessCodeInfoRequest(TeaModel):
+    def __init__(
+        self,
+        business_code: str = None,
+        event_type: str = None,
+        status: str = None,
+    ):
+        # This parameter is required.
+        self.business_code = business_code
+        self.event_type = event_type
+        self.status = status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.business_code is not None:
+            result['businessCode'] = self.business_code
+        if self.event_type is not None:
+            result['eventType'] = self.event_type
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('businessCode') is not None:
+            self.business_code = m.get('businessCode')
+        if m.get('eventType') is not None:
+            self.event_type = m.get('eventType')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class QueryBusinessCodeInfoResponseBodySkuList(TeaModel):
+    def __init__(
+        self,
+        image_url: str = None,
+        sku_id: str = None,
+    ):
+        self.image_url = image_url
+        self.sku_id = sku_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.image_url is not None:
+            result['imageUrl'] = self.image_url
+        if self.sku_id is not None:
+            result['skuId'] = self.sku_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('imageUrl') is not None:
+            self.image_url = m.get('imageUrl')
+        if m.get('skuId') is not None:
+            self.sku_id = m.get('skuId')
+        return self
+
+
+class QueryBusinessCodeInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        business_code: str = None,
+        image_type: str = None,
+        image_urls: List[str] = None,
+        product_id: str = None,
+        sku_list: List[QueryBusinessCodeInfoResponseBodySkuList] = None,
+    ):
+        self.business_code = business_code
+        self.image_type = image_type
+        self.image_urls = image_urls
+        self.product_id = product_id
+        self.sku_list = sku_list
+
+    def validate(self):
+        if self.sku_list:
+            for k in self.sku_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.business_code is not None:
+            result['businessCode'] = self.business_code
+        if self.image_type is not None:
+            result['imageType'] = self.image_type
+        if self.image_urls is not None:
+            result['imageUrls'] = self.image_urls
+        if self.product_id is not None:
+            result['productId'] = self.product_id
+        result['skuList'] = []
+        if self.sku_list is not None:
+            for k in self.sku_list:
+                result['skuList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('businessCode') is not None:
+            self.business_code = m.get('businessCode')
+        if m.get('imageType') is not None:
+            self.image_type = m.get('imageType')
+        if m.get('imageUrls') is not None:
+            self.image_urls = m.get('imageUrls')
+        if m.get('productId') is not None:
+            self.product_id = m.get('productId')
+        self.sku_list = []
+        if m.get('skuList') is not None:
+            for k in m.get('skuList'):
+                temp_model = QueryBusinessCodeInfoResponseBodySkuList()
+                self.sku_list.append(temp_model.from_map(k))
+        return self
+
+
+class QueryBusinessCodeInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryBusinessCodeInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryBusinessCodeInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

@@ -2607,6 +2607,229 @@ class QueryTripTrainOrderByPageResponse(TeaModel):
         return self
 
 
+class SubmitTripApprovalProcessHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SubmitTripApprovalProcessRequestItineraries(TeaModel):
+    def __init__(
+        self,
+        departure_time: str = None,
+        destination: str = None,
+        destination_detail: str = None,
+        place_of_departure: str = None,
+        place_of_departure_detail: str = None,
+        return_time: str = None,
+        single_or_return: str = None,
+        vehicle: str = None,
+    ):
+        self.departure_time = departure_time
+        self.destination = destination
+        self.destination_detail = destination_detail
+        self.place_of_departure = place_of_departure
+        self.place_of_departure_detail = place_of_departure_detail
+        self.return_time = return_time
+        self.single_or_return = single_or_return
+        self.vehicle = vehicle
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.departure_time is not None:
+            result['departureTime'] = self.departure_time
+        if self.destination is not None:
+            result['destination'] = self.destination
+        if self.destination_detail is not None:
+            result['destinationDetail'] = self.destination_detail
+        if self.place_of_departure is not None:
+            result['placeOfDeparture'] = self.place_of_departure
+        if self.place_of_departure_detail is not None:
+            result['placeOfDepartureDetail'] = self.place_of_departure_detail
+        if self.return_time is not None:
+            result['returnTime'] = self.return_time
+        if self.single_or_return is not None:
+            result['singleOrReturn'] = self.single_or_return
+        if self.vehicle is not None:
+            result['vehicle'] = self.vehicle
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('departureTime') is not None:
+            self.departure_time = m.get('departureTime')
+        if m.get('destination') is not None:
+            self.destination = m.get('destination')
+        if m.get('destinationDetail') is not None:
+            self.destination_detail = m.get('destinationDetail')
+        if m.get('placeOfDeparture') is not None:
+            self.place_of_departure = m.get('placeOfDeparture')
+        if m.get('placeOfDepartureDetail') is not None:
+            self.place_of_departure_detail = m.get('placeOfDepartureDetail')
+        if m.get('returnTime') is not None:
+            self.return_time = m.get('returnTime')
+        if m.get('singleOrReturn') is not None:
+            self.single_or_return = m.get('singleOrReturn')
+        if m.get('vehicle') is not None:
+            self.vehicle = m.get('vehicle')
+        return self
+
+
+class SubmitTripApprovalProcessRequest(TeaModel):
+    def __init__(
+        self,
+        itineraries: List[SubmitTripApprovalProcessRequestItineraries] = None,
+        process_code: str = None,
+        reason: str = None,
+        user_id: str = None,
+    ):
+        self.itineraries = itineraries
+        self.process_code = process_code
+        self.reason = reason
+        self.user_id = user_id
+
+    def validate(self):
+        if self.itineraries:
+            for k in self.itineraries:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['itineraries'] = []
+        if self.itineraries is not None:
+            for k in self.itineraries:
+                result['itineraries'].append(k.to_map() if k else None)
+        if self.process_code is not None:
+            result['processCode'] = self.process_code
+        if self.reason is not None:
+            result['reason'] = self.reason
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.itineraries = []
+        if m.get('itineraries') is not None:
+            for k in m.get('itineraries'):
+                temp_model = SubmitTripApprovalProcessRequestItineraries()
+                self.itineraries.append(temp_model.from_map(k))
+        if m.get('processCode') is not None:
+            self.process_code = m.get('processCode')
+        if m.get('reason') is not None:
+            self.reason = m.get('reason')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class SubmitTripApprovalProcessResponseBody(TeaModel):
+    def __init__(
+        self,
+        instance_id: str = None,
+    ):
+        self.instance_id = instance_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.instance_id is not None:
+            result['instanceId'] = self.instance_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('instanceId') is not None:
+            self.instance_id = m.get('instanceId')
+        return self
+
+
+class SubmitTripApprovalProcessResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: SubmitTripApprovalProcessResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = SubmitTripApprovalProcessResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class SyncBusinessSignInfoHeaders(TeaModel):
     def __init__(
         self,

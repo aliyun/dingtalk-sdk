@@ -1784,6 +1784,242 @@ class Client(OpenApiClient):
         headers = dingtalkbizfinance__2__0_models.DeleteEnterpriseAccountHeaders()
         return await self.delete_enterprise_account_with_options_async(request, headers, runtime)
 
+    def delete_process_instance_with_options(
+        self,
+        request: dingtalkbizfinance__2__0_models.DeleteProcessInstanceRequest,
+        headers: dingtalkbizfinance__2__0_models.DeleteProcessInstanceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.DeleteProcessInstanceResponse:
+        """
+        @summary 删除智能财务OA审批单，有权限控制
+        
+        @param request: DeleteProcessInstanceRequest
+        @param headers: DeleteProcessInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteProcessInstanceResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.instance_id):
+            query['instanceId'] = request.instance_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DeleteProcessInstance',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/processInstance/delete',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.DeleteProcessInstanceResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def delete_process_instance_with_options_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.DeleteProcessInstanceRequest,
+        headers: dingtalkbizfinance__2__0_models.DeleteProcessInstanceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.DeleteProcessInstanceResponse:
+        """
+        @summary 删除智能财务OA审批单，有权限控制
+        
+        @param request: DeleteProcessInstanceRequest
+        @param headers: DeleteProcessInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteProcessInstanceResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.instance_id):
+            query['instanceId'] = request.instance_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DeleteProcessInstance',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/processInstance/delete',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.DeleteProcessInstanceResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def delete_process_instance(
+        self,
+        request: dingtalkbizfinance__2__0_models.DeleteProcessInstanceRequest,
+    ) -> dingtalkbizfinance__2__0_models.DeleteProcessInstanceResponse:
+        """
+        @summary 删除智能财务OA审批单，有权限控制
+        
+        @param request: DeleteProcessInstanceRequest
+        @return: DeleteProcessInstanceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.DeleteProcessInstanceHeaders()
+        return self.delete_process_instance_with_options(request, headers, runtime)
+
+    async def delete_process_instance_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.DeleteProcessInstanceRequest,
+    ) -> dingtalkbizfinance__2__0_models.DeleteProcessInstanceResponse:
+        """
+        @summary 删除智能财务OA审批单，有权限控制
+        
+        @param request: DeleteProcessInstanceRequest
+        @return: DeleteProcessInstanceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.DeleteProcessInstanceHeaders()
+        return await self.delete_process_instance_with_options_async(request, headers, runtime)
+
+    def delete_workflow_instance_with_options(
+        self,
+        request: dingtalkbizfinance__2__0_models.DeleteWorkflowInstanceRequest,
+        headers: dingtalkbizfinance__2__0_models.DeleteWorkflowInstanceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.DeleteWorkflowInstanceResponse:
+        """
+        @summary 删除工作流流程实例
+        
+        @param request: DeleteWorkflowInstanceRequest
+        @param headers: DeleteWorkflowInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteWorkflowInstanceResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.instance_id):
+            query['instanceId'] = request.instance_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DeleteWorkflowInstance',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/workflowInstance/delete',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.DeleteWorkflowInstanceResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def delete_workflow_instance_with_options_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.DeleteWorkflowInstanceRequest,
+        headers: dingtalkbizfinance__2__0_models.DeleteWorkflowInstanceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.DeleteWorkflowInstanceResponse:
+        """
+        @summary 删除工作流流程实例
+        
+        @param request: DeleteWorkflowInstanceRequest
+        @param headers: DeleteWorkflowInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteWorkflowInstanceResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.instance_id):
+            query['instanceId'] = request.instance_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DeleteWorkflowInstance',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/workflowInstance/delete',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.DeleteWorkflowInstanceResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def delete_workflow_instance(
+        self,
+        request: dingtalkbizfinance__2__0_models.DeleteWorkflowInstanceRequest,
+    ) -> dingtalkbizfinance__2__0_models.DeleteWorkflowInstanceResponse:
+        """
+        @summary 删除工作流流程实例
+        
+        @param request: DeleteWorkflowInstanceRequest
+        @return: DeleteWorkflowInstanceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.DeleteWorkflowInstanceHeaders()
+        return self.delete_workflow_instance_with_options(request, headers, runtime)
+
+    async def delete_workflow_instance_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.DeleteWorkflowInstanceRequest,
+    ) -> dingtalkbizfinance__2__0_models.DeleteWorkflowInstanceResponse:
+        """
+        @summary 删除工作流流程实例
+        
+        @param request: DeleteWorkflowInstanceRequest
+        @return: DeleteWorkflowInstanceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.DeleteWorkflowInstanceHeaders()
+        return await self.delete_workflow_instance_with_options_async(request, headers, runtime)
+
     def enable_company_with_options(
         self,
         request: dingtalkbizfinance__2__0_models.EnableCompanyRequest,
@@ -5151,6 +5387,124 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkbizfinance__2__0_models.QueryPaymentRecallFileHeaders()
         return await self.query_payment_recall_file_with_options_async(instance_id, request, headers, runtime)
+
+    def query_payment_recall_file_vtwo_with_options(
+        self,
+        instance_id: str,
+        request: dingtalkbizfinance__2__0_models.QueryPaymentRecallFileVTwoRequest,
+        headers: dingtalkbizfinance__2__0_models.QueryPaymentRecallFileVTwoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.QueryPaymentRecallFileVTwoResponse:
+        """
+        @summary 查询支付回单信息，权限集与QueryPaymentRecallFile不同
+        
+        @param request: QueryPaymentRecallFileVTwoRequest
+        @param headers: QueryPaymentRecallFileVTwoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryPaymentRecallFileVTwoResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryPaymentRecallFileVTwo',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/payments/recallFilesV2/{instance_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.QueryPaymentRecallFileVTwoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_payment_recall_file_vtwo_with_options_async(
+        self,
+        instance_id: str,
+        request: dingtalkbizfinance__2__0_models.QueryPaymentRecallFileVTwoRequest,
+        headers: dingtalkbizfinance__2__0_models.QueryPaymentRecallFileVTwoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.QueryPaymentRecallFileVTwoResponse:
+        """
+        @summary 查询支付回单信息，权限集与QueryPaymentRecallFile不同
+        
+        @param request: QueryPaymentRecallFileVTwoRequest
+        @param headers: QueryPaymentRecallFileVTwoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryPaymentRecallFileVTwoResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryPaymentRecallFileVTwo',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/payments/recallFilesV2/{instance_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.QueryPaymentRecallFileVTwoResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_payment_recall_file_vtwo(
+        self,
+        instance_id: str,
+        request: dingtalkbizfinance__2__0_models.QueryPaymentRecallFileVTwoRequest,
+    ) -> dingtalkbizfinance__2__0_models.QueryPaymentRecallFileVTwoResponse:
+        """
+        @summary 查询支付回单信息，权限集与QueryPaymentRecallFile不同
+        
+        @param request: QueryPaymentRecallFileVTwoRequest
+        @return: QueryPaymentRecallFileVTwoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.QueryPaymentRecallFileVTwoHeaders()
+        return self.query_payment_recall_file_vtwo_with_options(instance_id, request, headers, runtime)
+
+    async def query_payment_recall_file_vtwo_async(
+        self,
+        instance_id: str,
+        request: dingtalkbizfinance__2__0_models.QueryPaymentRecallFileVTwoRequest,
+    ) -> dingtalkbizfinance__2__0_models.QueryPaymentRecallFileVTwoResponse:
+        """
+        @summary 查询支付回单信息，权限集与QueryPaymentRecallFile不同
+        
+        @param request: QueryPaymentRecallFileVTwoRequest
+        @return: QueryPaymentRecallFileVTwoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.QueryPaymentRecallFileVTwoHeaders()
+        return await self.query_payment_recall_file_vtwo_with_options_async(instance_id, request, headers, runtime)
 
     def query_payment_status_with_options(
         self,

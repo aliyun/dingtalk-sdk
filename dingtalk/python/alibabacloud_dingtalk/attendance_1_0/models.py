@@ -1673,6 +1673,7 @@ class CalculateDurationRequest(TeaModel):
         duration_unit: str = None,
         from_time: str = None,
         leave_code: str = None,
+        time_zone_id: str = None,
         to_time: str = None,
         user_id: str = None,
     ):
@@ -1681,6 +1682,7 @@ class CalculateDurationRequest(TeaModel):
         self.duration_unit = duration_unit
         self.from_time = from_time
         self.leave_code = leave_code
+        self.time_zone_id = time_zone_id
         self.to_time = to_time
         self.user_id = user_id
 
@@ -1703,6 +1705,8 @@ class CalculateDurationRequest(TeaModel):
             result['fromTime'] = self.from_time
         if self.leave_code is not None:
             result['leaveCode'] = self.leave_code
+        if self.time_zone_id is not None:
+            result['timeZoneId'] = self.time_zone_id
         if self.to_time is not None:
             result['toTime'] = self.to_time
         if self.user_id is not None:
@@ -1721,6 +1725,8 @@ class CalculateDurationRequest(TeaModel):
             self.from_time = m.get('fromTime')
         if m.get('leaveCode') is not None:
             self.leave_code = m.get('leaveCode')
+        if m.get('timeZoneId') is not None:
+            self.time_zone_id = m.get('timeZoneId')
         if m.get('toTime') is not None:
             self.to_time = m.get('toTime')
         if m.get('userId') is not None:
@@ -7090,6 +7096,7 @@ class GetShiftResponseBodyResult(TeaModel):
         id: int = None,
         name: str = None,
         owner: str = None,
+        owner_list: List[str] = None,
         sections: List[GetShiftResponseBodyResultSections] = None,
         shift_group_id: int = None,
         shift_group_name: str = None,
@@ -7099,6 +7106,7 @@ class GetShiftResponseBodyResult(TeaModel):
         self.id = id
         self.name = name
         self.owner = owner
+        self.owner_list = owner_list
         self.sections = sections
         self.shift_group_id = shift_group_id
         self.shift_group_name = shift_group_name
@@ -7126,6 +7134,8 @@ class GetShiftResponseBodyResult(TeaModel):
             result['name'] = self.name
         if self.owner is not None:
             result['owner'] = self.owner
+        if self.owner_list is not None:
+            result['ownerList'] = self.owner_list
         result['sections'] = []
         if self.sections is not None:
             for k in self.sections:
@@ -7148,6 +7158,8 @@ class GetShiftResponseBodyResult(TeaModel):
             self.name = m.get('name')
         if m.get('owner') is not None:
             self.owner = m.get('owner')
+        if m.get('ownerList') is not None:
+            self.owner_list = m.get('ownerList')
         self.sections = []
         if m.get('sections') is not None:
             for k in m.get('sections'):

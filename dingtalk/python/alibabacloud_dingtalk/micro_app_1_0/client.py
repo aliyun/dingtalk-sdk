@@ -1895,38 +1895,29 @@ class Client(OpenApiClient):
     def get_inner_app_with_options(
         self,
         agent_id: str,
-        request: dingtalkmicro_app__1__0_models.GetInnerAppRequest,
         headers: dingtalkmicro_app__1__0_models.GetInnerAppHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkmicro_app__1__0_models.GetInnerAppResponse:
         """
-        @summary 获取企业内部H5应用
+        @summary 获取企业内部应用
         
-        @param request: GetInnerAppRequest
         @param headers: GetInnerAppHeaders
         @param runtime: runtime options for this request RuntimeOptions
         @return: GetInnerAppResponse
         """
-        UtilClient.validate_model(request)
-        query = {}
-        if not UtilClient.is_unset(request.ecological_corp_id):
-            query['ecologicalCorpId'] = request.ecological_corp_id
-        if not UtilClient.is_unset(request.op_union_id):
-            query['opUnionId'] = request.op_union_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            headers=real_headers
         )
         params = open_api_models.Params(
             action='GetInnerApp',
             version='microApp_1.0',
             protocol='HTTP',
-            pathname=f'/v1.0/microApp/apps/{agent_id}',
+            pathname=f'/v1.0/microApp/apps/inner/{agent_id}',
             method='GET',
             auth_type='AK',
             style='ROA',
@@ -1941,38 +1932,29 @@ class Client(OpenApiClient):
     async def get_inner_app_with_options_async(
         self,
         agent_id: str,
-        request: dingtalkmicro_app__1__0_models.GetInnerAppRequest,
         headers: dingtalkmicro_app__1__0_models.GetInnerAppHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkmicro_app__1__0_models.GetInnerAppResponse:
         """
-        @summary 获取企业内部H5应用
+        @summary 获取企业内部应用
         
-        @param request: GetInnerAppRequest
         @param headers: GetInnerAppHeaders
         @param runtime: runtime options for this request RuntimeOptions
         @return: GetInnerAppResponse
         """
-        UtilClient.validate_model(request)
-        query = {}
-        if not UtilClient.is_unset(request.ecological_corp_id):
-            query['ecologicalCorpId'] = request.ecological_corp_id
-        if not UtilClient.is_unset(request.op_union_id):
-            query['opUnionId'] = request.op_union_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            headers=real_headers
         )
         params = open_api_models.Params(
             action='GetInnerApp',
             version='microApp_1.0',
             protocol='HTTP',
-            pathname=f'/v1.0/microApp/apps/{agent_id}',
+            pathname=f'/v1.0/microApp/apps/inner/{agent_id}',
             method='GET',
             auth_type='AK',
             style='ROA',
@@ -1987,32 +1969,128 @@ class Client(OpenApiClient):
     def get_inner_app(
         self,
         agent_id: str,
-        request: dingtalkmicro_app__1__0_models.GetInnerAppRequest,
     ) -> dingtalkmicro_app__1__0_models.GetInnerAppResponse:
         """
-        @summary 获取企业内部H5应用
+        @summary 获取企业内部应用
         
-        @param request: GetInnerAppRequest
         @return: GetInnerAppResponse
         """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkmicro_app__1__0_models.GetInnerAppHeaders()
-        return self.get_inner_app_with_options(agent_id, request, headers, runtime)
+        return self.get_inner_app_with_options(agent_id, headers, runtime)
 
     async def get_inner_app_async(
         self,
         agent_id: str,
-        request: dingtalkmicro_app__1__0_models.GetInnerAppRequest,
     ) -> dingtalkmicro_app__1__0_models.GetInnerAppResponse:
         """
-        @summary 获取企业内部H5应用
+        @summary 获取企业内部应用
         
-        @param request: GetInnerAppRequest
         @return: GetInnerAppResponse
         """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkmicro_app__1__0_models.GetInnerAppHeaders()
-        return await self.get_inner_app_with_options_async(agent_id, request, headers, runtime)
+        return await self.get_inner_app_with_options_async(agent_id, headers, runtime)
+
+    def get_inner_app_info_with_options(
+        self,
+        agent_id: str,
+        headers: dingtalkmicro_app__1__0_models.GetInnerAppInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.GetInnerAppInfoResponse:
+        """
+        @summary 获取企业内部应用信息
+        
+        @param headers: GetInnerAppInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetInnerAppInfoResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetInnerAppInfo',
+            version='microApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/microApp/apps/innerapps/{agent_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.GetInnerAppInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_inner_app_info_with_options_async(
+        self,
+        agent_id: str,
+        headers: dingtalkmicro_app__1__0_models.GetInnerAppInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.GetInnerAppInfoResponse:
+        """
+        @summary 获取企业内部应用信息
+        
+        @param headers: GetInnerAppInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetInnerAppInfoResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetInnerAppInfo',
+            version='microApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/microApp/apps/innerapps/{agent_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.GetInnerAppInfoResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_inner_app_info(
+        self,
+        agent_id: str,
+    ) -> dingtalkmicro_app__1__0_models.GetInnerAppInfoResponse:
+        """
+        @summary 获取企业内部应用信息
+        
+        @return: GetInnerAppInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.GetInnerAppInfoHeaders()
+        return self.get_inner_app_info_with_options(agent_id, headers, runtime)
+
+    async def get_inner_app_info_async(
+        self,
+        agent_id: str,
+    ) -> dingtalkmicro_app__1__0_models.GetInnerAppInfoResponse:
+        """
+        @summary 获取企业内部应用信息
+        
+        @return: GetInnerAppInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.GetInnerAppInfoHeaders()
+        return await self.get_inner_app_info_with_options_async(agent_id, headers, runtime)
 
     def get_micro_app_scope_with_options(
         self,

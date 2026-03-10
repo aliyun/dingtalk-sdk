@@ -2201,8 +2201,6 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(request.operator_id):
             query['operatorId'] = request.operator_id
         body = {}
-        if not UtilClient.is_unset(request.calc_fields):
-            body['calcFields'] = request.calc_fields
         if not UtilClient.is_unset(request.filter):
             body['filter'] = request.filter
         if not UtilClient.is_unset(request.max_results):
@@ -2256,8 +2254,6 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(request.operator_id):
             query['operatorId'] = request.operator_id
         body = {}
-        if not UtilClient.is_unset(request.calc_fields):
-            body['calcFields'] = request.calc_fields
         if not UtilClient.is_unset(request.filter):
             body['filter'] = request.filter
         if not UtilClient.is_unset(request.max_results):

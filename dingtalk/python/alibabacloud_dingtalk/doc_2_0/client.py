@@ -1254,6 +1254,140 @@ class Client(OpenApiClient):
         headers = dingtalkdoc__2__0_models.CreateShortcutHeaders()
         return await self.create_shortcut_with_options_async(request, headers, runtime)
 
+    def create_shortcut_for_migrate_with_options(
+        self,
+        request: dingtalkdoc__2__0_models.CreateShortcutForMigrateRequest,
+        headers: dingtalkdoc__2__0_models.CreateShortcutForMigrateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.CreateShortcutForMigrateResponse:
+        """
+        @summary 创建快捷方式V2版(顺丰迁移使用)
+        
+        @param request: CreateShortcutForMigrateRequest
+        @param headers: CreateShortcutForMigrateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateShortcutForMigrateResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.operator_id):
+            body['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.source_resource_id):
+            body['sourceResourceId'] = request.source_resource_id
+        if not UtilClient.is_unset(request.source_resource_type):
+            body['sourceResourceType'] = request.source_resource_type
+        if not UtilClient.is_unset(request.target_resource_id):
+            body['targetResourceId'] = request.target_resource_id
+        if not UtilClient.is_unset(request.target_resource_name):
+            body['targetResourceName'] = request.target_resource_name
+        if not UtilClient.is_unset(request.target_resource_type):
+            body['targetResourceType'] = request.target_resource_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateShortcutForMigrate',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/resource/shortcut/createV2',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.CreateShortcutForMigrateResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_shortcut_for_migrate_with_options_async(
+        self,
+        request: dingtalkdoc__2__0_models.CreateShortcutForMigrateRequest,
+        headers: dingtalkdoc__2__0_models.CreateShortcutForMigrateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.CreateShortcutForMigrateResponse:
+        """
+        @summary 创建快捷方式V2版(顺丰迁移使用)
+        
+        @param request: CreateShortcutForMigrateRequest
+        @param headers: CreateShortcutForMigrateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateShortcutForMigrateResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.operator_id):
+            body['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.source_resource_id):
+            body['sourceResourceId'] = request.source_resource_id
+        if not UtilClient.is_unset(request.source_resource_type):
+            body['sourceResourceType'] = request.source_resource_type
+        if not UtilClient.is_unset(request.target_resource_id):
+            body['targetResourceId'] = request.target_resource_id
+        if not UtilClient.is_unset(request.target_resource_name):
+            body['targetResourceName'] = request.target_resource_name
+        if not UtilClient.is_unset(request.target_resource_type):
+            body['targetResourceType'] = request.target_resource_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateShortcutForMigrate',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/resource/shortcut/createV2',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.CreateShortcutForMigrateResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_shortcut_for_migrate(
+        self,
+        request: dingtalkdoc__2__0_models.CreateShortcutForMigrateRequest,
+    ) -> dingtalkdoc__2__0_models.CreateShortcutForMigrateResponse:
+        """
+        @summary 创建快捷方式V2版(顺丰迁移使用)
+        
+        @param request: CreateShortcutForMigrateRequest
+        @return: CreateShortcutForMigrateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.CreateShortcutForMigrateHeaders()
+        return self.create_shortcut_for_migrate_with_options(request, headers, runtime)
+
+    async def create_shortcut_for_migrate_async(
+        self,
+        request: dingtalkdoc__2__0_models.CreateShortcutForMigrateRequest,
+    ) -> dingtalkdoc__2__0_models.CreateShortcutForMigrateResponse:
+        """
+        @summary 创建快捷方式V2版(顺丰迁移使用)
+        
+        @param request: CreateShortcutForMigrateRequest
+        @return: CreateShortcutForMigrateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.CreateShortcutForMigrateHeaders()
+        return await self.create_shortcut_for_migrate_with_options_async(request, headers, runtime)
+
     def create_space_with_options(
         self,
         request: dingtalkdoc__2__0_models.CreateSpaceRequest,

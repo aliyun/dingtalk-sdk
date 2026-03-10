@@ -3962,6 +3962,122 @@ class Client(OpenApiClient):
         headers = dingtalkcalendar__1__0_models.ListInstancesHeaders()
         return await self.list_instances_with_options_async(user_id, calendar_id, event_id, request, headers, runtime)
 
+    def list_org_plugins_with_options(
+        self,
+        headers: dingtalkcalendar__1__0_models.ListOrgPluginsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcalendar__1__0_models.ListOrgPluginsResponse:
+        """
+        @summary 拉取企业内插件列表
+        
+        @param headers: ListOrgPluginsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListOrgPluginsResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.ding_access_token_type):
+            real_headers['dingAccessTokenType'] = UtilClient.to_jsonstring(headers.ding_access_token_type)
+        if not UtilClient.is_unset(headers.ding_client_id):
+            real_headers['dingClientId'] = UtilClient.to_jsonstring(headers.ding_client_id)
+        if not UtilClient.is_unset(headers.ding_isv_org_id):
+            real_headers['dingIsvOrgId'] = UtilClient.to_jsonstring(headers.ding_isv_org_id)
+        if not UtilClient.is_unset(headers.ding_open_app_org_id):
+            real_headers['dingOpenAppOrgId'] = UtilClient.to_jsonstring(headers.ding_open_app_org_id)
+        if not UtilClient.is_unset(headers.ding_org_id):
+            real_headers['dingOrgId'] = UtilClient.to_jsonstring(headers.ding_org_id)
+        if not UtilClient.is_unset(headers.ding_suite_key):
+            real_headers['dingSuiteKey'] = UtilClient.to_jsonstring(headers.ding_suite_key)
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='ListOrgPlugins',
+            version='calendar_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/calendar/plugins',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcalendar__1__0_models.ListOrgPluginsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def list_org_plugins_with_options_async(
+        self,
+        headers: dingtalkcalendar__1__0_models.ListOrgPluginsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcalendar__1__0_models.ListOrgPluginsResponse:
+        """
+        @summary 拉取企业内插件列表
+        
+        @param headers: ListOrgPluginsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListOrgPluginsResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.ding_access_token_type):
+            real_headers['dingAccessTokenType'] = UtilClient.to_jsonstring(headers.ding_access_token_type)
+        if not UtilClient.is_unset(headers.ding_client_id):
+            real_headers['dingClientId'] = UtilClient.to_jsonstring(headers.ding_client_id)
+        if not UtilClient.is_unset(headers.ding_isv_org_id):
+            real_headers['dingIsvOrgId'] = UtilClient.to_jsonstring(headers.ding_isv_org_id)
+        if not UtilClient.is_unset(headers.ding_open_app_org_id):
+            real_headers['dingOpenAppOrgId'] = UtilClient.to_jsonstring(headers.ding_open_app_org_id)
+        if not UtilClient.is_unset(headers.ding_org_id):
+            real_headers['dingOrgId'] = UtilClient.to_jsonstring(headers.ding_org_id)
+        if not UtilClient.is_unset(headers.ding_suite_key):
+            real_headers['dingSuiteKey'] = UtilClient.to_jsonstring(headers.ding_suite_key)
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='ListOrgPlugins',
+            version='calendar_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/calendar/plugins',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcalendar__1__0_models.ListOrgPluginsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def list_org_plugins(self) -> dingtalkcalendar__1__0_models.ListOrgPluginsResponse:
+        """
+        @summary 拉取企业内插件列表
+        
+        @return: ListOrgPluginsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcalendar__1__0_models.ListOrgPluginsHeaders()
+        return self.list_org_plugins_with_options(headers, runtime)
+
+    async def list_org_plugins_async(self) -> dingtalkcalendar__1__0_models.ListOrgPluginsResponse:
+        """
+        @summary 拉取企业内插件列表
+        
+        @return: ListOrgPluginsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcalendar__1__0_models.ListOrgPluginsHeaders()
+        return await self.list_org_plugins_with_options_async(headers, runtime)
+
     def meeting_room_respond_with_options(
         self,
         calendar_id: str,
@@ -5245,6 +5361,128 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcalendar__1__0_models.UnsubscribeCalendarHeaders()
         return await self.unsubscribe_calendar_with_options_async(user_id, calendar_id, headers, runtime)
+
+    def update_org_plugin_subscribers_with_options(
+        self,
+        plugin_id: str,
+        request: dingtalkcalendar__1__0_models.UpdateOrgPluginSubscribersRequest,
+        headers: dingtalkcalendar__1__0_models.UpdateOrgPluginSubscribersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcalendar__1__0_models.UpdateOrgPluginSubscribersResponse:
+        """
+        @summary 更新插件订阅人群
+        
+        @param request: UpdateOrgPluginSubscribersRequest
+        @param headers: UpdateOrgPluginSubscribersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateOrgPluginSubscribersResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.dept_ids):
+            body['deptIds'] = request.dept_ids
+        if not UtilClient.is_unset(request.union_ids):
+            body['unionIds'] = request.union_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateOrgPluginSubscribers',
+            version='calendar_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/calendar/plugins/{plugin_id}/subscribers',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcalendar__1__0_models.UpdateOrgPluginSubscribersResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_org_plugin_subscribers_with_options_async(
+        self,
+        plugin_id: str,
+        request: dingtalkcalendar__1__0_models.UpdateOrgPluginSubscribersRequest,
+        headers: dingtalkcalendar__1__0_models.UpdateOrgPluginSubscribersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcalendar__1__0_models.UpdateOrgPluginSubscribersResponse:
+        """
+        @summary 更新插件订阅人群
+        
+        @param request: UpdateOrgPluginSubscribersRequest
+        @param headers: UpdateOrgPluginSubscribersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateOrgPluginSubscribersResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.dept_ids):
+            body['deptIds'] = request.dept_ids
+        if not UtilClient.is_unset(request.union_ids):
+            body['unionIds'] = request.union_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateOrgPluginSubscribers',
+            version='calendar_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/calendar/plugins/{plugin_id}/subscribers',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcalendar__1__0_models.UpdateOrgPluginSubscribersResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_org_plugin_subscribers(
+        self,
+        plugin_id: str,
+        request: dingtalkcalendar__1__0_models.UpdateOrgPluginSubscribersRequest,
+    ) -> dingtalkcalendar__1__0_models.UpdateOrgPluginSubscribersResponse:
+        """
+        @summary 更新插件订阅人群
+        
+        @param request: UpdateOrgPluginSubscribersRequest
+        @return: UpdateOrgPluginSubscribersResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcalendar__1__0_models.UpdateOrgPluginSubscribersHeaders()
+        return self.update_org_plugin_subscribers_with_options(plugin_id, request, headers, runtime)
+
+    async def update_org_plugin_subscribers_async(
+        self,
+        plugin_id: str,
+        request: dingtalkcalendar__1__0_models.UpdateOrgPluginSubscribersRequest,
+    ) -> dingtalkcalendar__1__0_models.UpdateOrgPluginSubscribersResponse:
+        """
+        @summary 更新插件订阅人群
+        
+        @param request: UpdateOrgPluginSubscribersRequest
+        @return: UpdateOrgPluginSubscribersResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcalendar__1__0_models.UpdateOrgPluginSubscribersHeaders()
+        return await self.update_org_plugin_subscribers_with_options_async(plugin_id, request, headers, runtime)
 
     def update_subscribed_calendars_with_options(
         self,

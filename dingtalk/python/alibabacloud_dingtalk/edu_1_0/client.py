@@ -2840,6 +2840,156 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.BatchOrgCreateHWHeaders()
         return await self.batch_org_create_hwwith_options_async(request, headers, runtime)
 
+    def call_multimodal_model_with_options(
+        self,
+        request: dingtalkedu__1__0_models.CallMultimodalModelRequest,
+        headers: dingtalkedu__1__0_models.CallMultimodalModelHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CallMultimodalModelResponse:
+        """
+        @summary 调用多模态模型
+        
+        @param request: CallMultimodalModelRequest
+        @param headers: CallMultimodalModelHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CallMultimodalModelResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.chat_message_model_list):
+            body['chatMessageModelList'] = request.chat_message_model_list
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.enable_thinking):
+            body['enableThinking'] = request.enable_thinking
+        if not UtilClient.is_unset(request.max_tokens):
+            body['maxTokens'] = request.max_tokens
+        if not UtilClient.is_unset(request.model):
+            body['model'] = request.model
+        if not UtilClient.is_unset(request.req_llm_model_param_url):
+            body['reqLlmModelParamUrl'] = request.req_llm_model_param_url
+        if not UtilClient.is_unset(request.response_format):
+            body['responseFormat'] = request.response_format
+        if not UtilClient.is_unset(request.task_code):
+            body['taskCode'] = request.task_code
+        if not UtilClient.is_unset(request.temperature):
+            body['temperature'] = request.temperature
+        if not UtilClient.is_unset(request.top_p):
+            body['topP'] = request.top_p
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CallMultimodalModel',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/multimodal/model/call',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CallMultimodalModelResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def call_multimodal_model_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.CallMultimodalModelRequest,
+        headers: dingtalkedu__1__0_models.CallMultimodalModelHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CallMultimodalModelResponse:
+        """
+        @summary 调用多模态模型
+        
+        @param request: CallMultimodalModelRequest
+        @param headers: CallMultimodalModelHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CallMultimodalModelResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.chat_message_model_list):
+            body['chatMessageModelList'] = request.chat_message_model_list
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.enable_thinking):
+            body['enableThinking'] = request.enable_thinking
+        if not UtilClient.is_unset(request.max_tokens):
+            body['maxTokens'] = request.max_tokens
+        if not UtilClient.is_unset(request.model):
+            body['model'] = request.model
+        if not UtilClient.is_unset(request.req_llm_model_param_url):
+            body['reqLlmModelParamUrl'] = request.req_llm_model_param_url
+        if not UtilClient.is_unset(request.response_format):
+            body['responseFormat'] = request.response_format
+        if not UtilClient.is_unset(request.task_code):
+            body['taskCode'] = request.task_code
+        if not UtilClient.is_unset(request.temperature):
+            body['temperature'] = request.temperature
+        if not UtilClient.is_unset(request.top_p):
+            body['topP'] = request.top_p
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CallMultimodalModel',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/multimodal/model/call',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CallMultimodalModelResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def call_multimodal_model(
+        self,
+        request: dingtalkedu__1__0_models.CallMultimodalModelRequest,
+    ) -> dingtalkedu__1__0_models.CallMultimodalModelResponse:
+        """
+        @summary 调用多模态模型
+        
+        @param request: CallMultimodalModelRequest
+        @return: CallMultimodalModelResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CallMultimodalModelHeaders()
+        return self.call_multimodal_model_with_options(request, headers, runtime)
+
+    async def call_multimodal_model_async(
+        self,
+        request: dingtalkedu__1__0_models.CallMultimodalModelRequest,
+    ) -> dingtalkedu__1__0_models.CallMultimodalModelResponse:
+        """
+        @summary 调用多模态模型
+        
+        @param request: CallMultimodalModelRequest
+        @return: CallMultimodalModelResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CallMultimodalModelHeaders()
+        return await self.call_multimodal_model_with_options_async(request, headers, runtime)
+
     def cancel_kit_task_with_options(
         self,
         request: dingtalkedu__1__0_models.CancelKitTaskRequest,
@@ -4994,14 +5144,20 @@ class Client(OpenApiClient):
             body['className'] = request.class_name
         if not UtilClient.is_unset(request.corp_id):
             body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.paper_name):
+            body['paperName'] = request.paper_name
         if not UtilClient.is_unset(request.print_info):
             body['printInfo'] = request.print_info
         if not UtilClient.is_unset(request.printer_code):
             body['printerCode'] = request.printer_code
+        if not UtilClient.is_unset(request.scan_file_oss_save_time):
+            body['scanFileOssSaveTime'] = request.scan_file_oss_save_time
         if not UtilClient.is_unset(request.subject_name):
             body['subjectName'] = request.subject_name
         if not UtilClient.is_unset(request.task_code):
             body['taskCode'] = request.task_code
+        if not UtilClient.is_unset(request.total_assignments):
+            body['totalAssignments'] = request.total_assignments
         if not UtilClient.is_unset(request.total_pages):
             body['totalPages'] = request.total_pages
         real_headers = {}
@@ -5051,14 +5207,20 @@ class Client(OpenApiClient):
             body['className'] = request.class_name
         if not UtilClient.is_unset(request.corp_id):
             body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.paper_name):
+            body['paperName'] = request.paper_name
         if not UtilClient.is_unset(request.print_info):
             body['printInfo'] = request.print_info
         if not UtilClient.is_unset(request.printer_code):
             body['printerCode'] = request.printer_code
+        if not UtilClient.is_unset(request.scan_file_oss_save_time):
+            body['scanFileOssSaveTime'] = request.scan_file_oss_save_time
         if not UtilClient.is_unset(request.subject_name):
             body['subjectName'] = request.subject_name
         if not UtilClient.is_unset(request.task_code):
             body['taskCode'] = request.task_code
+        if not UtilClient.is_unset(request.total_assignments):
+            body['totalAssignments'] = request.total_assignments
         if not UtilClient.is_unset(request.total_pages):
             body['totalPages'] = request.total_pages
         real_headers = {}
@@ -6155,6 +6317,156 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkedu__1__0_models.CreateEduAssetSpaceHeaders()
         return await self.create_edu_asset_space_with_options_async(request, headers, runtime)
+
+    def create_edu_llm_model_req_with_options(
+        self,
+        request: dingtalkedu__1__0_models.CreateEduLlmModelReqRequest,
+        headers: dingtalkedu__1__0_models.CreateEduLlmModelReqHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CreateEduLlmModelReqResponse:
+        """
+        @summary 作业批改-新增模型批改请求
+        
+        @param request: CreateEduLlmModelReqRequest
+        @param headers: CreateEduLlmModelReqHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateEduLlmModelReqResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.chat_message_model_list):
+            body['chatMessageModelList'] = request.chat_message_model_list
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.enable_thinking):
+            body['enableThinking'] = request.enable_thinking
+        if not UtilClient.is_unset(request.max_tokens):
+            body['maxTokens'] = request.max_tokens
+        if not UtilClient.is_unset(request.model):
+            body['model'] = request.model
+        if not UtilClient.is_unset(request.req_llm_model_param_url):
+            body['reqLlmModelParamUrl'] = request.req_llm_model_param_url
+        if not UtilClient.is_unset(request.response_format):
+            body['responseFormat'] = request.response_format
+        if not UtilClient.is_unset(request.task_code):
+            body['taskCode'] = request.task_code
+        if not UtilClient.is_unset(request.temperature):
+            body['temperature'] = request.temperature
+        if not UtilClient.is_unset(request.top_p):
+            body['topP'] = request.top_p
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateEduLlmModelReq',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/assignment/createEduLlmModelReq',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CreateEduLlmModelReqResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_edu_llm_model_req_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.CreateEduLlmModelReqRequest,
+        headers: dingtalkedu__1__0_models.CreateEduLlmModelReqHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CreateEduLlmModelReqResponse:
+        """
+        @summary 作业批改-新增模型批改请求
+        
+        @param request: CreateEduLlmModelReqRequest
+        @param headers: CreateEduLlmModelReqHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateEduLlmModelReqResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.chat_message_model_list):
+            body['chatMessageModelList'] = request.chat_message_model_list
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.enable_thinking):
+            body['enableThinking'] = request.enable_thinking
+        if not UtilClient.is_unset(request.max_tokens):
+            body['maxTokens'] = request.max_tokens
+        if not UtilClient.is_unset(request.model):
+            body['model'] = request.model
+        if not UtilClient.is_unset(request.req_llm_model_param_url):
+            body['reqLlmModelParamUrl'] = request.req_llm_model_param_url
+        if not UtilClient.is_unset(request.response_format):
+            body['responseFormat'] = request.response_format
+        if not UtilClient.is_unset(request.task_code):
+            body['taskCode'] = request.task_code
+        if not UtilClient.is_unset(request.temperature):
+            body['temperature'] = request.temperature
+        if not UtilClient.is_unset(request.top_p):
+            body['topP'] = request.top_p
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateEduLlmModelReq',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/assignment/createEduLlmModelReq',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CreateEduLlmModelReqResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_edu_llm_model_req(
+        self,
+        request: dingtalkedu__1__0_models.CreateEduLlmModelReqRequest,
+    ) -> dingtalkedu__1__0_models.CreateEduLlmModelReqResponse:
+        """
+        @summary 作业批改-新增模型批改请求
+        
+        @param request: CreateEduLlmModelReqRequest
+        @return: CreateEduLlmModelReqResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CreateEduLlmModelReqHeaders()
+        return self.create_edu_llm_model_req_with_options(request, headers, runtime)
+
+    async def create_edu_llm_model_req_async(
+        self,
+        request: dingtalkedu__1__0_models.CreateEduLlmModelReqRequest,
+    ) -> dingtalkedu__1__0_models.CreateEduLlmModelReqResponse:
+        """
+        @summary 作业批改-新增模型批改请求
+        
+        @param request: CreateEduLlmModelReqRequest
+        @return: CreateEduLlmModelReqResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CreateEduLlmModelReqHeaders()
+        return await self.create_edu_llm_model_req_with_options_async(request, headers, runtime)
 
     def create_fulfil_record_with_options(
         self,
@@ -19784,6 +20096,128 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.QueryEduAssetSpacesHeaders()
         return await self.query_edu_asset_spaces_with_options_async(request, headers, runtime)
 
+    def query_edu_llm_model_response_with_options(
+        self,
+        request: dingtalkedu__1__0_models.QueryEduLlmModelResponseRequest,
+        headers: dingtalkedu__1__0_models.QueryEduLlmModelResponseHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QueryEduLlmModelResponseResponse:
+        """
+        @summary 作业批改-查询模型返回结果
+        
+        @param request: QueryEduLlmModelResponseRequest
+        @param headers: QueryEduLlmModelResponseHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryEduLlmModelResponseResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.req_id):
+            body['reqId'] = request.req_id
+        if not UtilClient.is_unset(request.task_code):
+            body['taskCode'] = request.task_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryEduLlmModelResponse',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/assignment/queryEduLlmModelResponse',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QueryEduLlmModelResponseResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_edu_llm_model_response_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.QueryEduLlmModelResponseRequest,
+        headers: dingtalkedu__1__0_models.QueryEduLlmModelResponseHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QueryEduLlmModelResponseResponse:
+        """
+        @summary 作业批改-查询模型返回结果
+        
+        @param request: QueryEduLlmModelResponseRequest
+        @param headers: QueryEduLlmModelResponseHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryEduLlmModelResponseResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.req_id):
+            body['reqId'] = request.req_id
+        if not UtilClient.is_unset(request.task_code):
+            body['taskCode'] = request.task_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryEduLlmModelResponse',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/assignment/queryEduLlmModelResponse',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QueryEduLlmModelResponseResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_edu_llm_model_response(
+        self,
+        request: dingtalkedu__1__0_models.QueryEduLlmModelResponseRequest,
+    ) -> dingtalkedu__1__0_models.QueryEduLlmModelResponseResponse:
+        """
+        @summary 作业批改-查询模型返回结果
+        
+        @param request: QueryEduLlmModelResponseRequest
+        @return: QueryEduLlmModelResponseResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QueryEduLlmModelResponseHeaders()
+        return self.query_edu_llm_model_response_with_options(request, headers, runtime)
+
+    async def query_edu_llm_model_response_async(
+        self,
+        request: dingtalkedu__1__0_models.QueryEduLlmModelResponseRequest,
+    ) -> dingtalkedu__1__0_models.QueryEduLlmModelResponseResponse:
+        """
+        @summary 作业批改-查询模型返回结果
+        
+        @param request: QueryEduLlmModelResponseRequest
+        @return: QueryEduLlmModelResponseResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QueryEduLlmModelResponseHeaders()
+        return await self.query_edu_llm_model_response_with_options_async(request, headers, runtime)
+
     def query_group_id_with_options(
         self,
         request: dingtalkedu__1__0_models.QueryGroupIdRequest,
@@ -22685,6 +23119,132 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkedu__1__0_models.QueryUserPayInfoHeaders()
         return await self.query_user_pay_info_with_options_async(request, headers, runtime)
+
+    def record_action_point_with_options(
+        self,
+        request: dingtalkedu__1__0_models.RecordActionPointRequest,
+        headers: dingtalkedu__1__0_models.RecordActionPointHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.RecordActionPointResponse:
+        """
+        @summary 作业批改-记录行动点
+        
+        @param request: RecordActionPointRequest
+        @param headers: RecordActionPointHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RecordActionPointResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.action_code):
+            body['actionCode'] = request.action_code
+        if not UtilClient.is_unset(request.action_time):
+            body['actionTime'] = request.action_time
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.task_code):
+            body['taskCode'] = request.task_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='RecordActionPoint',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/assignment/recordActionPoint',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.RecordActionPointResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def record_action_point_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.RecordActionPointRequest,
+        headers: dingtalkedu__1__0_models.RecordActionPointHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.RecordActionPointResponse:
+        """
+        @summary 作业批改-记录行动点
+        
+        @param request: RecordActionPointRequest
+        @param headers: RecordActionPointHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RecordActionPointResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.action_code):
+            body['actionCode'] = request.action_code
+        if not UtilClient.is_unset(request.action_time):
+            body['actionTime'] = request.action_time
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.task_code):
+            body['taskCode'] = request.task_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='RecordActionPoint',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/assignment/recordActionPoint',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.RecordActionPointResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def record_action_point(
+        self,
+        request: dingtalkedu__1__0_models.RecordActionPointRequest,
+    ) -> dingtalkedu__1__0_models.RecordActionPointResponse:
+        """
+        @summary 作业批改-记录行动点
+        
+        @param request: RecordActionPointRequest
+        @return: RecordActionPointResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.RecordActionPointHeaders()
+        return self.record_action_point_with_options(request, headers, runtime)
+
+    async def record_action_point_async(
+        self,
+        request: dingtalkedu__1__0_models.RecordActionPointRequest,
+    ) -> dingtalkedu__1__0_models.RecordActionPointResponse:
+        """
+        @summary 作业批改-记录行动点
+        
+        @param request: RecordActionPointRequest
+        @return: RecordActionPointResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.RecordActionPointHeaders()
+        return await self.record_action_point_with_options_async(request, headers, runtime)
 
     def remove_device_with_options(
         self,
@@ -26361,6 +26921,132 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkedu__1__0_models.UpdateCollegeUserEmpTypeHeaders()
         return await self.update_college_user_emp_type_with_options_async(request, headers, runtime)
+
+    def update_correcting_data_with_options(
+        self,
+        request: dingtalkedu__1__0_models.UpdateCorrectingDataRequest,
+        headers: dingtalkedu__1__0_models.UpdateCorrectingDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.UpdateCorrectingDataResponse:
+        """
+        @summary 作业批改-更新批改中数据
+        
+        @param request: UpdateCorrectingDataRequest
+        @param headers: UpdateCorrectingDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateCorrectingDataResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.data_detail):
+            body['dataDetail'] = request.data_detail
+        if not UtilClient.is_unset(request.data_type):
+            body['dataType'] = request.data_type
+        if not UtilClient.is_unset(request.task_code):
+            body['taskCode'] = request.task_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateCorrectingData',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/assignment/updateCorrectingData',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.UpdateCorrectingDataResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_correcting_data_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.UpdateCorrectingDataRequest,
+        headers: dingtalkedu__1__0_models.UpdateCorrectingDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.UpdateCorrectingDataResponse:
+        """
+        @summary 作业批改-更新批改中数据
+        
+        @param request: UpdateCorrectingDataRequest
+        @param headers: UpdateCorrectingDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateCorrectingDataResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.data_detail):
+            body['dataDetail'] = request.data_detail
+        if not UtilClient.is_unset(request.data_type):
+            body['dataType'] = request.data_type
+        if not UtilClient.is_unset(request.task_code):
+            body['taskCode'] = request.task_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateCorrectingData',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/assignment/updateCorrectingData',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.UpdateCorrectingDataResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_correcting_data(
+        self,
+        request: dingtalkedu__1__0_models.UpdateCorrectingDataRequest,
+    ) -> dingtalkedu__1__0_models.UpdateCorrectingDataResponse:
+        """
+        @summary 作业批改-更新批改中数据
+        
+        @param request: UpdateCorrectingDataRequest
+        @return: UpdateCorrectingDataResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.UpdateCorrectingDataHeaders()
+        return self.update_correcting_data_with_options(request, headers, runtime)
+
+    async def update_correcting_data_async(
+        self,
+        request: dingtalkedu__1__0_models.UpdateCorrectingDataRequest,
+    ) -> dingtalkedu__1__0_models.UpdateCorrectingDataResponse:
+        """
+        @summary 作业批改-更新批改中数据
+        
+        @param request: UpdateCorrectingDataRequest
+        @return: UpdateCorrectingDataResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.UpdateCorrectingDataHeaders()
+        return await self.update_correcting_data_with_options_async(request, headers, runtime)
 
     def update_courses_of_class_with_options(
         self,

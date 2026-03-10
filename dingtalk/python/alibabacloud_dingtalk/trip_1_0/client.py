@@ -786,6 +786,132 @@ class Client(OpenApiClient):
         headers = dingtalktrip__1__0_models.QueryTripTrainOrderByPageHeaders()
         return await self.query_trip_train_order_by_page_with_options_async(request, headers, runtime)
 
+    def submit_trip_approval_process_with_options(
+        self,
+        request: dingtalktrip__1__0_models.SubmitTripApprovalProcessRequest,
+        headers: dingtalktrip__1__0_models.SubmitTripApprovalProcessHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrip__1__0_models.SubmitTripApprovalProcessResponse:
+        """
+        @summary 提交差旅出差申请单
+        
+        @param request: SubmitTripApprovalProcessRequest
+        @param headers: SubmitTripApprovalProcessHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SubmitTripApprovalProcessResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.itineraries):
+            body['itineraries'] = request.itineraries
+        if not UtilClient.is_unset(request.process_code):
+            body['processCode'] = request.process_code
+        if not UtilClient.is_unset(request.reason):
+            body['reason'] = request.reason
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SubmitTripApprovalProcess',
+            version='trip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/trip/approvals',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktrip__1__0_models.SubmitTripApprovalProcessResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def submit_trip_approval_process_with_options_async(
+        self,
+        request: dingtalktrip__1__0_models.SubmitTripApprovalProcessRequest,
+        headers: dingtalktrip__1__0_models.SubmitTripApprovalProcessHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrip__1__0_models.SubmitTripApprovalProcessResponse:
+        """
+        @summary 提交差旅出差申请单
+        
+        @param request: SubmitTripApprovalProcessRequest
+        @param headers: SubmitTripApprovalProcessHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SubmitTripApprovalProcessResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.itineraries):
+            body['itineraries'] = request.itineraries
+        if not UtilClient.is_unset(request.process_code):
+            body['processCode'] = request.process_code
+        if not UtilClient.is_unset(request.reason):
+            body['reason'] = request.reason
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SubmitTripApprovalProcess',
+            version='trip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/trip/approvals',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktrip__1__0_models.SubmitTripApprovalProcessResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def submit_trip_approval_process(
+        self,
+        request: dingtalktrip__1__0_models.SubmitTripApprovalProcessRequest,
+    ) -> dingtalktrip__1__0_models.SubmitTripApprovalProcessResponse:
+        """
+        @summary 提交差旅出差申请单
+        
+        @param request: SubmitTripApprovalProcessRequest
+        @return: SubmitTripApprovalProcessResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrip__1__0_models.SubmitTripApprovalProcessHeaders()
+        return self.submit_trip_approval_process_with_options(request, headers, runtime)
+
+    async def submit_trip_approval_process_async(
+        self,
+        request: dingtalktrip__1__0_models.SubmitTripApprovalProcessRequest,
+    ) -> dingtalktrip__1__0_models.SubmitTripApprovalProcessResponse:
+        """
+        @summary 提交差旅出差申请单
+        
+        @param request: SubmitTripApprovalProcessRequest
+        @return: SubmitTripApprovalProcessResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrip__1__0_models.SubmitTripApprovalProcessHeaders()
+        return await self.submit_trip_approval_process_with_options_async(request, headers, runtime)
+
     def sync_business_sign_info_with_options(
         self,
         request: dingtalktrip__1__0_models.SyncBusinessSignInfoRequest,

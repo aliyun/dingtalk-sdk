@@ -26,6 +26,128 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def business_code_callback_with_options(
+        self,
+        request: dingtalkai_global_e_c__1__0_models.BusinessCodeCallbackRequest,
+        headers: dingtalkai_global_e_c__1__0_models.BusinessCodeCallbackHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkai_global_e_c__1__0_models.BusinessCodeCallbackResponse:
+        """
+        @summary 业务code回调
+        
+        @param request: BusinessCodeCallbackRequest
+        @param headers: BusinessCodeCallbackHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BusinessCodeCallbackResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.business_code):
+            body['businessCode'] = request.business_code
+        if not UtilClient.is_unset(request.event_type):
+            body['eventType'] = request.event_type
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='BusinessCodeCallback',
+            version='aiGlobalEC_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/aiGlobalEC/businessCode/callback',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkai_global_e_c__1__0_models.BusinessCodeCallbackResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def business_code_callback_with_options_async(
+        self,
+        request: dingtalkai_global_e_c__1__0_models.BusinessCodeCallbackRequest,
+        headers: dingtalkai_global_e_c__1__0_models.BusinessCodeCallbackHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkai_global_e_c__1__0_models.BusinessCodeCallbackResponse:
+        """
+        @summary 业务code回调
+        
+        @param request: BusinessCodeCallbackRequest
+        @param headers: BusinessCodeCallbackHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BusinessCodeCallbackResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.business_code):
+            body['businessCode'] = request.business_code
+        if not UtilClient.is_unset(request.event_type):
+            body['eventType'] = request.event_type
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='BusinessCodeCallback',
+            version='aiGlobalEC_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/aiGlobalEC/businessCode/callback',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkai_global_e_c__1__0_models.BusinessCodeCallbackResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def business_code_callback(
+        self,
+        request: dingtalkai_global_e_c__1__0_models.BusinessCodeCallbackRequest,
+    ) -> dingtalkai_global_e_c__1__0_models.BusinessCodeCallbackResponse:
+        """
+        @summary 业务code回调
+        
+        @param request: BusinessCodeCallbackRequest
+        @return: BusinessCodeCallbackResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkai_global_e_c__1__0_models.BusinessCodeCallbackHeaders()
+        return self.business_code_callback_with_options(request, headers, runtime)
+
+    async def business_code_callback_async(
+        self,
+        request: dingtalkai_global_e_c__1__0_models.BusinessCodeCallbackRequest,
+    ) -> dingtalkai_global_e_c__1__0_models.BusinessCodeCallbackResponse:
+        """
+        @summary 业务code回调
+        
+        @param request: BusinessCodeCallbackRequest
+        @return: BusinessCodeCallbackResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkai_global_e_c__1__0_models.BusinessCodeCallbackHeaders()
+        return await self.business_code_callback_with_options_async(request, headers, runtime)
+
     def connection_omni_channel_tiktok_message_with_options(
         self,
         request: dingtalkai_global_e_c__1__0_models.ConnectionOmniChannelTiktokMessageRequest,
@@ -525,6 +647,128 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkai_global_e_c__1__0_models.LaunchHeaders()
         return await self.launch_with_options_async(request, headers, runtime)
+
+    def query_business_code_info_with_options(
+        self,
+        request: dingtalkai_global_e_c__1__0_models.QueryBusinessCodeInfoRequest,
+        headers: dingtalkai_global_e_c__1__0_models.QueryBusinessCodeInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkai_global_e_c__1__0_models.QueryBusinessCodeInfoResponse:
+        """
+        @summary 根据businessCode查询商品图片信息
+        
+        @param request: QueryBusinessCodeInfoRequest
+        @param headers: QueryBusinessCodeInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryBusinessCodeInfoResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.business_code):
+            body['businessCode'] = request.business_code
+        if not UtilClient.is_unset(request.event_type):
+            body['eventType'] = request.event_type
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryBusinessCodeInfo',
+            version='aiGlobalEC_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/aiGlobalEC/businessCode/queryInfo',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkai_global_e_c__1__0_models.QueryBusinessCodeInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_business_code_info_with_options_async(
+        self,
+        request: dingtalkai_global_e_c__1__0_models.QueryBusinessCodeInfoRequest,
+        headers: dingtalkai_global_e_c__1__0_models.QueryBusinessCodeInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkai_global_e_c__1__0_models.QueryBusinessCodeInfoResponse:
+        """
+        @summary 根据businessCode查询商品图片信息
+        
+        @param request: QueryBusinessCodeInfoRequest
+        @param headers: QueryBusinessCodeInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryBusinessCodeInfoResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.business_code):
+            body['businessCode'] = request.business_code
+        if not UtilClient.is_unset(request.event_type):
+            body['eventType'] = request.event_type
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryBusinessCodeInfo',
+            version='aiGlobalEC_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/aiGlobalEC/businessCode/queryInfo',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkai_global_e_c__1__0_models.QueryBusinessCodeInfoResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_business_code_info(
+        self,
+        request: dingtalkai_global_e_c__1__0_models.QueryBusinessCodeInfoRequest,
+    ) -> dingtalkai_global_e_c__1__0_models.QueryBusinessCodeInfoResponse:
+        """
+        @summary 根据businessCode查询商品图片信息
+        
+        @param request: QueryBusinessCodeInfoRequest
+        @return: QueryBusinessCodeInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkai_global_e_c__1__0_models.QueryBusinessCodeInfoHeaders()
+        return self.query_business_code_info_with_options(request, headers, runtime)
+
+    async def query_business_code_info_async(
+        self,
+        request: dingtalkai_global_e_c__1__0_models.QueryBusinessCodeInfoRequest,
+    ) -> dingtalkai_global_e_c__1__0_models.QueryBusinessCodeInfoResponse:
+        """
+        @summary 根据businessCode查询商品图片信息
+        
+        @param request: QueryBusinessCodeInfoRequest
+        @return: QueryBusinessCodeInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkai_global_e_c__1__0_models.QueryBusinessCodeInfoHeaders()
+        return await self.query_business_code_info_with_options_async(request, headers, runtime)
 
     def query_notable_info_with_options(
         self,

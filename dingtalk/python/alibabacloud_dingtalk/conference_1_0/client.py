@@ -2636,6 +2636,128 @@ class Client(OpenApiClient):
         headers = dingtalkconference__1__0_models.MuteMembersHeaders()
         return await self.mute_members_with_options_async(conference_id, request, headers, runtime)
 
+    def opt_record_white_account_with_options(
+        self,
+        tmp_req: dingtalkconference__1__0_models.OptRecordWhiteAccountRequest,
+        headers: dingtalkconference__1__0_models.OptRecordWhiteAccountHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.OptRecordWhiteAccountResponse:
+        """
+        @summary 操作云/本地录制白名单企业设置
+        
+        @param tmp_req: OptRecordWhiteAccountRequest
+        @param headers: OptRecordWhiteAccountHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: OptRecordWhiteAccountResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkconference__1__0_models.OptRecordWhiteAccountShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.request_body):
+            request.request_body_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.request_body, 'requestBody', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.request_body_shrink):
+            query['requestBody'] = request.request_body_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='OptRecordWhiteAccount',
+            version='conference_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/conference/videoConferences/enterpriseSetting/record/whiteAccount',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.OptRecordWhiteAccountResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def opt_record_white_account_with_options_async(
+        self,
+        tmp_req: dingtalkconference__1__0_models.OptRecordWhiteAccountRequest,
+        headers: dingtalkconference__1__0_models.OptRecordWhiteAccountHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.OptRecordWhiteAccountResponse:
+        """
+        @summary 操作云/本地录制白名单企业设置
+        
+        @param tmp_req: OptRecordWhiteAccountRequest
+        @param headers: OptRecordWhiteAccountHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: OptRecordWhiteAccountResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkconference__1__0_models.OptRecordWhiteAccountShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.request_body):
+            request.request_body_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.request_body, 'requestBody', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.request_body_shrink):
+            query['requestBody'] = request.request_body_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='OptRecordWhiteAccount',
+            version='conference_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/conference/videoConferences/enterpriseSetting/record/whiteAccount',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.OptRecordWhiteAccountResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def opt_record_white_account(
+        self,
+        request: dingtalkconference__1__0_models.OptRecordWhiteAccountRequest,
+    ) -> dingtalkconference__1__0_models.OptRecordWhiteAccountResponse:
+        """
+        @summary 操作云/本地录制白名单企业设置
+        
+        @param request: OptRecordWhiteAccountRequest
+        @return: OptRecordWhiteAccountResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.OptRecordWhiteAccountHeaders()
+        return self.opt_record_white_account_with_options(request, headers, runtime)
+
+    async def opt_record_white_account_async(
+        self,
+        request: dingtalkconference__1__0_models.OptRecordWhiteAccountRequest,
+    ) -> dingtalkconference__1__0_models.OptRecordWhiteAccountResponse:
+        """
+        @summary 操作云/本地录制白名单企业设置
+        
+        @param request: OptRecordWhiteAccountRequest
+        @return: OptRecordWhiteAccountResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.OptRecordWhiteAccountHeaders()
+        return await self.opt_record_white_account_with_options_async(request, headers, runtime)
+
     def query_cloud_record_text_with_options(
         self,
         conference_id: str,

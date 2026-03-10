@@ -26,6 +26,350 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def control_recording_with_options(
+        self,
+        request: dingtalkdvi__1__0_models.ControlRecordingRequest,
+        headers: dingtalkdvi__1__0_models.ControlRecordingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.ControlRecordingResponse:
+        """
+        @summary 设备录音启停控制
+        
+        @param request: ControlRecordingRequest
+        @param headers: ControlRecordingHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ControlRecordingResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.action):
+            body['action'] = request.action
+        if not UtilClient.is_unset(request.agree):
+            body['agree'] = request.agree
+        if not UtilClient.is_unset(request.team_code):
+            body['teamCode'] = request.team_code
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ControlRecording',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/devices/recording/control',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.ControlRecordingResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def control_recording_with_options_async(
+        self,
+        request: dingtalkdvi__1__0_models.ControlRecordingRequest,
+        headers: dingtalkdvi__1__0_models.ControlRecordingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.ControlRecordingResponse:
+        """
+        @summary 设备录音启停控制
+        
+        @param request: ControlRecordingRequest
+        @param headers: ControlRecordingHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ControlRecordingResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.action):
+            body['action'] = request.action
+        if not UtilClient.is_unset(request.agree):
+            body['agree'] = request.agree
+        if not UtilClient.is_unset(request.team_code):
+            body['teamCode'] = request.team_code
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ControlRecording',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/devices/recording/control',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.ControlRecordingResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def control_recording(
+        self,
+        request: dingtalkdvi__1__0_models.ControlRecordingRequest,
+    ) -> dingtalkdvi__1__0_models.ControlRecordingResponse:
+        """
+        @summary 设备录音启停控制
+        
+        @param request: ControlRecordingRequest
+        @return: ControlRecordingResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.ControlRecordingHeaders()
+        return self.control_recording_with_options(request, headers, runtime)
+
+    async def control_recording_async(
+        self,
+        request: dingtalkdvi__1__0_models.ControlRecordingRequest,
+    ) -> dingtalkdvi__1__0_models.ControlRecordingResponse:
+        """
+        @summary 设备录音启停控制
+        
+        @param request: ControlRecordingRequest
+        @return: ControlRecordingResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.ControlRecordingHeaders()
+        return await self.control_recording_with_options_async(request, headers, runtime)
+
+    def create_recording_schedule_with_options(
+        self,
+        request: dingtalkdvi__1__0_models.CreateRecordingScheduleRequest,
+        headers: dingtalkdvi__1__0_models.CreateRecordingScheduleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.CreateRecordingScheduleResponse:
+        """
+        @summary 创建录制计划
+        
+        @param request: CreateRecordingScheduleRequest
+        @param headers: CreateRecordingScheduleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateRecordingScheduleResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.schedules):
+            body['schedules'] = request.schedules
+        if not UtilClient.is_unset(request.sn):
+            body['sn'] = request.sn
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateRecordingSchedule',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/devices/recording/schedules',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.CreateRecordingScheduleResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_recording_schedule_with_options_async(
+        self,
+        request: dingtalkdvi__1__0_models.CreateRecordingScheduleRequest,
+        headers: dingtalkdvi__1__0_models.CreateRecordingScheduleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.CreateRecordingScheduleResponse:
+        """
+        @summary 创建录制计划
+        
+        @param request: CreateRecordingScheduleRequest
+        @param headers: CreateRecordingScheduleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateRecordingScheduleResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.schedules):
+            body['schedules'] = request.schedules
+        if not UtilClient.is_unset(request.sn):
+            body['sn'] = request.sn
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateRecordingSchedule',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/devices/recording/schedules',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.CreateRecordingScheduleResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_recording_schedule(
+        self,
+        request: dingtalkdvi__1__0_models.CreateRecordingScheduleRequest,
+    ) -> dingtalkdvi__1__0_models.CreateRecordingScheduleResponse:
+        """
+        @summary 创建录制计划
+        
+        @param request: CreateRecordingScheduleRequest
+        @return: CreateRecordingScheduleResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.CreateRecordingScheduleHeaders()
+        return self.create_recording_schedule_with_options(request, headers, runtime)
+
+    async def create_recording_schedule_async(
+        self,
+        request: dingtalkdvi__1__0_models.CreateRecordingScheduleRequest,
+    ) -> dingtalkdvi__1__0_models.CreateRecordingScheduleResponse:
+        """
+        @summary 创建录制计划
+        
+        @param request: CreateRecordingScheduleRequest
+        @return: CreateRecordingScheduleResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.CreateRecordingScheduleHeaders()
+        return await self.create_recording_schedule_with_options_async(request, headers, runtime)
+
+    def delete_recording_schedule_with_options(
+        self,
+        task_id: str,
+        headers: dingtalkdvi__1__0_models.DeleteRecordingScheduleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.DeleteRecordingScheduleResponse:
+        """
+        @summary 删除录制计划
+        
+        @param headers: DeleteRecordingScheduleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteRecordingScheduleResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='DeleteRecordingSchedule',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/devices/recording/schedules/{task_id}',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.DeleteRecordingScheduleResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def delete_recording_schedule_with_options_async(
+        self,
+        task_id: str,
+        headers: dingtalkdvi__1__0_models.DeleteRecordingScheduleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.DeleteRecordingScheduleResponse:
+        """
+        @summary 删除录制计划
+        
+        @param headers: DeleteRecordingScheduleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteRecordingScheduleResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='DeleteRecordingSchedule',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/devices/recording/schedules/{task_id}',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.DeleteRecordingScheduleResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def delete_recording_schedule(
+        self,
+        task_id: str,
+    ) -> dingtalkdvi__1__0_models.DeleteRecordingScheduleResponse:
+        """
+        @summary 删除录制计划
+        
+        @return: DeleteRecordingScheduleResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.DeleteRecordingScheduleHeaders()
+        return self.delete_recording_schedule_with_options(task_id, headers, runtime)
+
+    async def delete_recording_schedule_async(
+        self,
+        task_id: str,
+    ) -> dingtalkdvi__1__0_models.DeleteRecordingScheduleResponse:
+        """
+        @summary 删除录制计划
+        
+        @return: DeleteRecordingScheduleResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.DeleteRecordingScheduleHeaders()
+        return await self.delete_recording_schedule_with_options_async(task_id, headers, runtime)
+
     def get_audio_file_download_info_with_options(
         self,
         request: dingtalkdvi__1__0_models.GetAudioFileDownloadInfoRequest,
@@ -489,6 +833,106 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdvi__1__0_models.GetCustomerInsightHeaders()
         return await self.get_customer_insight_with_options_async(request, headers, runtime)
+
+    def get_recording_schedule_with_options(
+        self,
+        task_id: str,
+        headers: dingtalkdvi__1__0_models.GetRecordingScheduleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.GetRecordingScheduleResponse:
+        """
+        @summary 获取录制计划
+        
+        @param headers: GetRecordingScheduleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetRecordingScheduleResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetRecordingSchedule',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/devices/recording/schedules/{task_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.GetRecordingScheduleResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_recording_schedule_with_options_async(
+        self,
+        task_id: str,
+        headers: dingtalkdvi__1__0_models.GetRecordingScheduleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.GetRecordingScheduleResponse:
+        """
+        @summary 获取录制计划
+        
+        @param headers: GetRecordingScheduleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetRecordingScheduleResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetRecordingSchedule',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/devices/recording/schedules/{task_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.GetRecordingScheduleResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_recording_schedule(
+        self,
+        task_id: str,
+    ) -> dingtalkdvi__1__0_models.GetRecordingScheduleResponse:
+        """
+        @summary 获取录制计划
+        
+        @return: GetRecordingScheduleResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.GetRecordingScheduleHeaders()
+        return self.get_recording_schedule_with_options(task_id, headers, runtime)
+
+    async def get_recording_schedule_async(
+        self,
+        task_id: str,
+    ) -> dingtalkdvi__1__0_models.GetRecordingScheduleResponse:
+        """
+        @summary 获取录制计划
+        
+        @return: GetRecordingScheduleResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.GetRecordingScheduleHeaders()
+        return await self.get_recording_schedule_with_options_async(task_id, headers, runtime)
 
     def get_service_chapter_summary_with_options(
         self,
@@ -1197,6 +1641,144 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdvi__1__0_models.ListCustomerHeaders()
         return await self.list_customer_with_options_async(request, headers, runtime)
+
+    def list_device_recording_duration_with_options(
+        self,
+        request: dingtalkdvi__1__0_models.ListDeviceRecordingDurationRequest,
+        headers: dingtalkdvi__1__0_models.ListDeviceRecordingDurationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.ListDeviceRecordingDurationResponse:
+        """
+        @summary 分页查询设备录音时长
+        
+        @param request: ListDeviceRecordingDurationRequest
+        @param headers: ListDeviceRecordingDurationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListDeviceRecordingDurationResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.end_time):
+            query['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.sn):
+            query['sn'] = request.sn
+        if not UtilClient.is_unset(request.start_time):
+            query['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.team_code):
+            query['teamCode'] = request.team_code
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListDeviceRecordingDuration',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/devices/recording-durations',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.ListDeviceRecordingDurationResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def list_device_recording_duration_with_options_async(
+        self,
+        request: dingtalkdvi__1__0_models.ListDeviceRecordingDurationRequest,
+        headers: dingtalkdvi__1__0_models.ListDeviceRecordingDurationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.ListDeviceRecordingDurationResponse:
+        """
+        @summary 分页查询设备录音时长
+        
+        @param request: ListDeviceRecordingDurationRequest
+        @param headers: ListDeviceRecordingDurationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListDeviceRecordingDurationResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.end_time):
+            query['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.sn):
+            query['sn'] = request.sn
+        if not UtilClient.is_unset(request.start_time):
+            query['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.team_code):
+            query['teamCode'] = request.team_code
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListDeviceRecordingDuration',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/devices/recording-durations',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.ListDeviceRecordingDurationResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def list_device_recording_duration(
+        self,
+        request: dingtalkdvi__1__0_models.ListDeviceRecordingDurationRequest,
+    ) -> dingtalkdvi__1__0_models.ListDeviceRecordingDurationResponse:
+        """
+        @summary 分页查询设备录音时长
+        
+        @param request: ListDeviceRecordingDurationRequest
+        @return: ListDeviceRecordingDurationResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.ListDeviceRecordingDurationHeaders()
+        return self.list_device_recording_duration_with_options(request, headers, runtime)
+
+    async def list_device_recording_duration_async(
+        self,
+        request: dingtalkdvi__1__0_models.ListDeviceRecordingDurationRequest,
+    ) -> dingtalkdvi__1__0_models.ListDeviceRecordingDurationResponse:
+        """
+        @summary 分页查询设备录音时长
+        
+        @param request: ListDeviceRecordingDurationRequest
+        @return: ListDeviceRecordingDurationResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.ListDeviceRecordingDurationHeaders()
+        return await self.list_device_recording_duration_with_options_async(request, headers, runtime)
 
     def list_service_record_with_options(
         self,
@@ -2197,6 +2779,254 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdvi__1__0_models.SubmitAsrTaskHeaders()
         return await self.submit_asr_task_with_options_async(request, headers, runtime)
+
+    def update_device_binding_with_options(
+        self,
+        request: dingtalkdvi__1__0_models.UpdateDeviceBindingRequest,
+        headers: dingtalkdvi__1__0_models.UpdateDeviceBindingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.UpdateDeviceBindingResponse:
+        """
+        @summary 更新设备绑定关系
+        
+        @param request: UpdateDeviceBindingRequest
+        @param headers: UpdateDeviceBindingHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateDeviceBindingResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.action):
+            body['action'] = request.action
+        if not UtilClient.is_unset(request.sn):
+            body['sn'] = request.sn
+        if not UtilClient.is_unset(request.team_code):
+            body['teamCode'] = request.team_code
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateDeviceBinding',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/devices/binding/update',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.UpdateDeviceBindingResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_device_binding_with_options_async(
+        self,
+        request: dingtalkdvi__1__0_models.UpdateDeviceBindingRequest,
+        headers: dingtalkdvi__1__0_models.UpdateDeviceBindingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.UpdateDeviceBindingResponse:
+        """
+        @summary 更新设备绑定关系
+        
+        @param request: UpdateDeviceBindingRequest
+        @param headers: UpdateDeviceBindingHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateDeviceBindingResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.action):
+            body['action'] = request.action
+        if not UtilClient.is_unset(request.sn):
+            body['sn'] = request.sn
+        if not UtilClient.is_unset(request.team_code):
+            body['teamCode'] = request.team_code
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateDeviceBinding',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/devices/binding/update',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.UpdateDeviceBindingResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_device_binding(
+        self,
+        request: dingtalkdvi__1__0_models.UpdateDeviceBindingRequest,
+    ) -> dingtalkdvi__1__0_models.UpdateDeviceBindingResponse:
+        """
+        @summary 更新设备绑定关系
+        
+        @param request: UpdateDeviceBindingRequest
+        @return: UpdateDeviceBindingResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.UpdateDeviceBindingHeaders()
+        return self.update_device_binding_with_options(request, headers, runtime)
+
+    async def update_device_binding_async(
+        self,
+        request: dingtalkdvi__1__0_models.UpdateDeviceBindingRequest,
+    ) -> dingtalkdvi__1__0_models.UpdateDeviceBindingResponse:
+        """
+        @summary 更新设备绑定关系
+        
+        @param request: UpdateDeviceBindingRequest
+        @return: UpdateDeviceBindingResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.UpdateDeviceBindingHeaders()
+        return await self.update_device_binding_with_options_async(request, headers, runtime)
+
+    def update_recording_schedule_with_options(
+        self,
+        request: dingtalkdvi__1__0_models.UpdateRecordingScheduleRequest,
+        headers: dingtalkdvi__1__0_models.UpdateRecordingScheduleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.UpdateRecordingScheduleResponse:
+        """
+        @summary 更新录制计划
+        
+        @param request: UpdateRecordingScheduleRequest
+        @param headers: UpdateRecordingScheduleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateRecordingScheduleResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.task_id):
+            body['taskId'] = request.task_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateRecordingSchedule',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/devices/recording/schedules',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.UpdateRecordingScheduleResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_recording_schedule_with_options_async(
+        self,
+        request: dingtalkdvi__1__0_models.UpdateRecordingScheduleRequest,
+        headers: dingtalkdvi__1__0_models.UpdateRecordingScheduleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.UpdateRecordingScheduleResponse:
+        """
+        @summary 更新录制计划
+        
+        @param request: UpdateRecordingScheduleRequest
+        @param headers: UpdateRecordingScheduleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateRecordingScheduleResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.task_id):
+            body['taskId'] = request.task_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateRecordingSchedule',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/devices/recording/schedules',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.UpdateRecordingScheduleResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_recording_schedule(
+        self,
+        request: dingtalkdvi__1__0_models.UpdateRecordingScheduleRequest,
+    ) -> dingtalkdvi__1__0_models.UpdateRecordingScheduleResponse:
+        """
+        @summary 更新录制计划
+        
+        @param request: UpdateRecordingScheduleRequest
+        @return: UpdateRecordingScheduleResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.UpdateRecordingScheduleHeaders()
+        return self.update_recording_schedule_with_options(request, headers, runtime)
+
+    async def update_recording_schedule_async(
+        self,
+        request: dingtalkdvi__1__0_models.UpdateRecordingScheduleRequest,
+    ) -> dingtalkdvi__1__0_models.UpdateRecordingScheduleResponse:
+        """
+        @summary 更新录制计划
+        
+        @param request: UpdateRecordingScheduleRequest
+        @return: UpdateRecordingScheduleResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.UpdateRecordingScheduleHeaders()
+        return await self.update_recording_schedule_with_options_async(request, headers, runtime)
 
     def video_customer_split_with_options(
         self,

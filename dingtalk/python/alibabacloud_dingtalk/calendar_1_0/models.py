@@ -12303,6 +12303,237 @@ class ListInstancesResponse(TeaModel):
         return self
 
 
+class ListOrgPluginsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        ding_access_token_type: str = None,
+        ding_client_id: str = None,
+        ding_isv_org_id: str = None,
+        ding_open_app_org_id: str = None,
+        ding_org_id: str = None,
+        ding_suite_key: str = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.ding_access_token_type = ding_access_token_type
+        self.ding_client_id = ding_client_id
+        self.ding_isv_org_id = ding_isv_org_id
+        self.ding_open_app_org_id = ding_open_app_org_id
+        self.ding_org_id = ding_org_id
+        self.ding_suite_key = ding_suite_key
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.ding_access_token_type is not None:
+            result['dingAccessTokenType'] = self.ding_access_token_type
+        if self.ding_client_id is not None:
+            result['dingClientId'] = self.ding_client_id
+        if self.ding_isv_org_id is not None:
+            result['dingIsvOrgId'] = self.ding_isv_org_id
+        if self.ding_open_app_org_id is not None:
+            result['dingOpenAppOrgId'] = self.ding_open_app_org_id
+        if self.ding_org_id is not None:
+            result['dingOrgId'] = self.ding_org_id
+        if self.ding_suite_key is not None:
+            result['dingSuiteKey'] = self.ding_suite_key
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('dingAccessTokenType') is not None:
+            self.ding_access_token_type = m.get('dingAccessTokenType')
+        if m.get('dingClientId') is not None:
+            self.ding_client_id = m.get('dingClientId')
+        if m.get('dingIsvOrgId') is not None:
+            self.ding_isv_org_id = m.get('dingIsvOrgId')
+        if m.get('dingOpenAppOrgId') is not None:
+            self.ding_open_app_org_id = m.get('dingOpenAppOrgId')
+        if m.get('dingOrgId') is not None:
+            self.ding_org_id = m.get('dingOrgId')
+        if m.get('dingSuiteKey') is not None:
+            self.ding_suite_key = m.get('dingSuiteKey')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListOrgPluginsResponseBodyPluginsSubscribers(TeaModel):
+    def __init__(
+        self,
+        dept_ids: List[str] = None,
+        union_ids: List[str] = None,
+    ):
+        self.dept_ids = dept_ids
+        self.union_ids = union_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_ids is not None:
+            result['deptIds'] = self.dept_ids
+        if self.union_ids is not None:
+            result['unionIds'] = self.union_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptIds') is not None:
+            self.dept_ids = m.get('deptIds')
+        if m.get('unionIds') is not None:
+            self.union_ids = m.get('unionIds')
+        return self
+
+
+class ListOrgPluginsResponseBodyPlugins(TeaModel):
+    def __init__(
+        self,
+        logo: str = None,
+        name: str = None,
+        plugin_classification: str = None,
+        plugin_id: str = None,
+        subscribers: ListOrgPluginsResponseBodyPluginsSubscribers = None,
+    ):
+        self.logo = logo
+        self.name = name
+        self.plugin_classification = plugin_classification
+        self.plugin_id = plugin_id
+        self.subscribers = subscribers
+
+    def validate(self):
+        if self.subscribers:
+            self.subscribers.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.logo is not None:
+            result['logo'] = self.logo
+        if self.name is not None:
+            result['name'] = self.name
+        if self.plugin_classification is not None:
+            result['pluginClassification'] = self.plugin_classification
+        if self.plugin_id is not None:
+            result['pluginId'] = self.plugin_id
+        if self.subscribers is not None:
+            result['subscribers'] = self.subscribers.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('logo') is not None:
+            self.logo = m.get('logo')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('pluginClassification') is not None:
+            self.plugin_classification = m.get('pluginClassification')
+        if m.get('pluginId') is not None:
+            self.plugin_id = m.get('pluginId')
+        if m.get('subscribers') is not None:
+            temp_model = ListOrgPluginsResponseBodyPluginsSubscribers()
+            self.subscribers = temp_model.from_map(m['subscribers'])
+        return self
+
+
+class ListOrgPluginsResponseBody(TeaModel):
+    def __init__(
+        self,
+        plugins: List[ListOrgPluginsResponseBodyPlugins] = None,
+    ):
+        self.plugins = plugins
+
+    def validate(self):
+        if self.plugins:
+            for k in self.plugins:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['plugins'] = []
+        if self.plugins is not None:
+            for k in self.plugins:
+                result['plugins'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.plugins = []
+        if m.get('plugins') is not None:
+            for k in m.get('plugins'):
+                temp_model = ListOrgPluginsResponseBodyPlugins()
+                self.plugins.append(temp_model.from_map(k))
+        return self
+
+
+class ListOrgPluginsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ListOrgPluginsResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ListOrgPluginsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class MeetingRoomRespondHeaders(TeaModel):
     def __init__(
         self,
@@ -14830,6 +15061,140 @@ class UnsubscribeCalendarResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UnsubscribeCalendarResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateOrgPluginSubscribersHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateOrgPluginSubscribersRequest(TeaModel):
+    def __init__(
+        self,
+        dept_ids: List[str] = None,
+        union_ids: List[str] = None,
+    ):
+        self.dept_ids = dept_ids
+        self.union_ids = union_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_ids is not None:
+            result['deptIds'] = self.dept_ids
+        if self.union_ids is not None:
+            result['unionIds'] = self.union_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptIds') is not None:
+            self.dept_ids = m.get('deptIds')
+        if m.get('unionIds') is not None:
+            self.union_ids = m.get('unionIds')
+        return self
+
+
+class UpdateOrgPluginSubscribersResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class UpdateOrgPluginSubscribersResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdateOrgPluginSubscribersResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdateOrgPluginSubscribersResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

@@ -13312,6 +13312,120 @@ class Client(OpenApiClient):
         headers = dingtalkindustry__1__0_models.ExternalQueryExternalOrgsHeaders()
         return await self.external_query_external_orgs_with_options_async(request, headers, runtime)
 
+    def get_convert_result_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.GetConvertResultRequest,
+        headers: dingtalkindustry__1__0_models.GetConvertResultHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.GetConvertResultResponse:
+        """
+        @summary 获取转换结果
+        
+        @param request: GetConvertResultRequest
+        @param headers: GetConvertResultHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetConvertResultResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.task_biz_id):
+            body['taskBizId'] = request.task_biz_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetConvertResult',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/order/convert/get',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.GetConvertResultResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_convert_result_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.GetConvertResultRequest,
+        headers: dingtalkindustry__1__0_models.GetConvertResultHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.GetConvertResultResponse:
+        """
+        @summary 获取转换结果
+        
+        @param request: GetConvertResultRequest
+        @param headers: GetConvertResultHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetConvertResultResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.task_biz_id):
+            body['taskBizId'] = request.task_biz_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetConvertResult',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/order/convert/get',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.GetConvertResultResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_convert_result(
+        self,
+        request: dingtalkindustry__1__0_models.GetConvertResultRequest,
+    ) -> dingtalkindustry__1__0_models.GetConvertResultResponse:
+        """
+        @summary 获取转换结果
+        
+        @param request: GetConvertResultRequest
+        @return: GetConvertResultResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.GetConvertResultHeaders()
+        return self.get_convert_result_with_options(request, headers, runtime)
+
+    async def get_convert_result_async(
+        self,
+        request: dingtalkindustry__1__0_models.GetConvertResultRequest,
+    ) -> dingtalkindustry__1__0_models.GetConvertResultResponse:
+        """
+        @summary 获取转换结果
+        
+        @param request: GetConvertResultRequest
+        @return: GetConvertResultResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.GetConvertResultHeaders()
+        return await self.get_convert_result_with_options_async(request, headers, runtime)
+
     def get_task_package_result_with_options(
         self,
         request: dingtalkindustry__1__0_models.GetTaskPackageResultRequest,
@@ -16170,6 +16284,128 @@ class Client(OpenApiClient):
         headers = dingtalkindustry__1__0_models.IndustryMmanufactureMaterialCostGetHeaders()
         return await self.industry_mmanufacture_material_cost_get_with_options_async(request, headers, runtime)
 
+    def order_convert_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.OrderConvertRequest,
+        headers: dingtalkindustry__1__0_models.OrderConvertHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.OrderConvertResponse:
+        """
+        @summary 查询订单转换结果
+        
+        @param request: OrderConvertRequest
+        @param headers: OrderConvertHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: OrderConvertResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.attachments):
+            body['attachments'] = request.attachments
+        if not UtilClient.is_unset(request.operate_user_id):
+            body['operateUserId'] = request.operate_user_id
+        if not UtilClient.is_unset(request.rule_biz_id):
+            body['ruleBizId'] = request.rule_biz_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='OrderConvert',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/order/convert/execute',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.OrderConvertResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def order_convert_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.OrderConvertRequest,
+        headers: dingtalkindustry__1__0_models.OrderConvertHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.OrderConvertResponse:
+        """
+        @summary 查询订单转换结果
+        
+        @param request: OrderConvertRequest
+        @param headers: OrderConvertHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: OrderConvertResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.attachments):
+            body['attachments'] = request.attachments
+        if not UtilClient.is_unset(request.operate_user_id):
+            body['operateUserId'] = request.operate_user_id
+        if not UtilClient.is_unset(request.rule_biz_id):
+            body['ruleBizId'] = request.rule_biz_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='OrderConvert',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/order/convert/execute',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.OrderConvertResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def order_convert(
+        self,
+        request: dingtalkindustry__1__0_models.OrderConvertRequest,
+    ) -> dingtalkindustry__1__0_models.OrderConvertResponse:
+        """
+        @summary 查询订单转换结果
+        
+        @param request: OrderConvertRequest
+        @return: OrderConvertResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.OrderConvertHeaders()
+        return self.order_convert_with_options(request, headers, runtime)
+
+    async def order_convert_async(
+        self,
+        request: dingtalkindustry__1__0_models.OrderConvertRequest,
+    ) -> dingtalkindustry__1__0_models.OrderConvertResponse:
+        """
+        @summary 查询订单转换结果
+        
+        @param request: OrderConvertRequest
+        @return: OrderConvertResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.OrderConvertHeaders()
+        return await self.order_convert_with_options_async(request, headers, runtime)
+
     def push_ding_message_with_options(
         self,
         request: dingtalkindustry__1__0_models.PushDingMessageRequest,
@@ -17280,6 +17516,128 @@ class Client(OpenApiClient):
         headers = dingtalkindustry__1__0_models.QueryChatAIOXMInfoHeaders()
         return await self.query_chat_aioxminfo_with_options_async(request, headers, runtime)
 
+    def query_convert_rules_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.QueryConvertRulesRequest,
+        headers: dingtalkindustry__1__0_models.QueryConvertRulesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.QueryConvertRulesResponse:
+        """
+        @summary 查询订单转换规则
+        
+        @param request: QueryConvertRulesRequest
+        @param headers: QueryConvertRulesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryConvertRulesResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.keyword):
+            body['keyword'] = request.keyword
+        if not UtilClient.is_unset(request.page_no):
+            body['pageNo'] = request.page_no
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryConvertRules',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/order/rule/page',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.QueryConvertRulesResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_convert_rules_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.QueryConvertRulesRequest,
+        headers: dingtalkindustry__1__0_models.QueryConvertRulesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.QueryConvertRulesResponse:
+        """
+        @summary 查询订单转换规则
+        
+        @param request: QueryConvertRulesRequest
+        @param headers: QueryConvertRulesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryConvertRulesResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.keyword):
+            body['keyword'] = request.keyword
+        if not UtilClient.is_unset(request.page_no):
+            body['pageNo'] = request.page_no
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryConvertRules',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/order/rule/page',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.QueryConvertRulesResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_convert_rules(
+        self,
+        request: dingtalkindustry__1__0_models.QueryConvertRulesRequest,
+    ) -> dingtalkindustry__1__0_models.QueryConvertRulesResponse:
+        """
+        @summary 查询订单转换规则
+        
+        @param request: QueryConvertRulesRequest
+        @return: QueryConvertRulesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.QueryConvertRulesHeaders()
+        return self.query_convert_rules_with_options(request, headers, runtime)
+
+    async def query_convert_rules_async(
+        self,
+        request: dingtalkindustry__1__0_models.QueryConvertRulesRequest,
+    ) -> dingtalkindustry__1__0_models.QueryConvertRulesResponse:
+        """
+        @summary 查询订单转换规则
+        
+        @param request: QueryConvertRulesRequest
+        @return: QueryConvertRulesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.QueryConvertRulesHeaders()
+        return await self.query_convert_rules_with_options_async(request, headers, runtime)
+
     def query_department_extend_info_with_options(
         self,
         request: dingtalkindustry__1__0_models.QueryDepartmentExtendInfoRequest,
@@ -18319,6 +18677,148 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkindustry__1__0_models.QueryMedicalEventsHeaders()
         return await self.query_medical_events_with_options_async(headers, runtime)
+
+    def query_order_convert_result_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.QueryOrderConvertResultRequest,
+        headers: dingtalkindustry__1__0_models.QueryOrderConvertResultHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.QueryOrderConvertResultResponse:
+        """
+        @summary 查询订单转换结果
+        
+        @param request: QueryOrderConvertResultRequest
+        @param headers: QueryOrderConvertResultHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryOrderConvertResultResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.content_search):
+            body['contentSearch'] = request.content_search
+        if not UtilClient.is_unset(request.create_time_end):
+            body['createTimeEnd'] = request.create_time_end
+        if not UtilClient.is_unset(request.create_time_start):
+            body['createTimeStart'] = request.create_time_start
+        if not UtilClient.is_unset(request.page_no):
+            body['pageNo'] = request.page_no
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryOrderConvertResult',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/order/convert/list',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.QueryOrderConvertResultResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_order_convert_result_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.QueryOrderConvertResultRequest,
+        headers: dingtalkindustry__1__0_models.QueryOrderConvertResultHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.QueryOrderConvertResultResponse:
+        """
+        @summary 查询订单转换结果
+        
+        @param request: QueryOrderConvertResultRequest
+        @param headers: QueryOrderConvertResultHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryOrderConvertResultResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.content_search):
+            body['contentSearch'] = request.content_search
+        if not UtilClient.is_unset(request.create_time_end):
+            body['createTimeEnd'] = request.create_time_end
+        if not UtilClient.is_unset(request.create_time_start):
+            body['createTimeStart'] = request.create_time_start
+        if not UtilClient.is_unset(request.page_no):
+            body['pageNo'] = request.page_no
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryOrderConvertResult',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/order/convert/list',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.QueryOrderConvertResultResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_order_convert_result(
+        self,
+        request: dingtalkindustry__1__0_models.QueryOrderConvertResultRequest,
+    ) -> dingtalkindustry__1__0_models.QueryOrderConvertResultResponse:
+        """
+        @summary 查询订单转换结果
+        
+        @param request: QueryOrderConvertResultRequest
+        @return: QueryOrderConvertResultResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.QueryOrderConvertResultHeaders()
+        return self.query_order_convert_result_with_options(request, headers, runtime)
+
+    async def query_order_convert_result_async(
+        self,
+        request: dingtalkindustry__1__0_models.QueryOrderConvertResultRequest,
+    ) -> dingtalkindustry__1__0_models.QueryOrderConvertResultResponse:
+        """
+        @summary 查询订单转换结果
+        
+        @param request: QueryOrderConvertResultRequest
+        @return: QueryOrderConvertResultResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.QueryOrderConvertResultHeaders()
+        return await self.query_order_convert_result_with_options_async(request, headers, runtime)
 
     def query_user_credentials_with_options(
         self,

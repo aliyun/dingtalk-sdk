@@ -281,3 +281,251 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkalgo__1__0_models.OkrOpenRecommendHeaders()
         return await self.okr_open_recommend_with_options_async(request, headers, runtime)
+
+    def weiqiao_aluminum_query_with_options(
+        self,
+        request: dingtalkalgo__1__0_models.WeiqiaoAluminumQueryRequest,
+        headers: dingtalkalgo__1__0_models.WeiqiaoAluminumQueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkalgo__1__0_models.WeiqiaoAluminumQueryResponse:
+        """
+        @summary 魏桥铝原料预测任务查询
+        
+        @param request: WeiqiaoAluminumQueryRequest
+        @param headers: WeiqiaoAluminumQueryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: WeiqiaoAluminumQueryResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.task_id):
+            body['task_id'] = request.task_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='WeiqiaoAluminumQuery',
+            version='algo_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/algo/industry/weiqiao/aluminum/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkalgo__1__0_models.WeiqiaoAluminumQueryResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def weiqiao_aluminum_query_with_options_async(
+        self,
+        request: dingtalkalgo__1__0_models.WeiqiaoAluminumQueryRequest,
+        headers: dingtalkalgo__1__0_models.WeiqiaoAluminumQueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkalgo__1__0_models.WeiqiaoAluminumQueryResponse:
+        """
+        @summary 魏桥铝原料预测任务查询
+        
+        @param request: WeiqiaoAluminumQueryRequest
+        @param headers: WeiqiaoAluminumQueryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: WeiqiaoAluminumQueryResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.task_id):
+            body['task_id'] = request.task_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='WeiqiaoAluminumQuery',
+            version='algo_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/algo/industry/weiqiao/aluminum/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkalgo__1__0_models.WeiqiaoAluminumQueryResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def weiqiao_aluminum_query(
+        self,
+        request: dingtalkalgo__1__0_models.WeiqiaoAluminumQueryRequest,
+    ) -> dingtalkalgo__1__0_models.WeiqiaoAluminumQueryResponse:
+        """
+        @summary 魏桥铝原料预测任务查询
+        
+        @param request: WeiqiaoAluminumQueryRequest
+        @return: WeiqiaoAluminumQueryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkalgo__1__0_models.WeiqiaoAluminumQueryHeaders()
+        return self.weiqiao_aluminum_query_with_options(request, headers, runtime)
+
+    async def weiqiao_aluminum_query_async(
+        self,
+        request: dingtalkalgo__1__0_models.WeiqiaoAluminumQueryRequest,
+    ) -> dingtalkalgo__1__0_models.WeiqiaoAluminumQueryResponse:
+        """
+        @summary 魏桥铝原料预测任务查询
+        
+        @param request: WeiqiaoAluminumQueryRequest
+        @return: WeiqiaoAluminumQueryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkalgo__1__0_models.WeiqiaoAluminumQueryHeaders()
+        return await self.weiqiao_aluminum_query_with_options_async(request, headers, runtime)
+
+    def weiqiao_aluminum_submit_with_options(
+        self,
+        request: dingtalkalgo__1__0_models.WeiqiaoAluminumSubmitRequest,
+        headers: dingtalkalgo__1__0_models.WeiqiaoAluminumSubmitHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkalgo__1__0_models.WeiqiaoAluminumSubmitResponse:
+        """
+        @summary 魏桥铝原料预测任务提交
+        
+        @param request: WeiqiaoAluminumSubmitRequest
+        @param headers: WeiqiaoAluminumSubmitHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: WeiqiaoAluminumSubmitResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.current_furnace):
+            body['current_furnace'] = request.current_furnace
+        if not UtilClient.is_unset(request.dilution_config):
+            body['dilution_config'] = request.dilution_config
+        if not UtilClient.is_unset(request.history_furnace):
+            body['history_furnace'] = request.history_furnace
+        if not UtilClient.is_unset(request.raw_materials):
+            body['raw_materials'] = request.raw_materials
+        if not UtilClient.is_unset(request.target):
+            body['target'] = request.target
+        if not UtilClient.is_unset(request.target_ranges):
+            body['target_ranges'] = request.target_ranges
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='WeiqiaoAluminumSubmit',
+            version='algo_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/algo/industry/weiqiao/aluminum/submit',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkalgo__1__0_models.WeiqiaoAluminumSubmitResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def weiqiao_aluminum_submit_with_options_async(
+        self,
+        request: dingtalkalgo__1__0_models.WeiqiaoAluminumSubmitRequest,
+        headers: dingtalkalgo__1__0_models.WeiqiaoAluminumSubmitHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkalgo__1__0_models.WeiqiaoAluminumSubmitResponse:
+        """
+        @summary 魏桥铝原料预测任务提交
+        
+        @param request: WeiqiaoAluminumSubmitRequest
+        @param headers: WeiqiaoAluminumSubmitHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: WeiqiaoAluminumSubmitResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.current_furnace):
+            body['current_furnace'] = request.current_furnace
+        if not UtilClient.is_unset(request.dilution_config):
+            body['dilution_config'] = request.dilution_config
+        if not UtilClient.is_unset(request.history_furnace):
+            body['history_furnace'] = request.history_furnace
+        if not UtilClient.is_unset(request.raw_materials):
+            body['raw_materials'] = request.raw_materials
+        if not UtilClient.is_unset(request.target):
+            body['target'] = request.target
+        if not UtilClient.is_unset(request.target_ranges):
+            body['target_ranges'] = request.target_ranges
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='WeiqiaoAluminumSubmit',
+            version='algo_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/algo/industry/weiqiao/aluminum/submit',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkalgo__1__0_models.WeiqiaoAluminumSubmitResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def weiqiao_aluminum_submit(
+        self,
+        request: dingtalkalgo__1__0_models.WeiqiaoAluminumSubmitRequest,
+    ) -> dingtalkalgo__1__0_models.WeiqiaoAluminumSubmitResponse:
+        """
+        @summary 魏桥铝原料预测任务提交
+        
+        @param request: WeiqiaoAluminumSubmitRequest
+        @return: WeiqiaoAluminumSubmitResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkalgo__1__0_models.WeiqiaoAluminumSubmitHeaders()
+        return self.weiqiao_aluminum_submit_with_options(request, headers, runtime)
+
+    async def weiqiao_aluminum_submit_async(
+        self,
+        request: dingtalkalgo__1__0_models.WeiqiaoAluminumSubmitRequest,
+    ) -> dingtalkalgo__1__0_models.WeiqiaoAluminumSubmitResponse:
+        """
+        @summary 魏桥铝原料预测任务提交
+        
+        @param request: WeiqiaoAluminumSubmitRequest
+        @return: WeiqiaoAluminumSubmitResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkalgo__1__0_models.WeiqiaoAluminumSubmitHeaders()
+        return await self.weiqiao_aluminum_submit_with_options_async(request, headers, runtime)

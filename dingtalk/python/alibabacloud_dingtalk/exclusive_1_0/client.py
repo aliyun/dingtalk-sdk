@@ -2006,6 +2006,8 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.did):
+            body['did'] = request.did
         if not UtilClient.is_unset(request.id):
             body['id'] = request.id
         if not UtilClient.is_unset(request.kick_off):
@@ -2055,6 +2057,8 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.did):
+            body['did'] = request.did
         if not UtilClient.is_unset(request.id):
             body['id'] = request.id
         if not UtilClient.is_unset(request.kick_off):
@@ -2615,6 +2619,258 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkexclusive__1__0_models.ExclusiveCreateDingPortalHeaders()
         return await self.exclusive_create_ding_portal_with_options_async(request, headers, runtime)
+
+    def exclusive_pc_alert_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.ExclusivePcAlertRequest,
+        headers: dingtalkexclusive__1__0_models.ExclusivePcAlertHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.ExclusivePcAlertResponse:
+        """
+        @summary 智能运营桌面端弹窗
+        
+        @param request: ExclusivePcAlertRequest
+        @param headers: ExclusivePcAlertHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ExclusivePcAlertResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.image_media_id):
+            body['imageMediaId'] = request.image_media_id
+        if not UtilClient.is_unset(request.open_link):
+            body['openLink'] = request.open_link
+        if not UtilClient.is_unset(request.user_list):
+            body['userList'] = request.user_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ExclusivePcAlert',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/customize/marketing/pcAlert',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.ExclusivePcAlertResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def exclusive_pc_alert_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.ExclusivePcAlertRequest,
+        headers: dingtalkexclusive__1__0_models.ExclusivePcAlertHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.ExclusivePcAlertResponse:
+        """
+        @summary 智能运营桌面端弹窗
+        
+        @param request: ExclusivePcAlertRequest
+        @param headers: ExclusivePcAlertHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ExclusivePcAlertResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.image_media_id):
+            body['imageMediaId'] = request.image_media_id
+        if not UtilClient.is_unset(request.open_link):
+            body['openLink'] = request.open_link
+        if not UtilClient.is_unset(request.user_list):
+            body['userList'] = request.user_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ExclusivePcAlert',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/customize/marketing/pcAlert',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.ExclusivePcAlertResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def exclusive_pc_alert(
+        self,
+        request: dingtalkexclusive__1__0_models.ExclusivePcAlertRequest,
+    ) -> dingtalkexclusive__1__0_models.ExclusivePcAlertResponse:
+        """
+        @summary 智能运营桌面端弹窗
+        
+        @param request: ExclusivePcAlertRequest
+        @return: ExclusivePcAlertResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.ExclusivePcAlertHeaders()
+        return self.exclusive_pc_alert_with_options(request, headers, runtime)
+
+    async def exclusive_pc_alert_async(
+        self,
+        request: dingtalkexclusive__1__0_models.ExclusivePcAlertRequest,
+    ) -> dingtalkexclusive__1__0_models.ExclusivePcAlertResponse:
+        """
+        @summary 智能运营桌面端弹窗
+        
+        @param request: ExclusivePcAlertRequest
+        @return: ExclusivePcAlertResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.ExclusivePcAlertHeaders()
+        return await self.exclusive_pc_alert_with_options_async(request, headers, runtime)
+
+    def exclusive_popup_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.ExclusivePopupRequest,
+        headers: dingtalkexclusive__1__0_models.ExclusivePopupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.ExclusivePopupResponse:
+        """
+        @summary 智能运营移动端首页弹窗
+        
+        @param request: ExclusivePopupRequest
+        @param headers: ExclusivePopupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ExclusivePopupResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.image_media_id):
+            body['imageMediaId'] = request.image_media_id
+        if not UtilClient.is_unset(request.open_link):
+            body['openLink'] = request.open_link
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.user_list):
+            body['userList'] = request.user_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ExclusivePopup',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/customize/marketing/popup',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.ExclusivePopupResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def exclusive_popup_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.ExclusivePopupRequest,
+        headers: dingtalkexclusive__1__0_models.ExclusivePopupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.ExclusivePopupResponse:
+        """
+        @summary 智能运营移动端首页弹窗
+        
+        @param request: ExclusivePopupRequest
+        @param headers: ExclusivePopupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ExclusivePopupResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.image_media_id):
+            body['imageMediaId'] = request.image_media_id
+        if not UtilClient.is_unset(request.open_link):
+            body['openLink'] = request.open_link
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.user_list):
+            body['userList'] = request.user_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ExclusivePopup',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/customize/marketing/popup',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.ExclusivePopupResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def exclusive_popup(
+        self,
+        request: dingtalkexclusive__1__0_models.ExclusivePopupRequest,
+    ) -> dingtalkexclusive__1__0_models.ExclusivePopupResponse:
+        """
+        @summary 智能运营移动端首页弹窗
+        
+        @param request: ExclusivePopupRequest
+        @return: ExclusivePopupResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.ExclusivePopupHeaders()
+        return self.exclusive_popup_with_options(request, headers, runtime)
+
+    async def exclusive_popup_async(
+        self,
+        request: dingtalkexclusive__1__0_models.ExclusivePopupRequest,
+    ) -> dingtalkexclusive__1__0_models.ExclusivePopupResponse:
+        """
+        @summary 智能运营移动端首页弹窗
+        
+        @param request: ExclusivePopupRequest
+        @return: ExclusivePopupResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.ExclusivePopupHeaders()
+        return await self.exclusive_popup_with_options_async(request, headers, runtime)
 
     def file_encrypt_callback_with_options(
         self,
@@ -7772,19 +8028,23 @@ class Client(OpenApiClient):
 
     def get_public_devices_with_options(
         self,
-        request: dingtalkexclusive__1__0_models.GetPublicDevicesRequest,
+        tmp_req: dingtalkexclusive__1__0_models.GetPublicDevicesRequest,
         headers: dingtalkexclusive__1__0_models.GetPublicDevicesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkexclusive__1__0_models.GetPublicDevicesResponse:
         """
         @summary 获取公共设备列表。
         
-        @param request: GetPublicDevicesRequest
+        @param tmp_req: GetPublicDevicesRequest
         @param headers: GetPublicDevicesHeaders
         @param runtime: runtime options for this request RuntimeOptions
         @return: GetPublicDevicesResponse
         """
-        UtilClient.validate_model(request)
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkexclusive__1__0_models.GetPublicDevicesShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.serial_number_list):
+            request.serial_number_list_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.serial_number_list, 'serialNumberList', 'json')
         query = {}
         if not UtilClient.is_unset(request.device_uuid):
             query['deviceUuid'] = request.device_uuid
@@ -7800,6 +8060,8 @@ class Client(OpenApiClient):
             query['platform'] = request.platform
         if not UtilClient.is_unset(request.serial_number):
             query['serialNumber'] = request.serial_number
+        if not UtilClient.is_unset(request.serial_number_list_shrink):
+            query['serialNumberList'] = request.serial_number_list_shrink
         if not UtilClient.is_unset(request.start_time):
             query['startTime'] = request.start_time
         if not UtilClient.is_unset(request.title):
@@ -7831,19 +8093,23 @@ class Client(OpenApiClient):
 
     async def get_public_devices_with_options_async(
         self,
-        request: dingtalkexclusive__1__0_models.GetPublicDevicesRequest,
+        tmp_req: dingtalkexclusive__1__0_models.GetPublicDevicesRequest,
         headers: dingtalkexclusive__1__0_models.GetPublicDevicesHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkexclusive__1__0_models.GetPublicDevicesResponse:
         """
         @summary 获取公共设备列表。
         
-        @param request: GetPublicDevicesRequest
+        @param tmp_req: GetPublicDevicesRequest
         @param headers: GetPublicDevicesHeaders
         @param runtime: runtime options for this request RuntimeOptions
         @return: GetPublicDevicesResponse
         """
-        UtilClient.validate_model(request)
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkexclusive__1__0_models.GetPublicDevicesShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.serial_number_list):
+            request.serial_number_list_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.serial_number_list, 'serialNumberList', 'json')
         query = {}
         if not UtilClient.is_unset(request.device_uuid):
             query['deviceUuid'] = request.device_uuid
@@ -7859,6 +8125,8 @@ class Client(OpenApiClient):
             query['platform'] = request.platform
         if not UtilClient.is_unset(request.serial_number):
             query['serialNumber'] = request.serial_number
+        if not UtilClient.is_unset(request.serial_number_list_shrink):
+            query['serialNumberList'] = request.serial_number_list_shrink
         if not UtilClient.is_unset(request.start_time):
             query['startTime'] = request.start_time
         if not UtilClient.is_unset(request.title):
@@ -8712,6 +8980,8 @@ class Client(OpenApiClient):
             body['platform'] = request.platform
         if not UtilClient.is_unset(request.serial_number):
             body['serialNumber'] = request.serial_number
+        if not UtilClient.is_unset(request.serial_number_list):
+            body['serialNumberList'] = request.serial_number_list
         if not UtilClient.is_unset(request.status):
             body['status'] = request.status
         if not UtilClient.is_unset(request.user_ids):
@@ -8777,6 +9047,8 @@ class Client(OpenApiClient):
             body['platform'] = request.platform
         if not UtilClient.is_unset(request.serial_number):
             body['serialNumber'] = request.serial_number
+        if not UtilClient.is_unset(request.serial_number_list):
+            body['serialNumberList'] = request.serial_number_list
         if not UtilClient.is_unset(request.status):
             body['status'] = request.status
         if not UtilClient.is_unset(request.user_ids):
@@ -11612,6 +11884,8 @@ class Client(OpenApiClient):
             body['badgeItems'] = request.badge_items
         if not UtilClient.is_unset(request.push_type):
             body['pushType'] = request.push_type
+        if not UtilClient.is_unset(request.version):
+            body['version'] = request.version
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -11659,6 +11933,8 @@ class Client(OpenApiClient):
             body['badgeItems'] = request.badge_items
         if not UtilClient.is_unset(request.push_type):
             body['pushType'] = request.push_type
+        if not UtilClient.is_unset(request.version):
+            body['version'] = request.version
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

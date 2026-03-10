@@ -1119,3 +1119,121 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = {}
         return await self.get_user_token_with_options_async(request, headers, runtime)
+
+    def kickoff_by_device_id_with_options(
+        self,
+        request: dingtalkoauth_2__1__0_models.KickoffByDeviceIdRequest,
+        headers: dingtalkoauth_2__1__0_models.KickoffByDeviceIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkoauth_2__1__0_models.KickoffByDeviceIdResponse:
+        """
+        @summary 根据 deviceId 将设备踢出登录
+        
+        @param request: KickoffByDeviceIdRequest
+        @param headers: KickoffByDeviceIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: KickoffByDeviceIdResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_device_id):
+            body['openDeviceId'] = request.open_device_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='KickoffByDeviceId',
+            version='oauth2_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/oauth2/kickoffByDeviceId',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkoauth_2__1__0_models.KickoffByDeviceIdResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def kickoff_by_device_id_with_options_async(
+        self,
+        request: dingtalkoauth_2__1__0_models.KickoffByDeviceIdRequest,
+        headers: dingtalkoauth_2__1__0_models.KickoffByDeviceIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkoauth_2__1__0_models.KickoffByDeviceIdResponse:
+        """
+        @summary 根据 deviceId 将设备踢出登录
+        
+        @param request: KickoffByDeviceIdRequest
+        @param headers: KickoffByDeviceIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: KickoffByDeviceIdResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_device_id):
+            body['openDeviceId'] = request.open_device_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='KickoffByDeviceId',
+            version='oauth2_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/oauth2/kickoffByDeviceId',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkoauth_2__1__0_models.KickoffByDeviceIdResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def kickoff_by_device_id(
+        self,
+        request: dingtalkoauth_2__1__0_models.KickoffByDeviceIdRequest,
+    ) -> dingtalkoauth_2__1__0_models.KickoffByDeviceIdResponse:
+        """
+        @summary 根据 deviceId 将设备踢出登录
+        
+        @param request: KickoffByDeviceIdRequest
+        @return: KickoffByDeviceIdResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkoauth_2__1__0_models.KickoffByDeviceIdHeaders()
+        return self.kickoff_by_device_id_with_options(request, headers, runtime)
+
+    async def kickoff_by_device_id_async(
+        self,
+        request: dingtalkoauth_2__1__0_models.KickoffByDeviceIdRequest,
+    ) -> dingtalkoauth_2__1__0_models.KickoffByDeviceIdResponse:
+        """
+        @summary 根据 deviceId 将设备踢出登录
+        
+        @param request: KickoffByDeviceIdRequest
+        @return: KickoffByDeviceIdResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkoauth_2__1__0_models.KickoffByDeviceIdHeaders()
+        return await self.kickoff_by_device_id_with_options_async(request, headers, runtime)

@@ -725,6 +725,8 @@ class Client(OpenApiClient):
             body['fromTime'] = request.from_time
         if not UtilClient.is_unset(request.leave_code):
             body['leaveCode'] = request.leave_code
+        if not UtilClient.is_unset(request.time_zone_id):
+            body['timeZoneId'] = request.time_zone_id
         if not UtilClient.is_unset(request.to_time):
             body['toTime'] = request.to_time
         real_headers = {}
@@ -782,6 +784,8 @@ class Client(OpenApiClient):
             body['fromTime'] = request.from_time
         if not UtilClient.is_unset(request.leave_code):
             body['leaveCode'] = request.leave_code
+        if not UtilClient.is_unset(request.time_zone_id):
+            body['timeZoneId'] = request.time_zone_id
         if not UtilClient.is_unset(request.to_time):
             body['toTime'] = request.to_time
         real_headers = {}

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.core import TeaCore
+from typing import Dict
 
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
@@ -22,6 +23,7 @@ class Client(OpenApiClient):
         super().__init__(config)
         gateway_client = GatewayClientClient()
         self._spi = gateway_client
+        self._signature_algorithm = 'v2'
         self._endpoint_rule = ''
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
@@ -281,6 +283,122 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkstorage__2__0_models.BatchQueryRolesHeaders()
         return await self.batch_query_roles_with_options_async(request, headers, runtime)
+
+    def clean_file_with_options(
+        self,
+        request: dingtalkstorage__2__0_models.CleanFileRequest,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__2__0_models.CleanFileResponse:
+        """
+        @summary 企业文件管理——删除文件接口
+        
+        @param request: CleanFileRequest
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CleanFileResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.clean_reason):
+            body['cleanReason'] = request.clean_reason
+        if not UtilClient.is_unset(request.dentry_id):
+            body['dentryId'] = request.dentry_id
+        if not UtilClient.is_unset(request.operator_id):
+            body['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.space_id):
+            body['spaceId'] = request.space_id
+        req = open_api_models.OpenApiRequest(
+            headers=headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CleanFile',
+            version='storage_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/storage/filemanager/clean',
+            method='POST',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__2__0_models.CleanFileResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def clean_file_with_options_async(
+        self,
+        request: dingtalkstorage__2__0_models.CleanFileRequest,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__2__0_models.CleanFileResponse:
+        """
+        @summary 企业文件管理——删除文件接口
+        
+        @param request: CleanFileRequest
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CleanFileResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.clean_reason):
+            body['cleanReason'] = request.clean_reason
+        if not UtilClient.is_unset(request.dentry_id):
+            body['dentryId'] = request.dentry_id
+        if not UtilClient.is_unset(request.operator_id):
+            body['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.space_id):
+            body['spaceId'] = request.space_id
+        req = open_api_models.OpenApiRequest(
+            headers=headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CleanFile',
+            version='storage_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/storage/filemanager/clean',
+            method='POST',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__2__0_models.CleanFileResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def clean_file(
+        self,
+        request: dingtalkstorage__2__0_models.CleanFileRequest,
+    ) -> dingtalkstorage__2__0_models.CleanFileResponse:
+        """
+        @summary 企业文件管理——删除文件接口
+        
+        @param request: CleanFileRequest
+        @return: CleanFileResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return self.clean_file_with_options(request, headers, runtime)
+
+    async def clean_file_async(
+        self,
+        request: dingtalkstorage__2__0_models.CleanFileRequest,
+    ) -> dingtalkstorage__2__0_models.CleanFileResponse:
+        """
+        @summary 企业文件管理——删除文件接口
+        
+        @param request: CleanFileRequest
+        @return: CleanFileResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return await self.clean_file_with_options_async(request, headers, runtime)
 
     def commit_file_with_options(
         self,

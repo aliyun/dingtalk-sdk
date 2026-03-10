@@ -5234,6 +5234,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.category_codes):
             body['categoryCodes'] = request.category_codes
+        if not UtilClient.is_unset(request.label_code):
+            body['labelCode'] = request.label_code
         if not UtilClient.is_unset(request.max_results):
             body['maxResults'] = request.max_results
         if not UtilClient.is_unset(request.next_token):
@@ -5281,6 +5283,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.category_codes):
             body['categoryCodes'] = request.category_codes
+        if not UtilClient.is_unset(request.label_code):
+            body['labelCode'] = request.label_code
         if not UtilClient.is_unset(request.max_results):
             body['maxResults'] = request.max_results
         if not UtilClient.is_unset(request.next_token):

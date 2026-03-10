@@ -5744,6 +5744,152 @@ class Client(OpenApiClient):
         headers = dingtalkim__1__0_models.InstallRobotToOrgHeaders()
         return await self.install_robot_to_org_with_options_async(request, headers, runtime)
 
+    def intelligent_send_card_with_options(
+        self,
+        request: dingtalkim__1__0_models.IntelligentSendCardRequest,
+        headers: dingtalkim__1__0_models.IntelligentSendCardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.IntelligentSendCardResponse:
+        """
+        @summary 使用小钉发送卡片消息
+        
+        @param request: IntelligentSendCardRequest
+        @param headers: IntelligentSendCardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: IntelligentSendCardResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.at_all):
+            body['atAll'] = request.at_all
+        if not UtilClient.is_unset(request.at_open_group_role_ids):
+            body['atOpenGroupRoleIds'] = request.at_open_group_role_ids
+        if not UtilClient.is_unset(request.at_union_ids):
+            body['atUnionIds'] = request.at_union_ids
+        if not UtilClient.is_unset(request.at_user_ids):
+            body['atUserIds'] = request.at_user_ids
+        if not UtilClient.is_unset(request.exclude_ids):
+            body['excludeIds'] = request.exclude_ids
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.out_track_id):
+            body['outTrackId'] = request.out_track_id
+        if not UtilClient.is_unset(request.receivers):
+            body['receivers'] = request.receivers
+        if not UtilClient.is_unset(request.uuid):
+            body['uuid'] = request.uuid
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='IntelligentSendCard',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/intelligent/cards/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.IntelligentSendCardResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def intelligent_send_card_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.IntelligentSendCardRequest,
+        headers: dingtalkim__1__0_models.IntelligentSendCardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.IntelligentSendCardResponse:
+        """
+        @summary 使用小钉发送卡片消息
+        
+        @param request: IntelligentSendCardRequest
+        @param headers: IntelligentSendCardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: IntelligentSendCardResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.at_all):
+            body['atAll'] = request.at_all
+        if not UtilClient.is_unset(request.at_open_group_role_ids):
+            body['atOpenGroupRoleIds'] = request.at_open_group_role_ids
+        if not UtilClient.is_unset(request.at_union_ids):
+            body['atUnionIds'] = request.at_union_ids
+        if not UtilClient.is_unset(request.at_user_ids):
+            body['atUserIds'] = request.at_user_ids
+        if not UtilClient.is_unset(request.exclude_ids):
+            body['excludeIds'] = request.exclude_ids
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.out_track_id):
+            body['outTrackId'] = request.out_track_id
+        if not UtilClient.is_unset(request.receivers):
+            body['receivers'] = request.receivers
+        if not UtilClient.is_unset(request.uuid):
+            body['uuid'] = request.uuid
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='IntelligentSendCard',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/intelligent/cards/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.IntelligentSendCardResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def intelligent_send_card(
+        self,
+        request: dingtalkim__1__0_models.IntelligentSendCardRequest,
+    ) -> dingtalkim__1__0_models.IntelligentSendCardResponse:
+        """
+        @summary 使用小钉发送卡片消息
+        
+        @param request: IntelligentSendCardRequest
+        @return: IntelligentSendCardResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.IntelligentSendCardHeaders()
+        return self.intelligent_send_card_with_options(request, headers, runtime)
+
+    async def intelligent_send_card_async(
+        self,
+        request: dingtalkim__1__0_models.IntelligentSendCardRequest,
+    ) -> dingtalkim__1__0_models.IntelligentSendCardResponse:
+        """
+        @summary 使用小钉发送卡片消息
+        
+        @param request: IntelligentSendCardRequest
+        @return: IntelligentSendCardResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.IntelligentSendCardHeaders()
+        return await self.intelligent_send_card_with_options_async(request, headers, runtime)
+
     def interactive_card_create_instance_with_options(
         self,
         request: dingtalkim__1__0_models.InteractiveCardCreateInstanceRequest,
@@ -7690,6 +7836,124 @@ class Client(OpenApiClient):
         headers = dingtalkim__1__0_models.PersonalSendCardMessageHeaders()
         return await self.personal_send_card_message_with_options_async(request, headers, runtime)
 
+    def put_msg_card_top_by_intelligent_with_options(
+        self,
+        request: dingtalkim__1__0_models.PutMsgCardTopByIntelligentRequest,
+        headers: dingtalkim__1__0_models.PutMsgCardTopByIntelligentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.PutMsgCardTopByIntelligentResponse:
+        """
+        @summary 以小钉身份将小钉发送的卡片消息置顶
+        
+        @param request: PutMsgCardTopByIntelligentRequest
+        @param headers: PutMsgCardTopByIntelligentHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PutMsgCardTopByIntelligentResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_task_id):
+            body['openTaskId'] = request.open_task_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PutMsgCardTopByIntelligent',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/intelligent/cards/putTop',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.PutMsgCardTopByIntelligentResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def put_msg_card_top_by_intelligent_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.PutMsgCardTopByIntelligentRequest,
+        headers: dingtalkim__1__0_models.PutMsgCardTopByIntelligentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.PutMsgCardTopByIntelligentResponse:
+        """
+        @summary 以小钉身份将小钉发送的卡片消息置顶
+        
+        @param request: PutMsgCardTopByIntelligentRequest
+        @param headers: PutMsgCardTopByIntelligentHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PutMsgCardTopByIntelligentResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_task_id):
+            body['openTaskId'] = request.open_task_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PutMsgCardTopByIntelligent',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/intelligent/cards/putTop',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.PutMsgCardTopByIntelligentResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def put_msg_card_top_by_intelligent(
+        self,
+        request: dingtalkim__1__0_models.PutMsgCardTopByIntelligentRequest,
+    ) -> dingtalkim__1__0_models.PutMsgCardTopByIntelligentResponse:
+        """
+        @summary 以小钉身份将小钉发送的卡片消息置顶
+        
+        @param request: PutMsgCardTopByIntelligentRequest
+        @return: PutMsgCardTopByIntelligentResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.PutMsgCardTopByIntelligentHeaders()
+        return self.put_msg_card_top_by_intelligent_with_options(request, headers, runtime)
+
+    async def put_msg_card_top_by_intelligent_async(
+        self,
+        request: dingtalkim__1__0_models.PutMsgCardTopByIntelligentRequest,
+    ) -> dingtalkim__1__0_models.PutMsgCardTopByIntelligentResponse:
+        """
+        @summary 以小钉身份将小钉发送的卡片消息置顶
+        
+        @param request: PutMsgCardTopByIntelligentRequest
+        @return: PutMsgCardTopByIntelligentResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.PutMsgCardTopByIntelligentHeaders()
+        return await self.put_msg_card_top_by_intelligent_with_options_async(request, headers, runtime)
+
     def query_group_info_by_app_cids_with_options(
         self,
         request: dingtalkim__1__0_models.QueryGroupInfoByAppCidsRequest,
@@ -8976,6 +9240,132 @@ class Client(OpenApiClient):
         headers = dingtalkim__1__0_models.QueryMessageSendResultHeaders()
         return await self.query_message_send_result_with_options_async(request, headers, runtime)
 
+    def query_msg_read_status_with_options(
+        self,
+        request: dingtalkim__1__0_models.QueryMsgReadStatusRequest,
+        headers: dingtalkim__1__0_models.QueryMsgReadStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.QueryMsgReadStatusResponse:
+        """
+        @summary 查询消息已读状态
+        
+        @param request: QueryMsgReadStatusRequest
+        @param headers: QueryMsgReadStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryMsgReadStatusResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.cursor):
+            body['cursor'] = request.cursor
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_task_id):
+            body['openTaskId'] = request.open_task_id
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryMsgReadStatus',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/intelligent/messages/readStatuses/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.QueryMsgReadStatusResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_msg_read_status_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.QueryMsgReadStatusRequest,
+        headers: dingtalkim__1__0_models.QueryMsgReadStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.QueryMsgReadStatusResponse:
+        """
+        @summary 查询消息已读状态
+        
+        @param request: QueryMsgReadStatusRequest
+        @param headers: QueryMsgReadStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryMsgReadStatusResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.cursor):
+            body['cursor'] = request.cursor
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_task_id):
+            body['openTaskId'] = request.open_task_id
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryMsgReadStatus',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/intelligent/messages/readStatuses/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.QueryMsgReadStatusResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_msg_read_status(
+        self,
+        request: dingtalkim__1__0_models.QueryMsgReadStatusRequest,
+    ) -> dingtalkim__1__0_models.QueryMsgReadStatusResponse:
+        """
+        @summary 查询消息已读状态
+        
+        @param request: QueryMsgReadStatusRequest
+        @return: QueryMsgReadStatusResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.QueryMsgReadStatusHeaders()
+        return self.query_msg_read_status_with_options(request, headers, runtime)
+
+    async def query_msg_read_status_async(
+        self,
+        request: dingtalkim__1__0_models.QueryMsgReadStatusRequest,
+    ) -> dingtalkim__1__0_models.QueryMsgReadStatusResponse:
+        """
+        @summary 查询消息已读状态
+        
+        @param request: QueryMsgReadStatusRequest
+        @return: QueryMsgReadStatusResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.QueryMsgReadStatusHeaders()
+        return await self.query_msg_read_status_with_options_async(request, headers, runtime)
+
     def query_open_conversation_receive_user_with_options(
         self,
         request: dingtalkim__1__0_models.QueryOpenConversationReceiveUserRequest,
@@ -10160,6 +10550,128 @@ class Client(OpenApiClient):
         headers = dingtalkim__1__0_models.QueryUserGroupAliasTitleHeaders()
         return await self.query_user_group_alias_title_with_options_async(request, headers, runtime)
 
+    def query_user_group_roles_with_options(
+        self,
+        request: dingtalkim__1__0_models.QueryUserGroupRolesRequest,
+        headers: dingtalkim__1__0_models.QueryUserGroupRolesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.QueryUserGroupRolesResponse:
+        """
+        @summary 查询群内用户的群身份
+        
+        @param request: QueryUserGroupRolesRequest
+        @param headers: QueryUserGroupRolesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryUserGroupRolesResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.viewed_user_id):
+            body['viewedUserId'] = request.viewed_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryUserGroupRoles',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/groupRoles/users/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.QueryUserGroupRolesResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_user_group_roles_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.QueryUserGroupRolesRequest,
+        headers: dingtalkim__1__0_models.QueryUserGroupRolesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.QueryUserGroupRolesResponse:
+        """
+        @summary 查询群内用户的群身份
+        
+        @param request: QueryUserGroupRolesRequest
+        @param headers: QueryUserGroupRolesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryUserGroupRolesResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.viewed_user_id):
+            body['viewedUserId'] = request.viewed_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryUserGroupRoles',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/groupRoles/users/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.QueryUserGroupRolesResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_user_group_roles(
+        self,
+        request: dingtalkim__1__0_models.QueryUserGroupRolesRequest,
+    ) -> dingtalkim__1__0_models.QueryUserGroupRolesResponse:
+        """
+        @summary 查询群内用户的群身份
+        
+        @param request: QueryUserGroupRolesRequest
+        @return: QueryUserGroupRolesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.QueryUserGroupRolesHeaders()
+        return self.query_user_group_roles_with_options(request, headers, runtime)
+
+    async def query_user_group_roles_async(
+        self,
+        request: dingtalkim__1__0_models.QueryUserGroupRolesRequest,
+    ) -> dingtalkim__1__0_models.QueryUserGroupRolesResponse:
+        """
+        @summary 查询群内用户的群身份
+        
+        @param request: QueryUserGroupRolesRequest
+        @return: QueryUserGroupRolesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.QueryUserGroupRolesHeaders()
+        return await self.query_user_group_roles_with_options_async(request, headers, runtime)
+
     def query_user_view_group_last_message_time_with_options(
         self,
         request: dingtalkim__1__0_models.QueryUserViewGroupLastMessageTimeRequest,
@@ -10387,6 +10899,124 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.ReadPersonalMessageHeaders()
         return await self.read_personal_message_with_options_async(request, headers, runtime)
+
+    def recall_messages_with_options(
+        self,
+        request: dingtalkim__1__0_models.RecallMessagesRequest,
+        headers: dingtalkim__1__0_models.RecallMessagesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.RecallMessagesResponse:
+        """
+        @summary 撤回消息
+        
+        @param request: RecallMessagesRequest
+        @param headers: RecallMessagesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RecallMessagesResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_task_id):
+            body['openTaskId'] = request.open_task_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='RecallMessages',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/intelligent/messages/recall',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.RecallMessagesResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def recall_messages_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.RecallMessagesRequest,
+        headers: dingtalkim__1__0_models.RecallMessagesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.RecallMessagesResponse:
+        """
+        @summary 撤回消息
+        
+        @param request: RecallMessagesRequest
+        @param headers: RecallMessagesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RecallMessagesResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_task_id):
+            body['openTaskId'] = request.open_task_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='RecallMessages',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/intelligent/messages/recall',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.RecallMessagesResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def recall_messages(
+        self,
+        request: dingtalkim__1__0_models.RecallMessagesRequest,
+    ) -> dingtalkim__1__0_models.RecallMessagesResponse:
+        """
+        @summary 撤回消息
+        
+        @param request: RecallMessagesRequest
+        @return: RecallMessagesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.RecallMessagesHeaders()
+        return self.recall_messages_with_options(request, headers, runtime)
+
+    async def recall_messages_async(
+        self,
+        request: dingtalkim__1__0_models.RecallMessagesRequest,
+    ) -> dingtalkim__1__0_models.RecallMessagesResponse:
+        """
+        @summary 撤回消息
+        
+        @param request: RecallMessagesRequest
+        @return: RecallMessagesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.RecallMessagesHeaders()
+        return await self.recall_messages_with_options_async(request, headers, runtime)
 
     def recall_personal_message_with_options(
         self,
@@ -11898,6 +12528,124 @@ class Client(OpenApiClient):
         headers = dingtalkim__1__0_models.SetRightPanelHeaders()
         return await self.set_right_panel_with_options_async(request, headers, runtime)
 
+    def sort_conv_nav_tab_with_options(
+        self,
+        request: dingtalkim__1__0_models.SortConvNavTabRequest,
+        headers: dingtalkim__1__0_models.SortConvNavTabHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.SortConvNavTabResponse:
+        """
+        @summary 群维度对群标签页进行排序
+        
+        @param request: SortConvNavTabRequest
+        @param headers: SortConvNavTabHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SortConvNavTabResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.sorted_ids):
+            body['sortedIds'] = request.sorted_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SortConvNavTab',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/convNavTabs/sort',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.SortConvNavTabResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def sort_conv_nav_tab_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.SortConvNavTabRequest,
+        headers: dingtalkim__1__0_models.SortConvNavTabHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.SortConvNavTabResponse:
+        """
+        @summary 群维度对群标签页进行排序
+        
+        @param request: SortConvNavTabRequest
+        @param headers: SortConvNavTabHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SortConvNavTabResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.sorted_ids):
+            body['sortedIds'] = request.sorted_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SortConvNavTab',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/convNavTabs/sort',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.SortConvNavTabResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def sort_conv_nav_tab(
+        self,
+        request: dingtalkim__1__0_models.SortConvNavTabRequest,
+    ) -> dingtalkim__1__0_models.SortConvNavTabResponse:
+        """
+        @summary 群维度对群标签页进行排序
+        
+        @param request: SortConvNavTabRequest
+        @return: SortConvNavTabResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.SortConvNavTabHeaders()
+        return self.sort_conv_nav_tab_with_options(request, headers, runtime)
+
+    async def sort_conv_nav_tab_async(
+        self,
+        request: dingtalkim__1__0_models.SortConvNavTabRequest,
+    ) -> dingtalkim__1__0_models.SortConvNavTabResponse:
+        """
+        @summary 群维度对群标签页进行排序
+        
+        @param request: SortConvNavTabRequest
+        @return: SortConvNavTabResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.SortConvNavTabHeaders()
+        return await self.sort_conv_nav_tab_with_options_async(request, headers, runtime)
+
     def super_admin_apply_template_with_options(
         self,
         request: dingtalkim__1__0_models.SuperAdminApplyTemplateRequest,
@@ -13060,6 +13808,8 @@ class Client(OpenApiClient):
             body['openConversationId'] = request.open_conversation_id
         if not UtilClient.is_unset(request.role):
             body['role'] = request.role
+        if not UtilClient.is_unset(request.union_ids):
+            body['unionIds'] = request.union_ids
         if not UtilClient.is_unset(request.user_ids):
             body['userIds'] = request.user_ids
         real_headers = {}
@@ -13107,6 +13857,8 @@ class Client(OpenApiClient):
             body['openConversationId'] = request.open_conversation_id
         if not UtilClient.is_unset(request.role):
             body['role'] = request.role
+        if not UtilClient.is_unset(request.union_ids):
+            body['unionIds'] = request.union_ids
         if not UtilClient.is_unset(request.user_ids):
             body['userIds'] = request.user_ids
         real_headers = {}
@@ -13314,6 +14066,8 @@ class Client(OpenApiClient):
             body['muteStatus'] = request.mute_status
         if not UtilClient.is_unset(request.open_conversation_id):
             body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.union_ids):
+            body['unionIds'] = request.union_ids
         if not UtilClient.is_unset(request.user_id_list):
             body['userIdList'] = request.user_id_list
         real_headers = {}
@@ -13363,6 +14117,8 @@ class Client(OpenApiClient):
             body['muteStatus'] = request.mute_status
         if not UtilClient.is_unset(request.open_conversation_id):
             body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.union_ids):
+            body['unionIds'] = request.union_ids
         if not UtilClient.is_unset(request.user_id_list):
             body['userIdList'] = request.user_id_list
         real_headers = {}
