@@ -9,6 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkagoal_1_0.Models
 {
     public class GetIndicatorDetailRequest : TeaModel {
+        /// <summary>
+        /// <para>This parameter is required.</para>
+        /// </summary>
         [NameInMap("indicatorId")]
         [Validation(Required=false)]
         public string IndicatorId { get; set; }

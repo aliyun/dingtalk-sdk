@@ -2428,6 +2428,318 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>删除智能财务OA审批单，有权限控制</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteProcessInstanceRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteProcessInstanceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteProcessInstanceResponse
+        /// </returns>
+        public DeleteProcessInstanceResponse DeleteProcessInstanceWithOptions(DeleteProcessInstanceRequest request, DeleteProcessInstanceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InstanceId))
+            {
+                query["instanceId"] = request.InstanceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteProcessInstance",
+                Version = "bizfinance_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/bizfinance/processInstance/delete",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteProcessInstanceResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除智能财务OA审批单，有权限控制</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteProcessInstanceRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteProcessInstanceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteProcessInstanceResponse
+        /// </returns>
+        public async Task<DeleteProcessInstanceResponse> DeleteProcessInstanceWithOptionsAsync(DeleteProcessInstanceRequest request, DeleteProcessInstanceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InstanceId))
+            {
+                query["instanceId"] = request.InstanceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteProcessInstance",
+                Version = "bizfinance_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/bizfinance/processInstance/delete",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteProcessInstanceResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除智能财务OA审批单，有权限控制</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteProcessInstanceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteProcessInstanceResponse
+        /// </returns>
+        public DeleteProcessInstanceResponse DeleteProcessInstance(DeleteProcessInstanceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteProcessInstanceHeaders headers = new DeleteProcessInstanceHeaders();
+            return DeleteProcessInstanceWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除智能财务OA审批单，有权限控制</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteProcessInstanceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteProcessInstanceResponse
+        /// </returns>
+        public async Task<DeleteProcessInstanceResponse> DeleteProcessInstanceAsync(DeleteProcessInstanceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteProcessInstanceHeaders headers = new DeleteProcessInstanceHeaders();
+            return await DeleteProcessInstanceWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除工作流流程实例</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteWorkflowInstanceRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteWorkflowInstanceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteWorkflowInstanceResponse
+        /// </returns>
+        public DeleteWorkflowInstanceResponse DeleteWorkflowInstanceWithOptions(DeleteWorkflowInstanceRequest request, DeleteWorkflowInstanceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InstanceId))
+            {
+                query["instanceId"] = request.InstanceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteWorkflowInstance",
+                Version = "bizfinance_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/bizfinance/workflowInstance/delete",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteWorkflowInstanceResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除工作流流程实例</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteWorkflowInstanceRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteWorkflowInstanceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteWorkflowInstanceResponse
+        /// </returns>
+        public async Task<DeleteWorkflowInstanceResponse> DeleteWorkflowInstanceWithOptionsAsync(DeleteWorkflowInstanceRequest request, DeleteWorkflowInstanceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InstanceId))
+            {
+                query["instanceId"] = request.InstanceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteWorkflowInstance",
+                Version = "bizfinance_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/bizfinance/workflowInstance/delete",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteWorkflowInstanceResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除工作流流程实例</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteWorkflowInstanceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteWorkflowInstanceResponse
+        /// </returns>
+        public DeleteWorkflowInstanceResponse DeleteWorkflowInstance(DeleteWorkflowInstanceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteWorkflowInstanceHeaders headers = new DeleteWorkflowInstanceHeaders();
+            return DeleteWorkflowInstanceWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除工作流流程实例</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteWorkflowInstanceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteWorkflowInstanceResponse
+        /// </returns>
+        public async Task<DeleteWorkflowInstanceResponse> DeleteWorkflowInstanceAsync(DeleteWorkflowInstanceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteWorkflowInstanceHeaders headers = new DeleteWorkflowInstanceHeaders();
+            return await DeleteWorkflowInstanceWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>启用企业主体</para>
         /// </summary>
         /// 
@@ -6924,6 +7236,154 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             QueryPaymentRecallFileHeaders headers = new QueryPaymentRecallFileHeaders();
             return await QueryPaymentRecallFileWithOptionsAsync(instanceId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询支付回单信息，权限集与QueryPaymentRecallFile不同</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryPaymentRecallFileVTwoRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryPaymentRecallFileVTwoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryPaymentRecallFileVTwoResponse
+        /// </returns>
+        public QueryPaymentRecallFileVTwoResponse QueryPaymentRecallFileVTwoWithOptions(string instanceId, QueryPaymentRecallFileVTwoRequest request, QueryPaymentRecallFileVTwoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryPaymentRecallFileVTwo",
+                Version = "bizfinance_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/bizfinance/payments/recallFilesV2/" + instanceId,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryPaymentRecallFileVTwoResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询支付回单信息，权限集与QueryPaymentRecallFile不同</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryPaymentRecallFileVTwoRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryPaymentRecallFileVTwoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryPaymentRecallFileVTwoResponse
+        /// </returns>
+        public async Task<QueryPaymentRecallFileVTwoResponse> QueryPaymentRecallFileVTwoWithOptionsAsync(string instanceId, QueryPaymentRecallFileVTwoRequest request, QueryPaymentRecallFileVTwoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryPaymentRecallFileVTwo",
+                Version = "bizfinance_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/bizfinance/payments/recallFilesV2/" + instanceId,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryPaymentRecallFileVTwoResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询支付回单信息，权限集与QueryPaymentRecallFile不同</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryPaymentRecallFileVTwoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryPaymentRecallFileVTwoResponse
+        /// </returns>
+        public QueryPaymentRecallFileVTwoResponse QueryPaymentRecallFileVTwo(string instanceId, QueryPaymentRecallFileVTwoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryPaymentRecallFileVTwoHeaders headers = new QueryPaymentRecallFileVTwoHeaders();
+            return QueryPaymentRecallFileVTwoWithOptions(instanceId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询支付回单信息，权限集与QueryPaymentRecallFile不同</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryPaymentRecallFileVTwoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryPaymentRecallFileVTwoResponse
+        /// </returns>
+        public async Task<QueryPaymentRecallFileVTwoResponse> QueryPaymentRecallFileVTwoAsync(string instanceId, QueryPaymentRecallFileVTwoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryPaymentRecallFileVTwoHeaders headers = new QueryPaymentRecallFileVTwoHeaders();
+            return await QueryPaymentRecallFileVTwoWithOptionsAsync(instanceId, request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

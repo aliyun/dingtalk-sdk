@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class DeleteTrustedDeviceRequest : TeaModel {
+        [NameInMap("did")]
+        [Validation(Required=false)]
+        public string Did { get; set; }
+
         [NameInMap("id")]
         [Validation(Required=false)]
         public long? Id { get; set; }

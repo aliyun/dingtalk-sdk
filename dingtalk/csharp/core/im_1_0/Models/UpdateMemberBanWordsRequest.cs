@@ -39,9 +39,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         [Validation(Required=false)]
         public string OpenConversationId { get; set; }
 
-        /// <summary>
-        /// <para>This parameter is required.</para>
-        /// </summary>
+        [NameInMap("unionIds")]
+        [Validation(Required=false)]
+        public List<string> UnionIds { get; set; }
+
         [NameInMap("userIdList")]
         [Validation(Required=false)]
         public List<string> UserIdList { get; set; }

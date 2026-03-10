@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkdvi_1_0.Models
         [Validation(Required=false)]
         public List<QueryAudioFileResponseBodyResult> Result { get; set; }
         public class QueryAudioFileResponseBodyResult : TeaModel {
+            [NameInMap("attributes")]
+            [Validation(Required=false)]
+            public Dictionary<string, object> Attributes { get; set; }
+
             [NameInMap("createTime")]
             [Validation(Required=false)]
             public long? CreateTime { get; set; }

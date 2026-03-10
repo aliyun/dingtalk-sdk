@@ -81,6 +81,20 @@ namespace AlibabaCloud.SDK.Dingtalkminutes_1_0.Models
 
             }
 
+            [NameInMap("speakerDisplay")]
+            [Validation(Required=false)]
+            public QueryMinutesTextResponseBodyParagraphListSpeakerDisplay SpeakerDisplay { get; set; }
+            public class QueryMinutesTextResponseBodyParagraphListSpeakerDisplay : TeaModel {
+                [NameInMap("avatarUrl")]
+                [Validation(Required=false)]
+                public string AvatarUrl { get; set; }
+
+                [NameInMap("nickName")]
+                [Validation(Required=false)]
+                public string NickName { get; set; }
+
+            }
+
             [NameInMap("startTime")]
             [Validation(Required=false)]
             public long? StartTime { get; set; }

@@ -37,6 +37,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         [Validation(Required=false)]
         public bool? Success { get; set; }
 
+        [NameInMap("unionIdList")]
+        [Validation(Required=false)]
+        public List<string> UnionIdList { get; set; }
+
     }
 
 }

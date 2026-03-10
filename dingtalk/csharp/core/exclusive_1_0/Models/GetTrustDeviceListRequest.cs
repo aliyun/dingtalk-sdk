@@ -81,6 +81,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         [Validation(Required=false)]
         public string SerialNumber { get; set; }
 
+        [NameInMap("serialNumberList")]
+        [Validation(Required=false)]
+        public List<string> SerialNumberList { get; set; }
+
         [NameInMap("status")]
         [Validation(Required=false)]
         public int? Status { get; set; }

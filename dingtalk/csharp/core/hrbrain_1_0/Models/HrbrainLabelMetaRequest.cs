@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0.Models
         [Validation(Required=false)]
         public List<string> CategoryCodes { get; set; }
 
+        [NameInMap("labelCode")]
+        [Validation(Required=false)]
+        public string LabelCode { get; set; }
+
         [NameInMap("maxResults")]
         [Validation(Required=false)]
         public long? MaxResults { get; set; }

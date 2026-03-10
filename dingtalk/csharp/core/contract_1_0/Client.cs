@@ -30,6 +30,162 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>智能法务取消合同审查</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CancelContractReviewRequest
+        /// </param>
+        /// <param name="headers">
+        /// CancelContractReviewHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CancelContractReviewResponse
+        /// </returns>
+        public CancelContractReviewResponse CancelContractReviewWithOptions(CancelContractReviewRequest request, CancelContractReviewHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReviewType))
+            {
+                body["reviewType"] = request.ReviewType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskId))
+            {
+                body["taskId"] = request.TaskId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CancelContractReview",
+                Version = "contract_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contract/review/cancel",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CancelContractReviewResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>智能法务取消合同审查</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CancelContractReviewRequest
+        /// </param>
+        /// <param name="headers">
+        /// CancelContractReviewHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CancelContractReviewResponse
+        /// </returns>
+        public async Task<CancelContractReviewResponse> CancelContractReviewWithOptionsAsync(CancelContractReviewRequest request, CancelContractReviewHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReviewType))
+            {
+                body["reviewType"] = request.ReviewType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskId))
+            {
+                body["taskId"] = request.TaskId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CancelContractReview",
+                Version = "contract_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contract/review/cancel",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CancelContractReviewResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>智能法务取消合同审查</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CancelContractReviewRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CancelContractReviewResponse
+        /// </returns>
+        public CancelContractReviewResponse CancelContractReview(CancelContractReviewRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CancelContractReviewHeaders headers = new CancelContractReviewHeaders();
+            return CancelContractReviewWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>智能法务取消合同审查</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CancelContractReviewRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CancelContractReviewResponse
+        /// </returns>
+        public async Task<CancelContractReviewResponse> CancelContractReviewAsync(CancelContractReviewRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CancelContractReviewHeaders headers = new CancelContractReviewHeaders();
+            return await CancelContractReviewWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>取消审查工单接口</para>
         /// </summary>
         /// 
@@ -1966,6 +2122,202 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>智能法务发起合同审查</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateContractReviewRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateContractReviewHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateContractReviewResponse
+        /// </returns>
+        public CreateContractReviewResponse CreateContractReviewWithOptions(CreateContractReviewRequest request, CreateContractReviewHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CompanyList))
+            {
+                body["companyList"] = request.CompanyList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CustomReviewRules))
+            {
+                body["customReviewRules"] = request.CustomReviewRules;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FileInfo))
+            {
+                body["fileInfo"] = request.FileInfo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OriginatorUserId))
+            {
+                body["originatorUserId"] = request.OriginatorUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReviewPosition))
+            {
+                body["reviewPosition"] = request.ReviewPosition;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReviewResultType))
+            {
+                body["reviewResultType"] = request.ReviewResultType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReviewType))
+            {
+                body["reviewType"] = request.ReviewType;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateContractReview",
+                Version = "contract_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contract/review/create",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateContractReviewResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>智能法务发起合同审查</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateContractReviewRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateContractReviewHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateContractReviewResponse
+        /// </returns>
+        public async Task<CreateContractReviewResponse> CreateContractReviewWithOptionsAsync(CreateContractReviewRequest request, CreateContractReviewHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CompanyList))
+            {
+                body["companyList"] = request.CompanyList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CustomReviewRules))
+            {
+                body["customReviewRules"] = request.CustomReviewRules;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FileInfo))
+            {
+                body["fileInfo"] = request.FileInfo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OriginatorUserId))
+            {
+                body["originatorUserId"] = request.OriginatorUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReviewPosition))
+            {
+                body["reviewPosition"] = request.ReviewPosition;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReviewResultType))
+            {
+                body["reviewResultType"] = request.ReviewResultType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReviewType))
+            {
+                body["reviewType"] = request.ReviewType;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateContractReview",
+                Version = "contract_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contract/review/create",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateContractReviewResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>智能法务发起合同审查</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateContractReviewRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateContractReviewResponse
+        /// </returns>
+        public CreateContractReviewResponse CreateContractReview(CreateContractReviewRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateContractReviewHeaders headers = new CreateContractReviewHeaders();
+            return CreateContractReviewWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>智能法务发起合同审查</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateContractReviewRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateContractReviewResponse
+        /// </returns>
+        public async Task<CreateContractReviewResponse> CreateContractReviewAsync(CreateContractReviewRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateContractReviewHeaders headers = new CreateContractReviewHeaders();
+            return await CreateContractReviewWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>创建合同审查任务</para>
         /// </summary>
         /// 
@@ -3158,6 +3510,634 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             FinishReviewOrderHeaders headers = new FinishReviewOrderHeaders();
             return await FinishReviewOrderWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取合同解析结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetContractAnalysisResultRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetContractAnalysisResultHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetContractAnalysisResultResponse
+        /// </returns>
+        public GetContractAnalysisResultResponse GetContractAnalysisResultWithOptions(GetContractAnalysisResultRequest request, GetContractAnalysisResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FileInfo))
+            {
+                body["fileInfo"] = request.FileInfo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OriginatorUserId))
+            {
+                body["originatorUserId"] = request.OriginatorUserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetContractAnalysisResult",
+                Version = "contract_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contract/review/getContractAnalysisResult",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetContractAnalysisResultResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取合同解析结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetContractAnalysisResultRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetContractAnalysisResultHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetContractAnalysisResultResponse
+        /// </returns>
+        public async Task<GetContractAnalysisResultResponse> GetContractAnalysisResultWithOptionsAsync(GetContractAnalysisResultRequest request, GetContractAnalysisResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FileInfo))
+            {
+                body["fileInfo"] = request.FileInfo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OriginatorUserId))
+            {
+                body["originatorUserId"] = request.OriginatorUserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetContractAnalysisResult",
+                Version = "contract_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contract/review/getContractAnalysisResult",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetContractAnalysisResultResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取合同解析结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetContractAnalysisResultRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetContractAnalysisResultResponse
+        /// </returns>
+        public GetContractAnalysisResultResponse GetContractAnalysisResult(GetContractAnalysisResultRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetContractAnalysisResultHeaders headers = new GetContractAnalysisResultHeaders();
+            return GetContractAnalysisResultWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取合同解析结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetContractAnalysisResultRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetContractAnalysisResultResponse
+        /// </returns>
+        public async Task<GetContractAnalysisResultResponse> GetContractAnalysisResultAsync(GetContractAnalysisResultRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetContractAnalysisResultHeaders headers = new GetContractAnalysisResultHeaders();
+            return await GetContractAnalysisResultWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>智能法务查询合同审查权益</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetContractReviewBenefitRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetContractReviewBenefitHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetContractReviewBenefitResponse
+        /// </returns>
+        public GetContractReviewBenefitResponse GetContractReviewBenefitWithOptions(GetContractReviewBenefitRequest request, GetContractReviewBenefitHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReviewType))
+            {
+                body["reviewType"] = request.ReviewType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskId))
+            {
+                body["taskId"] = request.TaskId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetContractReviewBenefit",
+                Version = "contract_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contract/review/getBenefit",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetContractReviewBenefitResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>智能法务查询合同审查权益</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetContractReviewBenefitRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetContractReviewBenefitHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetContractReviewBenefitResponse
+        /// </returns>
+        public async Task<GetContractReviewBenefitResponse> GetContractReviewBenefitWithOptionsAsync(GetContractReviewBenefitRequest request, GetContractReviewBenefitHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReviewType))
+            {
+                body["reviewType"] = request.ReviewType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskId))
+            {
+                body["taskId"] = request.TaskId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetContractReviewBenefit",
+                Version = "contract_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contract/review/getBenefit",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetContractReviewBenefitResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>智能法务查询合同审查权益</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetContractReviewBenefitRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetContractReviewBenefitResponse
+        /// </returns>
+        public GetContractReviewBenefitResponse GetContractReviewBenefit(GetContractReviewBenefitRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetContractReviewBenefitHeaders headers = new GetContractReviewBenefitHeaders();
+            return GetContractReviewBenefitWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>智能法务查询合同审查权益</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetContractReviewBenefitRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetContractReviewBenefitResponse
+        /// </returns>
+        public async Task<GetContractReviewBenefitResponse> GetContractReviewBenefitAsync(GetContractReviewBenefitRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetContractReviewBenefitHeaders headers = new GetContractReviewBenefitHeaders();
+            return await GetContractReviewBenefitWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>智能法务查询合同审查结果</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// GetContractReviewResultRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetContractReviewResultHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetContractReviewResultResponse
+        /// </returns>
+        public GetContractReviewResultResponse GetContractReviewResultWithOptions(GetContractReviewResultRequest tmpReq, GetContractReviewResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            GetContractReviewResultShrinkRequest request = new GetContractReviewResultShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.Body))
+            {
+                request.BodyShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.Body, "body", "json");
+            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BodyShrink))
+            {
+                query["body"] = request.BodyShrink;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetContractReviewResult",
+                Version = "contract_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contract/review/getResult",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetContractReviewResultResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>智能法务查询合同审查结果</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// GetContractReviewResultRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetContractReviewResultHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetContractReviewResultResponse
+        /// </returns>
+        public async Task<GetContractReviewResultResponse> GetContractReviewResultWithOptionsAsync(GetContractReviewResultRequest tmpReq, GetContractReviewResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            GetContractReviewResultShrinkRequest request = new GetContractReviewResultShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.Body))
+            {
+                request.BodyShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.Body, "body", "json");
+            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BodyShrink))
+            {
+                query["body"] = request.BodyShrink;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetContractReviewResult",
+                Version = "contract_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contract/review/getResult",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetContractReviewResultResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>智能法务查询合同审查结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetContractReviewResultRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetContractReviewResultResponse
+        /// </returns>
+        public GetContractReviewResultResponse GetContractReviewResult(GetContractReviewResultRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetContractReviewResultHeaders headers = new GetContractReviewResultHeaders();
+            return GetContractReviewResultWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>智能法务查询合同审查结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetContractReviewResultRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetContractReviewResultResponse
+        /// </returns>
+        public async Task<GetContractReviewResultResponse> GetContractReviewResultAsync(GetContractReviewResultRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetContractReviewResultHeaders headers = new GetContractReviewResultHeaders();
+            return await GetContractReviewResultWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取合同主体风险结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetContractSubjectRiskResultRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetContractSubjectRiskResultHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetContractSubjectRiskResultResponse
+        /// </returns>
+        public GetContractSubjectRiskResultResponse GetContractSubjectRiskResultWithOptions(GetContractSubjectRiskResultRequest request, GetContractSubjectRiskResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReviewType))
+            {
+                body["reviewType"] = request.ReviewType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskId))
+            {
+                body["taskId"] = request.TaskId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetContractSubjectRiskResult",
+                Version = "contract_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contract/review/getSubjectRiskResult",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetContractSubjectRiskResultResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取合同主体风险结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetContractSubjectRiskResultRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetContractSubjectRiskResultHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetContractSubjectRiskResultResponse
+        /// </returns>
+        public async Task<GetContractSubjectRiskResultResponse> GetContractSubjectRiskResultWithOptionsAsync(GetContractSubjectRiskResultRequest request, GetContractSubjectRiskResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReviewType))
+            {
+                body["reviewType"] = request.ReviewType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskId))
+            {
+                body["taskId"] = request.TaskId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetContractSubjectRiskResult",
+                Version = "contract_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contract/review/getSubjectRiskResult",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetContractSubjectRiskResultResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取合同主体风险结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetContractSubjectRiskResultRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetContractSubjectRiskResultResponse
+        /// </returns>
+        public GetContractSubjectRiskResultResponse GetContractSubjectRiskResult(GetContractSubjectRiskResultRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetContractSubjectRiskResultHeaders headers = new GetContractSubjectRiskResultHeaders();
+            return GetContractSubjectRiskResultWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取合同主体风险结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetContractSubjectRiskResultRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetContractSubjectRiskResultResponse
+        /// </returns>
+        public async Task<GetContractSubjectRiskResultResponse> GetContractSubjectRiskResultAsync(GetContractSubjectRiskResultRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetContractSubjectRiskResultHeaders headers = new GetContractSubjectRiskResultHeaders();
+            return await GetContractSubjectRiskResultWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

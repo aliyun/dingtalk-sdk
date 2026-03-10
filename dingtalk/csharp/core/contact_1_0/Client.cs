@@ -1748,6 +1748,162 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>企业账号修改主企业</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChangeMainOrgRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChangeMainOrgHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChangeMainOrgResponse
+        /// </returns>
+        public ChangeMainOrgResponse ChangeMainOrgWithOptions(ChangeMainOrgRequest request, ChangeMainOrgHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NewMainCorpId))
+            {
+                body["newMainCorpId"] = request.NewMainCorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ChangeMainOrg",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/orgAccounts/mainOrgs/change",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ChangeMainOrgResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>企业账号修改主企业</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChangeMainOrgRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChangeMainOrgHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChangeMainOrgResponse
+        /// </returns>
+        public async Task<ChangeMainOrgResponse> ChangeMainOrgWithOptionsAsync(ChangeMainOrgRequest request, ChangeMainOrgHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NewMainCorpId))
+            {
+                body["newMainCorpId"] = request.NewMainCorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ChangeMainOrg",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/orgAccounts/mainOrgs/change",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ChangeMainOrgResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>企业账号修改主企业</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChangeMainOrgRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChangeMainOrgResponse
+        /// </returns>
+        public ChangeMainOrgResponse ChangeMainOrg(ChangeMainOrgRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ChangeMainOrgHeaders headers = new ChangeMainOrgHeaders();
+            return ChangeMainOrgWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>企业账号修改主企业</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChangeMainOrgRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChangeMainOrgResponse
+        /// </returns>
+        public async Task<ChangeMainOrgResponse> ChangeMainOrgAsync(ChangeMainOrgRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ChangeMainOrgHeaders headers = new ChangeMainOrgHeaders();
+            return await ChangeMainOrgWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>考证上钉-isv-证书颁发接口</para>
         /// </summary>
         /// 
@@ -11018,6 +11174,162 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             SortUserHeaders headers = new SortUserHeaders();
             return await SortUserWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>提交资源转交</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SubmitHandoverResourceRequest
+        /// </param>
+        /// <param name="headers">
+        /// SubmitHandoverResourceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SubmitHandoverResourceResponse
+        /// </returns>
+        public SubmitHandoverResourceResponse SubmitHandoverResourceWithOptions(SubmitHandoverResourceRequest request, SubmitHandoverResourceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Tasks))
+            {
+                body["tasks"] = request.Tasks;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SubmitHandoverResource",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/assets/submitHandoverResource",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SubmitHandoverResourceResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>提交资源转交</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SubmitHandoverResourceRequest
+        /// </param>
+        /// <param name="headers">
+        /// SubmitHandoverResourceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SubmitHandoverResourceResponse
+        /// </returns>
+        public async Task<SubmitHandoverResourceResponse> SubmitHandoverResourceWithOptionsAsync(SubmitHandoverResourceRequest request, SubmitHandoverResourceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Tasks))
+            {
+                body["tasks"] = request.Tasks;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SubmitHandoverResource",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/assets/submitHandoverResource",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SubmitHandoverResourceResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>提交资源转交</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SubmitHandoverResourceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SubmitHandoverResourceResponse
+        /// </returns>
+        public SubmitHandoverResourceResponse SubmitHandoverResource(SubmitHandoverResourceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SubmitHandoverResourceHeaders headers = new SubmitHandoverResourceHeaders();
+            return SubmitHandoverResourceWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>提交资源转交</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SubmitHandoverResourceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SubmitHandoverResourceResponse
+        /// </returns>
+        public async Task<SubmitHandoverResourceResponse> SubmitHandoverResourceAsync(SubmitHandoverResourceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SubmitHandoverResourceHeaders headers = new SubmitHandoverResourceHeaders();
+            return await SubmitHandoverResourceWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

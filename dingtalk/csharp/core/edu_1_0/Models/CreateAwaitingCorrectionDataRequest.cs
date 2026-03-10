@@ -42,6 +42,13 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 
         /// <summary>
         /// <para>This parameter is required.</para>
+        /// </summary>
+        [NameInMap("paperName")]
+        [Validation(Required=false)]
+        public string PaperName { get; set; }
+
+        /// <summary>
+        /// <para>This parameter is required.</para>
         /// 
         /// <b>Example:</b>
         /// <para>{&quot;paperSize&quot;:&quot;A4&quot;,&quot;duplex&quot;:false,&quot;color&quot;:true}</para>
@@ -62,6 +69,13 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 
         /// <summary>
         /// <para>This parameter is required.</para>
+        /// </summary>
+        [NameInMap("scanFileOssSaveTime")]
+        [Validation(Required=false)]
+        public long? ScanFileOssSaveTime { get; set; }
+
+        /// <summary>
+        /// <para>This parameter is required.</para>
         /// 
         /// <b>Example:</b>
         /// <para>数学</para>
@@ -79,6 +93,13 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         [NameInMap("taskCode")]
         [Validation(Required=false)]
         public string TaskCode { get; set; }
+
+        /// <summary>
+        /// <para>This parameter is required.</para>
+        /// </summary>
+        [NameInMap("totalAssignments")]
+        [Validation(Required=false)]
+        public int? TotalAssignments { get; set; }
 
         /// <summary>
         /// <para>This parameter is required.</para>

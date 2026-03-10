@@ -26,9 +26,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         [Validation(Required=false)]
         public long? Role { get; set; }
 
-        /// <summary>
-        /// <para>This parameter is required.</para>
-        /// </summary>
+        [NameInMap("unionIds")]
+        [Validation(Required=false)]
+        public List<string> UnionIds { get; set; }
+
         [NameInMap("userIds")]
         [Validation(Required=false)]
         public List<string> UserIds { get; set; }

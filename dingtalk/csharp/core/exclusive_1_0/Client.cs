@@ -2690,6 +2690,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Did))
+            {
+                body["did"] = request.Did;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Id))
             {
                 body["id"] = request.Id;
@@ -2757,6 +2761,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Did))
+            {
+                body["did"] = request.Did;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Id))
             {
                 body["id"] = request.Id;
@@ -3518,6 +3526,350 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             ExclusiveCreateDingPortalHeaders headers = new ExclusiveCreateDingPortalHeaders();
             return await ExclusiveCreateDingPortalWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>智能运营桌面端弹窗</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ExclusivePcAlertRequest
+        /// </param>
+        /// <param name="headers">
+        /// ExclusivePcAlertHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ExclusivePcAlertResponse
+        /// </returns>
+        public ExclusivePcAlertResponse ExclusivePcAlertWithOptions(ExclusivePcAlertRequest request, ExclusivePcAlertHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImageMediaId))
+            {
+                body["imageMediaId"] = request.ImageMediaId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenLink))
+            {
+                body["openLink"] = request.OpenLink;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserList))
+            {
+                body["userList"] = request.UserList;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ExclusivePcAlert",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/customize/marketing/pcAlert",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ExclusivePcAlertResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>智能运营桌面端弹窗</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ExclusivePcAlertRequest
+        /// </param>
+        /// <param name="headers">
+        /// ExclusivePcAlertHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ExclusivePcAlertResponse
+        /// </returns>
+        public async Task<ExclusivePcAlertResponse> ExclusivePcAlertWithOptionsAsync(ExclusivePcAlertRequest request, ExclusivePcAlertHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImageMediaId))
+            {
+                body["imageMediaId"] = request.ImageMediaId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenLink))
+            {
+                body["openLink"] = request.OpenLink;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserList))
+            {
+                body["userList"] = request.UserList;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ExclusivePcAlert",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/customize/marketing/pcAlert",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ExclusivePcAlertResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>智能运营桌面端弹窗</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ExclusivePcAlertRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ExclusivePcAlertResponse
+        /// </returns>
+        public ExclusivePcAlertResponse ExclusivePcAlert(ExclusivePcAlertRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ExclusivePcAlertHeaders headers = new ExclusivePcAlertHeaders();
+            return ExclusivePcAlertWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>智能运营桌面端弹窗</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ExclusivePcAlertRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ExclusivePcAlertResponse
+        /// </returns>
+        public async Task<ExclusivePcAlertResponse> ExclusivePcAlertAsync(ExclusivePcAlertRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ExclusivePcAlertHeaders headers = new ExclusivePcAlertHeaders();
+            return await ExclusivePcAlertWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>智能运营移动端首页弹窗</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ExclusivePopupRequest
+        /// </param>
+        /// <param name="headers">
+        /// ExclusivePopupHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ExclusivePopupResponse
+        /// </returns>
+        public ExclusivePopupResponse ExclusivePopupWithOptions(ExclusivePopupRequest request, ExclusivePopupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
+            {
+                body["endTime"] = request.EndTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImageMediaId))
+            {
+                body["imageMediaId"] = request.ImageMediaId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenLink))
+            {
+                body["openLink"] = request.OpenLink;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
+            {
+                body["startTime"] = request.StartTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserList))
+            {
+                body["userList"] = request.UserList;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ExclusivePopup",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/customize/marketing/popup",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ExclusivePopupResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>智能运营移动端首页弹窗</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ExclusivePopupRequest
+        /// </param>
+        /// <param name="headers">
+        /// ExclusivePopupHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ExclusivePopupResponse
+        /// </returns>
+        public async Task<ExclusivePopupResponse> ExclusivePopupWithOptionsAsync(ExclusivePopupRequest request, ExclusivePopupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
+            {
+                body["endTime"] = request.EndTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImageMediaId))
+            {
+                body["imageMediaId"] = request.ImageMediaId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenLink))
+            {
+                body["openLink"] = request.OpenLink;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
+            {
+                body["startTime"] = request.StartTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserList))
+            {
+                body["userList"] = request.UserList;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ExclusivePopup",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/customize/marketing/popup",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ExclusivePopupResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>智能运营移动端首页弹窗</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ExclusivePopupRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ExclusivePopupResponse
+        /// </returns>
+        public ExclusivePopupResponse ExclusivePopup(ExclusivePopupRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ExclusivePopupHeaders headers = new ExclusivePopupHeaders();
+            return ExclusivePopupWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>智能运营移动端首页弹窗</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ExclusivePopupRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ExclusivePopupResponse
+        /// </returns>
+        public async Task<ExclusivePopupResponse> ExclusivePopupAsync(ExclusivePopupRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ExclusivePopupHeaders headers = new ExclusivePopupHeaders();
+            return await ExclusivePopupWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>
@@ -10313,7 +10665,7 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
         /// <para>获取公共设备列表。</para>
         /// </summary>
         /// 
-        /// <param name="request">
+        /// <param name="tmpReq">
         /// GetPublicDevicesRequest
         /// </param>
         /// <param name="headers">
@@ -10326,9 +10678,15 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
         /// <returns>
         /// GetPublicDevicesResponse
         /// </returns>
-        public GetPublicDevicesResponse GetPublicDevicesWithOptions(GetPublicDevicesRequest request, GetPublicDevicesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public GetPublicDevicesResponse GetPublicDevicesWithOptions(GetPublicDevicesRequest tmpReq, GetPublicDevicesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            GetPublicDevicesShrinkRequest request = new GetPublicDevicesShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.SerialNumberList))
+            {
+                request.SerialNumberListShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.SerialNumberList, "serialNumberList", "json");
+            }
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceUuid))
             {
@@ -10357,6 +10715,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SerialNumber))
             {
                 query["serialNumber"] = request.SerialNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SerialNumberListShrink))
+            {
+                query["serialNumberList"] = request.SerialNumberListShrink;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
             {
@@ -10400,7 +10762,7 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
         /// <para>获取公共设备列表。</para>
         /// </summary>
         /// 
-        /// <param name="request">
+        /// <param name="tmpReq">
         /// GetPublicDevicesRequest
         /// </param>
         /// <param name="headers">
@@ -10413,9 +10775,15 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
         /// <returns>
         /// GetPublicDevicesResponse
         /// </returns>
-        public async Task<GetPublicDevicesResponse> GetPublicDevicesWithOptionsAsync(GetPublicDevicesRequest request, GetPublicDevicesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<GetPublicDevicesResponse> GetPublicDevicesWithOptionsAsync(GetPublicDevicesRequest tmpReq, GetPublicDevicesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            GetPublicDevicesShrinkRequest request = new GetPublicDevicesShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.SerialNumberList))
+            {
+                request.SerialNumberListShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.SerialNumberList, "serialNumberList", "json");
+            }
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceUuid))
             {
@@ -10444,6 +10812,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SerialNumber))
             {
                 query["serialNumber"] = request.SerialNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SerialNumberListShrink))
+            {
+                query["serialNumberList"] = request.SerialNumberListShrink;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
             {
@@ -11614,6 +11986,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             {
                 body["serialNumber"] = request.SerialNumber;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SerialNumberList))
+            {
+                body["serialNumberList"] = request.SerialNumberList;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Status))
             {
                 body["status"] = request.Status;
@@ -11712,6 +12088,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SerialNumber))
             {
                 body["serialNumber"] = request.SerialNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SerialNumberList))
+            {
+                body["serialNumberList"] = request.SerialNumberList;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Status))
             {
@@ -15482,6 +15862,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             {
                 body["pushType"] = request.PushType;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Version))
+            {
+                body["version"] = request.Version;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -15544,6 +15928,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PushType))
             {
                 body["pushType"] = request.PushType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Version))
+            {
+                body["version"] = request.Version;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

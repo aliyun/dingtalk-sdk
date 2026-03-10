@@ -25,6 +25,34 @@ namespace AlibabaCloud.SDK.Dingtalkdvi_1_0.Models
             [Validation(Required=false)]
             public string Name { get; set; }
 
+            [NameInMap("tagList")]
+            [Validation(Required=false)]
+            public List<ListTeamResponseBodyResultTagList> TagList { get; set; }
+            public class ListTeamResponseBodyResultTagList : TeaModel {
+                [NameInMap("code")]
+                [Validation(Required=false)]
+                public string Code { get; set; }
+
+                [NameInMap("name")]
+                [Validation(Required=false)]
+                public string Name { get; set; }
+
+                [NameInMap("valueList")]
+                [Validation(Required=false)]
+                public List<ListTeamResponseBodyResultTagListValueList> ValueList { get; set; }
+                public class ListTeamResponseBodyResultTagListValueList : TeaModel {
+                    [NameInMap("code")]
+                    [Validation(Required=false)]
+                    public string Code { get; set; }
+
+                    [NameInMap("name")]
+                    [Validation(Required=false)]
+                    public string Name { get; set; }
+
+                }
+
+            }
+
         }
 
         [NameInMap("totalCount")]

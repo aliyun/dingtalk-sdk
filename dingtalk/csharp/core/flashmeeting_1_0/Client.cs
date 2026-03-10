@@ -546,6 +546,162 @@ namespace AlibabaCloud.SDK.Dingtalkflashmeeting_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>获取闪会内上传的附件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetShanhuiAttachmentsRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetShanhuiAttachmentsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetShanhuiAttachmentsResponse
+        /// </returns>
+        public GetShanhuiAttachmentsResponse GetShanhuiAttachmentsWithOptions(GetShanhuiAttachmentsRequest request, GetShanhuiAttachmentsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShanhuiKey))
+            {
+                body["shanhuiKey"] = request.ShanhuiKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetShanhuiAttachments",
+                Version = "flashmeeting_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/flashmeeting/meetings/getShanhuiAttachments",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetShanhuiAttachmentsResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取闪会内上传的附件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetShanhuiAttachmentsRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetShanhuiAttachmentsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetShanhuiAttachmentsResponse
+        /// </returns>
+        public async Task<GetShanhuiAttachmentsResponse> GetShanhuiAttachmentsWithOptionsAsync(GetShanhuiAttachmentsRequest request, GetShanhuiAttachmentsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShanhuiKey))
+            {
+                body["shanhuiKey"] = request.ShanhuiKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetShanhuiAttachments",
+                Version = "flashmeeting_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/flashmeeting/meetings/getShanhuiAttachments",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetShanhuiAttachmentsResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取闪会内上传的附件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetShanhuiAttachmentsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetShanhuiAttachmentsResponse
+        /// </returns>
+        public GetShanhuiAttachmentsResponse GetShanhuiAttachments(GetShanhuiAttachmentsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetShanhuiAttachmentsHeaders headers = new GetShanhuiAttachmentsHeaders();
+            return GetShanhuiAttachmentsWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取闪会内上传的附件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetShanhuiAttachmentsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetShanhuiAttachmentsResponse
+        /// </returns>
+        public async Task<GetShanhuiAttachmentsResponse> GetShanhuiAttachmentsAsync(GetShanhuiAttachmentsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetShanhuiAttachmentsHeaders headers = new GetShanhuiAttachmentsHeaders();
+            return await GetShanhuiAttachmentsWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>根据日程获取闪会的信息</para>
         /// </summary>
         /// 

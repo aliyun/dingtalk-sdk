@@ -6812,6 +6812,10 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             {
                 body["categoryCodes"] = request.CategoryCodes;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LabelCode))
+            {
+                body["labelCode"] = request.LabelCode;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
             {
                 body["maxResults"] = request.MaxResults;
@@ -6874,6 +6878,10 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CategoryCodes))
             {
                 body["categoryCodes"] = request.CategoryCodes;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LabelCode))
+            {
+                body["labelCode"] = request.LabelCode;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
             {

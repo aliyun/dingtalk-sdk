@@ -9,83 +9,53 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
 {
     public class GetInnerAppResponseBody : TeaModel {
-        /// <summary>
-        /// <b>Example:</b>
-        /// <para>1</para>
-        /// </summary>
         [NameInMap("agentId")]
         [Validation(Required=false)]
         public long? AgentId { get; set; }
 
-        /// <summary>
-        /// <b>Example:</b>
-        /// <para>aooxxx</para>
-        /// </summary>
-        [NameInMap("appKey")]
+        [NameInMap("appName")]
         [Validation(Required=false)]
-        public string AppKey { get; set; }
+        public string AppName { get; set; }
 
-        /// <summary>
-        /// <para>This parameter is required.</para>
-        /// 
-        /// <b>Example:</b>
-        /// <para>aaaxxxxx</para>
-        /// </summary>
-        [NameInMap("appSecret")]
+        [NameInMap("customerAppId")]
         [Validation(Required=false)]
-        public string AppSecret { get; set; }
+        public string CustomerAppId { get; set; }
 
-        /// <summary>
-        /// <b>Example:</b>
-        /// <para>desc</para>
-        /// </summary>
-        [NameInMap("desc")]
+        [NameInMap("mobileLoginAddressKey")]
         [Validation(Required=false)]
-        public string Desc { get; set; }
+        public string MobileLoginAddressKey { get; set; }
 
-        /// <summary>
-        /// <b>Example:</b>
-        /// <para><a href="https://www.dingtalk.com">https://www.dingtalk.com</a></para>
-        /// </summary>
-        [NameInMap("homepageLink")]
+        [NameInMap("mobileLoginLoginUrl")]
         [Validation(Required=false)]
-        public string HomepageLink { get; set; }
+        public string MobileLoginLoginUrl { get; set; }
 
-        /// <summary>
-        /// <b>Example:</b>
-        /// <para>icon</para>
-        /// </summary>
-        [NameInMap("icon")]
+        [NameInMap("mobileOriginalHomepageUrl")]
         [Validation(Required=false)]
-        public string Icon { get; set; }
+        public string MobileOriginalHomepageUrl { get; set; }
 
-        [NameInMap("ipWhiteList")]
+        [NameInMap("mobileTransferUrl")]
         [Validation(Required=false)]
-        public List<string> IpWhiteList { get; set; }
+        public string MobileTransferUrl { get; set; }
 
-        /// <summary>
-        /// <b>Example:</b>
-        /// <para>name</para>
-        /// </summary>
-        [NameInMap("name")]
+        [NameInMap("pcEffectiveHomepageUrl")]
         [Validation(Required=false)]
-        public string Name { get; set; }
+        public string PcEffectiveHomepageUrl { get; set; }
 
-        /// <summary>
-        /// <b>Example:</b>
-        /// <para><a href="https://www.dingtalk.com">https://www.dingtalk.com</a></para>
-        /// </summary>
-        [NameInMap("ompLink")]
+        [NameInMap("pcLoginAddressKey")]
         [Validation(Required=false)]
-        public string OmpLink { get; set; }
+        public string PcLoginAddressKey { get; set; }
 
-        /// <summary>
-        /// <b>Example:</b>
-        /// <para><a href="https://www.dingtalk.com">https://www.dingtalk.com</a></para>
-        /// </summary>
-        [NameInMap("pcHomepageLink")]
+        [NameInMap("pcLoginLoginUrl")]
         [Validation(Required=false)]
-        public string PcHomepageLink { get; set; }
+        public string PcLoginLoginUrl { get; set; }
+
+        [NameInMap("pcOriginalHomepageUrl")]
+        [Validation(Required=false)]
+        public string PcOriginalHomepageUrl { get; set; }
+
+        [NameInMap("pcTransferUrl")]
+        [Validation(Required=false)]
+        public string PcTransferUrl { get; set; }
 
     }
 

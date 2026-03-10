@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
             [Validation(Required=false)]
             public string RecordMinutesUrl { get; set; }
 
+            [NameInMap("taskUuid")]
+            [Validation(Required=false)]
+            public string TaskUuid { get; set; }
+
         }
 
     }

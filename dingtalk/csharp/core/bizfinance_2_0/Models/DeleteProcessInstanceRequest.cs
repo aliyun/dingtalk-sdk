@@ -6,24 +6,24 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0.Models
 {
-    public class GetInnerAppRequest : TeaModel {
+    public class DeleteProcessInstanceRequest : TeaModel {
         /// <summary>
         /// <b>Example:</b>
-        /// <para>corpxxxx</para>
+        /// <para>xxxx</para>
         /// </summary>
-        [NameInMap("ecologicalCorpId")]
+        [NameInMap("instanceId")]
         [Validation(Required=false)]
-        public string EcologicalCorpId { get; set; }
+        public string InstanceId { get; set; }
 
         /// <summary>
         /// <b>Example:</b>
         /// <para>xxxx</para>
         /// </summary>
-        [NameInMap("opUnionId")]
+        [NameInMap("userId")]
         [Validation(Required=false)]
-        public string OpUnionId { get; set; }
+        public string UserId { get; set; }
 
     }
 

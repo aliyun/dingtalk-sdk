@@ -29,7 +29,7 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 
         /// <summary>
         /// <b>Example:</b>
-        /// <para>2021-01-01</para>
+        /// <para>1770189343</para>
         /// </summary>
         [NameInMap("endTimeGMT")]
         [Validation(Required=false)]
@@ -75,6 +75,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         [Validation(Required=false)]
         public string ProcessCode { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>1770189343</para>
+        /// </summary>
         [NameInMap("startTimeGMT")]
         [Validation(Required=false)]
         public long? StartTimeGMT { get; set; }

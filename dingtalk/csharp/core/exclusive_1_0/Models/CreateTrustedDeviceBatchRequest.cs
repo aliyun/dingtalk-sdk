@@ -13,17 +13,33 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         [Validation(Required=false)]
         public List<CreateTrustedDeviceBatchRequestDetailList> DetailList { get; set; }
         public class CreateTrustedDeviceBatchRequestDetailList : TeaModel {
+            [NameInMap("did")]
+            [Validation(Required=false)]
+            public string Did { get; set; }
+
             [NameInMap("macAddress")]
             [Validation(Required=false)]
             public string MacAddress { get; set; }
+
+            [NameInMap("platform")]
+            [Validation(Required=false)]
+            public string Platform { get; set; }
 
             [NameInMap("serialNumber")]
             [Validation(Required=false)]
             public string SerialNumber { get; set; }
 
+            [NameInMap("status")]
+            [Validation(Required=false)]
+            public long? Status { get; set; }
+
             [NameInMap("title")]
             [Validation(Required=false)]
             public string Title { get; set; }
+
+            [NameInMap("userId")]
+            [Validation(Required=false)]
+            public string UserId { get; set; }
 
         }
 
@@ -32,8 +48,6 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         public List<string> MacAddressList { get; set; }
 
         /// <summary>
-        /// <para>This parameter is required.</para>
-        /// 
         /// <b>Example:</b>
         /// <para>Win</para>
         /// </summary>
@@ -42,8 +56,6 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         public string Platform { get; set; }
 
         /// <summary>
-        /// <para>This parameter is required.</para>
-        /// 
         /// <b>Example:</b>
         /// <para>123</para>
         /// </summary>

@@ -3458,6 +3458,166 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>操作云/本地录制白名单企业设置</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// OptRecordWhiteAccountRequest
+        /// </param>
+        /// <param name="headers">
+        /// OptRecordWhiteAccountHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// OptRecordWhiteAccountResponse
+        /// </returns>
+        public OptRecordWhiteAccountResponse OptRecordWhiteAccountWithOptions(OptRecordWhiteAccountRequest tmpReq, OptRecordWhiteAccountHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            OptRecordWhiteAccountShrinkRequest request = new OptRecordWhiteAccountShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.RequestBody))
+            {
+                request.RequestBodyShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.RequestBody, "requestBody", "json");
+            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RequestBodyShrink))
+            {
+                query["requestBody"] = request.RequestBodyShrink;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "OptRecordWhiteAccount",
+                Version = "conference_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/conference/videoConferences/enterpriseSetting/record/whiteAccount",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<OptRecordWhiteAccountResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>操作云/本地录制白名单企业设置</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// OptRecordWhiteAccountRequest
+        /// </param>
+        /// <param name="headers">
+        /// OptRecordWhiteAccountHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// OptRecordWhiteAccountResponse
+        /// </returns>
+        public async Task<OptRecordWhiteAccountResponse> OptRecordWhiteAccountWithOptionsAsync(OptRecordWhiteAccountRequest tmpReq, OptRecordWhiteAccountHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            OptRecordWhiteAccountShrinkRequest request = new OptRecordWhiteAccountShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.RequestBody))
+            {
+                request.RequestBodyShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.RequestBody, "requestBody", "json");
+            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RequestBodyShrink))
+            {
+                query["requestBody"] = request.RequestBodyShrink;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "OptRecordWhiteAccount",
+                Version = "conference_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/conference/videoConferences/enterpriseSetting/record/whiteAccount",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<OptRecordWhiteAccountResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>操作云/本地录制白名单企业设置</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// OptRecordWhiteAccountRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// OptRecordWhiteAccountResponse
+        /// </returns>
+        public OptRecordWhiteAccountResponse OptRecordWhiteAccount(OptRecordWhiteAccountRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            OptRecordWhiteAccountHeaders headers = new OptRecordWhiteAccountHeaders();
+            return OptRecordWhiteAccountWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>操作云/本地录制白名单企业设置</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// OptRecordWhiteAccountRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// OptRecordWhiteAccountResponse
+        /// </returns>
+        public async Task<OptRecordWhiteAccountResponse> OptRecordWhiteAccountAsync(OptRecordWhiteAccountRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            OptRecordWhiteAccountHeaders headers = new OptRecordWhiteAccountHeaders();
+            return await OptRecordWhiteAccountWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>查询云录制文本信息</para>
         /// </summary>
         /// 

@@ -1449,5 +1449,161 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
             return await GetUserTokenWithOptionsAsync(request, headers, runtime);
         }
 
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据 deviceId 将设备踢出登录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// KickoffByDeviceIdRequest
+        /// </param>
+        /// <param name="headers">
+        /// KickoffByDeviceIdHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// KickoffByDeviceIdResponse
+        /// </returns>
+        public KickoffByDeviceIdResponse KickoffByDeviceIdWithOptions(KickoffByDeviceIdRequest request, KickoffByDeviceIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenDeviceId))
+            {
+                body["openDeviceId"] = request.OpenDeviceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "KickoffByDeviceId",
+                Version = "oauth2_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/oauth2/kickoffByDeviceId",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<KickoffByDeviceIdResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据 deviceId 将设备踢出登录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// KickoffByDeviceIdRequest
+        /// </param>
+        /// <param name="headers">
+        /// KickoffByDeviceIdHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// KickoffByDeviceIdResponse
+        /// </returns>
+        public async Task<KickoffByDeviceIdResponse> KickoffByDeviceIdWithOptionsAsync(KickoffByDeviceIdRequest request, KickoffByDeviceIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenDeviceId))
+            {
+                body["openDeviceId"] = request.OpenDeviceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "KickoffByDeviceId",
+                Version = "oauth2_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/oauth2/kickoffByDeviceId",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<KickoffByDeviceIdResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据 deviceId 将设备踢出登录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// KickoffByDeviceIdRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// KickoffByDeviceIdResponse
+        /// </returns>
+        public KickoffByDeviceIdResponse KickoffByDeviceId(KickoffByDeviceIdRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            KickoffByDeviceIdHeaders headers = new KickoffByDeviceIdHeaders();
+            return KickoffByDeviceIdWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据 deviceId 将设备踢出登录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// KickoffByDeviceIdRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// KickoffByDeviceIdResponse
+        /// </returns>
+        public async Task<KickoffByDeviceIdResponse> KickoffByDeviceIdAsync(KickoffByDeviceIdRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            KickoffByDeviceIdHeaders headers = new KickoffByDeviceIdHeaders();
+            return await KickoffByDeviceIdWithOptionsAsync(request, headers, runtime);
+        }
+
     }
 }

@@ -20,6 +20,7 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_2_0
         {
             AlibabaCloud.GatewayDingTalk.Client gatewayClient = new AlibabaCloud.GatewayDingTalk.Client();
             this._spi = gatewayClient;
+            this._signatureAlgorithm = "v2";
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {
@@ -362,6 +363,160 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_2_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             BatchQueryRolesHeaders headers = new BatchQueryRolesHeaders();
             return await BatchQueryRolesWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>企业文件管理——删除文件接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CleanFileRequest
+        /// </param>
+        /// <param name="headers">
+        /// map
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CleanFileResponse
+        /// </returns>
+        public CleanFileResponse CleanFileWithOptions(CleanFileRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CleanReason))
+            {
+                body["cleanReason"] = request.CleanReason;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DentryId))
+            {
+                body["dentryId"] = request.DentryId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                body["operatorId"] = request.OperatorId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SpaceId))
+            {
+                body["spaceId"] = request.SpaceId;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = headers,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CleanFile",
+                Version = "storage_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/storage/filemanager/clean",
+                Method = "POST",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CleanFileResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>企业文件管理——删除文件接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CleanFileRequest
+        /// </param>
+        /// <param name="headers">
+        /// map
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CleanFileResponse
+        /// </returns>
+        public async Task<CleanFileResponse> CleanFileWithOptionsAsync(CleanFileRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CleanReason))
+            {
+                body["cleanReason"] = request.CleanReason;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DentryId))
+            {
+                body["dentryId"] = request.DentryId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                body["operatorId"] = request.OperatorId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SpaceId))
+            {
+                body["spaceId"] = request.SpaceId;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = headers,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CleanFile",
+                Version = "storage_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/storage/filemanager/clean",
+                Method = "POST",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CleanFileResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>企业文件管理——删除文件接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CleanFileRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CleanFileResponse
+        /// </returns>
+        public CleanFileResponse CleanFile(CleanFileRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            return CleanFileWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>企业文件管理——删除文件接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CleanFileRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CleanFileResponse
+        /// </returns>
+        public async Task<CleanFileResponse> CleanFileAsync(CleanFileRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            return await CleanFileWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

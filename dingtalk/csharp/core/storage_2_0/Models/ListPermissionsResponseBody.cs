@@ -59,6 +59,14 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_2_0.Models
 
                 /// <summary>
                 /// <b>Example:</b>
+                /// <para>member_name</para>
+                /// </summary>
+                [NameInMap("name")]
+                [Validation(Required=false)]
+                public string Name { get; set; }
+
+                /// <summary>
+                /// <b>Example:</b>
                 /// <para>USER</para>
                 /// </summary>
                 [NameInMap("type")]

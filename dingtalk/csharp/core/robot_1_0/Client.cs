@@ -3146,6 +3146,382 @@ namespace AlibabaCloud.SDK.Dingtalkrobot_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>机器人撤回贴表情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RobotRecallEmotionRequest
+        /// </param>
+        /// <param name="headers">
+        /// RobotRecallEmotionHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// RobotRecallEmotionResponse
+        /// </returns>
+        public RobotRecallEmotionResponse RobotRecallEmotionWithOptions(RobotRecallEmotionRequest request, RobotRecallEmotionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EmotionName))
+            {
+                body["emotionName"] = request.EmotionName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EmotionType))
+            {
+                body["emotionType"] = request.EmotionType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenMsgId))
+            {
+                body["openMsgId"] = request.OpenMsgId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RobotCode))
+            {
+                body["robotCode"] = request.RobotCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TextEmotion))
+            {
+                body["textEmotion"] = request.TextEmotion;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "RobotRecallEmotion",
+                Version = "robot_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/robot/emotion/recall",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<RobotRecallEmotionResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>机器人撤回贴表情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RobotRecallEmotionRequest
+        /// </param>
+        /// <param name="headers">
+        /// RobotRecallEmotionHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// RobotRecallEmotionResponse
+        /// </returns>
+        public async Task<RobotRecallEmotionResponse> RobotRecallEmotionWithOptionsAsync(RobotRecallEmotionRequest request, RobotRecallEmotionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EmotionName))
+            {
+                body["emotionName"] = request.EmotionName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EmotionType))
+            {
+                body["emotionType"] = request.EmotionType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenMsgId))
+            {
+                body["openMsgId"] = request.OpenMsgId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RobotCode))
+            {
+                body["robotCode"] = request.RobotCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TextEmotion))
+            {
+                body["textEmotion"] = request.TextEmotion;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "RobotRecallEmotion",
+                Version = "robot_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/robot/emotion/recall",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<RobotRecallEmotionResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>机器人撤回贴表情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RobotRecallEmotionRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// RobotRecallEmotionResponse
+        /// </returns>
+        public RobotRecallEmotionResponse RobotRecallEmotion(RobotRecallEmotionRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            RobotRecallEmotionHeaders headers = new RobotRecallEmotionHeaders();
+            return RobotRecallEmotionWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>机器人撤回贴表情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RobotRecallEmotionRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// RobotRecallEmotionResponse
+        /// </returns>
+        public async Task<RobotRecallEmotionResponse> RobotRecallEmotionAsync(RobotRecallEmotionRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            RobotRecallEmotionHeaders headers = new RobotRecallEmotionHeaders();
+            return await RobotRecallEmotionWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>机器人贴表情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RobotReplyEmotionRequest
+        /// </param>
+        /// <param name="headers">
+        /// RobotReplyEmotionHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// RobotReplyEmotionResponse
+        /// </returns>
+        public RobotReplyEmotionResponse RobotReplyEmotionWithOptions(RobotReplyEmotionRequest request, RobotReplyEmotionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EmotionName))
+            {
+                body["emotionName"] = request.EmotionName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EmotionType))
+            {
+                body["emotionType"] = request.EmotionType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenMsgId))
+            {
+                body["openMsgId"] = request.OpenMsgId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RobotCode))
+            {
+                body["robotCode"] = request.RobotCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TextEmotion))
+            {
+                body["textEmotion"] = request.TextEmotion;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "RobotReplyEmotion",
+                Version = "robot_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/robot/emotion/reply",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<RobotReplyEmotionResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>机器人贴表情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RobotReplyEmotionRequest
+        /// </param>
+        /// <param name="headers">
+        /// RobotReplyEmotionHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// RobotReplyEmotionResponse
+        /// </returns>
+        public async Task<RobotReplyEmotionResponse> RobotReplyEmotionWithOptionsAsync(RobotReplyEmotionRequest request, RobotReplyEmotionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EmotionName))
+            {
+                body["emotionName"] = request.EmotionName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EmotionType))
+            {
+                body["emotionType"] = request.EmotionType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenMsgId))
+            {
+                body["openMsgId"] = request.OpenMsgId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RobotCode))
+            {
+                body["robotCode"] = request.RobotCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TextEmotion))
+            {
+                body["textEmotion"] = request.TextEmotion;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "RobotReplyEmotion",
+                Version = "robot_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/robot/emotion/reply",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<RobotReplyEmotionResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>机器人贴表情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RobotReplyEmotionRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// RobotReplyEmotionResponse
+        /// </returns>
+        public RobotReplyEmotionResponse RobotReplyEmotion(RobotReplyEmotionRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            RobotReplyEmotionHeaders headers = new RobotReplyEmotionHeaders();
+            return RobotReplyEmotionWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>机器人贴表情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RobotReplyEmotionRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// RobotReplyEmotionResponse
+        /// </returns>
+        public async Task<RobotReplyEmotionResponse> RobotReplyEmotionAsync(RobotReplyEmotionRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            RobotReplyEmotionHeaders headers = new RobotReplyEmotionHeaders();
+            return await RobotReplyEmotionWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>发送DING消息</para>
         /// </summary>
         /// 

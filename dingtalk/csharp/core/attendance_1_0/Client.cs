@@ -1007,6 +1007,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             {
                 body["leaveCode"] = request.LeaveCode;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TimeZoneId))
+            {
+                body["timeZoneId"] = request.TimeZoneId;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ToTime))
             {
                 body["toTime"] = request.ToTime;
@@ -1087,6 +1091,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LeaveCode))
             {
                 body["leaveCode"] = request.LeaveCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TimeZoneId))
+            {
+                body["timeZoneId"] = request.TimeZoneId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ToTime))
             {

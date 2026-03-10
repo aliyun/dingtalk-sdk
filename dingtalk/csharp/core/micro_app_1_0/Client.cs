@@ -2445,12 +2445,9 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>获取企业内部H5应用</para>
+        /// <para>获取企业内部应用</para>
         /// </summary>
         /// 
-        /// <param name="request">
-        /// GetInnerAppRequest
-        /// </param>
         /// <param name="headers">
         /// GetInnerAppHeaders
         /// </param>
@@ -2461,18 +2458,8 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
         /// <returns>
         /// GetInnerAppResponse
         /// </returns>
-        public GetInnerAppResponse GetInnerAppWithOptions(string agentId, GetInnerAppRequest request, GetInnerAppHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public GetInnerAppResponse GetInnerAppWithOptions(string agentId, GetInnerAppHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EcologicalCorpId))
-            {
-                query["ecologicalCorpId"] = request.EcologicalCorpId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUnionId))
-            {
-                query["opUnionId"] = request.OpUnionId;
-            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -2485,14 +2472,13 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
             AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
             {
                 Action = "GetInnerApp",
                 Version = "microApp_1.0",
                 Protocol = "HTTP",
-                Pathname = "/v1.0/microApp/apps/" + agentId,
+                Pathname = "/v1.0/microApp/apps/inner/" + agentId,
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
@@ -2504,12 +2490,9 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>获取企业内部H5应用</para>
+        /// <para>获取企业内部应用</para>
         /// </summary>
         /// 
-        /// <param name="request">
-        /// GetInnerAppRequest
-        /// </param>
         /// <param name="headers">
         /// GetInnerAppHeaders
         /// </param>
@@ -2520,18 +2503,8 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
         /// <returns>
         /// GetInnerAppResponse
         /// </returns>
-        public async Task<GetInnerAppResponse> GetInnerAppWithOptionsAsync(string agentId, GetInnerAppRequest request, GetInnerAppHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<GetInnerAppResponse> GetInnerAppWithOptionsAsync(string agentId, GetInnerAppHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EcologicalCorpId))
-            {
-                query["ecologicalCorpId"] = request.EcologicalCorpId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUnionId))
-            {
-                query["opUnionId"] = request.OpUnionId;
-            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -2544,14 +2517,13 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
             AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
             {
                 Action = "GetInnerApp",
                 Version = "microApp_1.0",
                 Protocol = "HTTP",
-                Pathname = "/v1.0/microApp/apps/" + agentId,
+                Pathname = "/v1.0/microApp/apps/inner/" + agentId,
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
@@ -2563,40 +2535,152 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>获取企业内部H5应用</para>
+        /// <para>获取企业内部应用</para>
         /// </summary>
-        /// 
-        /// <param name="request">
-        /// GetInnerAppRequest
-        /// </param>
         /// 
         /// <returns>
         /// GetInnerAppResponse
         /// </returns>
-        public GetInnerAppResponse GetInnerApp(string agentId, GetInnerAppRequest request)
+        public GetInnerAppResponse GetInnerApp(string agentId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetInnerAppHeaders headers = new GetInnerAppHeaders();
-            return GetInnerAppWithOptions(agentId, request, headers, runtime);
+            return GetInnerAppWithOptions(agentId, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>获取企业内部H5应用</para>
+        /// <para>获取企业内部应用</para>
         /// </summary>
-        /// 
-        /// <param name="request">
-        /// GetInnerAppRequest
-        /// </param>
         /// 
         /// <returns>
         /// GetInnerAppResponse
         /// </returns>
-        public async Task<GetInnerAppResponse> GetInnerAppAsync(string agentId, GetInnerAppRequest request)
+        public async Task<GetInnerAppResponse> GetInnerAppAsync(string agentId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetInnerAppHeaders headers = new GetInnerAppHeaders();
-            return await GetInnerAppWithOptionsAsync(agentId, request, headers, runtime);
+            return await GetInnerAppWithOptionsAsync(agentId, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取企业内部应用信息</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// GetInnerAppInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetInnerAppInfoResponse
+        /// </returns>
+        public GetInnerAppInfoResponse GetInnerAppInfoWithOptions(string agentId, GetInnerAppInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetInnerAppInfo",
+                Version = "microApp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/microApp/apps/innerapps/" + agentId,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetInnerAppInfoResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取企业内部应用信息</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// GetInnerAppInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetInnerAppInfoResponse
+        /// </returns>
+        public async Task<GetInnerAppInfoResponse> GetInnerAppInfoWithOptionsAsync(string agentId, GetInnerAppInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetInnerAppInfo",
+                Version = "microApp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/microApp/apps/innerapps/" + agentId,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetInnerAppInfoResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取企业内部应用信息</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// GetInnerAppInfoResponse
+        /// </returns>
+        public GetInnerAppInfoResponse GetInnerAppInfo(string agentId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetInnerAppInfoHeaders headers = new GetInnerAppInfoHeaders();
+            return GetInnerAppInfoWithOptions(agentId, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取企业内部应用信息</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// GetInnerAppInfoResponse
+        /// </returns>
+        public async Task<GetInnerAppInfoResponse> GetInnerAppInfoAsync(string agentId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetInnerAppInfoHeaders headers = new GetInnerAppInfoHeaders();
+            return await GetInnerAppInfoWithOptionsAsync(agentId, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

@@ -827,6 +827,162 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>用于提供给独立部署的一方应用转换unionId（白名单策略）</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ConvertUnionIdRequest
+        /// </param>
+        /// <param name="headers">
+        /// ConvertUnionIdHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ConvertUnionIdResponse
+        /// </returns>
+        public ConvertUnionIdResponse ConvertUnionIdWithOptions(ConvertUnionIdRequest request, ConvertUnionIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionIdList))
+            {
+                body["unionIdList"] = request.UnionIdList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIdList))
+            {
+                body["userIdList"] = request.UserIdList;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ConvertUnionId",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/isv/convertUnionId",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ConvertUnionIdResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>用于提供给独立部署的一方应用转换unionId（白名单策略）</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ConvertUnionIdRequest
+        /// </param>
+        /// <param name="headers">
+        /// ConvertUnionIdHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ConvertUnionIdResponse
+        /// </returns>
+        public async Task<ConvertUnionIdResponse> ConvertUnionIdWithOptionsAsync(ConvertUnionIdRequest request, ConvertUnionIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionIdList))
+            {
+                body["unionIdList"] = request.UnionIdList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIdList))
+            {
+                body["userIdList"] = request.UserIdList;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ConvertUnionId",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/isv/convertUnionId",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ConvertUnionIdResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>用于提供给独立部署的一方应用转换unionId（白名单策略）</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ConvertUnionIdRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ConvertUnionIdResponse
+        /// </returns>
+        public ConvertUnionIdResponse ConvertUnionId(ConvertUnionIdRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ConvertUnionIdHeaders headers = new ConvertUnionIdHeaders();
+            return ConvertUnionIdWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>用于提供给独立部署的一方应用转换unionId（白名单策略）</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ConvertUnionIdRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ConvertUnionIdResponse
+        /// </returns>
+        public async Task<ConvertUnionIdResponse> ConvertUnionIdAsync(ConvertUnionIdRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ConvertUnionIdHeaders headers = new ConvertUnionIdHeaders();
+            return await ConvertUnionIdWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>创建电子签签署记录</para>
         /// </summary>
         /// 
@@ -2387,6 +2543,162 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetAllDismissionReasonsHeaders headers = new GetAllDismissionReasonsHeaders();
             return await GetAllDismissionReasonsWithOptionsAsync(headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取离职记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetDismissionRecordRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetDismissionRecordHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetDismissionRecordResponse
+        /// </returns>
+        public GetDismissionRecordResponse GetDismissionRecordWithOptions(GetDismissionRecordRequest request, GetDismissionRecordHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Size))
+            {
+                query["size"] = request.Size;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetDismissionRecord",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/dismission/record/get",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetDismissionRecordResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取离职记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetDismissionRecordRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetDismissionRecordHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetDismissionRecordResponse
+        /// </returns>
+        public async Task<GetDismissionRecordResponse> GetDismissionRecordWithOptionsAsync(GetDismissionRecordRequest request, GetDismissionRecordHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Size))
+            {
+                query["size"] = request.Size;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetDismissionRecord",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/dismission/record/get",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetDismissionRecordResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取离职记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetDismissionRecordRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetDismissionRecordResponse
+        /// </returns>
+        public GetDismissionRecordResponse GetDismissionRecord(GetDismissionRecordRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetDismissionRecordHeaders headers = new GetDismissionRecordHeaders();
+            return GetDismissionRecordWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取离职记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetDismissionRecordRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetDismissionRecordResponse
+        /// </returns>
+        public async Task<GetDismissionRecordResponse> GetDismissionRecordAsync(GetDismissionRecordRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetDismissionRecordHeaders headers = new GetDismissionRecordHeaders();
+            return await GetDismissionRecordWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

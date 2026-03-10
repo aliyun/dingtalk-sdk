@@ -1058,6 +1058,178 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>提交差旅出差申请单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SubmitTripApprovalProcessRequest
+        /// </param>
+        /// <param name="headers">
+        /// SubmitTripApprovalProcessHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SubmitTripApprovalProcessResponse
+        /// </returns>
+        public SubmitTripApprovalProcessResponse SubmitTripApprovalProcessWithOptions(SubmitTripApprovalProcessRequest request, SubmitTripApprovalProcessHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Itineraries))
+            {
+                body["itineraries"] = request.Itineraries;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessCode))
+            {
+                body["processCode"] = request.ProcessCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Reason))
+            {
+                body["reason"] = request.Reason;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SubmitTripApprovalProcess",
+                Version = "trip_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/trip/approvals",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SubmitTripApprovalProcessResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>提交差旅出差申请单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SubmitTripApprovalProcessRequest
+        /// </param>
+        /// <param name="headers">
+        /// SubmitTripApprovalProcessHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SubmitTripApprovalProcessResponse
+        /// </returns>
+        public async Task<SubmitTripApprovalProcessResponse> SubmitTripApprovalProcessWithOptionsAsync(SubmitTripApprovalProcessRequest request, SubmitTripApprovalProcessHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Itineraries))
+            {
+                body["itineraries"] = request.Itineraries;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessCode))
+            {
+                body["processCode"] = request.ProcessCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Reason))
+            {
+                body["reason"] = request.Reason;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SubmitTripApprovalProcess",
+                Version = "trip_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/trip/approvals",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SubmitTripApprovalProcessResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>提交差旅出差申请单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SubmitTripApprovalProcessRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SubmitTripApprovalProcessResponse
+        /// </returns>
+        public SubmitTripApprovalProcessResponse SubmitTripApprovalProcess(SubmitTripApprovalProcessRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SubmitTripApprovalProcessHeaders headers = new SubmitTripApprovalProcessHeaders();
+            return SubmitTripApprovalProcessWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>提交差旅出差申请单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SubmitTripApprovalProcessRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SubmitTripApprovalProcessResponse
+        /// </returns>
+        public async Task<SubmitTripApprovalProcessResponse> SubmitTripApprovalProcessAsync(SubmitTripApprovalProcessRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SubmitTripApprovalProcessHeaders headers = new SubmitTripApprovalProcessHeaders();
+            return await SubmitTripApprovalProcessWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>同步服务商企业签约变更事件</para>
         /// </summary>
         /// 

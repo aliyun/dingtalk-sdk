@@ -41,6 +41,10 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
             [Validation(Required=false)]
             public bool? Host { get; set; }
 
+            [NameInMap("jobNumber")]
+            [Validation(Required=false)]
+            public string JobNumber { get; set; }
+
             [NameInMap("joinTime")]
             [Validation(Required=false)]
             public long? JoinTime { get; set; }

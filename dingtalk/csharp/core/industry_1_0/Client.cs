@@ -17910,6 +17910,154 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>获取转换结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetConvertResultRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetConvertResultHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetConvertResultResponse
+        /// </returns>
+        public GetConvertResultResponse GetConvertResultWithOptions(GetConvertResultRequest request, GetConvertResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskBizId))
+            {
+                body["taskBizId"] = request.TaskBizId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetConvertResult",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/order/convert/get",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetConvertResultResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取转换结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetConvertResultRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetConvertResultHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetConvertResultResponse
+        /// </returns>
+        public async Task<GetConvertResultResponse> GetConvertResultWithOptionsAsync(GetConvertResultRequest request, GetConvertResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskBizId))
+            {
+                body["taskBizId"] = request.TaskBizId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetConvertResult",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/order/convert/get",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetConvertResultResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取转换结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetConvertResultRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetConvertResultResponse
+        /// </returns>
+        public GetConvertResultResponse GetConvertResult(GetConvertResultRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetConvertResultHeaders headers = new GetConvertResultHeaders();
+            return GetConvertResultWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取转换结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetConvertResultRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetConvertResultResponse
+        /// </returns>
+        public async Task<GetConvertResultResponse> GetConvertResultAsync(GetConvertResultRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetConvertResultHeaders headers = new GetConvertResultHeaders();
+            return await GetConvertResultWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>getTaskPackageResult</para>
         /// </summary>
         /// 
@@ -22266,6 +22414,170 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>查询订单转换结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// OrderConvertRequest
+        /// </param>
+        /// <param name="headers">
+        /// OrderConvertHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// OrderConvertResponse
+        /// </returns>
+        public OrderConvertResponse OrderConvertWithOptions(OrderConvertRequest request, OrderConvertHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Attachments))
+            {
+                body["attachments"] = request.Attachments;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperateUserId))
+            {
+                body["operateUserId"] = request.OperateUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RuleBizId))
+            {
+                body["ruleBizId"] = request.RuleBizId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "OrderConvert",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/order/convert/execute",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<OrderConvertResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询订单转换结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// OrderConvertRequest
+        /// </param>
+        /// <param name="headers">
+        /// OrderConvertHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// OrderConvertResponse
+        /// </returns>
+        public async Task<OrderConvertResponse> OrderConvertWithOptionsAsync(OrderConvertRequest request, OrderConvertHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Attachments))
+            {
+                body["attachments"] = request.Attachments;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperateUserId))
+            {
+                body["operateUserId"] = request.OperateUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RuleBizId))
+            {
+                body["ruleBizId"] = request.RuleBizId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "OrderConvert",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/order/convert/execute",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<OrderConvertResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询订单转换结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// OrderConvertRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// OrderConvertResponse
+        /// </returns>
+        public OrderConvertResponse OrderConvert(OrderConvertRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            OrderConvertHeaders headers = new OrderConvertHeaders();
+            return OrderConvertWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询订单转换结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// OrderConvertRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// OrderConvertResponse
+        /// </returns>
+        public async Task<OrderConvertResponse> OrderConvertAsync(OrderConvertRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            OrderConvertHeaders headers = new OrderConvertHeaders();
+            return await OrderConvertWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>提供text和card两种形式工作通知消息</para>
         /// </summary>
         /// 
@@ -23742,6 +24054,170 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>查询订单转换规则</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryConvertRulesRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryConvertRulesHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryConvertRulesResponse
+        /// </returns>
+        public QueryConvertRulesResponse QueryConvertRulesWithOptions(QueryConvertRulesRequest request, QueryConvertRulesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Keyword))
+            {
+                body["keyword"] = request.Keyword;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNo))
+            {
+                body["pageNo"] = request.PageNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                body["pageSize"] = request.PageSize;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryConvertRules",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/order/rule/page",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryConvertRulesResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询订单转换规则</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryConvertRulesRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryConvertRulesHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryConvertRulesResponse
+        /// </returns>
+        public async Task<QueryConvertRulesResponse> QueryConvertRulesWithOptionsAsync(QueryConvertRulesRequest request, QueryConvertRulesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Keyword))
+            {
+                body["keyword"] = request.Keyword;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNo))
+            {
+                body["pageNo"] = request.PageNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                body["pageSize"] = request.PageSize;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryConvertRules",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/order/rule/page",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryConvertRulesResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询订单转换规则</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryConvertRulesRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryConvertRulesResponse
+        /// </returns>
+        public QueryConvertRulesResponse QueryConvertRules(QueryConvertRulesRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryConvertRulesHeaders headers = new QueryConvertRulesHeaders();
+            return QueryConvertRulesWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询订单转换规则</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryConvertRulesRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryConvertRulesResponse
+        /// </returns>
+        public async Task<QueryConvertRulesResponse> QueryConvertRulesAsync(QueryConvertRulesRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryConvertRulesHeaders headers = new QueryConvertRulesHeaders();
+            return await QueryConvertRulesWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>查询科室和医疗组的扩展信息</para>
         /// </summary>
         /// 
@@ -25074,6 +25550,210 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             QueryMedicalEventsHeaders headers = new QueryMedicalEventsHeaders();
             return await QueryMedicalEventsWithOptionsAsync(headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询订单转换结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryOrderConvertResultRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryOrderConvertResultHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryOrderConvertResultResponse
+        /// </returns>
+        public QueryOrderConvertResultResponse QueryOrderConvertResultWithOptions(QueryOrderConvertResultRequest request, QueryOrderConvertResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContentSearch))
+            {
+                body["contentSearch"] = request.ContentSearch;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreateTimeEnd))
+            {
+                body["createTimeEnd"] = request.CreateTimeEnd;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreateTimeStart))
+            {
+                body["createTimeStart"] = request.CreateTimeStart;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNo))
+            {
+                body["pageNo"] = request.PageNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                body["pageSize"] = request.PageSize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Status))
+            {
+                body["status"] = request.Status;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Title))
+            {
+                body["title"] = request.Title;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryOrderConvertResult",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/order/convert/list",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryOrderConvertResultResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询订单转换结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryOrderConvertResultRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryOrderConvertResultHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryOrderConvertResultResponse
+        /// </returns>
+        public async Task<QueryOrderConvertResultResponse> QueryOrderConvertResultWithOptionsAsync(QueryOrderConvertResultRequest request, QueryOrderConvertResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContentSearch))
+            {
+                body["contentSearch"] = request.ContentSearch;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreateTimeEnd))
+            {
+                body["createTimeEnd"] = request.CreateTimeEnd;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreateTimeStart))
+            {
+                body["createTimeStart"] = request.CreateTimeStart;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNo))
+            {
+                body["pageNo"] = request.PageNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                body["pageSize"] = request.PageSize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Status))
+            {
+                body["status"] = request.Status;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Title))
+            {
+                body["title"] = request.Title;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryOrderConvertResult",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/order/convert/list",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryOrderConvertResultResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询订单转换结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryOrderConvertResultRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryOrderConvertResultResponse
+        /// </returns>
+        public QueryOrderConvertResultResponse QueryOrderConvertResult(QueryOrderConvertResultRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryOrderConvertResultHeaders headers = new QueryOrderConvertResultHeaders();
+            return QueryOrderConvertResultWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询订单转换结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryOrderConvertResultRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryOrderConvertResultResponse
+        /// </returns>
+        public async Task<QueryOrderConvertResultResponse> QueryOrderConvertResultAsync(QueryOrderConvertResultRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryOrderConvertResultHeaders headers = new QueryOrderConvertResultHeaders();
+            return await QueryOrderConvertResultWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

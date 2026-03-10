@@ -30,6 +30,454 @@ namespace AlibabaCloud.SDK.Dingtalkdvi_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>设备录音启停控制</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ControlRecordingRequest
+        /// </param>
+        /// <param name="headers">
+        /// ControlRecordingHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ControlRecordingResponse
+        /// </returns>
+        public ControlRecordingResponse ControlRecordingWithOptions(ControlRecordingRequest request, ControlRecordingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Action))
+            {
+                body["action"] = request.Action;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Agree))
+            {
+                body["agree"] = request.Agree;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TeamCode))
+            {
+                body["teamCode"] = request.TeamCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ControlRecording",
+                Version = "dvi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dvi/devices/recording/control",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ControlRecordingResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>设备录音启停控制</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ControlRecordingRequest
+        /// </param>
+        /// <param name="headers">
+        /// ControlRecordingHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ControlRecordingResponse
+        /// </returns>
+        public async Task<ControlRecordingResponse> ControlRecordingWithOptionsAsync(ControlRecordingRequest request, ControlRecordingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Action))
+            {
+                body["action"] = request.Action;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Agree))
+            {
+                body["agree"] = request.Agree;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TeamCode))
+            {
+                body["teamCode"] = request.TeamCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ControlRecording",
+                Version = "dvi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dvi/devices/recording/control",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ControlRecordingResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>设备录音启停控制</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ControlRecordingRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ControlRecordingResponse
+        /// </returns>
+        public ControlRecordingResponse ControlRecording(ControlRecordingRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ControlRecordingHeaders headers = new ControlRecordingHeaders();
+            return ControlRecordingWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>设备录音启停控制</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ControlRecordingRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ControlRecordingResponse
+        /// </returns>
+        public async Task<ControlRecordingResponse> ControlRecordingAsync(ControlRecordingRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ControlRecordingHeaders headers = new ControlRecordingHeaders();
+            return await ControlRecordingWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建录制计划</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateRecordingScheduleRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateRecordingScheduleHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateRecordingScheduleResponse
+        /// </returns>
+        public CreateRecordingScheduleResponse CreateRecordingScheduleWithOptions(CreateRecordingScheduleRequest request, CreateRecordingScheduleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Schedules))
+            {
+                body["schedules"] = request.Schedules;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Sn))
+            {
+                body["sn"] = request.Sn;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateRecordingSchedule",
+                Version = "dvi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dvi/devices/recording/schedules",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateRecordingScheduleResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建录制计划</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateRecordingScheduleRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateRecordingScheduleHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateRecordingScheduleResponse
+        /// </returns>
+        public async Task<CreateRecordingScheduleResponse> CreateRecordingScheduleWithOptionsAsync(CreateRecordingScheduleRequest request, CreateRecordingScheduleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Schedules))
+            {
+                body["schedules"] = request.Schedules;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Sn))
+            {
+                body["sn"] = request.Sn;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateRecordingSchedule",
+                Version = "dvi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dvi/devices/recording/schedules",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateRecordingScheduleResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建录制计划</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateRecordingScheduleRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateRecordingScheduleResponse
+        /// </returns>
+        public CreateRecordingScheduleResponse CreateRecordingSchedule(CreateRecordingScheduleRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateRecordingScheduleHeaders headers = new CreateRecordingScheduleHeaders();
+            return CreateRecordingScheduleWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建录制计划</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateRecordingScheduleRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateRecordingScheduleResponse
+        /// </returns>
+        public async Task<CreateRecordingScheduleResponse> CreateRecordingScheduleAsync(CreateRecordingScheduleRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateRecordingScheduleHeaders headers = new CreateRecordingScheduleHeaders();
+            return await CreateRecordingScheduleWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除录制计划</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// DeleteRecordingScheduleHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteRecordingScheduleResponse
+        /// </returns>
+        public DeleteRecordingScheduleResponse DeleteRecordingScheduleWithOptions(string taskId, DeleteRecordingScheduleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteRecordingSchedule",
+                Version = "dvi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dvi/devices/recording/schedules/" + taskId,
+                Method = "DELETE",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteRecordingScheduleResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除录制计划</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// DeleteRecordingScheduleHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteRecordingScheduleResponse
+        /// </returns>
+        public async Task<DeleteRecordingScheduleResponse> DeleteRecordingScheduleWithOptionsAsync(string taskId, DeleteRecordingScheduleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteRecordingSchedule",
+                Version = "dvi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dvi/devices/recording/schedules/" + taskId,
+                Method = "DELETE",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteRecordingScheduleResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除录制计划</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// DeleteRecordingScheduleResponse
+        /// </returns>
+        public DeleteRecordingScheduleResponse DeleteRecordingSchedule(string taskId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteRecordingScheduleHeaders headers = new DeleteRecordingScheduleHeaders();
+            return DeleteRecordingScheduleWithOptions(taskId, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除录制计划</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// DeleteRecordingScheduleResponse
+        /// </returns>
+        public async Task<DeleteRecordingScheduleResponse> DeleteRecordingScheduleAsync(string taskId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteRecordingScheduleHeaders headers = new DeleteRecordingScheduleHeaders();
+            return await DeleteRecordingScheduleWithOptionsAsync(taskId, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>获取音频文件下载地址</para>
         /// </summary>
         /// 
@@ -634,6 +1082,126 @@ namespace AlibabaCloud.SDK.Dingtalkdvi_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetCustomerInsightHeaders headers = new GetCustomerInsightHeaders();
             return await GetCustomerInsightWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取录制计划</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// GetRecordingScheduleHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetRecordingScheduleResponse
+        /// </returns>
+        public GetRecordingScheduleResponse GetRecordingScheduleWithOptions(string taskId, GetRecordingScheduleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetRecordingSchedule",
+                Version = "dvi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dvi/devices/recording/schedules/" + taskId,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetRecordingScheduleResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取录制计划</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// GetRecordingScheduleHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetRecordingScheduleResponse
+        /// </returns>
+        public async Task<GetRecordingScheduleResponse> GetRecordingScheduleWithOptionsAsync(string taskId, GetRecordingScheduleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetRecordingSchedule",
+                Version = "dvi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dvi/devices/recording/schedules/" + taskId,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetRecordingScheduleResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取录制计划</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// GetRecordingScheduleResponse
+        /// </returns>
+        public GetRecordingScheduleResponse GetRecordingSchedule(string taskId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetRecordingScheduleHeaders headers = new GetRecordingScheduleHeaders();
+            return GetRecordingScheduleWithOptions(taskId, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取录制计划</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// GetRecordingScheduleResponse
+        /// </returns>
+        public async Task<GetRecordingScheduleResponse> GetRecordingScheduleAsync(string taskId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetRecordingScheduleHeaders headers = new GetRecordingScheduleHeaders();
+            return await GetRecordingScheduleWithOptionsAsync(taskId, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>
@@ -1570,6 +2138,202 @@ namespace AlibabaCloud.SDK.Dingtalkdvi_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             ListCustomerHeaders headers = new ListCustomerHeaders();
             return await ListCustomerWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>分页查询设备录音时长</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListDeviceRecordingDurationRequest
+        /// </param>
+        /// <param name="headers">
+        /// ListDeviceRecordingDurationHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListDeviceRecordingDurationResponse
+        /// </returns>
+        public ListDeviceRecordingDurationResponse ListDeviceRecordingDurationWithOptions(ListDeviceRecordingDurationRequest request, ListDeviceRecordingDurationHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
+            {
+                query["endTime"] = request.EndTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                query["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Sn))
+            {
+                query["sn"] = request.Sn;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
+            {
+                query["startTime"] = request.StartTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TeamCode))
+            {
+                query["teamCode"] = request.TeamCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ListDeviceRecordingDuration",
+                Version = "dvi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dvi/devices/recording-durations",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ListDeviceRecordingDurationResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>分页查询设备录音时长</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListDeviceRecordingDurationRequest
+        /// </param>
+        /// <param name="headers">
+        /// ListDeviceRecordingDurationHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListDeviceRecordingDurationResponse
+        /// </returns>
+        public async Task<ListDeviceRecordingDurationResponse> ListDeviceRecordingDurationWithOptionsAsync(ListDeviceRecordingDurationRequest request, ListDeviceRecordingDurationHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
+            {
+                query["endTime"] = request.EndTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                query["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Sn))
+            {
+                query["sn"] = request.Sn;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
+            {
+                query["startTime"] = request.StartTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TeamCode))
+            {
+                query["teamCode"] = request.TeamCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ListDeviceRecordingDuration",
+                Version = "dvi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dvi/devices/recording-durations",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ListDeviceRecordingDurationResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>分页查询设备录音时长</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListDeviceRecordingDurationRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListDeviceRecordingDurationResponse
+        /// </returns>
+        public ListDeviceRecordingDurationResponse ListDeviceRecordingDuration(ListDeviceRecordingDurationRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListDeviceRecordingDurationHeaders headers = new ListDeviceRecordingDurationHeaders();
+            return ListDeviceRecordingDurationWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>分页查询设备录音时长</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListDeviceRecordingDurationRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListDeviceRecordingDurationResponse
+        /// </returns>
+        public async Task<ListDeviceRecordingDurationResponse> ListDeviceRecordingDurationAsync(ListDeviceRecordingDurationRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListDeviceRecordingDurationHeaders headers = new ListDeviceRecordingDurationHeaders();
+            return await ListDeviceRecordingDurationWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>
@@ -2930,6 +3694,342 @@ namespace AlibabaCloud.SDK.Dingtalkdvi_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             SubmitAsrTaskHeaders headers = new SubmitAsrTaskHeaders();
             return await SubmitAsrTaskWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新设备绑定关系</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateDeviceBindingRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateDeviceBindingHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateDeviceBindingResponse
+        /// </returns>
+        public UpdateDeviceBindingResponse UpdateDeviceBindingWithOptions(UpdateDeviceBindingRequest request, UpdateDeviceBindingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Action))
+            {
+                body["action"] = request.Action;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Sn))
+            {
+                body["sn"] = request.Sn;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TeamCode))
+            {
+                body["teamCode"] = request.TeamCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateDeviceBinding",
+                Version = "dvi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dvi/devices/binding/update",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateDeviceBindingResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新设备绑定关系</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateDeviceBindingRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateDeviceBindingHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateDeviceBindingResponse
+        /// </returns>
+        public async Task<UpdateDeviceBindingResponse> UpdateDeviceBindingWithOptionsAsync(UpdateDeviceBindingRequest request, UpdateDeviceBindingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Action))
+            {
+                body["action"] = request.Action;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Sn))
+            {
+                body["sn"] = request.Sn;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TeamCode))
+            {
+                body["teamCode"] = request.TeamCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateDeviceBinding",
+                Version = "dvi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dvi/devices/binding/update",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateDeviceBindingResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新设备绑定关系</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateDeviceBindingRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateDeviceBindingResponse
+        /// </returns>
+        public UpdateDeviceBindingResponse UpdateDeviceBinding(UpdateDeviceBindingRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateDeviceBindingHeaders headers = new UpdateDeviceBindingHeaders();
+            return UpdateDeviceBindingWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新设备绑定关系</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateDeviceBindingRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateDeviceBindingResponse
+        /// </returns>
+        public async Task<UpdateDeviceBindingResponse> UpdateDeviceBindingAsync(UpdateDeviceBindingRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateDeviceBindingHeaders headers = new UpdateDeviceBindingHeaders();
+            return await UpdateDeviceBindingWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新录制计划</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateRecordingScheduleRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateRecordingScheduleHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateRecordingScheduleResponse
+        /// </returns>
+        public UpdateRecordingScheduleResponse UpdateRecordingScheduleWithOptions(UpdateRecordingScheduleRequest request, UpdateRecordingScheduleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
+            {
+                body["endTime"] = request.EndTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
+            {
+                body["startTime"] = request.StartTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskId))
+            {
+                body["taskId"] = request.TaskId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateRecordingSchedule",
+                Version = "dvi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dvi/devices/recording/schedules",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateRecordingScheduleResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新录制计划</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateRecordingScheduleRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateRecordingScheduleHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateRecordingScheduleResponse
+        /// </returns>
+        public async Task<UpdateRecordingScheduleResponse> UpdateRecordingScheduleWithOptionsAsync(UpdateRecordingScheduleRequest request, UpdateRecordingScheduleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
+            {
+                body["endTime"] = request.EndTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
+            {
+                body["startTime"] = request.StartTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskId))
+            {
+                body["taskId"] = request.TaskId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateRecordingSchedule",
+                Version = "dvi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dvi/devices/recording/schedules",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateRecordingScheduleResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新录制计划</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateRecordingScheduleRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateRecordingScheduleResponse
+        /// </returns>
+        public UpdateRecordingScheduleResponse UpdateRecordingSchedule(UpdateRecordingScheduleRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateRecordingScheduleHeaders headers = new UpdateRecordingScheduleHeaders();
+            return UpdateRecordingScheduleWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新录制计划</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateRecordingScheduleRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateRecordingScheduleResponse
+        /// </returns>
+        public async Task<UpdateRecordingScheduleResponse> UpdateRecordingScheduleAsync(UpdateRecordingScheduleRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateRecordingScheduleHeaders headers = new UpdateRecordingScheduleHeaders();
+            return await UpdateRecordingScheduleWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

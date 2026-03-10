@@ -45,6 +45,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
             [Validation(Required=false)]
             public string Owner { get; set; }
 
+            [NameInMap("ownerList")]
+            [Validation(Required=false)]
+            public List<string> OwnerList { get; set; }
+
             [NameInMap("sections")]
             [Validation(Required=false)]
             public List<GetShiftResponseBodyResultSections> Sections { get; set; }

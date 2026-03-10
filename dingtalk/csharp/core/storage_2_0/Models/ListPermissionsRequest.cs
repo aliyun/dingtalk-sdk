@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_2_0.Models
         [Validation(Required=false)]
         public ListPermissionsRequestOption Option { get; set; }
         public class ListPermissionsRequestOption : TeaModel {
+            [NameInMap("filterMemberTypes")]
+            [Validation(Required=false)]
+            public List<string> FilterMemberTypes { get; set; }
+
             [NameInMap("filterRoleIds")]
             [Validation(Required=false)]
             public List<string> FilterRoleIds { get; set; }

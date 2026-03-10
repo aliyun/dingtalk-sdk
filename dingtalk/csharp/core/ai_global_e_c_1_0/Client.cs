@@ -30,6 +30,170 @@ namespace AlibabaCloud.SDK.Dingtalkai_global_e_c_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>业务code回调</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BusinessCodeCallbackRequest
+        /// </param>
+        /// <param name="headers">
+        /// BusinessCodeCallbackHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// BusinessCodeCallbackResponse
+        /// </returns>
+        public BusinessCodeCallbackResponse BusinessCodeCallbackWithOptions(BusinessCodeCallbackRequest request, BusinessCodeCallbackHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BusinessCode))
+            {
+                body["businessCode"] = request.BusinessCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EventType))
+            {
+                body["eventType"] = request.EventType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Status))
+            {
+                body["status"] = request.Status;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BusinessCodeCallback",
+                Version = "aiGlobalEC_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/aiGlobalEC/businessCode/callback",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BusinessCodeCallbackResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>业务code回调</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BusinessCodeCallbackRequest
+        /// </param>
+        /// <param name="headers">
+        /// BusinessCodeCallbackHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// BusinessCodeCallbackResponse
+        /// </returns>
+        public async Task<BusinessCodeCallbackResponse> BusinessCodeCallbackWithOptionsAsync(BusinessCodeCallbackRequest request, BusinessCodeCallbackHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BusinessCode))
+            {
+                body["businessCode"] = request.BusinessCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EventType))
+            {
+                body["eventType"] = request.EventType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Status))
+            {
+                body["status"] = request.Status;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BusinessCodeCallback",
+                Version = "aiGlobalEC_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/aiGlobalEC/businessCode/callback",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BusinessCodeCallbackResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>业务code回调</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BusinessCodeCallbackRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// BusinessCodeCallbackResponse
+        /// </returns>
+        public BusinessCodeCallbackResponse BusinessCodeCallback(BusinessCodeCallbackRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            BusinessCodeCallbackHeaders headers = new BusinessCodeCallbackHeaders();
+            return BusinessCodeCallbackWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>业务code回调</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BusinessCodeCallbackRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// BusinessCodeCallbackResponse
+        /// </returns>
+        public async Task<BusinessCodeCallbackResponse> BusinessCodeCallbackAsync(BusinessCodeCallbackRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            BusinessCodeCallbackHeaders headers = new BusinessCodeCallbackHeaders();
+            return await BusinessCodeCallbackWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>全渠道运营客服tiktok消息接入</para>
         /// </summary>
         /// 
@@ -706,6 +870,170 @@ namespace AlibabaCloud.SDK.Dingtalkai_global_e_c_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             LaunchHeaders headers = new LaunchHeaders();
             return await LaunchWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据businessCode查询商品图片信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryBusinessCodeInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryBusinessCodeInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryBusinessCodeInfoResponse
+        /// </returns>
+        public QueryBusinessCodeInfoResponse QueryBusinessCodeInfoWithOptions(QueryBusinessCodeInfoRequest request, QueryBusinessCodeInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BusinessCode))
+            {
+                body["businessCode"] = request.BusinessCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EventType))
+            {
+                body["eventType"] = request.EventType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Status))
+            {
+                body["status"] = request.Status;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryBusinessCodeInfo",
+                Version = "aiGlobalEC_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/aiGlobalEC/businessCode/queryInfo",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryBusinessCodeInfoResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据businessCode查询商品图片信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryBusinessCodeInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryBusinessCodeInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryBusinessCodeInfoResponse
+        /// </returns>
+        public async Task<QueryBusinessCodeInfoResponse> QueryBusinessCodeInfoWithOptionsAsync(QueryBusinessCodeInfoRequest request, QueryBusinessCodeInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BusinessCode))
+            {
+                body["businessCode"] = request.BusinessCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EventType))
+            {
+                body["eventType"] = request.EventType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Status))
+            {
+                body["status"] = request.Status;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryBusinessCodeInfo",
+                Version = "aiGlobalEC_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/aiGlobalEC/businessCode/queryInfo",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryBusinessCodeInfoResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据businessCode查询商品图片信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryBusinessCodeInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryBusinessCodeInfoResponse
+        /// </returns>
+        public QueryBusinessCodeInfoResponse QueryBusinessCodeInfo(QueryBusinessCodeInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryBusinessCodeInfoHeaders headers = new QueryBusinessCodeInfoHeaders();
+            return QueryBusinessCodeInfoWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据businessCode查询商品图片信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryBusinessCodeInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryBusinessCodeInfoResponse
+        /// </returns>
+        public async Task<QueryBusinessCodeInfoResponse> QueryBusinessCodeInfoAsync(QueryBusinessCodeInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryBusinessCodeInfoHeaders headers = new QueryBusinessCodeInfoHeaders();
+            return await QueryBusinessCodeInfoWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

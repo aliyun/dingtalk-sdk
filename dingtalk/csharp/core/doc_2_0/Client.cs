@@ -1646,6 +1646,194 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>创建快捷方式V2版(顺丰迁移使用)</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateShortcutForMigrateRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateShortcutForMigrateHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateShortcutForMigrateResponse
+        /// </returns>
+        public CreateShortcutForMigrateResponse CreateShortcutForMigrateWithOptions(CreateShortcutForMigrateRequest request, CreateShortcutForMigrateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                body["operatorId"] = request.OperatorId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceResourceId))
+            {
+                body["sourceResourceId"] = request.SourceResourceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceResourceType))
+            {
+                body["sourceResourceType"] = request.SourceResourceType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetResourceId))
+            {
+                body["targetResourceId"] = request.TargetResourceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetResourceName))
+            {
+                body["targetResourceName"] = request.TargetResourceName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetResourceType))
+            {
+                body["targetResourceType"] = request.TargetResourceType;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateShortcutForMigrate",
+                Version = "doc_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/doc/resource/shortcut/createV2",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateShortcutForMigrateResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建快捷方式V2版(顺丰迁移使用)</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateShortcutForMigrateRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateShortcutForMigrateHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateShortcutForMigrateResponse
+        /// </returns>
+        public async Task<CreateShortcutForMigrateResponse> CreateShortcutForMigrateWithOptionsAsync(CreateShortcutForMigrateRequest request, CreateShortcutForMigrateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                body["operatorId"] = request.OperatorId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceResourceId))
+            {
+                body["sourceResourceId"] = request.SourceResourceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceResourceType))
+            {
+                body["sourceResourceType"] = request.SourceResourceType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetResourceId))
+            {
+                body["targetResourceId"] = request.TargetResourceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetResourceName))
+            {
+                body["targetResourceName"] = request.TargetResourceName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetResourceType))
+            {
+                body["targetResourceType"] = request.TargetResourceType;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateShortcutForMigrate",
+                Version = "doc_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/doc/resource/shortcut/createV2",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateShortcutForMigrateResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建快捷方式V2版(顺丰迁移使用)</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateShortcutForMigrateRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateShortcutForMigrateResponse
+        /// </returns>
+        public CreateShortcutForMigrateResponse CreateShortcutForMigrate(CreateShortcutForMigrateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateShortcutForMigrateHeaders headers = new CreateShortcutForMigrateHeaders();
+            return CreateShortcutForMigrateWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建快捷方式V2版(顺丰迁移使用)</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateShortcutForMigrateRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateShortcutForMigrateResponse
+        /// </returns>
+        public async Task<CreateShortcutForMigrateResponse> CreateShortcutForMigrateAsync(CreateShortcutForMigrateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateShortcutForMigrateHeaders headers = new CreateShortcutForMigrateHeaders();
+            return await CreateShortcutForMigrateWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>创建知识库</para>
         /// </summary>
         /// 

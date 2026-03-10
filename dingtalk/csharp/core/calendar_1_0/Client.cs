@@ -4982,6 +4982,174 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>拉取企业内插件列表</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// ListOrgPluginsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListOrgPluginsResponse
+        /// </returns>
+        public ListOrgPluginsResponse ListOrgPluginsWithOptions(ListOrgPluginsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingAccessTokenType))
+            {
+                realHeaders["dingAccessTokenType"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.DingAccessTokenType);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingClientId))
+            {
+                realHeaders["dingClientId"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.DingClientId);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingIsvOrgId))
+            {
+                realHeaders["dingIsvOrgId"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.DingIsvOrgId);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingOpenAppOrgId))
+            {
+                realHeaders["dingOpenAppOrgId"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.DingOpenAppOrgId);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingOrgId))
+            {
+                realHeaders["dingOrgId"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.DingOrgId);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingSuiteKey))
+            {
+                realHeaders["dingSuiteKey"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.DingSuiteKey);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ListOrgPlugins",
+                Version = "calendar_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/calendar/plugins",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ListOrgPluginsResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>拉取企业内插件列表</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// ListOrgPluginsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListOrgPluginsResponse
+        /// </returns>
+        public async Task<ListOrgPluginsResponse> ListOrgPluginsWithOptionsAsync(ListOrgPluginsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingAccessTokenType))
+            {
+                realHeaders["dingAccessTokenType"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.DingAccessTokenType);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingClientId))
+            {
+                realHeaders["dingClientId"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.DingClientId);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingIsvOrgId))
+            {
+                realHeaders["dingIsvOrgId"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.DingIsvOrgId);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingOpenAppOrgId))
+            {
+                realHeaders["dingOpenAppOrgId"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.DingOpenAppOrgId);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingOrgId))
+            {
+                realHeaders["dingOrgId"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.DingOrgId);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingSuiteKey))
+            {
+                realHeaders["dingSuiteKey"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.DingSuiteKey);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ListOrgPlugins",
+                Version = "calendar_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/calendar/plugins",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ListOrgPluginsResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>拉取企业内插件列表</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// ListOrgPluginsResponse
+        /// </returns>
+        public ListOrgPluginsResponse ListOrgPlugins()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListOrgPluginsHeaders headers = new ListOrgPluginsHeaders();
+            return ListOrgPluginsWithOptions(headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>拉取企业内插件列表</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// ListOrgPluginsResponse
+        /// </returns>
+        public async Task<ListOrgPluginsResponse> ListOrgPluginsAsync()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListOrgPluginsHeaders headers = new ListOrgPluginsHeaders();
+            return await ListOrgPluginsWithOptionsAsync(headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>设置会议室在日程中的响应状态</para>
         /// </summary>
         /// 
@@ -6546,6 +6714,162 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             UnsubscribeCalendarHeaders headers = new UnsubscribeCalendarHeaders();
             return await UnsubscribeCalendarWithOptionsAsync(userId, calendarId, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新插件订阅人群</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateOrgPluginSubscribersRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateOrgPluginSubscribersHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateOrgPluginSubscribersResponse
+        /// </returns>
+        public UpdateOrgPluginSubscribersResponse UpdateOrgPluginSubscribersWithOptions(string pluginId, UpdateOrgPluginSubscribersRequest request, UpdateOrgPluginSubscribersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptIds))
+            {
+                body["deptIds"] = request.DeptIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionIds))
+            {
+                body["unionIds"] = request.UnionIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateOrgPluginSubscribers",
+                Version = "calendar_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/calendar/plugins/" + pluginId + "/subscribers",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateOrgPluginSubscribersResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新插件订阅人群</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateOrgPluginSubscribersRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateOrgPluginSubscribersHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateOrgPluginSubscribersResponse
+        /// </returns>
+        public async Task<UpdateOrgPluginSubscribersResponse> UpdateOrgPluginSubscribersWithOptionsAsync(string pluginId, UpdateOrgPluginSubscribersRequest request, UpdateOrgPluginSubscribersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptIds))
+            {
+                body["deptIds"] = request.DeptIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionIds))
+            {
+                body["unionIds"] = request.UnionIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateOrgPluginSubscribers",
+                Version = "calendar_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/calendar/plugins/" + pluginId + "/subscribers",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateOrgPluginSubscribersResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新插件订阅人群</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateOrgPluginSubscribersRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateOrgPluginSubscribersResponse
+        /// </returns>
+        public UpdateOrgPluginSubscribersResponse UpdateOrgPluginSubscribers(string pluginId, UpdateOrgPluginSubscribersRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateOrgPluginSubscribersHeaders headers = new UpdateOrgPluginSubscribersHeaders();
+            return UpdateOrgPluginSubscribersWithOptions(pluginId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新插件订阅人群</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateOrgPluginSubscribersRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateOrgPluginSubscribersResponse
+        /// </returns>
+        public async Task<UpdateOrgPluginSubscribersResponse> UpdateOrgPluginSubscribersAsync(string pluginId, UpdateOrgPluginSubscribersRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateOrgPluginSubscribersHeaders headers = new UpdateOrgPluginSubscribersHeaders();
+            return await UpdateOrgPluginSubscribersWithOptionsAsync(pluginId, request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

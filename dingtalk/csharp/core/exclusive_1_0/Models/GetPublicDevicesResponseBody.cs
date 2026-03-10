@@ -91,6 +91,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             [Validation(Required=false)]
             public string DeviceUuid { get; set; }
 
+            [NameInMap("did")]
+            [Validation(Required=false)]
+            public string Did { get; set; }
+
             /// <summary>
             /// <b>Example:</b>
             /// <para>1671767361000</para>

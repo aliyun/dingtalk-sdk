@@ -380,5 +380,341 @@ namespace AlibabaCloud.SDK.Dingtalkalgo_1_0
             return await OkrOpenRecommendWithOptionsAsync(request, headers, runtime);
         }
 
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>魏桥铝原料预测任务查询</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// WeiqiaoAluminumQueryRequest
+        /// </param>
+        /// <param name="headers">
+        /// WeiqiaoAluminumQueryHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// WeiqiaoAluminumQueryResponse
+        /// </returns>
+        public WeiqiaoAluminumQueryResponse WeiqiaoAluminumQueryWithOptions(WeiqiaoAluminumQueryRequest request, WeiqiaoAluminumQueryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskId))
+            {
+                body["task_id"] = request.TaskId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "WeiqiaoAluminumQuery",
+                Version = "algo_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/algo/industry/weiqiao/aluminum/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<WeiqiaoAluminumQueryResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>魏桥铝原料预测任务查询</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// WeiqiaoAluminumQueryRequest
+        /// </param>
+        /// <param name="headers">
+        /// WeiqiaoAluminumQueryHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// WeiqiaoAluminumQueryResponse
+        /// </returns>
+        public async Task<WeiqiaoAluminumQueryResponse> WeiqiaoAluminumQueryWithOptionsAsync(WeiqiaoAluminumQueryRequest request, WeiqiaoAluminumQueryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskId))
+            {
+                body["task_id"] = request.TaskId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "WeiqiaoAluminumQuery",
+                Version = "algo_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/algo/industry/weiqiao/aluminum/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<WeiqiaoAluminumQueryResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>魏桥铝原料预测任务查询</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// WeiqiaoAluminumQueryRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// WeiqiaoAluminumQueryResponse
+        /// </returns>
+        public WeiqiaoAluminumQueryResponse WeiqiaoAluminumQuery(WeiqiaoAluminumQueryRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            WeiqiaoAluminumQueryHeaders headers = new WeiqiaoAluminumQueryHeaders();
+            return WeiqiaoAluminumQueryWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>魏桥铝原料预测任务查询</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// WeiqiaoAluminumQueryRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// WeiqiaoAluminumQueryResponse
+        /// </returns>
+        public async Task<WeiqiaoAluminumQueryResponse> WeiqiaoAluminumQueryAsync(WeiqiaoAluminumQueryRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            WeiqiaoAluminumQueryHeaders headers = new WeiqiaoAluminumQueryHeaders();
+            return await WeiqiaoAluminumQueryWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>魏桥铝原料预测任务提交</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// WeiqiaoAluminumSubmitRequest
+        /// </param>
+        /// <param name="headers">
+        /// WeiqiaoAluminumSubmitHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// WeiqiaoAluminumSubmitResponse
+        /// </returns>
+        public WeiqiaoAluminumSubmitResponse WeiqiaoAluminumSubmitWithOptions(WeiqiaoAluminumSubmitRequest request, WeiqiaoAluminumSubmitHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CurrentFurnace))
+            {
+                body["current_furnace"] = request.CurrentFurnace;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DilutionConfig))
+            {
+                body["dilution_config"] = request.DilutionConfig;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HistoryFurnace))
+            {
+                body["history_furnace"] = request.HistoryFurnace;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RawMaterials))
+            {
+                body["raw_materials"] = request.RawMaterials;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Target))
+            {
+                body["target"] = request.Target;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetRanges))
+            {
+                body["target_ranges"] = request.TargetRanges;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "WeiqiaoAluminumSubmit",
+                Version = "algo_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/algo/industry/weiqiao/aluminum/submit",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<WeiqiaoAluminumSubmitResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>魏桥铝原料预测任务提交</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// WeiqiaoAluminumSubmitRequest
+        /// </param>
+        /// <param name="headers">
+        /// WeiqiaoAluminumSubmitHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// WeiqiaoAluminumSubmitResponse
+        /// </returns>
+        public async Task<WeiqiaoAluminumSubmitResponse> WeiqiaoAluminumSubmitWithOptionsAsync(WeiqiaoAluminumSubmitRequest request, WeiqiaoAluminumSubmitHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CurrentFurnace))
+            {
+                body["current_furnace"] = request.CurrentFurnace;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DilutionConfig))
+            {
+                body["dilution_config"] = request.DilutionConfig;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HistoryFurnace))
+            {
+                body["history_furnace"] = request.HistoryFurnace;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RawMaterials))
+            {
+                body["raw_materials"] = request.RawMaterials;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Target))
+            {
+                body["target"] = request.Target;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetRanges))
+            {
+                body["target_ranges"] = request.TargetRanges;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "WeiqiaoAluminumSubmit",
+                Version = "algo_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/algo/industry/weiqiao/aluminum/submit",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<WeiqiaoAluminumSubmitResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>魏桥铝原料预测任务提交</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// WeiqiaoAluminumSubmitRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// WeiqiaoAluminumSubmitResponse
+        /// </returns>
+        public WeiqiaoAluminumSubmitResponse WeiqiaoAluminumSubmit(WeiqiaoAluminumSubmitRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            WeiqiaoAluminumSubmitHeaders headers = new WeiqiaoAluminumSubmitHeaders();
+            return WeiqiaoAluminumSubmitWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>魏桥铝原料预测任务提交</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// WeiqiaoAluminumSubmitRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// WeiqiaoAluminumSubmitResponse
+        /// </returns>
+        public async Task<WeiqiaoAluminumSubmitResponse> WeiqiaoAluminumSubmitAsync(WeiqiaoAluminumSubmitRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            WeiqiaoAluminumSubmitHeaders headers = new WeiqiaoAluminumSubmitHeaders();
+            return await WeiqiaoAluminumSubmitWithOptionsAsync(request, headers, runtime);
+        }
+
     }
 }

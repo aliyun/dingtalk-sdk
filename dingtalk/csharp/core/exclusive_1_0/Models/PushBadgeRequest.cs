@@ -51,6 +51,14 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         [Validation(Required=false)]
         public string PushType { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>1767225600000</para>
+        /// </summary>
+        [NameInMap("version")]
+        [Validation(Required=false)]
+        public long? Version { get; set; }
+
     }
 
 }
