@@ -10,6 +10,9 @@ public class AppendRowsResponse extends TeaModel {
     @NameInMap("statusCode")
     public Integer statusCode;
 
+    @NameInMap("body")
+    public AppendRowsResponseBody body;
+
     public static AppendRowsResponse build(java.util.Map<String, ?> map) throws Exception {
         AppendRowsResponse self = new AppendRowsResponse();
         return TeaModel.build(map, self);
@@ -29,6 +32,14 @@ public class AppendRowsResponse extends TeaModel {
     }
     public Integer getStatusCode() {
         return this.statusCode;
+    }
+
+    public AppendRowsResponse setBody(AppendRowsResponseBody body) {
+        this.body = body;
+        return this;
+    }
+    public AppendRowsResponseBody getBody() {
+        return this.body;
     }
 
 }

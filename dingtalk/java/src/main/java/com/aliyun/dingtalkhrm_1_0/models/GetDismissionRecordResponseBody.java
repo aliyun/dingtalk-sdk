@@ -66,7 +66,7 @@ public class GetDismissionRecordResponseBody extends TeaModel {
         public Boolean hasMore;
 
         @NameInMap("list")
-        public GetDismissionRecordResponseBodyResultList list;
+        public java.util.List<GetDismissionRecordResponseBodyResultList> list;
 
         @NameInMap("nextCursor")
         public Long nextCursor;
@@ -84,11 +84,11 @@ public class GetDismissionRecordResponseBody extends TeaModel {
             return this.hasMore;
         }
 
-        public GetDismissionRecordResponseBodyResult setList(GetDismissionRecordResponseBodyResultList list) {
+        public GetDismissionRecordResponseBodyResult setList(java.util.List<GetDismissionRecordResponseBodyResultList> list) {
             this.list = list;
             return this;
         }
-        public GetDismissionRecordResponseBodyResultList getList() {
+        public java.util.List<GetDismissionRecordResponseBodyResultList> getList() {
             return this.list;
         }
 

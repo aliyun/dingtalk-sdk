@@ -4256,6 +4256,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("reason", request.reason);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.reasonI18nForEmployee)) {
+            body.put("reasonI18nForEmployee", request.reasonI18nForEmployee);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
             body.put("userId", request.userId);
         }
@@ -4418,6 +4422,748 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SubmitHandoverResourceHeaders headers = new SubmitHandoverResourceHeaders();
         return this.submitHandoverResourceWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>人才标签：添加员工自定义标签</p>
+     * 
+     * @param request TalentAddCustomTagRequest
+     * @param headers TalentAddCustomTagHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return TalentAddCustomTagResponse
+     */
+    public TalentAddCustomTagResponse talentAddCustomTagWithOptions(TalentAddCustomTagRequest request, TalentAddCustomTagHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.sortOrder)) {
+            body.put("sortOrder", request.sortOrder);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.tagCode)) {
+            body.put("tagCode", request.tagCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.tagName)) {
+            body.put("tagName", request.tagName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "TalentAddCustomTag"),
+            new TeaPair("version", "contact_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contact/talentTags/addCustomTag"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new TalentAddCustomTagResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>人才标签：添加员工自定义标签</p>
+     * 
+     * @param request TalentAddCustomTagRequest
+     * @return TalentAddCustomTagResponse
+     */
+    public TalentAddCustomTagResponse talentAddCustomTag(TalentAddCustomTagRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        TalentAddCustomTagHeaders headers = new TalentAddCustomTagHeaders();
+        return this.talentAddCustomTagWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>人才标签：添加员工客观标签</p>
+     * 
+     * @param request TalentAddObjectiveTagRequest
+     * @param headers TalentAddObjectiveTagHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return TalentAddObjectiveTagResponse
+     */
+    public TalentAddObjectiveTagResponse talentAddObjectiveTagWithOptions(TalentAddObjectiveTagRequest request, TalentAddObjectiveTagHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.sortOrder)) {
+            body.put("sortOrder", request.sortOrder);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.tagCode)) {
+            body.put("tagCode", request.tagCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.tagName)) {
+            body.put("tagName", request.tagName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "TalentAddObjectiveTag"),
+            new TeaPair("version", "contact_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contact/talentTags/addObjectiveTag"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new TalentAddObjectiveTagResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>人才标签：添加员工客观标签</p>
+     * 
+     * @param request TalentAddObjectiveTagRequest
+     * @return TalentAddObjectiveTagResponse
+     */
+    public TalentAddObjectiveTagResponse talentAddObjectiveTag(TalentAddObjectiveTagRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        TalentAddObjectiveTagHeaders headers = new TalentAddObjectiveTagHeaders();
+        return this.talentAddObjectiveTagWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>人才标签：添加企业个性标签</p>
+     * 
+     * @param request TalentAddPersonalityTagRequest
+     * @param headers TalentAddPersonalityTagHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return TalentAddPersonalityTagResponse
+     */
+    public TalentAddPersonalityTagResponse talentAddPersonalityTagWithOptions(TalentAddPersonalityTagRequest request, TalentAddPersonalityTagHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.categoryCode)) {
+            body.put("categoryCode", request.categoryCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.categoryName)) {
+            body.put("categoryName", request.categoryName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.categorySortOrder)) {
+            body.put("categorySortOrder", request.categorySortOrder);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.sortOrder)) {
+            body.put("sortOrder", request.sortOrder);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.tagCode)) {
+            body.put("tagCode", request.tagCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.tagName)) {
+            body.put("tagName", request.tagName);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "TalentAddPersonalityTag"),
+            new TeaPair("version", "contact_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contact/talentTags/addPersonalityTag"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new TalentAddPersonalityTagResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>人才标签：添加企业个性标签</p>
+     * 
+     * @param request TalentAddPersonalityTagRequest
+     * @return TalentAddPersonalityTagResponse
+     */
+    public TalentAddPersonalityTagResponse talentAddPersonalityTag(TalentAddPersonalityTagRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        TalentAddPersonalityTagHeaders headers = new TalentAddPersonalityTagHeaders();
+        return this.talentAddPersonalityTagWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>人才标签：删除员工自定义标签并清除所有点赞记录</p>
+     * 
+     * @param request TalentDeleteCustomTagRequest
+     * @param headers TalentDeleteCustomTagHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return TalentDeleteCustomTagResponse
+     */
+    public TalentDeleteCustomTagResponse talentDeleteCustomTagWithOptions(TalentDeleteCustomTagRequest request, TalentDeleteCustomTagHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.tagCode)) {
+            body.put("tagCode", request.tagCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "TalentDeleteCustomTag"),
+            new TeaPair("version", "contact_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contact/talentTags/deleteCustomTagWithClearLike"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new TalentDeleteCustomTagResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>人才标签：删除员工自定义标签并清除所有点赞记录</p>
+     * 
+     * @param request TalentDeleteCustomTagRequest
+     * @return TalentDeleteCustomTagResponse
+     */
+    public TalentDeleteCustomTagResponse talentDeleteCustomTag(TalentDeleteCustomTagRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        TalentDeleteCustomTagHeaders headers = new TalentDeleteCustomTagHeaders();
+        return this.talentDeleteCustomTagWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>人才标签：删除员工客观标签</p>
+     * 
+     * @param request TalentDeleteObjectiveTagRequest
+     * @param headers TalentDeleteObjectiveTagHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return TalentDeleteObjectiveTagResponse
+     */
+    public TalentDeleteObjectiveTagResponse talentDeleteObjectiveTagWithOptions(TalentDeleteObjectiveTagRequest request, TalentDeleteObjectiveTagHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.tagCode)) {
+            body.put("tagCode", request.tagCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "TalentDeleteObjectiveTag"),
+            new TeaPair("version", "contact_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contact/talentTags/deleteObjectiveTag"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new TalentDeleteObjectiveTagResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>人才标签：删除员工客观标签</p>
+     * 
+     * @param request TalentDeleteObjectiveTagRequest
+     * @return TalentDeleteObjectiveTagResponse
+     */
+    public TalentDeleteObjectiveTagResponse talentDeleteObjectiveTag(TalentDeleteObjectiveTagRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        TalentDeleteObjectiveTagHeaders headers = new TalentDeleteObjectiveTagHeaders();
+        return this.talentDeleteObjectiveTagWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>人才标签：删除企业个性标签</p>
+     * 
+     * @param request TalentDeletePersonalityTagRequest
+     * @param headers TalentDeletePersonalityTagHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return TalentDeletePersonalityTagResponse
+     */
+    public TalentDeletePersonalityTagResponse talentDeletePersonalityTagWithOptions(TalentDeletePersonalityTagRequest request, TalentDeletePersonalityTagHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.tagCode)) {
+            body.put("tagCode", request.tagCode);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "TalentDeletePersonalityTag"),
+            new TeaPair("version", "contact_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contact/talentTags/deletePersonalityTag"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new TalentDeletePersonalityTagResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>人才标签：删除企业个性标签</p>
+     * 
+     * @param request TalentDeletePersonalityTagRequest
+     * @return TalentDeletePersonalityTagResponse
+     */
+    public TalentDeletePersonalityTagResponse talentDeletePersonalityTag(TalentDeletePersonalityTagRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        TalentDeletePersonalityTagHeaders headers = new TalentDeletePersonalityTagHeaders();
+        return this.talentDeletePersonalityTagWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>人才标签：点赞/取消点赞标签</p>
+     * 
+     * @param request TalentLikeTagRequest
+     * @param headers TalentLikeTagHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return TalentLikeTagResponse
+     */
+    public TalentLikeTagResponse talentLikeTagWithOptions(TalentLikeTagRequest request, TalentLikeTagHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.actionType)) {
+            body.put("actionType", request.actionType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorUserId)) {
+            body.put("operatorUserId", request.operatorUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.tagCode)) {
+            body.put("tagCode", request.tagCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "TalentLikeTag"),
+            new TeaPair("version", "contact_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contact/talentTags/likeTag"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new TalentLikeTagResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>人才标签：点赞/取消点赞标签</p>
+     * 
+     * @param request TalentLikeTagRequest
+     * @return TalentLikeTagResponse
+     */
+    public TalentLikeTagResponse talentLikeTag(TalentLikeTagRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        TalentLikeTagHeaders headers = new TalentLikeTagHeaders();
+        return this.talentLikeTagWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>人才标签：查询员工自定义标签</p>
+     * 
+     * @param request TalentQueryCustomTagRequest
+     * @param headers TalentQueryCustomTagHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return TalentQueryCustomTagResponse
+     */
+    public TalentQueryCustomTagResponse talentQueryCustomTagWithOptions(TalentQueryCustomTagRequest request, TalentQueryCustomTagHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "TalentQueryCustomTag"),
+            new TeaPair("version", "contact_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contact/talentTags/queryCustomTag"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new TalentQueryCustomTagResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>人才标签：查询员工自定义标签</p>
+     * 
+     * @param request TalentQueryCustomTagRequest
+     * @return TalentQueryCustomTagResponse
+     */
+    public TalentQueryCustomTagResponse talentQueryCustomTag(TalentQueryCustomTagRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        TalentQueryCustomTagHeaders headers = new TalentQueryCustomTagHeaders();
+        return this.talentQueryCustomTagWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>人才标签：查询员工客观标签</p>
+     * 
+     * @param request TalentQueryObjectiveTagRequest
+     * @param headers TalentQueryObjectiveTagHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return TalentQueryObjectiveTagResponse
+     */
+    public TalentQueryObjectiveTagResponse talentQueryObjectiveTagWithOptions(TalentQueryObjectiveTagRequest request, TalentQueryObjectiveTagHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "TalentQueryObjectiveTag"),
+            new TeaPair("version", "contact_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contact/talentTags/queryObjectiveTag"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new TalentQueryObjectiveTagResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>人才标签：查询员工客观标签</p>
+     * 
+     * @param request TalentQueryObjectiveTagRequest
+     * @return TalentQueryObjectiveTagResponse
+     */
+    public TalentQueryObjectiveTagResponse talentQueryObjectiveTag(TalentQueryObjectiveTagRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        TalentQueryObjectiveTagHeaders headers = new TalentQueryObjectiveTagHeaders();
+        return this.talentQueryObjectiveTagWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>人才标签：查询企业个性标签</p>
+     * 
+     * @param headers TalentQueryPersonalityTagHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return TalentQueryPersonalityTagResponse
+     */
+    public TalentQueryPersonalityTagResponse talentQueryPersonalityTagWithOptions(TalentQueryPersonalityTagHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "TalentQueryPersonalityTag"),
+            new TeaPair("version", "contact_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contact/talentTags/queryPersonalityTag"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new TalentQueryPersonalityTagResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>人才标签：查询企业个性标签</p>
+     * @return TalentQueryPersonalityTagResponse
+     */
+    public TalentQueryPersonalityTagResponse talentQueryPersonalityTag() throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        TalentQueryPersonalityTagHeaders headers = new TalentQueryPersonalityTagHeaders();
+        return this.talentQueryPersonalityTagWithOptions(headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>人才标签：分页查询指定标签的点赞记录</p>
+     * 
+     * @param request TalentQueryTagLikeDetailListRequest
+     * @param headers TalentQueryTagLikeDetailListHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return TalentQueryTagLikeDetailListResponse
+     */
+    public TalentQueryTagLikeDetailListResponse talentQueryTagLikeDetailListWithOptions(TalentQueryTagLikeDetailListRequest request, TalentQueryTagLikeDetailListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.cursor)) {
+            query.put("cursor", request.cursor);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.size)) {
+            query.put("size", request.size);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.tagCode)) {
+            query.put("tagCode", request.tagCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "TalentQueryTagLikeDetailList"),
+            new TeaPair("version", "contact_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contact/talentTags/queryTagLikeDetailList"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new TalentQueryTagLikeDetailListResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>人才标签：分页查询指定标签的点赞记录</p>
+     * 
+     * @param request TalentQueryTagLikeDetailListRequest
+     * @return TalentQueryTagLikeDetailListResponse
+     */
+    public TalentQueryTagLikeDetailListResponse talentQueryTagLikeDetailList(TalentQueryTagLikeDetailListRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        TalentQueryTagLikeDetailListHeaders headers = new TalentQueryTagLikeDetailListHeaders();
+        return this.talentQueryTagLikeDetailListWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>人才标签：查询点赞标签列表</p>
+     * 
+     * @param request TalentQueryTagLikeListRequest
+     * @param headers TalentQueryTagLikeListHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return TalentQueryTagLikeListResponse
+     */
+    public TalentQueryTagLikeListResponse talentQueryTagLikeListWithOptions(TalentQueryTagLikeListRequest request, TalentQueryTagLikeListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorUserId)) {
+            query.put("operatorUserId", request.operatorUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "TalentQueryTagLikeList"),
+            new TeaPair("version", "contact_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contact/talentTags/queryTagLikeList"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new TalentQueryTagLikeListResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>人才标签：查询点赞标签列表</p>
+     * 
+     * @param request TalentQueryTagLikeListRequest
+     * @return TalentQueryTagLikeListResponse
+     */
+    public TalentQueryTagLikeListResponse talentQueryTagLikeList(TalentQueryTagLikeListRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        TalentQueryTagLikeListHeaders headers = new TalentQueryTagLikeListHeaders();
+        return this.talentQueryTagLikeListWithOptions(request, headers, runtime);
     }
 
     /**

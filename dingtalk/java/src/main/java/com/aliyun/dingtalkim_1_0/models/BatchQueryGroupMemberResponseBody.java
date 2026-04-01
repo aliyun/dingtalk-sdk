@@ -25,11 +25,17 @@ public class BatchQueryGroupMemberResponseBody extends TeaModel {
     @NameInMap("nextToken")
     public String nextToken;
 
+    @NameInMap("staffIdNickMap")
+    public java.util.Map<String, String> staffIdNickMap;
+
     @NameInMap("success")
     public Boolean success;
 
     @NameInMap("unionIdList")
     public java.util.List<String> unionIdList;
+
+    @NameInMap("unionIdNickMap")
+    public java.util.Map<String, String> unionIdNickMap;
 
     public static BatchQueryGroupMemberResponseBody build(java.util.Map<String, ?> map) throws Exception {
         BatchQueryGroupMemberResponseBody self = new BatchQueryGroupMemberResponseBody();
@@ -60,6 +66,14 @@ public class BatchQueryGroupMemberResponseBody extends TeaModel {
         return this.nextToken;
     }
 
+    public BatchQueryGroupMemberResponseBody setStaffIdNickMap(java.util.Map<String, String> staffIdNickMap) {
+        this.staffIdNickMap = staffIdNickMap;
+        return this;
+    }
+    public java.util.Map<String, String> getStaffIdNickMap() {
+        return this.staffIdNickMap;
+    }
+
     public BatchQueryGroupMemberResponseBody setSuccess(Boolean success) {
         this.success = success;
         return this;
@@ -74,6 +88,14 @@ public class BatchQueryGroupMemberResponseBody extends TeaModel {
     }
     public java.util.List<String> getUnionIdList() {
         return this.unionIdList;
+    }
+
+    public BatchQueryGroupMemberResponseBody setUnionIdNickMap(java.util.Map<String, String> unionIdNickMap) {
+        this.unionIdNickMap = unionIdNickMap;
+        return this;
+    }
+    public java.util.Map<String, String> getUnionIdNickMap() {
+        return this.unionIdNickMap;
     }
 
 }

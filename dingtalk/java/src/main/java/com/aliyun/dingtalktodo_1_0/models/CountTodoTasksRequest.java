@@ -19,6 +19,13 @@ public class CountTodoTasksRequest extends TeaModel {
     @NameInMap("toDueTime")
     public Long toDueTime;
 
+    /**
+     * <strong>example:</strong>
+     * <p>TODO</p>
+     */
+    @NameInMap("todoType")
+    public String todoType;
+
     public static CountTodoTasksRequest build(java.util.Map<String, ?> map) throws Exception {
         CountTodoTasksRequest self = new CountTodoTasksRequest();
         return TeaModel.build(map, self);
@@ -62,6 +69,14 @@ public class CountTodoTasksRequest extends TeaModel {
     }
     public Long getToDueTime() {
         return this.toDueTime;
+    }
+
+    public CountTodoTasksRequest setTodoType(String todoType) {
+        this.todoType = todoType;
+        return this;
+    }
+    public String getTodoType() {
+        return this.todoType;
     }
 
 }

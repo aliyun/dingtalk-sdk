@@ -38,9 +38,6 @@ public class ListPermissionsRequest extends TeaModel {
     }
 
     public static class ListPermissionsRequestOption extends TeaModel {
-        @NameInMap("filterMemberTypes")
-        public java.util.List<String> filterMemberTypes;
-
         @NameInMap("filterRoleIds")
         public java.util.List<String> filterRoleIds;
 
@@ -61,14 +58,6 @@ public class ListPermissionsRequest extends TeaModel {
         public static ListPermissionsRequestOption build(java.util.Map<String, ?> map) throws Exception {
             ListPermissionsRequestOption self = new ListPermissionsRequestOption();
             return TeaModel.build(map, self);
-        }
-
-        public ListPermissionsRequestOption setFilterMemberTypes(java.util.List<String> filterMemberTypes) {
-            this.filterMemberTypes = filterMemberTypes;
-            return this;
-        }
-        public java.util.List<String> getFilterMemberTypes() {
-            return this.filterMemberTypes;
         }
 
         public ListPermissionsRequestOption setFilterRoleIds(java.util.List<String> filterRoleIds) {

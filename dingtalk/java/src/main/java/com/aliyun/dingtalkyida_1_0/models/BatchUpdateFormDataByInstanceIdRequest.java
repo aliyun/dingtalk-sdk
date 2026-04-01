@@ -21,6 +21,16 @@ public class BatchUpdateFormDataByInstanceIdRequest extends TeaModel {
     public Boolean asynchronousExecution;
 
     /**
+     * <strong>example:</strong>
+     * <p>vpc,sgp_vpc</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
+    @NameInMap("env")
+    public String env;
+
+    /**
      * <p>This parameter is required.</p>
      * 
      * <strong>example:</strong>
@@ -105,6 +115,14 @@ public class BatchUpdateFormDataByInstanceIdRequest extends TeaModel {
     }
     public Boolean getAsynchronousExecution() {
         return this.asynchronousExecution;
+    }
+
+    public BatchUpdateFormDataByInstanceIdRequest setEnv(String env) {
+        this.env = env;
+        return this;
+    }
+    public String getEnv() {
+        return this.env;
     }
 
     public BatchUpdateFormDataByInstanceIdRequest setFormInstanceIdList(java.util.List<String> formInstanceIdList) {

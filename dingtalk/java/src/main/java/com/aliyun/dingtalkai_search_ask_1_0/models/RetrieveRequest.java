@@ -10,12 +10,6 @@ public class RetrieveRequest extends TeaModel {
     @NameInMap("answerer")
     public String answerer;
 
-    /**
-     * <p>This parameter is required.</p>
-     */
-    @NameInMap("corpId")
-    public String corpId;
-
     @NameInMap("dragRequestContext")
     public RetrieveRequestDragRequestContext dragRequestContext;
 
@@ -33,12 +27,6 @@ public class RetrieveRequest extends TeaModel {
      */
     @NameInMap("question")
     public String question;
-
-    /**
-     * <p>This parameter is required.</p>
-     */
-    @NameInMap("questioner")
-    public String questioner;
 
     /**
      * <p>This parameter is required.</p>
@@ -77,14 +65,6 @@ public class RetrieveRequest extends TeaModel {
         return this.answerer;
     }
 
-    public RetrieveRequest setCorpId(String corpId) {
-        this.corpId = corpId;
-        return this;
-    }
-    public String getCorpId() {
-        return this.corpId;
-    }
-
     public RetrieveRequest setDragRequestContext(RetrieveRequestDragRequestContext dragRequestContext) {
         this.dragRequestContext = dragRequestContext;
         return this;
@@ -115,14 +95,6 @@ public class RetrieveRequest extends TeaModel {
     }
     public String getQuestion() {
         return this.question;
-    }
-
-    public RetrieveRequest setQuestioner(String questioner) {
-        this.questioner = questioner;
-        return this;
-    }
-    public String getQuestioner() {
-        return this.questioner;
     }
 
     public RetrieveRequest setRetrievalExtendParams(java.util.Map<String, RetrievalExtendParamsValue> retrievalExtendParams) {

@@ -20,6 +20,92 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>搜索企业内听记</p>
+     * 
+     * @param request AdminSearchMinutesRequest
+     * @param headers AdminSearchMinutesHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AdminSearchMinutesResponse
+     */
+    public AdminSearchMinutesResponse adminSearchMinutesWithOptions(AdminSearchMinutesRequest request, AdminSearchMinutesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            query.put("unionId", request.unionId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.creatorUnionIds)) {
+            body.put("creatorUnionIds", request.creatorUnionIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.endTime)) {
+            body.put("endTime", request.endTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
+            body.put("nextToken", request.nextToken);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
+            body.put("pageSize", request.pageSize);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.query)) {
+            body.put("query", request.query);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.searchType)) {
+            body.put("searchType", request.searchType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.startTime)) {
+            body.put("startTime", request.startTime);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AdminSearchMinutes"),
+            new TeaPair("version", "minutes_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/minutes/flashMinutes/adminSearch"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AdminSearchMinutesResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>搜索企业内听记</p>
+     * 
+     * @param request AdminSearchMinutesRequest
+     * @return AdminSearchMinutesResponse
+     */
+    public AdminSearchMinutesResponse adminSearchMinutes(AdminSearchMinutesRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AdminSearchMinutesHeaders headers = new AdminSearchMinutesHeaders();
+        return this.adminSearchMinutesWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>批量获取闪记详情</p>
      * 
      * @param request BatchGetMinutesDetailsRequest
@@ -103,6 +189,18 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.creatorId)) {
             body.put("creatorId", request.creatorId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.customPrompt)) {
+            body.put("customPrompt", request.customPrompt);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.enablePushCard)) {
+            body.put("enablePushCard", request.enablePushCard);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.hiddenMinutes)) {
+            body.put("hiddenMinutes", request.hiddenMinutes);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.mediaFileUrl)) {
@@ -1506,6 +1604,72 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryUserMinutesPermissionHeaders headers = new QueryUserMinutesPermissionHeaders();
         return this.queryUserMinutesPermissionWithOptions(taskUuid, unionId, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>重新生成听记智能章节</p>
+     * 
+     * @param request RegenerateChaptersRequest
+     * @param headers RegenerateChaptersHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return RegenerateChaptersResponse
+     */
+    public RegenerateChaptersResponse regenerateChaptersWithOptions(RegenerateChaptersRequest request, RegenerateChaptersHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.taskUuid)) {
+            query.put("taskUuid", request.taskUuid);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            query.put("unionId", request.unionId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.customPrompt)) {
+            body.put("customPrompt", request.customPrompt);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "RegenerateChapters"),
+            new TeaPair("version", "minutes_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/minutes/chapters/regenerate"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new RegenerateChaptersResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>重新生成听记智能章节</p>
+     * 
+     * @param request RegenerateChaptersRequest
+     * @return RegenerateChaptersResponse
+     */
+    public RegenerateChaptersResponse regenerateChapters(RegenerateChaptersRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        RegenerateChaptersHeaders headers = new RegenerateChaptersHeaders();
+        return this.regenerateChaptersWithOptions(request, headers, runtime);
     }
 
     /**

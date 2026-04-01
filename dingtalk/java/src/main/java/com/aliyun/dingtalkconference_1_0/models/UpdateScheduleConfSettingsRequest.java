@@ -199,6 +199,13 @@ public class UpdateScheduleConfSettingsRequest extends TeaModel {
 
         /**
          * <strong>example:</strong>
+         * <p>true：隐藏发起者姓名 false：不隐藏（默认）</p>
+         */
+        @NameInMap("hiddenOwnerNick")
+        public Boolean hiddenOwnerNick;
+
+        /**
+         * <strong>example:</strong>
          * <p>0：未开启 1：开启</p>
          */
         @NameInMap("joinBeforeHost")
@@ -284,6 +291,14 @@ public class UpdateScheduleConfSettingsRequest extends TeaModel {
         }
         public Boolean getEnableWebAnonymousJoin() {
             return this.enableWebAnonymousJoin;
+        }
+
+        public UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSetting setHiddenOwnerNick(Boolean hiddenOwnerNick) {
+            this.hiddenOwnerNick = hiddenOwnerNick;
+            return this;
+        }
+        public Boolean getHiddenOwnerNick() {
+            return this.hiddenOwnerNick;
         }
 
         public UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSetting setJoinBeforeHost(Integer joinBeforeHost) {

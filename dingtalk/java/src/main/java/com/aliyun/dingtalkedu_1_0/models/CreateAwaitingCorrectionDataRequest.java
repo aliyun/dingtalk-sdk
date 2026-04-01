@@ -5,8 +5,6 @@ import com.aliyun.tea.*;
 
 public class CreateAwaitingCorrectionDataRequest extends TeaModel {
     /**
-     * <p>This parameter is required.</p>
-     * 
      * <strong>example:</strong>
      * <p><a href="https://example.com/files/corrected_math_hw_T250401-001.pdf">https://example.com/files/corrected_math_hw_T250401-001.pdf</a></p>
      */

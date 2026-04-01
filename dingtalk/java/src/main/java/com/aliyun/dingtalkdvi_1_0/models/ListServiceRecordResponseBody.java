@@ -127,6 +127,9 @@ public class ListServiceRecordResponseBody extends TeaModel {
         @NameInMap("user")
         public ListServiceRecordResponseBodyResultUser user;
 
+        @NameInMap("valid")
+        public Boolean valid;
+
         public static ListServiceRecordResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             ListServiceRecordResponseBodyResult self = new ListServiceRecordResponseBodyResult();
             return TeaModel.build(map, self);
@@ -194,6 +197,14 @@ public class ListServiceRecordResponseBody extends TeaModel {
         }
         public ListServiceRecordResponseBodyResultUser getUser() {
             return this.user;
+        }
+
+        public ListServiceRecordResponseBodyResult setValid(Boolean valid) {
+            this.valid = valid;
+            return this;
+        }
+        public Boolean getValid() {
+            return this.valid;
         }
 
     }

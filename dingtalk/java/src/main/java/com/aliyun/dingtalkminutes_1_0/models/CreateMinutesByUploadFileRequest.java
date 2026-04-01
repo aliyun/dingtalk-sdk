@@ -19,6 +19,23 @@ public class CreateMinutesByUploadFileRequest extends TeaModel {
     @NameInMap("creatorId")
     public String creatorId;
 
+    @NameInMap("customPrompt")
+    public String customPrompt;
+
+    /**
+     * <strong>example:</strong>
+     * <p>true</p>
+     */
+    @NameInMap("enablePushCard")
+    public Boolean enablePushCard;
+
+    /**
+     * <strong>example:</strong>
+     * <p>false</p>
+     */
+    @NameInMap("hiddenMinutes")
+    public Boolean hiddenMinutes;
+
     /**
      * <p>This parameter is required.</p>
      * 
@@ -74,6 +91,30 @@ public class CreateMinutesByUploadFileRequest extends TeaModel {
     }
     public String getCreatorId() {
         return this.creatorId;
+    }
+
+    public CreateMinutesByUploadFileRequest setCustomPrompt(String customPrompt) {
+        this.customPrompt = customPrompt;
+        return this;
+    }
+    public String getCustomPrompt() {
+        return this.customPrompt;
+    }
+
+    public CreateMinutesByUploadFileRequest setEnablePushCard(Boolean enablePushCard) {
+        this.enablePushCard = enablePushCard;
+        return this;
+    }
+    public Boolean getEnablePushCard() {
+        return this.enablePushCard;
+    }
+
+    public CreateMinutesByUploadFileRequest setHiddenMinutes(Boolean hiddenMinutes) {
+        this.hiddenMinutes = hiddenMinutes;
+        return this;
+    }
+    public Boolean getHiddenMinutes() {
+        return this.hiddenMinutes;
     }
 
     public CreateMinutesByUploadFileRequest setMediaFileUrl(String mediaFileUrl) {

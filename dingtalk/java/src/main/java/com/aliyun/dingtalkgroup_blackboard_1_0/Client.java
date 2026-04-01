@@ -96,6 +96,82 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>创建群公告</p>
+     * 
+     * @param request CreateGroupBlackboardNewRequest
+     * @param headers CreateGroupBlackboardNewHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateGroupBlackboardNewResponse
+     */
+    public CreateGroupBlackboardNewResponse createGroupBlackboardNewWithOptions(CreateGroupBlackboardNewRequest request, CreateGroupBlackboardNewHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.content)) {
+            body.put("content", request.content);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
+            body.put("openConversationId", request.openConversationId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.sendDing)) {
+            body.put("sendDing", request.sendDing);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.sticky)) {
+            body.put("sticky", request.sticky);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.uniqueId)) {
+            body.put("uniqueId", request.uniqueId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateGroupBlackboardNew"),
+            new TeaPair("version", "groupBlackboard_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/groupBlackboard/blackboards/create"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateGroupBlackboardNewResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>创建群公告</p>
+     * 
+     * @param request CreateGroupBlackboardNewRequest
+     * @return CreateGroupBlackboardNewResponse
+     */
+    public CreateGroupBlackboardNewResponse createGroupBlackboardNew(CreateGroupBlackboardNewRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CreateGroupBlackboardNewHeaders headers = new CreateGroupBlackboardNewHeaders();
+        return this.createGroupBlackboardNewWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>删除群公告</p>
      * 
      * @param request DeleteGroupBlackboardRequest
@@ -156,5 +232,273 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DeleteGroupBlackboardHeaders headers = new DeleteGroupBlackboardHeaders();
         return this.deleteGroupBlackboardWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除群公告</p>
+     * 
+     * @param request DeleteGroupBlackboardNewRequest
+     * @param headers DeleteGroupBlackboardNewHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteGroupBlackboardNewResponse
+     */
+    public DeleteGroupBlackboardNewResponse deleteGroupBlackboardNewWithOptions(DeleteGroupBlackboardNewRequest request, DeleteGroupBlackboardNewHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.dataId)) {
+            body.put("dataId", request.dataId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
+            body.put("openConversationId", request.openConversationId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DeleteGroupBlackboardNew"),
+            new TeaPair("version", "groupBlackboard_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/groupBlackboard/blackboards/delete"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DeleteGroupBlackboardNewResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除群公告</p>
+     * 
+     * @param request DeleteGroupBlackboardNewRequest
+     * @return DeleteGroupBlackboardNewResponse
+     */
+    public DeleteGroupBlackboardNewResponse deleteGroupBlackboardNew(DeleteGroupBlackboardNewRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DeleteGroupBlackboardNewHeaders headers = new DeleteGroupBlackboardNewHeaders();
+        return this.deleteGroupBlackboardNewWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>编辑群公告</p>
+     * 
+     * @param request EditGroupBlackboardRequest
+     * @param headers EditGroupBlackboardHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return EditGroupBlackboardResponse
+     */
+    public EditGroupBlackboardResponse editGroupBlackboardWithOptions(EditGroupBlackboardRequest request, EditGroupBlackboardHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.content)) {
+            body.put("content", request.content);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dataId)) {
+            body.put("dataId", request.dataId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
+            body.put("openConversationId", request.openConversationId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.sticky)) {
+            body.put("sticky", request.sticky);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "EditGroupBlackboard"),
+            new TeaPair("version", "groupBlackboard_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/groupBlackboard/blackboards/edit"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new EditGroupBlackboardResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>编辑群公告</p>
+     * 
+     * @param request EditGroupBlackboardRequest
+     * @return EditGroupBlackboardResponse
+     */
+    public EditGroupBlackboardResponse editGroupBlackboard(EditGroupBlackboardRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        EditGroupBlackboardHeaders headers = new EditGroupBlackboardHeaders();
+        return this.editGroupBlackboardWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询群公告详情</p>
+     * 
+     * @param request GetGroupBlackboardRequest
+     * @param headers GetGroupBlackboardHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetGroupBlackboardResponse
+     */
+    public GetGroupBlackboardResponse getGroupBlackboardWithOptions(GetGroupBlackboardRequest request, GetGroupBlackboardHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.dataId)) {
+            body.put("dataId", request.dataId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
+            body.put("openConversationId", request.openConversationId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetGroupBlackboard"),
+            new TeaPair("version", "groupBlackboard_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/groupBlackboard/blackboards/get"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetGroupBlackboardResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询群公告详情</p>
+     * 
+     * @param request GetGroupBlackboardRequest
+     * @return GetGroupBlackboardResponse
+     */
+    public GetGroupBlackboardResponse getGroupBlackboard(GetGroupBlackboardRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetGroupBlackboardHeaders headers = new GetGroupBlackboardHeaders();
+        return this.getGroupBlackboardWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询群公告列表</p>
+     * 
+     * @param request ListGroupBlackboardRequest
+     * @param headers ListGroupBlackboardHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ListGroupBlackboardResponse
+     */
+    public ListGroupBlackboardResponse listGroupBlackboardWithOptions(ListGroupBlackboardRequest request, ListGroupBlackboardHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.nextPageCursor)) {
+            body.put("nextPageCursor", request.nextPageCursor);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
+            body.put("openConversationId", request.openConversationId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
+            body.put("pageSize", request.pageSize);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ListGroupBlackboard"),
+            new TeaPair("version", "groupBlackboard_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/groupBlackboard/blackboards/list"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ListGroupBlackboardResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询群公告列表</p>
+     * 
+     * @param request ListGroupBlackboardRequest
+     * @return ListGroupBlackboardResponse
+     */
+    public ListGroupBlackboardResponse listGroupBlackboard(ListGroupBlackboardRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ListGroupBlackboardHeaders headers = new ListGroupBlackboardHeaders();
+        return this.listGroupBlackboardWithOptions(request, headers, runtime);
     }
 }

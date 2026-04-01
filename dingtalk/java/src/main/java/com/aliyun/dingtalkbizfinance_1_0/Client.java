@@ -2116,11 +2116,18 @@ public class Client extends com.aliyun.teaopenapi.Client {
      * <b>summary</b> : 
      * <p>查询钉钉智能财务多主体信息</p>
      * 
+     * @param request QueryMultiCompanyInfoRequest
      * @param headers QueryMultiCompanyInfoHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return QueryMultiCompanyInfoResponse
      */
-    public QueryMultiCompanyInfoResponse queryMultiCompanyInfoWithOptions(QueryMultiCompanyInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+    public QueryMultiCompanyInfoResponse queryMultiCompanyInfoWithOptions(QueryMultiCompanyInfoRequest request, QueryMultiCompanyInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.startStatus)) {
+            query.put("startStatus", request.startStatus);
+        }
+
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -2131,7 +2138,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
-            new TeaPair("headers", realHeaders)
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
         com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
             new TeaPair("action", "QueryMultiCompanyInfo"),
@@ -2150,12 +2158,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     /**
      * <b>summary</b> : 
      * <p>查询钉钉智能财务多主体信息</p>
+     * 
+     * @param request QueryMultiCompanyInfoRequest
      * @return QueryMultiCompanyInfoResponse
      */
-    public QueryMultiCompanyInfoResponse queryMultiCompanyInfo() throws Exception {
+    public QueryMultiCompanyInfoResponse queryMultiCompanyInfo(QueryMultiCompanyInfoRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryMultiCompanyInfoHeaders headers = new QueryMultiCompanyInfoHeaders();
-        return this.queryMultiCompanyInfoWithOptions(headers, runtime);
+        return this.queryMultiCompanyInfoWithOptions(request, headers, runtime);
     }
 
     /**

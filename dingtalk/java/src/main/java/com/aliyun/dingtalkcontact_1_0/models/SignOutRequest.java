@@ -7,6 +7,9 @@ public class SignOutRequest extends TeaModel {
     @NameInMap("reason")
     public String reason;
 
+    @NameInMap("reasonI18nForEmployee")
+    public java.util.Map<String, String> reasonI18nForEmployee;
+
     /**
      * <p>This parameter is required.</p>
      */
@@ -24,6 +27,14 @@ public class SignOutRequest extends TeaModel {
     }
     public String getReason() {
         return this.reason;
+    }
+
+    public SignOutRequest setReasonI18nForEmployee(java.util.Map<String, String> reasonI18nForEmployee) {
+        this.reasonI18nForEmployee = reasonI18nForEmployee;
+        return this;
+    }
+    public java.util.Map<String, String> getReasonI18nForEmployee() {
+        return this.reasonI18nForEmployee;
     }
 
     public SignOutRequest setUserId(String userId) {

@@ -20,6 +20,66 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>异步发起合同解析</p>
+     * 
+     * @param request AsyncCreateContractAnalysisRequest
+     * @param headers AsyncCreateContractAnalysisHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AsyncCreateContractAnalysisResponse
+     */
+    public AsyncCreateContractAnalysisResponse asyncCreateContractAnalysisWithOptions(AsyncCreateContractAnalysisRequest request, AsyncCreateContractAnalysisHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.fileInfo)) {
+            body.put("fileInfo", request.fileInfo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.originatorUserId)) {
+            body.put("originatorUserId", request.originatorUserId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AsyncCreateContractAnalysis"),
+            new TeaPair("version", "contract_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contract/review/asyncCreateContractAnalysis"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AsyncCreateContractAnalysisResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>异步发起合同解析</p>
+     * 
+     * @param request AsyncCreateContractAnalysisRequest
+     * @return AsyncCreateContractAnalysisResponse
+     */
+    public AsyncCreateContractAnalysisResponse asyncCreateContractAnalysis(AsyncCreateContractAnalysisRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AsyncCreateContractAnalysisHeaders headers = new AsyncCreateContractAnalysisHeaders();
+        return this.asyncCreateContractAnalysisWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>智能法务取消合同审查</p>
      * 
      * @param request CancelContractReviewRequest
@@ -1416,6 +1476,66 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         FinishReviewOrderHeaders headers = new FinishReviewOrderHeaders();
         return this.finishReviewOrderWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>异步发起合同解析结果</p>
+     * 
+     * @param request GetAsyncCreateContractAnalysisRequest
+     * @param headers GetAsyncCreateContractAnalysisHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetAsyncCreateContractAnalysisResponse
+     */
+    public GetAsyncCreateContractAnalysisResponse getAsyncCreateContractAnalysisWithOptions(GetAsyncCreateContractAnalysisRequest request, GetAsyncCreateContractAnalysisHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.fileInfo)) {
+            body.put("fileInfo", request.fileInfo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.originatorUserId)) {
+            body.put("originatorUserId", request.originatorUserId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetAsyncCreateContractAnalysis"),
+            new TeaPair("version", "contract_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contract/review/getAsyncContractAnalysisResult"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetAsyncCreateContractAnalysisResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>异步发起合同解析结果</p>
+     * 
+     * @param request GetAsyncCreateContractAnalysisRequest
+     * @return GetAsyncCreateContractAnalysisResponse
+     */
+    public GetAsyncCreateContractAnalysisResponse getAsyncCreateContractAnalysis(GetAsyncCreateContractAnalysisRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetAsyncCreateContractAnalysisHeaders headers = new GetAsyncCreateContractAnalysisHeaders();
+        return this.getAsyncCreateContractAnalysisWithOptions(request, headers, runtime);
     }
 
     /**

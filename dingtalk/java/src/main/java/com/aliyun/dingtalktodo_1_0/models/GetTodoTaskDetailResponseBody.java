@@ -82,6 +82,13 @@ public class GetTodoTaskDetailResponseBody extends TeaModel {
     @NameInMap("todoCardView")
     public GetTodoTaskDetailResponseBodyTodoCardView todoCardView;
 
+    /**
+     * <strong>example:</strong>
+     * <p>TODO</p>
+     */
+    @NameInMap("todoType")
+    public String todoType;
+
     public static GetTodoTaskDetailResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetTodoTaskDetailResponseBody self = new GetTodoTaskDetailResponseBody();
         return TeaModel.build(map, self);
@@ -295,6 +302,14 @@ public class GetTodoTaskDetailResponseBody extends TeaModel {
         return this.todoCardView;
     }
 
+    public GetTodoTaskDetailResponseBody setTodoType(String todoType) {
+        this.todoType = todoType;
+        return this;
+    }
+    public String getTodoType() {
+        return this.todoType;
+    }
+
     public static class GetTodoTaskDetailResponseBodyDetailUrl extends TeaModel {
         @NameInMap("appUrl")
         public String appUrl;
@@ -326,6 +341,9 @@ public class GetTodoTaskDetailResponseBody extends TeaModel {
     }
 
     public static class GetTodoTaskDetailResponseBodyExecutorStatus extends TeaModel {
+        @NameInMap("finishTime")
+        public Long finishTime;
+
         @NameInMap("isDone")
         public Boolean isDone;
 
@@ -335,6 +353,14 @@ public class GetTodoTaskDetailResponseBody extends TeaModel {
         public static GetTodoTaskDetailResponseBodyExecutorStatus build(java.util.Map<String, ?> map) throws Exception {
             GetTodoTaskDetailResponseBodyExecutorStatus self = new GetTodoTaskDetailResponseBodyExecutorStatus();
             return TeaModel.build(map, self);
+        }
+
+        public GetTodoTaskDetailResponseBodyExecutorStatus setFinishTime(Long finishTime) {
+            this.finishTime = finishTime;
+            return this;
+        }
+        public Long getFinishTime() {
+            return this.finishTime;
         }
 
         public GetTodoTaskDetailResponseBodyExecutorStatus setIsDone(Boolean isDone) {

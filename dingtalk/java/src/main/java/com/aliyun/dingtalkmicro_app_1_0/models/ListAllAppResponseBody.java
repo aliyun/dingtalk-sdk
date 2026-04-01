@@ -61,6 +61,9 @@ public class ListAllAppResponseBody extends TeaModel {
         @NameInMap("developType")
         public Integer developType;
 
+        @NameInMap("h5PageType")
+        public String h5PageType;
+
         /**
          * <strong>example:</strong>
          * <p><a href="https://www.dingtalk.com">https://www.dingtalk.com</a></p>
@@ -139,6 +142,14 @@ public class ListAllAppResponseBody extends TeaModel {
         }
         public Integer getDevelopType() {
             return this.developType;
+        }
+
+        public ListAllAppResponseBodyAppList setH5PageType(String h5PageType) {
+            this.h5PageType = h5PageType;
+            return this;
+        }
+        public String getH5PageType() {
+            return this.h5PageType;
         }
 
         public ListAllAppResponseBodyAppList setHomepageLink(String homepageLink) {

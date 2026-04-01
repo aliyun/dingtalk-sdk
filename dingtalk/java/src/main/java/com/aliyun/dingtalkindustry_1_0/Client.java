@@ -8936,7 +8936,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
-     * <p>查询订单转换结果</p>
+     * <p>订单转换</p>
      * 
      * @param request OrderConvertRequest
      * @param headers OrderConvertHeaders
@@ -8987,7 +8987,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
-     * <p>查询订单转换结果</p>
+     * <p>订单转换</p>
      * 
      * @param request OrderConvertRequest
      * @return OrderConvertResponse

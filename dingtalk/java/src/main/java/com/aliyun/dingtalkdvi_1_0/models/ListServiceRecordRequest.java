@@ -4,6 +4,9 @@ package com.aliyun.dingtalkdvi_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListServiceRecordRequest extends TeaModel {
+    @NameInMap("customerId")
+    public String customerId;
+
     @NameInMap("endTime")
     public Long endTime;
 
@@ -25,6 +28,14 @@ public class ListServiceRecordRequest extends TeaModel {
     public static ListServiceRecordRequest build(java.util.Map<String, ?> map) throws Exception {
         ListServiceRecordRequest self = new ListServiceRecordRequest();
         return TeaModel.build(map, self);
+    }
+
+    public ListServiceRecordRequest setCustomerId(String customerId) {
+        this.customerId = customerId;
+        return this;
+    }
+    public String getCustomerId() {
+        return this.customerId;
     }
 
     public ListServiceRecordRequest setEndTime(Long endTime) {

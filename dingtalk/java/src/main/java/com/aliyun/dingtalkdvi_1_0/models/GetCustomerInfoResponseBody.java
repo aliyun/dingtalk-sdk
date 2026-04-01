@@ -33,6 +33,9 @@ public class GetCustomerInfoResponseBody extends TeaModel {
         @NameInMap("ownerUserId")
         public String ownerUserId;
 
+        @NameInMap("phone")
+        public String phone;
+
         @NameInMap("teamCode")
         public String teamCode;
 
@@ -71,6 +74,14 @@ public class GetCustomerInfoResponseBody extends TeaModel {
         }
         public String getOwnerUserId() {
             return this.ownerUserId;
+        }
+
+        public GetCustomerInfoResponseBodyResult setPhone(String phone) {
+            this.phone = phone;
+            return this;
+        }
+        public String getPhone() {
+            return this.phone;
         }
 
         public GetCustomerInfoResponseBodyResult setTeamCode(String teamCode) {

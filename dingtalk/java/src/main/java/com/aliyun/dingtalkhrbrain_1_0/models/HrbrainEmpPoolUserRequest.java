@@ -13,6 +13,9 @@ public class HrbrainEmpPoolUserRequest extends TeaModel {
     @NameInMap("poolCode")
     public String poolCode;
 
+    @NameInMap("userId")
+    public String userId;
+
     public static HrbrainEmpPoolUserRequest build(java.util.Map<String, ?> map) throws Exception {
         HrbrainEmpPoolUserRequest self = new HrbrainEmpPoolUserRequest();
         return TeaModel.build(map, self);
@@ -40,6 +43,14 @@ public class HrbrainEmpPoolUserRequest extends TeaModel {
     }
     public String getPoolCode() {
         return this.poolCode;
+    }
+
+    public HrbrainEmpPoolUserRequest setUserId(String userId) {
+        this.userId = userId;
+        return this;
+    }
+    public String getUserId() {
+        return this.userId;
     }
 
 }

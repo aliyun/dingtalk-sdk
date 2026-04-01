@@ -296,6 +296,142 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>小微薪酬撤销定调薪数据</p>
+     * 
+     * @param request RevokeSalaryArchivesRequest
+     * @param headers RevokeSalaryArchivesHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return RevokeSalaryArchivesResponse
+     */
+    public RevokeSalaryArchivesResponse revokeSalaryArchivesWithOptions(RevokeSalaryArchivesRequest request, RevokeSalaryArchivesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.effectiveDate)) {
+            body.put("effectiveDate", request.effectiveDate);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.opUserId)) {
+            body.put("opUserId", request.opUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "RevokeSalaryArchives"),
+            new TeaPair("version", "salary_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/salary/archives"),
+            new TeaPair("method", "DELETE"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new RevokeSalaryArchivesResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>小微薪酬撤销定调薪数据</p>
+     * 
+     * @param request RevokeSalaryArchivesRequest
+     * @return RevokeSalaryArchivesResponse
+     */
+    public RevokeSalaryArchivesResponse revokeSalaryArchives(RevokeSalaryArchivesRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        RevokeSalaryArchivesHeaders headers = new RevokeSalaryArchivesHeaders();
+        return this.revokeSalaryArchivesWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>小微薪酬保存定调薪数据</p>
+     * 
+     * @param request SaveSalaryArchivesRequest
+     * @param headers SaveSalaryArchivesHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SaveSalaryArchivesResponse
+     */
+    public SaveSalaryArchivesResponse saveSalaryArchivesWithOptions(SaveSalaryArchivesRequest request, SaveSalaryArchivesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.adjustMemo)) {
+            body.put("adjustMemo", request.adjustMemo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.contents)) {
+            body.put("contents", request.contents);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.effectiveDate)) {
+            body.put("effectiveDate", request.effectiveDate);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.opUserId)) {
+            body.put("opUserId", request.opUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SaveSalaryArchives"),
+            new TeaPair("version", "salary_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/salary/archives"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SaveSalaryArchivesResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>小微薪酬保存定调薪数据</p>
+     * 
+     * @param request SaveSalaryArchivesRequest
+     * @return SaveSalaryArchivesResponse
+     */
+    public SaveSalaryArchivesResponse saveSalaryArchives(SaveSalaryArchivesRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SaveSalaryArchivesHeaders headers = new SaveSalaryArchivesHeaders();
+        return this.saveSalaryArchivesWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>小微薪酬获取薪资记录写入</p>
      * 
      * @param request WriteSalaryCalculationRequest
