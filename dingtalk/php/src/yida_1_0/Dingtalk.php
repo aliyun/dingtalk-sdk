@@ -562,6 +562,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->asynchronousExecution)) {
             $body['asynchronousExecution'] = $request->asynchronousExecution;
         }
+        if (!Utils::isUnset($request->env)) {
+            $body['env'] = $request->env;
+        }
         if (!Utils::isUnset($request->formDataJsonList)) {
             $body['formDataJsonList'] = $request->formDataJsonList;
         }
@@ -639,6 +642,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->asynchronousExecution)) {
             $body['asynchronousExecution'] = $request->asynchronousExecution;
+        }
+        if (!Utils::isUnset($request->env)) {
+            $body['env'] = $request->env;
         }
         if (!Utils::isUnset($request->formInstanceIdList)) {
             $body['formInstanceIdList'] = $request->formInstanceIdList;
@@ -723,6 +729,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->asynchronousExecution)) {
             $body['asynchronousExecution'] = $request->asynchronousExecution;
+        }
+        if (!Utils::isUnset($request->env)) {
+            $body['env'] = $request->env;
         }
         if (!Utils::isUnset($request->formUuid)) {
             $body['formUuid'] = $request->formUuid;
@@ -1109,6 +1118,9 @@ class Dingtalk extends OpenApiClient
         $query = [];
         if (!Utils::isUnset($request->appType)) {
             $query['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->env)) {
+            $query['env'] = $request->env;
         }
         if (!Utils::isUnset($request->formInstanceId)) {
             $query['formInstanceId'] = $request->formInstanceId;

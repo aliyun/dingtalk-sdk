@@ -141,6 +141,13 @@ class GetTodoTaskDetailResponseBody extends Model
      * @var todoCardView
      */
     public $todoCardView;
+
+    /**
+     * @example TODO
+     *
+     * @var string
+     */
+    public $todoType;
     protected $_name = [
         'bizTag' => 'bizTag',
         'category' => 'category',
@@ -168,6 +175,7 @@ class GetTodoTaskDetailResponseBody extends Model
         'tenantId' => 'tenantId',
         'tenantType' => 'tenantType',
         'todoCardView' => 'todoCardView',
+        'todoType' => 'todoType',
     ];
 
     public function validate() {}
@@ -258,6 +266,9 @@ class GetTodoTaskDetailResponseBody extends Model
         }
         if (null !== $this->todoCardView) {
             $res['todoCardView'] = null !== $this->todoCardView ? $this->todoCardView->toMap() : null;
+        }
+        if (null !== $this->todoType) {
+            $res['todoType'] = $this->todoType;
         }
 
         return $res;
@@ -358,6 +369,9 @@ class GetTodoTaskDetailResponseBody extends Model
         }
         if (isset($map['todoCardView'])) {
             $model->todoCardView = todoCardView::fromMap($map['todoCardView']);
+        }
+        if (isset($map['todoType'])) {
+            $model->todoType = $map['todoType'];
         }
 
         return $model;

@@ -15,7 +15,7 @@ class result extends Model
     public $hasMore;
 
     /**
-     * @var list_
+     * @var list_[]
      */
     public $list;
 
@@ -38,7 +38,13 @@ class result extends Model
             $res['hasMore'] = $this->hasMore;
         }
         if (null !== $this->list) {
-            $res['list'] = null !== $this->list ? $this->list->toMap() : null;
+            $res['list'] = [];
+            if (null !== $this->list && \is_array($this->list)) {
+                $n = 0;
+                foreach ($this->list as $item) {
+                    $res['list'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
         if (null !== $this->nextCursor) {
             $res['nextCursor'] = $this->nextCursor;
@@ -59,7 +65,13 @@ class result extends Model
             $model->hasMore = $map['hasMore'];
         }
         if (isset($map['list'])) {
-            $model->list = list_::fromMap($map['list']);
+            if (!empty($map['list'])) {
+                $model->list = [];
+                $n = 0;
+                foreach ($map['list'] as $item) {
+                    $model->list[$n++] = null !== $item ? list_::fromMap($item) : $item;
+                }
+            }
         }
         if (isset($map['nextCursor'])) {
             $model->nextCursor = $map['nextCursor'];

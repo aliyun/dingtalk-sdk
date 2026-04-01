@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vminutes_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\AdminSearchMinutesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\AdminSearchMinutesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\AdminSearchMinutesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\BatchGetMinutesDetailsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\BatchGetMinutesDetailsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\BatchGetMinutesDetailsResponse;
@@ -76,6 +79,9 @@ use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryUserAvailableDiyTemplates
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryUserAvailableDiyTemplatesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryUserMinutesPermissionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryUserMinutesPermissionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\RegenerateChaptersHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\RegenerateChaptersRequest;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\RegenerateChaptersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\SetDetailPageCustomTabHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\SetDetailPageCustomTabRequest;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\SetDetailPageCustomTabResponse;
@@ -109,6 +115,86 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @summary 搜索企业内听记
+     *  *
+     * @param AdminSearchMinutesRequest $request AdminSearchMinutesRequest
+     * @param AdminSearchMinutesHeaders $headers AdminSearchMinutesHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AdminSearchMinutesResponse AdminSearchMinutesResponse
+     */
+    public function adminSearchMinutesWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->creatorUnionIds)) {
+            $body['creatorUnionIds'] = $request->creatorUnionIds;
+        }
+        if (!Utils::isUnset($request->endTime)) {
+            $body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $body['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->query)) {
+            $body['query'] = $request->query;
+        }
+        if (!Utils::isUnset($request->searchType)) {
+            $body['searchType'] = $request->searchType;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            $body['startTime'] = $request->startTime;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'AdminSearchMinutes',
+            'version' => 'minutes_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/minutes/flashMinutes/adminSearch',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return AdminSearchMinutesResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 搜索企业内听记
+     *  *
+     * @param AdminSearchMinutesRequest $request AdminSearchMinutesRequest
+     *
+     * @return AdminSearchMinutesResponse AdminSearchMinutesResponse
+     */
+    public function adminSearchMinutes($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AdminSearchMinutesHeaders([]);
+
+        return $this->adminSearchMinutesWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -195,6 +281,15 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->creatorId)) {
             $body['creatorId'] = $request->creatorId;
+        }
+        if (!Utils::isUnset($request->customPrompt)) {
+            $body['customPrompt'] = $request->customPrompt;
+        }
+        if (!Utils::isUnset($request->enablePushCard)) {
+            $body['enablePushCard'] = $request->enablePushCard;
+        }
+        if (!Utils::isUnset($request->hiddenMinutes)) {
+            $body['hiddenMinutes'] = $request->hiddenMinutes;
         }
         if (!Utils::isUnset($request->mediaFileUrl)) {
             $body['mediaFileUrl'] = $request->mediaFileUrl;
@@ -1614,6 +1709,71 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryUserMinutesPermissionHeaders([]);
 
         return $this->queryUserMinutesPermissionWithOptions($taskUuid, $unionId, $headers, $runtime);
+    }
+
+    /**
+     * @summary 重新生成听记智能章节
+     *  *
+     * @param RegenerateChaptersRequest $request RegenerateChaptersRequest
+     * @param RegenerateChaptersHeaders $headers RegenerateChaptersHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return RegenerateChaptersResponse RegenerateChaptersResponse
+     */
+    public function regenerateChaptersWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->taskUuid)) {
+            $query['taskUuid'] = $request->taskUuid;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->customPrompt)) {
+            $body['customPrompt'] = $request->customPrompt;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'RegenerateChapters',
+            'version' => 'minutes_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/minutes/chapters/regenerate',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return RegenerateChaptersResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 重新生成听记智能章节
+     *  *
+     * @param RegenerateChaptersRequest $request RegenerateChaptersRequest
+     *
+     * @return RegenerateChaptersResponse RegenerateChaptersResponse
+     */
+    public function regenerateChapters($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RegenerateChaptersHeaders([]);
+
+        return $this->regenerateChaptersWithOptions($request, $headers, $runtime);
     }
 
     /**

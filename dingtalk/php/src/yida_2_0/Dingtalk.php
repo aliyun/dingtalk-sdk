@@ -422,6 +422,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->appType)) {
             $body['appType'] = $request->appType;
         }
+        if (!Utils::isUnset($request->env)) {
+            $body['env'] = $request->env;
+        }
         if (!Utils::isUnset($request->formDataJson)) {
             $body['formDataJson'] = $request->formDataJson;
         }
@@ -1295,6 +1298,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->appType)) {
             $body['appType'] = $request->appType;
         }
+        if (!Utils::isUnset($request->env)) {
+            $body['env'] = $request->env;
+        }
         if (!Utils::isUnset($request->formDataJson)) {
             $body['formDataJson'] = $request->formDataJson;
         }
@@ -1471,6 +1477,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->createToTimeGMT)) {
             $body['createToTimeGMT'] = $request->createToTimeGMT;
+        }
+        if (!Utils::isUnset($request->env)) {
+            $body['env'] = $request->env;
         }
         if (!Utils::isUnset($request->formUuid)) {
             $body['formUuid'] = $request->formUuid;

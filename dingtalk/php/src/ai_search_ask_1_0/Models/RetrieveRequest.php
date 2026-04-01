@@ -17,13 +17,6 @@ class RetrieveRequest extends Model
     public $answerer;
 
     /**
-     * @description This parameter is required.
-     *
-     * @var string
-     */
-    public $corpId;
-
-    /**
      * @var dragRequestContext
      */
     public $dragRequestContext;
@@ -46,13 +39,6 @@ class RetrieveRequest extends Model
      * @var string
      */
     public $question;
-
-    /**
-     * @description This parameter is required.
-     *
-     * @var string
-     */
-    public $questioner;
 
     /**
      * @description This parameter is required.
@@ -86,12 +72,10 @@ class RetrieveRequest extends Model
     public $tokenLimit;
     protected $_name = [
         'answerer' => 'answerer',
-        'corpId' => 'corpId',
         'dragRequestContext' => 'dragRequestContext',
         'keywordList' => 'keywordList',
         'limit' => 'limit',
         'question' => 'question',
-        'questioner' => 'questioner',
         'retrievalExtendParams' => 'retrievalExtendParams',
         'retrieveScoreThreshold' => 'retrieveScoreThreshold',
         'scene' => 'scene',
@@ -107,9 +91,6 @@ class RetrieveRequest extends Model
         if (null !== $this->answerer) {
             $res['answerer'] = $this->answerer;
         }
-        if (null !== $this->corpId) {
-            $res['corpId'] = $this->corpId;
-        }
         if (null !== $this->dragRequestContext) {
             $res['dragRequestContext'] = null !== $this->dragRequestContext ? $this->dragRequestContext->toMap() : null;
         }
@@ -121,9 +102,6 @@ class RetrieveRequest extends Model
         }
         if (null !== $this->question) {
             $res['question'] = $this->question;
-        }
-        if (null !== $this->questioner) {
-            $res['questioner'] = $this->questioner;
         }
         if (null !== $this->retrievalExtendParams) {
             $res['retrievalExtendParams'] = [];
@@ -160,9 +138,6 @@ class RetrieveRequest extends Model
         if (isset($map['answerer'])) {
             $model->answerer = $map['answerer'];
         }
-        if (isset($map['corpId'])) {
-            $model->corpId = $map['corpId'];
-        }
         if (isset($map['dragRequestContext'])) {
             $model->dragRequestContext = dragRequestContext::fromMap($map['dragRequestContext']);
         }
@@ -176,9 +151,6 @@ class RetrieveRequest extends Model
         }
         if (isset($map['question'])) {
             $model->question = $map['question'];
-        }
-        if (isset($map['questioner'])) {
-            $model->questioner = $map['questioner'];
         }
         if (isset($map['retrievalExtendParams'])) {
             $model->retrievalExtendParams = $map['retrievalExtendParams'];

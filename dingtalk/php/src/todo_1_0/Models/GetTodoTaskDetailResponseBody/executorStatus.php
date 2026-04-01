@@ -9,6 +9,11 @@ use AlibabaCloud\Tea\Model;
 class executorStatus extends Model
 {
     /**
+     * @var int
+     */
+    public $finishTime;
+
+    /**
      * @var bool
      */
     public $isDone;
@@ -18,6 +23,7 @@ class executorStatus extends Model
      */
     public $userId;
     protected $_name = [
+        'finishTime' => 'finishTime',
         'isDone' => 'isDone',
         'userId' => 'userId',
     ];
@@ -27,6 +33,9 @@ class executorStatus extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->finishTime) {
+            $res['finishTime'] = $this->finishTime;
+        }
         if (null !== $this->isDone) {
             $res['isDone'] = $this->isDone;
         }
@@ -45,6 +54,9 @@ class executorStatus extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['finishTime'])) {
+            $model->finishTime = $map['finishTime'];
+        }
         if (isset($map['isDone'])) {
             $model->isDone = $map['isDone'];
         }

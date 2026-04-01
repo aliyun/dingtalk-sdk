@@ -18,6 +18,12 @@ use AlibabaCloud\SDK\Dingtalk\Vsalary_1_0\Models\GetSalaryItemResponse;
 use AlibabaCloud\SDK\Dingtalk\Vsalary_1_0\Models\ListSalaryCalculationHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vsalary_1_0\Models\ListSalaryCalculationRequest;
 use AlibabaCloud\SDK\Dingtalk\Vsalary_1_0\Models\ListSalaryCalculationResponse;
+use AlibabaCloud\SDK\Dingtalk\Vsalary_1_0\Models\RevokeSalaryArchivesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vsalary_1_0\Models\RevokeSalaryArchivesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vsalary_1_0\Models\RevokeSalaryArchivesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vsalary_1_0\Models\SaveSalaryArchivesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vsalary_1_0\Models\SaveSalaryArchivesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vsalary_1_0\Models\SaveSalaryArchivesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vsalary_1_0\Models\WriteSalaryCalculationHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vsalary_1_0\Models\WriteSalaryCalculationRequest;
 use AlibabaCloud\SDK\Dingtalk\Vsalary_1_0\Models\WriteSalaryCalculationResponse;
@@ -318,6 +324,138 @@ class Dingtalk extends OpenApiClient
         $headers = new ListSalaryCalculationHeaders([]);
 
         return $this->listSalaryCalculationWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 小微薪酬撤销定调薪数据
+     *  *
+     * @param RevokeSalaryArchivesRequest $request RevokeSalaryArchivesRequest
+     * @param RevokeSalaryArchivesHeaders $headers RevokeSalaryArchivesHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
+     *
+     * @return RevokeSalaryArchivesResponse RevokeSalaryArchivesResponse
+     */
+    public function revokeSalaryArchivesWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->effectiveDate)) {
+            $body['effectiveDate'] = $request->effectiveDate;
+        }
+        if (!Utils::isUnset($request->opUserId)) {
+            $body['opUserId'] = $request->opUserId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'RevokeSalaryArchives',
+            'version' => 'salary_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/salary/archives',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return RevokeSalaryArchivesResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 小微薪酬撤销定调薪数据
+     *  *
+     * @param RevokeSalaryArchivesRequest $request RevokeSalaryArchivesRequest
+     *
+     * @return RevokeSalaryArchivesResponse RevokeSalaryArchivesResponse
+     */
+    public function revokeSalaryArchives($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RevokeSalaryArchivesHeaders([]);
+
+        return $this->revokeSalaryArchivesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 小微薪酬保存定调薪数据
+     *  *
+     * @param SaveSalaryArchivesRequest $request SaveSalaryArchivesRequest
+     * @param SaveSalaryArchivesHeaders $headers SaveSalaryArchivesHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SaveSalaryArchivesResponse SaveSalaryArchivesResponse
+     */
+    public function saveSalaryArchivesWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->adjustMemo)) {
+            $body['adjustMemo'] = $request->adjustMemo;
+        }
+        if (!Utils::isUnset($request->contents)) {
+            $body['contents'] = $request->contents;
+        }
+        if (!Utils::isUnset($request->effectiveDate)) {
+            $body['effectiveDate'] = $request->effectiveDate;
+        }
+        if (!Utils::isUnset($request->opUserId)) {
+            $body['opUserId'] = $request->opUserId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'SaveSalaryArchives',
+            'version' => 'salary_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/salary/archives',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return SaveSalaryArchivesResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 小微薪酬保存定调薪数据
+     *  *
+     * @param SaveSalaryArchivesRequest $request SaveSalaryArchivesRequest
+     *
+     * @return SaveSalaryArchivesResponse SaveSalaryArchivesResponse
+     */
+    public function saveSalaryArchives($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SaveSalaryArchivesHeaders([]);
+
+        return $this->saveSalaryArchivesWithOptions($request, $headers, $runtime);
     }
 
     /**

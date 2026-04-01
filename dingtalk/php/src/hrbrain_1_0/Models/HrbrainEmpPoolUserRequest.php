@@ -22,10 +22,16 @@ class HrbrainEmpPoolUserRequest extends Model
      * @var string
      */
     public $poolCode;
+
+    /**
+     * @var string
+     */
+    public $userId;
     protected $_name = [
         'maxResults' => 'maxResults',
         'nextToken' => 'nextToken',
         'poolCode' => 'poolCode',
+        'userId' => 'userId',
     ];
 
     public function validate() {}
@@ -41,6 +47,9 @@ class HrbrainEmpPoolUserRequest extends Model
         }
         if (null !== $this->poolCode) {
             $res['poolCode'] = $this->poolCode;
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -62,6 +71,9 @@ class HrbrainEmpPoolUserRequest extends Model
         }
         if (isset($map['poolCode'])) {
             $model->poolCode = $map['poolCode'];
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

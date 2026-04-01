@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class CreateAwaitingCorrectionDataRequest extends Model
 {
     /**
-     * @description This parameter is required.
-     *
      * @example https://example.com/files/corrected_math_hw_T250401-001.pdf
      *
      * @var string

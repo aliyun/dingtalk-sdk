@@ -11,6 +11,9 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\AddFinanceEnterpriseAccount
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\AddRetentionRecordHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\AddRetentionRecordRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\AddRetentionRecordResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\AiVoucherHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\AiVoucherRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\AiVoucherResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BankGatewayInvokeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BankGatewayInvokeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BankGatewayInvokeResponse;
@@ -97,9 +100,17 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryAccountTradeByPageResp
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryAlipayUserIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryAlipayUserIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryAlipayUserIdResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryBankHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryBankResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryBranchHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryBranchRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryBranchResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryCategoryByPageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryCategoryByPageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryCategoryByPageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryCityHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryCityRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryCityResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryCollectionInfoListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryCollectionInfoListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryCollectionInfoListResponse;
@@ -152,6 +163,8 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryProductByPageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryProjectByPageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryProjectByPageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryProjectByPageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryProvinceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryProvinceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryReceiptForInvoiceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryReceiptForInvoiceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryReceiptForInvoiceResponse;
@@ -356,6 +369,72 @@ class Dingtalk extends OpenApiClient
         $headers = new AddRetentionRecordHeaders([]);
 
         return $this->addRetentionRecordWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 调用大模型生成ai凭证
+     *  *
+     * @param AiVoucherRequest $request AiVoucherRequest
+     * @param AiVoucherHeaders $headers AiVoucherHeaders
+     * @param RuntimeOptions   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AiVoucherResponse AiVoucherResponse
+     */
+    public function aiVoucherWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->chatMessages)) {
+            $body['chatMessages'] = $request->chatMessages;
+        }
+        if (!Utils::isUnset($request->enableThinking)) {
+            $body['enableThinking'] = $request->enableThinking;
+        }
+        if (!Utils::isUnset($request->extendInfo)) {
+            $body['extendInfo'] = $request->extendInfo;
+        }
+        if (!Utils::isUnset($request->prompt)) {
+            $body['prompt'] = $request->prompt;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'AiVoucher',
+            'version' => 'bizfinance_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/bizfinance/aiVoucher/execute',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return AiVoucherResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 调用大模型生成ai凭证
+     *  *
+     * @param AiVoucherRequest $request AiVoucherRequest
+     *
+     * @return AiVoucherResponse AiVoucherResponse
+     */
+    public function aiVoucher($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AiVoucherHeaders([]);
+
+        return $this->aiVoucherWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -2215,6 +2294,117 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询银行列表
+     *  *
+     * @param QueryBankHeaders $headers QueryBankHeaders
+     * @param RuntimeOptions   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryBankResponse QueryBankResponse
+     */
+    public function queryBankWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action' => 'QueryBank',
+            'version' => 'bizfinance_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/bizfinance/bankinfo/bank',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryBankResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询银行列表
+     *  *
+     * @return QueryBankResponse QueryBankResponse
+     */
+    public function queryBank()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryBankHeaders([]);
+
+        return $this->queryBankWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @summary 查询支行名
+     *  *
+     * @param QueryBranchRequest $request QueryBranchRequest
+     * @param QueryBranchHeaders $headers QueryBranchHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryBranchResponse QueryBranchResponse
+     */
+    public function queryBranchWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->bankName)) {
+            $query['bankName'] = $request->bankName;
+        }
+        if (!Utils::isUnset($request->city)) {
+            $query['city'] = $request->city;
+        }
+        if (!Utils::isUnset($request->province)) {
+            $query['province'] = $request->province;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'QueryBranch',
+            'version' => 'bizfinance_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/bizfinance/bankinfo/branch',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryBranchResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询支行名
+     *  *
+     * @param QueryBranchRequest $request QueryBranchRequest
+     *
+     * @return QueryBranchResponse QueryBranchResponse
+     */
+    public function queryBranch($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryBranchHeaders([]);
+
+        return $this->queryBranchWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 批量获取费用类别
      *  *
      * @param QueryCategoryByPageRequest $request QueryCategoryByPageRequest
@@ -2275,6 +2465,63 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryCategoryByPageHeaders([]);
 
         return $this->queryCategoryByPageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询城市列表
+     *  *
+     * @param QueryCityRequest $request QueryCityRequest
+     * @param QueryCityHeaders $headers QueryCityHeaders
+     * @param RuntimeOptions   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryCityResponse QueryCityResponse
+     */
+    public function queryCityWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->province)) {
+            $query['province'] = $request->province;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'QueryCity',
+            'version' => 'bizfinance_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/bizfinance/bankinfo/city',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryCityResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询城市列表
+     *  *
+     * @param QueryCityRequest $request QueryCityRequest
+     *
+     * @return QueryCityResponse QueryCityResponse
+     */
+    public function queryCity($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryCityHeaders([]);
+
+        return $this->queryCityWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -3271,6 +3518,54 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryProjectByPageHeaders([]);
 
         return $this->queryProjectByPageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询省份列表
+     *  *
+     * @param QueryProvinceHeaders $headers QueryProvinceHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryProvinceResponse QueryProvinceResponse
+     */
+    public function queryProvinceWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action' => 'QueryProvince',
+            'version' => 'bizfinance_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/bizfinance/bankinfo/province',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryProvinceResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询省份列表
+     *  *
+     * @return QueryProvinceResponse QueryProvinceResponse
+     */
+    public function queryProvince()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryProvinceHeaders([]);
+
+        return $this->queryProvinceWithOptions($headers, $runtime);
     }
 
     /**

@@ -31,12 +31,18 @@ class result extends Model
     /**
      * @var string
      */
+    public $phone;
+
+    /**
+     * @var string
+     */
     public $teamCode;
     protected $_name = [
         'createAt' => 'createAt',
         'id' => 'id',
         'name' => 'name',
         'ownerUserId' => 'ownerUserId',
+        'phone' => 'phone',
         'teamCode' => 'teamCode',
     ];
 
@@ -56,6 +62,9 @@ class result extends Model
         }
         if (null !== $this->ownerUserId) {
             $res['ownerUserId'] = $this->ownerUserId;
+        }
+        if (null !== $this->phone) {
+            $res['phone'] = $this->phone;
         }
         if (null !== $this->teamCode) {
             $res['teamCode'] = $this->teamCode;
@@ -83,6 +92,9 @@ class result extends Model
         }
         if (isset($map['ownerUserId'])) {
             $model->ownerUserId = $map['ownerUserId'];
+        }
+        if (isset($map['phone'])) {
+            $model->phone = $map['phone'];
         }
         if (isset($map['teamCode'])) {
             $model->teamCode = $map['teamCode'];

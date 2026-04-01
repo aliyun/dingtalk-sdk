@@ -494,7 +494,7 @@ class Dingtalk extends OpenApiClient
             'authType' => 'AK',
             'style' => 'ROA',
             'reqBodyType' => 'none',
-            'bodyType' => 'none',
+            'bodyType' => 'json',
         ]);
 
         return AppendRowsResponse::fromMap($this->execute($params, $req, $runtime));

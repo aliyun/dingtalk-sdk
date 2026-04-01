@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vcontract_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\AsyncCreateContractAnalysisHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\AsyncCreateContractAnalysisRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\AsyncCreateContractAnalysisResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CancelContractReviewHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CancelContractReviewRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CancelContractReviewResponse;
@@ -62,6 +65,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\EsignUserVerifyResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\FinishReviewOrderHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\FinishReviewOrderRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\FinishReviewOrderResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\GetAsyncCreateContractAnalysisHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\GetAsyncCreateContractAnalysisRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\GetAsyncCreateContractAnalysisResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\GetContractAnalysisResultHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\GetContractAnalysisResultRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\GetContractAnalysisResultResponse;
@@ -130,6 +136,66 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @summary 异步发起合同解析
+     *  *
+     * @param AsyncCreateContractAnalysisRequest $request AsyncCreateContractAnalysisRequest
+     * @param AsyncCreateContractAnalysisHeaders $headers AsyncCreateContractAnalysisHeaders
+     * @param RuntimeOptions                     $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AsyncCreateContractAnalysisResponse AsyncCreateContractAnalysisResponse
+     */
+    public function asyncCreateContractAnalysisWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->fileInfo)) {
+            $body['fileInfo'] = $request->fileInfo;
+        }
+        if (!Utils::isUnset($request->originatorUserId)) {
+            $body['originatorUserId'] = $request->originatorUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'AsyncCreateContractAnalysis',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/review/asyncCreateContractAnalysis',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return AsyncCreateContractAnalysisResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 异步发起合同解析
+     *  *
+     * @param AsyncCreateContractAnalysisRequest $request AsyncCreateContractAnalysisRequest
+     *
+     * @return AsyncCreateContractAnalysisResponse AsyncCreateContractAnalysisResponse
+     */
+    public function asyncCreateContractAnalysis($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AsyncCreateContractAnalysisHeaders([]);
+
+        return $this->asyncCreateContractAnalysisWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -1465,6 +1531,66 @@ class Dingtalk extends OpenApiClient
         $headers = new FinishReviewOrderHeaders([]);
 
         return $this->finishReviewOrderWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 异步发起合同解析结果
+     *  *
+     * @param GetAsyncCreateContractAnalysisRequest $request GetAsyncCreateContractAnalysisRequest
+     * @param GetAsyncCreateContractAnalysisHeaders $headers GetAsyncCreateContractAnalysisHeaders
+     * @param RuntimeOptions                        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetAsyncCreateContractAnalysisResponse GetAsyncCreateContractAnalysisResponse
+     */
+    public function getAsyncCreateContractAnalysisWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->fileInfo)) {
+            $body['fileInfo'] = $request->fileInfo;
+        }
+        if (!Utils::isUnset($request->originatorUserId)) {
+            $body['originatorUserId'] = $request->originatorUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'GetAsyncCreateContractAnalysis',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/review/getAsyncContractAnalysisResult',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetAsyncCreateContractAnalysisResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 异步发起合同解析结果
+     *  *
+     * @param GetAsyncCreateContractAnalysisRequest $request GetAsyncCreateContractAnalysisRequest
+     *
+     * @return GetAsyncCreateContractAnalysisResponse GetAsyncCreateContractAnalysisResponse
+     */
+    public function getAsyncCreateContractAnalysis($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetAsyncCreateContractAnalysisHeaders([]);
+
+        return $this->getAsyncCreateContractAnalysisWithOptions($request, $headers, $runtime);
     }
 
     /**

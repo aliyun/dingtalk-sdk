@@ -28,6 +28,8 @@ use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\GetTodoTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\GetTodoTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\GetTodoTypeConfigHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\GetTodoTypeConfigResponse;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\HideUserTodoTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\HideUserTodoTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\ListAllBizCategoryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\ListAllBizCategoryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\QueryOrgConfigHeaders;
@@ -107,6 +109,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->toDueTime)) {
             $body['toDueTime'] = $request->toDueTime;
+        }
+        if (!Utils::isUnset($request->todoType)) {
+            $body['todoType'] = $request->todoType;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -690,6 +695,59 @@ class Dingtalk extends OpenApiClient
         $headers = new GetTodoTypeConfigHeaders([]);
 
         return $this->getTodoTypeConfigWithOptions($unionId, $cardTypeId, $headers, $runtime);
+    }
+
+    /**
+     * @summary 根据待办ID删除用户的某条待办任务。该操作仅删除某个用户自己的待办视图，该待办本身依然还存在，其他执行者依然可以看见该待办。
+     *  *
+     * @param string                  $unionId
+     * @param string                  $taskId
+     * @param HideUserTodoTaskHeaders $headers HideUserTodoTaskHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return HideUserTodoTaskResponse HideUserTodoTaskResponse
+     */
+    public function hideUserTodoTaskWithOptions($unionId, $taskId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action' => 'HideUserTodoTask',
+            'version' => 'todo_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/todo/users/' . $unionId . '/tasks/' . $taskId . '/hide',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return HideUserTodoTaskResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 根据待办ID删除用户的某条待办任务。该操作仅删除某个用户自己的待办视图，该待办本身依然还存在，其他执行者依然可以看见该待办。
+     *  *
+     * @param string $unionId
+     * @param string $taskId
+     *
+     * @return HideUserTodoTaskResponse HideUserTodoTaskResponse
+     */
+    public function hideUserTodoTask($unionId, $taskId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new HideUserTodoTaskHeaders([]);
+
+        return $this->hideUserTodoTaskWithOptions($unionId, $taskId, $headers, $runtime);
     }
 
     /**

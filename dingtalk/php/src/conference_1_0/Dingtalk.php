@@ -146,6 +146,9 @@ use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\StopMinutesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\StopStreamOutHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\StopStreamOutRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\StopStreamOutResponse;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\UpdateMemberNickHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\UpdateMemberNickRequest;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\UpdateMemberNickResponse;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\UpdateScheduleConferenceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\UpdateScheduleConferenceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\UpdateScheduleConferenceResponse;
@@ -3122,6 +3125,68 @@ class Dingtalk extends OpenApiClient
         $headers = new StopStreamOutHeaders([]);
 
         return $this->stopStreamOutWithOptions($conferenceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更新参会人昵称
+     *  *
+     * @param string                  $conferenceId
+     * @param UpdateMemberNickRequest $request      UpdateMemberNickRequest
+     * @param UpdateMemberNickHeaders $headers      UpdateMemberNickHeaders
+     * @param RuntimeOptions          $runtime      runtime options for this request RuntimeOptions
+     *
+     * @return UpdateMemberNickResponse UpdateMemberNickResponse
+     */
+    public function updateMemberNickWithOptions($conferenceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->nick)) {
+            $body['nick'] = $request->nick;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $body['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'UpdateMemberNick',
+            'version' => 'conference_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/conference/videoConferences/' . $conferenceId . '/members/updateNick',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UpdateMemberNickResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新参会人昵称
+     *  *
+     * @param string                  $conferenceId
+     * @param UpdateMemberNickRequest $request      UpdateMemberNickRequest
+     *
+     * @return UpdateMemberNickResponse UpdateMemberNickResponse
+     */
+    public function updateMemberNick($conferenceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateMemberNickHeaders([]);
+
+        return $this->updateMemberNickWithOptions($conferenceId, $request, $headers, $runtime);
     }
 
     /**

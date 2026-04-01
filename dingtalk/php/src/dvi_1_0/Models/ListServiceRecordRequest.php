@@ -9,6 +9,11 @@ use AlibabaCloud\Tea\Model;
 class ListServiceRecordRequest extends Model
 {
     /**
+     * @var string
+     */
+    public $customerId;
+
+    /**
      * @var int
      */
     public $endTime;
@@ -38,6 +43,7 @@ class ListServiceRecordRequest extends Model
      */
     public $userId;
     protected $_name = [
+        'customerId' => 'customerId',
         'endTime' => 'endTime',
         'maxResults' => 'maxResults',
         'nextToken' => 'nextToken',
@@ -51,6 +57,9 @@ class ListServiceRecordRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->customerId) {
+            $res['customerId'] = $this->customerId;
+        }
         if (null !== $this->endTime) {
             $res['endTime'] = $this->endTime;
         }
@@ -81,6 +90,9 @@ class ListServiceRecordRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['customerId'])) {
+            $model->customerId = $map['customerId'];
+        }
         if (isset($map['endTime'])) {
             $model->endTime = $map['endTime'];
         }

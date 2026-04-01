@@ -214,6 +214,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->nextToken)) {
             $query['nextToken'] = $request->nextToken;
         }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -1309,6 +1312,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->nextToken)) {
             $body['nextToken'] = $request->nextToken;
         }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -1371,6 +1377,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->poolCode)) {
             $body['poolCode'] = $request->poolCode;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {

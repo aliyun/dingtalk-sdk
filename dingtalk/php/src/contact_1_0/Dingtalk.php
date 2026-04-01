@@ -209,6 +209,41 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SortUserResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SubmitHandoverResourceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SubmitHandoverResourceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\SubmitHandoverResourceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TalentAddCustomTagHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TalentAddCustomTagRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TalentAddCustomTagResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TalentAddObjectiveTagHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TalentAddObjectiveTagRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TalentAddObjectiveTagResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TalentAddPersonalityTagHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TalentAddPersonalityTagRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TalentAddPersonalityTagResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TalentDeleteCustomTagHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TalentDeleteCustomTagRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TalentDeleteCustomTagResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TalentDeleteObjectiveTagHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TalentDeleteObjectiveTagRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TalentDeleteObjectiveTagResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TalentDeletePersonalityTagHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TalentDeletePersonalityTagRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TalentDeletePersonalityTagResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TalentLikeTagHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TalentLikeTagRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TalentLikeTagResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TalentQueryCustomTagHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TalentQueryCustomTagRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TalentQueryCustomTagResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TalentQueryObjectiveTagHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TalentQueryObjectiveTagRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TalentQueryObjectiveTagResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TalentQueryPersonalityTagHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TalentQueryPersonalityTagResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TalentQueryTagLikeDetailListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TalentQueryTagLikeDetailListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TalentQueryTagLikeDetailListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TalentQueryTagLikeListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TalentQueryTagLikeListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TalentQueryTagLikeListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TransformToExclusiveAccountHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TransformToExclusiveAccountRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TransformToExclusiveAccountResponse;
@@ -4531,6 +4566,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->reason)) {
             $body['reason'] = $request->reason;
         }
+        if (!Utils::isUnset($request->reasonI18nForEmployee)) {
+            $body['reasonI18nForEmployee'] = $request->reasonI18nForEmployee;
+        }
         if (!Utils::isUnset($request->userId)) {
             $body['userId'] = $request->userId;
         }
@@ -4693,6 +4731,741 @@ class Dingtalk extends OpenApiClient
         $headers = new SubmitHandoverResourceHeaders([]);
 
         return $this->submitHandoverResourceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 人才标签：添加员工自定义标签
+     *  *
+     * @param TalentAddCustomTagRequest $request TalentAddCustomTagRequest
+     * @param TalentAddCustomTagHeaders $headers TalentAddCustomTagHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return TalentAddCustomTagResponse TalentAddCustomTagResponse
+     */
+    public function talentAddCustomTagWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->sortOrder)) {
+            $body['sortOrder'] = $request->sortOrder;
+        }
+        if (!Utils::isUnset($request->tagCode)) {
+            $body['tagCode'] = $request->tagCode;
+        }
+        if (!Utils::isUnset($request->tagName)) {
+            $body['tagName'] = $request->tagName;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'TalentAddCustomTag',
+            'version' => 'contact_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contact/talentTags/addCustomTag',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return TalentAddCustomTagResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 人才标签：添加员工自定义标签
+     *  *
+     * @param TalentAddCustomTagRequest $request TalentAddCustomTagRequest
+     *
+     * @return TalentAddCustomTagResponse TalentAddCustomTagResponse
+     */
+    public function talentAddCustomTag($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new TalentAddCustomTagHeaders([]);
+
+        return $this->talentAddCustomTagWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 人才标签：添加员工客观标签
+     *  *
+     * @param TalentAddObjectiveTagRequest $request TalentAddObjectiveTagRequest
+     * @param TalentAddObjectiveTagHeaders $headers TalentAddObjectiveTagHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return TalentAddObjectiveTagResponse TalentAddObjectiveTagResponse
+     */
+    public function talentAddObjectiveTagWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->sortOrder)) {
+            $body['sortOrder'] = $request->sortOrder;
+        }
+        if (!Utils::isUnset($request->tagCode)) {
+            $body['tagCode'] = $request->tagCode;
+        }
+        if (!Utils::isUnset($request->tagName)) {
+            $body['tagName'] = $request->tagName;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'TalentAddObjectiveTag',
+            'version' => 'contact_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contact/talentTags/addObjectiveTag',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return TalentAddObjectiveTagResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 人才标签：添加员工客观标签
+     *  *
+     * @param TalentAddObjectiveTagRequest $request TalentAddObjectiveTagRequest
+     *
+     * @return TalentAddObjectiveTagResponse TalentAddObjectiveTagResponse
+     */
+    public function talentAddObjectiveTag($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new TalentAddObjectiveTagHeaders([]);
+
+        return $this->talentAddObjectiveTagWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 人才标签：添加企业个性标签
+     *  *
+     * @param TalentAddPersonalityTagRequest $request TalentAddPersonalityTagRequest
+     * @param TalentAddPersonalityTagHeaders $headers TalentAddPersonalityTagHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return TalentAddPersonalityTagResponse TalentAddPersonalityTagResponse
+     */
+    public function talentAddPersonalityTagWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->categoryCode)) {
+            $body['categoryCode'] = $request->categoryCode;
+        }
+        if (!Utils::isUnset($request->categoryName)) {
+            $body['categoryName'] = $request->categoryName;
+        }
+        if (!Utils::isUnset($request->categorySortOrder)) {
+            $body['categorySortOrder'] = $request->categorySortOrder;
+        }
+        if (!Utils::isUnset($request->sortOrder)) {
+            $body['sortOrder'] = $request->sortOrder;
+        }
+        if (!Utils::isUnset($request->tagCode)) {
+            $body['tagCode'] = $request->tagCode;
+        }
+        if (!Utils::isUnset($request->tagName)) {
+            $body['tagName'] = $request->tagName;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'TalentAddPersonalityTag',
+            'version' => 'contact_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contact/talentTags/addPersonalityTag',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return TalentAddPersonalityTagResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 人才标签：添加企业个性标签
+     *  *
+     * @param TalentAddPersonalityTagRequest $request TalentAddPersonalityTagRequest
+     *
+     * @return TalentAddPersonalityTagResponse TalentAddPersonalityTagResponse
+     */
+    public function talentAddPersonalityTag($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new TalentAddPersonalityTagHeaders([]);
+
+        return $this->talentAddPersonalityTagWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 人才标签：删除员工自定义标签并清除所有点赞记录
+     *  *
+     * @param TalentDeleteCustomTagRequest $request TalentDeleteCustomTagRequest
+     * @param TalentDeleteCustomTagHeaders $headers TalentDeleteCustomTagHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return TalentDeleteCustomTagResponse TalentDeleteCustomTagResponse
+     */
+    public function talentDeleteCustomTagWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->tagCode)) {
+            $body['tagCode'] = $request->tagCode;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'TalentDeleteCustomTag',
+            'version' => 'contact_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contact/talentTags/deleteCustomTagWithClearLike',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return TalentDeleteCustomTagResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 人才标签：删除员工自定义标签并清除所有点赞记录
+     *  *
+     * @param TalentDeleteCustomTagRequest $request TalentDeleteCustomTagRequest
+     *
+     * @return TalentDeleteCustomTagResponse TalentDeleteCustomTagResponse
+     */
+    public function talentDeleteCustomTag($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new TalentDeleteCustomTagHeaders([]);
+
+        return $this->talentDeleteCustomTagWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 人才标签：删除员工客观标签
+     *  *
+     * @param TalentDeleteObjectiveTagRequest $request TalentDeleteObjectiveTagRequest
+     * @param TalentDeleteObjectiveTagHeaders $headers TalentDeleteObjectiveTagHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
+     *
+     * @return TalentDeleteObjectiveTagResponse TalentDeleteObjectiveTagResponse
+     */
+    public function talentDeleteObjectiveTagWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->tagCode)) {
+            $body['tagCode'] = $request->tagCode;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'TalentDeleteObjectiveTag',
+            'version' => 'contact_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contact/talentTags/deleteObjectiveTag',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return TalentDeleteObjectiveTagResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 人才标签：删除员工客观标签
+     *  *
+     * @param TalentDeleteObjectiveTagRequest $request TalentDeleteObjectiveTagRequest
+     *
+     * @return TalentDeleteObjectiveTagResponse TalentDeleteObjectiveTagResponse
+     */
+    public function talentDeleteObjectiveTag($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new TalentDeleteObjectiveTagHeaders([]);
+
+        return $this->talentDeleteObjectiveTagWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 人才标签：删除企业个性标签
+     *  *
+     * @param TalentDeletePersonalityTagRequest $request TalentDeletePersonalityTagRequest
+     * @param TalentDeletePersonalityTagHeaders $headers TalentDeletePersonalityTagHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
+     *
+     * @return TalentDeletePersonalityTagResponse TalentDeletePersonalityTagResponse
+     */
+    public function talentDeletePersonalityTagWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->tagCode)) {
+            $body['tagCode'] = $request->tagCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'TalentDeletePersonalityTag',
+            'version' => 'contact_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contact/talentTags/deletePersonalityTag',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return TalentDeletePersonalityTagResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 人才标签：删除企业个性标签
+     *  *
+     * @param TalentDeletePersonalityTagRequest $request TalentDeletePersonalityTagRequest
+     *
+     * @return TalentDeletePersonalityTagResponse TalentDeletePersonalityTagResponse
+     */
+    public function talentDeletePersonalityTag($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new TalentDeletePersonalityTagHeaders([]);
+
+        return $this->talentDeletePersonalityTagWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 人才标签：点赞/取消点赞标签
+     *  *
+     * @param TalentLikeTagRequest $request TalentLikeTagRequest
+     * @param TalentLikeTagHeaders $headers TalentLikeTagHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return TalentLikeTagResponse TalentLikeTagResponse
+     */
+    public function talentLikeTagWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->actionType)) {
+            $body['actionType'] = $request->actionType;
+        }
+        if (!Utils::isUnset($request->operatorUserId)) {
+            $body['operatorUserId'] = $request->operatorUserId;
+        }
+        if (!Utils::isUnset($request->tagCode)) {
+            $body['tagCode'] = $request->tagCode;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'TalentLikeTag',
+            'version' => 'contact_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contact/talentTags/likeTag',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return TalentLikeTagResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 人才标签：点赞/取消点赞标签
+     *  *
+     * @param TalentLikeTagRequest $request TalentLikeTagRequest
+     *
+     * @return TalentLikeTagResponse TalentLikeTagResponse
+     */
+    public function talentLikeTag($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new TalentLikeTagHeaders([]);
+
+        return $this->talentLikeTagWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 人才标签：查询员工自定义标签
+     *  *
+     * @param TalentQueryCustomTagRequest $request TalentQueryCustomTagRequest
+     * @param TalentQueryCustomTagHeaders $headers TalentQueryCustomTagHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
+     *
+     * @return TalentQueryCustomTagResponse TalentQueryCustomTagResponse
+     */
+    public function talentQueryCustomTagWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'TalentQueryCustomTag',
+            'version' => 'contact_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contact/talentTags/queryCustomTag',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return TalentQueryCustomTagResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 人才标签：查询员工自定义标签
+     *  *
+     * @param TalentQueryCustomTagRequest $request TalentQueryCustomTagRequest
+     *
+     * @return TalentQueryCustomTagResponse TalentQueryCustomTagResponse
+     */
+    public function talentQueryCustomTag($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new TalentQueryCustomTagHeaders([]);
+
+        return $this->talentQueryCustomTagWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 人才标签：查询员工客观标签
+     *  *
+     * @param TalentQueryObjectiveTagRequest $request TalentQueryObjectiveTagRequest
+     * @param TalentQueryObjectiveTagHeaders $headers TalentQueryObjectiveTagHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return TalentQueryObjectiveTagResponse TalentQueryObjectiveTagResponse
+     */
+    public function talentQueryObjectiveTagWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'TalentQueryObjectiveTag',
+            'version' => 'contact_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contact/talentTags/queryObjectiveTag',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return TalentQueryObjectiveTagResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 人才标签：查询员工客观标签
+     *  *
+     * @param TalentQueryObjectiveTagRequest $request TalentQueryObjectiveTagRequest
+     *
+     * @return TalentQueryObjectiveTagResponse TalentQueryObjectiveTagResponse
+     */
+    public function talentQueryObjectiveTag($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new TalentQueryObjectiveTagHeaders([]);
+
+        return $this->talentQueryObjectiveTagWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 人才标签：查询企业个性标签
+     *  *
+     * @param TalentQueryPersonalityTagHeaders $headers TalentQueryPersonalityTagHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return TalentQueryPersonalityTagResponse TalentQueryPersonalityTagResponse
+     */
+    public function talentQueryPersonalityTagWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action' => 'TalentQueryPersonalityTag',
+            'version' => 'contact_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contact/talentTags/queryPersonalityTag',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return TalentQueryPersonalityTagResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 人才标签：查询企业个性标签
+     *  *
+     * @return TalentQueryPersonalityTagResponse TalentQueryPersonalityTagResponse
+     */
+    public function talentQueryPersonalityTag()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new TalentQueryPersonalityTagHeaders([]);
+
+        return $this->talentQueryPersonalityTagWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @summary 人才标签：分页查询指定标签的点赞记录
+     *  *
+     * @param TalentQueryTagLikeDetailListRequest $request TalentQueryTagLikeDetailListRequest
+     * @param TalentQueryTagLikeDetailListHeaders $headers TalentQueryTagLikeDetailListHeaders
+     * @param RuntimeOptions                      $runtime runtime options for this request RuntimeOptions
+     *
+     * @return TalentQueryTagLikeDetailListResponse TalentQueryTagLikeDetailListResponse
+     */
+    public function talentQueryTagLikeDetailListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->cursor)) {
+            $query['cursor'] = $request->cursor;
+        }
+        if (!Utils::isUnset($request->size)) {
+            $query['size'] = $request->size;
+        }
+        if (!Utils::isUnset($request->tagCode)) {
+            $query['tagCode'] = $request->tagCode;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'TalentQueryTagLikeDetailList',
+            'version' => 'contact_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contact/talentTags/queryTagLikeDetailList',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return TalentQueryTagLikeDetailListResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 人才标签：分页查询指定标签的点赞记录
+     *  *
+     * @param TalentQueryTagLikeDetailListRequest $request TalentQueryTagLikeDetailListRequest
+     *
+     * @return TalentQueryTagLikeDetailListResponse TalentQueryTagLikeDetailListResponse
+     */
+    public function talentQueryTagLikeDetailList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new TalentQueryTagLikeDetailListHeaders([]);
+
+        return $this->talentQueryTagLikeDetailListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 人才标签：查询点赞标签列表
+     *  *
+     * @param TalentQueryTagLikeListRequest $request TalentQueryTagLikeListRequest
+     * @param TalentQueryTagLikeListHeaders $headers TalentQueryTagLikeListHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return TalentQueryTagLikeListResponse TalentQueryTagLikeListResponse
+     */
+    public function talentQueryTagLikeListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorUserId)) {
+            $query['operatorUserId'] = $request->operatorUserId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'TalentQueryTagLikeList',
+            'version' => 'contact_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contact/talentTags/queryTagLikeList',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return TalentQueryTagLikeListResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 人才标签：查询点赞标签列表
+     *  *
+     * @param TalentQueryTagLikeListRequest $request TalentQueryTagLikeListRequest
+     *
+     * @return TalentQueryTagLikeListResponse TalentQueryTagLikeListResponse
+     */
+    public function talentQueryTagLikeList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new TalentQueryTagLikeListHeaders([]);
+
+        return $this->talentQueryTagLikeListWithOptions($request, $headers, $runtime);
     }
 
     /**

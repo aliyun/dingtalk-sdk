@@ -25,6 +25,13 @@ class BatchSaveFormDataRequest extends Model
     public $asynchronousExecution;
 
     /**
+     * @example vpc,sgp_vpc
+     *
+     * @var string
+     */
+    public $env;
+
+    /**
      * @description This parameter is required.
      *
      * @example "{\"countrySelectField_l0c1cwiu\":[{\"value\":\"US\"}],\"addressField_l0c1cwiy\":{\"address\":\"111\",\"regionIds\":[460000,469027,469023401],\"regionText\":[{\"en_US\":\"hai+nan+sheng\",\"zh_CN\":\"海南省\"},{\"en_US\":\"cheng+mai+xian\",\"zh_CN\":\"澄迈县\"},{\"en_US\":\"guo+ying+hong+gang+nong+chang\",\"zh_CN\":\"国营红岗农场\"}]}}"
@@ -76,6 +83,7 @@ class BatchSaveFormDataRequest extends Model
     protected $_name = [
         'appType' => 'appType',
         'asynchronousExecution' => 'asynchronousExecution',
+        'env' => 'env',
         'formDataJsonList' => 'formDataJsonList',
         'formUuid' => 'formUuid',
         'keepRunningAfterException' => 'keepRunningAfterException',
@@ -94,6 +102,9 @@ class BatchSaveFormDataRequest extends Model
         }
         if (null !== $this->asynchronousExecution) {
             $res['asynchronousExecution'] = $this->asynchronousExecution;
+        }
+        if (null !== $this->env) {
+            $res['env'] = $this->env;
         }
         if (null !== $this->formDataJsonList) {
             $res['formDataJsonList'] = $this->formDataJsonList;
@@ -130,6 +141,9 @@ class BatchSaveFormDataRequest extends Model
         }
         if (isset($map['asynchronousExecution'])) {
             $model->asynchronousExecution = $map['asynchronousExecution'];
+        }
+        if (isset($map['env'])) {
+            $model->env = $map['env'];
         }
         if (isset($map['formDataJsonList'])) {
             if (!empty($map['formDataJsonList'])) {

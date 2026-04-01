@@ -32,6 +32,13 @@ class SearchFormDataSecondGenerationRequest extends Model
     public $createToTimeGMT;
 
     /**
+     * @example vpc,sgp_vpc
+     *
+     * @var string
+     */
+    public $env;
+
+    /**
      * @description This parameter is required.
      *
      * @example FORM-GX866MC1NC1VOFF6WVQW33FD16E23L3CPMKVKA
@@ -117,6 +124,7 @@ class SearchFormDataSecondGenerationRequest extends Model
         'appType' => 'appType',
         'createFromTimeGMT' => 'createFromTimeGMT',
         'createToTimeGMT' => 'createToTimeGMT',
+        'env' => 'env',
         'formUuid' => 'formUuid',
         'modifiedFromTimeGMT' => 'modifiedFromTimeGMT',
         'modifiedToTimeGMT' => 'modifiedToTimeGMT',
@@ -143,6 +151,9 @@ class SearchFormDataSecondGenerationRequest extends Model
         }
         if (null !== $this->createToTimeGMT) {
             $res['createToTimeGMT'] = $this->createToTimeGMT;
+        }
+        if (null !== $this->env) {
+            $res['env'] = $this->env;
         }
         if (null !== $this->formUuid) {
             $res['formUuid'] = $this->formUuid;
@@ -197,6 +208,9 @@ class SearchFormDataSecondGenerationRequest extends Model
         }
         if (isset($map['createToTimeGMT'])) {
             $model->createToTimeGMT = $map['createToTimeGMT'];
+        }
+        if (isset($map['env'])) {
+            $model->env = $map['env'];
         }
         if (isset($map['formUuid'])) {
             $model->formUuid = $map['formUuid'];

@@ -11,11 +11,6 @@ class option extends Model
     /**
      * @var string[]
      */
-    public $filterMemberTypes;
-
-    /**
-     * @var string[]
-     */
     public $filterRoleIds;
 
     /**
@@ -32,7 +27,6 @@ class option extends Model
      */
     public $nextToken;
     protected $_name = [
-        'filterMemberTypes' => 'filterMemberTypes',
         'filterRoleIds' => 'filterRoleIds',
         'maxResults' => 'maxResults',
         'nextToken' => 'nextToken',
@@ -43,9 +37,6 @@ class option extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->filterMemberTypes) {
-            $res['filterMemberTypes'] = $this->filterMemberTypes;
-        }
         if (null !== $this->filterRoleIds) {
             $res['filterRoleIds'] = $this->filterRoleIds;
         }
@@ -67,11 +58,6 @@ class option extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['filterMemberTypes'])) {
-            if (!empty($map['filterMemberTypes'])) {
-                $model->filterMemberTypes = $map['filterMemberTypes'];
-            }
-        }
         if (isset($map['filterRoleIds'])) {
             if (!empty($map['filterRoleIds'])) {
                 $model->filterRoleIds = $map['filterRoleIds'];

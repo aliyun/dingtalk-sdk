@@ -45,9 +45,12 @@ use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetTranscriptSummaryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\ListCustomerHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\ListCustomerRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\ListCustomerResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\ListDeviceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\ListDeviceRecordingDurationHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\ListDeviceRecordingDurationRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\ListDeviceRecordingDurationResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\ListDeviceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\ListDeviceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\ListServiceRecordHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\ListServiceRecordRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\ListServiceRecordResponse;
@@ -924,6 +927,75 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 分页查询设备列表
+     *  *
+     * @param ListDeviceRequest $request ListDeviceRequest
+     * @param ListDeviceHeaders $headers ListDeviceHeaders
+     * @param RuntimeOptions    $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ListDeviceResponse ListDeviceResponse
+     */
+    public function listDeviceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->sn)) {
+            $query['sn'] = $request->sn;
+        }
+        if (!Utils::isUnset($request->teamCode)) {
+            $query['teamCode'] = $request->teamCode;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'ListDevice',
+            'version' => 'dvi_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/dvi/devices',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return ListDeviceResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 分页查询设备列表
+     *  *
+     * @param ListDeviceRequest $request ListDeviceRequest
+     *
+     * @return ListDeviceResponse ListDeviceResponse
+     */
+    public function listDevice($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListDeviceHeaders([]);
+
+        return $this->listDeviceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 分页查询设备录音时长
      *  *
      * @param ListDeviceRecordingDurationRequest $request ListDeviceRecordingDurationRequest
@@ -1011,6 +1083,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $query = [];
+        if (!Utils::isUnset($request->customerId)) {
+            $query['customerId'] = $request->customerId;
+        }
         if (!Utils::isUnset($request->endTime)) {
             $query['endTime'] = $request->endTime;
         }

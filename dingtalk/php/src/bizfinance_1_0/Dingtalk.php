@@ -106,6 +106,7 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryFinanceCompanyInfoResp
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryInvoiceRelationCountHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryInvoiceRelationCountResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryMultiCompanyInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryMultiCompanyInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryMultiCompanyInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryPermissionByUserIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\QueryPermissionByUserIdRequest;
@@ -2297,13 +2298,19 @@ class Dingtalk extends OpenApiClient
     /**
      * @summary 查询钉钉智能财务多主体信息
      *  *
+     * @param QueryMultiCompanyInfoRequest $request QueryMultiCompanyInfoRequest
      * @param QueryMultiCompanyInfoHeaders $headers QueryMultiCompanyInfoHeaders
      * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
      *
      * @return QueryMultiCompanyInfoResponse QueryMultiCompanyInfoResponse
      */
-    public function queryMultiCompanyInfoWithOptions($headers, $runtime)
+    public function queryMultiCompanyInfoWithOptions($request, $headers, $runtime)
     {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->startStatus)) {
+            $query['startStatus'] = $request->startStatus;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -2313,6 +2320,7 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
             'action' => 'QueryMultiCompanyInfo',
@@ -2332,14 +2340,16 @@ class Dingtalk extends OpenApiClient
     /**
      * @summary 查询钉钉智能财务多主体信息
      *  *
+     * @param QueryMultiCompanyInfoRequest $request QueryMultiCompanyInfoRequest
+     *
      * @return QueryMultiCompanyInfoResponse QueryMultiCompanyInfoResponse
      */
-    public function queryMultiCompanyInfo()
+    public function queryMultiCompanyInfo($request)
     {
         $runtime = new RuntimeOptions([]);
         $headers = new QueryMultiCompanyInfoHeaders([]);
 
-        return $this->queryMultiCompanyInfoWithOptions($headers, $runtime);
+        return $this->queryMultiCompanyInfoWithOptions($request, $headers, $runtime);
     }
 
     /**

@@ -171,9 +171,6 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->answerer)) {
             $body['answerer'] = $request->answerer;
         }
-        if (!Utils::isUnset($request->corpId)) {
-            $body['corpId'] = $request->corpId;
-        }
         if (!Utils::isUnset($request->dragRequestContext)) {
             $body['dragRequestContext'] = $request->dragRequestContext;
         }
@@ -185,9 +182,6 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->question)) {
             $body['question'] = $request->question;
-        }
-        if (!Utils::isUnset($request->questioner)) {
-            $body['questioner'] = $request->questioner;
         }
         if (!Utils::isUnset($request->retrievalExtendParams)) {
             $body['retrievalExtendParams'] = $request->retrievalExtendParams;

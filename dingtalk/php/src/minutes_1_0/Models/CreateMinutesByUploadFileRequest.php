@@ -25,6 +25,25 @@ class CreateMinutesByUploadFileRequest extends Model
     public $creatorId;
 
     /**
+     * @var string
+     */
+    public $customPrompt;
+
+    /**
+     * @example true
+     *
+     * @var bool
+     */
+    public $enablePushCard;
+
+    /**
+     * @example false
+     *
+     * @var bool
+     */
+    public $hiddenMinutes;
+
+    /**
      * @description This parameter is required.
      *
      * @example https://media.source/audiotominutes.ogg
@@ -62,6 +81,9 @@ class CreateMinutesByUploadFileRequest extends Model
     protected $_name = [
         'bizId' => 'bizId',
         'creatorId' => 'creatorId',
+        'customPrompt' => 'customPrompt',
+        'enablePushCard' => 'enablePushCard',
+        'hiddenMinutes' => 'hiddenMinutes',
         'mediaFileUrl' => 'mediaFileUrl',
         'mediaType' => 'mediaType',
         'title' => 'title',
@@ -78,6 +100,15 @@ class CreateMinutesByUploadFileRequest extends Model
         }
         if (null !== $this->creatorId) {
             $res['creatorId'] = $this->creatorId;
+        }
+        if (null !== $this->customPrompt) {
+            $res['customPrompt'] = $this->customPrompt;
+        }
+        if (null !== $this->enablePushCard) {
+            $res['enablePushCard'] = $this->enablePushCard;
+        }
+        if (null !== $this->hiddenMinutes) {
+            $res['hiddenMinutes'] = $this->hiddenMinutes;
         }
         if (null !== $this->mediaFileUrl) {
             $res['mediaFileUrl'] = $this->mediaFileUrl;
@@ -108,6 +139,15 @@ class CreateMinutesByUploadFileRequest extends Model
         }
         if (isset($map['creatorId'])) {
             $model->creatorId = $map['creatorId'];
+        }
+        if (isset($map['customPrompt'])) {
+            $model->customPrompt = $map['customPrompt'];
+        }
+        if (isset($map['enablePushCard'])) {
+            $model->enablePushCard = $map['enablePushCard'];
+        }
+        if (isset($map['hiddenMinutes'])) {
+            $model->hiddenMinutes = $map['hiddenMinutes'];
         }
         if (isset($map['mediaFileUrl'])) {
             $model->mediaFileUrl = $map['mediaFileUrl'];

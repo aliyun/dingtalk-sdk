@@ -23,6 +23,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\BusinessEventUpdateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CheckControlHitStatusHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CheckControlHitStatusRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CheckControlHitStatusResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CleanFileHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CleanFileRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CleanFileResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateCategoryAndBindingGroupsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateCategoryAndBindingGroupsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateCategoryAndBindingGroupsResponse;
@@ -845,6 +848,66 @@ class Dingtalk extends OpenApiClient
         $headers = new CheckControlHitStatusHeaders([]);
 
         return $this->checkControlHitStatusWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 删除钉钉文档
+     *  *
+     * @param CleanFileRequest $request CleanFileRequest
+     * @param CleanFileHeaders $headers CleanFileHeaders
+     * @param RuntimeOptions   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CleanFileResponse CleanFileResponse
+     */
+    public function cleanFileWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dentryIds)) {
+            $body['dentryIds'] = $request->dentryIds;
+        }
+        if (!Utils::isUnset($request->staffId)) {
+            $body['staffId'] = $request->staffId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'CleanFile',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/privateStores/files/clean',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CleanFileResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 删除钉钉文档
+     *  *
+     * @param CleanFileRequest $request CleanFileRequest
+     *
+     * @return CleanFileResponse CleanFileResponse
+     */
+    public function cleanFile($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CleanFileHeaders([]);
+
+        return $this->cleanFileWithOptions($request, $headers, $runtime);
     }
 
     /**

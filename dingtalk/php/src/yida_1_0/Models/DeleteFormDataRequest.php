@@ -18,6 +18,13 @@ class DeleteFormDataRequest extends Model
     public $appType;
 
     /**
+     * @example vpc,sgp_vpc
+     *
+     * @var string
+     */
+    public $env;
+
+    /**
      * @description This parameter is required.
      *
      * @example 33f6d221-17f8-42b7-836a-682b95a046c2
@@ -52,6 +59,7 @@ class DeleteFormDataRequest extends Model
     public $userId;
     protected $_name = [
         'appType' => 'appType',
+        'env' => 'env',
         'formInstanceId' => 'formInstanceId',
         'language' => 'language',
         'systemToken' => 'systemToken',
@@ -65,6 +73,9 @@ class DeleteFormDataRequest extends Model
         $res = [];
         if (null !== $this->appType) {
             $res['appType'] = $this->appType;
+        }
+        if (null !== $this->env) {
+            $res['env'] = $this->env;
         }
         if (null !== $this->formInstanceId) {
             $res['formInstanceId'] = $this->formInstanceId;
@@ -92,6 +103,9 @@ class DeleteFormDataRequest extends Model
         $model = new self();
         if (isset($map['appType'])) {
             $model->appType = $map['appType'];
+        }
+        if (isset($map['env'])) {
+            $model->env = $map['env'];
         }
         if (isset($map['formInstanceId'])) {
             $model->formInstanceId = $map['formInstanceId'];

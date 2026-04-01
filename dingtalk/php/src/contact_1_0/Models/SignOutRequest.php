@@ -14,6 +14,11 @@ class SignOutRequest extends Model
     public $reason;
 
     /**
+     * @var string[]
+     */
+    public $reasonI18nForEmployee;
+
+    /**
      * @description This parameter is required.
      *
      * @var string
@@ -21,6 +26,7 @@ class SignOutRequest extends Model
     public $userId;
     protected $_name = [
         'reason' => 'reason',
+        'reasonI18nForEmployee' => 'reasonI18nForEmployee',
         'userId' => 'userId',
     ];
 
@@ -31,6 +37,9 @@ class SignOutRequest extends Model
         $res = [];
         if (null !== $this->reason) {
             $res['reason'] = $this->reason;
+        }
+        if (null !== $this->reasonI18nForEmployee) {
+            $res['reasonI18nForEmployee'] = $this->reasonI18nForEmployee;
         }
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
@@ -49,6 +58,9 @@ class SignOutRequest extends Model
         $model = new self();
         if (isset($map['reason'])) {
             $model->reason = $map['reason'];
+        }
+        if (isset($map['reasonI18nForEmployee'])) {
+            $model->reasonI18nForEmployee = $map['reasonI18nForEmployee'];
         }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];

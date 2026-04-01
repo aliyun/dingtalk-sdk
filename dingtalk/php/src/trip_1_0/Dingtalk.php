@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vtrip_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\CheckOrderHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\CheckOrderRequest;
+use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\CheckOrderResponse;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\GetTravelProcessDetailHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\GetTravelProcessDetailRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtrip_1_0\Models\GetTravelProcessDetailResponse;
@@ -87,6 +90,75 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @summary 下单前校验是否符合业务标准
+     *  *
+     * @param CheckOrderRequest $request CheckOrderRequest
+     * @param CheckOrderHeaders $headers CheckOrderHeaders
+     * @param RuntimeOptions    $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CheckOrderResponse CheckOrderResponse
+     */
+    public function checkOrderWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->channelCorpId)) {
+            $body['channelCorpId'] = $request->channelCorpId;
+        }
+        if (!Utils::isUnset($request->journeyBizNo)) {
+            $body['journeyBizNo'] = $request->journeyBizNo;
+        }
+        if (!Utils::isUnset($request->orderType)) {
+            $body['orderType'] = $request->orderType;
+        }
+        if (!Utils::isUnset($request->processInstanceId)) {
+            $body['processInstanceId'] = $request->processInstanceId;
+        }
+        if (!Utils::isUnset($request->staffId)) {
+            $body['staffId'] = $request->staffId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'CheckOrder',
+            'version' => 'trip_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/trip/tripOrder/check',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CheckOrderResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 下单前校验是否符合业务标准
+     *  *
+     * @param CheckOrderRequest $request CheckOrderRequest
+     *
+     * @return CheckOrderResponse CheckOrderResponse
+     */
+    public function checkOrder($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CheckOrderHeaders([]);
+
+        return $this->checkOrderWithOptions($request, $headers, $runtime);
     }
 
     /**

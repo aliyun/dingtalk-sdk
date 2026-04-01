@@ -24,10 +24,16 @@ class HrbrainBizDataQueryRequest extends Model
      * @var string
      */
     public $nextToken;
+
+    /**
+     * @var string
+     */
+    public $userId;
     protected $_name = [
         'bizCode' => 'bizCode',
         'maxResults' => 'maxResults',
         'nextToken' => 'nextToken',
+        'userId' => 'userId',
     ];
 
     public function validate() {}
@@ -43,6 +49,9 @@ class HrbrainBizDataQueryRequest extends Model
         }
         if (null !== $this->nextToken) {
             $res['nextToken'] = $this->nextToken;
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -64,6 +73,9 @@ class HrbrainBizDataQueryRequest extends Model
         }
         if (isset($map['nextToken'])) {
             $model->nextToken = $map['nextToken'];
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

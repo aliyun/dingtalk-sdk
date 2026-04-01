@@ -32,12 +32,20 @@ class CountTodoTasksRequest extends Model
      * @var int
      */
     public $toDueTime;
+
+    /**
+     * @example TODO
+     *
+     * @var string
+     */
+    public $todoType;
     protected $_name = [
         'fromDueTime' => 'fromDueTime',
         'isDone' => 'isDone',
         'isRecycled' => 'isRecycled',
         'roleTypes' => 'roleTypes',
         'toDueTime' => 'toDueTime',
+        'todoType' => 'todoType',
     ];
 
     public function validate() {}
@@ -59,6 +67,9 @@ class CountTodoTasksRequest extends Model
         }
         if (null !== $this->toDueTime) {
             $res['toDueTime'] = $this->toDueTime;
+        }
+        if (null !== $this->todoType) {
+            $res['todoType'] = $this->todoType;
         }
 
         return $res;
@@ -88,6 +99,9 @@ class CountTodoTasksRequest extends Model
         }
         if (isset($map['toDueTime'])) {
             $model->toDueTime = $map['toDueTime'];
+        }
+        if (isset($map['todoType'])) {
+            $model->todoType = $map['todoType'];
         }
 
         return $model;

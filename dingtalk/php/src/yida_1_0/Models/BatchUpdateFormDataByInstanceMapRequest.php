@@ -25,6 +25,13 @@ class BatchUpdateFormDataByInstanceMapRequest extends Model
     public $asynchronousExecution;
 
     /**
+     * @example vpc,sgp_vpc
+     *
+     * @var string
+     */
+    public $env;
+
+    /**
      * @description This parameter is required.
      *
      * @example FORM-GX866MC1NC1VOFF6WVQW33FD16E23L3CPMKVKA
@@ -83,6 +90,7 @@ class BatchUpdateFormDataByInstanceMapRequest extends Model
     protected $_name = [
         'appType' => 'appType',
         'asynchronousExecution' => 'asynchronousExecution',
+        'env' => 'env',
         'formUuid' => 'formUuid',
         'ignoreEmpty' => 'ignoreEmpty',
         'noExecuteExpression' => 'noExecuteExpression',
@@ -102,6 +110,9 @@ class BatchUpdateFormDataByInstanceMapRequest extends Model
         }
         if (null !== $this->asynchronousExecution) {
             $res['asynchronousExecution'] = $this->asynchronousExecution;
+        }
+        if (null !== $this->env) {
+            $res['env'] = $this->env;
         }
         if (null !== $this->formUuid) {
             $res['formUuid'] = $this->formUuid;
@@ -141,6 +152,9 @@ class BatchUpdateFormDataByInstanceMapRequest extends Model
         }
         if (isset($map['asynchronousExecution'])) {
             $model->asynchronousExecution = $map['asynchronousExecution'];
+        }
+        if (isset($map['env'])) {
+            $model->env = $map['env'];
         }
         if (isset($map['formUuid'])) {
             $model->formUuid = $map['formUuid'];

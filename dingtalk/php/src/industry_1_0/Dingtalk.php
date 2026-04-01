@@ -9163,7 +9163,7 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 查询订单转换结果
+     * @summary 订单转换
      *  *
      * @param OrderConvertRequest $request OrderConvertRequest
      * @param OrderConvertHeaders $headers OrderConvertHeaders
@@ -9211,7 +9211,7 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 查询订单转换结果
+     * @summary 订单转换
      *  *
      * @param OrderConvertRequest $request OrderConvertRequest
      *

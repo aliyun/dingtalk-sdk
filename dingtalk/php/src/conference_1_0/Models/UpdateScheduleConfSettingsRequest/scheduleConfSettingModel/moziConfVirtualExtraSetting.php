@@ -31,6 +31,13 @@ class moziConfVirtualExtraSetting extends Model
     public $enableWebAnonymousJoin;
 
     /**
+     * @example true：隐藏发起者姓名 false：不隐藏（默认）
+     *
+     * @var bool
+     */
+    public $hiddenOwnerNick;
+
+    /**
      * @example 0：未开启 1：开启
      *
      * @var int
@@ -105,6 +112,7 @@ class moziConfVirtualExtraSetting extends Model
         'cloudRecordOwnerUnionId' => 'cloudRecordOwnerUnionId',
         'enableChat' => 'enableChat',
         'enableWebAnonymousJoin' => 'enableWebAnonymousJoin',
+        'hiddenOwnerNick' => 'hiddenOwnerNick',
         'joinBeforeHost' => 'joinBeforeHost',
         'lockMediaStatusMicMute' => 'lockMediaStatusMicMute',
         'lockNick' => 'lockNick',
@@ -132,6 +140,9 @@ class moziConfVirtualExtraSetting extends Model
         }
         if (null !== $this->enableWebAnonymousJoin) {
             $res['enableWebAnonymousJoin'] = $this->enableWebAnonymousJoin;
+        }
+        if (null !== $this->hiddenOwnerNick) {
+            $res['hiddenOwnerNick'] = $this->hiddenOwnerNick;
         }
         if (null !== $this->joinBeforeHost) {
             $res['joinBeforeHost'] = $this->joinBeforeHost;
@@ -195,6 +206,9 @@ class moziConfVirtualExtraSetting extends Model
         }
         if (isset($map['enableWebAnonymousJoin'])) {
             $model->enableWebAnonymousJoin = $map['enableWebAnonymousJoin'];
+        }
+        if (isset($map['hiddenOwnerNick'])) {
+            $model->hiddenOwnerNick = $map['hiddenOwnerNick'];
         }
         if (isset($map['joinBeforeHost'])) {
             $model->joinBeforeHost = $map['joinBeforeHost'];

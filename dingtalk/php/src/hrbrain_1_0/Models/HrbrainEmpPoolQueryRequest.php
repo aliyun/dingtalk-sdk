@@ -27,11 +27,17 @@ class HrbrainEmpPoolQueryRequest extends Model
      * @var int
      */
     public $nextToken;
+
+    /**
+     * @var string
+     */
+    public $userId;
     protected $_name = [
         'keyword' => 'keyword',
         'labels' => 'labels',
         'maxResults' => 'maxResults',
         'nextToken' => 'nextToken',
+        'userId' => 'userId',
     ];
 
     public function validate() {}
@@ -50,6 +56,9 @@ class HrbrainEmpPoolQueryRequest extends Model
         }
         if (null !== $this->nextToken) {
             $res['nextToken'] = $this->nextToken;
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -76,6 +85,9 @@ class HrbrainEmpPoolQueryRequest extends Model
         }
         if (isset($map['nextToken'])) {
             $model->nextToken = $map['nextToken'];
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

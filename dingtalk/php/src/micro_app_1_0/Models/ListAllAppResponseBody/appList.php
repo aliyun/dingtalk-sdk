@@ -50,6 +50,11 @@ class appList extends Model
     public $developType;
 
     /**
+     * @var string
+     */
+    public $h5PageType;
+
+    /**
      * @example https://www.dingtalk.com
      *
      * @var string
@@ -89,6 +94,7 @@ class appList extends Model
         'appStatus' => 'appStatus',
         'desc' => 'desc',
         'developType' => 'developType',
+        'h5PageType' => 'h5PageType',
         'homepageLink' => 'homepageLink',
         'icon' => 'icon',
         'name' => 'name',
@@ -115,6 +121,9 @@ class appList extends Model
         }
         if (null !== $this->developType) {
             $res['developType'] = $this->developType;
+        }
+        if (null !== $this->h5PageType) {
+            $res['h5PageType'] = $this->h5PageType;
         }
         if (null !== $this->homepageLink) {
             $res['homepageLink'] = $this->homepageLink;
@@ -157,6 +166,9 @@ class appList extends Model
         }
         if (isset($map['developType'])) {
             $model->developType = $map['developType'];
+        }
+        if (isset($map['h5PageType'])) {
+            $model->h5PageType = $map['h5PageType'];
         }
         if (isset($map['homepageLink'])) {
             $model->homepageLink = $map['homepageLink'];

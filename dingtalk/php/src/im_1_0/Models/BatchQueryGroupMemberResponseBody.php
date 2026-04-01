@@ -30,6 +30,11 @@ class BatchQueryGroupMemberResponseBody extends Model
     public $nextToken;
 
     /**
+     * @var string[]
+     */
+    public $staffIdNickMap;
+
+    /**
      * @var bool
      */
     public $success;
@@ -38,12 +43,19 @@ class BatchQueryGroupMemberResponseBody extends Model
      * @var string[]
      */
     public $unionIdList;
+
+    /**
+     * @var string[]
+     */
+    public $unionIdNickMap;
     protected $_name = [
         'hasMore' => 'hasMore',
         'memberUserIds' => 'memberUserIds',
         'nextToken' => 'nextToken',
+        'staffIdNickMap' => 'staffIdNickMap',
         'success' => 'success',
         'unionIdList' => 'unionIdList',
+        'unionIdNickMap' => 'unionIdNickMap',
     ];
 
     public function validate() {}
@@ -60,11 +72,17 @@ class BatchQueryGroupMemberResponseBody extends Model
         if (null !== $this->nextToken) {
             $res['nextToken'] = $this->nextToken;
         }
+        if (null !== $this->staffIdNickMap) {
+            $res['staffIdNickMap'] = $this->staffIdNickMap;
+        }
         if (null !== $this->success) {
             $res['success'] = $this->success;
         }
         if (null !== $this->unionIdList) {
             $res['unionIdList'] = $this->unionIdList;
+        }
+        if (null !== $this->unionIdNickMap) {
+            $res['unionIdNickMap'] = $this->unionIdNickMap;
         }
 
         return $res;
@@ -89,6 +107,9 @@ class BatchQueryGroupMemberResponseBody extends Model
         if (isset($map['nextToken'])) {
             $model->nextToken = $map['nextToken'];
         }
+        if (isset($map['staffIdNickMap'])) {
+            $model->staffIdNickMap = $map['staffIdNickMap'];
+        }
         if (isset($map['success'])) {
             $model->success = $map['success'];
         }
@@ -96,6 +117,9 @@ class BatchQueryGroupMemberResponseBody extends Model
             if (!empty($map['unionIdList'])) {
                 $model->unionIdList = $map['unionIdList'];
             }
+        }
+        if (isset($map['unionIdNickMap'])) {
+            $model->unionIdNickMap = $map['unionIdNickMap'];
         }
 
         return $model;

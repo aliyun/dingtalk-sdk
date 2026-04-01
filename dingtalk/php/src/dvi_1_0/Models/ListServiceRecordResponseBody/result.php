@@ -49,6 +49,11 @@ class result extends Model
      * @var user
      */
     public $user;
+
+    /**
+     * @var bool
+     */
+    public $valid;
     protected $_name = [
         'customerId' => 'customerId',
         'deviceSn' => 'deviceSn',
@@ -58,6 +63,7 @@ class result extends Model
         'startTimestamp' => 'startTimestamp',
         'team' => 'team',
         'user' => 'user',
+        'valid' => 'valid',
     ];
 
     public function validate() {}
@@ -88,6 +94,9 @@ class result extends Model
         }
         if (null !== $this->user) {
             $res['user'] = null !== $this->user ? $this->user->toMap() : null;
+        }
+        if (null !== $this->valid) {
+            $res['valid'] = $this->valid;
         }
 
         return $res;
@@ -124,6 +133,9 @@ class result extends Model
         }
         if (isset($map['user'])) {
             $model->user = user::fromMap($map['user']);
+        }
+        if (isset($map['valid'])) {
+            $model->valid = $map['valid'];
         }
 
         return $model;
