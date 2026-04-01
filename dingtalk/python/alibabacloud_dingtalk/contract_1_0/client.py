@@ -26,6 +26,124 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def async_create_contract_analysis_with_options(
+        self,
+        request: dingtalkcontract__1__0_models.AsyncCreateContractAnalysisRequest,
+        headers: dingtalkcontract__1__0_models.AsyncCreateContractAnalysisHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.AsyncCreateContractAnalysisResponse:
+        """
+        @summary 异步发起合同解析
+        
+        @param request: AsyncCreateContractAnalysisRequest
+        @param headers: AsyncCreateContractAnalysisHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AsyncCreateContractAnalysisResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.file_info):
+            body['fileInfo'] = request.file_info
+        if not UtilClient.is_unset(request.originator_user_id):
+            body['originatorUserId'] = request.originator_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AsyncCreateContractAnalysis',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/review/asyncCreateContractAnalysis',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.AsyncCreateContractAnalysisResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def async_create_contract_analysis_with_options_async(
+        self,
+        request: dingtalkcontract__1__0_models.AsyncCreateContractAnalysisRequest,
+        headers: dingtalkcontract__1__0_models.AsyncCreateContractAnalysisHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.AsyncCreateContractAnalysisResponse:
+        """
+        @summary 异步发起合同解析
+        
+        @param request: AsyncCreateContractAnalysisRequest
+        @param headers: AsyncCreateContractAnalysisHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AsyncCreateContractAnalysisResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.file_info):
+            body['fileInfo'] = request.file_info
+        if not UtilClient.is_unset(request.originator_user_id):
+            body['originatorUserId'] = request.originator_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AsyncCreateContractAnalysis',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/review/asyncCreateContractAnalysis',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.AsyncCreateContractAnalysisResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def async_create_contract_analysis(
+        self,
+        request: dingtalkcontract__1__0_models.AsyncCreateContractAnalysisRequest,
+    ) -> dingtalkcontract__1__0_models.AsyncCreateContractAnalysisResponse:
+        """
+        @summary 异步发起合同解析
+        
+        @param request: AsyncCreateContractAnalysisRequest
+        @return: AsyncCreateContractAnalysisResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.AsyncCreateContractAnalysisHeaders()
+        return self.async_create_contract_analysis_with_options(request, headers, runtime)
+
+    async def async_create_contract_analysis_async(
+        self,
+        request: dingtalkcontract__1__0_models.AsyncCreateContractAnalysisRequest,
+    ) -> dingtalkcontract__1__0_models.AsyncCreateContractAnalysisResponse:
+        """
+        @summary 异步发起合同解析
+        
+        @param request: AsyncCreateContractAnalysisRequest
+        @return: AsyncCreateContractAnalysisResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.AsyncCreateContractAnalysisHeaders()
+        return await self.async_create_contract_analysis_with_options_async(request, headers, runtime)
+
     def cancel_contract_review_with_options(
         self,
         request: dingtalkcontract__1__0_models.CancelContractReviewRequest,
@@ -2527,6 +2645,124 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcontract__1__0_models.FinishReviewOrderHeaders()
         return await self.finish_review_order_with_options_async(request, headers, runtime)
+
+    def get_async_create_contract_analysis_with_options(
+        self,
+        request: dingtalkcontract__1__0_models.GetAsyncCreateContractAnalysisRequest,
+        headers: dingtalkcontract__1__0_models.GetAsyncCreateContractAnalysisHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.GetAsyncCreateContractAnalysisResponse:
+        """
+        @summary 异步发起合同解析结果
+        
+        @param request: GetAsyncCreateContractAnalysisRequest
+        @param headers: GetAsyncCreateContractAnalysisHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetAsyncCreateContractAnalysisResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.file_info):
+            body['fileInfo'] = request.file_info
+        if not UtilClient.is_unset(request.originator_user_id):
+            body['originatorUserId'] = request.originator_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetAsyncCreateContractAnalysis',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/review/getAsyncContractAnalysisResult',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.GetAsyncCreateContractAnalysisResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_async_create_contract_analysis_with_options_async(
+        self,
+        request: dingtalkcontract__1__0_models.GetAsyncCreateContractAnalysisRequest,
+        headers: dingtalkcontract__1__0_models.GetAsyncCreateContractAnalysisHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.GetAsyncCreateContractAnalysisResponse:
+        """
+        @summary 异步发起合同解析结果
+        
+        @param request: GetAsyncCreateContractAnalysisRequest
+        @param headers: GetAsyncCreateContractAnalysisHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetAsyncCreateContractAnalysisResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.file_info):
+            body['fileInfo'] = request.file_info
+        if not UtilClient.is_unset(request.originator_user_id):
+            body['originatorUserId'] = request.originator_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetAsyncCreateContractAnalysis',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/review/getAsyncContractAnalysisResult',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.GetAsyncCreateContractAnalysisResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_async_create_contract_analysis(
+        self,
+        request: dingtalkcontract__1__0_models.GetAsyncCreateContractAnalysisRequest,
+    ) -> dingtalkcontract__1__0_models.GetAsyncCreateContractAnalysisResponse:
+        """
+        @summary 异步发起合同解析结果
+        
+        @param request: GetAsyncCreateContractAnalysisRequest
+        @return: GetAsyncCreateContractAnalysisResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.GetAsyncCreateContractAnalysisHeaders()
+        return self.get_async_create_contract_analysis_with_options(request, headers, runtime)
+
+    async def get_async_create_contract_analysis_async(
+        self,
+        request: dingtalkcontract__1__0_models.GetAsyncCreateContractAnalysisRequest,
+    ) -> dingtalkcontract__1__0_models.GetAsyncCreateContractAnalysisResponse:
+        """
+        @summary 异步发起合同解析结果
+        
+        @param request: GetAsyncCreateContractAnalysisRequest
+        @return: GetAsyncCreateContractAnalysisResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.GetAsyncCreateContractAnalysisHeaders()
+        return await self.get_async_create_contract_analysis_with_options_async(request, headers, runtime)
 
     def get_contract_analysis_result_with_options(
         self,

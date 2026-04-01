@@ -927,12 +927,14 @@ class GetCustomerInfoResponseBodyResult(TeaModel):
         id: str = None,
         name: str = None,
         owner_user_id: str = None,
+        phone: str = None,
         team_code: str = None,
     ):
         self.create_at = create_at
         self.id = id
         self.name = name
         self.owner_user_id = owner_user_id
+        self.phone = phone
         self.team_code = team_code
 
     def validate(self):
@@ -952,6 +954,8 @@ class GetCustomerInfoResponseBodyResult(TeaModel):
             result['name'] = self.name
         if self.owner_user_id is not None:
             result['ownerUserId'] = self.owner_user_id
+        if self.phone is not None:
+            result['phone'] = self.phone
         if self.team_code is not None:
             result['teamCode'] = self.team_code
         return result
@@ -966,6 +970,8 @@ class GetCustomerInfoResponseBodyResult(TeaModel):
             self.name = m.get('name')
         if m.get('ownerUserId') is not None:
             self.owner_user_id = m.get('ownerUserId')
+        if m.get('phone') is not None:
+            self.phone = m.get('phone')
         if m.get('teamCode') is not None:
             self.team_code = m.get('teamCode')
         return self
@@ -2863,12 +2869,14 @@ class ListCustomerResponseBodyResult(TeaModel):
         id: str = None,
         name: str = None,
         owner_user_id: str = None,
+        phone: str = None,
         team_code: str = None,
     ):
         self.create_at = create_at
         self.id = id
         self.name = name
         self.owner_user_id = owner_user_id
+        self.phone = phone
         self.team_code = team_code
 
     def validate(self):
@@ -2888,6 +2896,8 @@ class ListCustomerResponseBodyResult(TeaModel):
             result['name'] = self.name
         if self.owner_user_id is not None:
             result['ownerUserId'] = self.owner_user_id
+        if self.phone is not None:
+            result['phone'] = self.phone
         if self.team_code is not None:
             result['teamCode'] = self.team_code
         return result
@@ -2902,6 +2912,8 @@ class ListCustomerResponseBodyResult(TeaModel):
             self.name = m.get('name')
         if m.get('ownerUserId') is not None:
             self.owner_user_id = m.get('ownerUserId')
+        if m.get('phone') is not None:
+            self.phone = m.get('phone')
         if m.get('teamCode') is not None:
             self.team_code = m.get('teamCode')
         return self
@@ -2991,6 +3003,223 @@ class ListCustomerResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ListCustomerResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ListDeviceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListDeviceRequest(TeaModel):
+    def __init__(
+        self,
+        max_results: int = None,
+        next_token: str = None,
+        sn: str = None,
+        team_code: str = None,
+        user_id: str = None,
+    ):
+        self.max_results = max_results
+        self.next_token = next_token
+        self.sn = sn
+        self.team_code = team_code
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.sn is not None:
+            result['sn'] = self.sn
+        if self.team_code is not None:
+            result['teamCode'] = self.team_code
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('sn') is not None:
+            self.sn = m.get('sn')
+        if m.get('teamCode') is not None:
+            self.team_code = m.get('teamCode')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class ListDeviceResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        bind_timestamp: int = None,
+        sn: str = None,
+        team_code: str = None,
+        user_id: str = None,
+    ):
+        self.bind_timestamp = bind_timestamp
+        self.sn = sn
+        self.team_code = team_code
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.bind_timestamp is not None:
+            result['bindTimestamp'] = self.bind_timestamp
+        if self.sn is not None:
+            result['sn'] = self.sn
+        if self.team_code is not None:
+            result['teamCode'] = self.team_code
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bindTimestamp') is not None:
+            self.bind_timestamp = m.get('bindTimestamp')
+        if m.get('sn') is not None:
+            self.sn = m.get('sn')
+        if m.get('teamCode') is not None:
+            self.team_code = m.get('teamCode')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class ListDeviceResponseBody(TeaModel):
+    def __init__(
+        self,
+        next_token: str = None,
+        result: List[ListDeviceResponseBodyResult] = None,
+        total_count: int = None,
+    ):
+        self.next_token = next_token
+        self.result = result
+        self.total_count = total_count
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = ListDeviceResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class ListDeviceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ListDeviceResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ListDeviceResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -3262,6 +3491,7 @@ class ListServiceRecordHeaders(TeaModel):
 class ListServiceRecordRequest(TeaModel):
     def __init__(
         self,
+        customer_id: str = None,
         end_time: int = None,
         max_results: int = None,
         next_token: str = None,
@@ -3269,6 +3499,7 @@ class ListServiceRecordRequest(TeaModel):
         team_code: str = None,
         user_id: str = None,
     ):
+        self.customer_id = customer_id
         self.end_time = end_time
         self.max_results = max_results
         self.next_token = next_token
@@ -3285,6 +3516,8 @@ class ListServiceRecordRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.customer_id is not None:
+            result['customerId'] = self.customer_id
         if self.end_time is not None:
             result['endTime'] = self.end_time
         if self.max_results is not None:
@@ -3301,6 +3534,8 @@ class ListServiceRecordRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('customerId') is not None:
+            self.customer_id = m.get('customerId')
         if m.get('endTime') is not None:
             self.end_time = m.get('endTime')
         if m.get('maxResults') is not None:
@@ -3393,6 +3628,7 @@ class ListServiceRecordResponseBodyResult(TeaModel):
         start_timestamp: int = None,
         team: ListServiceRecordResponseBodyResultTeam = None,
         user: ListServiceRecordResponseBodyResultUser = None,
+        valid: bool = None,
     ):
         self.customer_id = customer_id
         self.device_sn = device_sn
@@ -3402,6 +3638,7 @@ class ListServiceRecordResponseBodyResult(TeaModel):
         self.start_timestamp = start_timestamp
         self.team = team
         self.user = user
+        self.valid = valid
 
     def validate(self):
         if self.team:
@@ -3431,6 +3668,8 @@ class ListServiceRecordResponseBodyResult(TeaModel):
             result['team'] = self.team.to_map()
         if self.user is not None:
             result['user'] = self.user.to_map()
+        if self.valid is not None:
+            result['valid'] = self.valid
         return result
 
     def from_map(self, m: dict = None):
@@ -3453,6 +3692,8 @@ class ListServiceRecordResponseBodyResult(TeaModel):
         if m.get('user') is not None:
             temp_model = ListServiceRecordResponseBodyResultUser()
             self.user = temp_model.from_map(m['user'])
+        if m.get('valid') is not None:
+            self.valid = m.get('valid')
         return self
 
 

@@ -26,6 +26,152 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def admin_search_minutes_with_options(
+        self,
+        request: dingtalkminutes__1__0_models.AdminSearchMinutesRequest,
+        headers: dingtalkminutes__1__0_models.AdminSearchMinutesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkminutes__1__0_models.AdminSearchMinutesResponse:
+        """
+        @summary 搜索企业内听记
+        
+        @param request: AdminSearchMinutesRequest
+        @param headers: AdminSearchMinutesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AdminSearchMinutesResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.creator_union_ids):
+            body['creatorUnionIds'] = request.creator_union_ids
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.query):
+            body['query'] = request.query
+        if not UtilClient.is_unset(request.search_type):
+            body['searchType'] = request.search_type
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AdminSearchMinutes',
+            version='minutes_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/minutes/flashMinutes/adminSearch',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkminutes__1__0_models.AdminSearchMinutesResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def admin_search_minutes_with_options_async(
+        self,
+        request: dingtalkminutes__1__0_models.AdminSearchMinutesRequest,
+        headers: dingtalkminutes__1__0_models.AdminSearchMinutesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkminutes__1__0_models.AdminSearchMinutesResponse:
+        """
+        @summary 搜索企业内听记
+        
+        @param request: AdminSearchMinutesRequest
+        @param headers: AdminSearchMinutesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AdminSearchMinutesResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.creator_union_ids):
+            body['creatorUnionIds'] = request.creator_union_ids
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.query):
+            body['query'] = request.query
+        if not UtilClient.is_unset(request.search_type):
+            body['searchType'] = request.search_type
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AdminSearchMinutes',
+            version='minutes_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/minutes/flashMinutes/adminSearch',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkminutes__1__0_models.AdminSearchMinutesResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def admin_search_minutes(
+        self,
+        request: dingtalkminutes__1__0_models.AdminSearchMinutesRequest,
+    ) -> dingtalkminutes__1__0_models.AdminSearchMinutesResponse:
+        """
+        @summary 搜索企业内听记
+        
+        @param request: AdminSearchMinutesRequest
+        @return: AdminSearchMinutesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkminutes__1__0_models.AdminSearchMinutesHeaders()
+        return self.admin_search_minutes_with_options(request, headers, runtime)
+
+    async def admin_search_minutes_async(
+        self,
+        request: dingtalkminutes__1__0_models.AdminSearchMinutesRequest,
+    ) -> dingtalkminutes__1__0_models.AdminSearchMinutesResponse:
+        """
+        @summary 搜索企业内听记
+        
+        @param request: AdminSearchMinutesRequest
+        @return: AdminSearchMinutesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkminutes__1__0_models.AdminSearchMinutesHeaders()
+        return await self.admin_search_minutes_with_options_async(request, headers, runtime)
+
     def batch_get_minutes_details_with_options(
         self,
         request: dingtalkminutes__1__0_models.BatchGetMinutesDetailsRequest,
@@ -171,6 +317,12 @@ class Client(OpenApiClient):
             body['bizId'] = request.biz_id
         if not UtilClient.is_unset(request.creator_id):
             body['creatorId'] = request.creator_id
+        if not UtilClient.is_unset(request.custom_prompt):
+            body['customPrompt'] = request.custom_prompt
+        if not UtilClient.is_unset(request.enable_push_card):
+            body['enablePushCard'] = request.enable_push_card
+        if not UtilClient.is_unset(request.hidden_minutes):
+            body['hiddenMinutes'] = request.hidden_minutes
         if not UtilClient.is_unset(request.media_file_url):
             body['mediaFileUrl'] = request.media_file_url
         if not UtilClient.is_unset(request.media_type):
@@ -226,6 +378,12 @@ class Client(OpenApiClient):
             body['bizId'] = request.biz_id
         if not UtilClient.is_unset(request.creator_id):
             body['creatorId'] = request.creator_id
+        if not UtilClient.is_unset(request.custom_prompt):
+            body['customPrompt'] = request.custom_prompt
+        if not UtilClient.is_unset(request.enable_push_card):
+            body['enablePushCard'] = request.enable_push_card
+        if not UtilClient.is_unset(request.hidden_minutes):
+            body['hiddenMinutes'] = request.hidden_minutes
         if not UtilClient.is_unset(request.media_file_url):
             body['mediaFileUrl'] = request.media_file_url
         if not UtilClient.is_unset(request.media_type):
@@ -2959,6 +3117,132 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkminutes__1__0_models.QueryUserMinutesPermissionHeaders()
         return await self.query_user_minutes_permission_with_options_async(task_uuid, union_id, headers, runtime)
+
+    def regenerate_chapters_with_options(
+        self,
+        request: dingtalkminutes__1__0_models.RegenerateChaptersRequest,
+        headers: dingtalkminutes__1__0_models.RegenerateChaptersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkminutes__1__0_models.RegenerateChaptersResponse:
+        """
+        @summary 重新生成听记智能章节
+        
+        @param request: RegenerateChaptersRequest
+        @param headers: RegenerateChaptersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RegenerateChaptersResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.task_uuid):
+            query['taskUuid'] = request.task_uuid
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.custom_prompt):
+            body['customPrompt'] = request.custom_prompt
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='RegenerateChapters',
+            version='minutes_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/minutes/chapters/regenerate',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkminutes__1__0_models.RegenerateChaptersResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def regenerate_chapters_with_options_async(
+        self,
+        request: dingtalkminutes__1__0_models.RegenerateChaptersRequest,
+        headers: dingtalkminutes__1__0_models.RegenerateChaptersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkminutes__1__0_models.RegenerateChaptersResponse:
+        """
+        @summary 重新生成听记智能章节
+        
+        @param request: RegenerateChaptersRequest
+        @param headers: RegenerateChaptersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RegenerateChaptersResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.task_uuid):
+            query['taskUuid'] = request.task_uuid
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        body = {}
+        if not UtilClient.is_unset(request.custom_prompt):
+            body['customPrompt'] = request.custom_prompt
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='RegenerateChapters',
+            version='minutes_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/minutes/chapters/regenerate',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkminutes__1__0_models.RegenerateChaptersResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def regenerate_chapters(
+        self,
+        request: dingtalkminutes__1__0_models.RegenerateChaptersRequest,
+    ) -> dingtalkminutes__1__0_models.RegenerateChaptersResponse:
+        """
+        @summary 重新生成听记智能章节
+        
+        @param request: RegenerateChaptersRequest
+        @return: RegenerateChaptersResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkminutes__1__0_models.RegenerateChaptersHeaders()
+        return self.regenerate_chapters_with_options(request, headers, runtime)
+
+    async def regenerate_chapters_async(
+        self,
+        request: dingtalkminutes__1__0_models.RegenerateChaptersRequest,
+    ) -> dingtalkminutes__1__0_models.RegenerateChaptersResponse:
+        """
+        @summary 重新生成听记智能章节
+        
+        @param request: RegenerateChaptersRequest
+        @return: RegenerateChaptersResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkminutes__1__0_models.RegenerateChaptersHeaders()
+        return await self.regenerate_chapters_with_options_async(request, headers, runtime)
 
     def set_detail_page_custom_tab_with_options(
         self,

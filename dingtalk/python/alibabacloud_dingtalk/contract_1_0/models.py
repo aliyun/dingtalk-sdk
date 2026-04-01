@@ -4,6 +4,193 @@ from Tea.model import TeaModel
 from typing import Dict, List, Any
 
 
+class AsyncCreateContractAnalysisHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AsyncCreateContractAnalysisRequestFileInfo(TeaModel):
+    def __init__(
+        self,
+        file_id: str = None,
+        file_name: str = None,
+        file_type: str = None,
+        space_id: str = None,
+    ):
+        self.file_id = file_id
+        self.file_name = file_name
+        self.file_type = file_type
+        self.space_id = space_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_id is not None:
+            result['fileId'] = self.file_id
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.file_type is not None:
+            result['fileType'] = self.file_type
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileId') is not None:
+            self.file_id = m.get('fileId')
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('fileType') is not None:
+            self.file_type = m.get('fileType')
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        return self
+
+
+class AsyncCreateContractAnalysisRequest(TeaModel):
+    def __init__(
+        self,
+        file_info: AsyncCreateContractAnalysisRequestFileInfo = None,
+        originator_user_id: str = None,
+    ):
+        self.file_info = file_info
+        self.originator_user_id = originator_user_id
+
+    def validate(self):
+        if self.file_info:
+            self.file_info.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_info is not None:
+            result['fileInfo'] = self.file_info.to_map()
+        if self.originator_user_id is not None:
+            result['originatorUserId'] = self.originator_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileInfo') is not None:
+            temp_model = AsyncCreateContractAnalysisRequestFileInfo()
+            self.file_info = temp_model.from_map(m['fileInfo'])
+        if m.get('originatorUserId') is not None:
+            self.originator_user_id = m.get('originatorUserId')
+        return self
+
+
+class AsyncCreateContractAnalysisResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class AsyncCreateContractAnalysisResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: AsyncCreateContractAnalysisResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = AsyncCreateContractAnalysisResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CancelContractReviewHeaders(TeaModel):
     def __init__(
         self,
@@ -4753,6 +4940,217 @@ class FinishReviewOrderResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = FinishReviewOrderResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetAsyncCreateContractAnalysisHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetAsyncCreateContractAnalysisRequestFileInfo(TeaModel):
+    def __init__(
+        self,
+        file_id: str = None,
+        file_name: str = None,
+        file_size: int = None,
+        file_type: str = None,
+        space_id: str = None,
+    ):
+        self.file_id = file_id
+        self.file_name = file_name
+        self.file_size = file_size
+        self.file_type = file_type
+        self.space_id = space_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_id is not None:
+            result['fileId'] = self.file_id
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.file_size is not None:
+            result['fileSize'] = self.file_size
+        if self.file_type is not None:
+            result['fileType'] = self.file_type
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileId') is not None:
+            self.file_id = m.get('fileId')
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('fileSize') is not None:
+            self.file_size = m.get('fileSize')
+        if m.get('fileType') is not None:
+            self.file_type = m.get('fileType')
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        return self
+
+
+class GetAsyncCreateContractAnalysisRequest(TeaModel):
+    def __init__(
+        self,
+        file_info: GetAsyncCreateContractAnalysisRequestFileInfo = None,
+        originator_user_id: str = None,
+    ):
+        self.file_info = file_info
+        self.originator_user_id = originator_user_id
+
+    def validate(self):
+        if self.file_info:
+            self.file_info.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_info is not None:
+            result['fileInfo'] = self.file_info.to_map()
+        if self.originator_user_id is not None:
+            result['originatorUserId'] = self.originator_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileInfo') is not None:
+            temp_model = GetAsyncCreateContractAnalysisRequestFileInfo()
+            self.file_info = temp_model.from_map(m['fileInfo'])
+        if m.get('originatorUserId') is not None:
+            self.originator_user_id = m.get('originatorUserId')
+        return self
+
+
+class GetAsyncCreateContractAnalysisResponseBody(TeaModel):
+    def __init__(
+        self,
+        analysis_status: str = None,
+        company_list: List[str] = None,
+        review_positions: List[str] = None,
+        review_type: str = None,
+        word_count: int = None,
+    ):
+        self.analysis_status = analysis_status
+        self.company_list = company_list
+        self.review_positions = review_positions
+        self.review_type = review_type
+        self.word_count = word_count
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.analysis_status is not None:
+            result['analysisStatus'] = self.analysis_status
+        if self.company_list is not None:
+            result['companyList'] = self.company_list
+        if self.review_positions is not None:
+            result['reviewPositions'] = self.review_positions
+        if self.review_type is not None:
+            result['reviewType'] = self.review_type
+        if self.word_count is not None:
+            result['wordCount'] = self.word_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('analysisStatus') is not None:
+            self.analysis_status = m.get('analysisStatus')
+        if m.get('companyList') is not None:
+            self.company_list = m.get('companyList')
+        if m.get('reviewPositions') is not None:
+            self.review_positions = m.get('reviewPositions')
+        if m.get('reviewType') is not None:
+            self.review_type = m.get('reviewType')
+        if m.get('wordCount') is not None:
+            self.word_count = m.get('wordCount')
+        return self
+
+
+class GetAsyncCreateContractAnalysisResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetAsyncCreateContractAnalysisResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetAsyncCreateContractAnalysisResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

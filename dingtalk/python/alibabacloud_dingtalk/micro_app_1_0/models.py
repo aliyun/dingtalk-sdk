@@ -3139,6 +3139,7 @@ class ListAllAppResponseBodyAppList(TeaModel):
         app_status: int = None,
         desc: str = None,
         develop_type: int = None,
+        h_5page_type: str = None,
         homepage_link: str = None,
         icon: str = None,
         name: str = None,
@@ -3154,6 +3155,7 @@ class ListAllAppResponseBodyAppList(TeaModel):
         self.desc = desc
         # This parameter is required.
         self.develop_type = develop_type
+        self.h_5page_type = h_5page_type
         self.homepage_link = homepage_link
         self.icon = icon
         self.name = name
@@ -3179,6 +3181,8 @@ class ListAllAppResponseBodyAppList(TeaModel):
             result['desc'] = self.desc
         if self.develop_type is not None:
             result['developType'] = self.develop_type
+        if self.h_5page_type is not None:
+            result['h5PageType'] = self.h_5page_type
         if self.homepage_link is not None:
             result['homepageLink'] = self.homepage_link
         if self.icon is not None:
@@ -3203,6 +3207,8 @@ class ListAllAppResponseBodyAppList(TeaModel):
             self.desc = m.get('desc')
         if m.get('developType') is not None:
             self.develop_type = m.get('developType')
+        if m.get('h5PageType') is not None:
+            self.h_5page_type = m.get('h5PageType')
         if m.get('homepageLink') is not None:
             self.homepage_link = m.get('homepageLink')
         if m.get('icon') is not None:

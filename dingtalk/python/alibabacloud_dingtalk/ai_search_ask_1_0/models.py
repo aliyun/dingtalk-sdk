@@ -631,12 +631,10 @@ class RetrieveRequest(TeaModel):
     def __init__(
         self,
         answerer: str = None,
-        corp_id: str = None,
         drag_request_context: RetrieveRequestDragRequestContext = None,
         keyword_list: List[str] = None,
         limit: int = None,
         question: str = None,
-        questioner: str = None,
         retrieval_extend_params: Dict[str, RetrievalExtendParamsValue] = None,
         retrieve_score_threshold: float = None,
         scene: str = None,
@@ -645,16 +643,12 @@ class RetrieveRequest(TeaModel):
     ):
         # This parameter is required.
         self.answerer = answerer
-        # This parameter is required.
-        self.corp_id = corp_id
         self.drag_request_context = drag_request_context
         self.keyword_list = keyword_list
         # This parameter is required.
         self.limit = limit
         # This parameter is required.
         self.question = question
-        # This parameter is required.
-        self.questioner = questioner
         # This parameter is required.
         self.retrieval_extend_params = retrieval_extend_params
         self.retrieve_score_threshold = retrieve_score_threshold
@@ -680,8 +674,6 @@ class RetrieveRequest(TeaModel):
         result = dict()
         if self.answerer is not None:
             result['answerer'] = self.answerer
-        if self.corp_id is not None:
-            result['corpId'] = self.corp_id
         if self.drag_request_context is not None:
             result['dragRequestContext'] = self.drag_request_context.to_map()
         if self.keyword_list is not None:
@@ -690,8 +682,6 @@ class RetrieveRequest(TeaModel):
             result['limit'] = self.limit
         if self.question is not None:
             result['question'] = self.question
-        if self.questioner is not None:
-            result['questioner'] = self.questioner
         result['retrievalExtendParams'] = {}
         if self.retrieval_extend_params is not None:
             for k, v in self.retrieval_extend_params.items():
@@ -710,8 +700,6 @@ class RetrieveRequest(TeaModel):
         m = m or dict()
         if m.get('answerer') is not None:
             self.answerer = m.get('answerer')
-        if m.get('corpId') is not None:
-            self.corp_id = m.get('corpId')
         if m.get('dragRequestContext') is not None:
             temp_model = RetrieveRequestDragRequestContext()
             self.drag_request_context = temp_model.from_map(m['dragRequestContext'])
@@ -721,8 +709,6 @@ class RetrieveRequest(TeaModel):
             self.limit = m.get('limit')
         if m.get('question') is not None:
             self.question = m.get('question')
-        if m.get('questioner') is not None:
-            self.questioner = m.get('questioner')
         self.retrieval_extend_params = {}
         if m.get('retrievalExtendParams') is not None:
             for k, v in m.get('retrievalExtendParams').items():

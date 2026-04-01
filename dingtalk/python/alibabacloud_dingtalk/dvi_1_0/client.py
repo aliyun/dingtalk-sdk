@@ -1642,6 +1642,136 @@ class Client(OpenApiClient):
         headers = dingtalkdvi__1__0_models.ListCustomerHeaders()
         return await self.list_customer_with_options_async(request, headers, runtime)
 
+    def list_device_with_options(
+        self,
+        request: dingtalkdvi__1__0_models.ListDeviceRequest,
+        headers: dingtalkdvi__1__0_models.ListDeviceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.ListDeviceResponse:
+        """
+        @summary 分页查询设备列表
+        
+        @param request: ListDeviceRequest
+        @param headers: ListDeviceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListDeviceResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.sn):
+            query['sn'] = request.sn
+        if not UtilClient.is_unset(request.team_code):
+            query['teamCode'] = request.team_code
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListDevice',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/devices',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.ListDeviceResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def list_device_with_options_async(
+        self,
+        request: dingtalkdvi__1__0_models.ListDeviceRequest,
+        headers: dingtalkdvi__1__0_models.ListDeviceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.ListDeviceResponse:
+        """
+        @summary 分页查询设备列表
+        
+        @param request: ListDeviceRequest
+        @param headers: ListDeviceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListDeviceResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.sn):
+            query['sn'] = request.sn
+        if not UtilClient.is_unset(request.team_code):
+            query['teamCode'] = request.team_code
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListDevice',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/devices',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.ListDeviceResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def list_device(
+        self,
+        request: dingtalkdvi__1__0_models.ListDeviceRequest,
+    ) -> dingtalkdvi__1__0_models.ListDeviceResponse:
+        """
+        @summary 分页查询设备列表
+        
+        @param request: ListDeviceRequest
+        @return: ListDeviceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.ListDeviceHeaders()
+        return self.list_device_with_options(request, headers, runtime)
+
+    async def list_device_async(
+        self,
+        request: dingtalkdvi__1__0_models.ListDeviceRequest,
+    ) -> dingtalkdvi__1__0_models.ListDeviceResponse:
+        """
+        @summary 分页查询设备列表
+        
+        @param request: ListDeviceRequest
+        @return: ListDeviceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.ListDeviceHeaders()
+        return await self.list_device_with_options_async(request, headers, runtime)
+
     def list_device_recording_duration_with_options(
         self,
         request: dingtalkdvi__1__0_models.ListDeviceRecordingDurationRequest,
@@ -1796,6 +1926,8 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         query = {}
+        if not UtilClient.is_unset(request.customer_id):
+            query['customerId'] = request.customer_id
         if not UtilClient.is_unset(request.end_time):
             query['endTime'] = request.end_time
         if not UtilClient.is_unset(request.max_results):
@@ -1849,6 +1981,8 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         query = {}
+        if not UtilClient.is_unset(request.customer_id):
+            query['customerId'] = request.customer_id
         if not UtilClient.is_unset(request.end_time):
             query['endTime'] = request.end_time
         if not UtilClient.is_unset(request.max_results):

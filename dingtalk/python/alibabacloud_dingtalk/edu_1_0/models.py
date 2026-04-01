@@ -9060,7 +9060,6 @@ class CreateAwaitingCorrectionDataRequest(TeaModel):
         total_assignments: int = None,
         total_pages: int = None,
     ):
-        # This parameter is required.
         self.all_assignment_pdf_url = all_assignment_pdf_url
         self.class_name = class_name
         # This parameter is required.

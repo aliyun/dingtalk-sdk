@@ -377,6 +377,152 @@ class AddRetentionRecordResponse(TeaModel):
         return self
 
 
+class AiVoucherHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AiVoucherRequest(TeaModel):
+    def __init__(
+        self,
+        chat_messages: str = None,
+        enable_thinking: bool = None,
+        extend_info: str = None,
+        prompt: str = None,
+    ):
+        self.chat_messages = chat_messages
+        self.enable_thinking = enable_thinking
+        self.extend_info = extend_info
+        self.prompt = prompt
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.chat_messages is not None:
+            result['chatMessages'] = self.chat_messages
+        if self.enable_thinking is not None:
+            result['enableThinking'] = self.enable_thinking
+        if self.extend_info is not None:
+            result['extendInfo'] = self.extend_info
+        if self.prompt is not None:
+            result['prompt'] = self.prompt
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('chatMessages') is not None:
+            self.chat_messages = m.get('chatMessages')
+        if m.get('enableThinking') is not None:
+            self.enable_thinking = m.get('enableThinking')
+        if m.get('extendInfo') is not None:
+            self.extend_info = m.get('extendInfo')
+        if m.get('prompt') is not None:
+            self.prompt = m.get('prompt')
+        return self
+
+
+class AiVoucherResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: str = None,
+    ):
+        self.content = content
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        return self
+
+
+class AiVoucherResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: AiVoucherResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = AiVoucherResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class BankGatewayInvokeHeaders(TeaModel):
     def __init__(
         self,
@@ -6129,6 +6275,335 @@ class QueryAlipayUserIdResponse(TeaModel):
         return self
 
 
+class QueryBankHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryBankResponseBodySupportBanks(TeaModel):
+    def __init__(
+        self,
+        bank_abbr: str = None,
+        bank_first_pin_yin: str = None,
+        bank_name: str = None,
+    ):
+        self.bank_abbr = bank_abbr
+        self.bank_first_pin_yin = bank_first_pin_yin
+        self.bank_name = bank_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.bank_abbr is not None:
+            result['bankAbbr'] = self.bank_abbr
+        if self.bank_first_pin_yin is not None:
+            result['bankFirstPinYin'] = self.bank_first_pin_yin
+        if self.bank_name is not None:
+            result['bankName'] = self.bank_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bankAbbr') is not None:
+            self.bank_abbr = m.get('bankAbbr')
+        if m.get('bankFirstPinYin') is not None:
+            self.bank_first_pin_yin = m.get('bankFirstPinYin')
+        if m.get('bankName') is not None:
+            self.bank_name = m.get('bankName')
+        return self
+
+
+class QueryBankResponseBody(TeaModel):
+    def __init__(
+        self,
+        support_banks: List[QueryBankResponseBodySupportBanks] = None,
+    ):
+        self.support_banks = support_banks
+
+    def validate(self):
+        if self.support_banks:
+            for k in self.support_banks:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['supportBanks'] = []
+        if self.support_banks is not None:
+            for k in self.support_banks:
+                result['supportBanks'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.support_banks = []
+        if m.get('supportBanks') is not None:
+            for k in m.get('supportBanks'):
+                temp_model = QueryBankResponseBodySupportBanks()
+                self.support_banks.append(temp_model.from_map(k))
+        return self
+
+
+class QueryBankResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryBankResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryBankResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryBranchHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryBranchRequest(TeaModel):
+    def __init__(
+        self,
+        bank_name: str = None,
+        city: str = None,
+        province: str = None,
+    ):
+        self.bank_name = bank_name
+        self.city = city
+        self.province = province
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.bank_name is not None:
+            result['bankName'] = self.bank_name
+        if self.city is not None:
+            result['city'] = self.city
+        if self.province is not None:
+            result['province'] = self.province
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bankName') is not None:
+            self.bank_name = m.get('bankName')
+        if m.get('city') is not None:
+            self.city = m.get('city')
+        if m.get('province') is not None:
+            self.province = m.get('province')
+        return self
+
+
+class QueryBranchResponseBodySupportSubBanks(TeaModel):
+    def __init__(
+        self,
+        branch_code: str = None,
+        branch_name: str = None,
+    ):
+        self.branch_code = branch_code
+        self.branch_name = branch_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.branch_code is not None:
+            result['branchCode'] = self.branch_code
+        if self.branch_name is not None:
+            result['branchName'] = self.branch_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('branchCode') is not None:
+            self.branch_code = m.get('branchCode')
+        if m.get('branchName') is not None:
+            self.branch_name = m.get('branchName')
+        return self
+
+
+class QueryBranchResponseBody(TeaModel):
+    def __init__(
+        self,
+        support_sub_banks: List[QueryBranchResponseBodySupportSubBanks] = None,
+    ):
+        self.support_sub_banks = support_sub_banks
+
+    def validate(self):
+        if self.support_sub_banks:
+            for k in self.support_sub_banks:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['supportSubBanks'] = []
+        if self.support_sub_banks is not None:
+            for k in self.support_sub_banks:
+                result['supportSubBanks'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.support_sub_banks = []
+        if m.get('supportSubBanks') is not None:
+            for k in m.get('supportSubBanks'):
+                temp_model = QueryBranchResponseBodySupportSubBanks()
+                self.support_sub_banks.append(temp_model.from_map(k))
+        return self
+
+
+class QueryBranchResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryBranchResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryBranchResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryCategoryByPageHeaders(TeaModel):
     def __init__(
         self,
@@ -6352,6 +6827,169 @@ class QueryCategoryByPageResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryCategoryByPageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryCityHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryCityRequest(TeaModel):
+    def __init__(
+        self,
+        province: str = None,
+    ):
+        self.province = province
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.province is not None:
+            result['province'] = self.province
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('province') is not None:
+            self.province = m.get('province')
+        return self
+
+
+class QueryCityResponseBodyCitys(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+    ):
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
+class QueryCityResponseBody(TeaModel):
+    def __init__(
+        self,
+        citys: List[QueryCityResponseBodyCitys] = None,
+    ):
+        self.citys = citys
+
+    def validate(self):
+        if self.citys:
+            for k in self.citys:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['citys'] = []
+        if self.citys is not None:
+            for k in self.citys:
+                result['citys'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.citys = []
+        if m.get('citys') is not None:
+            for k in m.get('citys'):
+                temp_model = QueryCityResponseBodyCitys()
+                self.citys.append(temp_model.from_map(k))
+        return self
+
+
+class QueryCityResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryCityResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryCityResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -10260,6 +10898,142 @@ class QueryProjectByPageResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryProjectByPageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryProvinceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryProvinceResponseBodyProvinces(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+    ):
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
+class QueryProvinceResponseBody(TeaModel):
+    def __init__(
+        self,
+        provinces: List[QueryProvinceResponseBodyProvinces] = None,
+    ):
+        self.provinces = provinces
+
+    def validate(self):
+        if self.provinces:
+            for k in self.provinces:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['provinces'] = []
+        if self.provinces is not None:
+            for k in self.provinces:
+                result['provinces'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.provinces = []
+        if m.get('provinces') is not None:
+            for k in m.get('provinces'):
+                temp_model = QueryProvinceResponseBodyProvinces()
+                self.provinces.append(temp_model.from_map(k))
+        return self
+
+
+class QueryProvinceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryProvinceResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryProvinceResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

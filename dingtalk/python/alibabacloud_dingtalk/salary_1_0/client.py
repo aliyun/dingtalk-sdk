@@ -568,6 +568,258 @@ class Client(OpenApiClient):
         headers = dingtalksalary__1__0_models.ListSalaryCalculationHeaders()
         return await self.list_salary_calculation_with_options_async(request, headers, runtime)
 
+    def revoke_salary_archives_with_options(
+        self,
+        request: dingtalksalary__1__0_models.RevokeSalaryArchivesRequest,
+        headers: dingtalksalary__1__0_models.RevokeSalaryArchivesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalksalary__1__0_models.RevokeSalaryArchivesResponse:
+        """
+        @summary 小微薪酬撤销定调薪数据
+        
+        @param request: RevokeSalaryArchivesRequest
+        @param headers: RevokeSalaryArchivesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RevokeSalaryArchivesResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.effective_date):
+            body['effectiveDate'] = request.effective_date
+        if not UtilClient.is_unset(request.op_user_id):
+            body['opUserId'] = request.op_user_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='RevokeSalaryArchives',
+            version='salary_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/salary/archives',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalksalary__1__0_models.RevokeSalaryArchivesResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def revoke_salary_archives_with_options_async(
+        self,
+        request: dingtalksalary__1__0_models.RevokeSalaryArchivesRequest,
+        headers: dingtalksalary__1__0_models.RevokeSalaryArchivesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalksalary__1__0_models.RevokeSalaryArchivesResponse:
+        """
+        @summary 小微薪酬撤销定调薪数据
+        
+        @param request: RevokeSalaryArchivesRequest
+        @param headers: RevokeSalaryArchivesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RevokeSalaryArchivesResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.effective_date):
+            body['effectiveDate'] = request.effective_date
+        if not UtilClient.is_unset(request.op_user_id):
+            body['opUserId'] = request.op_user_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='RevokeSalaryArchives',
+            version='salary_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/salary/archives',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalksalary__1__0_models.RevokeSalaryArchivesResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def revoke_salary_archives(
+        self,
+        request: dingtalksalary__1__0_models.RevokeSalaryArchivesRequest,
+    ) -> dingtalksalary__1__0_models.RevokeSalaryArchivesResponse:
+        """
+        @summary 小微薪酬撤销定调薪数据
+        
+        @param request: RevokeSalaryArchivesRequest
+        @return: RevokeSalaryArchivesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalksalary__1__0_models.RevokeSalaryArchivesHeaders()
+        return self.revoke_salary_archives_with_options(request, headers, runtime)
+
+    async def revoke_salary_archives_async(
+        self,
+        request: dingtalksalary__1__0_models.RevokeSalaryArchivesRequest,
+    ) -> dingtalksalary__1__0_models.RevokeSalaryArchivesResponse:
+        """
+        @summary 小微薪酬撤销定调薪数据
+        
+        @param request: RevokeSalaryArchivesRequest
+        @return: RevokeSalaryArchivesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalksalary__1__0_models.RevokeSalaryArchivesHeaders()
+        return await self.revoke_salary_archives_with_options_async(request, headers, runtime)
+
+    def save_salary_archives_with_options(
+        self,
+        request: dingtalksalary__1__0_models.SaveSalaryArchivesRequest,
+        headers: dingtalksalary__1__0_models.SaveSalaryArchivesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalksalary__1__0_models.SaveSalaryArchivesResponse:
+        """
+        @summary 小微薪酬保存定调薪数据
+        
+        @param request: SaveSalaryArchivesRequest
+        @param headers: SaveSalaryArchivesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SaveSalaryArchivesResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.adjust_memo):
+            body['adjustMemo'] = request.adjust_memo
+        if not UtilClient.is_unset(request.contents):
+            body['contents'] = request.contents
+        if not UtilClient.is_unset(request.effective_date):
+            body['effectiveDate'] = request.effective_date
+        if not UtilClient.is_unset(request.op_user_id):
+            body['opUserId'] = request.op_user_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SaveSalaryArchives',
+            version='salary_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/salary/archives',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalksalary__1__0_models.SaveSalaryArchivesResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def save_salary_archives_with_options_async(
+        self,
+        request: dingtalksalary__1__0_models.SaveSalaryArchivesRequest,
+        headers: dingtalksalary__1__0_models.SaveSalaryArchivesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalksalary__1__0_models.SaveSalaryArchivesResponse:
+        """
+        @summary 小微薪酬保存定调薪数据
+        
+        @param request: SaveSalaryArchivesRequest
+        @param headers: SaveSalaryArchivesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SaveSalaryArchivesResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.adjust_memo):
+            body['adjustMemo'] = request.adjust_memo
+        if not UtilClient.is_unset(request.contents):
+            body['contents'] = request.contents
+        if not UtilClient.is_unset(request.effective_date):
+            body['effectiveDate'] = request.effective_date
+        if not UtilClient.is_unset(request.op_user_id):
+            body['opUserId'] = request.op_user_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SaveSalaryArchives',
+            version='salary_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/salary/archives',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalksalary__1__0_models.SaveSalaryArchivesResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def save_salary_archives(
+        self,
+        request: dingtalksalary__1__0_models.SaveSalaryArchivesRequest,
+    ) -> dingtalksalary__1__0_models.SaveSalaryArchivesResponse:
+        """
+        @summary 小微薪酬保存定调薪数据
+        
+        @param request: SaveSalaryArchivesRequest
+        @return: SaveSalaryArchivesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalksalary__1__0_models.SaveSalaryArchivesHeaders()
+        return self.save_salary_archives_with_options(request, headers, runtime)
+
+    async def save_salary_archives_async(
+        self,
+        request: dingtalksalary__1__0_models.SaveSalaryArchivesRequest,
+    ) -> dingtalksalary__1__0_models.SaveSalaryArchivesResponse:
+        """
+        @summary 小微薪酬保存定调薪数据
+        
+        @param request: SaveSalaryArchivesRequest
+        @return: SaveSalaryArchivesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalksalary__1__0_models.SaveSalaryArchivesHeaders()
+        return await self.save_salary_archives_with_options_async(request, headers, runtime)
+
     def write_salary_calculation_with_options(
         self,
         request: dingtalksalary__1__0_models.WriteSalaryCalculationRequest,

@@ -794,6 +794,124 @@ class Client(OpenApiClient):
         headers = dingtalkexclusive__1__0_models.CheckControlHitStatusHeaders()
         return await self.check_control_hit_status_with_options_async(request, headers, runtime)
 
+    def clean_file_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.CleanFileRequest,
+        headers: dingtalkexclusive__1__0_models.CleanFileHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.CleanFileResponse:
+        """
+        @summary 删除钉钉文档
+        
+        @param request: CleanFileRequest
+        @param headers: CleanFileHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CleanFileResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.dentry_ids):
+            body['dentryIds'] = request.dentry_ids
+        if not UtilClient.is_unset(request.staff_id):
+            body['staffId'] = request.staff_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CleanFile',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/privateStores/files/clean',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.CleanFileResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def clean_file_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.CleanFileRequest,
+        headers: dingtalkexclusive__1__0_models.CleanFileHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.CleanFileResponse:
+        """
+        @summary 删除钉钉文档
+        
+        @param request: CleanFileRequest
+        @param headers: CleanFileHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CleanFileResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.dentry_ids):
+            body['dentryIds'] = request.dentry_ids
+        if not UtilClient.is_unset(request.staff_id):
+            body['staffId'] = request.staff_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CleanFile',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/privateStores/files/clean',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.CleanFileResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def clean_file(
+        self,
+        request: dingtalkexclusive__1__0_models.CleanFileRequest,
+    ) -> dingtalkexclusive__1__0_models.CleanFileResponse:
+        """
+        @summary 删除钉钉文档
+        
+        @param request: CleanFileRequest
+        @return: CleanFileResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.CleanFileHeaders()
+        return self.clean_file_with_options(request, headers, runtime)
+
+    async def clean_file_async(
+        self,
+        request: dingtalkexclusive__1__0_models.CleanFileRequest,
+    ) -> dingtalkexclusive__1__0_models.CleanFileResponse:
+        """
+        @summary 删除钉钉文档
+        
+        @param request: CleanFileRequest
+        @return: CleanFileResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.CleanFileHeaders()
+        return await self.clean_file_with_options_async(request, headers, runtime)
+
     def create_category_and_binding_groups_with_options(
         self,
         request: dingtalkexclusive__1__0_models.CreateCategoryAndBindingGroupsRequest,

@@ -26,6 +26,136 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def check_order_with_options(
+        self,
+        request: dingtalktrip__1__0_models.CheckOrderRequest,
+        headers: dingtalktrip__1__0_models.CheckOrderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrip__1__0_models.CheckOrderResponse:
+        """
+        @summary 下单前校验是否符合业务标准
+        
+        @param request: CheckOrderRequest
+        @param headers: CheckOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CheckOrderResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.channel_corp_id):
+            body['channelCorpId'] = request.channel_corp_id
+        if not UtilClient.is_unset(request.journey_biz_no):
+            body['journeyBizNo'] = request.journey_biz_no
+        if not UtilClient.is_unset(request.order_type):
+            body['orderType'] = request.order_type
+        if not UtilClient.is_unset(request.process_instance_id):
+            body['processInstanceId'] = request.process_instance_id
+        if not UtilClient.is_unset(request.staff_id):
+            body['staffId'] = request.staff_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CheckOrder',
+            version='trip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/trip/tripOrder/check',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktrip__1__0_models.CheckOrderResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def check_order_with_options_async(
+        self,
+        request: dingtalktrip__1__0_models.CheckOrderRequest,
+        headers: dingtalktrip__1__0_models.CheckOrderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrip__1__0_models.CheckOrderResponse:
+        """
+        @summary 下单前校验是否符合业务标准
+        
+        @param request: CheckOrderRequest
+        @param headers: CheckOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CheckOrderResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.channel_corp_id):
+            body['channelCorpId'] = request.channel_corp_id
+        if not UtilClient.is_unset(request.journey_biz_no):
+            body['journeyBizNo'] = request.journey_biz_no
+        if not UtilClient.is_unset(request.order_type):
+            body['orderType'] = request.order_type
+        if not UtilClient.is_unset(request.process_instance_id):
+            body['processInstanceId'] = request.process_instance_id
+        if not UtilClient.is_unset(request.staff_id):
+            body['staffId'] = request.staff_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CheckOrder',
+            version='trip_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/trip/tripOrder/check',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktrip__1__0_models.CheckOrderResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def check_order(
+        self,
+        request: dingtalktrip__1__0_models.CheckOrderRequest,
+    ) -> dingtalktrip__1__0_models.CheckOrderResponse:
+        """
+        @summary 下单前校验是否符合业务标准
+        
+        @param request: CheckOrderRequest
+        @return: CheckOrderResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrip__1__0_models.CheckOrderHeaders()
+        return self.check_order_with_options(request, headers, runtime)
+
+    async def check_order_async(
+        self,
+        request: dingtalktrip__1__0_models.CheckOrderRequest,
+    ) -> dingtalktrip__1__0_models.CheckOrderResponse:
+        """
+        @summary 下单前校验是否符合业务标准
+        
+        @param request: CheckOrderRequest
+        @return: CheckOrderResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrip__1__0_models.CheckOrderHeaders()
+        return await self.check_order_with_options_async(request, headers, runtime)
+
     def get_travel_process_detail_with_options(
         self,
         request: dingtalktrip__1__0_models.GetTravelProcessDetailRequest,

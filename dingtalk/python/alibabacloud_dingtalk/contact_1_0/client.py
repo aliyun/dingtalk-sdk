@@ -8256,6 +8256,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.reason):
             body['reason'] = request.reason
+        if not UtilClient.is_unset(request.reason_i18n_for_employee):
+            body['reasonI18nForEmployee'] = request.reason_i18n_for_employee
         if not UtilClient.is_unset(request.user_id):
             body['userId'] = request.user_id
         real_headers = {}
@@ -8301,6 +8303,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.reason):
             body['reason'] = request.reason
+        if not UtilClient.is_unset(request.reason_i18n_for_employee):
+            body['reasonI18nForEmployee'] = request.reason_i18n_for_employee
         if not UtilClient.is_unset(request.user_id):
             body['userId'] = request.user_id
         real_headers = {}
@@ -8591,6 +8595,1432 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcontact__1__0_models.SubmitHandoverResourceHeaders()
         return await self.submit_handover_resource_with_options_async(request, headers, runtime)
+
+    def talent_add_custom_tag_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.TalentAddCustomTagRequest,
+        headers: dingtalkcontact__1__0_models.TalentAddCustomTagHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.TalentAddCustomTagResponse:
+        """
+        @summary 人才标签：添加员工自定义标签
+        
+        @param request: TalentAddCustomTagRequest
+        @param headers: TalentAddCustomTagHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TalentAddCustomTagResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.sort_order):
+            body['sortOrder'] = request.sort_order
+        if not UtilClient.is_unset(request.tag_code):
+            body['tagCode'] = request.tag_code
+        if not UtilClient.is_unset(request.tag_name):
+            body['tagName'] = request.tag_name
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='TalentAddCustomTag',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/talentTags/addCustomTag',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.TalentAddCustomTagResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def talent_add_custom_tag_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.TalentAddCustomTagRequest,
+        headers: dingtalkcontact__1__0_models.TalentAddCustomTagHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.TalentAddCustomTagResponse:
+        """
+        @summary 人才标签：添加员工自定义标签
+        
+        @param request: TalentAddCustomTagRequest
+        @param headers: TalentAddCustomTagHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TalentAddCustomTagResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.sort_order):
+            body['sortOrder'] = request.sort_order
+        if not UtilClient.is_unset(request.tag_code):
+            body['tagCode'] = request.tag_code
+        if not UtilClient.is_unset(request.tag_name):
+            body['tagName'] = request.tag_name
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='TalentAddCustomTag',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/talentTags/addCustomTag',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.TalentAddCustomTagResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def talent_add_custom_tag(
+        self,
+        request: dingtalkcontact__1__0_models.TalentAddCustomTagRequest,
+    ) -> dingtalkcontact__1__0_models.TalentAddCustomTagResponse:
+        """
+        @summary 人才标签：添加员工自定义标签
+        
+        @param request: TalentAddCustomTagRequest
+        @return: TalentAddCustomTagResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.TalentAddCustomTagHeaders()
+        return self.talent_add_custom_tag_with_options(request, headers, runtime)
+
+    async def talent_add_custom_tag_async(
+        self,
+        request: dingtalkcontact__1__0_models.TalentAddCustomTagRequest,
+    ) -> dingtalkcontact__1__0_models.TalentAddCustomTagResponse:
+        """
+        @summary 人才标签：添加员工自定义标签
+        
+        @param request: TalentAddCustomTagRequest
+        @return: TalentAddCustomTagResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.TalentAddCustomTagHeaders()
+        return await self.talent_add_custom_tag_with_options_async(request, headers, runtime)
+
+    def talent_add_objective_tag_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.TalentAddObjectiveTagRequest,
+        headers: dingtalkcontact__1__0_models.TalentAddObjectiveTagHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.TalentAddObjectiveTagResponse:
+        """
+        @summary 人才标签：添加员工客观标签
+        
+        @param request: TalentAddObjectiveTagRequest
+        @param headers: TalentAddObjectiveTagHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TalentAddObjectiveTagResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.sort_order):
+            body['sortOrder'] = request.sort_order
+        if not UtilClient.is_unset(request.tag_code):
+            body['tagCode'] = request.tag_code
+        if not UtilClient.is_unset(request.tag_name):
+            body['tagName'] = request.tag_name
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='TalentAddObjectiveTag',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/talentTags/addObjectiveTag',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.TalentAddObjectiveTagResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def talent_add_objective_tag_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.TalentAddObjectiveTagRequest,
+        headers: dingtalkcontact__1__0_models.TalentAddObjectiveTagHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.TalentAddObjectiveTagResponse:
+        """
+        @summary 人才标签：添加员工客观标签
+        
+        @param request: TalentAddObjectiveTagRequest
+        @param headers: TalentAddObjectiveTagHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TalentAddObjectiveTagResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.sort_order):
+            body['sortOrder'] = request.sort_order
+        if not UtilClient.is_unset(request.tag_code):
+            body['tagCode'] = request.tag_code
+        if not UtilClient.is_unset(request.tag_name):
+            body['tagName'] = request.tag_name
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='TalentAddObjectiveTag',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/talentTags/addObjectiveTag',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.TalentAddObjectiveTagResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def talent_add_objective_tag(
+        self,
+        request: dingtalkcontact__1__0_models.TalentAddObjectiveTagRequest,
+    ) -> dingtalkcontact__1__0_models.TalentAddObjectiveTagResponse:
+        """
+        @summary 人才标签：添加员工客观标签
+        
+        @param request: TalentAddObjectiveTagRequest
+        @return: TalentAddObjectiveTagResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.TalentAddObjectiveTagHeaders()
+        return self.talent_add_objective_tag_with_options(request, headers, runtime)
+
+    async def talent_add_objective_tag_async(
+        self,
+        request: dingtalkcontact__1__0_models.TalentAddObjectiveTagRequest,
+    ) -> dingtalkcontact__1__0_models.TalentAddObjectiveTagResponse:
+        """
+        @summary 人才标签：添加员工客观标签
+        
+        @param request: TalentAddObjectiveTagRequest
+        @return: TalentAddObjectiveTagResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.TalentAddObjectiveTagHeaders()
+        return await self.talent_add_objective_tag_with_options_async(request, headers, runtime)
+
+    def talent_add_personality_tag_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.TalentAddPersonalityTagRequest,
+        headers: dingtalkcontact__1__0_models.TalentAddPersonalityTagHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.TalentAddPersonalityTagResponse:
+        """
+        @summary 人才标签：添加企业个性标签
+        
+        @param request: TalentAddPersonalityTagRequest
+        @param headers: TalentAddPersonalityTagHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TalentAddPersonalityTagResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.category_code):
+            body['categoryCode'] = request.category_code
+        if not UtilClient.is_unset(request.category_name):
+            body['categoryName'] = request.category_name
+        if not UtilClient.is_unset(request.category_sort_order):
+            body['categorySortOrder'] = request.category_sort_order
+        if not UtilClient.is_unset(request.sort_order):
+            body['sortOrder'] = request.sort_order
+        if not UtilClient.is_unset(request.tag_code):
+            body['tagCode'] = request.tag_code
+        if not UtilClient.is_unset(request.tag_name):
+            body['tagName'] = request.tag_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='TalentAddPersonalityTag',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/talentTags/addPersonalityTag',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.TalentAddPersonalityTagResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def talent_add_personality_tag_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.TalentAddPersonalityTagRequest,
+        headers: dingtalkcontact__1__0_models.TalentAddPersonalityTagHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.TalentAddPersonalityTagResponse:
+        """
+        @summary 人才标签：添加企业个性标签
+        
+        @param request: TalentAddPersonalityTagRequest
+        @param headers: TalentAddPersonalityTagHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TalentAddPersonalityTagResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.category_code):
+            body['categoryCode'] = request.category_code
+        if not UtilClient.is_unset(request.category_name):
+            body['categoryName'] = request.category_name
+        if not UtilClient.is_unset(request.category_sort_order):
+            body['categorySortOrder'] = request.category_sort_order
+        if not UtilClient.is_unset(request.sort_order):
+            body['sortOrder'] = request.sort_order
+        if not UtilClient.is_unset(request.tag_code):
+            body['tagCode'] = request.tag_code
+        if not UtilClient.is_unset(request.tag_name):
+            body['tagName'] = request.tag_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='TalentAddPersonalityTag',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/talentTags/addPersonalityTag',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.TalentAddPersonalityTagResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def talent_add_personality_tag(
+        self,
+        request: dingtalkcontact__1__0_models.TalentAddPersonalityTagRequest,
+    ) -> dingtalkcontact__1__0_models.TalentAddPersonalityTagResponse:
+        """
+        @summary 人才标签：添加企业个性标签
+        
+        @param request: TalentAddPersonalityTagRequest
+        @return: TalentAddPersonalityTagResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.TalentAddPersonalityTagHeaders()
+        return self.talent_add_personality_tag_with_options(request, headers, runtime)
+
+    async def talent_add_personality_tag_async(
+        self,
+        request: dingtalkcontact__1__0_models.TalentAddPersonalityTagRequest,
+    ) -> dingtalkcontact__1__0_models.TalentAddPersonalityTagResponse:
+        """
+        @summary 人才标签：添加企业个性标签
+        
+        @param request: TalentAddPersonalityTagRequest
+        @return: TalentAddPersonalityTagResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.TalentAddPersonalityTagHeaders()
+        return await self.talent_add_personality_tag_with_options_async(request, headers, runtime)
+
+    def talent_delete_custom_tag_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.TalentDeleteCustomTagRequest,
+        headers: dingtalkcontact__1__0_models.TalentDeleteCustomTagHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.TalentDeleteCustomTagResponse:
+        """
+        @summary 人才标签：删除员工自定义标签并清除所有点赞记录
+        
+        @param request: TalentDeleteCustomTagRequest
+        @param headers: TalentDeleteCustomTagHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TalentDeleteCustomTagResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.tag_code):
+            body['tagCode'] = request.tag_code
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='TalentDeleteCustomTag',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/talentTags/deleteCustomTagWithClearLike',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.TalentDeleteCustomTagResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def talent_delete_custom_tag_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.TalentDeleteCustomTagRequest,
+        headers: dingtalkcontact__1__0_models.TalentDeleteCustomTagHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.TalentDeleteCustomTagResponse:
+        """
+        @summary 人才标签：删除员工自定义标签并清除所有点赞记录
+        
+        @param request: TalentDeleteCustomTagRequest
+        @param headers: TalentDeleteCustomTagHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TalentDeleteCustomTagResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.tag_code):
+            body['tagCode'] = request.tag_code
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='TalentDeleteCustomTag',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/talentTags/deleteCustomTagWithClearLike',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.TalentDeleteCustomTagResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def talent_delete_custom_tag(
+        self,
+        request: dingtalkcontact__1__0_models.TalentDeleteCustomTagRequest,
+    ) -> dingtalkcontact__1__0_models.TalentDeleteCustomTagResponse:
+        """
+        @summary 人才标签：删除员工自定义标签并清除所有点赞记录
+        
+        @param request: TalentDeleteCustomTagRequest
+        @return: TalentDeleteCustomTagResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.TalentDeleteCustomTagHeaders()
+        return self.talent_delete_custom_tag_with_options(request, headers, runtime)
+
+    async def talent_delete_custom_tag_async(
+        self,
+        request: dingtalkcontact__1__0_models.TalentDeleteCustomTagRequest,
+    ) -> dingtalkcontact__1__0_models.TalentDeleteCustomTagResponse:
+        """
+        @summary 人才标签：删除员工自定义标签并清除所有点赞记录
+        
+        @param request: TalentDeleteCustomTagRequest
+        @return: TalentDeleteCustomTagResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.TalentDeleteCustomTagHeaders()
+        return await self.talent_delete_custom_tag_with_options_async(request, headers, runtime)
+
+    def talent_delete_objective_tag_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.TalentDeleteObjectiveTagRequest,
+        headers: dingtalkcontact__1__0_models.TalentDeleteObjectiveTagHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.TalentDeleteObjectiveTagResponse:
+        """
+        @summary 人才标签：删除员工客观标签
+        
+        @param request: TalentDeleteObjectiveTagRequest
+        @param headers: TalentDeleteObjectiveTagHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TalentDeleteObjectiveTagResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.tag_code):
+            body['tagCode'] = request.tag_code
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='TalentDeleteObjectiveTag',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/talentTags/deleteObjectiveTag',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.TalentDeleteObjectiveTagResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def talent_delete_objective_tag_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.TalentDeleteObjectiveTagRequest,
+        headers: dingtalkcontact__1__0_models.TalentDeleteObjectiveTagHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.TalentDeleteObjectiveTagResponse:
+        """
+        @summary 人才标签：删除员工客观标签
+        
+        @param request: TalentDeleteObjectiveTagRequest
+        @param headers: TalentDeleteObjectiveTagHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TalentDeleteObjectiveTagResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.tag_code):
+            body['tagCode'] = request.tag_code
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='TalentDeleteObjectiveTag',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/talentTags/deleteObjectiveTag',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.TalentDeleteObjectiveTagResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def talent_delete_objective_tag(
+        self,
+        request: dingtalkcontact__1__0_models.TalentDeleteObjectiveTagRequest,
+    ) -> dingtalkcontact__1__0_models.TalentDeleteObjectiveTagResponse:
+        """
+        @summary 人才标签：删除员工客观标签
+        
+        @param request: TalentDeleteObjectiveTagRequest
+        @return: TalentDeleteObjectiveTagResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.TalentDeleteObjectiveTagHeaders()
+        return self.talent_delete_objective_tag_with_options(request, headers, runtime)
+
+    async def talent_delete_objective_tag_async(
+        self,
+        request: dingtalkcontact__1__0_models.TalentDeleteObjectiveTagRequest,
+    ) -> dingtalkcontact__1__0_models.TalentDeleteObjectiveTagResponse:
+        """
+        @summary 人才标签：删除员工客观标签
+        
+        @param request: TalentDeleteObjectiveTagRequest
+        @return: TalentDeleteObjectiveTagResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.TalentDeleteObjectiveTagHeaders()
+        return await self.talent_delete_objective_tag_with_options_async(request, headers, runtime)
+
+    def talent_delete_personality_tag_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.TalentDeletePersonalityTagRequest,
+        headers: dingtalkcontact__1__0_models.TalentDeletePersonalityTagHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.TalentDeletePersonalityTagResponse:
+        """
+        @summary 人才标签：删除企业个性标签
+        
+        @param request: TalentDeletePersonalityTagRequest
+        @param headers: TalentDeletePersonalityTagHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TalentDeletePersonalityTagResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.tag_code):
+            body['tagCode'] = request.tag_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='TalentDeletePersonalityTag',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/talentTags/deletePersonalityTag',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.TalentDeletePersonalityTagResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def talent_delete_personality_tag_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.TalentDeletePersonalityTagRequest,
+        headers: dingtalkcontact__1__0_models.TalentDeletePersonalityTagHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.TalentDeletePersonalityTagResponse:
+        """
+        @summary 人才标签：删除企业个性标签
+        
+        @param request: TalentDeletePersonalityTagRequest
+        @param headers: TalentDeletePersonalityTagHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TalentDeletePersonalityTagResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.tag_code):
+            body['tagCode'] = request.tag_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='TalentDeletePersonalityTag',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/talentTags/deletePersonalityTag',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.TalentDeletePersonalityTagResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def talent_delete_personality_tag(
+        self,
+        request: dingtalkcontact__1__0_models.TalentDeletePersonalityTagRequest,
+    ) -> dingtalkcontact__1__0_models.TalentDeletePersonalityTagResponse:
+        """
+        @summary 人才标签：删除企业个性标签
+        
+        @param request: TalentDeletePersonalityTagRequest
+        @return: TalentDeletePersonalityTagResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.TalentDeletePersonalityTagHeaders()
+        return self.talent_delete_personality_tag_with_options(request, headers, runtime)
+
+    async def talent_delete_personality_tag_async(
+        self,
+        request: dingtalkcontact__1__0_models.TalentDeletePersonalityTagRequest,
+    ) -> dingtalkcontact__1__0_models.TalentDeletePersonalityTagResponse:
+        """
+        @summary 人才标签：删除企业个性标签
+        
+        @param request: TalentDeletePersonalityTagRequest
+        @return: TalentDeletePersonalityTagResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.TalentDeletePersonalityTagHeaders()
+        return await self.talent_delete_personality_tag_with_options_async(request, headers, runtime)
+
+    def talent_like_tag_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.TalentLikeTagRequest,
+        headers: dingtalkcontact__1__0_models.TalentLikeTagHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.TalentLikeTagResponse:
+        """
+        @summary 人才标签：点赞/取消点赞标签
+        
+        @param request: TalentLikeTagRequest
+        @param headers: TalentLikeTagHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TalentLikeTagResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.action_type):
+            body['actionType'] = request.action_type
+        if not UtilClient.is_unset(request.operator_user_id):
+            body['operatorUserId'] = request.operator_user_id
+        if not UtilClient.is_unset(request.tag_code):
+            body['tagCode'] = request.tag_code
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='TalentLikeTag',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/talentTags/likeTag',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.TalentLikeTagResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def talent_like_tag_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.TalentLikeTagRequest,
+        headers: dingtalkcontact__1__0_models.TalentLikeTagHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.TalentLikeTagResponse:
+        """
+        @summary 人才标签：点赞/取消点赞标签
+        
+        @param request: TalentLikeTagRequest
+        @param headers: TalentLikeTagHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TalentLikeTagResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.action_type):
+            body['actionType'] = request.action_type
+        if not UtilClient.is_unset(request.operator_user_id):
+            body['operatorUserId'] = request.operator_user_id
+        if not UtilClient.is_unset(request.tag_code):
+            body['tagCode'] = request.tag_code
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='TalentLikeTag',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/talentTags/likeTag',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.TalentLikeTagResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def talent_like_tag(
+        self,
+        request: dingtalkcontact__1__0_models.TalentLikeTagRequest,
+    ) -> dingtalkcontact__1__0_models.TalentLikeTagResponse:
+        """
+        @summary 人才标签：点赞/取消点赞标签
+        
+        @param request: TalentLikeTagRequest
+        @return: TalentLikeTagResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.TalentLikeTagHeaders()
+        return self.talent_like_tag_with_options(request, headers, runtime)
+
+    async def talent_like_tag_async(
+        self,
+        request: dingtalkcontact__1__0_models.TalentLikeTagRequest,
+    ) -> dingtalkcontact__1__0_models.TalentLikeTagResponse:
+        """
+        @summary 人才标签：点赞/取消点赞标签
+        
+        @param request: TalentLikeTagRequest
+        @return: TalentLikeTagResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.TalentLikeTagHeaders()
+        return await self.talent_like_tag_with_options_async(request, headers, runtime)
+
+    def talent_query_custom_tag_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.TalentQueryCustomTagRequest,
+        headers: dingtalkcontact__1__0_models.TalentQueryCustomTagHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.TalentQueryCustomTagResponse:
+        """
+        @summary 人才标签：查询员工自定义标签
+        
+        @param request: TalentQueryCustomTagRequest
+        @param headers: TalentQueryCustomTagHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TalentQueryCustomTagResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='TalentQueryCustomTag',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/talentTags/queryCustomTag',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.TalentQueryCustomTagResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def talent_query_custom_tag_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.TalentQueryCustomTagRequest,
+        headers: dingtalkcontact__1__0_models.TalentQueryCustomTagHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.TalentQueryCustomTagResponse:
+        """
+        @summary 人才标签：查询员工自定义标签
+        
+        @param request: TalentQueryCustomTagRequest
+        @param headers: TalentQueryCustomTagHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TalentQueryCustomTagResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='TalentQueryCustomTag',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/talentTags/queryCustomTag',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.TalentQueryCustomTagResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def talent_query_custom_tag(
+        self,
+        request: dingtalkcontact__1__0_models.TalentQueryCustomTagRequest,
+    ) -> dingtalkcontact__1__0_models.TalentQueryCustomTagResponse:
+        """
+        @summary 人才标签：查询员工自定义标签
+        
+        @param request: TalentQueryCustomTagRequest
+        @return: TalentQueryCustomTagResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.TalentQueryCustomTagHeaders()
+        return self.talent_query_custom_tag_with_options(request, headers, runtime)
+
+    async def talent_query_custom_tag_async(
+        self,
+        request: dingtalkcontact__1__0_models.TalentQueryCustomTagRequest,
+    ) -> dingtalkcontact__1__0_models.TalentQueryCustomTagResponse:
+        """
+        @summary 人才标签：查询员工自定义标签
+        
+        @param request: TalentQueryCustomTagRequest
+        @return: TalentQueryCustomTagResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.TalentQueryCustomTagHeaders()
+        return await self.talent_query_custom_tag_with_options_async(request, headers, runtime)
+
+    def talent_query_objective_tag_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.TalentQueryObjectiveTagRequest,
+        headers: dingtalkcontact__1__0_models.TalentQueryObjectiveTagHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.TalentQueryObjectiveTagResponse:
+        """
+        @summary 人才标签：查询员工客观标签
+        
+        @param request: TalentQueryObjectiveTagRequest
+        @param headers: TalentQueryObjectiveTagHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TalentQueryObjectiveTagResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='TalentQueryObjectiveTag',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/talentTags/queryObjectiveTag',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.TalentQueryObjectiveTagResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def talent_query_objective_tag_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.TalentQueryObjectiveTagRequest,
+        headers: dingtalkcontact__1__0_models.TalentQueryObjectiveTagHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.TalentQueryObjectiveTagResponse:
+        """
+        @summary 人才标签：查询员工客观标签
+        
+        @param request: TalentQueryObjectiveTagRequest
+        @param headers: TalentQueryObjectiveTagHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TalentQueryObjectiveTagResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='TalentQueryObjectiveTag',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/talentTags/queryObjectiveTag',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.TalentQueryObjectiveTagResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def talent_query_objective_tag(
+        self,
+        request: dingtalkcontact__1__0_models.TalentQueryObjectiveTagRequest,
+    ) -> dingtalkcontact__1__0_models.TalentQueryObjectiveTagResponse:
+        """
+        @summary 人才标签：查询员工客观标签
+        
+        @param request: TalentQueryObjectiveTagRequest
+        @return: TalentQueryObjectiveTagResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.TalentQueryObjectiveTagHeaders()
+        return self.talent_query_objective_tag_with_options(request, headers, runtime)
+
+    async def talent_query_objective_tag_async(
+        self,
+        request: dingtalkcontact__1__0_models.TalentQueryObjectiveTagRequest,
+    ) -> dingtalkcontact__1__0_models.TalentQueryObjectiveTagResponse:
+        """
+        @summary 人才标签：查询员工客观标签
+        
+        @param request: TalentQueryObjectiveTagRequest
+        @return: TalentQueryObjectiveTagResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.TalentQueryObjectiveTagHeaders()
+        return await self.talent_query_objective_tag_with_options_async(request, headers, runtime)
+
+    def talent_query_personality_tag_with_options(
+        self,
+        headers: dingtalkcontact__1__0_models.TalentQueryPersonalityTagHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.TalentQueryPersonalityTagResponse:
+        """
+        @summary 人才标签：查询企业个性标签
+        
+        @param headers: TalentQueryPersonalityTagHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TalentQueryPersonalityTagResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='TalentQueryPersonalityTag',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/talentTags/queryPersonalityTag',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.TalentQueryPersonalityTagResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def talent_query_personality_tag_with_options_async(
+        self,
+        headers: dingtalkcontact__1__0_models.TalentQueryPersonalityTagHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.TalentQueryPersonalityTagResponse:
+        """
+        @summary 人才标签：查询企业个性标签
+        
+        @param headers: TalentQueryPersonalityTagHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TalentQueryPersonalityTagResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='TalentQueryPersonalityTag',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/talentTags/queryPersonalityTag',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.TalentQueryPersonalityTagResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def talent_query_personality_tag(self) -> dingtalkcontact__1__0_models.TalentQueryPersonalityTagResponse:
+        """
+        @summary 人才标签：查询企业个性标签
+        
+        @return: TalentQueryPersonalityTagResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.TalentQueryPersonalityTagHeaders()
+        return self.talent_query_personality_tag_with_options(headers, runtime)
+
+    async def talent_query_personality_tag_async(self) -> dingtalkcontact__1__0_models.TalentQueryPersonalityTagResponse:
+        """
+        @summary 人才标签：查询企业个性标签
+        
+        @return: TalentQueryPersonalityTagResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.TalentQueryPersonalityTagHeaders()
+        return await self.talent_query_personality_tag_with_options_async(headers, runtime)
+
+    def talent_query_tag_like_detail_list_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.TalentQueryTagLikeDetailListRequest,
+        headers: dingtalkcontact__1__0_models.TalentQueryTagLikeDetailListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.TalentQueryTagLikeDetailListResponse:
+        """
+        @summary 人才标签：分页查询指定标签的点赞记录
+        
+        @param request: TalentQueryTagLikeDetailListRequest
+        @param headers: TalentQueryTagLikeDetailListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TalentQueryTagLikeDetailListResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.cursor):
+            query['cursor'] = request.cursor
+        if not UtilClient.is_unset(request.size):
+            query['size'] = request.size
+        if not UtilClient.is_unset(request.tag_code):
+            query['tagCode'] = request.tag_code
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='TalentQueryTagLikeDetailList',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/talentTags/queryTagLikeDetailList',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.TalentQueryTagLikeDetailListResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def talent_query_tag_like_detail_list_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.TalentQueryTagLikeDetailListRequest,
+        headers: dingtalkcontact__1__0_models.TalentQueryTagLikeDetailListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.TalentQueryTagLikeDetailListResponse:
+        """
+        @summary 人才标签：分页查询指定标签的点赞记录
+        
+        @param request: TalentQueryTagLikeDetailListRequest
+        @param headers: TalentQueryTagLikeDetailListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TalentQueryTagLikeDetailListResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.cursor):
+            query['cursor'] = request.cursor
+        if not UtilClient.is_unset(request.size):
+            query['size'] = request.size
+        if not UtilClient.is_unset(request.tag_code):
+            query['tagCode'] = request.tag_code
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='TalentQueryTagLikeDetailList',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/talentTags/queryTagLikeDetailList',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.TalentQueryTagLikeDetailListResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def talent_query_tag_like_detail_list(
+        self,
+        request: dingtalkcontact__1__0_models.TalentQueryTagLikeDetailListRequest,
+    ) -> dingtalkcontact__1__0_models.TalentQueryTagLikeDetailListResponse:
+        """
+        @summary 人才标签：分页查询指定标签的点赞记录
+        
+        @param request: TalentQueryTagLikeDetailListRequest
+        @return: TalentQueryTagLikeDetailListResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.TalentQueryTagLikeDetailListHeaders()
+        return self.talent_query_tag_like_detail_list_with_options(request, headers, runtime)
+
+    async def talent_query_tag_like_detail_list_async(
+        self,
+        request: dingtalkcontact__1__0_models.TalentQueryTagLikeDetailListRequest,
+    ) -> dingtalkcontact__1__0_models.TalentQueryTagLikeDetailListResponse:
+        """
+        @summary 人才标签：分页查询指定标签的点赞记录
+        
+        @param request: TalentQueryTagLikeDetailListRequest
+        @return: TalentQueryTagLikeDetailListResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.TalentQueryTagLikeDetailListHeaders()
+        return await self.talent_query_tag_like_detail_list_with_options_async(request, headers, runtime)
+
+    def talent_query_tag_like_list_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.TalentQueryTagLikeListRequest,
+        headers: dingtalkcontact__1__0_models.TalentQueryTagLikeListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.TalentQueryTagLikeListResponse:
+        """
+        @summary 人才标签：查询点赞标签列表
+        
+        @param request: TalentQueryTagLikeListRequest
+        @param headers: TalentQueryTagLikeListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TalentQueryTagLikeListResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_user_id):
+            query['operatorUserId'] = request.operator_user_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='TalentQueryTagLikeList',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/talentTags/queryTagLikeList',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.TalentQueryTagLikeListResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def talent_query_tag_like_list_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.TalentQueryTagLikeListRequest,
+        headers: dingtalkcontact__1__0_models.TalentQueryTagLikeListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.TalentQueryTagLikeListResponse:
+        """
+        @summary 人才标签：查询点赞标签列表
+        
+        @param request: TalentQueryTagLikeListRequest
+        @param headers: TalentQueryTagLikeListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TalentQueryTagLikeListResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_user_id):
+            query['operatorUserId'] = request.operator_user_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='TalentQueryTagLikeList',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/talentTags/queryTagLikeList',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.TalentQueryTagLikeListResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def talent_query_tag_like_list(
+        self,
+        request: dingtalkcontact__1__0_models.TalentQueryTagLikeListRequest,
+    ) -> dingtalkcontact__1__0_models.TalentQueryTagLikeListResponse:
+        """
+        @summary 人才标签：查询点赞标签列表
+        
+        @param request: TalentQueryTagLikeListRequest
+        @return: TalentQueryTagLikeListResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.TalentQueryTagLikeListHeaders()
+        return self.talent_query_tag_like_list_with_options(request, headers, runtime)
+
+    async def talent_query_tag_like_list_async(
+        self,
+        request: dingtalkcontact__1__0_models.TalentQueryTagLikeListRequest,
+    ) -> dingtalkcontact__1__0_models.TalentQueryTagLikeListResponse:
+        """
+        @summary 人才标签：查询点赞标签列表
+        
+        @param request: TalentQueryTagLikeListRequest
+        @return: TalentQueryTagLikeListResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.TalentQueryTagLikeListHeaders()
+        return await self.talent_query_tag_like_list_with_options_async(request, headers, runtime)
 
     def transform_to_exclusive_account_with_options(
         self,

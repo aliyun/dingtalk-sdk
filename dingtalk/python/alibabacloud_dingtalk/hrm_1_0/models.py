@@ -3699,7 +3699,7 @@ class GetDismissionRecordResponseBodyResult(TeaModel):
     def __init__(
         self,
         has_more: bool = None,
-        list: GetDismissionRecordResponseBodyResultList = None,
+        list: List[GetDismissionRecordResponseBodyResultList] = None,
         next_cursor: int = None,
     ):
         self.has_more = has_more
@@ -3708,7 +3708,9 @@ class GetDismissionRecordResponseBodyResult(TeaModel):
 
     def validate(self):
         if self.list:
-            self.list.validate()
+            for k in self.list:
+                if k:
+                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -3718,8 +3720,10 @@ class GetDismissionRecordResponseBodyResult(TeaModel):
         result = dict()
         if self.has_more is not None:
             result['hasMore'] = self.has_more
+        result['list'] = []
         if self.list is not None:
-            result['list'] = self.list.to_map()
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
         if self.next_cursor is not None:
             result['nextCursor'] = self.next_cursor
         return result
@@ -3728,9 +3732,11 @@ class GetDismissionRecordResponseBodyResult(TeaModel):
         m = m or dict()
         if m.get('hasMore') is not None:
             self.has_more = m.get('hasMore')
+        self.list = []
         if m.get('list') is not None:
-            temp_model = GetDismissionRecordResponseBodyResultList()
-            self.list = temp_model.from_map(m['list'])
+            for k in m.get('list'):
+                temp_model = GetDismissionRecordResponseBodyResultList()
+                self.list.append(temp_model.from_map(k))
         if m.get('nextCursor') is not None:
             self.next_cursor = m.get('nextCursor')
         return self

@@ -45,12 +45,14 @@ class CountTodoTasksRequest(TeaModel):
         is_recycled: bool = None,
         role_types: List[List[str]] = None,
         to_due_time: int = None,
+        todo_type: str = None,
     ):
         self.from_due_time = from_due_time
         self.is_done = is_done
         self.is_recycled = is_recycled
         self.role_types = role_types
         self.to_due_time = to_due_time
+        self.todo_type = todo_type
 
     def validate(self):
         pass
@@ -71,6 +73,8 @@ class CountTodoTasksRequest(TeaModel):
             result['roleTypes'] = self.role_types
         if self.to_due_time is not None:
             result['toDueTime'] = self.to_due_time
+        if self.todo_type is not None:
+            result['todoType'] = self.todo_type
         return result
 
     def from_map(self, m: dict = None):
@@ -85,6 +89,8 @@ class CountTodoTasksRequest(TeaModel):
             self.role_types = m.get('roleTypes')
         if m.get('toDueTime') is not None:
             self.to_due_time = m.get('toDueTime')
+        if m.get('todoType') is not None:
+            self.todo_type = m.get('todoType')
         return self
 
 
@@ -2279,9 +2285,11 @@ class GetTodoTaskDetailResponseBodyDetailUrl(TeaModel):
 class GetTodoTaskDetailResponseBodyExecutorStatus(TeaModel):
     def __init__(
         self,
+        finish_time: int = None,
         is_done: bool = None,
         user_id: str = None,
     ):
+        self.finish_time = finish_time
         self.is_done = is_done
         self.user_id = user_id
 
@@ -2294,6 +2302,8 @@ class GetTodoTaskDetailResponseBodyExecutorStatus(TeaModel):
             return _map
 
         result = dict()
+        if self.finish_time is not None:
+            result['finishTime'] = self.finish_time
         if self.is_done is not None:
             result['isDone'] = self.is_done
         if self.user_id is not None:
@@ -2302,6 +2312,8 @@ class GetTodoTaskDetailResponseBodyExecutorStatus(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('finishTime') is not None:
+            self.finish_time = m.get('finishTime')
         if m.get('isDone') is not None:
             self.is_done = m.get('isDone')
         if m.get('userId') is not None:
@@ -2475,6 +2487,7 @@ class GetTodoTaskDetailResponseBody(TeaModel):
         tenant_id: str = None,
         tenant_type: str = None,
         todo_card_view: GetTodoTaskDetailResponseBodyTodoCardView = None,
+        todo_type: str = None,
     ):
         self.biz_tag = biz_tag
         self.category = category
@@ -2502,6 +2515,7 @@ class GetTodoTaskDetailResponseBody(TeaModel):
         self.tenant_id = tenant_id
         self.tenant_type = tenant_type
         self.todo_card_view = todo_card_view
+        self.todo_type = todo_type
 
     def validate(self):
         if self.detail_url:
@@ -2575,6 +2589,8 @@ class GetTodoTaskDetailResponseBody(TeaModel):
             result['tenantType'] = self.tenant_type
         if self.todo_card_view is not None:
             result['todoCardView'] = self.todo_card_view.to_map()
+        if self.todo_type is not None:
+            result['todoType'] = self.todo_type
         return result
 
     def from_map(self, m: dict = None):
@@ -2637,6 +2653,8 @@ class GetTodoTaskDetailResponseBody(TeaModel):
         if m.get('todoCardView') is not None:
             temp_model = GetTodoTaskDetailResponseBodyTodoCardView()
             self.todo_card_view = temp_model.from_map(m['todoCardView'])
+        if m.get('todoType') is not None:
+            self.todo_type = m.get('todoType')
         return self
 
 
@@ -2963,6 +2981,107 @@ class GetTodoTypeConfigResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetTodoTypeConfigResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class HideUserTodoTaskHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class HideUserTodoTaskResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class HideUserTodoTaskResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: HideUserTodoTaskResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = HideUserTodoTaskResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

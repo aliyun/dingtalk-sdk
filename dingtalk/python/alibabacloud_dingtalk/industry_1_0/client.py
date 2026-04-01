@@ -16291,7 +16291,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkindustry__1__0_models.OrderConvertResponse:
         """
-        @summary 查询订单转换结果
+        @summary 订单转换
         
         @param request: OrderConvertRequest
         @param headers: OrderConvertHeaders
@@ -16338,7 +16338,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkindustry__1__0_models.OrderConvertResponse:
         """
-        @summary 查询订单转换结果
+        @summary 订单转换
         
         @param request: OrderConvertRequest
         @param headers: OrderConvertHeaders
@@ -16383,7 +16383,7 @@ class Client(OpenApiClient):
         request: dingtalkindustry__1__0_models.OrderConvertRequest,
     ) -> dingtalkindustry__1__0_models.OrderConvertResponse:
         """
-        @summary 查询订单转换结果
+        @summary 订单转换
         
         @param request: OrderConvertRequest
         @return: OrderConvertResponse
@@ -16397,7 +16397,7 @@ class Client(OpenApiClient):
         request: dingtalkindustry__1__0_models.OrderConvertRequest,
     ) -> dingtalkindustry__1__0_models.OrderConvertResponse:
         """
-        @summary 查询订单转换结果
+        @summary 订单转换
         
         @param request: OrderConvertRequest
         @return: OrderConvertResponse

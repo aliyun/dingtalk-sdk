@@ -53,6 +53,8 @@ class Client(OpenApiClient):
             body['roleTypes'] = request.role_types
         if not UtilClient.is_unset(request.to_due_time):
             body['toDueTime'] = request.to_due_time
+        if not UtilClient.is_unset(request.todo_type):
+            body['todoType'] = request.todo_type
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -105,6 +107,8 @@ class Client(OpenApiClient):
             body['roleTypes'] = request.role_types
         if not UtilClient.is_unset(request.to_due_time):
             body['toDueTime'] = request.to_due_time
+        if not UtilClient.is_unset(request.todo_type):
+            body['todoType'] = request.todo_type
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1175,6 +1179,110 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalktodo__1__0_models.GetTodoTypeConfigHeaders()
         return await self.get_todo_type_config_with_options_async(union_id, card_type_id, headers, runtime)
+
+    def hide_user_todo_task_with_options(
+        self,
+        union_id: str,
+        task_id: str,
+        headers: dingtalktodo__1__0_models.HideUserTodoTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktodo__1__0_models.HideUserTodoTaskResponse:
+        """
+        @summary 根据待办ID删除用户的某条待办任务。该操作仅删除某个用户自己的待办视图，该待办本身依然还存在，其他执行者依然可以看见该待办。
+        
+        @param headers: HideUserTodoTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HideUserTodoTaskResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='HideUserTodoTask',
+            version='todo_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/todo/users/{union_id}/tasks/{task_id}/hide',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktodo__1__0_models.HideUserTodoTaskResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def hide_user_todo_task_with_options_async(
+        self,
+        union_id: str,
+        task_id: str,
+        headers: dingtalktodo__1__0_models.HideUserTodoTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktodo__1__0_models.HideUserTodoTaskResponse:
+        """
+        @summary 根据待办ID删除用户的某条待办任务。该操作仅删除某个用户自己的待办视图，该待办本身依然还存在，其他执行者依然可以看见该待办。
+        
+        @param headers: HideUserTodoTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HideUserTodoTaskResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='HideUserTodoTask',
+            version='todo_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/todo/users/{union_id}/tasks/{task_id}/hide',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktodo__1__0_models.HideUserTodoTaskResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def hide_user_todo_task(
+        self,
+        union_id: str,
+        task_id: str,
+    ) -> dingtalktodo__1__0_models.HideUserTodoTaskResponse:
+        """
+        @summary 根据待办ID删除用户的某条待办任务。该操作仅删除某个用户自己的待办视图，该待办本身依然还存在，其他执行者依然可以看见该待办。
+        
+        @return: HideUserTodoTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktodo__1__0_models.HideUserTodoTaskHeaders()
+        return self.hide_user_todo_task_with_options(union_id, task_id, headers, runtime)
+
+    async def hide_user_todo_task_async(
+        self,
+        union_id: str,
+        task_id: str,
+    ) -> dingtalktodo__1__0_models.HideUserTodoTaskResponse:
+        """
+        @summary 根据待办ID删除用户的某条待办任务。该操作仅删除某个用户自己的待办视图，该待办本身依然还存在，其他执行者依然可以看见该待办。
+        
+        @return: HideUserTodoTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktodo__1__0_models.HideUserTodoTaskHeaders()
+        return await self.hide_user_todo_task_with_options_async(union_id, task_id, headers, runtime)
 
     def list_all_biz_category_with_options(
         self,

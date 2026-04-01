@@ -2040,6 +2040,254 @@ class Client(OpenApiClient):
         headers = dingtalkim__1__0_models.CreateCoupleGroupConversationHeaders()
         return await self.create_couple_group_conversation_with_options_async(request, headers, runtime)
 
+    def create_custom_group_role_with_options(
+        self,
+        request: dingtalkim__1__0_models.CreateCustomGroupRoleRequest,
+        headers: dingtalkim__1__0_models.CreateCustomGroupRoleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.CreateCustomGroupRoleResponse:
+        """
+        @summary 创建群角色
+        
+        @param request: CreateCustomGroupRoleRequest
+        @param headers: CreateCustomGroupRoleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateCustomGroupRoleResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.role_name):
+            body['roleName'] = request.role_name
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateCustomGroupRole',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/customGroupRole/create',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.CreateCustomGroupRoleResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_custom_group_role_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.CreateCustomGroupRoleRequest,
+        headers: dingtalkim__1__0_models.CreateCustomGroupRoleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.CreateCustomGroupRoleResponse:
+        """
+        @summary 创建群角色
+        
+        @param request: CreateCustomGroupRoleRequest
+        @param headers: CreateCustomGroupRoleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateCustomGroupRoleResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.role_name):
+            body['roleName'] = request.role_name
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateCustomGroupRole',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/customGroupRole/create',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.CreateCustomGroupRoleResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_custom_group_role(
+        self,
+        request: dingtalkim__1__0_models.CreateCustomGroupRoleRequest,
+    ) -> dingtalkim__1__0_models.CreateCustomGroupRoleResponse:
+        """
+        @summary 创建群角色
+        
+        @param request: CreateCustomGroupRoleRequest
+        @return: CreateCustomGroupRoleResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.CreateCustomGroupRoleHeaders()
+        return self.create_custom_group_role_with_options(request, headers, runtime)
+
+    async def create_custom_group_role_async(
+        self,
+        request: dingtalkim__1__0_models.CreateCustomGroupRoleRequest,
+    ) -> dingtalkim__1__0_models.CreateCustomGroupRoleResponse:
+        """
+        @summary 创建群角色
+        
+        @param request: CreateCustomGroupRoleRequest
+        @return: CreateCustomGroupRoleResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.CreateCustomGroupRoleHeaders()
+        return await self.create_custom_group_role_with_options_async(request, headers, runtime)
+
+    def create_custom_user_roles_with_options(
+        self,
+        request: dingtalkim__1__0_models.CreateCustomUserRolesRequest,
+        headers: dingtalkim__1__0_models.CreateCustomUserRolesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.CreateCustomUserRolesResponse:
+        """
+        @summary 设置成员的角色
+        
+        @param request: CreateCustomUserRolesRequest
+        @param headers: CreateCustomUserRolesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateCustomUserRolesResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_role_ids):
+            body['openRoleIds'] = request.open_role_ids
+        if not UtilClient.is_unset(request.target_user_id):
+            body['targetUserId'] = request.target_user_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateCustomUserRoles',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/customUserRoles/create',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.CreateCustomUserRolesResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_custom_user_roles_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.CreateCustomUserRolesRequest,
+        headers: dingtalkim__1__0_models.CreateCustomUserRolesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.CreateCustomUserRolesResponse:
+        """
+        @summary 设置成员的角色
+        
+        @param request: CreateCustomUserRolesRequest
+        @param headers: CreateCustomUserRolesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateCustomUserRolesResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_role_ids):
+            body['openRoleIds'] = request.open_role_ids
+        if not UtilClient.is_unset(request.target_user_id):
+            body['targetUserId'] = request.target_user_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateCustomUserRoles',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/customUserRoles/create',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.CreateCustomUserRolesResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_custom_user_roles(
+        self,
+        request: dingtalkim__1__0_models.CreateCustomUserRolesRequest,
+    ) -> dingtalkim__1__0_models.CreateCustomUserRolesResponse:
+        """
+        @summary 设置成员的角色
+        
+        @param request: CreateCustomUserRolesRequest
+        @return: CreateCustomUserRolesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.CreateCustomUserRolesHeaders()
+        return self.create_custom_user_roles_with_options(request, headers, runtime)
+
+    async def create_custom_user_roles_async(
+        self,
+        request: dingtalkim__1__0_models.CreateCustomUserRolesRequest,
+    ) -> dingtalkim__1__0_models.CreateCustomUserRolesResponse:
+        """
+        @summary 设置成员的角色
+        
+        @param request: CreateCustomUserRolesRequest
+        @return: CreateCustomUserRolesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.CreateCustomUserRolesHeaders()
+        return await self.create_custom_user_roles_with_options_async(request, headers, runtime)
+
     def create_group_conversation_with_options(
         self,
         request: dingtalkim__1__0_models.CreateGroupConversationRequest,
@@ -2181,6 +2429,136 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.CreateGroupConversationHeaders()
         return await self.create_group_conversation_with_options_async(request, headers, runtime)
+
+    def create_group_from_old_group_with_options(
+        self,
+        request: dingtalkim__1__0_models.CreateGroupFromOldGroupRequest,
+        headers: dingtalkim__1__0_models.CreateGroupFromOldGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.CreateGroupFromOldGroupResponse:
+        """
+        @summary 内部群转外部群
+        
+        @param request: CreateGroupFromOldGroupRequest
+        @param headers: CreateGroupFromOldGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateGroupFromOldGroupResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.not_quit_when_emp_leave):
+            body['notQuitWhenEmpLeave'] = request.not_quit_when_emp_leave
+        if not UtilClient.is_unset(request.src_corp_id):
+            body['srcCorpId'] = request.src_corp_id
+        if not UtilClient.is_unset(request.src_open_conversation_id):
+            body['srcOpenConversationId'] = request.src_open_conversation_id
+        if not UtilClient.is_unset(request.template_id):
+            body['templateId'] = request.template_id
+        if not UtilClient.is_unset(request.uuid):
+            body['uuid'] = request.uuid
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateGroupFromOldGroup',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/sceneGroups/createGroupFromOldGroup',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.CreateGroupFromOldGroupResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_group_from_old_group_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.CreateGroupFromOldGroupRequest,
+        headers: dingtalkim__1__0_models.CreateGroupFromOldGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.CreateGroupFromOldGroupResponse:
+        """
+        @summary 内部群转外部群
+        
+        @param request: CreateGroupFromOldGroupRequest
+        @param headers: CreateGroupFromOldGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateGroupFromOldGroupResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.not_quit_when_emp_leave):
+            body['notQuitWhenEmpLeave'] = request.not_quit_when_emp_leave
+        if not UtilClient.is_unset(request.src_corp_id):
+            body['srcCorpId'] = request.src_corp_id
+        if not UtilClient.is_unset(request.src_open_conversation_id):
+            body['srcOpenConversationId'] = request.src_open_conversation_id
+        if not UtilClient.is_unset(request.template_id):
+            body['templateId'] = request.template_id
+        if not UtilClient.is_unset(request.uuid):
+            body['uuid'] = request.uuid
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateGroupFromOldGroup',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/sceneGroups/createGroupFromOldGroup',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.CreateGroupFromOldGroupResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_group_from_old_group(
+        self,
+        request: dingtalkim__1__0_models.CreateGroupFromOldGroupRequest,
+    ) -> dingtalkim__1__0_models.CreateGroupFromOldGroupResponse:
+        """
+        @summary 内部群转外部群
+        
+        @param request: CreateGroupFromOldGroupRequest
+        @return: CreateGroupFromOldGroupResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.CreateGroupFromOldGroupHeaders()
+        return self.create_group_from_old_group_with_options(request, headers, runtime)
+
+    async def create_group_from_old_group_async(
+        self,
+        request: dingtalkim__1__0_models.CreateGroupFromOldGroupRequest,
+    ) -> dingtalkim__1__0_models.CreateGroupFromOldGroupResponse:
+        """
+        @summary 内部群转外部群
+        
+        @param request: CreateGroupFromOldGroupRequest
+        @return: CreateGroupFromOldGroupResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.CreateGroupFromOldGroupHeaders()
+        return await self.create_group_from_old_group_with_options_async(request, headers, runtime)
 
     def create_interconnection_with_options(
         self,
@@ -3055,6 +3433,120 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.DismissGroupConversationHeaders()
         return await self.dismiss_group_conversation_with_options_async(request, headers, runtime)
+
+    def dsband_open_scene_group_with_options(
+        self,
+        request: dingtalkim__1__0_models.DsbandOpenSceneGroupRequest,
+        headers: dingtalkim__1__0_models.DsbandOpenSceneGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.DsbandOpenSceneGroupResponse:
+        """
+        @summary 解散群
+        
+        @param request: DsbandOpenSceneGroupRequest
+        @param headers: DsbandOpenSceneGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DsbandOpenSceneGroupResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DsbandOpenSceneGroup',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/chat/scenegroup/disband',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.DsbandOpenSceneGroupResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def dsband_open_scene_group_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.DsbandOpenSceneGroupRequest,
+        headers: dingtalkim__1__0_models.DsbandOpenSceneGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.DsbandOpenSceneGroupResponse:
+        """
+        @summary 解散群
+        
+        @param request: DsbandOpenSceneGroupRequest
+        @param headers: DsbandOpenSceneGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DsbandOpenSceneGroupResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DsbandOpenSceneGroup',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/chat/scenegroup/disband',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.DsbandOpenSceneGroupResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def dsband_open_scene_group(
+        self,
+        request: dingtalkim__1__0_models.DsbandOpenSceneGroupRequest,
+    ) -> dingtalkim__1__0_models.DsbandOpenSceneGroupResponse:
+        """
+        @summary 解散群
+        
+        @param request: DsbandOpenSceneGroupRequest
+        @return: DsbandOpenSceneGroupResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.DsbandOpenSceneGroupHeaders()
+        return self.dsband_open_scene_group_with_options(request, headers, runtime)
+
+    async def dsband_open_scene_group_async(
+        self,
+        request: dingtalkim__1__0_models.DsbandOpenSceneGroupRequest,
+    ) -> dingtalkim__1__0_models.DsbandOpenSceneGroupResponse:
+        """
+        @summary 解散群
+        
+        @param request: DsbandOpenSceneGroupRequest
+        @return: DsbandOpenSceneGroupResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.DsbandOpenSceneGroupHeaders()
+        return await self.dsband_open_scene_group_with_options_async(request, headers, runtime)
 
     def freeze_group_with_options(
         self,
@@ -7954,6 +8446,246 @@ class Client(OpenApiClient):
         headers = dingtalkim__1__0_models.PutMsgCardTopByIntelligentHeaders()
         return await self.put_msg_card_top_by_intelligent_with_options_async(request, headers, runtime)
 
+    def query_custom_group_roles_with_options(
+        self,
+        request: dingtalkim__1__0_models.QueryCustomGroupRolesRequest,
+        headers: dingtalkim__1__0_models.QueryCustomGroupRolesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.QueryCustomGroupRolesResponse:
+        """
+        @summary 查询群内所有角色
+        
+        @param request: QueryCustomGroupRolesRequest
+        @param headers: QueryCustomGroupRolesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryCustomGroupRolesResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryCustomGroupRoles',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/customGroupRole/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.QueryCustomGroupRolesResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_custom_group_roles_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.QueryCustomGroupRolesRequest,
+        headers: dingtalkim__1__0_models.QueryCustomGroupRolesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.QueryCustomGroupRolesResponse:
+        """
+        @summary 查询群内所有角色
+        
+        @param request: QueryCustomGroupRolesRequest
+        @param headers: QueryCustomGroupRolesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryCustomGroupRolesResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryCustomGroupRoles',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/customGroupRole/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.QueryCustomGroupRolesResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_custom_group_roles(
+        self,
+        request: dingtalkim__1__0_models.QueryCustomGroupRolesRequest,
+    ) -> dingtalkim__1__0_models.QueryCustomGroupRolesResponse:
+        """
+        @summary 查询群内所有角色
+        
+        @param request: QueryCustomGroupRolesRequest
+        @return: QueryCustomGroupRolesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.QueryCustomGroupRolesHeaders()
+        return self.query_custom_group_roles_with_options(request, headers, runtime)
+
+    async def query_custom_group_roles_async(
+        self,
+        request: dingtalkim__1__0_models.QueryCustomGroupRolesRequest,
+    ) -> dingtalkim__1__0_models.QueryCustomGroupRolesResponse:
+        """
+        @summary 查询群内所有角色
+        
+        @param request: QueryCustomGroupRolesRequest
+        @return: QueryCustomGroupRolesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.QueryCustomGroupRolesHeaders()
+        return await self.query_custom_group_roles_with_options_async(request, headers, runtime)
+
+    def query_custom_group_roles_by_user_with_options(
+        self,
+        request: dingtalkim__1__0_models.QueryCustomGroupRolesByUserRequest,
+        headers: dingtalkim__1__0_models.QueryCustomGroupRolesByUserHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.QueryCustomGroupRolesByUserResponse:
+        """
+        @summary 查询成员的角色
+        
+        @param request: QueryCustomGroupRolesByUserRequest
+        @param headers: QueryCustomGroupRolesByUserHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryCustomGroupRolesByUserResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.viewed_user_id):
+            body['viewedUserId'] = request.viewed_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryCustomGroupRolesByUser',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/customUserRoles/queryByUser',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.QueryCustomGroupRolesByUserResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_custom_group_roles_by_user_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.QueryCustomGroupRolesByUserRequest,
+        headers: dingtalkim__1__0_models.QueryCustomGroupRolesByUserHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.QueryCustomGroupRolesByUserResponse:
+        """
+        @summary 查询成员的角色
+        
+        @param request: QueryCustomGroupRolesByUserRequest
+        @param headers: QueryCustomGroupRolesByUserHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryCustomGroupRolesByUserResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.viewed_user_id):
+            body['viewedUserId'] = request.viewed_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryCustomGroupRolesByUser',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/customUserRoles/queryByUser',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.QueryCustomGroupRolesByUserResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_custom_group_roles_by_user(
+        self,
+        request: dingtalkim__1__0_models.QueryCustomGroupRolesByUserRequest,
+    ) -> dingtalkim__1__0_models.QueryCustomGroupRolesByUserResponse:
+        """
+        @summary 查询成员的角色
+        
+        @param request: QueryCustomGroupRolesByUserRequest
+        @return: QueryCustomGroupRolesByUserResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.QueryCustomGroupRolesByUserHeaders()
+        return self.query_custom_group_roles_by_user_with_options(request, headers, runtime)
+
+    async def query_custom_group_roles_by_user_async(
+        self,
+        request: dingtalkim__1__0_models.QueryCustomGroupRolesByUserRequest,
+    ) -> dingtalkim__1__0_models.QueryCustomGroupRolesByUserResponse:
+        """
+        @summary 查询成员的角色
+        
+        @param request: QueryCustomGroupRolesByUserRequest
+        @return: QueryCustomGroupRolesByUserResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.QueryCustomGroupRolesByUserHeaders()
+        return await self.query_custom_group_roles_by_user_with_options_async(request, headers, runtime)
+
     def query_group_info_by_app_cids_with_options(
         self,
         request: dingtalkim__1__0_models.QueryGroupInfoByAppCidsRequest,
@@ -11258,6 +11990,254 @@ class Client(OpenApiClient):
         headers = dingtalkim__1__0_models.ReleaseUnfurlingRegisterHeaders()
         return await self.release_unfurling_register_with_options_async(request, headers, runtime)
 
+    def remove_custom_group_role_with_options(
+        self,
+        request: dingtalkim__1__0_models.RemoveCustomGroupRoleRequest,
+        headers: dingtalkim__1__0_models.RemoveCustomGroupRoleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.RemoveCustomGroupRoleResponse:
+        """
+        @summary 删除群角色
+        
+        @param request: RemoveCustomGroupRoleRequest
+        @param headers: RemoveCustomGroupRoleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RemoveCustomGroupRoleResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_role_id):
+            body['openRoleId'] = request.open_role_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='RemoveCustomGroupRole',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/customGroupRole/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.RemoveCustomGroupRoleResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def remove_custom_group_role_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.RemoveCustomGroupRoleRequest,
+        headers: dingtalkim__1__0_models.RemoveCustomGroupRoleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.RemoveCustomGroupRoleResponse:
+        """
+        @summary 删除群角色
+        
+        @param request: RemoveCustomGroupRoleRequest
+        @param headers: RemoveCustomGroupRoleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RemoveCustomGroupRoleResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_role_id):
+            body['openRoleId'] = request.open_role_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='RemoveCustomGroupRole',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/customGroupRole/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.RemoveCustomGroupRoleResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def remove_custom_group_role(
+        self,
+        request: dingtalkim__1__0_models.RemoveCustomGroupRoleRequest,
+    ) -> dingtalkim__1__0_models.RemoveCustomGroupRoleResponse:
+        """
+        @summary 删除群角色
+        
+        @param request: RemoveCustomGroupRoleRequest
+        @return: RemoveCustomGroupRoleResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.RemoveCustomGroupRoleHeaders()
+        return self.remove_custom_group_role_with_options(request, headers, runtime)
+
+    async def remove_custom_group_role_async(
+        self,
+        request: dingtalkim__1__0_models.RemoveCustomGroupRoleRequest,
+    ) -> dingtalkim__1__0_models.RemoveCustomGroupRoleResponse:
+        """
+        @summary 删除群角色
+        
+        @param request: RemoveCustomGroupRoleRequest
+        @return: RemoveCustomGroupRoleResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.RemoveCustomGroupRoleHeaders()
+        return await self.remove_custom_group_role_with_options_async(request, headers, runtime)
+
+    def remove_custom_user_roles_with_options(
+        self,
+        request: dingtalkim__1__0_models.RemoveCustomUserRolesRequest,
+        headers: dingtalkim__1__0_models.RemoveCustomUserRolesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.RemoveCustomUserRolesResponse:
+        """
+        @summary 删除成员的角色
+        
+        @param request: RemoveCustomUserRolesRequest
+        @param headers: RemoveCustomUserRolesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RemoveCustomUserRolesResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_role_ids):
+            body['openRoleIds'] = request.open_role_ids
+        if not UtilClient.is_unset(request.target_user_id):
+            body['targetUserId'] = request.target_user_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='RemoveCustomUserRoles',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/customUserRoles/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.RemoveCustomUserRolesResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def remove_custom_user_roles_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.RemoveCustomUserRolesRequest,
+        headers: dingtalkim__1__0_models.RemoveCustomUserRolesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.RemoveCustomUserRolesResponse:
+        """
+        @summary 删除成员的角色
+        
+        @param request: RemoveCustomUserRolesRequest
+        @param headers: RemoveCustomUserRolesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RemoveCustomUserRolesResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_role_ids):
+            body['openRoleIds'] = request.open_role_ids
+        if not UtilClient.is_unset(request.target_user_id):
+            body['targetUserId'] = request.target_user_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='RemoveCustomUserRoles',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/customUserRoles/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.RemoveCustomUserRolesResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def remove_custom_user_roles(
+        self,
+        request: dingtalkim__1__0_models.RemoveCustomUserRolesRequest,
+    ) -> dingtalkim__1__0_models.RemoveCustomUserRolesResponse:
+        """
+        @summary 删除成员的角色
+        
+        @param request: RemoveCustomUserRolesRequest
+        @return: RemoveCustomUserRolesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.RemoveCustomUserRolesHeaders()
+        return self.remove_custom_user_roles_with_options(request, headers, runtime)
+
+    async def remove_custom_user_roles_async(
+        self,
+        request: dingtalkim__1__0_models.RemoveCustomUserRolesRequest,
+    ) -> dingtalkim__1__0_models.RemoveCustomUserRolesResponse:
+        """
+        @summary 删除成员的角色
+        
+        @param request: RemoveCustomUserRolesRequest
+        @return: RemoveCustomUserRolesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.RemoveCustomUserRolesHeaders()
+        return await self.remove_custom_user_roles_with_options_async(request, headers, runtime)
+
     def remove_robot_from_conversation_with_options(
         self,
         request: dingtalkim__1__0_models.RemoveRobotFromConversationRequest,
@@ -13429,6 +14409,132 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.UpdateConvNavTabHeaders()
         return await self.update_conv_nav_tab_with_options_async(request, headers, runtime)
+
+    def update_custom_group_role_with_options(
+        self,
+        request: dingtalkim__1__0_models.UpdateCustomGroupRoleRequest,
+        headers: dingtalkim__1__0_models.UpdateCustomGroupRoleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.UpdateCustomGroupRoleResponse:
+        """
+        @summary 更新群角色
+        
+        @param request: UpdateCustomGroupRoleRequest
+        @param headers: UpdateCustomGroupRoleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateCustomGroupRoleResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_role_id):
+            body['openRoleId'] = request.open_role_id
+        if not UtilClient.is_unset(request.role_name):
+            body['roleName'] = request.role_name
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateCustomGroupRole',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/customGroupRole/update',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.UpdateCustomGroupRoleResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_custom_group_role_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.UpdateCustomGroupRoleRequest,
+        headers: dingtalkim__1__0_models.UpdateCustomGroupRoleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.UpdateCustomGroupRoleResponse:
+        """
+        @summary 更新群角色
+        
+        @param request: UpdateCustomGroupRoleRequest
+        @param headers: UpdateCustomGroupRoleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateCustomGroupRoleResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_role_id):
+            body['openRoleId'] = request.open_role_id
+        if not UtilClient.is_unset(request.role_name):
+            body['roleName'] = request.role_name
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateCustomGroupRole',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/customGroupRole/update',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.UpdateCustomGroupRoleResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_custom_group_role(
+        self,
+        request: dingtalkim__1__0_models.UpdateCustomGroupRoleRequest,
+    ) -> dingtalkim__1__0_models.UpdateCustomGroupRoleResponse:
+        """
+        @summary 更新群角色
+        
+        @param request: UpdateCustomGroupRoleRequest
+        @return: UpdateCustomGroupRoleResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.UpdateCustomGroupRoleHeaders()
+        return self.update_custom_group_role_with_options(request, headers, runtime)
+
+    async def update_custom_group_role_async(
+        self,
+        request: dingtalkim__1__0_models.UpdateCustomGroupRoleRequest,
+    ) -> dingtalkim__1__0_models.UpdateCustomGroupRoleResponse:
+        """
+        @summary 更新群角色
+        
+        @param request: UpdateCustomGroupRoleRequest
+        @return: UpdateCustomGroupRoleResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.UpdateCustomGroupRoleHeaders()
+        return await self.update_custom_group_role_with_options_async(request, headers, runtime)
 
     def update_group_avatar_with_options(
         self,

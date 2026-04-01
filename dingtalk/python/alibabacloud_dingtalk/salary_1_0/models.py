@@ -920,6 +920,346 @@ class ListSalaryCalculationResponse(TeaModel):
         return self
 
 
+class RevokeSalaryArchivesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class RevokeSalaryArchivesRequest(TeaModel):
+    def __init__(
+        self,
+        effective_date: str = None,
+        op_user_id: str = None,
+        user_id: str = None,
+    ):
+        # This parameter is required.
+        self.effective_date = effective_date
+        # This parameter is required.
+        self.op_user_id = op_user_id
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.effective_date is not None:
+            result['effectiveDate'] = self.effective_date
+        if self.op_user_id is not None:
+            result['opUserId'] = self.op_user_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('effectiveDate') is not None:
+            self.effective_date = m.get('effectiveDate')
+        if m.get('opUserId') is not None:
+            self.op_user_id = m.get('opUserId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class RevokeSalaryArchivesResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: Dict[str, Any] = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class RevokeSalaryArchivesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: RevokeSalaryArchivesResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = RevokeSalaryArchivesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SaveSalaryArchivesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SaveSalaryArchivesRequestContents(TeaModel):
+    def __init__(
+        self,
+        salary_item_id: str = None,
+        salary_item_value: str = None,
+    ):
+        # This parameter is required.
+        self.salary_item_id = salary_item_id
+        self.salary_item_value = salary_item_value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.salary_item_id is not None:
+            result['salaryItemId'] = self.salary_item_id
+        if self.salary_item_value is not None:
+            result['salaryItemValue'] = self.salary_item_value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('salaryItemId') is not None:
+            self.salary_item_id = m.get('salaryItemId')
+        if m.get('salaryItemValue') is not None:
+            self.salary_item_value = m.get('salaryItemValue')
+        return self
+
+
+class SaveSalaryArchivesRequest(TeaModel):
+    def __init__(
+        self,
+        adjust_memo: str = None,
+        contents: List[SaveSalaryArchivesRequestContents] = None,
+        effective_date: str = None,
+        op_user_id: str = None,
+        user_id: str = None,
+    ):
+        self.adjust_memo = adjust_memo
+        self.contents = contents
+        # This parameter is required.
+        self.effective_date = effective_date
+        # This parameter is required.
+        self.op_user_id = op_user_id
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        if self.contents:
+            for k in self.contents:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.adjust_memo is not None:
+            result['adjustMemo'] = self.adjust_memo
+        result['contents'] = []
+        if self.contents is not None:
+            for k in self.contents:
+                result['contents'].append(k.to_map() if k else None)
+        if self.effective_date is not None:
+            result['effectiveDate'] = self.effective_date
+        if self.op_user_id is not None:
+            result['opUserId'] = self.op_user_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('adjustMemo') is not None:
+            self.adjust_memo = m.get('adjustMemo')
+        self.contents = []
+        if m.get('contents') is not None:
+            for k in m.get('contents'):
+                temp_model = SaveSalaryArchivesRequestContents()
+                self.contents.append(temp_model.from_map(k))
+        if m.get('effectiveDate') is not None:
+            self.effective_date = m.get('effectiveDate')
+        if m.get('opUserId') is not None:
+            self.op_user_id = m.get('opUserId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class SaveSalaryArchivesResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: Dict[str, Any] = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class SaveSalaryArchivesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: SaveSalaryArchivesResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = SaveSalaryArchivesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class WriteSalaryCalculationHeaders(TeaModel):
     def __init__(
         self,

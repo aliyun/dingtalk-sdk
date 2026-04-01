@@ -12239,9 +12239,11 @@ class SignOutRequest(TeaModel):
     def __init__(
         self,
         reason: str = None,
+        reason_i18n_for_employee: Dict[str, str] = None,
         user_id: str = None,
     ):
         self.reason = reason
+        self.reason_i18n_for_employee = reason_i18n_for_employee
         # This parameter is required.
         self.user_id = user_id
 
@@ -12256,6 +12258,8 @@ class SignOutRequest(TeaModel):
         result = dict()
         if self.reason is not None:
             result['reason'] = self.reason
+        if self.reason_i18n_for_employee is not None:
+            result['reasonI18nForEmployee'] = self.reason_i18n_for_employee
         if self.user_id is not None:
             result['userId'] = self.user_id
         return result
@@ -12264,6 +12268,8 @@ class SignOutRequest(TeaModel):
         m = m or dict()
         if m.get('reason') is not None:
             self.reason = m.get('reason')
+        if m.get('reasonI18nForEmployee') is not None:
+            self.reason_i18n_for_employee = m.get('reasonI18nForEmployee')
         if m.get('userId') is not None:
             self.user_id = m.get('userId')
         return self
@@ -12654,6 +12660,2298 @@ class SubmitHandoverResourceResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SubmitHandoverResourceResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class TalentAddCustomTagHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class TalentAddCustomTagRequest(TeaModel):
+    def __init__(
+        self,
+        sort_order: int = None,
+        tag_code: str = None,
+        tag_name: str = None,
+        user_id: str = None,
+    ):
+        self.sort_order = sort_order
+        self.tag_code = tag_code
+        # This parameter is required.
+        self.tag_name = tag_name
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.sort_order is not None:
+            result['sortOrder'] = self.sort_order
+        if self.tag_code is not None:
+            result['tagCode'] = self.tag_code
+        if self.tag_name is not None:
+            result['tagName'] = self.tag_name
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('sortOrder') is not None:
+            self.sort_order = m.get('sortOrder')
+        if m.get('tagCode') is not None:
+            self.tag_code = m.get('tagCode')
+        if m.get('tagName') is not None:
+            self.tag_name = m.get('tagName')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class TalentAddCustomTagResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        tag_code: str = None,
+        tag_name: str = None,
+    ):
+        self.tag_code = tag_code
+        self.tag_name = tag_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.tag_code is not None:
+            result['tagCode'] = self.tag_code
+        if self.tag_name is not None:
+            result['tagName'] = self.tag_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('tagCode') is not None:
+            self.tag_code = m.get('tagCode')
+        if m.get('tagName') is not None:
+            self.tag_name = m.get('tagName')
+        return self
+
+
+class TalentAddCustomTagResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: TalentAddCustomTagResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = TalentAddCustomTagResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class TalentAddCustomTagResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: TalentAddCustomTagResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = TalentAddCustomTagResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class TalentAddObjectiveTagHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class TalentAddObjectiveTagRequest(TeaModel):
+    def __init__(
+        self,
+        sort_order: int = None,
+        tag_code: str = None,
+        tag_name: str = None,
+        user_id: str = None,
+    ):
+        self.sort_order = sort_order
+        self.tag_code = tag_code
+        # This parameter is required.
+        self.tag_name = tag_name
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.sort_order is not None:
+            result['sortOrder'] = self.sort_order
+        if self.tag_code is not None:
+            result['tagCode'] = self.tag_code
+        if self.tag_name is not None:
+            result['tagName'] = self.tag_name
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('sortOrder') is not None:
+            self.sort_order = m.get('sortOrder')
+        if m.get('tagCode') is not None:
+            self.tag_code = m.get('tagCode')
+        if m.get('tagName') is not None:
+            self.tag_name = m.get('tagName')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class TalentAddObjectiveTagResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        tag_code: str = None,
+        tag_name: str = None,
+    ):
+        self.tag_code = tag_code
+        self.tag_name = tag_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.tag_code is not None:
+            result['tagCode'] = self.tag_code
+        if self.tag_name is not None:
+            result['tagName'] = self.tag_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('tagCode') is not None:
+            self.tag_code = m.get('tagCode')
+        if m.get('tagName') is not None:
+            self.tag_name = m.get('tagName')
+        return self
+
+
+class TalentAddObjectiveTagResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: TalentAddObjectiveTagResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = TalentAddObjectiveTagResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class TalentAddObjectiveTagResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: TalentAddObjectiveTagResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = TalentAddObjectiveTagResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class TalentAddPersonalityTagHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class TalentAddPersonalityTagRequest(TeaModel):
+    def __init__(
+        self,
+        category_code: str = None,
+        category_name: str = None,
+        category_sort_order: int = None,
+        sort_order: int = None,
+        tag_code: str = None,
+        tag_name: str = None,
+    ):
+        self.category_code = category_code
+        # This parameter is required.
+        self.category_name = category_name
+        self.category_sort_order = category_sort_order
+        self.sort_order = sort_order
+        self.tag_code = tag_code
+        # This parameter is required.
+        self.tag_name = tag_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.category_code is not None:
+            result['categoryCode'] = self.category_code
+        if self.category_name is not None:
+            result['categoryName'] = self.category_name
+        if self.category_sort_order is not None:
+            result['categorySortOrder'] = self.category_sort_order
+        if self.sort_order is not None:
+            result['sortOrder'] = self.sort_order
+        if self.tag_code is not None:
+            result['tagCode'] = self.tag_code
+        if self.tag_name is not None:
+            result['tagName'] = self.tag_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('categoryCode') is not None:
+            self.category_code = m.get('categoryCode')
+        if m.get('categoryName') is not None:
+            self.category_name = m.get('categoryName')
+        if m.get('categorySortOrder') is not None:
+            self.category_sort_order = m.get('categorySortOrder')
+        if m.get('sortOrder') is not None:
+            self.sort_order = m.get('sortOrder')
+        if m.get('tagCode') is not None:
+            self.tag_code = m.get('tagCode')
+        if m.get('tagName') is not None:
+            self.tag_name = m.get('tagName')
+        return self
+
+
+class TalentAddPersonalityTagResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        category_code: str = None,
+        category_name: str = None,
+        tag_code: str = None,
+        tag_name: str = None,
+    ):
+        self.category_code = category_code
+        self.category_name = category_name
+        self.tag_code = tag_code
+        self.tag_name = tag_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.category_code is not None:
+            result['categoryCode'] = self.category_code
+        if self.category_name is not None:
+            result['categoryName'] = self.category_name
+        if self.tag_code is not None:
+            result['tagCode'] = self.tag_code
+        if self.tag_name is not None:
+            result['tagName'] = self.tag_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('categoryCode') is not None:
+            self.category_code = m.get('categoryCode')
+        if m.get('categoryName') is not None:
+            self.category_name = m.get('categoryName')
+        if m.get('tagCode') is not None:
+            self.tag_code = m.get('tagCode')
+        if m.get('tagName') is not None:
+            self.tag_name = m.get('tagName')
+        return self
+
+
+class TalentAddPersonalityTagResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: TalentAddPersonalityTagResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = TalentAddPersonalityTagResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class TalentAddPersonalityTagResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: TalentAddPersonalityTagResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = TalentAddPersonalityTagResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class TalentDeleteCustomTagHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class TalentDeleteCustomTagRequest(TeaModel):
+    def __init__(
+        self,
+        tag_code: str = None,
+        user_id: str = None,
+    ):
+        # This parameter is required.
+        self.tag_code = tag_code
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.tag_code is not None:
+            result['tagCode'] = self.tag_code
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('tagCode') is not None:
+            self.tag_code = m.get('tagCode')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class TalentDeleteCustomTagResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class TalentDeleteCustomTagResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: TalentDeleteCustomTagResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = TalentDeleteCustomTagResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class TalentDeleteCustomTagResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: TalentDeleteCustomTagResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = TalentDeleteCustomTagResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class TalentDeleteObjectiveTagHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class TalentDeleteObjectiveTagRequest(TeaModel):
+    def __init__(
+        self,
+        tag_code: str = None,
+        user_id: str = None,
+    ):
+        # This parameter is required.
+        self.tag_code = tag_code
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.tag_code is not None:
+            result['tagCode'] = self.tag_code
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('tagCode') is not None:
+            self.tag_code = m.get('tagCode')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class TalentDeleteObjectiveTagResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class TalentDeleteObjectiveTagResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: TalentDeleteObjectiveTagResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = TalentDeleteObjectiveTagResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class TalentDeleteObjectiveTagResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: TalentDeleteObjectiveTagResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = TalentDeleteObjectiveTagResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class TalentDeletePersonalityTagHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class TalentDeletePersonalityTagRequest(TeaModel):
+    def __init__(
+        self,
+        tag_code: str = None,
+    ):
+        # This parameter is required.
+        self.tag_code = tag_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.tag_code is not None:
+            result['tagCode'] = self.tag_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('tagCode') is not None:
+            self.tag_code = m.get('tagCode')
+        return self
+
+
+class TalentDeletePersonalityTagResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class TalentDeletePersonalityTagResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: TalentDeletePersonalityTagResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = TalentDeletePersonalityTagResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class TalentDeletePersonalityTagResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: TalentDeletePersonalityTagResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = TalentDeletePersonalityTagResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class TalentLikeTagHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class TalentLikeTagRequest(TeaModel):
+    def __init__(
+        self,
+        action_type: str = None,
+        operator_user_id: str = None,
+        tag_code: str = None,
+        user_id: str = None,
+    ):
+        # This parameter is required.
+        self.action_type = action_type
+        # This parameter is required.
+        self.operator_user_id = operator_user_id
+        # This parameter is required.
+        self.tag_code = tag_code
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action_type is not None:
+            result['actionType'] = self.action_type
+        if self.operator_user_id is not None:
+            result['operatorUserId'] = self.operator_user_id
+        if self.tag_code is not None:
+            result['tagCode'] = self.tag_code
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('actionType') is not None:
+            self.action_type = m.get('actionType')
+        if m.get('operatorUserId') is not None:
+            self.operator_user_id = m.get('operatorUserId')
+        if m.get('tagCode') is not None:
+            self.tag_code = m.get('tagCode')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class TalentLikeTagResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class TalentLikeTagResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: TalentLikeTagResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = TalentLikeTagResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class TalentLikeTagResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: TalentLikeTagResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = TalentLikeTagResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class TalentQueryCustomTagHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class TalentQueryCustomTagRequest(TeaModel):
+    def __init__(
+        self,
+        user_id: str = None,
+    ):
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class TalentQueryCustomTagResponseBodyResultTags(TeaModel):
+    def __init__(
+        self,
+        sort_order: int = None,
+        tag_code: str = None,
+        tag_name: str = None,
+    ):
+        self.sort_order = sort_order
+        self.tag_code = tag_code
+        self.tag_name = tag_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.sort_order is not None:
+            result['sortOrder'] = self.sort_order
+        if self.tag_code is not None:
+            result['tagCode'] = self.tag_code
+        if self.tag_name is not None:
+            result['tagName'] = self.tag_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('sortOrder') is not None:
+            self.sort_order = m.get('sortOrder')
+        if m.get('tagCode') is not None:
+            self.tag_code = m.get('tagCode')
+        if m.get('tagName') is not None:
+            self.tag_name = m.get('tagName')
+        return self
+
+
+class TalentQueryCustomTagResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        tags: List[TalentQueryCustomTagResponseBodyResultTags] = None,
+    ):
+        self.tags = tags
+
+    def validate(self):
+        if self.tags:
+            for k in self.tags:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['tags'] = []
+        if self.tags is not None:
+            for k in self.tags:
+                result['tags'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.tags = []
+        if m.get('tags') is not None:
+            for k in m.get('tags'):
+                temp_model = TalentQueryCustomTagResponseBodyResultTags()
+                self.tags.append(temp_model.from_map(k))
+        return self
+
+
+class TalentQueryCustomTagResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: TalentQueryCustomTagResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = TalentQueryCustomTagResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class TalentQueryCustomTagResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: TalentQueryCustomTagResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = TalentQueryCustomTagResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class TalentQueryObjectiveTagHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class TalentQueryObjectiveTagRequest(TeaModel):
+    def __init__(
+        self,
+        user_id: str = None,
+    ):
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class TalentQueryObjectiveTagResponseBodyResultTags(TeaModel):
+    def __init__(
+        self,
+        sort_order: int = None,
+        tag_code: str = None,
+        tag_name: str = None,
+    ):
+        self.sort_order = sort_order
+        self.tag_code = tag_code
+        self.tag_name = tag_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.sort_order is not None:
+            result['sortOrder'] = self.sort_order
+        if self.tag_code is not None:
+            result['tagCode'] = self.tag_code
+        if self.tag_name is not None:
+            result['tagName'] = self.tag_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('sortOrder') is not None:
+            self.sort_order = m.get('sortOrder')
+        if m.get('tagCode') is not None:
+            self.tag_code = m.get('tagCode')
+        if m.get('tagName') is not None:
+            self.tag_name = m.get('tagName')
+        return self
+
+
+class TalentQueryObjectiveTagResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        tags: List[TalentQueryObjectiveTagResponseBodyResultTags] = None,
+    ):
+        self.tags = tags
+
+    def validate(self):
+        if self.tags:
+            for k in self.tags:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['tags'] = []
+        if self.tags is not None:
+            for k in self.tags:
+                result['tags'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.tags = []
+        if m.get('tags') is not None:
+            for k in m.get('tags'):
+                temp_model = TalentQueryObjectiveTagResponseBodyResultTags()
+                self.tags.append(temp_model.from_map(k))
+        return self
+
+
+class TalentQueryObjectiveTagResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: TalentQueryObjectiveTagResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = TalentQueryObjectiveTagResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class TalentQueryObjectiveTagResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: TalentQueryObjectiveTagResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = TalentQueryObjectiveTagResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class TalentQueryPersonalityTagHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class TalentQueryPersonalityTagResponseBodyResultTags(TeaModel):
+    def __init__(
+        self,
+        category_code: str = None,
+        category_name: str = None,
+        category_sort_order: int = None,
+        sort_order: int = None,
+        tag_code: str = None,
+        tag_name: str = None,
+    ):
+        self.category_code = category_code
+        self.category_name = category_name
+        self.category_sort_order = category_sort_order
+        self.sort_order = sort_order
+        self.tag_code = tag_code
+        self.tag_name = tag_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.category_code is not None:
+            result['categoryCode'] = self.category_code
+        if self.category_name is not None:
+            result['categoryName'] = self.category_name
+        if self.category_sort_order is not None:
+            result['categorySortOrder'] = self.category_sort_order
+        if self.sort_order is not None:
+            result['sortOrder'] = self.sort_order
+        if self.tag_code is not None:
+            result['tagCode'] = self.tag_code
+        if self.tag_name is not None:
+            result['tagName'] = self.tag_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('categoryCode') is not None:
+            self.category_code = m.get('categoryCode')
+        if m.get('categoryName') is not None:
+            self.category_name = m.get('categoryName')
+        if m.get('categorySortOrder') is not None:
+            self.category_sort_order = m.get('categorySortOrder')
+        if m.get('sortOrder') is not None:
+            self.sort_order = m.get('sortOrder')
+        if m.get('tagCode') is not None:
+            self.tag_code = m.get('tagCode')
+        if m.get('tagName') is not None:
+            self.tag_name = m.get('tagName')
+        return self
+
+
+class TalentQueryPersonalityTagResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        tags: List[TalentQueryPersonalityTagResponseBodyResultTags] = None,
+    ):
+        self.tags = tags
+
+    def validate(self):
+        if self.tags:
+            for k in self.tags:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['tags'] = []
+        if self.tags is not None:
+            for k in self.tags:
+                result['tags'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.tags = []
+        if m.get('tags') is not None:
+            for k in m.get('tags'):
+                temp_model = TalentQueryPersonalityTagResponseBodyResultTags()
+                self.tags.append(temp_model.from_map(k))
+        return self
+
+
+class TalentQueryPersonalityTagResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: TalentQueryPersonalityTagResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = TalentQueryPersonalityTagResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class TalentQueryPersonalityTagResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: TalentQueryPersonalityTagResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = TalentQueryPersonalityTagResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class TalentQueryTagLikeDetailListHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class TalentQueryTagLikeDetailListRequest(TeaModel):
+    def __init__(
+        self,
+        cursor: int = None,
+        size: int = None,
+        tag_code: str = None,
+        user_id: str = None,
+    ):
+        self.cursor = cursor
+        self.size = size
+        # This parameter is required.
+        self.tag_code = tag_code
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.cursor is not None:
+            result['cursor'] = self.cursor
+        if self.size is not None:
+            result['size'] = self.size
+        if self.tag_code is not None:
+            result['tagCode'] = self.tag_code
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cursor') is not None:
+            self.cursor = m.get('cursor')
+        if m.get('size') is not None:
+            self.size = m.get('size')
+        if m.get('tagCode') is not None:
+            self.tag_code = m.get('tagCode')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class TalentQueryTagLikeDetailListResponseBodyResultLikeDetails(TeaModel):
+    def __init__(
+        self,
+        like_timestamp: int = None,
+        operator_user_id: str = None,
+    ):
+        self.like_timestamp = like_timestamp
+        self.operator_user_id = operator_user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.like_timestamp is not None:
+            result['likeTimestamp'] = self.like_timestamp
+        if self.operator_user_id is not None:
+            result['operatorUserId'] = self.operator_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('likeTimestamp') is not None:
+            self.like_timestamp = m.get('likeTimestamp')
+        if m.get('operatorUserId') is not None:
+            self.operator_user_id = m.get('operatorUserId')
+        return self
+
+
+class TalentQueryTagLikeDetailListResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        like_details: List[TalentQueryTagLikeDetailListResponseBodyResultLikeDetails] = None,
+        next_cursor: int = None,
+    ):
+        self.has_more = has_more
+        self.like_details = like_details
+        self.next_cursor = next_cursor
+
+    def validate(self):
+        if self.like_details:
+            for k in self.like_details:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['likeDetails'] = []
+        if self.like_details is not None:
+            for k in self.like_details:
+                result['likeDetails'].append(k.to_map() if k else None)
+        if self.next_cursor is not None:
+            result['nextCursor'] = self.next_cursor
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.like_details = []
+        if m.get('likeDetails') is not None:
+            for k in m.get('likeDetails'):
+                temp_model = TalentQueryTagLikeDetailListResponseBodyResultLikeDetails()
+                self.like_details.append(temp_model.from_map(k))
+        if m.get('nextCursor') is not None:
+            self.next_cursor = m.get('nextCursor')
+        return self
+
+
+class TalentQueryTagLikeDetailListResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: TalentQueryTagLikeDetailListResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = TalentQueryTagLikeDetailListResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class TalentQueryTagLikeDetailListResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: TalentQueryTagLikeDetailListResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = TalentQueryTagLikeDetailListResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class TalentQueryTagLikeListHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class TalentQueryTagLikeListRequest(TeaModel):
+    def __init__(
+        self,
+        operator_user_id: str = None,
+        user_id: str = None,
+    ):
+        self.operator_user_id = operator_user_id
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operator_user_id is not None:
+            result['operatorUserId'] = self.operator_user_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operatorUserId') is not None:
+            self.operator_user_id = m.get('operatorUserId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class TalentQueryTagLikeListResponseBodyResultTagLikes(TeaModel):
+    def __init__(
+        self,
+        has_liked: bool = None,
+        like_count: int = None,
+        tag_code: str = None,
+        tag_name: str = None,
+    ):
+        self.has_liked = has_liked
+        self.like_count = like_count
+        self.tag_code = tag_code
+        self.tag_name = tag_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_liked is not None:
+            result['hasLiked'] = self.has_liked
+        if self.like_count is not None:
+            result['likeCount'] = self.like_count
+        if self.tag_code is not None:
+            result['tagCode'] = self.tag_code
+        if self.tag_name is not None:
+            result['tagName'] = self.tag_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasLiked') is not None:
+            self.has_liked = m.get('hasLiked')
+        if m.get('likeCount') is not None:
+            self.like_count = m.get('likeCount')
+        if m.get('tagCode') is not None:
+            self.tag_code = m.get('tagCode')
+        if m.get('tagName') is not None:
+            self.tag_name = m.get('tagName')
+        return self
+
+
+class TalentQueryTagLikeListResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        tag_likes: List[TalentQueryTagLikeListResponseBodyResultTagLikes] = None,
+    ):
+        self.tag_likes = tag_likes
+
+    def validate(self):
+        if self.tag_likes:
+            for k in self.tag_likes:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['tagLikes'] = []
+        if self.tag_likes is not None:
+            for k in self.tag_likes:
+                result['tagLikes'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.tag_likes = []
+        if m.get('tagLikes') is not None:
+            for k in m.get('tagLikes'):
+                temp_model = TalentQueryTagLikeListResponseBodyResultTagLikes()
+                self.tag_likes.append(temp_model.from_map(k))
+        return self
+
+
+class TalentQueryTagLikeListResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: TalentQueryTagLikeListResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = TalentQueryTagLikeListResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class TalentQueryTagLikeListResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: TalentQueryTagLikeListResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = TalentQueryTagLikeListResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

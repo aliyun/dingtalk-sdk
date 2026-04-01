@@ -452,6 +452,8 @@ class Client(OpenApiClient):
             body['appType'] = request.app_type
         if not UtilClient.is_unset(request.asynchronous_execution):
             body['asynchronousExecution'] = request.asynchronous_execution
+        if not UtilClient.is_unset(request.env):
+            body['env'] = request.env
         if not UtilClient.is_unset(request.form_data_json_list):
             body['formDataJsonList'] = request.form_data_json_list
         if not UtilClient.is_unset(request.form_uuid):
@@ -509,6 +511,8 @@ class Client(OpenApiClient):
             body['appType'] = request.app_type
         if not UtilClient.is_unset(request.asynchronous_execution):
             body['asynchronousExecution'] = request.asynchronous_execution
+        if not UtilClient.is_unset(request.env):
+            body['env'] = request.env
         if not UtilClient.is_unset(request.form_data_json_list):
             body['formDataJsonList'] = request.form_data_json_list
         if not UtilClient.is_unset(request.form_uuid):
@@ -594,6 +598,8 @@ class Client(OpenApiClient):
             body['appType'] = request.app_type
         if not UtilClient.is_unset(request.asynchronous_execution):
             body['asynchronousExecution'] = request.asynchronous_execution
+        if not UtilClient.is_unset(request.env):
+            body['env'] = request.env
         if not UtilClient.is_unset(request.form_instance_id_list):
             body['formInstanceIdList'] = request.form_instance_id_list
         if not UtilClient.is_unset(request.form_uuid):
@@ -655,6 +661,8 @@ class Client(OpenApiClient):
             body['appType'] = request.app_type
         if not UtilClient.is_unset(request.asynchronous_execution):
             body['asynchronousExecution'] = request.asynchronous_execution
+        if not UtilClient.is_unset(request.env):
+            body['env'] = request.env
         if not UtilClient.is_unset(request.form_instance_id_list):
             body['formInstanceIdList'] = request.form_instance_id_list
         if not UtilClient.is_unset(request.form_uuid):
@@ -744,6 +752,8 @@ class Client(OpenApiClient):
             body['appType'] = request.app_type
         if not UtilClient.is_unset(request.asynchronous_execution):
             body['asynchronousExecution'] = request.asynchronous_execution
+        if not UtilClient.is_unset(request.env):
+            body['env'] = request.env
         if not UtilClient.is_unset(request.form_uuid):
             body['formUuid'] = request.form_uuid
         if not UtilClient.is_unset(request.ignore_empty):
@@ -803,6 +813,8 @@ class Client(OpenApiClient):
             body['appType'] = request.app_type
         if not UtilClient.is_unset(request.asynchronous_execution):
             body['asynchronousExecution'] = request.asynchronous_execution
+        if not UtilClient.is_unset(request.env):
+            body['env'] = request.env
         if not UtilClient.is_unset(request.form_uuid):
             body['formUuid'] = request.form_uuid
         if not UtilClient.is_unset(request.ignore_empty):
@@ -1452,6 +1464,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.app_type):
             query['appType'] = request.app_type
+        if not UtilClient.is_unset(request.env):
+            query['env'] = request.env
         if not UtilClient.is_unset(request.form_instance_id):
             query['formInstanceId'] = request.form_instance_id
         if not UtilClient.is_unset(request.language):
@@ -1503,6 +1517,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.app_type):
             query['appType'] = request.app_type
+        if not UtilClient.is_unset(request.env):
+            query['env'] = request.env
         if not UtilClient.is_unset(request.form_instance_id):
             query['formInstanceId'] = request.form_instance_id
         if not UtilClient.is_unset(request.language):

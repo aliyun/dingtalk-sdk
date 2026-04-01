@@ -771,6 +771,7 @@ class CreateOrUpdateFormDataRequest(TeaModel):
     def __init__(
         self,
         app_type: str = None,
+        env: str = None,
         form_data_json: str = None,
         form_uuid: str = None,
         no_execute_expression: bool = None,
@@ -781,6 +782,7 @@ class CreateOrUpdateFormDataRequest(TeaModel):
     ):
         # This parameter is required.
         self.app_type = app_type
+        self.env = env
         # This parameter is required.
         self.form_data_json = form_data_json
         # This parameter is required.
@@ -805,6 +807,8 @@ class CreateOrUpdateFormDataRequest(TeaModel):
         result = dict()
         if self.app_type is not None:
             result['appType'] = self.app_type
+        if self.env is not None:
+            result['env'] = self.env
         if self.form_data_json is not None:
             result['formDataJson'] = self.form_data_json
         if self.form_uuid is not None:
@@ -825,6 +829,8 @@ class CreateOrUpdateFormDataRequest(TeaModel):
         m = m or dict()
         if m.get('appType') is not None:
             self.app_type = m.get('appType')
+        if m.get('env') is not None:
+            self.env = m.get('env')
         if m.get('formDataJson') is not None:
             self.form_data_json = m.get('formDataJson')
         if m.get('formUuid') is not None:
@@ -3979,6 +3985,7 @@ class SaveFormDataRequest(TeaModel):
     def __init__(
         self,
         app_type: str = None,
+        env: str = None,
         form_data_json: str = None,
         form_uuid: str = None,
         language: str = None,
@@ -3988,6 +3995,7 @@ class SaveFormDataRequest(TeaModel):
     ):
         # This parameter is required.
         self.app_type = app_type
+        self.env = env
         # This parameter is required.
         self.form_data_json = form_data_json
         # This parameter is required.
@@ -4010,6 +4018,8 @@ class SaveFormDataRequest(TeaModel):
         result = dict()
         if self.app_type is not None:
             result['appType'] = self.app_type
+        if self.env is not None:
+            result['env'] = self.env
         if self.form_data_json is not None:
             result['formDataJson'] = self.form_data_json
         if self.form_uuid is not None:
@@ -4028,6 +4038,8 @@ class SaveFormDataRequest(TeaModel):
         m = m or dict()
         if m.get('appType') is not None:
             self.app_type = m.get('appType')
+        if m.get('env') is not None:
+            self.env = m.get('env')
         if m.get('formDataJson') is not None:
             self.form_data_json = m.get('formDataJson')
         if m.get('formUuid') is not None:
@@ -4358,6 +4370,7 @@ class SearchFormDataSecondGenerationRequest(TeaModel):
         app_type: str = None,
         create_from_time_gmt: str = None,
         create_to_time_gmt: str = None,
+        env: str = None,
         form_uuid: str = None,
         modified_from_time_gmt: str = None,
         modified_to_time_gmt: str = None,
@@ -4374,6 +4387,7 @@ class SearchFormDataSecondGenerationRequest(TeaModel):
         self.app_type = app_type
         self.create_from_time_gmt = create_from_time_gmt
         self.create_to_time_gmt = create_to_time_gmt
+        self.env = env
         # This parameter is required.
         self.form_uuid = form_uuid
         self.modified_from_time_gmt = modified_from_time_gmt
@@ -4404,6 +4418,8 @@ class SearchFormDataSecondGenerationRequest(TeaModel):
             result['createFromTimeGMT'] = self.create_from_time_gmt
         if self.create_to_time_gmt is not None:
             result['createToTimeGMT'] = self.create_to_time_gmt
+        if self.env is not None:
+            result['env'] = self.env
         if self.form_uuid is not None:
             result['formUuid'] = self.form_uuid
         if self.modified_from_time_gmt is not None:
@@ -4436,6 +4452,8 @@ class SearchFormDataSecondGenerationRequest(TeaModel):
             self.create_from_time_gmt = m.get('createFromTimeGMT')
         if m.get('createToTimeGMT') is not None:
             self.create_to_time_gmt = m.get('createToTimeGMT')
+        if m.get('env') is not None:
+            self.env = m.get('env')
         if m.get('formUuid') is not None:
             self.form_uuid = m.get('formUuid')
         if m.get('modifiedFromTimeGMT') is not None:

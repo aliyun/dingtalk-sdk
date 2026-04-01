@@ -43,11 +43,13 @@ class HrbrainBizDataQueryRequest(TeaModel):
         biz_code: str = None,
         max_results: int = None,
         next_token: str = None,
+        user_id: str = None,
     ):
         # This parameter is required.
         self.biz_code = biz_code
         self.max_results = max_results
         self.next_token = next_token
+        self.user_id = user_id
 
     def validate(self):
         pass
@@ -64,6 +66,8 @@ class HrbrainBizDataQueryRequest(TeaModel):
             result['maxResults'] = self.max_results
         if self.next_token is not None:
             result['nextToken'] = self.next_token
+        if self.user_id is not None:
+            result['userId'] = self.user_id
         return result
 
     def from_map(self, m: dict = None):
@@ -74,6 +78,8 @@ class HrbrainBizDataQueryRequest(TeaModel):
             self.max_results = m.get('maxResults')
         if m.get('nextToken') is not None:
             self.next_token = m.get('nextToken')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
         return self
 
 
@@ -3552,11 +3558,13 @@ class HrbrainEmpPoolQueryRequest(TeaModel):
         labels: List[str] = None,
         max_results: int = None,
         next_token: int = None,
+        user_id: str = None,
     ):
         self.keyword = keyword
         self.labels = labels
         self.max_results = max_results
         self.next_token = next_token
+        self.user_id = user_id
 
     def validate(self):
         pass
@@ -3575,6 +3583,8 @@ class HrbrainEmpPoolQueryRequest(TeaModel):
             result['maxResults'] = self.max_results
         if self.next_token is not None:
             result['nextToken'] = self.next_token
+        if self.user_id is not None:
+            result['userId'] = self.user_id
         return result
 
     def from_map(self, m: dict = None):
@@ -3587,6 +3597,8 @@ class HrbrainEmpPoolQueryRequest(TeaModel):
             self.max_results = m.get('maxResults')
         if m.get('nextToken') is not None:
             self.next_token = m.get('nextToken')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
         return self
 
 
@@ -3856,10 +3868,12 @@ class HrbrainEmpPoolUserRequest(TeaModel):
         max_results: int = None,
         next_token: int = None,
         pool_code: str = None,
+        user_id: str = None,
     ):
         self.max_results = max_results
         self.next_token = next_token
         self.pool_code = pool_code
+        self.user_id = user_id
 
     def validate(self):
         pass
@@ -3876,6 +3890,8 @@ class HrbrainEmpPoolUserRequest(TeaModel):
             result['nextToken'] = self.next_token
         if self.pool_code is not None:
             result['poolCode'] = self.pool_code
+        if self.user_id is not None:
+            result['userId'] = self.user_id
         return result
 
     def from_map(self, m: dict = None):
@@ -3886,6 +3902,8 @@ class HrbrainEmpPoolUserRequest(TeaModel):
             self.next_token = m.get('nextToken')
         if m.get('poolCode') is not None:
             self.pool_code = m.get('poolCode')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
         return self
 
 

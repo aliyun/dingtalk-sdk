@@ -276,8 +276,6 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.answerer):
             body['answerer'] = request.answerer
-        if not UtilClient.is_unset(request.corp_id):
-            body['corpId'] = request.corp_id
         if not UtilClient.is_unset(request.drag_request_context):
             body['dragRequestContext'] = request.drag_request_context
         if not UtilClient.is_unset(request.keyword_list):
@@ -286,8 +284,6 @@ class Client(OpenApiClient):
             body['limit'] = request.limit
         if not UtilClient.is_unset(request.question):
             body['question'] = request.question
-        if not UtilClient.is_unset(request.questioner):
-            body['questioner'] = request.questioner
         if not UtilClient.is_unset(request.retrieval_extend_params):
             body['retrievalExtendParams'] = request.retrieval_extend_params
         if not UtilClient.is_unset(request.retrieve_score_threshold):
@@ -341,8 +337,6 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.answerer):
             body['answerer'] = request.answerer
-        if not UtilClient.is_unset(request.corp_id):
-            body['corpId'] = request.corp_id
         if not UtilClient.is_unset(request.drag_request_context):
             body['dragRequestContext'] = request.drag_request_context
         if not UtilClient.is_unset(request.keyword_list):
@@ -351,8 +345,6 @@ class Client(OpenApiClient):
             body['limit'] = request.limit
         if not UtilClient.is_unset(request.question):
             body['question'] = request.question
-        if not UtilClient.is_unset(request.questioner):
-            body['questioner'] = request.questioner
         if not UtilClient.is_unset(request.retrieval_extend_params):
             body['retrievalExtendParams'] = request.retrieval_extend_params
         if not UtilClient.is_unset(request.retrieve_score_threshold):

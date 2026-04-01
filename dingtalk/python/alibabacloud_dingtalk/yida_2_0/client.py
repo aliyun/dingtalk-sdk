@@ -608,6 +608,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.app_type):
             body['appType'] = request.app_type
+        if not UtilClient.is_unset(request.env):
+            body['env'] = request.env
         if not UtilClient.is_unset(request.form_data_json):
             body['formDataJson'] = request.form_data_json
         if not UtilClient.is_unset(request.form_uuid):
@@ -665,6 +667,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.app_type):
             body['appType'] = request.app_type
+        if not UtilClient.is_unset(request.env):
+            body['env'] = request.env
         if not UtilClient.is_unset(request.form_data_json):
             body['formDataJson'] = request.form_data_json
         if not UtilClient.is_unset(request.form_uuid):
@@ -2198,6 +2202,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.app_type):
             body['appType'] = request.app_type
+        if not UtilClient.is_unset(request.env):
+            body['env'] = request.env
         if not UtilClient.is_unset(request.form_data_json):
             body['formDataJson'] = request.form_data_json
         if not UtilClient.is_unset(request.form_uuid):
@@ -2253,6 +2259,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.app_type):
             body['appType'] = request.app_type
+        if not UtilClient.is_unset(request.env):
+            body['env'] = request.env
         if not UtilClient.is_unset(request.form_data_json):
             body['formDataJson'] = request.form_data_json
         if not UtilClient.is_unset(request.form_uuid):
@@ -2510,6 +2518,8 @@ class Client(OpenApiClient):
             body['createFromTimeGMT'] = request.create_from_time_gmt
         if not UtilClient.is_unset(request.create_to_time_gmt):
             body['createToTimeGMT'] = request.create_to_time_gmt
+        if not UtilClient.is_unset(request.env):
+            body['env'] = request.env
         if not UtilClient.is_unset(request.form_uuid):
             body['formUuid'] = request.form_uuid
         if not UtilClient.is_unset(request.modified_from_time_gmt):
@@ -2579,6 +2589,8 @@ class Client(OpenApiClient):
             body['createFromTimeGMT'] = request.create_from_time_gmt
         if not UtilClient.is_unset(request.create_to_time_gmt):
             body['createToTimeGMT'] = request.create_to_time_gmt
+        if not UtilClient.is_unset(request.env):
+            body['env'] = request.env
         if not UtilClient.is_unset(request.form_uuid):
             body['formUuid'] = request.form_uuid
         if not UtilClient.is_unset(request.modified_from_time_gmt):

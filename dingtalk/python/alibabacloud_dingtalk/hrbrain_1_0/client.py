@@ -48,6 +48,8 @@ class Client(OpenApiClient):
             query['maxResults'] = request.max_results
         if not UtilClient.is_unset(request.next_token):
             query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -95,6 +97,8 @@ class Client(OpenApiClient):
             query['maxResults'] = request.max_results
         if not UtilClient.is_unset(request.next_token):
             query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2228,6 +2232,8 @@ class Client(OpenApiClient):
             body['maxResults'] = request.max_results
         if not UtilClient.is_unset(request.next_token):
             body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2277,6 +2283,8 @@ class Client(OpenApiClient):
             body['maxResults'] = request.max_results
         if not UtilClient.is_unset(request.next_token):
             body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2352,6 +2360,8 @@ class Client(OpenApiClient):
             body['nextToken'] = request.next_token
         if not UtilClient.is_unset(request.pool_code):
             body['poolCode'] = request.pool_code
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2399,6 +2409,8 @@ class Client(OpenApiClient):
             body['nextToken'] = request.next_token
         if not UtilClient.is_unset(request.pool_code):
             body['poolCode'] = request.pool_code
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

@@ -4080,23 +4080,30 @@ class Client(OpenApiClient):
 
     def query_multi_company_info_with_options(
         self,
+        request: dingtalkbizfinance__1__0_models.QueryMultiCompanyInfoRequest,
         headers: dingtalkbizfinance__1__0_models.QueryMultiCompanyInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkbizfinance__1__0_models.QueryMultiCompanyInfoResponse:
         """
         @summary 查询钉钉智能财务多主体信息
         
+        @param request: QueryMultiCompanyInfoRequest
         @param headers: QueryMultiCompanyInfoHeaders
         @param runtime: runtime options for this request RuntimeOptions
         @return: QueryMultiCompanyInfoResponse
         """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.start_status):
+            query['startStatus'] = request.start_status
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
-            headers=real_headers
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
         )
         params = open_api_models.Params(
             action='QueryMultiCompanyInfo',
@@ -4116,23 +4123,30 @@ class Client(OpenApiClient):
 
     async def query_multi_company_info_with_options_async(
         self,
+        request: dingtalkbizfinance__1__0_models.QueryMultiCompanyInfoRequest,
         headers: dingtalkbizfinance__1__0_models.QueryMultiCompanyInfoHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkbizfinance__1__0_models.QueryMultiCompanyInfoResponse:
         """
         @summary 查询钉钉智能财务多主体信息
         
+        @param request: QueryMultiCompanyInfoRequest
         @param headers: QueryMultiCompanyInfoHeaders
         @param runtime: runtime options for this request RuntimeOptions
         @return: QueryMultiCompanyInfoResponse
         """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.start_status):
+            query['startStatus'] = request.start_status
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
-            headers=real_headers
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
         )
         params = open_api_models.Params(
             action='QueryMultiCompanyInfo',
@@ -4150,25 +4164,33 @@ class Client(OpenApiClient):
             await self.execute_async(params, req, runtime)
         )
 
-    def query_multi_company_info(self) -> dingtalkbizfinance__1__0_models.QueryMultiCompanyInfoResponse:
+    def query_multi_company_info(
+        self,
+        request: dingtalkbizfinance__1__0_models.QueryMultiCompanyInfoRequest,
+    ) -> dingtalkbizfinance__1__0_models.QueryMultiCompanyInfoResponse:
         """
         @summary 查询钉钉智能财务多主体信息
         
+        @param request: QueryMultiCompanyInfoRequest
         @return: QueryMultiCompanyInfoResponse
         """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkbizfinance__1__0_models.QueryMultiCompanyInfoHeaders()
-        return self.query_multi_company_info_with_options(headers, runtime)
+        return self.query_multi_company_info_with_options(request, headers, runtime)
 
-    async def query_multi_company_info_async(self) -> dingtalkbizfinance__1__0_models.QueryMultiCompanyInfoResponse:
+    async def query_multi_company_info_async(
+        self,
+        request: dingtalkbizfinance__1__0_models.QueryMultiCompanyInfoRequest,
+    ) -> dingtalkbizfinance__1__0_models.QueryMultiCompanyInfoResponse:
         """
         @summary 查询钉钉智能财务多主体信息
         
+        @param request: QueryMultiCompanyInfoRequest
         @return: QueryMultiCompanyInfoResponse
         """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkbizfinance__1__0_models.QueryMultiCompanyInfoHeaders()
-        return await self.query_multi_company_info_with_options_async(headers, runtime)
+        return await self.query_multi_company_info_with_options_async(request, headers, runtime)
 
     def query_permission_by_user_id_with_options(
         self,

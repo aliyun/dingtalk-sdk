@@ -306,6 +306,132 @@ class Client(OpenApiClient):
         headers = dingtalkbizfinance__2__0_models.AddRetentionRecordHeaders()
         return await self.add_retention_record_with_options_async(request, headers, runtime)
 
+    def ai_voucher_with_options(
+        self,
+        request: dingtalkbizfinance__2__0_models.AiVoucherRequest,
+        headers: dingtalkbizfinance__2__0_models.AiVoucherHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.AiVoucherResponse:
+        """
+        @summary 调用大模型生成ai凭证
+        
+        @param request: AiVoucherRequest
+        @param headers: AiVoucherHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AiVoucherResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.chat_messages):
+            body['chatMessages'] = request.chat_messages
+        if not UtilClient.is_unset(request.enable_thinking):
+            body['enableThinking'] = request.enable_thinking
+        if not UtilClient.is_unset(request.extend_info):
+            body['extendInfo'] = request.extend_info
+        if not UtilClient.is_unset(request.prompt):
+            body['prompt'] = request.prompt
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AiVoucher',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/aiVoucher/execute',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.AiVoucherResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def ai_voucher_with_options_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.AiVoucherRequest,
+        headers: dingtalkbizfinance__2__0_models.AiVoucherHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.AiVoucherResponse:
+        """
+        @summary 调用大模型生成ai凭证
+        
+        @param request: AiVoucherRequest
+        @param headers: AiVoucherHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AiVoucherResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.chat_messages):
+            body['chatMessages'] = request.chat_messages
+        if not UtilClient.is_unset(request.enable_thinking):
+            body['enableThinking'] = request.enable_thinking
+        if not UtilClient.is_unset(request.extend_info):
+            body['extendInfo'] = request.extend_info
+        if not UtilClient.is_unset(request.prompt):
+            body['prompt'] = request.prompt
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AiVoucher',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/aiVoucher/execute',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.AiVoucherResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def ai_voucher(
+        self,
+        request: dingtalkbizfinance__2__0_models.AiVoucherRequest,
+    ) -> dingtalkbizfinance__2__0_models.AiVoucherResponse:
+        """
+        @summary 调用大模型生成ai凭证
+        
+        @param request: AiVoucherRequest
+        @return: AiVoucherResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.AiVoucherHeaders()
+        return self.ai_voucher_with_options(request, headers, runtime)
+
+    async def ai_voucher_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.AiVoucherRequest,
+    ) -> dingtalkbizfinance__2__0_models.AiVoucherResponse:
+        """
+        @summary 调用大模型生成ai凭证
+        
+        @param request: AiVoucherRequest
+        @return: AiVoucherResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.AiVoucherHeaders()
+        return await self.ai_voucher_with_options_async(request, headers, runtime)
+
     def bank_gateway_invoke_with_options(
         self,
         request: dingtalkbizfinance__2__0_models.BankGatewayInvokeRequest,
@@ -3872,6 +3998,220 @@ class Client(OpenApiClient):
         headers = dingtalkbizfinance__2__0_models.QueryAlipayUserIdHeaders()
         return await self.query_alipay_user_id_with_options_async(request, headers, runtime)
 
+    def query_bank_with_options(
+        self,
+        headers: dingtalkbizfinance__2__0_models.QueryBankHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.QueryBankResponse:
+        """
+        @summary 查询银行列表
+        
+        @param headers: QueryBankHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryBankResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='QueryBank',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/bankinfo/bank',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.QueryBankResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_bank_with_options_async(
+        self,
+        headers: dingtalkbizfinance__2__0_models.QueryBankHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.QueryBankResponse:
+        """
+        @summary 查询银行列表
+        
+        @param headers: QueryBankHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryBankResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='QueryBank',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/bankinfo/bank',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.QueryBankResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_bank(self) -> dingtalkbizfinance__2__0_models.QueryBankResponse:
+        """
+        @summary 查询银行列表
+        
+        @return: QueryBankResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.QueryBankHeaders()
+        return self.query_bank_with_options(headers, runtime)
+
+    async def query_bank_async(self) -> dingtalkbizfinance__2__0_models.QueryBankResponse:
+        """
+        @summary 查询银行列表
+        
+        @return: QueryBankResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.QueryBankHeaders()
+        return await self.query_bank_with_options_async(headers, runtime)
+
+    def query_branch_with_options(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryBranchRequest,
+        headers: dingtalkbizfinance__2__0_models.QueryBranchHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.QueryBranchResponse:
+        """
+        @summary 查询支行名
+        
+        @param request: QueryBranchRequest
+        @param headers: QueryBranchHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryBranchResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.bank_name):
+            query['bankName'] = request.bank_name
+        if not UtilClient.is_unset(request.city):
+            query['city'] = request.city
+        if not UtilClient.is_unset(request.province):
+            query['province'] = request.province
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryBranch',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/bankinfo/branch',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.QueryBranchResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_branch_with_options_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryBranchRequest,
+        headers: dingtalkbizfinance__2__0_models.QueryBranchHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.QueryBranchResponse:
+        """
+        @summary 查询支行名
+        
+        @param request: QueryBranchRequest
+        @param headers: QueryBranchHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryBranchResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.bank_name):
+            query['bankName'] = request.bank_name
+        if not UtilClient.is_unset(request.city):
+            query['city'] = request.city
+        if not UtilClient.is_unset(request.province):
+            query['province'] = request.province
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryBranch',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/bankinfo/branch',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.QueryBranchResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_branch(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryBranchRequest,
+    ) -> dingtalkbizfinance__2__0_models.QueryBranchResponse:
+        """
+        @summary 查询支行名
+        
+        @param request: QueryBranchRequest
+        @return: QueryBranchResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.QueryBranchHeaders()
+        return self.query_branch_with_options(request, headers, runtime)
+
+    async def query_branch_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryBranchRequest,
+    ) -> dingtalkbizfinance__2__0_models.QueryBranchResponse:
+        """
+        @summary 查询支行名
+        
+        @param request: QueryBranchRequest
+        @return: QueryBranchResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.QueryBranchHeaders()
+        return await self.query_branch_with_options_async(request, headers, runtime)
+
     def query_category_by_page_with_options(
         self,
         request: dingtalkbizfinance__2__0_models.QueryCategoryByPageRequest,
@@ -3993,6 +4333,120 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkbizfinance__2__0_models.QueryCategoryByPageHeaders()
         return await self.query_category_by_page_with_options_async(request, headers, runtime)
+
+    def query_city_with_options(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryCityRequest,
+        headers: dingtalkbizfinance__2__0_models.QueryCityHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.QueryCityResponse:
+        """
+        @summary 查询城市列表
+        
+        @param request: QueryCityRequest
+        @param headers: QueryCityHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryCityResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.province):
+            query['province'] = request.province
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryCity',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/bankinfo/city',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.QueryCityResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_city_with_options_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryCityRequest,
+        headers: dingtalkbizfinance__2__0_models.QueryCityHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.QueryCityResponse:
+        """
+        @summary 查询城市列表
+        
+        @param request: QueryCityRequest
+        @param headers: QueryCityHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryCityResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.province):
+            query['province'] = request.province
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryCity',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/bankinfo/city',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.QueryCityResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_city(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryCityRequest,
+    ) -> dingtalkbizfinance__2__0_models.QueryCityResponse:
+        """
+        @summary 查询城市列表
+        
+        @param request: QueryCityRequest
+        @return: QueryCityResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.QueryCityHeaders()
+        return self.query_city_with_options(request, headers, runtime)
+
+    async def query_city_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryCityRequest,
+    ) -> dingtalkbizfinance__2__0_models.QueryCityResponse:
+        """
+        @summary 查询城市列表
+        
+        @param request: QueryCityRequest
+        @return: QueryCityResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.QueryCityHeaders()
+        return await self.query_city_with_options_async(request, headers, runtime)
 
     def query_collection_info_list_with_options(
         self,
@@ -5955,6 +6409,98 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkbizfinance__2__0_models.QueryProjectByPageHeaders()
         return await self.query_project_by_page_with_options_async(request, headers, runtime)
+
+    def query_province_with_options(
+        self,
+        headers: dingtalkbizfinance__2__0_models.QueryProvinceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.QueryProvinceResponse:
+        """
+        @summary 查询省份列表
+        
+        @param headers: QueryProvinceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryProvinceResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='QueryProvince',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/bankinfo/province',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.QueryProvinceResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_province_with_options_async(
+        self,
+        headers: dingtalkbizfinance__2__0_models.QueryProvinceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.QueryProvinceResponse:
+        """
+        @summary 查询省份列表
+        
+        @param headers: QueryProvinceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryProvinceResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='QueryProvince',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/bankinfo/province',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.QueryProvinceResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_province(self) -> dingtalkbizfinance__2__0_models.QueryProvinceResponse:
+        """
+        @summary 查询省份列表
+        
+        @return: QueryProvinceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.QueryProvinceHeaders()
+        return self.query_province_with_options(headers, runtime)
+
+    async def query_province_async(self) -> dingtalkbizfinance__2__0_models.QueryProvinceResponse:
+        """
+        @summary 查询省份列表
+        
+        @return: QueryProvinceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.QueryProvinceHeaders()
+        return await self.query_province_with_options_async(headers, runtime)
 
     def query_receipt_for_invoice_with_options(
         self,

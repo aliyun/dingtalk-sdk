@@ -4,6 +4,280 @@ from Tea.model import TeaModel
 from typing import Dict, List, Any
 
 
+class AdminSearchMinutesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AdminSearchMinutesRequest(TeaModel):
+    def __init__(
+        self,
+        creator_union_ids: List[str] = None,
+        end_time: int = None,
+        next_token: str = None,
+        page_size: int = None,
+        query: str = None,
+        search_type: str = None,
+        start_time: int = None,
+        union_id: str = None,
+    ):
+        self.creator_union_ids = creator_union_ids
+        self.end_time = end_time
+        self.next_token = next_token
+        # This parameter is required.
+        self.page_size = page_size
+        # This parameter is required.
+        self.query = query
+        self.search_type = search_type
+        self.start_time = start_time
+        # This parameter is required.
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.creator_union_ids is not None:
+            result['creatorUnionIds'] = self.creator_union_ids
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.query is not None:
+            result['query'] = self.query
+        if self.search_type is not None:
+            result['searchType'] = self.search_type
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('creatorUnionIds') is not None:
+            self.creator_union_ids = m.get('creatorUnionIds')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('query') is not None:
+            self.query = m.get('query')
+        if m.get('searchType') is not None:
+            self.search_type = m.get('searchType')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class AdminSearchMinutesResponseBodyMinutesList(TeaModel):
+    def __init__(
+        self,
+        biz_type: int = None,
+        creator_nick: str = None,
+        creator_union_id: str = None,
+        duration: int = None,
+        full_text_summary: str = None,
+        original_text: str = None,
+        start_time: int = None,
+        status: int = None,
+        task_uuid: str = None,
+        title: str = None,
+    ):
+        self.biz_type = biz_type
+        self.creator_nick = creator_nick
+        self.creator_union_id = creator_union_id
+        self.duration = duration
+        self.full_text_summary = full_text_summary
+        self.original_text = original_text
+        self.start_time = start_time
+        self.status = status
+        self.task_uuid = task_uuid
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.creator_nick is not None:
+            result['creatorNick'] = self.creator_nick
+        if self.creator_union_id is not None:
+            result['creatorUnionId'] = self.creator_union_id
+        if self.duration is not None:
+            result['duration'] = self.duration
+        if self.full_text_summary is not None:
+            result['fullTextSummary'] = self.full_text_summary
+        if self.original_text is not None:
+            result['originalText'] = self.original_text
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.status is not None:
+            result['status'] = self.status
+        if self.task_uuid is not None:
+            result['taskUuid'] = self.task_uuid
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('creatorNick') is not None:
+            self.creator_nick = m.get('creatorNick')
+        if m.get('creatorUnionId') is not None:
+            self.creator_union_id = m.get('creatorUnionId')
+        if m.get('duration') is not None:
+            self.duration = m.get('duration')
+        if m.get('fullTextSummary') is not None:
+            self.full_text_summary = m.get('fullTextSummary')
+        if m.get('originalText') is not None:
+            self.original_text = m.get('originalText')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('taskUuid') is not None:
+            self.task_uuid = m.get('taskUuid')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class AdminSearchMinutesResponseBody(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        minutes_list: List[AdminSearchMinutesResponseBodyMinutesList] = None,
+        next_token: str = None,
+    ):
+        self.has_more = has_more
+        self.minutes_list = minutes_list
+        self.next_token = next_token
+
+    def validate(self):
+        if self.minutes_list:
+            for k in self.minutes_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['minutesList'] = []
+        if self.minutes_list is not None:
+            for k in self.minutes_list:
+                result['minutesList'].append(k.to_map() if k else None)
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.minutes_list = []
+        if m.get('minutesList') is not None:
+            for k in m.get('minutesList'):
+                temp_model = AdminSearchMinutesResponseBodyMinutesList()
+                self.minutes_list.append(temp_model.from_map(k))
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        return self
+
+
+class AdminSearchMinutesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: AdminSearchMinutesResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = AdminSearchMinutesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class BatchGetMinutesDetailsHeaders(TeaModel):
     def __init__(
         self,
@@ -267,6 +541,9 @@ class CreateMinutesByUploadFileRequest(TeaModel):
         self,
         biz_id: str = None,
         creator_id: str = None,
+        custom_prompt: str = None,
+        enable_push_card: bool = None,
+        hidden_minutes: bool = None,
         media_file_url: str = None,
         media_type: str = None,
         title: str = None,
@@ -276,6 +553,9 @@ class CreateMinutesByUploadFileRequest(TeaModel):
         self.biz_id = biz_id
         # This parameter is required.
         self.creator_id = creator_id
+        self.custom_prompt = custom_prompt
+        self.enable_push_card = enable_push_card
+        self.hidden_minutes = hidden_minutes
         # This parameter is required.
         self.media_file_url = media_file_url
         # This parameter is required.
@@ -298,6 +578,12 @@ class CreateMinutesByUploadFileRequest(TeaModel):
             result['bizId'] = self.biz_id
         if self.creator_id is not None:
             result['creatorId'] = self.creator_id
+        if self.custom_prompt is not None:
+            result['customPrompt'] = self.custom_prompt
+        if self.enable_push_card is not None:
+            result['enablePushCard'] = self.enable_push_card
+        if self.hidden_minutes is not None:
+            result['hiddenMinutes'] = self.hidden_minutes
         if self.media_file_url is not None:
             result['mediaFileUrl'] = self.media_file_url
         if self.media_type is not None:
@@ -314,6 +600,12 @@ class CreateMinutesByUploadFileRequest(TeaModel):
             self.biz_id = m.get('bizId')
         if m.get('creatorId') is not None:
             self.creator_id = m.get('creatorId')
+        if m.get('customPrompt') is not None:
+            self.custom_prompt = m.get('customPrompt')
+        if m.get('enablePushCard') is not None:
+            self.enable_push_card = m.get('enablePushCard')
+        if m.get('hiddenMinutes') is not None:
+            self.hidden_minutes = m.get('hiddenMinutes')
         if m.get('mediaFileUrl') is not None:
             self.media_file_url = m.get('mediaFileUrl')
         if m.get('mediaType') is not None:
@@ -4786,6 +5078,148 @@ class QueryUserMinutesPermissionResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryUserMinutesPermissionResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class RegenerateChaptersHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class RegenerateChaptersRequest(TeaModel):
+    def __init__(
+        self,
+        custom_prompt: str = None,
+        task_uuid: str = None,
+        union_id: str = None,
+    ):
+        self.custom_prompt = custom_prompt
+        # This parameter is required.
+        self.task_uuid = task_uuid
+        # This parameter is required.
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.custom_prompt is not None:
+            result['customPrompt'] = self.custom_prompt
+        if self.task_uuid is not None:
+            result['taskUuid'] = self.task_uuid
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('customPrompt') is not None:
+            self.custom_prompt = m.get('customPrompt')
+        if m.get('taskUuid') is not None:
+            self.task_uuid = m.get('taskUuid')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class RegenerateChaptersResponseBody(TeaModel):
+    def __init__(
+        self,
+        task_uuid: str = None,
+    ):
+        self.task_uuid = task_uuid
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.task_uuid is not None:
+            result['taskUuid'] = self.task_uuid
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('taskUuid') is not None:
+            self.task_uuid = m.get('taskUuid')
+        return self
+
+
+class RegenerateChaptersResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: RegenerateChaptersResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = RegenerateChaptersResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

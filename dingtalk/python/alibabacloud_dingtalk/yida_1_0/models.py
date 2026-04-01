@@ -756,6 +756,7 @@ class BatchSaveFormDataRequest(TeaModel):
         self,
         app_type: str = None,
         asynchronous_execution: bool = None,
+        env: str = None,
         form_data_json_list: List[str] = None,
         form_uuid: str = None,
         keep_running_after_exception: bool = None,
@@ -766,6 +767,7 @@ class BatchSaveFormDataRequest(TeaModel):
         # This parameter is required.
         self.app_type = app_type
         self.asynchronous_execution = asynchronous_execution
+        self.env = env
         # This parameter is required.
         self.form_data_json_list = form_data_json_list
         # This parameter is required.
@@ -790,6 +792,8 @@ class BatchSaveFormDataRequest(TeaModel):
             result['appType'] = self.app_type
         if self.asynchronous_execution is not None:
             result['asynchronousExecution'] = self.asynchronous_execution
+        if self.env is not None:
+            result['env'] = self.env
         if self.form_data_json_list is not None:
             result['formDataJsonList'] = self.form_data_json_list
         if self.form_uuid is not None:
@@ -810,6 +814,8 @@ class BatchSaveFormDataRequest(TeaModel):
             self.app_type = m.get('appType')
         if m.get('asynchronousExecution') is not None:
             self.asynchronous_execution = m.get('asynchronousExecution')
+        if m.get('env') is not None:
+            self.env = m.get('env')
         if m.get('formDataJsonList') is not None:
             self.form_data_json_list = m.get('formDataJsonList')
         if m.get('formUuid') is not None:
@@ -931,6 +937,7 @@ class BatchUpdateFormDataByInstanceIdRequest(TeaModel):
         self,
         app_type: str = None,
         asynchronous_execution: bool = None,
+        env: str = None,
         form_instance_id_list: List[str] = None,
         form_uuid: str = None,
         ignore_empty: bool = None,
@@ -943,6 +950,7 @@ class BatchUpdateFormDataByInstanceIdRequest(TeaModel):
         # This parameter is required.
         self.app_type = app_type
         self.asynchronous_execution = asynchronous_execution
+        self.env = env
         # This parameter is required.
         self.form_instance_id_list = form_instance_id_list
         # This parameter is required.
@@ -970,6 +978,8 @@ class BatchUpdateFormDataByInstanceIdRequest(TeaModel):
             result['appType'] = self.app_type
         if self.asynchronous_execution is not None:
             result['asynchronousExecution'] = self.asynchronous_execution
+        if self.env is not None:
+            result['env'] = self.env
         if self.form_instance_id_list is not None:
             result['formInstanceIdList'] = self.form_instance_id_list
         if self.form_uuid is not None:
@@ -994,6 +1004,8 @@ class BatchUpdateFormDataByInstanceIdRequest(TeaModel):
             self.app_type = m.get('appType')
         if m.get('asynchronousExecution') is not None:
             self.asynchronous_execution = m.get('asynchronousExecution')
+        if m.get('env') is not None:
+            self.env = m.get('env')
         if m.get('formInstanceIdList') is not None:
             self.form_instance_id_list = m.get('formInstanceIdList')
         if m.get('formUuid') is not None:
@@ -1119,6 +1131,7 @@ class BatchUpdateFormDataByInstanceMapRequest(TeaModel):
         self,
         app_type: str = None,
         asynchronous_execution: bool = None,
+        env: str = None,
         form_uuid: str = None,
         ignore_empty: bool = None,
         no_execute_expression: bool = None,
@@ -1130,6 +1143,7 @@ class BatchUpdateFormDataByInstanceMapRequest(TeaModel):
         # This parameter is required.
         self.app_type = app_type
         self.asynchronous_execution = asynchronous_execution
+        self.env = env
         # This parameter is required.
         self.form_uuid = form_uuid
         self.ignore_empty = ignore_empty
@@ -1155,6 +1169,8 @@ class BatchUpdateFormDataByInstanceMapRequest(TeaModel):
             result['appType'] = self.app_type
         if self.asynchronous_execution is not None:
             result['asynchronousExecution'] = self.asynchronous_execution
+        if self.env is not None:
+            result['env'] = self.env
         if self.form_uuid is not None:
             result['formUuid'] = self.form_uuid
         if self.ignore_empty is not None:
@@ -1177,6 +1193,8 @@ class BatchUpdateFormDataByInstanceMapRequest(TeaModel):
             self.app_type = m.get('appType')
         if m.get('asynchronousExecution') is not None:
             self.asynchronous_execution = m.get('asynchronousExecution')
+        if m.get('env') is not None:
+            self.env = m.get('env')
         if m.get('formUuid') is not None:
             self.form_uuid = m.get('formUuid')
         if m.get('ignoreEmpty') is not None:
@@ -1973,6 +1991,7 @@ class DeleteFormDataRequest(TeaModel):
     def __init__(
         self,
         app_type: str = None,
+        env: str = None,
         form_instance_id: str = None,
         language: str = None,
         system_token: str = None,
@@ -1980,6 +1999,7 @@ class DeleteFormDataRequest(TeaModel):
     ):
         # This parameter is required.
         self.app_type = app_type
+        self.env = env
         # This parameter is required.
         self.form_instance_id = form_instance_id
         self.language = language
@@ -1999,6 +2019,8 @@ class DeleteFormDataRequest(TeaModel):
         result = dict()
         if self.app_type is not None:
             result['appType'] = self.app_type
+        if self.env is not None:
+            result['env'] = self.env
         if self.form_instance_id is not None:
             result['formInstanceId'] = self.form_instance_id
         if self.language is not None:
@@ -2013,6 +2035,8 @@ class DeleteFormDataRequest(TeaModel):
         m = m or dict()
         if m.get('appType') is not None:
             self.app_type = m.get('appType')
+        if m.get('env') is not None:
+            self.env = m.get('env')
         if m.get('formInstanceId') is not None:
             self.form_instance_id = m.get('formInstanceId')
         if m.get('language') is not None:

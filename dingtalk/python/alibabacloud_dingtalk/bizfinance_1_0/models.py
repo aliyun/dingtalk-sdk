@@ -8453,6 +8453,33 @@ class QueryMultiCompanyInfoHeaders(TeaModel):
         return self
 
 
+class QueryMultiCompanyInfoRequest(TeaModel):
+    def __init__(
+        self,
+        start_status: bool = None,
+    ):
+        self.start_status = start_status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.start_status is not None:
+            result['startStatus'] = self.start_status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('startStatus') is not None:
+            self.start_status = m.get('startStatus')
+        return self
+
+
 class QueryMultiCompanyInfoResponseBodyListAdvancedSettingList(TeaModel):
     def __init__(
         self,

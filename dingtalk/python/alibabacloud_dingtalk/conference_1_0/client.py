@@ -5782,6 +5782,128 @@ class Client(OpenApiClient):
         headers = dingtalkconference__1__0_models.StopStreamOutHeaders()
         return await self.stop_stream_out_with_options_async(conference_id, request, headers, runtime)
 
+    def update_member_nick_with_options(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.UpdateMemberNickRequest,
+        headers: dingtalkconference__1__0_models.UpdateMemberNickHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.UpdateMemberNickResponse:
+        """
+        @summary 更新参会人昵称
+        
+        @param request: UpdateMemberNickRequest
+        @param headers: UpdateMemberNickHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateMemberNickResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.nick):
+            body['nick'] = request.nick
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateMemberNick',
+            version='conference_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/conference/videoConferences/{conference_id}/members/updateNick',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.UpdateMemberNickResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_member_nick_with_options_async(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.UpdateMemberNickRequest,
+        headers: dingtalkconference__1__0_models.UpdateMemberNickHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.UpdateMemberNickResponse:
+        """
+        @summary 更新参会人昵称
+        
+        @param request: UpdateMemberNickRequest
+        @param headers: UpdateMemberNickHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateMemberNickResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.nick):
+            body['nick'] = request.nick
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateMemberNick',
+            version='conference_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/conference/videoConferences/{conference_id}/members/updateNick',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.UpdateMemberNickResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_member_nick(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.UpdateMemberNickRequest,
+    ) -> dingtalkconference__1__0_models.UpdateMemberNickResponse:
+        """
+        @summary 更新参会人昵称
+        
+        @param request: UpdateMemberNickRequest
+        @return: UpdateMemberNickResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.UpdateMemberNickHeaders()
+        return self.update_member_nick_with_options(conference_id, request, headers, runtime)
+
+    async def update_member_nick_async(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.UpdateMemberNickRequest,
+    ) -> dingtalkconference__1__0_models.UpdateMemberNickResponse:
+        """
+        @summary 更新参会人昵称
+        
+        @param request: UpdateMemberNickRequest
+        @return: UpdateMemberNickResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.UpdateMemberNickHeaders()
+        return await self.update_member_nick_with_options_async(conference_id, request, headers, runtime)
+
     def update_schedule_conf_settings_with_options(
         self,
         request: dingtalkconference__1__0_models.UpdateScheduleConfSettingsRequest,

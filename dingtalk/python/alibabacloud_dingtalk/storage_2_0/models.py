@@ -2149,12 +2149,10 @@ class ListPermissionsHeaders(TeaModel):
 class ListPermissionsRequestOption(TeaModel):
     def __init__(
         self,
-        filter_member_types: List[str] = None,
         filter_role_ids: List[str] = None,
         max_results: int = None,
         next_token: str = None,
     ):
-        self.filter_member_types = filter_member_types
         self.filter_role_ids = filter_role_ids
         self.max_results = max_results
         self.next_token = next_token
@@ -2168,8 +2166,6 @@ class ListPermissionsRequestOption(TeaModel):
             return _map
 
         result = dict()
-        if self.filter_member_types is not None:
-            result['filterMemberTypes'] = self.filter_member_types
         if self.filter_role_ids is not None:
             result['filterRoleIds'] = self.filter_role_ids
         if self.max_results is not None:
@@ -2180,8 +2176,6 @@ class ListPermissionsRequestOption(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('filterMemberTypes') is not None:
-            self.filter_member_types = m.get('filterMemberTypes')
         if m.get('filterRoleIds') is not None:
             self.filter_role_ids = m.get('filterRoleIds')
         if m.get('maxResults') is not None:
