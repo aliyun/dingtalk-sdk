@@ -24,6 +24,10 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0.Models
         [Validation(Required=false)]
         public string NextToken { get; set; }
 
+        [NameInMap("userId")]
+        [Validation(Required=false)]
+        public string UserId { get; set; }
+
     }
 
 }

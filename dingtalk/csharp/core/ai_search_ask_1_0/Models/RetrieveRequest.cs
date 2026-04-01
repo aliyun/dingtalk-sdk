@@ -16,13 +16,6 @@ namespace AlibabaCloud.SDK.Dingtalkai_search_ask_1_0.Models
         [Validation(Required=false)]
         public string Answerer { get; set; }
 
-        /// <summary>
-        /// <para>This parameter is required.</para>
-        /// </summary>
-        [NameInMap("corpId")]
-        [Validation(Required=false)]
-        public string CorpId { get; set; }
-
         [NameInMap("dragRequestContext")]
         [Validation(Required=false)]
         public RetrieveRequestDragRequestContext DragRequestContext { get; set; }
@@ -56,13 +49,6 @@ namespace AlibabaCloud.SDK.Dingtalkai_search_ask_1_0.Models
         [NameInMap("question")]
         [Validation(Required=false)]
         public string Question { get; set; }
-
-        /// <summary>
-        /// <para>This parameter is required.</para>
-        /// </summary>
-        [NameInMap("questioner")]
-        [Validation(Required=false)]
-        public string Questioner { get; set; }
 
         /// <summary>
         /// <para>This parameter is required.</para>

@@ -358,10 +358,6 @@ namespace AlibabaCloud.SDK.Dingtalkai_search_ask_1_0
             {
                 body["answerer"] = request.Answerer;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
-            {
-                body["corpId"] = request.CorpId;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DragRequestContext))
             {
                 body["dragRequestContext"] = request.DragRequestContext;
@@ -377,10 +373,6 @@ namespace AlibabaCloud.SDK.Dingtalkai_search_ask_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Question))
             {
                 body["question"] = request.Question;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Questioner))
-            {
-                body["questioner"] = request.Questioner;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RetrievalExtendParams))
             {
@@ -457,10 +449,6 @@ namespace AlibabaCloud.SDK.Dingtalkai_search_ask_1_0
             {
                 body["answerer"] = request.Answerer;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
-            {
-                body["corpId"] = request.CorpId;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DragRequestContext))
             {
                 body["dragRequestContext"] = request.DragRequestContext;
@@ -476,10 +464,6 @@ namespace AlibabaCloud.SDK.Dingtalkai_search_ask_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Question))
             {
                 body["question"] = request.Question;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Questioner))
-            {
-                body["questioner"] = request.Questioner;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RetrievalExtendParams))
             {

@@ -7506,6 +7506,162 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>更新参会人昵称</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateMemberNickRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateMemberNickHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateMemberNickResponse
+        /// </returns>
+        public UpdateMemberNickResponse UpdateMemberNickWithOptions(string conferenceId, UpdateMemberNickRequest request, UpdateMemberNickHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Nick))
+            {
+                body["nick"] = request.Nick;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                body["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateMemberNick",
+                Version = "conference_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/conference/videoConferences/" + conferenceId + "/members/updateNick",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateMemberNickResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新参会人昵称</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateMemberNickRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateMemberNickHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateMemberNickResponse
+        /// </returns>
+        public async Task<UpdateMemberNickResponse> UpdateMemberNickWithOptionsAsync(string conferenceId, UpdateMemberNickRequest request, UpdateMemberNickHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Nick))
+            {
+                body["nick"] = request.Nick;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                body["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateMemberNick",
+                Version = "conference_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/conference/videoConferences/" + conferenceId + "/members/updateNick",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateMemberNickResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新参会人昵称</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateMemberNickRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateMemberNickResponse
+        /// </returns>
+        public UpdateMemberNickResponse UpdateMemberNick(string conferenceId, UpdateMemberNickRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateMemberNickHeaders headers = new UpdateMemberNickHeaders();
+            return UpdateMemberNickWithOptions(conferenceId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新参会人昵称</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateMemberNickRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateMemberNickResponse
+        /// </returns>
+        public async Task<UpdateMemberNickResponse> UpdateMemberNickAsync(string conferenceId, UpdateMemberNickRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateMemberNickHeaders headers = new UpdateMemberNickHeaders();
+            return await UpdateMemberNickWithOptionsAsync(conferenceId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>更新预约会议设置</para>
         /// </summary>
         /// 

@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         [Validation(Required=false)]
         public string Reason { get; set; }
 
+        [NameInMap("reasonI18nForEmployee")]
+        [Validation(Required=false)]
+        public Dictionary<string, string> ReasonI18nForEmployee { get; set; }
+
         /// <summary>
         /// <para>This parameter is required.</para>
         /// </summary>

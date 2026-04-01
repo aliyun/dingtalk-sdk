@@ -2142,6 +2142,186 @@ namespace AlibabaCloud.SDK.Dingtalkdvi_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>分页查询设备列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListDeviceRequest
+        /// </param>
+        /// <param name="headers">
+        /// ListDeviceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListDeviceResponse
+        /// </returns>
+        public ListDeviceResponse ListDeviceWithOptions(ListDeviceRequest request, ListDeviceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                query["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Sn))
+            {
+                query["sn"] = request.Sn;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TeamCode))
+            {
+                query["teamCode"] = request.TeamCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ListDevice",
+                Version = "dvi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dvi/devices",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ListDeviceResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>分页查询设备列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListDeviceRequest
+        /// </param>
+        /// <param name="headers">
+        /// ListDeviceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListDeviceResponse
+        /// </returns>
+        public async Task<ListDeviceResponse> ListDeviceWithOptionsAsync(ListDeviceRequest request, ListDeviceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                query["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Sn))
+            {
+                query["sn"] = request.Sn;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TeamCode))
+            {
+                query["teamCode"] = request.TeamCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ListDevice",
+                Version = "dvi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dvi/devices",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ListDeviceResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>分页查询设备列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListDeviceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListDeviceResponse
+        /// </returns>
+        public ListDeviceResponse ListDevice(ListDeviceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListDeviceHeaders headers = new ListDeviceHeaders();
+            return ListDeviceWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>分页查询设备列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListDeviceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListDeviceResponse
+        /// </returns>
+        public async Task<ListDeviceResponse> ListDeviceAsync(ListDeviceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListDeviceHeaders headers = new ListDeviceHeaders();
+            return await ListDeviceWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>分页查询设备录音时长</para>
         /// </summary>
         /// 
@@ -2358,6 +2538,10 @@ namespace AlibabaCloud.SDK.Dingtalkdvi_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CustomerId))
+            {
+                query["customerId"] = request.CustomerId;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
             {
                 query["endTime"] = request.EndTime;
@@ -2433,6 +2617,10 @@ namespace AlibabaCloud.SDK.Dingtalkdvi_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CustomerId))
+            {
+                query["customerId"] = request.CustomerId;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
             {
                 query["endTime"] = request.EndTime;

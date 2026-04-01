@@ -572,7 +572,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 AuthType = "AK",
                 Style = "ROA",
                 ReqBodyType = "none",
-                BodyType = "none",
+                BodyType = "json",
             };
             return TeaModel.ToObject<AppendRowsResponse>(Execute(params_, req, runtime));
         }
@@ -633,7 +633,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 AuthType = "AK",
                 Style = "ROA",
                 ReqBodyType = "none",
-                BodyType = "none",
+                BodyType = "json",
             };
             return TeaModel.ToObject<AppendRowsResponse>(await ExecuteAsync(params_, req, runtime));
         }

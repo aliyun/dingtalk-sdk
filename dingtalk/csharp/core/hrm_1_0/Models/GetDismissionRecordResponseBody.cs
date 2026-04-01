@@ -19,7 +19,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
 
             [NameInMap("list")]
             [Validation(Required=false)]
-            public GetDismissionRecordResponseBodyResultList List { get; set; }
+            public List<GetDismissionRecordResponseBodyResultList> List { get; set; }
             public class GetDismissionRecordResponseBodyResultList : TeaModel {
                 [NameInMap("lastWorkDay")]
                 [Validation(Required=false)]

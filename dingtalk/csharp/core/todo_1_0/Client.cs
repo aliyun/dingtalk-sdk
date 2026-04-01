@@ -70,6 +70,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             {
                 body["toDueTime"] = request.ToDueTime;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TodoType))
+            {
+                body["todoType"] = request.TodoType;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -140,6 +144,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ToDueTime))
             {
                 body["toDueTime"] = request.ToDueTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TodoType))
+            {
+                body["todoType"] = request.TodoType;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1526,6 +1534,126 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetTodoTypeConfigHeaders headers = new GetTodoTypeConfigHeaders();
             return await GetTodoTypeConfigWithOptionsAsync(unionId, cardTypeId, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据待办ID删除用户的某条待办任务。该操作仅删除某个用户自己的待办视图，该待办本身依然还存在，其他执行者依然可以看见该待办。</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// HideUserTodoTaskHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HideUserTodoTaskResponse
+        /// </returns>
+        public HideUserTodoTaskResponse HideUserTodoTaskWithOptions(string unionId, string taskId, HideUserTodoTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HideUserTodoTask",
+                Version = "todo_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/todo/users/" + unionId + "/tasks/" + taskId + "/hide",
+                Method = "DELETE",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HideUserTodoTaskResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据待办ID删除用户的某条待办任务。该操作仅删除某个用户自己的待办视图，该待办本身依然还存在，其他执行者依然可以看见该待办。</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// HideUserTodoTaskHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HideUserTodoTaskResponse
+        /// </returns>
+        public async Task<HideUserTodoTaskResponse> HideUserTodoTaskWithOptionsAsync(string unionId, string taskId, HideUserTodoTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HideUserTodoTask",
+                Version = "todo_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/todo/users/" + unionId + "/tasks/" + taskId + "/hide",
+                Method = "DELETE",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HideUserTodoTaskResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据待办ID删除用户的某条待办任务。该操作仅删除某个用户自己的待办视图，该待办本身依然还存在，其他执行者依然可以看见该待办。</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// HideUserTodoTaskResponse
+        /// </returns>
+        public HideUserTodoTaskResponse HideUserTodoTask(string unionId, string taskId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HideUserTodoTaskHeaders headers = new HideUserTodoTaskHeaders();
+            return HideUserTodoTaskWithOptions(unionId, taskId, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据待办ID删除用户的某条待办任务。该操作仅删除某个用户自己的待办视图，该待办本身依然还存在，其他执行者依然可以看见该待办。</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// HideUserTodoTaskResponse
+        /// </returns>
+        public async Task<HideUserTodoTaskResponse> HideUserTodoTaskAsync(string unionId, string taskId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HideUserTodoTaskHeaders headers = new HideUserTodoTaskHeaders();
+            return await HideUserTodoTaskWithOptionsAsync(unionId, taskId, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

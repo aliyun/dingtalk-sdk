@@ -26,6 +26,26 @@ namespace AlibabaCloud.SDK.Dingtalkminutes_1_0.Models
         [Validation(Required=false)]
         public string CreatorId { get; set; }
 
+        [NameInMap("customPrompt")]
+        [Validation(Required=false)]
+        public string CustomPrompt { get; set; }
+
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>true</para>
+        /// </summary>
+        [NameInMap("enablePushCard")]
+        [Validation(Required=false)]
+        public bool? EnablePushCard { get; set; }
+
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>false</para>
+        /// </summary>
+        [NameInMap("hiddenMinutes")]
+        [Validation(Required=false)]
+        public bool? HiddenMinutes { get; set; }
+
         /// <summary>
         /// <para>This parameter is required.</para>
         /// 

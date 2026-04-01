@@ -22414,7 +22414,7 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>查询订单转换结果</para>
+        /// <para>订单转换</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -22477,7 +22477,7 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>查询订单转换结果</para>
+        /// <para>订单转换</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -22540,7 +22540,7 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>查询订单转换结果</para>
+        /// <para>订单转换</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -22559,7 +22559,7 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>查询订单转换结果</para>
+        /// <para>订单转换</para>
         /// </summary>
         /// 
         /// <param name="request">

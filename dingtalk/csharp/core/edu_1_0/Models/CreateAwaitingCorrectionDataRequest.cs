@@ -10,8 +10,6 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class CreateAwaitingCorrectionDataRequest : TeaModel {
         /// <summary>
-        /// <para>This parameter is required.</para>
-        /// 
         /// <b>Example:</b>
         /// <para><a href="https://example.com/files/corrected_math_hw_T250401-001.pdf">https://example.com/files/corrected_math_hw_T250401-001.pdf</a></para>
         /// </summary>

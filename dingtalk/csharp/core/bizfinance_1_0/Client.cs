@@ -5425,6 +5425,9 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
         /// <para>查询钉钉智能财务多主体信息</para>
         /// </summary>
         /// 
+        /// <param name="request">
+        /// QueryMultiCompanyInfoRequest
+        /// </param>
         /// <param name="headers">
         /// QueryMultiCompanyInfoHeaders
         /// </param>
@@ -5435,8 +5438,14 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
         /// <returns>
         /// QueryMultiCompanyInfoResponse
         /// </returns>
-        public QueryMultiCompanyInfoResponse QueryMultiCompanyInfoWithOptions(QueryMultiCompanyInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public QueryMultiCompanyInfoResponse QueryMultiCompanyInfoWithOptions(QueryMultiCompanyInfoRequest request, QueryMultiCompanyInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartStatus))
+            {
+                query["startStatus"] = request.StartStatus;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -5449,6 +5458,7 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
             AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
             {
@@ -5470,6 +5480,9 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
         /// <para>查询钉钉智能财务多主体信息</para>
         /// </summary>
         /// 
+        /// <param name="request">
+        /// QueryMultiCompanyInfoRequest
+        /// </param>
         /// <param name="headers">
         /// QueryMultiCompanyInfoHeaders
         /// </param>
@@ -5480,8 +5493,14 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
         /// <returns>
         /// QueryMultiCompanyInfoResponse
         /// </returns>
-        public async Task<QueryMultiCompanyInfoResponse> QueryMultiCompanyInfoWithOptionsAsync(QueryMultiCompanyInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<QueryMultiCompanyInfoResponse> QueryMultiCompanyInfoWithOptionsAsync(QueryMultiCompanyInfoRequest request, QueryMultiCompanyInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartStatus))
+            {
+                query["startStatus"] = request.StartStatus;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -5494,6 +5513,7 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
             AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
             {
@@ -5515,14 +5535,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
         /// <para>查询钉钉智能财务多主体信息</para>
         /// </summary>
         /// 
+        /// <param name="request">
+        /// QueryMultiCompanyInfoRequest
+        /// </param>
+        /// 
         /// <returns>
         /// QueryMultiCompanyInfoResponse
         /// </returns>
-        public QueryMultiCompanyInfoResponse QueryMultiCompanyInfo()
+        public QueryMultiCompanyInfoResponse QueryMultiCompanyInfo(QueryMultiCompanyInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             QueryMultiCompanyInfoHeaders headers = new QueryMultiCompanyInfoHeaders();
-            return QueryMultiCompanyInfoWithOptions(headers, runtime);
+            return QueryMultiCompanyInfoWithOptions(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>
@@ -5530,14 +5554,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
         /// <para>查询钉钉智能财务多主体信息</para>
         /// </summary>
         /// 
+        /// <param name="request">
+        /// QueryMultiCompanyInfoRequest
+        /// </param>
+        /// 
         /// <returns>
         /// QueryMultiCompanyInfoResponse
         /// </returns>
-        public async Task<QueryMultiCompanyInfoResponse> QueryMultiCompanyInfoAsync()
+        public async Task<QueryMultiCompanyInfoResponse> QueryMultiCompanyInfoAsync(QueryMultiCompanyInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             QueryMultiCompanyInfoHeaders headers = new QueryMultiCompanyInfoHeaders();
-            return await QueryMultiCompanyInfoWithOptionsAsync(headers, runtime);
+            return await QueryMultiCompanyInfoWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

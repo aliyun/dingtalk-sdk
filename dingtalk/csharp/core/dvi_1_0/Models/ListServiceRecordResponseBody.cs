@@ -69,6 +69,10 @@ namespace AlibabaCloud.SDK.Dingtalkdvi_1_0.Models
 
             }
 
+            [NameInMap("valid")]
+            [Validation(Required=false)]
+            public bool? Valid { get; set; }
+
         }
 
         [NameInMap("totalCount")]

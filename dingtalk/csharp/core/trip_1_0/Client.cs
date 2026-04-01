@@ -30,6 +30,186 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>下单前校验是否符合业务标准</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CheckOrderRequest
+        /// </param>
+        /// <param name="headers">
+        /// CheckOrderHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CheckOrderResponse
+        /// </returns>
+        public CheckOrderResponse CheckOrderWithOptions(CheckOrderRequest request, CheckOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ChannelCorpId))
+            {
+                body["channelCorpId"] = request.ChannelCorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.JourneyBizNo))
+            {
+                body["journeyBizNo"] = request.JourneyBizNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderType))
+            {
+                body["orderType"] = request.OrderType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessInstanceId))
+            {
+                body["processInstanceId"] = request.ProcessInstanceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StaffId))
+            {
+                body["staffId"] = request.StaffId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CheckOrder",
+                Version = "trip_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/trip/tripOrder/check",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CheckOrderResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>下单前校验是否符合业务标准</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CheckOrderRequest
+        /// </param>
+        /// <param name="headers">
+        /// CheckOrderHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CheckOrderResponse
+        /// </returns>
+        public async Task<CheckOrderResponse> CheckOrderWithOptionsAsync(CheckOrderRequest request, CheckOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ChannelCorpId))
+            {
+                body["channelCorpId"] = request.ChannelCorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.JourneyBizNo))
+            {
+                body["journeyBizNo"] = request.JourneyBizNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderType))
+            {
+                body["orderType"] = request.OrderType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessInstanceId))
+            {
+                body["processInstanceId"] = request.ProcessInstanceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StaffId))
+            {
+                body["staffId"] = request.StaffId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CheckOrder",
+                Version = "trip_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/trip/tripOrder/check",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CheckOrderResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>下单前校验是否符合业务标准</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CheckOrderRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CheckOrderResponse
+        /// </returns>
+        public CheckOrderResponse CheckOrder(CheckOrderRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CheckOrderHeaders headers = new CheckOrderHeaders();
+            return CheckOrderWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>下单前校验是否符合业务标准</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CheckOrderRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CheckOrderResponse
+        /// </returns>
+        public async Task<CheckOrderResponse> CheckOrderAsync(CheckOrderRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CheckOrderHeaders headers = new CheckOrderHeaders();
+            return await CheckOrderWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>获取差旅审批实例详情</para>
         /// </summary>
         /// 

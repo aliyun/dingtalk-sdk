@@ -1086,6 +1086,162 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>删除钉钉文档</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CleanFileRequest
+        /// </param>
+        /// <param name="headers">
+        /// CleanFileHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CleanFileResponse
+        /// </returns>
+        public CleanFileResponse CleanFileWithOptions(CleanFileRequest request, CleanFileHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DentryIds))
+            {
+                body["dentryIds"] = request.DentryIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StaffId))
+            {
+                body["staffId"] = request.StaffId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CleanFile",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/privateStores/files/clean",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CleanFileResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除钉钉文档</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CleanFileRequest
+        /// </param>
+        /// <param name="headers">
+        /// CleanFileHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CleanFileResponse
+        /// </returns>
+        public async Task<CleanFileResponse> CleanFileWithOptionsAsync(CleanFileRequest request, CleanFileHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DentryIds))
+            {
+                body["dentryIds"] = request.DentryIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StaffId))
+            {
+                body["staffId"] = request.StaffId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CleanFile",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/privateStores/files/clean",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CleanFileResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除钉钉文档</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CleanFileRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CleanFileResponse
+        /// </returns>
+        public CleanFileResponse CleanFile(CleanFileRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CleanFileHeaders headers = new CleanFileHeaders();
+            return CleanFileWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除钉钉文档</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CleanFileRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CleanFileResponse
+        /// </returns>
+        public async Task<CleanFileResponse> CleanFileAsync(CleanFileRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CleanFileHeaders headers = new CleanFileHeaders();
+            return await CleanFileWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>创建分组并绑定会话</para>
         /// </summary>
         /// 

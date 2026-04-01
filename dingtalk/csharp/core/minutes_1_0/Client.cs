@@ -30,6 +30,214 @@ namespace AlibabaCloud.SDK.Dingtalkminutes_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>搜索企业内听记</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AdminSearchMinutesRequest
+        /// </param>
+        /// <param name="headers">
+        /// AdminSearchMinutesHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AdminSearchMinutesResponse
+        /// </returns>
+        public AdminSearchMinutesResponse AdminSearchMinutesWithOptions(AdminSearchMinutesRequest request, AdminSearchMinutesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreatorUnionIds))
+            {
+                body["creatorUnionIds"] = request.CreatorUnionIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
+            {
+                body["endTime"] = request.EndTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                body["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                body["pageSize"] = request.PageSize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Query))
+            {
+                body["query"] = request.Query;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SearchType))
+            {
+                body["searchType"] = request.SearchType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
+            {
+                body["startTime"] = request.StartTime;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AdminSearchMinutes",
+                Version = "minutes_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/minutes/flashMinutes/adminSearch",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AdminSearchMinutesResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>搜索企业内听记</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AdminSearchMinutesRequest
+        /// </param>
+        /// <param name="headers">
+        /// AdminSearchMinutesHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AdminSearchMinutesResponse
+        /// </returns>
+        public async Task<AdminSearchMinutesResponse> AdminSearchMinutesWithOptionsAsync(AdminSearchMinutesRequest request, AdminSearchMinutesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreatorUnionIds))
+            {
+                body["creatorUnionIds"] = request.CreatorUnionIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
+            {
+                body["endTime"] = request.EndTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                body["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                body["pageSize"] = request.PageSize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Query))
+            {
+                body["query"] = request.Query;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SearchType))
+            {
+                body["searchType"] = request.SearchType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
+            {
+                body["startTime"] = request.StartTime;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AdminSearchMinutes",
+                Version = "minutes_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/minutes/flashMinutes/adminSearch",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AdminSearchMinutesResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>搜索企业内听记</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AdminSearchMinutesRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AdminSearchMinutesResponse
+        /// </returns>
+        public AdminSearchMinutesResponse AdminSearchMinutes(AdminSearchMinutesRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AdminSearchMinutesHeaders headers = new AdminSearchMinutesHeaders();
+            return AdminSearchMinutesWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>搜索企业内听记</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AdminSearchMinutesRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AdminSearchMinutesResponse
+        /// </returns>
+        public async Task<AdminSearchMinutesResponse> AdminSearchMinutesAsync(AdminSearchMinutesRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AdminSearchMinutesHeaders headers = new AdminSearchMinutesHeaders();
+            return await AdminSearchMinutesWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>批量获取闪记详情</para>
         /// </summary>
         /// 
@@ -223,6 +431,18 @@ namespace AlibabaCloud.SDK.Dingtalkminutes_1_0
             {
                 body["creatorId"] = request.CreatorId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CustomPrompt))
+            {
+                body["customPrompt"] = request.CustomPrompt;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnablePushCard))
+            {
+                body["enablePushCard"] = request.EnablePushCard;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HiddenMinutes))
+            {
+                body["hiddenMinutes"] = request.HiddenMinutes;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MediaFileUrl))
             {
                 body["mediaFileUrl"] = request.MediaFileUrl;
@@ -299,6 +519,18 @@ namespace AlibabaCloud.SDK.Dingtalkminutes_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreatorId))
             {
                 body["creatorId"] = request.CreatorId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CustomPrompt))
+            {
+                body["customPrompt"] = request.CustomPrompt;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnablePushCard))
+            {
+                body["enablePushCard"] = request.EnablePushCard;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HiddenMinutes))
+            {
+                body["hiddenMinutes"] = request.HiddenMinutes;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MediaFileUrl))
             {
@@ -3862,6 +4094,174 @@ namespace AlibabaCloud.SDK.Dingtalkminutes_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             QueryUserMinutesPermissionHeaders headers = new QueryUserMinutesPermissionHeaders();
             return await QueryUserMinutesPermissionWithOptionsAsync(taskUuid, unionId, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>重新生成听记智能章节</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RegenerateChaptersRequest
+        /// </param>
+        /// <param name="headers">
+        /// RegenerateChaptersHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// RegenerateChaptersResponse
+        /// </returns>
+        public RegenerateChaptersResponse RegenerateChaptersWithOptions(RegenerateChaptersRequest request, RegenerateChaptersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskUuid))
+            {
+                query["taskUuid"] = request.TaskUuid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CustomPrompt))
+            {
+                body["customPrompt"] = request.CustomPrompt;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "RegenerateChapters",
+                Version = "minutes_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/minutes/chapters/regenerate",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<RegenerateChaptersResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>重新生成听记智能章节</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RegenerateChaptersRequest
+        /// </param>
+        /// <param name="headers">
+        /// RegenerateChaptersHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// RegenerateChaptersResponse
+        /// </returns>
+        public async Task<RegenerateChaptersResponse> RegenerateChaptersWithOptionsAsync(RegenerateChaptersRequest request, RegenerateChaptersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskUuid))
+            {
+                query["taskUuid"] = request.TaskUuid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CustomPrompt))
+            {
+                body["customPrompt"] = request.CustomPrompt;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "RegenerateChapters",
+                Version = "minutes_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/minutes/chapters/regenerate",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<RegenerateChaptersResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>重新生成听记智能章节</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RegenerateChaptersRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// RegenerateChaptersResponse
+        /// </returns>
+        public RegenerateChaptersResponse RegenerateChapters(RegenerateChaptersRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            RegenerateChaptersHeaders headers = new RegenerateChaptersHeaders();
+            return RegenerateChaptersWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>重新生成听记智能章节</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RegenerateChaptersRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// RegenerateChaptersResponse
+        /// </returns>
+        public async Task<RegenerateChaptersResponse> RegenerateChaptersAsync(RegenerateChaptersRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            RegenerateChaptersHeaders headers = new RegenerateChaptersHeaders();
+            return await RegenerateChaptersWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

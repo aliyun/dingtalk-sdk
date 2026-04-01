@@ -33,6 +33,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         [Validation(Required=false)]
         public string NextToken { get; set; }
 
+        [NameInMap("staffIdNickMap")]
+        [Validation(Required=false)]
+        public Dictionary<string, string> StaffIdNickMap { get; set; }
+
         [NameInMap("success")]
         [Validation(Required=false)]
         public bool? Success { get; set; }
@@ -40,6 +44,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         [NameInMap("unionIdList")]
         [Validation(Required=false)]
         public List<string> UnionIdList { get; set; }
+
+        [NameInMap("unionIdNickMap")]
+        [Validation(Required=false)]
+        public Dictionary<string, string> UnionIdNickMap { get; set; }
 
     }
 

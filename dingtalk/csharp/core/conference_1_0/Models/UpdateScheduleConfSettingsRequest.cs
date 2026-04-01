@@ -119,6 +119,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
 
                 /// <summary>
                 /// <b>Example:</b>
+                /// <para>true：隐藏发起者姓名 false：不隐藏（默认）</para>
+                /// </summary>
+                [NameInMap("hiddenOwnerNick")]
+                [Validation(Required=false)]
+                public bool? HiddenOwnerNick { get; set; }
+
+                /// <summary>
+                /// <b>Example:</b>
                 /// <para>0：未开启 1：开启</para>
                 /// </summary>
                 [NameInMap("joinBeforeHost")]

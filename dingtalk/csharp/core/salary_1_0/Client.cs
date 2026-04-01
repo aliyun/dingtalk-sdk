@@ -746,6 +746,350 @@ namespace AlibabaCloud.SDK.Dingtalksalary_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>小微薪酬撤销定调薪数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RevokeSalaryArchivesRequest
+        /// </param>
+        /// <param name="headers">
+        /// RevokeSalaryArchivesHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// RevokeSalaryArchivesResponse
+        /// </returns>
+        public RevokeSalaryArchivesResponse RevokeSalaryArchivesWithOptions(RevokeSalaryArchivesRequest request, RevokeSalaryArchivesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EffectiveDate))
+            {
+                body["effectiveDate"] = request.EffectiveDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUserId))
+            {
+                body["opUserId"] = request.OpUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "RevokeSalaryArchives",
+                Version = "salary_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/salary/archives",
+                Method = "DELETE",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<RevokeSalaryArchivesResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>小微薪酬撤销定调薪数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RevokeSalaryArchivesRequest
+        /// </param>
+        /// <param name="headers">
+        /// RevokeSalaryArchivesHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// RevokeSalaryArchivesResponse
+        /// </returns>
+        public async Task<RevokeSalaryArchivesResponse> RevokeSalaryArchivesWithOptionsAsync(RevokeSalaryArchivesRequest request, RevokeSalaryArchivesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EffectiveDate))
+            {
+                body["effectiveDate"] = request.EffectiveDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUserId))
+            {
+                body["opUserId"] = request.OpUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "RevokeSalaryArchives",
+                Version = "salary_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/salary/archives",
+                Method = "DELETE",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<RevokeSalaryArchivesResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>小微薪酬撤销定调薪数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RevokeSalaryArchivesRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// RevokeSalaryArchivesResponse
+        /// </returns>
+        public RevokeSalaryArchivesResponse RevokeSalaryArchives(RevokeSalaryArchivesRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            RevokeSalaryArchivesHeaders headers = new RevokeSalaryArchivesHeaders();
+            return RevokeSalaryArchivesWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>小微薪酬撤销定调薪数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RevokeSalaryArchivesRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// RevokeSalaryArchivesResponse
+        /// </returns>
+        public async Task<RevokeSalaryArchivesResponse> RevokeSalaryArchivesAsync(RevokeSalaryArchivesRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            RevokeSalaryArchivesHeaders headers = new RevokeSalaryArchivesHeaders();
+            return await RevokeSalaryArchivesWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>小微薪酬保存定调薪数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SaveSalaryArchivesRequest
+        /// </param>
+        /// <param name="headers">
+        /// SaveSalaryArchivesHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SaveSalaryArchivesResponse
+        /// </returns>
+        public SaveSalaryArchivesResponse SaveSalaryArchivesWithOptions(SaveSalaryArchivesRequest request, SaveSalaryArchivesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AdjustMemo))
+            {
+                body["adjustMemo"] = request.AdjustMemo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Contents))
+            {
+                body["contents"] = request.Contents;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EffectiveDate))
+            {
+                body["effectiveDate"] = request.EffectiveDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUserId))
+            {
+                body["opUserId"] = request.OpUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SaveSalaryArchives",
+                Version = "salary_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/salary/archives",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SaveSalaryArchivesResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>小微薪酬保存定调薪数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SaveSalaryArchivesRequest
+        /// </param>
+        /// <param name="headers">
+        /// SaveSalaryArchivesHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SaveSalaryArchivesResponse
+        /// </returns>
+        public async Task<SaveSalaryArchivesResponse> SaveSalaryArchivesWithOptionsAsync(SaveSalaryArchivesRequest request, SaveSalaryArchivesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AdjustMemo))
+            {
+                body["adjustMemo"] = request.AdjustMemo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Contents))
+            {
+                body["contents"] = request.Contents;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EffectiveDate))
+            {
+                body["effectiveDate"] = request.EffectiveDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUserId))
+            {
+                body["opUserId"] = request.OpUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SaveSalaryArchives",
+                Version = "salary_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/salary/archives",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SaveSalaryArchivesResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>小微薪酬保存定调薪数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SaveSalaryArchivesRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SaveSalaryArchivesResponse
+        /// </returns>
+        public SaveSalaryArchivesResponse SaveSalaryArchives(SaveSalaryArchivesRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SaveSalaryArchivesHeaders headers = new SaveSalaryArchivesHeaders();
+            return SaveSalaryArchivesWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>小微薪酬保存定调薪数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SaveSalaryArchivesRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SaveSalaryArchivesResponse
+        /// </returns>
+        public async Task<SaveSalaryArchivesResponse> SaveSalaryArchivesAsync(SaveSalaryArchivesRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SaveSalaryArchivesHeaders headers = new SaveSalaryArchivesHeaders();
+            return await SaveSalaryArchivesWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>小微薪酬获取薪资记录写入</para>
         /// </summary>
         /// 

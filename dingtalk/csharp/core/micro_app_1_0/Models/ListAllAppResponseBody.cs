@@ -58,6 +58,10 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
             [Validation(Required=false)]
             public int? DevelopType { get; set; }
 
+            [NameInMap("h5PageType")]
+            [Validation(Required=false)]
+            public string H5PageType { get; set; }
+
             /// <summary>
             /// <b>Example:</b>
             /// <para><a href="https://www.dingtalk.com">https://www.dingtalk.com</a></para>

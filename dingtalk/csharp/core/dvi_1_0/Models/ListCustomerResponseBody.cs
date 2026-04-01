@@ -33,6 +33,10 @@ namespace AlibabaCloud.SDK.Dingtalkdvi_1_0.Models
             [Validation(Required=false)]
             public string OwnerUserId { get; set; }
 
+            [NameInMap("phone")]
+            [Validation(Required=false)]
+            public string Phone { get; set; }
+
             [NameInMap("teamCode")]
             [Validation(Required=false)]
             public string TeamCode { get; set; }

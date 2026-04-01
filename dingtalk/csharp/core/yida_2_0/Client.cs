@@ -862,6 +862,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             {
                 body["appType"] = request.AppType;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Env))
+            {
+                body["env"] = request.Env;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FormDataJson))
             {
                 body["formDataJson"] = request.FormDataJson;
@@ -944,6 +948,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppType))
             {
                 body["appType"] = request.AppType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Env))
+            {
+                body["env"] = request.Env;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FormDataJson))
             {
@@ -3122,6 +3130,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             {
                 body["appType"] = request.AppType;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Env))
+            {
+                body["env"] = request.Env;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FormDataJson))
             {
                 body["formDataJson"] = request.FormDataJson;
@@ -3200,6 +3212,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppType))
             {
                 body["appType"] = request.AppType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Env))
+            {
+                body["env"] = request.Env;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FormDataJson))
             {
@@ -3566,6 +3582,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             {
                 body["createToTimeGMT"] = request.CreateToTimeGMT;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Env))
+            {
+                body["env"] = request.Env;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FormUuid))
             {
                 body["formUuid"] = request.FormUuid;
@@ -3672,6 +3692,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreateToTimeGMT))
             {
                 body["createToTimeGMT"] = request.CreateToTimeGMT;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Env))
+            {
+                body["env"] = request.Env;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FormUuid))
             {

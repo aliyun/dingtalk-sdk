@@ -10890,6 +10890,10 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
             {
                 body["reason"] = request.Reason;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReasonI18nForEmployee))
+            {
+                body["reasonI18nForEmployee"] = request.ReasonI18nForEmployee;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
                 body["userId"] = request.UserId;
@@ -10948,6 +10952,10 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Reason))
             {
                 body["reason"] = request.Reason;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReasonI18nForEmployee))
+            {
+                body["reasonI18nForEmployee"] = request.ReasonI18nForEmployee;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
@@ -11330,6 +11338,1914 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             SubmitHandoverResourceHeaders headers = new SubmitHandoverResourceHeaders();
             return await SubmitHandoverResourceWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：添加员工自定义标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TalentAddCustomTagRequest
+        /// </param>
+        /// <param name="headers">
+        /// TalentAddCustomTagHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// TalentAddCustomTagResponse
+        /// </returns>
+        public TalentAddCustomTagResponse TalentAddCustomTagWithOptions(TalentAddCustomTagRequest request, TalentAddCustomTagHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SortOrder))
+            {
+                body["sortOrder"] = request.SortOrder;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TagCode))
+            {
+                body["tagCode"] = request.TagCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TagName))
+            {
+                body["tagName"] = request.TagName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "TalentAddCustomTag",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/talentTags/addCustomTag",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<TalentAddCustomTagResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：添加员工自定义标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TalentAddCustomTagRequest
+        /// </param>
+        /// <param name="headers">
+        /// TalentAddCustomTagHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// TalentAddCustomTagResponse
+        /// </returns>
+        public async Task<TalentAddCustomTagResponse> TalentAddCustomTagWithOptionsAsync(TalentAddCustomTagRequest request, TalentAddCustomTagHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SortOrder))
+            {
+                body["sortOrder"] = request.SortOrder;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TagCode))
+            {
+                body["tagCode"] = request.TagCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TagName))
+            {
+                body["tagName"] = request.TagName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "TalentAddCustomTag",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/talentTags/addCustomTag",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<TalentAddCustomTagResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：添加员工自定义标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TalentAddCustomTagRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// TalentAddCustomTagResponse
+        /// </returns>
+        public TalentAddCustomTagResponse TalentAddCustomTag(TalentAddCustomTagRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            TalentAddCustomTagHeaders headers = new TalentAddCustomTagHeaders();
+            return TalentAddCustomTagWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：添加员工自定义标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TalentAddCustomTagRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// TalentAddCustomTagResponse
+        /// </returns>
+        public async Task<TalentAddCustomTagResponse> TalentAddCustomTagAsync(TalentAddCustomTagRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            TalentAddCustomTagHeaders headers = new TalentAddCustomTagHeaders();
+            return await TalentAddCustomTagWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：添加员工客观标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TalentAddObjectiveTagRequest
+        /// </param>
+        /// <param name="headers">
+        /// TalentAddObjectiveTagHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// TalentAddObjectiveTagResponse
+        /// </returns>
+        public TalentAddObjectiveTagResponse TalentAddObjectiveTagWithOptions(TalentAddObjectiveTagRequest request, TalentAddObjectiveTagHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SortOrder))
+            {
+                body["sortOrder"] = request.SortOrder;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TagCode))
+            {
+                body["tagCode"] = request.TagCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TagName))
+            {
+                body["tagName"] = request.TagName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "TalentAddObjectiveTag",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/talentTags/addObjectiveTag",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<TalentAddObjectiveTagResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：添加员工客观标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TalentAddObjectiveTagRequest
+        /// </param>
+        /// <param name="headers">
+        /// TalentAddObjectiveTagHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// TalentAddObjectiveTagResponse
+        /// </returns>
+        public async Task<TalentAddObjectiveTagResponse> TalentAddObjectiveTagWithOptionsAsync(TalentAddObjectiveTagRequest request, TalentAddObjectiveTagHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SortOrder))
+            {
+                body["sortOrder"] = request.SortOrder;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TagCode))
+            {
+                body["tagCode"] = request.TagCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TagName))
+            {
+                body["tagName"] = request.TagName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "TalentAddObjectiveTag",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/talentTags/addObjectiveTag",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<TalentAddObjectiveTagResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：添加员工客观标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TalentAddObjectiveTagRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// TalentAddObjectiveTagResponse
+        /// </returns>
+        public TalentAddObjectiveTagResponse TalentAddObjectiveTag(TalentAddObjectiveTagRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            TalentAddObjectiveTagHeaders headers = new TalentAddObjectiveTagHeaders();
+            return TalentAddObjectiveTagWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：添加员工客观标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TalentAddObjectiveTagRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// TalentAddObjectiveTagResponse
+        /// </returns>
+        public async Task<TalentAddObjectiveTagResponse> TalentAddObjectiveTagAsync(TalentAddObjectiveTagRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            TalentAddObjectiveTagHeaders headers = new TalentAddObjectiveTagHeaders();
+            return await TalentAddObjectiveTagWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：添加企业个性标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TalentAddPersonalityTagRequest
+        /// </param>
+        /// <param name="headers">
+        /// TalentAddPersonalityTagHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// TalentAddPersonalityTagResponse
+        /// </returns>
+        public TalentAddPersonalityTagResponse TalentAddPersonalityTagWithOptions(TalentAddPersonalityTagRequest request, TalentAddPersonalityTagHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CategoryCode))
+            {
+                body["categoryCode"] = request.CategoryCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CategoryName))
+            {
+                body["categoryName"] = request.CategoryName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CategorySortOrder))
+            {
+                body["categorySortOrder"] = request.CategorySortOrder;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SortOrder))
+            {
+                body["sortOrder"] = request.SortOrder;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TagCode))
+            {
+                body["tagCode"] = request.TagCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TagName))
+            {
+                body["tagName"] = request.TagName;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "TalentAddPersonalityTag",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/talentTags/addPersonalityTag",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<TalentAddPersonalityTagResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：添加企业个性标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TalentAddPersonalityTagRequest
+        /// </param>
+        /// <param name="headers">
+        /// TalentAddPersonalityTagHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// TalentAddPersonalityTagResponse
+        /// </returns>
+        public async Task<TalentAddPersonalityTagResponse> TalentAddPersonalityTagWithOptionsAsync(TalentAddPersonalityTagRequest request, TalentAddPersonalityTagHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CategoryCode))
+            {
+                body["categoryCode"] = request.CategoryCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CategoryName))
+            {
+                body["categoryName"] = request.CategoryName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CategorySortOrder))
+            {
+                body["categorySortOrder"] = request.CategorySortOrder;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SortOrder))
+            {
+                body["sortOrder"] = request.SortOrder;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TagCode))
+            {
+                body["tagCode"] = request.TagCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TagName))
+            {
+                body["tagName"] = request.TagName;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "TalentAddPersonalityTag",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/talentTags/addPersonalityTag",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<TalentAddPersonalityTagResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：添加企业个性标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TalentAddPersonalityTagRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// TalentAddPersonalityTagResponse
+        /// </returns>
+        public TalentAddPersonalityTagResponse TalentAddPersonalityTag(TalentAddPersonalityTagRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            TalentAddPersonalityTagHeaders headers = new TalentAddPersonalityTagHeaders();
+            return TalentAddPersonalityTagWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：添加企业个性标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TalentAddPersonalityTagRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// TalentAddPersonalityTagResponse
+        /// </returns>
+        public async Task<TalentAddPersonalityTagResponse> TalentAddPersonalityTagAsync(TalentAddPersonalityTagRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            TalentAddPersonalityTagHeaders headers = new TalentAddPersonalityTagHeaders();
+            return await TalentAddPersonalityTagWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：删除员工自定义标签并清除所有点赞记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TalentDeleteCustomTagRequest
+        /// </param>
+        /// <param name="headers">
+        /// TalentDeleteCustomTagHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// TalentDeleteCustomTagResponse
+        /// </returns>
+        public TalentDeleteCustomTagResponse TalentDeleteCustomTagWithOptions(TalentDeleteCustomTagRequest request, TalentDeleteCustomTagHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TagCode))
+            {
+                body["tagCode"] = request.TagCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "TalentDeleteCustomTag",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/talentTags/deleteCustomTagWithClearLike",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<TalentDeleteCustomTagResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：删除员工自定义标签并清除所有点赞记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TalentDeleteCustomTagRequest
+        /// </param>
+        /// <param name="headers">
+        /// TalentDeleteCustomTagHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// TalentDeleteCustomTagResponse
+        /// </returns>
+        public async Task<TalentDeleteCustomTagResponse> TalentDeleteCustomTagWithOptionsAsync(TalentDeleteCustomTagRequest request, TalentDeleteCustomTagHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TagCode))
+            {
+                body["tagCode"] = request.TagCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "TalentDeleteCustomTag",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/talentTags/deleteCustomTagWithClearLike",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<TalentDeleteCustomTagResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：删除员工自定义标签并清除所有点赞记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TalentDeleteCustomTagRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// TalentDeleteCustomTagResponse
+        /// </returns>
+        public TalentDeleteCustomTagResponse TalentDeleteCustomTag(TalentDeleteCustomTagRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            TalentDeleteCustomTagHeaders headers = new TalentDeleteCustomTagHeaders();
+            return TalentDeleteCustomTagWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：删除员工自定义标签并清除所有点赞记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TalentDeleteCustomTagRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// TalentDeleteCustomTagResponse
+        /// </returns>
+        public async Task<TalentDeleteCustomTagResponse> TalentDeleteCustomTagAsync(TalentDeleteCustomTagRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            TalentDeleteCustomTagHeaders headers = new TalentDeleteCustomTagHeaders();
+            return await TalentDeleteCustomTagWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：删除员工客观标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TalentDeleteObjectiveTagRequest
+        /// </param>
+        /// <param name="headers">
+        /// TalentDeleteObjectiveTagHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// TalentDeleteObjectiveTagResponse
+        /// </returns>
+        public TalentDeleteObjectiveTagResponse TalentDeleteObjectiveTagWithOptions(TalentDeleteObjectiveTagRequest request, TalentDeleteObjectiveTagHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TagCode))
+            {
+                body["tagCode"] = request.TagCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "TalentDeleteObjectiveTag",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/talentTags/deleteObjectiveTag",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<TalentDeleteObjectiveTagResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：删除员工客观标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TalentDeleteObjectiveTagRequest
+        /// </param>
+        /// <param name="headers">
+        /// TalentDeleteObjectiveTagHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// TalentDeleteObjectiveTagResponse
+        /// </returns>
+        public async Task<TalentDeleteObjectiveTagResponse> TalentDeleteObjectiveTagWithOptionsAsync(TalentDeleteObjectiveTagRequest request, TalentDeleteObjectiveTagHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TagCode))
+            {
+                body["tagCode"] = request.TagCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "TalentDeleteObjectiveTag",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/talentTags/deleteObjectiveTag",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<TalentDeleteObjectiveTagResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：删除员工客观标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TalentDeleteObjectiveTagRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// TalentDeleteObjectiveTagResponse
+        /// </returns>
+        public TalentDeleteObjectiveTagResponse TalentDeleteObjectiveTag(TalentDeleteObjectiveTagRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            TalentDeleteObjectiveTagHeaders headers = new TalentDeleteObjectiveTagHeaders();
+            return TalentDeleteObjectiveTagWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：删除员工客观标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TalentDeleteObjectiveTagRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// TalentDeleteObjectiveTagResponse
+        /// </returns>
+        public async Task<TalentDeleteObjectiveTagResponse> TalentDeleteObjectiveTagAsync(TalentDeleteObjectiveTagRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            TalentDeleteObjectiveTagHeaders headers = new TalentDeleteObjectiveTagHeaders();
+            return await TalentDeleteObjectiveTagWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：删除企业个性标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TalentDeletePersonalityTagRequest
+        /// </param>
+        /// <param name="headers">
+        /// TalentDeletePersonalityTagHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// TalentDeletePersonalityTagResponse
+        /// </returns>
+        public TalentDeletePersonalityTagResponse TalentDeletePersonalityTagWithOptions(TalentDeletePersonalityTagRequest request, TalentDeletePersonalityTagHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TagCode))
+            {
+                body["tagCode"] = request.TagCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "TalentDeletePersonalityTag",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/talentTags/deletePersonalityTag",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<TalentDeletePersonalityTagResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：删除企业个性标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TalentDeletePersonalityTagRequest
+        /// </param>
+        /// <param name="headers">
+        /// TalentDeletePersonalityTagHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// TalentDeletePersonalityTagResponse
+        /// </returns>
+        public async Task<TalentDeletePersonalityTagResponse> TalentDeletePersonalityTagWithOptionsAsync(TalentDeletePersonalityTagRequest request, TalentDeletePersonalityTagHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TagCode))
+            {
+                body["tagCode"] = request.TagCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "TalentDeletePersonalityTag",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/talentTags/deletePersonalityTag",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<TalentDeletePersonalityTagResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：删除企业个性标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TalentDeletePersonalityTagRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// TalentDeletePersonalityTagResponse
+        /// </returns>
+        public TalentDeletePersonalityTagResponse TalentDeletePersonalityTag(TalentDeletePersonalityTagRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            TalentDeletePersonalityTagHeaders headers = new TalentDeletePersonalityTagHeaders();
+            return TalentDeletePersonalityTagWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：删除企业个性标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TalentDeletePersonalityTagRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// TalentDeletePersonalityTagResponse
+        /// </returns>
+        public async Task<TalentDeletePersonalityTagResponse> TalentDeletePersonalityTagAsync(TalentDeletePersonalityTagRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            TalentDeletePersonalityTagHeaders headers = new TalentDeletePersonalityTagHeaders();
+            return await TalentDeletePersonalityTagWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：点赞/取消点赞标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TalentLikeTagRequest
+        /// </param>
+        /// <param name="headers">
+        /// TalentLikeTagHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// TalentLikeTagResponse
+        /// </returns>
+        public TalentLikeTagResponse TalentLikeTagWithOptions(TalentLikeTagRequest request, TalentLikeTagHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ActionType))
+            {
+                body["actionType"] = request.ActionType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorUserId))
+            {
+                body["operatorUserId"] = request.OperatorUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TagCode))
+            {
+                body["tagCode"] = request.TagCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "TalentLikeTag",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/talentTags/likeTag",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<TalentLikeTagResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：点赞/取消点赞标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TalentLikeTagRequest
+        /// </param>
+        /// <param name="headers">
+        /// TalentLikeTagHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// TalentLikeTagResponse
+        /// </returns>
+        public async Task<TalentLikeTagResponse> TalentLikeTagWithOptionsAsync(TalentLikeTagRequest request, TalentLikeTagHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ActionType))
+            {
+                body["actionType"] = request.ActionType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorUserId))
+            {
+                body["operatorUserId"] = request.OperatorUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TagCode))
+            {
+                body["tagCode"] = request.TagCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "TalentLikeTag",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/talentTags/likeTag",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<TalentLikeTagResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：点赞/取消点赞标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TalentLikeTagRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// TalentLikeTagResponse
+        /// </returns>
+        public TalentLikeTagResponse TalentLikeTag(TalentLikeTagRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            TalentLikeTagHeaders headers = new TalentLikeTagHeaders();
+            return TalentLikeTagWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：点赞/取消点赞标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TalentLikeTagRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// TalentLikeTagResponse
+        /// </returns>
+        public async Task<TalentLikeTagResponse> TalentLikeTagAsync(TalentLikeTagRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            TalentLikeTagHeaders headers = new TalentLikeTagHeaders();
+            return await TalentLikeTagWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：查询员工自定义标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TalentQueryCustomTagRequest
+        /// </param>
+        /// <param name="headers">
+        /// TalentQueryCustomTagHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// TalentQueryCustomTagResponse
+        /// </returns>
+        public TalentQueryCustomTagResponse TalentQueryCustomTagWithOptions(TalentQueryCustomTagRequest request, TalentQueryCustomTagHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "TalentQueryCustomTag",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/talentTags/queryCustomTag",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<TalentQueryCustomTagResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：查询员工自定义标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TalentQueryCustomTagRequest
+        /// </param>
+        /// <param name="headers">
+        /// TalentQueryCustomTagHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// TalentQueryCustomTagResponse
+        /// </returns>
+        public async Task<TalentQueryCustomTagResponse> TalentQueryCustomTagWithOptionsAsync(TalentQueryCustomTagRequest request, TalentQueryCustomTagHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "TalentQueryCustomTag",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/talentTags/queryCustomTag",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<TalentQueryCustomTagResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：查询员工自定义标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TalentQueryCustomTagRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// TalentQueryCustomTagResponse
+        /// </returns>
+        public TalentQueryCustomTagResponse TalentQueryCustomTag(TalentQueryCustomTagRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            TalentQueryCustomTagHeaders headers = new TalentQueryCustomTagHeaders();
+            return TalentQueryCustomTagWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：查询员工自定义标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TalentQueryCustomTagRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// TalentQueryCustomTagResponse
+        /// </returns>
+        public async Task<TalentQueryCustomTagResponse> TalentQueryCustomTagAsync(TalentQueryCustomTagRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            TalentQueryCustomTagHeaders headers = new TalentQueryCustomTagHeaders();
+            return await TalentQueryCustomTagWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：查询员工客观标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TalentQueryObjectiveTagRequest
+        /// </param>
+        /// <param name="headers">
+        /// TalentQueryObjectiveTagHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// TalentQueryObjectiveTagResponse
+        /// </returns>
+        public TalentQueryObjectiveTagResponse TalentQueryObjectiveTagWithOptions(TalentQueryObjectiveTagRequest request, TalentQueryObjectiveTagHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "TalentQueryObjectiveTag",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/talentTags/queryObjectiveTag",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<TalentQueryObjectiveTagResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：查询员工客观标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TalentQueryObjectiveTagRequest
+        /// </param>
+        /// <param name="headers">
+        /// TalentQueryObjectiveTagHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// TalentQueryObjectiveTagResponse
+        /// </returns>
+        public async Task<TalentQueryObjectiveTagResponse> TalentQueryObjectiveTagWithOptionsAsync(TalentQueryObjectiveTagRequest request, TalentQueryObjectiveTagHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "TalentQueryObjectiveTag",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/talentTags/queryObjectiveTag",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<TalentQueryObjectiveTagResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：查询员工客观标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TalentQueryObjectiveTagRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// TalentQueryObjectiveTagResponse
+        /// </returns>
+        public TalentQueryObjectiveTagResponse TalentQueryObjectiveTag(TalentQueryObjectiveTagRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            TalentQueryObjectiveTagHeaders headers = new TalentQueryObjectiveTagHeaders();
+            return TalentQueryObjectiveTagWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：查询员工客观标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TalentQueryObjectiveTagRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// TalentQueryObjectiveTagResponse
+        /// </returns>
+        public async Task<TalentQueryObjectiveTagResponse> TalentQueryObjectiveTagAsync(TalentQueryObjectiveTagRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            TalentQueryObjectiveTagHeaders headers = new TalentQueryObjectiveTagHeaders();
+            return await TalentQueryObjectiveTagWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：查询企业个性标签</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// TalentQueryPersonalityTagHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// TalentQueryPersonalityTagResponse
+        /// </returns>
+        public TalentQueryPersonalityTagResponse TalentQueryPersonalityTagWithOptions(TalentQueryPersonalityTagHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "TalentQueryPersonalityTag",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/talentTags/queryPersonalityTag",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<TalentQueryPersonalityTagResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：查询企业个性标签</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// TalentQueryPersonalityTagHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// TalentQueryPersonalityTagResponse
+        /// </returns>
+        public async Task<TalentQueryPersonalityTagResponse> TalentQueryPersonalityTagWithOptionsAsync(TalentQueryPersonalityTagHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "TalentQueryPersonalityTag",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/talentTags/queryPersonalityTag",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<TalentQueryPersonalityTagResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：查询企业个性标签</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// TalentQueryPersonalityTagResponse
+        /// </returns>
+        public TalentQueryPersonalityTagResponse TalentQueryPersonalityTag()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            TalentQueryPersonalityTagHeaders headers = new TalentQueryPersonalityTagHeaders();
+            return TalentQueryPersonalityTagWithOptions(headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：查询企业个性标签</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// TalentQueryPersonalityTagResponse
+        /// </returns>
+        public async Task<TalentQueryPersonalityTagResponse> TalentQueryPersonalityTagAsync()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            TalentQueryPersonalityTagHeaders headers = new TalentQueryPersonalityTagHeaders();
+            return await TalentQueryPersonalityTagWithOptionsAsync(headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：分页查询指定标签的点赞记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TalentQueryTagLikeDetailListRequest
+        /// </param>
+        /// <param name="headers">
+        /// TalentQueryTagLikeDetailListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// TalentQueryTagLikeDetailListResponse
+        /// </returns>
+        public TalentQueryTagLikeDetailListResponse TalentQueryTagLikeDetailListWithOptions(TalentQueryTagLikeDetailListRequest request, TalentQueryTagLikeDetailListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Cursor))
+            {
+                query["cursor"] = request.Cursor;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Size))
+            {
+                query["size"] = request.Size;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TagCode))
+            {
+                query["tagCode"] = request.TagCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "TalentQueryTagLikeDetailList",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/talentTags/queryTagLikeDetailList",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<TalentQueryTagLikeDetailListResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：分页查询指定标签的点赞记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TalentQueryTagLikeDetailListRequest
+        /// </param>
+        /// <param name="headers">
+        /// TalentQueryTagLikeDetailListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// TalentQueryTagLikeDetailListResponse
+        /// </returns>
+        public async Task<TalentQueryTagLikeDetailListResponse> TalentQueryTagLikeDetailListWithOptionsAsync(TalentQueryTagLikeDetailListRequest request, TalentQueryTagLikeDetailListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Cursor))
+            {
+                query["cursor"] = request.Cursor;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Size))
+            {
+                query["size"] = request.Size;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TagCode))
+            {
+                query["tagCode"] = request.TagCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "TalentQueryTagLikeDetailList",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/talentTags/queryTagLikeDetailList",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<TalentQueryTagLikeDetailListResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：分页查询指定标签的点赞记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TalentQueryTagLikeDetailListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// TalentQueryTagLikeDetailListResponse
+        /// </returns>
+        public TalentQueryTagLikeDetailListResponse TalentQueryTagLikeDetailList(TalentQueryTagLikeDetailListRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            TalentQueryTagLikeDetailListHeaders headers = new TalentQueryTagLikeDetailListHeaders();
+            return TalentQueryTagLikeDetailListWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：分页查询指定标签的点赞记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TalentQueryTagLikeDetailListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// TalentQueryTagLikeDetailListResponse
+        /// </returns>
+        public async Task<TalentQueryTagLikeDetailListResponse> TalentQueryTagLikeDetailListAsync(TalentQueryTagLikeDetailListRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            TalentQueryTagLikeDetailListHeaders headers = new TalentQueryTagLikeDetailListHeaders();
+            return await TalentQueryTagLikeDetailListWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：查询点赞标签列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TalentQueryTagLikeListRequest
+        /// </param>
+        /// <param name="headers">
+        /// TalentQueryTagLikeListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// TalentQueryTagLikeListResponse
+        /// </returns>
+        public TalentQueryTagLikeListResponse TalentQueryTagLikeListWithOptions(TalentQueryTagLikeListRequest request, TalentQueryTagLikeListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorUserId))
+            {
+                query["operatorUserId"] = request.OperatorUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "TalentQueryTagLikeList",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/talentTags/queryTagLikeList",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<TalentQueryTagLikeListResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：查询点赞标签列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TalentQueryTagLikeListRequest
+        /// </param>
+        /// <param name="headers">
+        /// TalentQueryTagLikeListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// TalentQueryTagLikeListResponse
+        /// </returns>
+        public async Task<TalentQueryTagLikeListResponse> TalentQueryTagLikeListWithOptionsAsync(TalentQueryTagLikeListRequest request, TalentQueryTagLikeListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorUserId))
+            {
+                query["operatorUserId"] = request.OperatorUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "TalentQueryTagLikeList",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/talentTags/queryTagLikeList",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<TalentQueryTagLikeListResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：查询点赞标签列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TalentQueryTagLikeListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// TalentQueryTagLikeListResponse
+        /// </returns>
+        public TalentQueryTagLikeListResponse TalentQueryTagLikeList(TalentQueryTagLikeListRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            TalentQueryTagLikeListHeaders headers = new TalentQueryTagLikeListHeaders();
+            return TalentQueryTagLikeListWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人才标签：查询点赞标签列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TalentQueryTagLikeListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// TalentQueryTagLikeListResponse
+        /// </returns>
+        public async Task<TalentQueryTagLikeListResponse> TalentQueryTagLikeListAsync(TalentQueryTagLikeListRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            TalentQueryTagLikeListHeaders headers = new TalentQueryTagLikeListHeaders();
+            return await TalentQueryTagLikeListWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

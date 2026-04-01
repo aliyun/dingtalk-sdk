@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdvi_1_0.Models
 {
     public class ListServiceRecordRequest : TeaModel {
+        [NameInMap("customerId")]
+        [Validation(Required=false)]
+        public string CustomerId { get; set; }
+
         [NameInMap("endTime")]
         [Validation(Required=false)]
         public long? EndTime { get; set; }

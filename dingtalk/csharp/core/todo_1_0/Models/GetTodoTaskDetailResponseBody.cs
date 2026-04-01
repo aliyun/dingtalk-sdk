@@ -59,6 +59,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
         [Validation(Required=false)]
         public List<GetTodoTaskDetailResponseBodyExecutorStatus> ExecutorStatus { get; set; }
         public class GetTodoTaskDetailResponseBodyExecutorStatus : TeaModel {
+            [NameInMap("finishTime")]
+            [Validation(Required=false)]
+            public long? FinishTime { get; set; }
+
             [NameInMap("isDone")]
             [Validation(Required=false)]
             public bool? IsDone { get; set; }
@@ -190,6 +194,14 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
             public string TodoCardTitle { get; set; }
 
         }
+
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>TODO</para>
+        /// </summary>
+        [NameInMap("todoType")]
+        [Validation(Required=false)]
+        public string TodoType { get; set; }
 
     }
 
