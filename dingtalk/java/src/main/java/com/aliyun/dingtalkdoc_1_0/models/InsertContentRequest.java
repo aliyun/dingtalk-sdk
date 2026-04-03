@@ -11,7 +11,7 @@ public class InsertContentRequest extends TeaModel {
      * <p>content</p>
      */
     @NameInMap("content")
-    public java.util.Map<String, ?> content;
+    public InsertContentRequestContent content;
 
     /**
      * <strong>example:</strong>
@@ -41,11 +41,11 @@ public class InsertContentRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public InsertContentRequest setContent(java.util.Map<String, ?> content) {
+    public InsertContentRequest setContent(InsertContentRequestContent content) {
         this.content = content;
         return this;
     }
-    public java.util.Map<String, ?> getContent() {
+    public InsertContentRequestContent getContent() {
         return this.content;
     }
 
@@ -71,6 +71,48 @@ public class InsertContentRequest extends TeaModel {
     }
     public String getOperatorId() {
         return this.operatorId;
+    }
+
+    public static class InsertContentRequestContent extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>content</p>
+         */
+        @NameInMap("content")
+        public String content;
+
+        /**
+         * <p>This parameter is required.</p>
+         * 
+         * <strong>example:</strong>
+         * <p>markdown</p>
+         */
+        @NameInMap("type")
+        public String type;
+
+        public static InsertContentRequestContent build(java.util.Map<String, ?> map) throws Exception {
+            InsertContentRequestContent self = new InsertContentRequestContent();
+            return TeaModel.build(map, self);
+        }
+
+        public InsertContentRequestContent setContent(String content) {
+            this.content = content;
+            return this;
+        }
+        public String getContent() {
+            return this.content;
+        }
+
+        public InsertContentRequestContent setType(String type) {
+            this.type = type;
+            return this;
+        }
+        public String getType() {
+            return this.type;
+        }
+
     }
 
 }

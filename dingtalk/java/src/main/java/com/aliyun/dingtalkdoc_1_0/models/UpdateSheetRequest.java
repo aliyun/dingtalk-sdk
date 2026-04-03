@@ -4,9 +4,17 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateSheetRequest extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>frozen_column_count</p>
+     */
     @NameInMap("frozenColumnCount")
     public Long frozenColumnCount;
 
+    /**
+     * <strong>example:</strong>
+     * <p>frozen_row_count</p>
+     */
     @NameInMap("frozenRowCount")
     public Long frozenRowCount;
 

@@ -392,6 +392,74 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>删除自定义机器人</p>
+     * 
+     * @param request DeleteCustomRobotRequest
+     * @param headers DeleteCustomRobotHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteCustomRobotResponse
+     */
+    public DeleteCustomRobotResponse deleteCustomRobotWithOptions(DeleteCustomRobotRequest request, DeleteCustomRobotHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.actionType)) {
+            body.put("actionType", request.actionType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorUserId)) {
+            body.put("operatorUserId", request.operatorUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.sendNotification)) {
+            body.put("sendNotification", request.sendNotification);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.token)) {
+            body.put("token", request.token);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DeleteCustomRobot"),
+            new TeaPair("version", "robot_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/robot/custom/delete"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DeleteCustomRobotResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除自定义机器人</p>
+     * 
+     * @param request DeleteCustomRobotRequest
+     * @return DeleteCustomRobotResponse
+     */
+    public DeleteCustomRobotResponse deleteCustomRobot(DeleteCustomRobotRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DeleteCustomRobotHeaders headers = new DeleteCustomRobotHeaders();
+        return this.deleteCustomRobotWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>执行机器人的AI技能</p>
      * 
      * @param request ExecuteRobotAiSkillRequest

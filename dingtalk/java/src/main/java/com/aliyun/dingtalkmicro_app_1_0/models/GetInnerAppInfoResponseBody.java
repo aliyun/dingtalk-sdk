@@ -28,6 +28,24 @@ public class GetInnerAppInfoResponseBody extends TeaModel {
     @NameInMap("mobileTransferUrl")
     public String mobileTransferUrl;
 
+    @NameInMap("padEffectiveHomepageUrl")
+    public String padEffectiveHomepageUrl;
+
+    @NameInMap("padLoginAddressKey")
+    public String padLoginAddressKey;
+
+    @NameInMap("padLoginLoginUrl")
+    public String padLoginLoginUrl;
+
+    @NameInMap("padLoginRequestMethod")
+    public String padLoginRequestMethod;
+
+    @NameInMap("padOriginalHomepageUrl")
+    public String padOriginalHomepageUrl;
+
+    @NameInMap("padTransferUrl")
+    public String padTransferUrl;
+
     @NameInMap("pcEffectiveHomepageUrl")
     public String pcEffectiveHomepageUrl;
 
@@ -113,6 +131,54 @@ public class GetInnerAppInfoResponseBody extends TeaModel {
     }
     public String getMobileTransferUrl() {
         return this.mobileTransferUrl;
+    }
+
+    public GetInnerAppInfoResponseBody setPadEffectiveHomepageUrl(String padEffectiveHomepageUrl) {
+        this.padEffectiveHomepageUrl = padEffectiveHomepageUrl;
+        return this;
+    }
+    public String getPadEffectiveHomepageUrl() {
+        return this.padEffectiveHomepageUrl;
+    }
+
+    public GetInnerAppInfoResponseBody setPadLoginAddressKey(String padLoginAddressKey) {
+        this.padLoginAddressKey = padLoginAddressKey;
+        return this;
+    }
+    public String getPadLoginAddressKey() {
+        return this.padLoginAddressKey;
+    }
+
+    public GetInnerAppInfoResponseBody setPadLoginLoginUrl(String padLoginLoginUrl) {
+        this.padLoginLoginUrl = padLoginLoginUrl;
+        return this;
+    }
+    public String getPadLoginLoginUrl() {
+        return this.padLoginLoginUrl;
+    }
+
+    public GetInnerAppInfoResponseBody setPadLoginRequestMethod(String padLoginRequestMethod) {
+        this.padLoginRequestMethod = padLoginRequestMethod;
+        return this;
+    }
+    public String getPadLoginRequestMethod() {
+        return this.padLoginRequestMethod;
+    }
+
+    public GetInnerAppInfoResponseBody setPadOriginalHomepageUrl(String padOriginalHomepageUrl) {
+        this.padOriginalHomepageUrl = padOriginalHomepageUrl;
+        return this;
+    }
+    public String getPadOriginalHomepageUrl() {
+        return this.padOriginalHomepageUrl;
+    }
+
+    public GetInnerAppInfoResponseBody setPadTransferUrl(String padTransferUrl) {
+        this.padTransferUrl = padTransferUrl;
+        return this;
+    }
+    public String getPadTransferUrl() {
+        return this.padTransferUrl;
     }
 
     public GetInnerAppInfoResponseBody setPcEffectiveHomepageUrl(String pcEffectiveHomepageUrl) {

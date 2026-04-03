@@ -1446,6 +1446,82 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>拉取日程中绑定的听记信息</p>
+     * 
+     * @param request ListAiMinutesRequest
+     * @param headers ListAiMinutesHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ListAiMinutesResponse
+     */
+    public ListAiMinutesResponse listAiMinutesWithOptions(String userId, String calendarId, String eventId, ListAiMinutesRequest request, ListAiMinutesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.fetchAll)) {
+            query.put("fetchAll", request.fetchAll);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.dingAccessTokenType)) {
+            realHeaders.put("dingAccessTokenType", com.aliyun.teautil.Common.toJSONString(headers.dingAccessTokenType));
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.dingIsvOrgId)) {
+            realHeaders.put("dingIsvOrgId", com.aliyun.teautil.Common.toJSONString(headers.dingIsvOrgId));
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.dingOrgId)) {
+            realHeaders.put("dingOrgId", com.aliyun.teautil.Common.toJSONString(headers.dingOrgId));
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.dingSuiteKey)) {
+            realHeaders.put("dingSuiteKey", com.aliyun.teautil.Common.toJSONString(headers.dingSuiteKey));
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.dingUid)) {
+            realHeaders.put("dingUid", com.aliyun.teautil.Common.toJSONString(headers.dingUid));
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ListAiMinutes"),
+            new TeaPair("version", "calendar_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId + "/minutes"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ListAiMinutesResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>拉取日程中绑定的听记信息</p>
+     * 
+     * @param request ListAiMinutesRequest
+     * @return ListAiMinutesResponse
+     */
+    public ListAiMinutesResponse listAiMinutes(String userId, String calendarId, String eventId, ListAiMinutesRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ListAiMinutesHeaders headers = new ListAiMinutesHeaders();
+        return this.listAiMinutesWithOptions(userId, calendarId, eventId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>分页获取参与人列表</p>
      * 
      * @param request ListAttendeesRequest

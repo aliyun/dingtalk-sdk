@@ -1,9 +1,9 @@
 // This file is auto-generated, don't edit it. Thanks.
-package com.aliyun.dingtalkdoc_1_0.models;
+package com.aliyun.dingtalkrobot_1_0.models;
 
 import com.aliyun.tea.*;
 
-public class UpdateSheetResponse extends TeaModel {
+public class DeleteCustomRobotResponse extends TeaModel {
     @NameInMap("headers")
     public java.util.Map<String, String> headers;
 
@@ -11,14 +11,14 @@ public class UpdateSheetResponse extends TeaModel {
     public Integer statusCode;
 
     @NameInMap("body")
-    public UpdateSheetResponseBody body;
+    public DeleteCustomRobotResponseBody body;
 
-    public static UpdateSheetResponse build(java.util.Map<String, ?> map) throws Exception {
-        UpdateSheetResponse self = new UpdateSheetResponse();
+    public static DeleteCustomRobotResponse build(java.util.Map<String, ?> map) throws Exception {
+        DeleteCustomRobotResponse self = new DeleteCustomRobotResponse();
         return TeaModel.build(map, self);
     }
 
-    public UpdateSheetResponse setHeaders(java.util.Map<String, String> headers) {
+    public DeleteCustomRobotResponse setHeaders(java.util.Map<String, String> headers) {
         this.headers = headers;
         return this;
     }
@@ -26,7 +26,7 @@ public class UpdateSheetResponse extends TeaModel {
         return this.headers;
     }
 
-    public UpdateSheetResponse setStatusCode(Integer statusCode) {
+    public DeleteCustomRobotResponse setStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
     }
@@ -34,11 +34,11 @@ public class UpdateSheetResponse extends TeaModel {
         return this.statusCode;
     }
 
-    public UpdateSheetResponse setBody(UpdateSheetResponseBody body) {
+    public DeleteCustomRobotResponse setBody(DeleteCustomRobotResponseBody body) {
         this.body = body;
         return this;
     }
-    public UpdateSheetResponseBody getBody() {
+    public DeleteCustomRobotResponseBody getBody() {
         return this.body;
     }
 

@@ -1,9 +1,9 @@
 // This file is auto-generated, don't edit it. Thanks.
-package com.aliyun.dingtalkdoc_1_0.models;
+package com.aliyun.dingtalkcalendar_1_0.models;
 
 import com.aliyun.tea.*;
 
-public class UpdateSheetResponse extends TeaModel {
+public class ListAiMinutesResponse extends TeaModel {
     @NameInMap("headers")
     public java.util.Map<String, String> headers;
 
@@ -11,14 +11,14 @@ public class UpdateSheetResponse extends TeaModel {
     public Integer statusCode;
 
     @NameInMap("body")
-    public UpdateSheetResponseBody body;
+    public ListAiMinutesResponseBody body;
 
-    public static UpdateSheetResponse build(java.util.Map<String, ?> map) throws Exception {
-        UpdateSheetResponse self = new UpdateSheetResponse();
+    public static ListAiMinutesResponse build(java.util.Map<String, ?> map) throws Exception {
+        ListAiMinutesResponse self = new ListAiMinutesResponse();
         return TeaModel.build(map, self);
     }
 
-    public UpdateSheetResponse setHeaders(java.util.Map<String, String> headers) {
+    public ListAiMinutesResponse setHeaders(java.util.Map<String, String> headers) {
         this.headers = headers;
         return this;
     }
@@ -26,7 +26,7 @@ public class UpdateSheetResponse extends TeaModel {
         return this.headers;
     }
 
-    public UpdateSheetResponse setStatusCode(Integer statusCode) {
+    public ListAiMinutesResponse setStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
     }
@@ -34,11 +34,11 @@ public class UpdateSheetResponse extends TeaModel {
         return this.statusCode;
     }
 
-    public UpdateSheetResponse setBody(UpdateSheetResponseBody body) {
+    public ListAiMinutesResponse setBody(ListAiMinutesResponseBody body) {
         this.body = body;
         return this;
     }
-    public UpdateSheetResponseBody getBody() {
+    public ListAiMinutesResponseBody getBody() {
         return this.body;
     }
 

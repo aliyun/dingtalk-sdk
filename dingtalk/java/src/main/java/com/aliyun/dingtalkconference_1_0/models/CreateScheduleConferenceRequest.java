@@ -88,6 +88,73 @@ public class CreateScheduleConferenceRequest extends TeaModel {
         return this.title;
     }
 
+    public static class CreateScheduleConferenceRequestScheduleConfSettingModelAiAgentSummarySetting extends TeaModel {
+        @NameInMap("allowAllParticipantsStart")
+        public Integer allowAllParticipantsStart;
+
+        @NameInMap("receiverType")
+        public Integer receiverType;
+
+        @NameInMap("restrictShareMinutesSummaryOnly")
+        public Integer restrictShareMinutesSummaryOnly;
+
+        @NameInMap("startType")
+        public Integer startType;
+
+        /**
+         * <strong>example:</strong>
+         * <p>disable</p>
+         */
+        @NameInMap("value")
+        public String value;
+
+        public static CreateScheduleConferenceRequestScheduleConfSettingModelAiAgentSummarySetting build(java.util.Map<String, ?> map) throws Exception {
+            CreateScheduleConferenceRequestScheduleConfSettingModelAiAgentSummarySetting self = new CreateScheduleConferenceRequestScheduleConfSettingModelAiAgentSummarySetting();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateScheduleConferenceRequestScheduleConfSettingModelAiAgentSummarySetting setAllowAllParticipantsStart(Integer allowAllParticipantsStart) {
+            this.allowAllParticipantsStart = allowAllParticipantsStart;
+            return this;
+        }
+        public Integer getAllowAllParticipantsStart() {
+            return this.allowAllParticipantsStart;
+        }
+
+        public CreateScheduleConferenceRequestScheduleConfSettingModelAiAgentSummarySetting setReceiverType(Integer receiverType) {
+            this.receiverType = receiverType;
+            return this;
+        }
+        public Integer getReceiverType() {
+            return this.receiverType;
+        }
+
+        public CreateScheduleConferenceRequestScheduleConfSettingModelAiAgentSummarySetting setRestrictShareMinutesSummaryOnly(Integer restrictShareMinutesSummaryOnly) {
+            this.restrictShareMinutesSummaryOnly = restrictShareMinutesSummaryOnly;
+            return this;
+        }
+        public Integer getRestrictShareMinutesSummaryOnly() {
+            return this.restrictShareMinutesSummaryOnly;
+        }
+
+        public CreateScheduleConferenceRequestScheduleConfSettingModelAiAgentSummarySetting setStartType(Integer startType) {
+            this.startType = startType;
+            return this;
+        }
+        public Integer getStartType() {
+            return this.startType;
+        }
+
+        public CreateScheduleConferenceRequestScheduleConfSettingModelAiAgentSummarySetting setValue(String value) {
+            this.value = value;
+            return this;
+        }
+        public String getValue() {
+            return this.value;
+        }
+
+    }
+
     public static class CreateScheduleConferenceRequestScheduleConfSettingModelMoziConfOpenRecordSetting extends TeaModel {
         /**
          * <strong>example:</strong>
@@ -116,6 +183,9 @@ public class CreateScheduleConferenceRequest extends TeaModel {
          */
         @NameInMap("recordAutoStartType")
         public Integer recordAutoStartType;
+
+        @NameInMap("restrictShareMinutesSummaryOnly")
+        public Integer restrictShareMinutesSummaryOnly;
 
         public static CreateScheduleConferenceRequestScheduleConfSettingModelMoziConfOpenRecordSetting build(java.util.Map<String, ?> map) throws Exception {
             CreateScheduleConferenceRequestScheduleConfSettingModelMoziConfOpenRecordSetting self = new CreateScheduleConferenceRequestScheduleConfSettingModelMoziConfOpenRecordSetting();
@@ -152,6 +222,14 @@ public class CreateScheduleConferenceRequest extends TeaModel {
         }
         public Integer getRecordAutoStartType() {
             return this.recordAutoStartType;
+        }
+
+        public CreateScheduleConferenceRequestScheduleConfSettingModelMoziConfOpenRecordSetting setRestrictShareMinutesSummaryOnly(Integer restrictShareMinutesSummaryOnly) {
+            this.restrictShareMinutesSummaryOnly = restrictShareMinutesSummaryOnly;
+            return this;
+        }
+        public Integer getRestrictShareMinutesSummaryOnly() {
+            return this.restrictShareMinutesSummaryOnly;
         }
 
     }
@@ -434,6 +512,9 @@ public class CreateScheduleConferenceRequest extends TeaModel {
     }
 
     public static class CreateScheduleConferenceRequestScheduleConfSettingModel extends TeaModel {
+        @NameInMap("aiAgentSummarySetting")
+        public CreateScheduleConferenceRequestScheduleConfSettingModelAiAgentSummarySetting aiAgentSummarySetting;
+
         @NameInMap("cohostUnionIds")
         public java.util.List<String> cohostUnionIds;
 
@@ -481,6 +562,14 @@ public class CreateScheduleConferenceRequest extends TeaModel {
         public static CreateScheduleConferenceRequestScheduleConfSettingModel build(java.util.Map<String, ?> map) throws Exception {
             CreateScheduleConferenceRequestScheduleConfSettingModel self = new CreateScheduleConferenceRequestScheduleConfSettingModel();
             return TeaModel.build(map, self);
+        }
+
+        public CreateScheduleConferenceRequestScheduleConfSettingModel setAiAgentSummarySetting(CreateScheduleConferenceRequestScheduleConfSettingModelAiAgentSummarySetting aiAgentSummarySetting) {
+            this.aiAgentSummarySetting = aiAgentSummarySetting;
+            return this;
+        }
+        public CreateScheduleConferenceRequestScheduleConfSettingModelAiAgentSummarySetting getAiAgentSummarySetting() {
+            return this.aiAgentSummarySetting;
         }
 
         public CreateScheduleConferenceRequestScheduleConfSettingModel setCohostUnionIds(java.util.List<String> cohostUnionIds) {
