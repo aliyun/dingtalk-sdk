@@ -4,6 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models;
 
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\InsertContentRequest\content;
 use AlibabaCloud\Tea\Model;
 
 class InsertContentRequest extends Model
@@ -13,7 +14,7 @@ class InsertContentRequest extends Model
      *
      * @example content
      *
-     * @var mixed[]
+     * @var content
      */
     public $content;
 
@@ -52,7 +53,7 @@ class InsertContentRequest extends Model
     {
         $res = [];
         if (null !== $this->content) {
-            $res['content'] = $this->content;
+            $res['content'] = null !== $this->content ? $this->content->toMap() : null;
         }
         if (null !== $this->index) {
             $res['index'] = $this->index;
@@ -76,7 +77,7 @@ class InsertContentRequest extends Model
     {
         $model = new self();
         if (isset($map['content'])) {
-            $model->content = $map['content'];
+            $model->content = content::fromMap($map['content']);
         }
         if (isset($map['index'])) {
             $model->index = $map['index'];

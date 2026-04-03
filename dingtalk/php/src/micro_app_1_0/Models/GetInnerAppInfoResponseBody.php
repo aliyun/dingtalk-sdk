@@ -51,6 +51,36 @@ class GetInnerAppInfoResponseBody extends Model
     /**
      * @var string
      */
+    public $padEffectiveHomepageUrl;
+
+    /**
+     * @var string
+     */
+    public $padLoginAddressKey;
+
+    /**
+     * @var string
+     */
+    public $padLoginLoginUrl;
+
+    /**
+     * @var string
+     */
+    public $padLoginRequestMethod;
+
+    /**
+     * @var string
+     */
+    public $padOriginalHomepageUrl;
+
+    /**
+     * @var string
+     */
+    public $padTransferUrl;
+
+    /**
+     * @var string
+     */
     public $pcEffectiveHomepageUrl;
 
     /**
@@ -86,6 +116,12 @@ class GetInnerAppInfoResponseBody extends Model
         'mobileLoginRequestMethod' => 'mobileLoginRequestMethod',
         'mobileOriginalHomepageUrl' => 'mobileOriginalHomepageUrl',
         'mobileTransferUrl' => 'mobileTransferUrl',
+        'padEffectiveHomepageUrl' => 'padEffectiveHomepageUrl',
+        'padLoginAddressKey' => 'padLoginAddressKey',
+        'padLoginLoginUrl' => 'padLoginLoginUrl',
+        'padLoginRequestMethod' => 'padLoginRequestMethod',
+        'padOriginalHomepageUrl' => 'padOriginalHomepageUrl',
+        'padTransferUrl' => 'padTransferUrl',
         'pcEffectiveHomepageUrl' => 'pcEffectiveHomepageUrl',
         'pcLoginAddressKey' => 'pcLoginAddressKey',
         'pcLoginLoginUrl' => 'pcLoginLoginUrl',
@@ -122,6 +158,24 @@ class GetInnerAppInfoResponseBody extends Model
         }
         if (null !== $this->mobileTransferUrl) {
             $res['mobileTransferUrl'] = $this->mobileTransferUrl;
+        }
+        if (null !== $this->padEffectiveHomepageUrl) {
+            $res['padEffectiveHomepageUrl'] = $this->padEffectiveHomepageUrl;
+        }
+        if (null !== $this->padLoginAddressKey) {
+            $res['padLoginAddressKey'] = $this->padLoginAddressKey;
+        }
+        if (null !== $this->padLoginLoginUrl) {
+            $res['padLoginLoginUrl'] = $this->padLoginLoginUrl;
+        }
+        if (null !== $this->padLoginRequestMethod) {
+            $res['padLoginRequestMethod'] = $this->padLoginRequestMethod;
+        }
+        if (null !== $this->padOriginalHomepageUrl) {
+            $res['padOriginalHomepageUrl'] = $this->padOriginalHomepageUrl;
+        }
+        if (null !== $this->padTransferUrl) {
+            $res['padTransferUrl'] = $this->padTransferUrl;
         }
         if (null !== $this->pcEffectiveHomepageUrl) {
             $res['pcEffectiveHomepageUrl'] = $this->pcEffectiveHomepageUrl;
@@ -176,6 +230,24 @@ class GetInnerAppInfoResponseBody extends Model
         }
         if (isset($map['mobileTransferUrl'])) {
             $model->mobileTransferUrl = $map['mobileTransferUrl'];
+        }
+        if (isset($map['padEffectiveHomepageUrl'])) {
+            $model->padEffectiveHomepageUrl = $map['padEffectiveHomepageUrl'];
+        }
+        if (isset($map['padLoginAddressKey'])) {
+            $model->padLoginAddressKey = $map['padLoginAddressKey'];
+        }
+        if (isset($map['padLoginLoginUrl'])) {
+            $model->padLoginLoginUrl = $map['padLoginLoginUrl'];
+        }
+        if (isset($map['padLoginRequestMethod'])) {
+            $model->padLoginRequestMethod = $map['padLoginRequestMethod'];
+        }
+        if (isset($map['padOriginalHomepageUrl'])) {
+            $model->padOriginalHomepageUrl = $map['padOriginalHomepageUrl'];
+        }
+        if (isset($map['padTransferUrl'])) {
+            $model->padTransferUrl = $map['padTransferUrl'];
         }
         if (isset($map['pcEffectiveHomepageUrl'])) {
             $model->pcEffectiveHomepageUrl = $map['pcEffectiveHomepageUrl'];

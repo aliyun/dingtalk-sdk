@@ -2,11 +2,11 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class UpdateSheetResponse extends Model
+class DeleteCustomRobotResponse extends Model
 {
     /**
      * @var string[]
@@ -19,7 +19,7 @@ class UpdateSheetResponse extends Model
     public $statusCode;
 
     /**
-     * @var UpdateSheetResponseBody
+     * @var DeleteCustomRobotResponseBody
      */
     public $body;
     protected $_name = [
@@ -49,7 +49,7 @@ class UpdateSheetResponse extends Model
     /**
      * @param array $map
      *
-     * @return UpdateSheetResponse
+     * @return DeleteCustomRobotResponse
      */
     public static function fromMap($map = [])
     {
@@ -61,7 +61,7 @@ class UpdateSheetResponse extends Model
             $model->statusCode = $map['statusCode'];
         }
         if (isset($map['body'])) {
-            $model->body = UpdateSheetResponseBody::fromMap($map['body']);
+            $model->body = DeleteCustomRobotResponseBody::fromMap($map['body']);
         }
 
         return $model;

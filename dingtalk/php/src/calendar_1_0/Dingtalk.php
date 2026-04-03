@@ -67,6 +67,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetSubscribedCalendarHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\GetSubscribedCalendarResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListAclsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListAclsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListAiMinutesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListAiMinutesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListAiMinutesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListAttendeesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListAttendeesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ListAttendeesResponse;
@@ -1650,6 +1653,84 @@ class Dingtalk extends OpenApiClient
         $headers = new ListAclsHeaders([]);
 
         return $this->listAclsWithOptions($userId, $calendarId, $headers, $runtime);
+    }
+
+    /**
+     * @summary 拉取日程中绑定的听记信息
+     *  *
+     * @param string               $userId
+     * @param string               $calendarId
+     * @param string               $eventId
+     * @param ListAiMinutesRequest $request    ListAiMinutesRequest
+     * @param ListAiMinutesHeaders $headers    ListAiMinutesHeaders
+     * @param RuntimeOptions       $runtime    runtime options for this request RuntimeOptions
+     *
+     * @return ListAiMinutesResponse ListAiMinutesResponse
+     */
+    public function listAiMinutesWithOptions($userId, $calendarId, $eventId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->fetchAll)) {
+            $query['fetchAll'] = $request->fetchAll;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->dingAccessTokenType)) {
+            $realHeaders['dingAccessTokenType'] = Utils::toJSONString($headers->dingAccessTokenType);
+        }
+        if (!Utils::isUnset($headers->dingIsvOrgId)) {
+            $realHeaders['dingIsvOrgId'] = Utils::toJSONString($headers->dingIsvOrgId);
+        }
+        if (!Utils::isUnset($headers->dingOrgId)) {
+            $realHeaders['dingOrgId'] = Utils::toJSONString($headers->dingOrgId);
+        }
+        if (!Utils::isUnset($headers->dingSuiteKey)) {
+            $realHeaders['dingSuiteKey'] = Utils::toJSONString($headers->dingSuiteKey);
+        }
+        if (!Utils::isUnset($headers->dingUid)) {
+            $realHeaders['dingUid'] = Utils::toJSONString($headers->dingUid);
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'ListAiMinutes',
+            'version' => 'calendar_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/minutes',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return ListAiMinutesResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 拉取日程中绑定的听记信息
+     *  *
+     * @param string               $userId
+     * @param string               $calendarId
+     * @param string               $eventId
+     * @param ListAiMinutesRequest $request    ListAiMinutesRequest
+     *
+     * @return ListAiMinutesResponse ListAiMinutesResponse
+     */
+    public function listAiMinutes($userId, $calendarId, $eventId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListAiMinutesHeaders([]);
+
+        return $this->listAiMinutesWithOptions($userId, $calendarId, $eventId, $request, $headers, $runtime);
     }
 
     /**

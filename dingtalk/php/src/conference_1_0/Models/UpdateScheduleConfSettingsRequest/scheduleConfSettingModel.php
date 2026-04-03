@@ -4,12 +4,18 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\UpdateScheduleConfSettingsRequest;
 
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\UpdateScheduleConfSettingsRequest\scheduleConfSettingModel\aiAgentSummarySetting;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\UpdateScheduleConfSettingsRequest\scheduleConfSettingModel\moziConfOpenRecordSetting;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\UpdateScheduleConfSettingsRequest\scheduleConfSettingModel\moziConfVirtualExtraSetting;
 use AlibabaCloud\Tea\Model;
 
 class scheduleConfSettingModel extends Model
 {
+    /**
+     * @var aiAgentSummarySetting
+     */
+    public $aiAgentSummarySetting;
+
     /**
      * @var string[]
      */
@@ -60,6 +66,7 @@ class scheduleConfSettingModel extends Model
      */
     public $screenShareForbidden;
     protected $_name = [
+        'aiAgentSummarySetting' => 'aiAgentSummarySetting',
         'cohostUnionIds' => 'cohostUnionIds',
         'confAllowedCorpId' => 'confAllowedCorpId',
         'hostUnionId' => 'hostUnionId',
@@ -75,6 +82,9 @@ class scheduleConfSettingModel extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->aiAgentSummarySetting) {
+            $res['aiAgentSummarySetting'] = null !== $this->aiAgentSummarySetting ? $this->aiAgentSummarySetting->toMap() : null;
+        }
         if (null !== $this->cohostUnionIds) {
             $res['cohostUnionIds'] = $this->cohostUnionIds;
         }
@@ -111,6 +121,9 @@ class scheduleConfSettingModel extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['aiAgentSummarySetting'])) {
+            $model->aiAgentSummarySetting = aiAgentSummarySetting::fromMap($map['aiAgentSummarySetting']);
+        }
         if (isset($map['cohostUnionIds'])) {
             if (!empty($map['cohostUnionIds'])) {
                 $model->cohostUnionIds = $map['cohostUnionIds'];

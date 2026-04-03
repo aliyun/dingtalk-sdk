@@ -2,11 +2,11 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class UpdateSheetResponse extends Model
+class ListAiMinutesResponse extends Model
 {
     /**
      * @var string[]
@@ -19,7 +19,7 @@ class UpdateSheetResponse extends Model
     public $statusCode;
 
     /**
-     * @var UpdateSheetResponseBody
+     * @var ListAiMinutesResponseBody
      */
     public $body;
     protected $_name = [
@@ -49,7 +49,7 @@ class UpdateSheetResponse extends Model
     /**
      * @param array $map
      *
-     * @return UpdateSheetResponse
+     * @return ListAiMinutesResponse
      */
     public static function fromMap($map = [])
     {
@@ -61,7 +61,7 @@ class UpdateSheetResponse extends Model
             $model->statusCode = $map['statusCode'];
         }
         if (isset($map['body'])) {
-            $model->body = UpdateSheetResponseBody::fromMap($map['body']);
+            $model->body = ListAiMinutesResponseBody::fromMap($map['body']);
         }
 
         return $model;

@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class UpdateSheetRequest extends Model
 {
     /**
+     * @example frozen_column_count
+     *
      * @var int
      */
     public $frozenColumnCount;
 
     /**
+     * @example frozen_row_count
+     *
      * @var int
      */
     public $frozenRowCount;

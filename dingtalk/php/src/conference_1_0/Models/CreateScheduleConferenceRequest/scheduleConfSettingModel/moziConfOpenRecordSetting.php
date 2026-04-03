@@ -35,11 +35,17 @@ class moziConfOpenRecordSetting extends Model
      * @var int
      */
     public $recordAutoStartType;
+
+    /**
+     * @var int
+     */
+    public $restrictShareMinutesSummaryOnly;
     protected $_name = [
         'isFollowHost' => 'isFollowHost',
         'mode' => 'mode',
         'recordAutoStart' => 'recordAutoStart',
         'recordAutoStartType' => 'recordAutoStartType',
+        'restrictShareMinutesSummaryOnly' => 'restrictShareMinutesSummaryOnly',
     ];
 
     public function validate() {}
@@ -58,6 +64,9 @@ class moziConfOpenRecordSetting extends Model
         }
         if (null !== $this->recordAutoStartType) {
             $res['recordAutoStartType'] = $this->recordAutoStartType;
+        }
+        if (null !== $this->restrictShareMinutesSummaryOnly) {
+            $res['restrictShareMinutesSummaryOnly'] = $this->restrictShareMinutesSummaryOnly;
         }
 
         return $res;
@@ -82,6 +91,9 @@ class moziConfOpenRecordSetting extends Model
         }
         if (isset($map['recordAutoStartType'])) {
             $model->recordAutoStartType = $map['recordAutoStartType'];
+        }
+        if (isset($map['restrictShareMinutesSummaryOnly'])) {
+            $model->restrictShareMinutesSummaryOnly = $map['restrictShareMinutesSummaryOnly'];
         }
 
         return $model;
