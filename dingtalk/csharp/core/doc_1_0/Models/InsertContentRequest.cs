@@ -17,7 +17,29 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         /// </summary>
         [NameInMap("content")]
         [Validation(Required=false)]
-        public Dictionary<string, object> Content { get; set; }
+        public InsertContentRequestContent Content { get; set; }
+        public class InsertContentRequestContent : TeaModel {
+            /// <summary>
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>content</para>
+            /// </summary>
+            [NameInMap("content")]
+            [Validation(Required=false)]
+            public string Content { get; set; }
+
+            /// <summary>
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>markdown</para>
+            /// </summary>
+            [NameInMap("type")]
+            [Validation(Required=false)]
+            public string Type { get; set; }
+
+        }
 
         /// <summary>
         /// <b>Example:</b>

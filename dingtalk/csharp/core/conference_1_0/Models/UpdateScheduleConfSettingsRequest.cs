@@ -23,6 +23,32 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
         [Validation(Required=false)]
         public UpdateScheduleConfSettingsRequestScheduleConfSettingModel ScheduleConfSettingModel { get; set; }
         public class UpdateScheduleConfSettingsRequestScheduleConfSettingModel : TeaModel {
+            [NameInMap("aiAgentSummarySetting")]
+            [Validation(Required=false)]
+            public UpdateScheduleConfSettingsRequestScheduleConfSettingModelAiAgentSummarySetting AiAgentSummarySetting { get; set; }
+            public class UpdateScheduleConfSettingsRequestScheduleConfSettingModelAiAgentSummarySetting : TeaModel {
+                [NameInMap("allowAllParticipantsStart")]
+                [Validation(Required=false)]
+                public int? AllowAllParticipantsStart { get; set; }
+
+                [NameInMap("receiverType")]
+                [Validation(Required=false)]
+                public int? ReceiverType { get; set; }
+
+                [NameInMap("restrictShareMinutesSummaryOnly")]
+                [Validation(Required=false)]
+                public int? RestrictShareMinutesSummaryOnly { get; set; }
+
+                [NameInMap("startType")]
+                [Validation(Required=false)]
+                public int? StartType { get; set; }
+
+                [NameInMap("value")]
+                [Validation(Required=false)]
+                public string Value { get; set; }
+
+            }
+
             [NameInMap("cohostUnionIds")]
             [Validation(Required=false)]
             public List<string> CohostUnionIds { get; set; }
@@ -86,6 +112,10 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
                 [NameInMap("recordAutoStartType")]
                 [Validation(Required=false)]
                 public int? RecordAutoStartType { get; set; }
+
+                [NameInMap("restrictShareMinutesSummaryOnly")]
+                [Validation(Required=false)]
+                public int? RestrictShareMinutesSummaryOnly { get; set; }
 
             }
 

@@ -6,9 +6,9 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 {
-    public class UpdateSheetResponse : TeaModel {
+    public class ListAiMinutesResponse : TeaModel {
         [NameInMap("headers")]
         [Validation(Required=false)]
         public Dictionary<string, string> Headers { get; set; }
@@ -19,7 +19,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 
         [NameInMap("body")]
         [Validation(Required=false)]
-        public UpdateSheetResponseBody Body { get; set; }
+        public ListAiMinutesResponseBody Body { get; set; }
 
     }
 

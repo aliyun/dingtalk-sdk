@@ -41,6 +41,30 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
         [Validation(Required=false)]
         public string MobileTransferUrl { get; set; }
 
+        [NameInMap("padEffectiveHomepageUrl")]
+        [Validation(Required=false)]
+        public string PadEffectiveHomepageUrl { get; set; }
+
+        [NameInMap("padLoginAddressKey")]
+        [Validation(Required=false)]
+        public string PadLoginAddressKey { get; set; }
+
+        [NameInMap("padLoginLoginUrl")]
+        [Validation(Required=false)]
+        public string PadLoginLoginUrl { get; set; }
+
+        [NameInMap("padLoginRequestMethod")]
+        [Validation(Required=false)]
+        public string PadLoginRequestMethod { get; set; }
+
+        [NameInMap("padOriginalHomepageUrl")]
+        [Validation(Required=false)]
+        public string PadOriginalHomepageUrl { get; set; }
+
+        [NameInMap("padTransferUrl")]
+        [Validation(Required=false)]
+        public string PadTransferUrl { get; set; }
+
         [NameInMap("pcEffectiveHomepageUrl")]
         [Validation(Required=false)]
         public string PcEffectiveHomepageUrl { get; set; }

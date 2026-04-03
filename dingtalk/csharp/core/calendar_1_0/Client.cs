@@ -3654,6 +3654,194 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>拉取日程中绑定的听记信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListAiMinutesRequest
+        /// </param>
+        /// <param name="headers">
+        /// ListAiMinutesHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListAiMinutesResponse
+        /// </returns>
+        public ListAiMinutesResponse ListAiMinutesWithOptions(string userId, string calendarId, string eventId, ListAiMinutesRequest request, ListAiMinutesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FetchAll))
+            {
+                query["fetchAll"] = request.FetchAll;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingAccessTokenType))
+            {
+                realHeaders["dingAccessTokenType"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.DingAccessTokenType);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingIsvOrgId))
+            {
+                realHeaders["dingIsvOrgId"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.DingIsvOrgId);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingOrgId))
+            {
+                realHeaders["dingOrgId"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.DingOrgId);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingSuiteKey))
+            {
+                realHeaders["dingSuiteKey"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.DingSuiteKey);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingUid))
+            {
+                realHeaders["dingUid"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.DingUid);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ListAiMinutes",
+                Version = "calendar_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId + "/minutes",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ListAiMinutesResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>拉取日程中绑定的听记信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListAiMinutesRequest
+        /// </param>
+        /// <param name="headers">
+        /// ListAiMinutesHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListAiMinutesResponse
+        /// </returns>
+        public async Task<ListAiMinutesResponse> ListAiMinutesWithOptionsAsync(string userId, string calendarId, string eventId, ListAiMinutesRequest request, ListAiMinutesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FetchAll))
+            {
+                query["fetchAll"] = request.FetchAll;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingAccessTokenType))
+            {
+                realHeaders["dingAccessTokenType"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.DingAccessTokenType);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingIsvOrgId))
+            {
+                realHeaders["dingIsvOrgId"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.DingIsvOrgId);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingOrgId))
+            {
+                realHeaders["dingOrgId"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.DingOrgId);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingSuiteKey))
+            {
+                realHeaders["dingSuiteKey"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.DingSuiteKey);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingUid))
+            {
+                realHeaders["dingUid"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.DingUid);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ListAiMinutes",
+                Version = "calendar_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId + "/minutes",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ListAiMinutesResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>拉取日程中绑定的听记信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListAiMinutesRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListAiMinutesResponse
+        /// </returns>
+        public ListAiMinutesResponse ListAiMinutes(string userId, string calendarId, string eventId, ListAiMinutesRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListAiMinutesHeaders headers = new ListAiMinutesHeaders();
+            return ListAiMinutesWithOptions(userId, calendarId, eventId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>拉取日程中绑定的听记信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListAiMinutesRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListAiMinutesResponse
+        /// </returns>
+        public async Task<ListAiMinutesResponse> ListAiMinutesAsync(string userId, string calendarId, string eventId, ListAiMinutesRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListAiMinutesHeaders headers = new ListAiMinutesHeaders();
+            return await ListAiMinutesWithOptionsAsync(userId, calendarId, eventId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>分页获取参与人列表</para>
         /// </summary>
         /// 
