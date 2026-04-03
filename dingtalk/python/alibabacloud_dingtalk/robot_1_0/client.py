@@ -746,6 +746,132 @@ class Client(OpenApiClient):
         headers = dingtalkrobot__1__0_models.ClearRobotPluginHeaders()
         return await self.clear_robot_plugin_with_options_async(request, headers, runtime)
 
+    def delete_custom_robot_with_options(
+        self,
+        request: dingtalkrobot__1__0_models.DeleteCustomRobotRequest,
+        headers: dingtalkrobot__1__0_models.DeleteCustomRobotHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.DeleteCustomRobotResponse:
+        """
+        @summary 删除自定义机器人
+        
+        @param request: DeleteCustomRobotRequest
+        @param headers: DeleteCustomRobotHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteCustomRobotResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.action_type):
+            body['actionType'] = request.action_type
+        if not UtilClient.is_unset(request.operator_user_id):
+            body['operatorUserId'] = request.operator_user_id
+        if not UtilClient.is_unset(request.send_notification):
+            body['sendNotification'] = request.send_notification
+        if not UtilClient.is_unset(request.token):
+            body['token'] = request.token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DeleteCustomRobot',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/custom/delete',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.DeleteCustomRobotResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def delete_custom_robot_with_options_async(
+        self,
+        request: dingtalkrobot__1__0_models.DeleteCustomRobotRequest,
+        headers: dingtalkrobot__1__0_models.DeleteCustomRobotHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.DeleteCustomRobotResponse:
+        """
+        @summary 删除自定义机器人
+        
+        @param request: DeleteCustomRobotRequest
+        @param headers: DeleteCustomRobotHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteCustomRobotResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.action_type):
+            body['actionType'] = request.action_type
+        if not UtilClient.is_unset(request.operator_user_id):
+            body['operatorUserId'] = request.operator_user_id
+        if not UtilClient.is_unset(request.send_notification):
+            body['sendNotification'] = request.send_notification
+        if not UtilClient.is_unset(request.token):
+            body['token'] = request.token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DeleteCustomRobot',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/custom/delete',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.DeleteCustomRobotResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def delete_custom_robot(
+        self,
+        request: dingtalkrobot__1__0_models.DeleteCustomRobotRequest,
+    ) -> dingtalkrobot__1__0_models.DeleteCustomRobotResponse:
+        """
+        @summary 删除自定义机器人
+        
+        @param request: DeleteCustomRobotRequest
+        @return: DeleteCustomRobotResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.DeleteCustomRobotHeaders()
+        return self.delete_custom_robot_with_options(request, headers, runtime)
+
+    async def delete_custom_robot_async(
+        self,
+        request: dingtalkrobot__1__0_models.DeleteCustomRobotRequest,
+    ) -> dingtalkrobot__1__0_models.DeleteCustomRobotResponse:
+        """
+        @summary 删除自定义机器人
+        
+        @param request: DeleteCustomRobotRequest
+        @return: DeleteCustomRobotResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.DeleteCustomRobotHeaders()
+        return await self.delete_custom_robot_with_options_async(request, headers, runtime)
+
     def execute_robot_ai_skill_with_options(
         self,
         request: dingtalkrobot__1__0_models.ExecuteRobotAiSkillRequest,

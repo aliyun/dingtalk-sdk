@@ -10449,20 +10449,16 @@ class InsertContentHeaders(TeaModel):
         return self
 
 
-class InsertContentRequest(TeaModel):
+class InsertContentRequestContent(TeaModel):
     def __init__(
         self,
-        content: Dict[str, Any] = None,
-        index: int = None,
-        path: List[int] = None,
-        operator_id: str = None,
+        content: str = None,
+        type: str = None,
     ):
         # This parameter is required.
         self.content = content
-        self.index = index
-        self.path = path
         # This parameter is required.
-        self.operator_id = operator_id
+        self.type = type
 
     def validate(self):
         pass
@@ -10475,6 +10471,46 @@ class InsertContentRequest(TeaModel):
         result = dict()
         if self.content is not None:
             result['content'] = self.content
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class InsertContentRequest(TeaModel):
+    def __init__(
+        self,
+        content: InsertContentRequestContent = None,
+        index: int = None,
+        path: List[int] = None,
+        operator_id: str = None,
+    ):
+        # This parameter is required.
+        self.content = content
+        self.index = index
+        self.path = path
+        # This parameter is required.
+        self.operator_id = operator_id
+
+    def validate(self):
+        if self.content:
+            self.content.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content.to_map()
         if self.index is not None:
             result['index'] = self.index
         if self.path is not None:
@@ -10486,7 +10522,8 @@ class InsertContentRequest(TeaModel):
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('content') is not None:
-            self.content = m.get('content')
+            temp_model = InsertContentRequestContent()
+            self.content = temp_model.from_map(m['content'])
         if m.get('index') is not None:
             self.index = m.get('index')
         if m.get('path') is not None:
@@ -14096,17 +14133,47 @@ class UpdateSheetRequest(TeaModel):
         return self
 
 
+class UpdateSheetResponseBody(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+    ):
+        self.id = id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        return self
+
+
 class UpdateSheetResponse(TeaModel):
     def __init__(
         self,
         headers: Dict[str, str] = None,
         status_code: int = None,
+        body: UpdateSheetResponseBody = None,
     ):
         self.headers = headers
         self.status_code = status_code
+        self.body = body
 
     def validate(self):
-        pass
+        if self.body:
+            self.body.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -14118,6 +14185,8 @@ class UpdateSheetResponse(TeaModel):
             result['headers'] = self.headers
         if self.status_code is not None:
             result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
         return result
 
     def from_map(self, m: dict = None):
@@ -14126,6 +14195,9 @@ class UpdateSheetResponse(TeaModel):
             self.headers = m.get('headers')
         if m.get('statusCode') is not None:
             self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdateSheetResponseBody()
+            self.body = temp_model.from_map(m['body'])
         return self
 
 

@@ -2341,6 +2341,12 @@ class GetInnerAppInfoResponseBody(TeaModel):
         mobile_login_request_method: str = None,
         mobile_original_homepage_url: str = None,
         mobile_transfer_url: str = None,
+        pad_effective_homepage_url: str = None,
+        pad_login_address_key: str = None,
+        pad_login_login_url: str = None,
+        pad_login_request_method: str = None,
+        pad_original_homepage_url: str = None,
+        pad_transfer_url: str = None,
         pc_effective_homepage_url: str = None,
         pc_login_address_key: str = None,
         pc_login_login_url: str = None,
@@ -2356,6 +2362,12 @@ class GetInnerAppInfoResponseBody(TeaModel):
         self.mobile_login_request_method = mobile_login_request_method
         self.mobile_original_homepage_url = mobile_original_homepage_url
         self.mobile_transfer_url = mobile_transfer_url
+        self.pad_effective_homepage_url = pad_effective_homepage_url
+        self.pad_login_address_key = pad_login_address_key
+        self.pad_login_login_url = pad_login_login_url
+        self.pad_login_request_method = pad_login_request_method
+        self.pad_original_homepage_url = pad_original_homepage_url
+        self.pad_transfer_url = pad_transfer_url
         self.pc_effective_homepage_url = pc_effective_homepage_url
         self.pc_login_address_key = pc_login_address_key
         self.pc_login_login_url = pc_login_login_url
@@ -2388,6 +2400,18 @@ class GetInnerAppInfoResponseBody(TeaModel):
             result['mobileOriginalHomepageUrl'] = self.mobile_original_homepage_url
         if self.mobile_transfer_url is not None:
             result['mobileTransferUrl'] = self.mobile_transfer_url
+        if self.pad_effective_homepage_url is not None:
+            result['padEffectiveHomepageUrl'] = self.pad_effective_homepage_url
+        if self.pad_login_address_key is not None:
+            result['padLoginAddressKey'] = self.pad_login_address_key
+        if self.pad_login_login_url is not None:
+            result['padLoginLoginUrl'] = self.pad_login_login_url
+        if self.pad_login_request_method is not None:
+            result['padLoginRequestMethod'] = self.pad_login_request_method
+        if self.pad_original_homepage_url is not None:
+            result['padOriginalHomepageUrl'] = self.pad_original_homepage_url
+        if self.pad_transfer_url is not None:
+            result['padTransferUrl'] = self.pad_transfer_url
         if self.pc_effective_homepage_url is not None:
             result['pcEffectiveHomepageUrl'] = self.pc_effective_homepage_url
         if self.pc_login_address_key is not None:
@@ -2420,6 +2444,18 @@ class GetInnerAppInfoResponseBody(TeaModel):
             self.mobile_original_homepage_url = m.get('mobileOriginalHomepageUrl')
         if m.get('mobileTransferUrl') is not None:
             self.mobile_transfer_url = m.get('mobileTransferUrl')
+        if m.get('padEffectiveHomepageUrl') is not None:
+            self.pad_effective_homepage_url = m.get('padEffectiveHomepageUrl')
+        if m.get('padLoginAddressKey') is not None:
+            self.pad_login_address_key = m.get('padLoginAddressKey')
+        if m.get('padLoginLoginUrl') is not None:
+            self.pad_login_login_url = m.get('padLoginLoginUrl')
+        if m.get('padLoginRequestMethod') is not None:
+            self.pad_login_request_method = m.get('padLoginRequestMethod')
+        if m.get('padOriginalHomepageUrl') is not None:
+            self.pad_original_homepage_url = m.get('padOriginalHomepageUrl')
+        if m.get('padTransferUrl') is not None:
+            self.pad_transfer_url = m.get('padTransferUrl')
         if m.get('pcEffectiveHomepageUrl') is not None:
             self.pc_effective_homepage_url = m.get('pcEffectiveHomepageUrl')
         if m.get('pcLoginAddressKey') is not None:

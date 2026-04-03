@@ -7199,6 +7199,205 @@ class ListAclsResponse(TeaModel):
         return self
 
 
+class ListAiMinutesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        ding_access_token_type: str = None,
+        ding_isv_org_id: str = None,
+        ding_org_id: str = None,
+        ding_suite_key: str = None,
+        ding_uid: str = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.ding_access_token_type = ding_access_token_type
+        self.ding_isv_org_id = ding_isv_org_id
+        self.ding_org_id = ding_org_id
+        self.ding_suite_key = ding_suite_key
+        self.ding_uid = ding_uid
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.ding_access_token_type is not None:
+            result['dingAccessTokenType'] = self.ding_access_token_type
+        if self.ding_isv_org_id is not None:
+            result['dingIsvOrgId'] = self.ding_isv_org_id
+        if self.ding_org_id is not None:
+            result['dingOrgId'] = self.ding_org_id
+        if self.ding_suite_key is not None:
+            result['dingSuiteKey'] = self.ding_suite_key
+        if self.ding_uid is not None:
+            result['dingUid'] = self.ding_uid
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('dingAccessTokenType') is not None:
+            self.ding_access_token_type = m.get('dingAccessTokenType')
+        if m.get('dingIsvOrgId') is not None:
+            self.ding_isv_org_id = m.get('dingIsvOrgId')
+        if m.get('dingOrgId') is not None:
+            self.ding_org_id = m.get('dingOrgId')
+        if m.get('dingSuiteKey') is not None:
+            self.ding_suite_key = m.get('dingSuiteKey')
+        if m.get('dingUid') is not None:
+            self.ding_uid = m.get('dingUid')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListAiMinutesRequest(TeaModel):
+    def __init__(
+        self,
+        fetch_all: bool = None,
+    ):
+        self.fetch_all = fetch_all
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.fetch_all is not None:
+            result['fetchAll'] = self.fetch_all
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fetchAll') is not None:
+            self.fetch_all = m.get('fetchAll')
+        return self
+
+
+class ListAiMinutesResponseBodyMinutes(TeaModel):
+    def __init__(
+        self,
+        creator_user_id: str = None,
+        minutes_id: str = None,
+    ):
+        self.creator_user_id = creator_user_id
+        self.minutes_id = minutes_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.creator_user_id is not None:
+            result['creatorUserId'] = self.creator_user_id
+        if self.minutes_id is not None:
+            result['minutesId'] = self.minutes_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('creatorUserId') is not None:
+            self.creator_user_id = m.get('creatorUserId')
+        if m.get('minutesId') is not None:
+            self.minutes_id = m.get('minutesId')
+        return self
+
+
+class ListAiMinutesResponseBody(TeaModel):
+    def __init__(
+        self,
+        minutes: List[ListAiMinutesResponseBodyMinutes] = None,
+    ):
+        self.minutes = minutes
+
+    def validate(self):
+        if self.minutes:
+            for k in self.minutes:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['minutes'] = []
+        if self.minutes is not None:
+            for k in self.minutes:
+                result['minutes'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.minutes = []
+        if m.get('minutes') is not None:
+            for k in m.get('minutes'):
+                temp_model = ListAiMinutesResponseBodyMinutes()
+                self.minutes.append(temp_model.from_map(k))
+        return self
+
+
+class ListAiMinutesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ListAiMinutesResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ListAiMinutesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class ListAttendeesHeaders(TeaModel):
     def __init__(
         self,

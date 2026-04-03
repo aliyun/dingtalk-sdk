@@ -2926,6 +2926,152 @@ class Client(OpenApiClient):
         headers = dingtalkcalendar__1__0_models.ListAclsHeaders()
         return await self.list_acls_with_options_async(user_id, calendar_id, headers, runtime)
 
+    def list_ai_minutes_with_options(
+        self,
+        user_id: str,
+        calendar_id: str,
+        event_id: str,
+        request: dingtalkcalendar__1__0_models.ListAiMinutesRequest,
+        headers: dingtalkcalendar__1__0_models.ListAiMinutesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcalendar__1__0_models.ListAiMinutesResponse:
+        """
+        @summary 拉取日程中绑定的听记信息
+        
+        @param request: ListAiMinutesRequest
+        @param headers: ListAiMinutesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListAiMinutesResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.fetch_all):
+            query['fetchAll'] = request.fetch_all
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.ding_access_token_type):
+            real_headers['dingAccessTokenType'] = UtilClient.to_jsonstring(headers.ding_access_token_type)
+        if not UtilClient.is_unset(headers.ding_isv_org_id):
+            real_headers['dingIsvOrgId'] = UtilClient.to_jsonstring(headers.ding_isv_org_id)
+        if not UtilClient.is_unset(headers.ding_org_id):
+            real_headers['dingOrgId'] = UtilClient.to_jsonstring(headers.ding_org_id)
+        if not UtilClient.is_unset(headers.ding_suite_key):
+            real_headers['dingSuiteKey'] = UtilClient.to_jsonstring(headers.ding_suite_key)
+        if not UtilClient.is_unset(headers.ding_uid):
+            real_headers['dingUid'] = UtilClient.to_jsonstring(headers.ding_uid)
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListAiMinutes',
+            version='calendar_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/events/{event_id}/minutes',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcalendar__1__0_models.ListAiMinutesResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def list_ai_minutes_with_options_async(
+        self,
+        user_id: str,
+        calendar_id: str,
+        event_id: str,
+        request: dingtalkcalendar__1__0_models.ListAiMinutesRequest,
+        headers: dingtalkcalendar__1__0_models.ListAiMinutesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcalendar__1__0_models.ListAiMinutesResponse:
+        """
+        @summary 拉取日程中绑定的听记信息
+        
+        @param request: ListAiMinutesRequest
+        @param headers: ListAiMinutesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListAiMinutesResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.fetch_all):
+            query['fetchAll'] = request.fetch_all
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.ding_access_token_type):
+            real_headers['dingAccessTokenType'] = UtilClient.to_jsonstring(headers.ding_access_token_type)
+        if not UtilClient.is_unset(headers.ding_isv_org_id):
+            real_headers['dingIsvOrgId'] = UtilClient.to_jsonstring(headers.ding_isv_org_id)
+        if not UtilClient.is_unset(headers.ding_org_id):
+            real_headers['dingOrgId'] = UtilClient.to_jsonstring(headers.ding_org_id)
+        if not UtilClient.is_unset(headers.ding_suite_key):
+            real_headers['dingSuiteKey'] = UtilClient.to_jsonstring(headers.ding_suite_key)
+        if not UtilClient.is_unset(headers.ding_uid):
+            real_headers['dingUid'] = UtilClient.to_jsonstring(headers.ding_uid)
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListAiMinutes',
+            version='calendar_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/calendar/users/{user_id}/calendars/{calendar_id}/events/{event_id}/minutes',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcalendar__1__0_models.ListAiMinutesResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def list_ai_minutes(
+        self,
+        user_id: str,
+        calendar_id: str,
+        event_id: str,
+        request: dingtalkcalendar__1__0_models.ListAiMinutesRequest,
+    ) -> dingtalkcalendar__1__0_models.ListAiMinutesResponse:
+        """
+        @summary 拉取日程中绑定的听记信息
+        
+        @param request: ListAiMinutesRequest
+        @return: ListAiMinutesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcalendar__1__0_models.ListAiMinutesHeaders()
+        return self.list_ai_minutes_with_options(user_id, calendar_id, event_id, request, headers, runtime)
+
+    async def list_ai_minutes_async(
+        self,
+        user_id: str,
+        calendar_id: str,
+        event_id: str,
+        request: dingtalkcalendar__1__0_models.ListAiMinutesRequest,
+    ) -> dingtalkcalendar__1__0_models.ListAiMinutesResponse:
+        """
+        @summary 拉取日程中绑定的听记信息
+        
+        @param request: ListAiMinutesRequest
+        @return: ListAiMinutesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcalendar__1__0_models.ListAiMinutesHeaders()
+        return await self.list_ai_minutes_with_options_async(user_id, calendar_id, event_id, request, headers, runtime)
+
     def list_attendees_with_options(
         self,
         user_id: str,

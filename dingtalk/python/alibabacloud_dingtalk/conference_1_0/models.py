@@ -1249,6 +1249,57 @@ class CreateScheduleConferenceHeaders(TeaModel):
         return self
 
 
+class CreateScheduleConferenceRequestScheduleConfSettingModelAiAgentSummarySetting(TeaModel):
+    def __init__(
+        self,
+        allow_all_participants_start: int = None,
+        receiver_type: int = None,
+        restrict_share_minutes_summary_only: int = None,
+        start_type: int = None,
+        value: str = None,
+    ):
+        self.allow_all_participants_start = allow_all_participants_start
+        self.receiver_type = receiver_type
+        self.restrict_share_minutes_summary_only = restrict_share_minutes_summary_only
+        self.start_type = start_type
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.allow_all_participants_start is not None:
+            result['allowAllParticipantsStart'] = self.allow_all_participants_start
+        if self.receiver_type is not None:
+            result['receiverType'] = self.receiver_type
+        if self.restrict_share_minutes_summary_only is not None:
+            result['restrictShareMinutesSummaryOnly'] = self.restrict_share_minutes_summary_only
+        if self.start_type is not None:
+            result['startType'] = self.start_type
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('allowAllParticipantsStart') is not None:
+            self.allow_all_participants_start = m.get('allowAllParticipantsStart')
+        if m.get('receiverType') is not None:
+            self.receiver_type = m.get('receiverType')
+        if m.get('restrictShareMinutesSummaryOnly') is not None:
+            self.restrict_share_minutes_summary_only = m.get('restrictShareMinutesSummaryOnly')
+        if m.get('startType') is not None:
+            self.start_type = m.get('startType')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
 class CreateScheduleConferenceRequestScheduleConfSettingModelMoziConfOpenRecordSetting(TeaModel):
     def __init__(
         self,
@@ -1256,11 +1307,13 @@ class CreateScheduleConferenceRequestScheduleConfSettingModelMoziConfOpenRecordS
         mode: str = None,
         record_auto_start: int = None,
         record_auto_start_type: int = None,
+        restrict_share_minutes_summary_only: int = None,
     ):
         self.is_follow_host = is_follow_host
         self.mode = mode
         self.record_auto_start = record_auto_start
         self.record_auto_start_type = record_auto_start_type
+        self.restrict_share_minutes_summary_only = restrict_share_minutes_summary_only
 
     def validate(self):
         pass
@@ -1279,6 +1332,8 @@ class CreateScheduleConferenceRequestScheduleConfSettingModelMoziConfOpenRecordS
             result['recordAutoStart'] = self.record_auto_start
         if self.record_auto_start_type is not None:
             result['recordAutoStartType'] = self.record_auto_start_type
+        if self.restrict_share_minutes_summary_only is not None:
+            result['restrictShareMinutesSummaryOnly'] = self.restrict_share_minutes_summary_only
         return result
 
     def from_map(self, m: dict = None):
@@ -1291,6 +1346,8 @@ class CreateScheduleConferenceRequestScheduleConfSettingModelMoziConfOpenRecordS
             self.record_auto_start = m.get('recordAutoStart')
         if m.get('recordAutoStartType') is not None:
             self.record_auto_start_type = m.get('recordAutoStartType')
+        if m.get('restrictShareMinutesSummaryOnly') is not None:
+            self.restrict_share_minutes_summary_only = m.get('restrictShareMinutesSummaryOnly')
         return self
 
 
@@ -1461,6 +1518,7 @@ class CreateScheduleConferenceRequestScheduleConfSettingModelMoziConfVirtualExtr
 class CreateScheduleConferenceRequestScheduleConfSettingModel(TeaModel):
     def __init__(
         self,
+        ai_agent_summary_setting: CreateScheduleConferenceRequestScheduleConfSettingModelAiAgentSummarySetting = None,
         cohost_union_ids: List[str] = None,
         conf_allowed_corp_id: str = None,
         host_union_id: str = None,
@@ -1470,6 +1528,7 @@ class CreateScheduleConferenceRequestScheduleConfSettingModel(TeaModel):
         mute_on_join: int = None,
         screen_share_forbidden: int = None,
     ):
+        self.ai_agent_summary_setting = ai_agent_summary_setting
         self.cohost_union_ids = cohost_union_ids
         self.conf_allowed_corp_id = conf_allowed_corp_id
         self.host_union_id = host_union_id
@@ -1480,6 +1539,8 @@ class CreateScheduleConferenceRequestScheduleConfSettingModel(TeaModel):
         self.screen_share_forbidden = screen_share_forbidden
 
     def validate(self):
+        if self.ai_agent_summary_setting:
+            self.ai_agent_summary_setting.validate()
         if self.mozi_conf_open_record_setting:
             self.mozi_conf_open_record_setting.validate()
         if self.mozi_conf_virtual_extra_setting:
@@ -1491,6 +1552,8 @@ class CreateScheduleConferenceRequestScheduleConfSettingModel(TeaModel):
             return _map
 
         result = dict()
+        if self.ai_agent_summary_setting is not None:
+            result['aiAgentSummarySetting'] = self.ai_agent_summary_setting.to_map()
         if self.cohost_union_ids is not None:
             result['cohostUnionIds'] = self.cohost_union_ids
         if self.conf_allowed_corp_id is not None:
@@ -1511,6 +1574,9 @@ class CreateScheduleConferenceRequestScheduleConfSettingModel(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('aiAgentSummarySetting') is not None:
+            temp_model = CreateScheduleConferenceRequestScheduleConfSettingModelAiAgentSummarySetting()
+            self.ai_agent_summary_setting = temp_model.from_map(m['aiAgentSummarySetting'])
         if m.get('cohostUnionIds') is not None:
             self.cohost_union_ids = m.get('cohostUnionIds')
         if m.get('confAllowedCorpId') is not None:
@@ -10124,6 +10190,57 @@ class UpdateScheduleConfSettingsHeaders(TeaModel):
         return self
 
 
+class UpdateScheduleConfSettingsRequestScheduleConfSettingModelAiAgentSummarySetting(TeaModel):
+    def __init__(
+        self,
+        allow_all_participants_start: int = None,
+        receiver_type: int = None,
+        restrict_share_minutes_summary_only: int = None,
+        start_type: int = None,
+        value: str = None,
+    ):
+        self.allow_all_participants_start = allow_all_participants_start
+        self.receiver_type = receiver_type
+        self.restrict_share_minutes_summary_only = restrict_share_minutes_summary_only
+        self.start_type = start_type
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.allow_all_participants_start is not None:
+            result['allowAllParticipantsStart'] = self.allow_all_participants_start
+        if self.receiver_type is not None:
+            result['receiverType'] = self.receiver_type
+        if self.restrict_share_minutes_summary_only is not None:
+            result['restrictShareMinutesSummaryOnly'] = self.restrict_share_minutes_summary_only
+        if self.start_type is not None:
+            result['startType'] = self.start_type
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('allowAllParticipantsStart') is not None:
+            self.allow_all_participants_start = m.get('allowAllParticipantsStart')
+        if m.get('receiverType') is not None:
+            self.receiver_type = m.get('receiverType')
+        if m.get('restrictShareMinutesSummaryOnly') is not None:
+            self.restrict_share_minutes_summary_only = m.get('restrictShareMinutesSummaryOnly')
+        if m.get('startType') is not None:
+            self.start_type = m.get('startType')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
 class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfOpenRecordSetting(TeaModel):
     def __init__(
         self,
@@ -10131,11 +10248,13 @@ class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfOpenRecor
         mode: str = None,
         record_auto_start: int = None,
         record_auto_start_type: int = None,
+        restrict_share_minutes_summary_only: int = None,
     ):
         self.is_follow_host = is_follow_host
         self.mode = mode
         self.record_auto_start = record_auto_start
         self.record_auto_start_type = record_auto_start_type
+        self.restrict_share_minutes_summary_only = restrict_share_minutes_summary_only
 
     def validate(self):
         pass
@@ -10154,6 +10273,8 @@ class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfOpenRecor
             result['recordAutoStart'] = self.record_auto_start
         if self.record_auto_start_type is not None:
             result['recordAutoStartType'] = self.record_auto_start_type
+        if self.restrict_share_minutes_summary_only is not None:
+            result['restrictShareMinutesSummaryOnly'] = self.restrict_share_minutes_summary_only
         return result
 
     def from_map(self, m: dict = None):
@@ -10166,6 +10287,8 @@ class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfOpenRecor
             self.record_auto_start = m.get('recordAutoStart')
         if m.get('recordAutoStartType') is not None:
             self.record_auto_start_type = m.get('recordAutoStartType')
+        if m.get('restrictShareMinutesSummaryOnly') is not None:
+            self.restrict_share_minutes_summary_only = m.get('restrictShareMinutesSummaryOnly')
         return self
 
 
@@ -10336,6 +10459,7 @@ class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualEx
 class UpdateScheduleConfSettingsRequestScheduleConfSettingModel(TeaModel):
     def __init__(
         self,
+        ai_agent_summary_setting: UpdateScheduleConfSettingsRequestScheduleConfSettingModelAiAgentSummarySetting = None,
         cohost_union_ids: List[str] = None,
         conf_allowed_corp_id: str = None,
         host_union_id: str = None,
@@ -10345,6 +10469,7 @@ class UpdateScheduleConfSettingsRequestScheduleConfSettingModel(TeaModel):
         mute_on_join: int = None,
         screen_share_forbidden: int = None,
     ):
+        self.ai_agent_summary_setting = ai_agent_summary_setting
         self.cohost_union_ids = cohost_union_ids
         self.conf_allowed_corp_id = conf_allowed_corp_id
         self.host_union_id = host_union_id
@@ -10355,6 +10480,8 @@ class UpdateScheduleConfSettingsRequestScheduleConfSettingModel(TeaModel):
         self.screen_share_forbidden = screen_share_forbidden
 
     def validate(self):
+        if self.ai_agent_summary_setting:
+            self.ai_agent_summary_setting.validate()
         if self.mozi_conf_open_record_setting:
             self.mozi_conf_open_record_setting.validate()
         if self.mozi_conf_virtual_extra_setting:
@@ -10366,6 +10493,8 @@ class UpdateScheduleConfSettingsRequestScheduleConfSettingModel(TeaModel):
             return _map
 
         result = dict()
+        if self.ai_agent_summary_setting is not None:
+            result['aiAgentSummarySetting'] = self.ai_agent_summary_setting.to_map()
         if self.cohost_union_ids is not None:
             result['cohostUnionIds'] = self.cohost_union_ids
         if self.conf_allowed_corp_id is not None:
@@ -10386,6 +10515,9 @@ class UpdateScheduleConfSettingsRequestScheduleConfSettingModel(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('aiAgentSummarySetting') is not None:
+            temp_model = UpdateScheduleConfSettingsRequestScheduleConfSettingModelAiAgentSummarySetting()
+            self.ai_agent_summary_setting = temp_model.from_map(m['aiAgentSummarySetting'])
         if m.get('cohostUnionIds') is not None:
             self.cohost_union_ids = m.get('cohostUnionIds')
         if m.get('confAllowedCorpId') is not None:

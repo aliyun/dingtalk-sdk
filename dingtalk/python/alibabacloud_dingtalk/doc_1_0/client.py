@@ -9684,7 +9684,7 @@ class Client(OpenApiClient):
             auth_type='AK',
             style='ROA',
             req_body_type='none',
-            body_type='none'
+            body_type='json'
         )
         return TeaCore.from_map(
             dingtalkdoc__1__0_models.UpdateSheetResponse(),
@@ -9739,7 +9739,7 @@ class Client(OpenApiClient):
             auth_type='AK',
             style='ROA',
             req_body_type='none',
-            body_type='none'
+            body_type='json'
         )
         return TeaCore.from_map(
             dingtalkdoc__1__0_models.UpdateSheetResponse(),
