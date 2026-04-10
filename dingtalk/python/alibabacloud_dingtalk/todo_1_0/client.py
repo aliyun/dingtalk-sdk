@@ -642,6 +642,106 @@ class Client(OpenApiClient):
         headers = dingtalktodo__1__0_models.CreateTodoTypeConfigHeaders()
         return await self.create_todo_type_config_with_options_async(union_id, request, headers, runtime)
 
+    def delete_personal_todo_task_with_options(
+        self,
+        task_id: str,
+        headers: dingtalktodo__1__0_models.DeletePersonalTodoTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktodo__1__0_models.DeletePersonalTodoTaskResponse:
+        """
+        @summary 以用户个人身份删除待办
+        
+        @param headers: DeletePersonalTodoTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeletePersonalTodoTaskResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='DeletePersonalTodoTask',
+            version='todo_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/todo/users/me/tasks/{task_id}/remove',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktodo__1__0_models.DeletePersonalTodoTaskResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def delete_personal_todo_task_with_options_async(
+        self,
+        task_id: str,
+        headers: dingtalktodo__1__0_models.DeletePersonalTodoTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktodo__1__0_models.DeletePersonalTodoTaskResponse:
+        """
+        @summary 以用户个人身份删除待办
+        
+        @param headers: DeletePersonalTodoTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeletePersonalTodoTaskResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='DeletePersonalTodoTask',
+            version='todo_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/todo/users/me/tasks/{task_id}/remove',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktodo__1__0_models.DeletePersonalTodoTaskResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def delete_personal_todo_task(
+        self,
+        task_id: str,
+    ) -> dingtalktodo__1__0_models.DeletePersonalTodoTaskResponse:
+        """
+        @summary 以用户个人身份删除待办
+        
+        @return: DeletePersonalTodoTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktodo__1__0_models.DeletePersonalTodoTaskHeaders()
+        return self.delete_personal_todo_task_with_options(task_id, headers, runtime)
+
+    async def delete_personal_todo_task_async(
+        self,
+        task_id: str,
+    ) -> dingtalktodo__1__0_models.DeletePersonalTodoTaskResponse:
+        """
+        @summary 以用户个人身份删除待办
+        
+        @return: DeletePersonalTodoTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktodo__1__0_models.DeletePersonalTodoTaskHeaders()
+        return await self.delete_personal_todo_task_with_options_async(task_id, headers, runtime)
+
     def delete_todo_task_with_options(
         self,
         union_id: str,
@@ -2276,6 +2376,262 @@ class Client(OpenApiClient):
         headers = dingtalktodo__1__0_models.SetOrgConfigHeaders()
         return await self.set_org_config_with_options_async(request, headers, runtime)
 
+    def update_personal_todo_task_with_options(
+        self,
+        task_id: str,
+        request: dingtalktodo__1__0_models.UpdatePersonalTodoTaskRequest,
+        headers: dingtalktodo__1__0_models.UpdatePersonalTodoTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktodo__1__0_models.UpdatePersonalTodoTaskResponse:
+        """
+        @summary 以用户个人身份更新待办
+        
+        @param request: UpdatePersonalTodoTaskRequest
+        @param headers: UpdatePersonalTodoTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdatePersonalTodoTaskResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.done):
+            body['done'] = request.done
+        if not UtilClient.is_unset(request.due_time):
+            body['dueTime'] = request.due_time
+        if not UtilClient.is_unset(request.executor_ids):
+            body['executorIds'] = request.executor_ids
+        if not UtilClient.is_unset(request.participant_ids):
+            body['participantIds'] = request.participant_ids
+        if not UtilClient.is_unset(request.subject):
+            body['subject'] = request.subject
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdatePersonalTodoTask',
+            version='todo_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/todo/users/me/tasks/{task_id}/update',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktodo__1__0_models.UpdatePersonalTodoTaskResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_personal_todo_task_with_options_async(
+        self,
+        task_id: str,
+        request: dingtalktodo__1__0_models.UpdatePersonalTodoTaskRequest,
+        headers: dingtalktodo__1__0_models.UpdatePersonalTodoTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktodo__1__0_models.UpdatePersonalTodoTaskResponse:
+        """
+        @summary 以用户个人身份更新待办
+        
+        @param request: UpdatePersonalTodoTaskRequest
+        @param headers: UpdatePersonalTodoTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdatePersonalTodoTaskResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.done):
+            body['done'] = request.done
+        if not UtilClient.is_unset(request.due_time):
+            body['dueTime'] = request.due_time
+        if not UtilClient.is_unset(request.executor_ids):
+            body['executorIds'] = request.executor_ids
+        if not UtilClient.is_unset(request.participant_ids):
+            body['participantIds'] = request.participant_ids
+        if not UtilClient.is_unset(request.subject):
+            body['subject'] = request.subject
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdatePersonalTodoTask',
+            version='todo_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/todo/users/me/tasks/{task_id}/update',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktodo__1__0_models.UpdatePersonalTodoTaskResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_personal_todo_task(
+        self,
+        task_id: str,
+        request: dingtalktodo__1__0_models.UpdatePersonalTodoTaskRequest,
+    ) -> dingtalktodo__1__0_models.UpdatePersonalTodoTaskResponse:
+        """
+        @summary 以用户个人身份更新待办
+        
+        @param request: UpdatePersonalTodoTaskRequest
+        @return: UpdatePersonalTodoTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktodo__1__0_models.UpdatePersonalTodoTaskHeaders()
+        return self.update_personal_todo_task_with_options(task_id, request, headers, runtime)
+
+    async def update_personal_todo_task_async(
+        self,
+        task_id: str,
+        request: dingtalktodo__1__0_models.UpdatePersonalTodoTaskRequest,
+    ) -> dingtalktodo__1__0_models.UpdatePersonalTodoTaskResponse:
+        """
+        @summary 以用户个人身份更新待办
+        
+        @param request: UpdatePersonalTodoTaskRequest
+        @return: UpdatePersonalTodoTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktodo__1__0_models.UpdatePersonalTodoTaskHeaders()
+        return await self.update_personal_todo_task_with_options_async(task_id, request, headers, runtime)
+
+    def update_personal_todo_task_executor_status_with_options(
+        self,
+        task_id: str,
+        request: dingtalktodo__1__0_models.UpdatePersonalTodoTaskExecutorStatusRequest,
+        headers: dingtalktodo__1__0_models.UpdatePersonalTodoTaskExecutorStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktodo__1__0_models.UpdatePersonalTodoTaskExecutorStatusResponse:
+        """
+        @summary 以用户个人身份更新自己作为执行者的状态
+        
+        @param request: UpdatePersonalTodoTaskExecutorStatusRequest
+        @param headers: UpdatePersonalTodoTaskExecutorStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdatePersonalTodoTaskExecutorStatusResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.done):
+            query['done'] = request.done
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='UpdatePersonalTodoTaskExecutorStatus',
+            version='todo_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/todo/users/me/tasks/{task_id}/updateExecutorStatus',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktodo__1__0_models.UpdatePersonalTodoTaskExecutorStatusResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_personal_todo_task_executor_status_with_options_async(
+        self,
+        task_id: str,
+        request: dingtalktodo__1__0_models.UpdatePersonalTodoTaskExecutorStatusRequest,
+        headers: dingtalktodo__1__0_models.UpdatePersonalTodoTaskExecutorStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktodo__1__0_models.UpdatePersonalTodoTaskExecutorStatusResponse:
+        """
+        @summary 以用户个人身份更新自己作为执行者的状态
+        
+        @param request: UpdatePersonalTodoTaskExecutorStatusRequest
+        @param headers: UpdatePersonalTodoTaskExecutorStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdatePersonalTodoTaskExecutorStatusResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.done):
+            query['done'] = request.done
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='UpdatePersonalTodoTaskExecutorStatus',
+            version='todo_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/todo/users/me/tasks/{task_id}/updateExecutorStatus',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktodo__1__0_models.UpdatePersonalTodoTaskExecutorStatusResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_personal_todo_task_executor_status(
+        self,
+        task_id: str,
+        request: dingtalktodo__1__0_models.UpdatePersonalTodoTaskExecutorStatusRequest,
+    ) -> dingtalktodo__1__0_models.UpdatePersonalTodoTaskExecutorStatusResponse:
+        """
+        @summary 以用户个人身份更新自己作为执行者的状态
+        
+        @param request: UpdatePersonalTodoTaskExecutorStatusRequest
+        @return: UpdatePersonalTodoTaskExecutorStatusResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktodo__1__0_models.UpdatePersonalTodoTaskExecutorStatusHeaders()
+        return self.update_personal_todo_task_executor_status_with_options(task_id, request, headers, runtime)
+
+    async def update_personal_todo_task_executor_status_async(
+        self,
+        task_id: str,
+        request: dingtalktodo__1__0_models.UpdatePersonalTodoTaskExecutorStatusRequest,
+    ) -> dingtalktodo__1__0_models.UpdatePersonalTodoTaskExecutorStatusResponse:
+        """
+        @summary 以用户个人身份更新自己作为执行者的状态
+        
+        @param request: UpdatePersonalTodoTaskExecutorStatusRequest
+        @return: UpdatePersonalTodoTaskExecutorStatusResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktodo__1__0_models.UpdatePersonalTodoTaskExecutorStatusHeaders()
+        return await self.update_personal_todo_task_executor_status_with_options_async(task_id, request, headers, runtime)
+
     def update_todo_task_with_options(
         self,
         union_id: str,
@@ -2297,6 +2653,8 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(request.operator_id):
             query['operatorId'] = request.operator_id
         body = {}
+        if not UtilClient.is_unset(request.content_field_list):
+            body['contentFieldList'] = request.content_field_list
         if not UtilClient.is_unset(request.description):
             body['description'] = request.description
         if not UtilClient.is_unset(request.done):
@@ -2356,6 +2714,8 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(request.operator_id):
             query['operatorId'] = request.operator_id
         body = {}
+        if not UtilClient.is_unset(request.content_field_list):
+            body['contentFieldList'] = request.content_field_list
         if not UtilClient.is_unset(request.description):
             body['description'] = request.description
         if not UtilClient.is_unset(request.done):

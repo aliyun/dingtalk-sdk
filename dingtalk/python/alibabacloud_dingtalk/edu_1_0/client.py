@@ -25484,6 +25484,132 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.SubscribeUniversityCourseGroupHeaders()
         return await self.subscribe_university_course_group_with_options_async(request, headers, runtime)
 
+    def sync_checked_data_with_options(
+        self,
+        request: dingtalkedu__1__0_models.SyncCheckedDataRequest,
+        headers: dingtalkedu__1__0_models.SyncCheckedDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.SyncCheckedDataResponse:
+        """
+        @summary 作业批改-同步抽检数据
+        
+        @param request: SyncCheckedDataRequest
+        @param headers: SyncCheckedDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SyncCheckedDataResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.check_json_url):
+            body['checkJsonUrl'] = request.check_json_url
+        if not UtilClient.is_unset(request.check_url):
+            body['checkUrl'] = request.check_url
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.task_code):
+            body['taskCode'] = request.task_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SyncCheckedData',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/assignment/syncCheckedData',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.SyncCheckedDataResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def sync_checked_data_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.SyncCheckedDataRequest,
+        headers: dingtalkedu__1__0_models.SyncCheckedDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.SyncCheckedDataResponse:
+        """
+        @summary 作业批改-同步抽检数据
+        
+        @param request: SyncCheckedDataRequest
+        @param headers: SyncCheckedDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SyncCheckedDataResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.check_json_url):
+            body['checkJsonUrl'] = request.check_json_url
+        if not UtilClient.is_unset(request.check_url):
+            body['checkUrl'] = request.check_url
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.task_code):
+            body['taskCode'] = request.task_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SyncCheckedData',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/assignment/syncCheckedData',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.SyncCheckedDataResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def sync_checked_data(
+        self,
+        request: dingtalkedu__1__0_models.SyncCheckedDataRequest,
+    ) -> dingtalkedu__1__0_models.SyncCheckedDataResponse:
+        """
+        @summary 作业批改-同步抽检数据
+        
+        @param request: SyncCheckedDataRequest
+        @return: SyncCheckedDataResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.SyncCheckedDataHeaders()
+        return self.sync_checked_data_with_options(request, headers, runtime)
+
+    async def sync_checked_data_async(
+        self,
+        request: dingtalkedu__1__0_models.SyncCheckedDataRequest,
+    ) -> dingtalkedu__1__0_models.SyncCheckedDataResponse:
+        """
+        @summary 作业批改-同步抽检数据
+        
+        @param request: SyncCheckedDataRequest
+        @return: SyncCheckedDataResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.SyncCheckedDataHeaders()
+        return await self.sync_checked_data_with_options_async(request, headers, runtime)
+
     def unsubscribe_university_course_group_with_options(
         self,
         request: dingtalkedu__1__0_models.UnsubscribeUniversityCourseGroupRequest,

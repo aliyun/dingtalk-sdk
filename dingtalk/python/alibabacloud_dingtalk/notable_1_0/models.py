@@ -3015,10 +3015,12 @@ class InsertRecordsRequest(TeaModel):
     def __init__(
         self,
         records: List[InsertRecordsRequestRecords] = None,
+        client_token: str = None,
         operator_id: str = None,
     ):
         # This parameter is required.
         self.records = records
+        self.client_token = client_token
         # This parameter is required.
         self.operator_id = operator_id
 
@@ -3038,6 +3040,8 @@ class InsertRecordsRequest(TeaModel):
         if self.records is not None:
             for k in self.records:
                 result['records'].append(k.to_map() if k else None)
+        if self.client_token is not None:
+            result['clientToken'] = self.client_token
         if self.operator_id is not None:
             result['operatorId'] = self.operator_id
         return result
@@ -3049,6 +3053,8 @@ class InsertRecordsRequest(TeaModel):
             for k in m.get('records'):
                 temp_model = InsertRecordsRequestRecords()
                 self.records.append(temp_model.from_map(k))
+        if m.get('clientToken') is not None:
+            self.client_token = m.get('clientToken')
         if m.get('operatorId') is not None:
             self.operator_id = m.get('operatorId')
         return self
@@ -3276,11 +3282,13 @@ class ListRecordsRequestFilter(TeaModel):
 class ListRecordsRequest(TeaModel):
     def __init__(
         self,
+        field_id_or_names: List[str] = None,
         filter: ListRecordsRequestFilter = None,
         max_results: int = None,
         next_token: str = None,
         operator_id: str = None,
     ):
+        self.field_id_or_names = field_id_or_names
         self.filter = filter
         self.max_results = max_results
         self.next_token = next_token
@@ -3297,6 +3305,8 @@ class ListRecordsRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.field_id_or_names is not None:
+            result['fieldIdOrNames'] = self.field_id_or_names
         if self.filter is not None:
             result['filter'] = self.filter.to_map()
         if self.max_results is not None:
@@ -3309,6 +3319,8 @@ class ListRecordsRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('fieldIdOrNames') is not None:
+            self.field_id_or_names = m.get('fieldIdOrNames')
         if m.get('filter') is not None:
             temp_model = ListRecordsRequestFilter()
             self.filter = temp_model.from_map(m['filter'])

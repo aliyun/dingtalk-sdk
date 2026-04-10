@@ -1255,13 +1255,11 @@ class CreateScheduleConferenceRequestScheduleConfSettingModelAiAgentSummarySetti
         allow_all_participants_start: int = None,
         receiver_type: int = None,
         restrict_share_minutes_summary_only: int = None,
-        start_type: int = None,
         value: str = None,
     ):
         self.allow_all_participants_start = allow_all_participants_start
         self.receiver_type = receiver_type
         self.restrict_share_minutes_summary_only = restrict_share_minutes_summary_only
-        self.start_type = start_type
         self.value = value
 
     def validate(self):
@@ -1279,8 +1277,6 @@ class CreateScheduleConferenceRequestScheduleConfSettingModelAiAgentSummarySetti
             result['receiverType'] = self.receiver_type
         if self.restrict_share_minutes_summary_only is not None:
             result['restrictShareMinutesSummaryOnly'] = self.restrict_share_minutes_summary_only
-        if self.start_type is not None:
-            result['startType'] = self.start_type
         if self.value is not None:
             result['value'] = self.value
         return result
@@ -1293,8 +1289,6 @@ class CreateScheduleConferenceRequestScheduleConfSettingModelAiAgentSummarySetti
             self.receiver_type = m.get('receiverType')
         if m.get('restrictShareMinutesSummaryOnly') is not None:
             self.restrict_share_minutes_summary_only = m.get('restrictShareMinutesSummaryOnly')
-        if m.get('startType') is not None:
-            self.start_type = m.get('startType')
         if m.get('value') is not None:
             self.value = m.get('value')
         return self
@@ -10196,13 +10190,11 @@ class UpdateScheduleConfSettingsRequestScheduleConfSettingModelAiAgentSummarySet
         allow_all_participants_start: int = None,
         receiver_type: int = None,
         restrict_share_minutes_summary_only: int = None,
-        start_type: int = None,
         value: str = None,
     ):
         self.allow_all_participants_start = allow_all_participants_start
         self.receiver_type = receiver_type
         self.restrict_share_minutes_summary_only = restrict_share_minutes_summary_only
-        self.start_type = start_type
         self.value = value
 
     def validate(self):
@@ -10220,8 +10212,6 @@ class UpdateScheduleConfSettingsRequestScheduleConfSettingModelAiAgentSummarySet
             result['receiverType'] = self.receiver_type
         if self.restrict_share_minutes_summary_only is not None:
             result['restrictShareMinutesSummaryOnly'] = self.restrict_share_minutes_summary_only
-        if self.start_type is not None:
-            result['startType'] = self.start_type
         if self.value is not None:
             result['value'] = self.value
         return result
@@ -10234,8 +10224,6 @@ class UpdateScheduleConfSettingsRequestScheduleConfSettingModelAiAgentSummarySet
             self.receiver_type = m.get('receiverType')
         if m.get('restrictShareMinutesSummaryOnly') is not None:
             self.restrict_share_minutes_summary_only = m.get('restrictShareMinutesSummaryOnly')
-        if m.get('startType') is not None:
-            self.start_type = m.get('startType')
         if m.get('value') is not None:
             self.value = m.get('value')
         return self

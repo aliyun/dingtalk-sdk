@@ -1552,6 +1552,107 @@ class CreateTodoTypeConfigResponse(TeaModel):
         return self
 
 
+class DeletePersonalTodoTaskHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeletePersonalTodoTaskResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: str = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class DeletePersonalTodoTaskResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: DeletePersonalTodoTaskResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = DeletePersonalTodoTaskResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class DeleteTodoTaskHeaders(TeaModel):
     def __init__(
         self,
@@ -4956,6 +5057,292 @@ class SetOrgConfigResponse(TeaModel):
         return self
 
 
+class UpdatePersonalTodoTaskHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdatePersonalTodoTaskRequest(TeaModel):
+    def __init__(
+        self,
+        description: str = None,
+        done: bool = None,
+        due_time: int = None,
+        executor_ids: List[str] = None,
+        participant_ids: List[str] = None,
+        subject: str = None,
+    ):
+        self.description = description
+        self.done = done
+        self.due_time = due_time
+        self.executor_ids = executor_ids
+        self.participant_ids = participant_ids
+        self.subject = subject
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.description is not None:
+            result['description'] = self.description
+        if self.done is not None:
+            result['done'] = self.done
+        if self.due_time is not None:
+            result['dueTime'] = self.due_time
+        if self.executor_ids is not None:
+            result['executorIds'] = self.executor_ids
+        if self.participant_ids is not None:
+            result['participantIds'] = self.participant_ids
+        if self.subject is not None:
+            result['subject'] = self.subject
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('done') is not None:
+            self.done = m.get('done')
+        if m.get('dueTime') is not None:
+            self.due_time = m.get('dueTime')
+        if m.get('executorIds') is not None:
+            self.executor_ids = m.get('executorIds')
+        if m.get('participantIds') is not None:
+            self.participant_ids = m.get('participantIds')
+        if m.get('subject') is not None:
+            self.subject = m.get('subject')
+        return self
+
+
+class UpdatePersonalTodoTaskResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class UpdatePersonalTodoTaskResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdatePersonalTodoTaskResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdatePersonalTodoTaskResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdatePersonalTodoTaskExecutorStatusHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdatePersonalTodoTaskExecutorStatusRequest(TeaModel):
+    def __init__(
+        self,
+        done: bool = None,
+    ):
+        self.done = done
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.done is not None:
+            result['done'] = self.done
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('done') is not None:
+            self.done = m.get('done')
+        return self
+
+
+class UpdatePersonalTodoTaskExecutorStatusResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class UpdatePersonalTodoTaskExecutorStatusResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdatePersonalTodoTaskExecutorStatusResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdatePersonalTodoTaskExecutorStatusResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class UpdateTodoTaskHeaders(TeaModel):
     def __init__(
         self,
@@ -4989,24 +5376,14 @@ class UpdateTodoTaskHeaders(TeaModel):
         return self
 
 
-class UpdateTodoTaskRequest(TeaModel):
+class UpdateTodoTaskRequestContentFieldList(TeaModel):
     def __init__(
         self,
-        description: str = None,
-        done: bool = None,
-        due_time: int = None,
-        executor_ids: List[str] = None,
-        participant_ids: List[str] = None,
-        subject: str = None,
-        operator_id: str = None,
+        field_key: str = None,
+        field_value: str = None,
     ):
-        self.description = description
-        self.done = done
-        self.due_time = due_time
-        self.executor_ids = executor_ids
-        self.participant_ids = participant_ids
-        self.subject = subject
-        self.operator_id = operator_id
+        self.field_key = field_key
+        self.field_value = field_value
 
     def validate(self):
         pass
@@ -5017,6 +5394,58 @@ class UpdateTodoTaskRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.field_key is not None:
+            result['fieldKey'] = self.field_key
+        if self.field_value is not None:
+            result['fieldValue'] = self.field_value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fieldKey') is not None:
+            self.field_key = m.get('fieldKey')
+        if m.get('fieldValue') is not None:
+            self.field_value = m.get('fieldValue')
+        return self
+
+
+class UpdateTodoTaskRequest(TeaModel):
+    def __init__(
+        self,
+        content_field_list: List[UpdateTodoTaskRequestContentFieldList] = None,
+        description: str = None,
+        done: bool = None,
+        due_time: int = None,
+        executor_ids: List[str] = None,
+        participant_ids: List[str] = None,
+        subject: str = None,
+        operator_id: str = None,
+    ):
+        self.content_field_list = content_field_list
+        self.description = description
+        self.done = done
+        self.due_time = due_time
+        self.executor_ids = executor_ids
+        self.participant_ids = participant_ids
+        self.subject = subject
+        self.operator_id = operator_id
+
+    def validate(self):
+        if self.content_field_list:
+            for k in self.content_field_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['contentFieldList'] = []
+        if self.content_field_list is not None:
+            for k in self.content_field_list:
+                result['contentFieldList'].append(k.to_map() if k else None)
         if self.description is not None:
             result['description'] = self.description
         if self.done is not None:
@@ -5035,6 +5464,11 @@ class UpdateTodoTaskRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        self.content_field_list = []
+        if m.get('contentFieldList') is not None:
+            for k in m.get('contentFieldList'):
+                temp_model = UpdateTodoTaskRequestContentFieldList()
+                self.content_field_list.append(temp_model.from_map(k))
         if m.get('description') is not None:
             self.description = m.get('description')
         if m.get('done') is not None:

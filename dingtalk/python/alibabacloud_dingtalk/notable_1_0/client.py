@@ -2068,6 +2068,8 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         query = {}
+        if not UtilClient.is_unset(request.client_token):
+            query['clientToken'] = request.client_token
         if not UtilClient.is_unset(request.operator_id):
             query['operatorId'] = request.operator_id
         body = {}
@@ -2117,6 +2119,8 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         query = {}
+        if not UtilClient.is_unset(request.client_token):
+            query['clientToken'] = request.client_token
         if not UtilClient.is_unset(request.operator_id):
             query['operatorId'] = request.operator_id
         body = {}
@@ -2201,6 +2205,8 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(request.operator_id):
             query['operatorId'] = request.operator_id
         body = {}
+        if not UtilClient.is_unset(request.field_id_or_names):
+            body['fieldIdOrNames'] = request.field_id_or_names
         if not UtilClient.is_unset(request.filter):
             body['filter'] = request.filter
         if not UtilClient.is_unset(request.max_results):
@@ -2254,6 +2260,8 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(request.operator_id):
             query['operatorId'] = request.operator_id
         body = {}
+        if not UtilClient.is_unset(request.field_id_or_names):
+            body['fieldIdOrNames'] = request.field_id_or_names
         if not UtilClient.is_unset(request.filter):
             body['filter'] = request.filter
         if not UtilClient.is_unset(request.max_results):

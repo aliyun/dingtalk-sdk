@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.core import TeaCore
+from typing import Dict
 
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
@@ -22,6 +23,7 @@ class Client(OpenApiClient):
         super().__init__(config)
         gateway_client = GatewayClientClient()
         self._spi = gateway_client
+        self._signature_algorithm = 'v2'
         self._endpoint_rule = ''
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
@@ -2989,6 +2991,118 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkexclusive__1__0_models.ExclusivePopupHeaders()
         return await self.exclusive_popup_with_options_async(request, headers, runtime)
+
+    def file_decrypt_callback_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.FileDecryptCallbackRequest,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.FileDecryptCallbackResponse:
+        """
+        @summary 文件解密回调
+        
+        @param request: FileDecryptCallbackRequest
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: FileDecryptCallbackResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.decrypt_file_size):
+            body['decryptFileSize'] = request.decrypt_file_size
+        if not UtilClient.is_unset(request.timestamp):
+            body['timestamp'] = request.timestamp
+        req = open_api_models.OpenApiRequest(
+            headers=headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='FileDecryptCallback',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/clientDecrypt/decrypt/callback',
+            method='POST',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.FileDecryptCallbackResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def file_decrypt_callback_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.FileDecryptCallbackRequest,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.FileDecryptCallbackResponse:
+        """
+        @summary 文件解密回调
+        
+        @param request: FileDecryptCallbackRequest
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: FileDecryptCallbackResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.decrypt_file_size):
+            body['decryptFileSize'] = request.decrypt_file_size
+        if not UtilClient.is_unset(request.timestamp):
+            body['timestamp'] = request.timestamp
+        req = open_api_models.OpenApiRequest(
+            headers=headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='FileDecryptCallback',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/clientDecrypt/decrypt/callback',
+            method='POST',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.FileDecryptCallbackResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def file_decrypt_callback(
+        self,
+        request: dingtalkexclusive__1__0_models.FileDecryptCallbackRequest,
+    ) -> dingtalkexclusive__1__0_models.FileDecryptCallbackResponse:
+        """
+        @summary 文件解密回调
+        
+        @param request: FileDecryptCallbackRequest
+        @return: FileDecryptCallbackResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return self.file_decrypt_callback_with_options(request, headers, runtime)
+
+    async def file_decrypt_callback_async(
+        self,
+        request: dingtalkexclusive__1__0_models.FileDecryptCallbackRequest,
+    ) -> dingtalkexclusive__1__0_models.FileDecryptCallbackResponse:
+        """
+        @summary 文件解密回调
+        
+        @param request: FileDecryptCallbackRequest
+        @return: FileDecryptCallbackResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return await self.file_decrypt_callback_with_options_async(request, headers, runtime)
 
     def file_encrypt_callback_with_options(
         self,
