@@ -910,6 +910,126 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>以用户个人身份删除待办</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// DeletePersonalTodoTaskHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeletePersonalTodoTaskResponse
+        /// </returns>
+        public DeletePersonalTodoTaskResponse DeletePersonalTodoTaskWithOptions(string taskId, DeletePersonalTodoTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeletePersonalTodoTask",
+                Version = "todo_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/todo/users/me/tasks/" + taskId + "/remove",
+                Method = "DELETE",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeletePersonalTodoTaskResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>以用户个人身份删除待办</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// DeletePersonalTodoTaskHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeletePersonalTodoTaskResponse
+        /// </returns>
+        public async Task<DeletePersonalTodoTaskResponse> DeletePersonalTodoTaskWithOptionsAsync(string taskId, DeletePersonalTodoTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeletePersonalTodoTask",
+                Version = "todo_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/todo/users/me/tasks/" + taskId + "/remove",
+                Method = "DELETE",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeletePersonalTodoTaskResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>以用户个人身份删除待办</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// DeletePersonalTodoTaskResponse
+        /// </returns>
+        public DeletePersonalTodoTaskResponse DeletePersonalTodoTask(string taskId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeletePersonalTodoTaskHeaders headers = new DeletePersonalTodoTaskHeaders();
+            return DeletePersonalTodoTaskWithOptions(taskId, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>以用户个人身份删除待办</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// DeletePersonalTodoTaskResponse
+        /// </returns>
+        public async Task<DeletePersonalTodoTaskResponse> DeletePersonalTodoTaskAsync(string taskId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeletePersonalTodoTaskHeaders headers = new DeletePersonalTodoTaskHeaders();
+            return await DeletePersonalTodoTaskWithOptionsAsync(taskId, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>删除待办</para>
         /// </summary>
         /// 
@@ -3010,6 +3130,342 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>以用户个人身份更新待办</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdatePersonalTodoTaskRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdatePersonalTodoTaskHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdatePersonalTodoTaskResponse
+        /// </returns>
+        public UpdatePersonalTodoTaskResponse UpdatePersonalTodoTaskWithOptions(string taskId, UpdatePersonalTodoTaskRequest request, UpdatePersonalTodoTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
+            {
+                body["description"] = request.Description;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Done))
+            {
+                body["done"] = request.Done;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DueTime))
+            {
+                body["dueTime"] = request.DueTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExecutorIds))
+            {
+                body["executorIds"] = request.ExecutorIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ParticipantIds))
+            {
+                body["participantIds"] = request.ParticipantIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Subject))
+            {
+                body["subject"] = request.Subject;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdatePersonalTodoTask",
+                Version = "todo_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/todo/users/me/tasks/" + taskId + "/update",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdatePersonalTodoTaskResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>以用户个人身份更新待办</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdatePersonalTodoTaskRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdatePersonalTodoTaskHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdatePersonalTodoTaskResponse
+        /// </returns>
+        public async Task<UpdatePersonalTodoTaskResponse> UpdatePersonalTodoTaskWithOptionsAsync(string taskId, UpdatePersonalTodoTaskRequest request, UpdatePersonalTodoTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
+            {
+                body["description"] = request.Description;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Done))
+            {
+                body["done"] = request.Done;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DueTime))
+            {
+                body["dueTime"] = request.DueTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExecutorIds))
+            {
+                body["executorIds"] = request.ExecutorIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ParticipantIds))
+            {
+                body["participantIds"] = request.ParticipantIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Subject))
+            {
+                body["subject"] = request.Subject;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdatePersonalTodoTask",
+                Version = "todo_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/todo/users/me/tasks/" + taskId + "/update",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdatePersonalTodoTaskResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>以用户个人身份更新待办</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdatePersonalTodoTaskRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdatePersonalTodoTaskResponse
+        /// </returns>
+        public UpdatePersonalTodoTaskResponse UpdatePersonalTodoTask(string taskId, UpdatePersonalTodoTaskRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdatePersonalTodoTaskHeaders headers = new UpdatePersonalTodoTaskHeaders();
+            return UpdatePersonalTodoTaskWithOptions(taskId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>以用户个人身份更新待办</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdatePersonalTodoTaskRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdatePersonalTodoTaskResponse
+        /// </returns>
+        public async Task<UpdatePersonalTodoTaskResponse> UpdatePersonalTodoTaskAsync(string taskId, UpdatePersonalTodoTaskRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdatePersonalTodoTaskHeaders headers = new UpdatePersonalTodoTaskHeaders();
+            return await UpdatePersonalTodoTaskWithOptionsAsync(taskId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>以用户个人身份更新自己作为执行者的状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdatePersonalTodoTaskExecutorStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdatePersonalTodoTaskExecutorStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdatePersonalTodoTaskExecutorStatusResponse
+        /// </returns>
+        public UpdatePersonalTodoTaskExecutorStatusResponse UpdatePersonalTodoTaskExecutorStatusWithOptions(string taskId, UpdatePersonalTodoTaskExecutorStatusRequest request, UpdatePersonalTodoTaskExecutorStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Done))
+            {
+                query["done"] = request.Done;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdatePersonalTodoTaskExecutorStatus",
+                Version = "todo_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/todo/users/me/tasks/" + taskId + "/updateExecutorStatus",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdatePersonalTodoTaskExecutorStatusResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>以用户个人身份更新自己作为执行者的状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdatePersonalTodoTaskExecutorStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdatePersonalTodoTaskExecutorStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdatePersonalTodoTaskExecutorStatusResponse
+        /// </returns>
+        public async Task<UpdatePersonalTodoTaskExecutorStatusResponse> UpdatePersonalTodoTaskExecutorStatusWithOptionsAsync(string taskId, UpdatePersonalTodoTaskExecutorStatusRequest request, UpdatePersonalTodoTaskExecutorStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Done))
+            {
+                query["done"] = request.Done;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdatePersonalTodoTaskExecutorStatus",
+                Version = "todo_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/todo/users/me/tasks/" + taskId + "/updateExecutorStatus",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdatePersonalTodoTaskExecutorStatusResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>以用户个人身份更新自己作为执行者的状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdatePersonalTodoTaskExecutorStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdatePersonalTodoTaskExecutorStatusResponse
+        /// </returns>
+        public UpdatePersonalTodoTaskExecutorStatusResponse UpdatePersonalTodoTaskExecutorStatus(string taskId, UpdatePersonalTodoTaskExecutorStatusRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdatePersonalTodoTaskExecutorStatusHeaders headers = new UpdatePersonalTodoTaskExecutorStatusHeaders();
+            return UpdatePersonalTodoTaskExecutorStatusWithOptions(taskId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>以用户个人身份更新自己作为执行者的状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdatePersonalTodoTaskExecutorStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdatePersonalTodoTaskExecutorStatusResponse
+        /// </returns>
+        public async Task<UpdatePersonalTodoTaskExecutorStatusResponse> UpdatePersonalTodoTaskExecutorStatusAsync(string taskId, UpdatePersonalTodoTaskExecutorStatusRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdatePersonalTodoTaskExecutorStatusHeaders headers = new UpdatePersonalTodoTaskExecutorStatusHeaders();
+            return await UpdatePersonalTodoTaskExecutorStatusWithOptionsAsync(taskId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>更新待办</para>
         /// </summary>
         /// 
@@ -3035,6 +3491,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
                 query["operatorId"] = request.OperatorId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContentFieldList))
+            {
+                body["contentFieldList"] = request.ContentFieldList;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
             {
                 body["description"] = request.Description;
@@ -3116,6 +3576,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0
                 query["operatorId"] = request.OperatorId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContentFieldList))
+            {
+                body["contentFieldList"] = request.ContentFieldList;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
             {
                 body["description"] = request.Description;

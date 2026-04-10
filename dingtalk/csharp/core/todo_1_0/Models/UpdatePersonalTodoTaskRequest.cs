@@ -8,21 +8,7 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
 {
-    public class UpdateTodoTaskRequest : TeaModel {
-        [NameInMap("contentFieldList")]
-        [Validation(Required=false)]
-        public List<UpdateTodoTaskRequestContentFieldList> ContentFieldList { get; set; }
-        public class UpdateTodoTaskRequestContentFieldList : TeaModel {
-            [NameInMap("fieldKey")]
-            [Validation(Required=false)]
-            public string FieldKey { get; set; }
-
-            [NameInMap("fieldValue")]
-            [Validation(Required=false)]
-            public string FieldValue { get; set; }
-
-        }
-
+    public class UpdatePersonalTodoTaskRequest : TeaModel {
         [NameInMap("description")]
         [Validation(Required=false)]
         public string Description { get; set; }
@@ -46,10 +32,6 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
         [NameInMap("subject")]
         [Validation(Required=false)]
         public string Subject { get; set; }
-
-        [NameInMap("operatorId")]
-        [Validation(Required=false)]
-        public string OperatorId { get; set; }
 
     }
 

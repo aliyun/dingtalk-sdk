@@ -35206,6 +35206,178 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>作业批改-同步抽检数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SyncCheckedDataRequest
+        /// </param>
+        /// <param name="headers">
+        /// SyncCheckedDataHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SyncCheckedDataResponse
+        /// </returns>
+        public SyncCheckedDataResponse SyncCheckedDataWithOptions(SyncCheckedDataRequest request, SyncCheckedDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CheckJsonUrl))
+            {
+                body["checkJsonUrl"] = request.CheckJsonUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CheckUrl))
+            {
+                body["checkUrl"] = request.CheckUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                body["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskCode))
+            {
+                body["taskCode"] = request.TaskCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SyncCheckedData",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/assignment/syncCheckedData",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SyncCheckedDataResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>作业批改-同步抽检数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SyncCheckedDataRequest
+        /// </param>
+        /// <param name="headers">
+        /// SyncCheckedDataHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SyncCheckedDataResponse
+        /// </returns>
+        public async Task<SyncCheckedDataResponse> SyncCheckedDataWithOptionsAsync(SyncCheckedDataRequest request, SyncCheckedDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CheckJsonUrl))
+            {
+                body["checkJsonUrl"] = request.CheckJsonUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CheckUrl))
+            {
+                body["checkUrl"] = request.CheckUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                body["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskCode))
+            {
+                body["taskCode"] = request.TaskCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SyncCheckedData",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/assignment/syncCheckedData",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SyncCheckedDataResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>作业批改-同步抽检数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SyncCheckedDataRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SyncCheckedDataResponse
+        /// </returns>
+        public SyncCheckedDataResponse SyncCheckedData(SyncCheckedDataRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SyncCheckedDataHeaders headers = new SyncCheckedDataHeaders();
+            return SyncCheckedDataWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>作业批改-同步抽检数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SyncCheckedDataRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SyncCheckedDataResponse
+        /// </returns>
+        public async Task<SyncCheckedDataResponse> SyncCheckedDataAsync(SyncCheckedDataRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SyncCheckedDataHeaders headers = new SyncCheckedDataHeaders();
+            return await SyncCheckedDataWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>取消订阅大学课程组</para>
         /// </summary>
         /// 

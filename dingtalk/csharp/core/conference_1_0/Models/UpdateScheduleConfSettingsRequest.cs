@@ -39,10 +39,6 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
                 [Validation(Required=false)]
                 public int? RestrictShareMinutesSummaryOnly { get; set; }
 
-                [NameInMap("startType")]
-                [Validation(Required=false)]
-                public int? StartType { get; set; }
-
                 [NameInMap("value")]
                 [Validation(Required=false)]
                 public string Value { get; set; }

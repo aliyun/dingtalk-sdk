@@ -2582,6 +2582,10 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ClientToken))
+            {
+                query["clientToken"] = request.ClientToken;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
                 query["operatorId"] = request.OperatorId;
@@ -2643,6 +2647,10 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ClientToken))
+            {
+                query["clientToken"] = request.ClientToken;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
                 query["operatorId"] = request.OperatorId;
@@ -2747,6 +2755,10 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
                 query["operatorId"] = request.OperatorId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FieldIdOrNames))
+            {
+                body["fieldIdOrNames"] = request.FieldIdOrNames;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Filter))
             {
                 body["filter"] = request.Filter;
@@ -2816,6 +2828,10 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
                 query["operatorId"] = request.OperatorId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FieldIdOrNames))
+            {
+                body["fieldIdOrNames"] = request.FieldIdOrNames;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Filter))
             {
                 body["filter"] = request.Filter;

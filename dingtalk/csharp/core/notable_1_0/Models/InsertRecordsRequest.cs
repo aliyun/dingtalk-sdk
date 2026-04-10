@@ -26,6 +26,14 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0.Models
         }
 
         /// <summary>
+        /// <b>Example:</b>
+        /// <para>union_id</para>
+        /// </summary>
+        [NameInMap("clientToken")]
+        [Validation(Required=false)]
+        public string ClientToken { get; set; }
+
+        /// <summary>
         /// <para>This parameter is required.</para>
         /// 
         /// <b>Example:</b>

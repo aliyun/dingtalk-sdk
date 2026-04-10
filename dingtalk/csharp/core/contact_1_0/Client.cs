@@ -13430,6 +13430,154 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>企业账号转换为普通账号</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TransformToNormalAccountRequest
+        /// </param>
+        /// <param name="headers">
+        /// TransformToNormalAccountHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// TransformToNormalAccountResponse
+        /// </returns>
+        public TransformToNormalAccountResponse TransformToNormalAccountWithOptions(TransformToNormalAccountRequest request, TransformToNormalAccountHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "TransformToNormalAccount",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/orgAccounts/transformToNormalAccount",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<TransformToNormalAccountResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>企业账号转换为普通账号</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TransformToNormalAccountRequest
+        /// </param>
+        /// <param name="headers">
+        /// TransformToNormalAccountHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// TransformToNormalAccountResponse
+        /// </returns>
+        public async Task<TransformToNormalAccountResponse> TransformToNormalAccountWithOptionsAsync(TransformToNormalAccountRequest request, TransformToNormalAccountHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "TransformToNormalAccount",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/orgAccounts/transformToNormalAccount",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<TransformToNormalAccountResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>企业账号转换为普通账号</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TransformToNormalAccountRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// TransformToNormalAccountResponse
+        /// </returns>
+        public TransformToNormalAccountResponse TransformToNormalAccount(TransformToNormalAccountRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            TransformToNormalAccountHeaders headers = new TransformToNormalAccountHeaders();
+            return TransformToNormalAccountWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>企业账号转换为普通账号</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// TransformToNormalAccountRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// TransformToNormalAccountResponse
+        /// </returns>
+        public async Task<TransformToNormalAccountResponse> TransformToNormalAccountAsync(TransformToNormalAccountRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            TransformToNormalAccountHeaders headers = new TransformToNormalAccountHeaders();
+            return await TransformToNormalAccountWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>异步文件内容转译</para>
         /// </summary>
         /// 

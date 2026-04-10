@@ -20,6 +20,7 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
         {
             AlibabaCloud.GatewayDingTalk.Client gatewayClient = new AlibabaCloud.GatewayDingTalk.Client();
             this._spi = gatewayClient;
+            this._signatureAlgorithm = "v2";
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {
@@ -4026,6 +4027,152 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             ExclusivePopupHeaders headers = new ExclusivePopupHeaders();
             return await ExclusivePopupWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>文件解密回调</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// FileDecryptCallbackRequest
+        /// </param>
+        /// <param name="headers">
+        /// map
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// FileDecryptCallbackResponse
+        /// </returns>
+        public FileDecryptCallbackResponse FileDecryptCallbackWithOptions(FileDecryptCallbackRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizId))
+            {
+                body["bizId"] = request.BizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DecryptFileSize))
+            {
+                body["decryptFileSize"] = request.DecryptFileSize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Timestamp))
+            {
+                body["timestamp"] = request.Timestamp;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = headers,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "FileDecryptCallback",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/clientDecrypt/decrypt/callback",
+                Method = "POST",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<FileDecryptCallbackResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>文件解密回调</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// FileDecryptCallbackRequest
+        /// </param>
+        /// <param name="headers">
+        /// map
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// FileDecryptCallbackResponse
+        /// </returns>
+        public async Task<FileDecryptCallbackResponse> FileDecryptCallbackWithOptionsAsync(FileDecryptCallbackRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizId))
+            {
+                body["bizId"] = request.BizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DecryptFileSize))
+            {
+                body["decryptFileSize"] = request.DecryptFileSize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Timestamp))
+            {
+                body["timestamp"] = request.Timestamp;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = headers,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "FileDecryptCallback",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/clientDecrypt/decrypt/callback",
+                Method = "POST",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<FileDecryptCallbackResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>文件解密回调</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// FileDecryptCallbackRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// FileDecryptCallbackResponse
+        /// </returns>
+        public FileDecryptCallbackResponse FileDecryptCallback(FileDecryptCallbackRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            return FileDecryptCallbackWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>文件解密回调</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// FileDecryptCallbackRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// FileDecryptCallbackResponse
+        /// </returns>
+        public async Task<FileDecryptCallbackResponse> FileDecryptCallbackAsync(FileDecryptCallbackRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            return await FileDecryptCallbackWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>
