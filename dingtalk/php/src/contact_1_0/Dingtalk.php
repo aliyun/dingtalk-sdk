@@ -247,6 +247,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TalentQueryTagLikeListResponse
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TransformToExclusiveAccountHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TransformToExclusiveAccountRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TransformToExclusiveAccountResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TransformToNormalAccountHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TransformToNormalAccountRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TransformToNormalAccountResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TranslateFileHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TranslateFileRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\TranslateFileResponse;
@@ -5535,6 +5538,63 @@ class Dingtalk extends OpenApiClient
         $headers = new TransformToExclusiveAccountHeaders([]);
 
         return $this->transformToExclusiveAccountWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 企业账号转换为普通账号
+     *  *
+     * @param TransformToNormalAccountRequest $request TransformToNormalAccountRequest
+     * @param TransformToNormalAccountHeaders $headers TransformToNormalAccountHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
+     *
+     * @return TransformToNormalAccountResponse TransformToNormalAccountResponse
+     */
+    public function transformToNormalAccountWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'TransformToNormalAccount',
+            'version' => 'contact_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contact/orgAccounts/transformToNormalAccount',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return TransformToNormalAccountResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 企业账号转换为普通账号
+     *  *
+     * @param TransformToNormalAccountRequest $request TransformToNormalAccountRequest
+     *
+     * @return TransformToNormalAccountResponse TransformToNormalAccountResponse
+     */
+    public function transformToNormalAccount($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new TransformToNormalAccountHeaders([]);
+
+        return $this->transformToNormalAccountWithOptions($request, $headers, $runtime);
     }
 
     /**

@@ -17,6 +17,8 @@ use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\CreateTodoTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\CreateTodoTypeConfigHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\CreateTodoTypeConfigRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\CreateTodoTypeConfigResponse;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\DeletePersonalTodoTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\DeletePersonalTodoTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\DeleteTodoTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\DeleteTodoTaskRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\DeleteTodoTaskResponse;
@@ -52,6 +54,12 @@ use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\SetBizCategoryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\SetOrgConfigHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\SetOrgConfigRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\SetOrgConfigResponse;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\UpdatePersonalTodoTaskExecutorStatusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\UpdatePersonalTodoTaskExecutorStatusRequest;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\UpdatePersonalTodoTaskExecutorStatusResponse;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\UpdatePersonalTodoTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\UpdatePersonalTodoTaskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\UpdatePersonalTodoTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\UpdateTodoTaskExecutorStatusHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\UpdateTodoTaskExecutorStatusRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\UpdateTodoTaskExecutorStatusResponse;
@@ -422,6 +430,57 @@ class Dingtalk extends OpenApiClient
         $headers = new CreateTodoTypeConfigHeaders([]);
 
         return $this->createTodoTypeConfigWithOptions($unionId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 以用户个人身份删除待办
+     *  *
+     * @param string                        $taskId
+     * @param DeletePersonalTodoTaskHeaders $headers DeletePersonalTodoTaskHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return DeletePersonalTodoTaskResponse DeletePersonalTodoTaskResponse
+     */
+    public function deletePersonalTodoTaskWithOptions($taskId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action' => 'DeletePersonalTodoTask',
+            'version' => 'todo_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/todo/users/me/tasks/' . $taskId . '/remove',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return DeletePersonalTodoTaskResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 以用户个人身份删除待办
+     *  *
+     * @param string $taskId
+     *
+     * @return DeletePersonalTodoTaskResponse DeletePersonalTodoTaskResponse
+     */
+    public function deletePersonalTodoTask($taskId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeletePersonalTodoTaskHeaders([]);
+
+        return $this->deletePersonalTodoTaskWithOptions($taskId, $headers, $runtime);
     }
 
     /**
@@ -1279,6 +1338,139 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 以用户个人身份更新待办
+     *  *
+     * @param string                        $taskId
+     * @param UpdatePersonalTodoTaskRequest $request UpdatePersonalTodoTaskRequest
+     * @param UpdatePersonalTodoTaskHeaders $headers UpdatePersonalTodoTaskHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdatePersonalTodoTaskResponse UpdatePersonalTodoTaskResponse
+     */
+    public function updatePersonalTodoTaskWithOptions($taskId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->description)) {
+            $body['description'] = $request->description;
+        }
+        if (!Utils::isUnset($request->done)) {
+            $body['done'] = $request->done;
+        }
+        if (!Utils::isUnset($request->dueTime)) {
+            $body['dueTime'] = $request->dueTime;
+        }
+        if (!Utils::isUnset($request->executorIds)) {
+            $body['executorIds'] = $request->executorIds;
+        }
+        if (!Utils::isUnset($request->participantIds)) {
+            $body['participantIds'] = $request->participantIds;
+        }
+        if (!Utils::isUnset($request->subject)) {
+            $body['subject'] = $request->subject;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'UpdatePersonalTodoTask',
+            'version' => 'todo_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/todo/users/me/tasks/' . $taskId . '/update',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UpdatePersonalTodoTaskResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 以用户个人身份更新待办
+     *  *
+     * @param string                        $taskId
+     * @param UpdatePersonalTodoTaskRequest $request UpdatePersonalTodoTaskRequest
+     *
+     * @return UpdatePersonalTodoTaskResponse UpdatePersonalTodoTaskResponse
+     */
+    public function updatePersonalTodoTask($taskId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdatePersonalTodoTaskHeaders([]);
+
+        return $this->updatePersonalTodoTaskWithOptions($taskId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 以用户个人身份更新自己作为执行者的状态
+     *  *
+     * @param string                                      $taskId
+     * @param UpdatePersonalTodoTaskExecutorStatusRequest $request UpdatePersonalTodoTaskExecutorStatusRequest
+     * @param UpdatePersonalTodoTaskExecutorStatusHeaders $headers UpdatePersonalTodoTaskExecutorStatusHeaders
+     * @param RuntimeOptions                              $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdatePersonalTodoTaskExecutorStatusResponse UpdatePersonalTodoTaskExecutorStatusResponse
+     */
+    public function updatePersonalTodoTaskExecutorStatusWithOptions($taskId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->done)) {
+            $query['done'] = $request->done;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'UpdatePersonalTodoTaskExecutorStatus',
+            'version' => 'todo_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/todo/users/me/tasks/' . $taskId . '/updateExecutorStatus',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UpdatePersonalTodoTaskExecutorStatusResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 以用户个人身份更新自己作为执行者的状态
+     *  *
+     * @param string                                      $taskId
+     * @param UpdatePersonalTodoTaskExecutorStatusRequest $request UpdatePersonalTodoTaskExecutorStatusRequest
+     *
+     * @return UpdatePersonalTodoTaskExecutorStatusResponse UpdatePersonalTodoTaskExecutorStatusResponse
+     */
+    public function updatePersonalTodoTaskExecutorStatus($taskId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdatePersonalTodoTaskExecutorStatusHeaders([]);
+
+        return $this->updatePersonalTodoTaskExecutorStatusWithOptions($taskId, $request, $headers, $runtime);
+    }
+
+    /**
      * @summary 更新待办
      *  *
      * @param string                $unionId
@@ -1297,6 +1489,9 @@ class Dingtalk extends OpenApiClient
             $query['operatorId'] = $request->operatorId;
         }
         $body = [];
+        if (!Utils::isUnset($request->contentFieldList)) {
+            $body['contentFieldList'] = $request->contentFieldList;
+        }
         if (!Utils::isUnset($request->description)) {
             $body['description'] = $request->description;
         }

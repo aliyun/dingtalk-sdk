@@ -10,6 +10,11 @@ use AlibabaCloud\Tea\Model;
 class ListRecordsRequest extends Model
 {
     /**
+     * @var string[]
+     */
+    public $fieldIdOrNames;
+
+    /**
      * @var filter
      */
     public $filter;
@@ -33,6 +38,7 @@ class ListRecordsRequest extends Model
      */
     public $operatorId;
     protected $_name = [
+        'fieldIdOrNames' => 'fieldIdOrNames',
         'filter' => 'filter',
         'maxResults' => 'maxResults',
         'nextToken' => 'nextToken',
@@ -44,6 +50,9 @@ class ListRecordsRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->fieldIdOrNames) {
+            $res['fieldIdOrNames'] = $this->fieldIdOrNames;
+        }
         if (null !== $this->filter) {
             $res['filter'] = null !== $this->filter ? $this->filter->toMap() : null;
         }
@@ -68,6 +77,11 @@ class ListRecordsRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['fieldIdOrNames'])) {
+            if (!empty($map['fieldIdOrNames'])) {
+                $model->fieldIdOrNames = $map['fieldIdOrNames'];
+            }
+        }
         if (isset($map['filter'])) {
             $model->filter = filter::fromMap($map['filter']);
         }

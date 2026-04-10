@@ -24,11 +24,6 @@ class aiAgentSummarySetting extends Model
     public $restrictShareMinutesSummaryOnly;
 
     /**
-     * @var int
-     */
-    public $startType;
-
-    /**
      * @example disable
      *
      * @var string
@@ -38,7 +33,6 @@ class aiAgentSummarySetting extends Model
         'allowAllParticipantsStart' => 'allowAllParticipantsStart',
         'receiverType' => 'receiverType',
         'restrictShareMinutesSummaryOnly' => 'restrictShareMinutesSummaryOnly',
-        'startType' => 'startType',
         'value' => 'value',
     ];
 
@@ -55,9 +49,6 @@ class aiAgentSummarySetting extends Model
         }
         if (null !== $this->restrictShareMinutesSummaryOnly) {
             $res['restrictShareMinutesSummaryOnly'] = $this->restrictShareMinutesSummaryOnly;
-        }
-        if (null !== $this->startType) {
-            $res['startType'] = $this->startType;
         }
         if (null !== $this->value) {
             $res['value'] = $this->value;
@@ -82,9 +73,6 @@ class aiAgentSummarySetting extends Model
         }
         if (isset($map['restrictShareMinutesSummaryOnly'])) {
             $model->restrictShareMinutesSummaryOnly = $map['restrictShareMinutesSummaryOnly'];
-        }
-        if (isset($map['startType'])) {
-            $model->startType = $map['startType'];
         }
         if (isset($map['value'])) {
             $model->value = $map['value'];

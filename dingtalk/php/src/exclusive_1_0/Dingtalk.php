@@ -75,6 +75,8 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ExclusivePcAlertResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ExclusivePopupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ExclusivePopupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ExclusivePopupResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\FileDecryptCallbackRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\FileDecryptCallbackResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\FileEncryptCallbackHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\FileEncryptCallbackRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\FileEncryptCallbackResponse;
@@ -439,6 +441,7 @@ class Dingtalk extends OpenApiClient
         parent::__construct($config);
         $gatewayClient = new Client();
         $this->_spi = $gatewayClient;
+        $this->_signatureAlgorithm = 'v2';
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
@@ -1990,6 +1993,62 @@ class Dingtalk extends OpenApiClient
         $headers = new ExclusivePopupHeaders([]);
 
         return $this->exclusivePopupWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 文件解密回调
+     *  *
+     * @param FileDecryptCallbackRequest $request FileDecryptCallbackRequest
+     * @param string[]                   $headers map
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return FileDecryptCallbackResponse FileDecryptCallbackResponse
+     */
+    public function fileDecryptCallbackWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizId)) {
+            $body['bizId'] = $request->bizId;
+        }
+        if (!Utils::isUnset($request->decryptFileSize)) {
+            $body['decryptFileSize'] = $request->decryptFileSize;
+        }
+        if (!Utils::isUnset($request->timestamp)) {
+            $body['timestamp'] = $request->timestamp;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $headers,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'FileDecryptCallback',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/clientDecrypt/decrypt/callback',
+            'method' => 'POST',
+            'authType' => 'Anonymous',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return FileDecryptCallbackResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 文件解密回调
+     *  *
+     * @param FileDecryptCallbackRequest $request FileDecryptCallbackRequest
+     *
+     * @return FileDecryptCallbackResponse FileDecryptCallbackResponse
+     */
+    public function fileDecryptCallback($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = [];
+
+        return $this->fileDecryptCallbackWithOptions($request, $headers, $runtime);
     }
 
     /**

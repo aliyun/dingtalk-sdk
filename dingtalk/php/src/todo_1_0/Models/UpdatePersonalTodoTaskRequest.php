@@ -4,16 +4,10 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models;
 
-use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\UpdateTodoTaskRequest\contentFieldList;
 use AlibabaCloud\Tea\Model;
 
-class UpdateTodoTaskRequest extends Model
+class UpdatePersonalTodoTaskRequest extends Model
 {
-    /**
-     * @var contentFieldList[]
-     */
-    public $contentFieldList;
-
     /**
      * @var string
      */
@@ -43,20 +37,13 @@ class UpdateTodoTaskRequest extends Model
      * @var string
      */
     public $subject;
-
-    /**
-     * @var string
-     */
-    public $operatorId;
     protected $_name = [
-        'contentFieldList' => 'contentFieldList',
         'description' => 'description',
         'done' => 'done',
         'dueTime' => 'dueTime',
         'executorIds' => 'executorIds',
         'participantIds' => 'participantIds',
         'subject' => 'subject',
-        'operatorId' => 'operatorId',
     ];
 
     public function validate() {}
@@ -64,15 +51,6 @@ class UpdateTodoTaskRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->contentFieldList) {
-            $res['contentFieldList'] = [];
-            if (null !== $this->contentFieldList && \is_array($this->contentFieldList)) {
-                $n = 0;
-                foreach ($this->contentFieldList as $item) {
-                    $res['contentFieldList'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
-        }
         if (null !== $this->description) {
             $res['description'] = $this->description;
         }
@@ -91,9 +69,6 @@ class UpdateTodoTaskRequest extends Model
         if (null !== $this->subject) {
             $res['subject'] = $this->subject;
         }
-        if (null !== $this->operatorId) {
-            $res['operatorId'] = $this->operatorId;
-        }
 
         return $res;
     }
@@ -101,20 +76,11 @@ class UpdateTodoTaskRequest extends Model
     /**
      * @param array $map
      *
-     * @return UpdateTodoTaskRequest
+     * @return UpdatePersonalTodoTaskRequest
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['contentFieldList'])) {
-            if (!empty($map['contentFieldList'])) {
-                $model->contentFieldList = [];
-                $n = 0;
-                foreach ($map['contentFieldList'] as $item) {
-                    $model->contentFieldList[$n++] = null !== $item ? contentFieldList::fromMap($item) : $item;
-                }
-            }
-        }
         if (isset($map['description'])) {
             $model->description = $map['description'];
         }
@@ -136,9 +102,6 @@ class UpdateTodoTaskRequest extends Model
         }
         if (isset($map['subject'])) {
             $model->subject = $map['subject'];
-        }
-        if (isset($map['operatorId'])) {
-            $model->operatorId = $map['operatorId'];
         }
 
         return $model;

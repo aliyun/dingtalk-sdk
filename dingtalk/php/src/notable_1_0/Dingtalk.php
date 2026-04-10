@@ -1144,6 +1144,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $query = [];
+        if (!Utils::isUnset($request->clientToken)) {
+            $query['clientToken'] = $request->clientToken;
+        }
         if (!Utils::isUnset($request->operatorId)) {
             $query['operatorId'] = $request->operatorId;
         }
@@ -1214,6 +1217,9 @@ class Dingtalk extends OpenApiClient
             $query['operatorId'] = $request->operatorId;
         }
         $body = [];
+        if (!Utils::isUnset($request->fieldIdOrNames)) {
+            $body['fieldIdOrNames'] = $request->fieldIdOrNames;
+        }
         if (!Utils::isUnset($request->filter)) {
             $body['filter'] = $request->filter;
         }

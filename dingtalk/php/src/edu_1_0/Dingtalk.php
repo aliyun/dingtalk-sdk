@@ -592,6 +592,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SubmitAiSportDataResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SubscribeUniversityCourseGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SubscribeUniversityCourseGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SubscribeUniversityCourseGroupResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SyncCheckedDataHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SyncCheckedDataRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SyncCheckedDataResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UnsubscribeUniversityCourseGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UnsubscribeUniversityCourseGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UnsubscribeUniversityCourseGroupResponse;
@@ -14211,6 +14214,72 @@ class Dingtalk extends OpenApiClient
         $headers = new SubscribeUniversityCourseGroupHeaders([]);
 
         return $this->subscribeUniversityCourseGroupWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 作业批改-同步抽检数据
+     *  *
+     * @param SyncCheckedDataRequest $request SyncCheckedDataRequest
+     * @param SyncCheckedDataHeaders $headers SyncCheckedDataHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SyncCheckedDataResponse SyncCheckedDataResponse
+     */
+    public function syncCheckedDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->checkJsonUrl)) {
+            $body['checkJsonUrl'] = $request->checkJsonUrl;
+        }
+        if (!Utils::isUnset($request->checkUrl)) {
+            $body['checkUrl'] = $request->checkUrl;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->taskCode)) {
+            $body['taskCode'] = $request->taskCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'SyncCheckedData',
+            'version' => 'edu_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/edu/assignment/syncCheckedData',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return SyncCheckedDataResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 作业批改-同步抽检数据
+     *  *
+     * @param SyncCheckedDataRequest $request SyncCheckedDataRequest
+     *
+     * @return SyncCheckedDataResponse SyncCheckedDataResponse
+     */
+    public function syncCheckedData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SyncCheckedDataHeaders([]);
+
+        return $this->syncCheckedDataWithOptions($request, $headers, $runtime);
     }
 
     /**

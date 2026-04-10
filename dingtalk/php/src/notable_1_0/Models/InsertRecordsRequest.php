@@ -17,6 +17,13 @@ class InsertRecordsRequest extends Model
     public $records;
 
     /**
+     * @example union_id
+     *
+     * @var string
+     */
+    public $clientToken;
+
+    /**
      * @description This parameter is required.
      *
      * @example union_id
@@ -26,6 +33,7 @@ class InsertRecordsRequest extends Model
     public $operatorId;
     protected $_name = [
         'records' => 'records',
+        'clientToken' => 'clientToken',
         'operatorId' => 'operatorId',
     ];
 
@@ -42,6 +50,9 @@ class InsertRecordsRequest extends Model
                     $res['records'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->clientToken) {
+            $res['clientToken'] = $this->clientToken;
         }
         if (null !== $this->operatorId) {
             $res['operatorId'] = $this->operatorId;
@@ -66,6 +77,9 @@ class InsertRecordsRequest extends Model
                     $model->records[$n++] = null !== $item ? records::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['clientToken'])) {
+            $model->clientToken = $map['clientToken'];
         }
         if (isset($map['operatorId'])) {
             $model->operatorId = $map['operatorId'];
