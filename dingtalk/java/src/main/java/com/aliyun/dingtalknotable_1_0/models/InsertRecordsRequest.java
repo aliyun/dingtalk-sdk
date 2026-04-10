@@ -11,6 +11,13 @@ public class InsertRecordsRequest extends TeaModel {
     public java.util.List<InsertRecordsRequestRecords> records;
 
     /**
+     * <strong>example:</strong>
+     * <p>union_id</p>
+     */
+    @NameInMap("clientToken")
+    public String clientToken;
+
+    /**
      * <p>This parameter is required.</p>
      * 
      * <strong>example:</strong>
@@ -30,6 +37,14 @@ public class InsertRecordsRequest extends TeaModel {
     }
     public java.util.List<InsertRecordsRequestRecords> getRecords() {
         return this.records;
+    }
+
+    public InsertRecordsRequest setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+        return this;
+    }
+    public String getClientToken() {
+        return this.clientToken;
     }
 
     public InsertRecordsRequest setOperatorId(String operatorId) {

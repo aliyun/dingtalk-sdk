@@ -388,6 +388,52 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>以用户个人身份删除待办</p>
+     * 
+     * @param headers DeletePersonalTodoTaskHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeletePersonalTodoTaskResponse
+     */
+    public DeletePersonalTodoTaskResponse deletePersonalTodoTaskWithOptions(String taskId, DeletePersonalTodoTaskHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DeletePersonalTodoTask"),
+            new TeaPair("version", "todo_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/todo/users/me/tasks/" + taskId + "/remove"),
+            new TeaPair("method", "DELETE"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DeletePersonalTodoTaskResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>以用户个人身份删除待办</p>
+     * @return DeletePersonalTodoTaskResponse
+     */
+    public DeletePersonalTodoTaskResponse deletePersonalTodoTask(String taskId) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DeletePersonalTodoTaskHeaders headers = new DeletePersonalTodoTaskHeaders();
+        return this.deletePersonalTodoTaskWithOptions(taskId, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>删除待办</p>
      * 
      * @param request DeleteTodoTaskRequest
@@ -1214,6 +1260,138 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>以用户个人身份更新待办</p>
+     * 
+     * @param request UpdatePersonalTodoTaskRequest
+     * @param headers UpdatePersonalTodoTaskHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdatePersonalTodoTaskResponse
+     */
+    public UpdatePersonalTodoTaskResponse updatePersonalTodoTaskWithOptions(String taskId, UpdatePersonalTodoTaskRequest request, UpdatePersonalTodoTaskHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.description)) {
+            body.put("description", request.description);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.done)) {
+            body.put("done", request.done);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dueTime)) {
+            body.put("dueTime", request.dueTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.executorIds)) {
+            body.put("executorIds", request.executorIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.participantIds)) {
+            body.put("participantIds", request.participantIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.subject)) {
+            body.put("subject", request.subject);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdatePersonalTodoTask"),
+            new TeaPair("version", "todo_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/todo/users/me/tasks/" + taskId + "/update"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdatePersonalTodoTaskResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>以用户个人身份更新待办</p>
+     * 
+     * @param request UpdatePersonalTodoTaskRequest
+     * @return UpdatePersonalTodoTaskResponse
+     */
+    public UpdatePersonalTodoTaskResponse updatePersonalTodoTask(String taskId, UpdatePersonalTodoTaskRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdatePersonalTodoTaskHeaders headers = new UpdatePersonalTodoTaskHeaders();
+        return this.updatePersonalTodoTaskWithOptions(taskId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>以用户个人身份更新自己作为执行者的状态</p>
+     * 
+     * @param request UpdatePersonalTodoTaskExecutorStatusRequest
+     * @param headers UpdatePersonalTodoTaskExecutorStatusHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdatePersonalTodoTaskExecutorStatusResponse
+     */
+    public UpdatePersonalTodoTaskExecutorStatusResponse updatePersonalTodoTaskExecutorStatusWithOptions(String taskId, UpdatePersonalTodoTaskExecutorStatusRequest request, UpdatePersonalTodoTaskExecutorStatusHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.done)) {
+            query.put("done", request.done);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdatePersonalTodoTaskExecutorStatus"),
+            new TeaPair("version", "todo_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/todo/users/me/tasks/" + taskId + "/updateExecutorStatus"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdatePersonalTodoTaskExecutorStatusResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>以用户个人身份更新自己作为执行者的状态</p>
+     * 
+     * @param request UpdatePersonalTodoTaskExecutorStatusRequest
+     * @return UpdatePersonalTodoTaskExecutorStatusResponse
+     */
+    public UpdatePersonalTodoTaskExecutorStatusResponse updatePersonalTodoTaskExecutorStatus(String taskId, UpdatePersonalTodoTaskExecutorStatusRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdatePersonalTodoTaskExecutorStatusHeaders headers = new UpdatePersonalTodoTaskExecutorStatusHeaders();
+        return this.updatePersonalTodoTaskExecutorStatusWithOptions(taskId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>更新待办</p>
      * 
      * @param request UpdateTodoTaskRequest
@@ -1229,6 +1407,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.contentFieldList)) {
+            body.put("contentFieldList", request.contentFieldList);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.description)) {
             body.put("description", request.description);
         }

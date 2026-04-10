@@ -4,6 +4,9 @@ package com.aliyun.dingtalktodo_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateTodoTaskRequest extends TeaModel {
+    @NameInMap("contentFieldList")
+    public java.util.List<UpdateTodoTaskRequestContentFieldList> contentFieldList;
+
     @NameInMap("description")
     public String description;
 
@@ -28,6 +31,14 @@ public class UpdateTodoTaskRequest extends TeaModel {
     public static UpdateTodoTaskRequest build(java.util.Map<String, ?> map) throws Exception {
         UpdateTodoTaskRequest self = new UpdateTodoTaskRequest();
         return TeaModel.build(map, self);
+    }
+
+    public UpdateTodoTaskRequest setContentFieldList(java.util.List<UpdateTodoTaskRequestContentFieldList> contentFieldList) {
+        this.contentFieldList = contentFieldList;
+        return this;
+    }
+    public java.util.List<UpdateTodoTaskRequestContentFieldList> getContentFieldList() {
+        return this.contentFieldList;
     }
 
     public UpdateTodoTaskRequest setDescription(String description) {
@@ -84,6 +95,36 @@ public class UpdateTodoTaskRequest extends TeaModel {
     }
     public String getOperatorId() {
         return this.operatorId;
+    }
+
+    public static class UpdateTodoTaskRequestContentFieldList extends TeaModel {
+        @NameInMap("fieldKey")
+        public String fieldKey;
+
+        @NameInMap("fieldValue")
+        public String fieldValue;
+
+        public static UpdateTodoTaskRequestContentFieldList build(java.util.Map<String, ?> map) throws Exception {
+            UpdateTodoTaskRequestContentFieldList self = new UpdateTodoTaskRequestContentFieldList();
+            return TeaModel.build(map, self);
+        }
+
+        public UpdateTodoTaskRequestContentFieldList setFieldKey(String fieldKey) {
+            this.fieldKey = fieldKey;
+            return this;
+        }
+        public String getFieldKey() {
+            return this.fieldKey;
+        }
+
+        public UpdateTodoTaskRequestContentFieldList setFieldValue(String fieldValue) {
+            this.fieldValue = fieldValue;
+            return this;
+        }
+        public String getFieldValue() {
+            return this.fieldValue;
+        }
+
     }
 
 }

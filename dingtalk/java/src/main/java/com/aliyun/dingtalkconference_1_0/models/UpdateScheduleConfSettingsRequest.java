@@ -64,9 +64,6 @@ public class UpdateScheduleConfSettingsRequest extends TeaModel {
         @NameInMap("restrictShareMinutesSummaryOnly")
         public Integer restrictShareMinutesSummaryOnly;
 
-        @NameInMap("startType")
-        public Integer startType;
-
         @NameInMap("value")
         public String value;
 
@@ -97,14 +94,6 @@ public class UpdateScheduleConfSettingsRequest extends TeaModel {
         }
         public Integer getRestrictShareMinutesSummaryOnly() {
             return this.restrictShareMinutesSummaryOnly;
-        }
-
-        public UpdateScheduleConfSettingsRequestScheduleConfSettingModelAiAgentSummarySetting setStartType(Integer startType) {
-            this.startType = startType;
-            return this;
-        }
-        public Integer getStartType() {
-            return this.startType;
         }
 
         public UpdateScheduleConfSettingsRequestScheduleConfSettingModelAiAgentSummarySetting setValue(String value) {

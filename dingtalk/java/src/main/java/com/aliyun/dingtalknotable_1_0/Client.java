@@ -1008,6 +1008,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public InsertRecordsResponse insertRecordsWithOptions(String baseId, String sheetIdOrName, InsertRecordsRequest request, InsertRecordsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.clientToken)) {
+            query.put("clientToken", request.clientToken);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
             query.put("operatorId", request.operatorId);
         }
@@ -1075,6 +1079,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.fieldIdOrNames)) {
+            body.put("fieldIdOrNames", request.fieldIdOrNames);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.filter)) {
             body.put("filter", request.filter);
         }

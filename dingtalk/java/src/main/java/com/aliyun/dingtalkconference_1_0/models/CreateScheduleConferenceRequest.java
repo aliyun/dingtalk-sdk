@@ -98,9 +98,6 @@ public class CreateScheduleConferenceRequest extends TeaModel {
         @NameInMap("restrictShareMinutesSummaryOnly")
         public Integer restrictShareMinutesSummaryOnly;
 
-        @NameInMap("startType")
-        public Integer startType;
-
         /**
          * <strong>example:</strong>
          * <p>disable</p>
@@ -135,14 +132,6 @@ public class CreateScheduleConferenceRequest extends TeaModel {
         }
         public Integer getRestrictShareMinutesSummaryOnly() {
             return this.restrictShareMinutesSummaryOnly;
-        }
-
-        public CreateScheduleConferenceRequestScheduleConfSettingModelAiAgentSummarySetting setStartType(Integer startType) {
-            this.startType = startType;
-            return this;
-        }
-        public Integer getStartType() {
-            return this.startType;
         }
 
         public CreateScheduleConferenceRequestScheduleConfSettingModelAiAgentSummarySetting setValue(String value) {
