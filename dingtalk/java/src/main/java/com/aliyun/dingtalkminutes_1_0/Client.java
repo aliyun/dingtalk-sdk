@@ -168,6 +168,118 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>批量查询声纹配置信息</p>
+     * 
+     * @param request BatchGetVoicePrintIdentifyConfigRequest
+     * @param headers BatchGetVoicePrintIdentifyConfigHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return BatchGetVoicePrintIdentifyConfigResponse
+     */
+    public BatchGetVoicePrintIdentifyConfigResponse batchGetVoicePrintIdentifyConfigWithOptions(BatchGetVoicePrintIdentifyConfigRequest request, BatchGetVoicePrintIdentifyConfigHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.items)) {
+            body.put("items", request.items);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "BatchGetVoicePrintIdentifyConfig"),
+            new TeaPair("version", "minutes_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/minutes/voicePrint/configs/batchGet"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new BatchGetVoicePrintIdentifyConfigResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>批量查询声纹配置信息</p>
+     * 
+     * @param request BatchGetVoicePrintIdentifyConfigRequest
+     * @return BatchGetVoicePrintIdentifyConfigResponse
+     */
+    public BatchGetVoicePrintIdentifyConfigResponse batchGetVoicePrintIdentifyConfig(BatchGetVoicePrintIdentifyConfigRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        BatchGetVoicePrintIdentifyConfigHeaders headers = new BatchGetVoicePrintIdentifyConfigHeaders();
+        return this.batchGetVoicePrintIdentifyConfigWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>批量设置声纹开关状态</p>
+     * 
+     * @param request BatchToggleVoicePrintSwitchStatusRequest
+     * @param headers BatchToggleVoicePrintSwitchStatusHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return BatchToggleVoicePrintSwitchStatusResponse
+     */
+    public BatchToggleVoicePrintSwitchStatusResponse batchToggleVoicePrintSwitchStatusWithOptions(BatchToggleVoicePrintSwitchStatusRequest request, BatchToggleVoicePrintSwitchStatusHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.items)) {
+            body.put("items", request.items);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "BatchToggleVoicePrintSwitchStatus"),
+            new TeaPair("version", "minutes_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/minutes/voicePrint/switches/batchToggle"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new BatchToggleVoicePrintSwitchStatusResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>批量设置声纹开关状态</p>
+     * 
+     * @param request BatchToggleVoicePrintSwitchStatusRequest
+     * @return BatchToggleVoicePrintSwitchStatusResponse
+     */
+    public BatchToggleVoicePrintSwitchStatusResponse batchToggleVoicePrintSwitchStatus(BatchToggleVoicePrintSwitchStatusRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        BatchToggleVoicePrintSwitchStatusHeaders headers = new BatchToggleVoicePrintSwitchStatusHeaders();
+        return this.batchToggleVoicePrintSwitchStatusWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>从上传的媒体文件创建闪记</p>
      * 
      * @param request CreateMinutesByUploadFileRequest

@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.aliyun</groupId>
   <artifactId>dingtalk</artifactId>
-  <version>2.2.47</version>
+  <version>2.2.48</version>
   <packaging>jar</packaging>
   <name>dingtalk</name>
   <description>Alibaba Cloud dingtalk SDK for Java
@@ -184,7 +184,7 @@
       <plugin>
         <groupId>org.sonatype.central</groupId>
         <artifactId>central-publishing-maven-plugin</artifactId>
-        <version>0.9.0</version>
+        <version>0.10.0</version>
         <extensions>true</extensions>
         <configuration>
           <publishingServerId>central</publishingServerId>

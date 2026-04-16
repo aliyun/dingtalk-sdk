@@ -37,6 +37,56 @@ public class OpenScoreCardDimensionDTO extends TeaModel {
         return this.scoreCardId;
     }
 
+    public static class OpenScoreCardDimensionDTODimensionListIndicatorList extends TeaModel {
+        /**
+         * <p>This parameter is required.</p>
+         */
+        @NameInMap("indicatorId")
+        public String indicatorId;
+
+        /**
+         * <p>This parameter is required.</p>
+         */
+        @NameInMap("originCode")
+        public String originCode;
+
+        /**
+         * <p>This parameter is required.</p>
+         */
+        @NameInMap("originId")
+        public String originId;
+
+        public static OpenScoreCardDimensionDTODimensionListIndicatorList build(java.util.Map<String, ?> map) throws Exception {
+            OpenScoreCardDimensionDTODimensionListIndicatorList self = new OpenScoreCardDimensionDTODimensionListIndicatorList();
+            return TeaModel.build(map, self);
+        }
+
+        public OpenScoreCardDimensionDTODimensionListIndicatorList setIndicatorId(String indicatorId) {
+            this.indicatorId = indicatorId;
+            return this;
+        }
+        public String getIndicatorId() {
+            return this.indicatorId;
+        }
+
+        public OpenScoreCardDimensionDTODimensionListIndicatorList setOriginCode(String originCode) {
+            this.originCode = originCode;
+            return this;
+        }
+        public String getOriginCode() {
+            return this.originCode;
+        }
+
+        public OpenScoreCardDimensionDTODimensionListIndicatorList setOriginId(String originId) {
+            this.originId = originId;
+            return this;
+        }
+        public String getOriginId() {
+            return this.originId;
+        }
+
+    }
+
     public static class OpenScoreCardDimensionDTODimensionList extends TeaModel {
         /**
          * <p>This parameter is required.</p>
@@ -49,6 +99,9 @@ public class OpenScoreCardDimensionDTO extends TeaModel {
          */
         @NameInMap("indicatorIdList")
         public java.util.List<String> indicatorIdList;
+
+        @NameInMap("indicatorList")
+        public java.util.List<OpenScoreCardDimensionDTODimensionListIndicatorList> indicatorList;
 
         public static OpenScoreCardDimensionDTODimensionList build(java.util.Map<String, ?> map) throws Exception {
             OpenScoreCardDimensionDTODimensionList self = new OpenScoreCardDimensionDTODimensionList();
@@ -69,6 +122,14 @@ public class OpenScoreCardDimensionDTO extends TeaModel {
         }
         public java.util.List<String> getIndicatorIdList() {
             return this.indicatorIdList;
+        }
+
+        public OpenScoreCardDimensionDTODimensionList setIndicatorList(java.util.List<OpenScoreCardDimensionDTODimensionListIndicatorList> indicatorList) {
+            this.indicatorList = indicatorList;
+            return this;
+        }
+        public java.util.List<OpenScoreCardDimensionDTODimensionListIndicatorList> getIndicatorList() {
+            return this.indicatorList;
         }
 
     }

@@ -1404,6 +1404,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("dingTeamId", request.dingTeamId);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.selectedTime)) {
+            query.put("selectedTime", request.selectedTime);
+        }
+
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;

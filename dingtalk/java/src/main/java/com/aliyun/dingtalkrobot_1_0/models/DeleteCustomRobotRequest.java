@@ -13,12 +13,6 @@ public class DeleteCustomRobotRequest extends TeaModel {
     /**
      * <p>This parameter is required.</p>
      */
-    @NameInMap("operatorUserId")
-    public String operatorUserId;
-
-    /**
-     * <p>This parameter is required.</p>
-     */
     @NameInMap("sendNotification")
     public Boolean sendNotification;
 
@@ -39,14 +33,6 @@ public class DeleteCustomRobotRequest extends TeaModel {
     }
     public String getActionType() {
         return this.actionType;
-    }
-
-    public DeleteCustomRobotRequest setOperatorUserId(String operatorUserId) {
-        this.operatorUserId = operatorUserId;
-        return this;
-    }
-    public String getOperatorUserId() {
-        return this.operatorUserId;
     }
 
     public DeleteCustomRobotRequest setSendNotification(Boolean sendNotification) {

@@ -694,6 +694,130 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>删除筛选条件</p>
+     * 
+     * @param request ClearFilterCriteriaRequest
+     * @param headers ClearFilterCriteriaHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ClearFilterCriteriaResponse
+     */
+    public ClearFilterCriteriaResponse clearFilterCriteriaWithOptions(String workbookId, String sheetId, ClearFilterCriteriaRequest request, ClearFilterCriteriaHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.column)) {
+            body.put("column", request.column);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ClearFilterCriteria"),
+            new TeaPair("version", "doc_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/filter/clearColumnFilterCriteria"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ClearFilterCriteriaResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除筛选条件</p>
+     * 
+     * @param request ClearFilterCriteriaRequest
+     * @return ClearFilterCriteriaResponse
+     */
+    public ClearFilterCriteriaResponse clearFilterCriteria(String workbookId, String sheetId, ClearFilterCriteriaRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ClearFilterCriteriaHeaders headers = new ClearFilterCriteriaHeaders();
+        return this.clearFilterCriteriaWithOptions(workbookId, sheetId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除筛选视图条件</p>
+     * 
+     * @param request ClearFilterViewCriteriaRequest
+     * @param headers ClearFilterViewCriteriaHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ClearFilterViewCriteriaResponse
+     */
+    public ClearFilterViewCriteriaResponse clearFilterViewCriteriaWithOptions(String workbookId, String sheetId, String filterViewId, ClearFilterViewCriteriaRequest request, ClearFilterViewCriteriaHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.column)) {
+            body.put("column", request.column);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ClearFilterViewCriteria"),
+            new TeaPair("version", "doc_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/filterViews/" + filterViewId + "/clearColumnFilterCriteria"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ClearFilterViewCriteriaResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除筛选视图条件</p>
+     * 
+     * @param request ClearFilterViewCriteriaRequest
+     * @return ClearFilterViewCriteriaResponse
+     */
+    public ClearFilterViewCriteriaResponse clearFilterViewCriteria(String workbookId, String sheetId, String filterViewId, ClearFilterViewCriteriaRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ClearFilterViewCriteriaHeaders headers = new ClearFilterViewCriteriaHeaders();
+        return this.clearFilterViewCriteriaWithOptions(workbookId, sheetId, filterViewId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>创建条件格式</p>
      * 
      * @param request CreateConditionalFormattingRuleRequest
@@ -834,6 +958,212 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateDeveloperMetadataHeaders headers = new CreateDeveloperMetadataHeaders();
         return this.createDeveloperMetadataWithOptions(workbookId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>创建筛选</p>
+     * 
+     * @param request CreateFilterRequest
+     * @param headers CreateFilterHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateFilterResponse
+     */
+    public CreateFilterResponse createFilterWithOptions(String workbookId, String sheetId, CreateFilterRequest request, CreateFilterHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.criteria)) {
+            body.put("criteria", request.criteria);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.range)) {
+            body.put("range", request.range);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateFilter"),
+            new TeaPair("version", "doc_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/createFilter"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateFilterResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>创建筛选</p>
+     * 
+     * @param request CreateFilterRequest
+     * @return CreateFilterResponse
+     */
+    public CreateFilterResponse createFilter(String workbookId, String sheetId, CreateFilterRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CreateFilterHeaders headers = new CreateFilterHeaders();
+        return this.createFilterWithOptions(workbookId, sheetId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>创建筛选视图</p>
+     * 
+     * @param request CreateFilterViewRequest
+     * @param headers CreateFilterViewHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateFilterViewResponse
+     */
+    public CreateFilterViewResponse createFilterViewWithOptions(String workbookId, String sheetId, CreateFilterViewRequest request, CreateFilterViewHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.criteria)) {
+            body.put("criteria", request.criteria);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
+            body.put("name", request.name);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.range)) {
+            body.put("range", request.range);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateFilterView"),
+            new TeaPair("version", "doc_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/filterViews"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateFilterViewResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>创建筛选视图</p>
+     * 
+     * @param request CreateFilterViewRequest
+     * @return CreateFilterViewResponse
+     */
+    public CreateFilterViewResponse createFilterView(String workbookId, String sheetId, CreateFilterViewRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CreateFilterViewHeaders headers = new CreateFilterViewHeaders();
+        return this.createFilterViewWithOptions(workbookId, sheetId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>创建浮动图片</p>
+     * 
+     * @param request CreateFloatImageRequest
+     * @param headers CreateFloatImageHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateFloatImageResponse
+     */
+    public CreateFloatImageResponse createFloatImageWithOptions(String workbookId, String sheetId, CreateFloatImageRequest request, CreateFloatImageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.anchor)) {
+            body.put("anchor", request.anchor);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.coordinate)) {
+            body.put("coordinate", request.coordinate);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.src)) {
+            body.put("src", request.src);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateFloatImage"),
+            new TeaPair("version", "doc_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/floatImages"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateFloatImageResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>创建浮动图片</p>
+     * 
+     * @param request CreateFloatImageRequest
+     * @return CreateFloatImageResponse
+     */
+    public CreateFloatImageResponse createFloatImage(String workbookId, String sheetId, CreateFloatImageRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CreateFloatImageHeaders headers = new CreateFloatImageHeaders();
+        return this.createFloatImageWithOptions(workbookId, sheetId, request, headers, runtime);
     }
 
     /**
@@ -1228,6 +1558,174 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DeleteDropdownListsHeaders headers = new DeleteDropdownListsHeaders();
         return this.deleteDropdownListsWithOptions(workbookId, sheetId, rangeAddress, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除筛选</p>
+     * 
+     * @param request DeleteFilterRequest
+     * @param headers DeleteFilterHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteFilterResponse
+     */
+    public DeleteFilterResponse deleteFilterWithOptions(String workbookId, String sheetId, DeleteFilterRequest request, DeleteFilterHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DeleteFilter"),
+            new TeaPair("version", "doc_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/deleteFilter"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DeleteFilterResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除筛选</p>
+     * 
+     * @param request DeleteFilterRequest
+     * @return DeleteFilterResponse
+     */
+    public DeleteFilterResponse deleteFilter(String workbookId, String sheetId, DeleteFilterRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DeleteFilterHeaders headers = new DeleteFilterHeaders();
+        return this.deleteFilterWithOptions(workbookId, sheetId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除筛选视图</p>
+     * 
+     * @param request DeleteFilterViewRequest
+     * @param headers DeleteFilterViewHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteFilterViewResponse
+     */
+    public DeleteFilterViewResponse deleteFilterViewWithOptions(String workbookId, String sheetId, String filterViewId, DeleteFilterViewRequest request, DeleteFilterViewHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DeleteFilterView"),
+            new TeaPair("version", "doc_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/filterViews/" + filterViewId + ""),
+            new TeaPair("method", "DELETE"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DeleteFilterViewResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除筛选视图</p>
+     * 
+     * @param request DeleteFilterViewRequest
+     * @return DeleteFilterViewResponse
+     */
+    public DeleteFilterViewResponse deleteFilterView(String workbookId, String sheetId, String filterViewId, DeleteFilterViewRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DeleteFilterViewHeaders headers = new DeleteFilterViewHeaders();
+        return this.deleteFilterViewWithOptions(workbookId, sheetId, filterViewId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除浮动图片</p>
+     * 
+     * @param request DeleteFloatImageRequest
+     * @param headers DeleteFloatImageHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteFloatImageResponse
+     */
+    public DeleteFloatImageResponse deleteFloatImageWithOptions(String workbookId, String sheetId, String id, DeleteFloatImageRequest request, DeleteFloatImageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DeleteFloatImage"),
+            new TeaPair("version", "doc_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/floatImages/" + id + ""),
+            new TeaPair("method", "DELETE"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DeleteFloatImageResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除浮动图片</p>
+     * 
+     * @param request DeleteFloatImageRequest
+     * @return DeleteFloatImageResponse
+     */
+    public DeleteFloatImageResponse deleteFloatImage(String workbookId, String sheetId, String id, DeleteFloatImageRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DeleteFloatImageHeaders headers = new DeleteFloatImageHeaders();
+        return this.deleteFloatImageWithOptions(workbookId, sheetId, id, request, headers, runtime);
     }
 
     /**
@@ -2634,6 +3132,230 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetDeveloperMetadataHeaders headers = new GetDeveloperMetadataHeaders();
         return this.getDeveloperMetadataWithOptions(workbookId, developerMetadataId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取筛选</p>
+     * 
+     * @param request GetFilterRequest
+     * @param headers GetFilterHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetFilterResponse
+     */
+    public GetFilterResponse getFilterWithOptions(String workbookId, String sheetId, GetFilterRequest request, GetFilterHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetFilter"),
+            new TeaPair("version", "doc_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/filter/getFilter"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetFilterResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取筛选</p>
+     * 
+     * @param request GetFilterRequest
+     * @return GetFilterResponse
+     */
+    public GetFilterResponse getFilter(String workbookId, String sheetId, GetFilterRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetFilterHeaders headers = new GetFilterHeaders();
+        return this.getFilterWithOptions(workbookId, sheetId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取筛选视图列表</p>
+     * 
+     * @param request GetFilterViewsRequest
+     * @param headers GetFilterViewsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetFilterViewsResponse
+     */
+    public GetFilterViewsResponse getFilterViewsWithOptions(String workbookId, String sheetId, GetFilterViewsRequest request, GetFilterViewsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetFilterViews"),
+            new TeaPair("version", "doc_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/filterViews"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetFilterViewsResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取筛选视图列表</p>
+     * 
+     * @param request GetFilterViewsRequest
+     * @return GetFilterViewsResponse
+     */
+    public GetFilterViewsResponse getFilterViews(String workbookId, String sheetId, GetFilterViewsRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetFilterViewsHeaders headers = new GetFilterViewsHeaders();
+        return this.getFilterViewsWithOptions(workbookId, sheetId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取浮动图片</p>
+     * 
+     * @param request GetFloatImageRequest
+     * @param headers GetFloatImageHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetFloatImageResponse
+     */
+    public GetFloatImageResponse getFloatImageWithOptions(String workbookId, String sheetId, String id, GetFloatImageRequest request, GetFloatImageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetFloatImage"),
+            new TeaPair("version", "doc_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/floatImages/" + id + ""),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetFloatImageResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取浮动图片</p>
+     * 
+     * @param request GetFloatImageRequest
+     * @return GetFloatImageResponse
+     */
+    public GetFloatImageResponse getFloatImage(String workbookId, String sheetId, String id, GetFloatImageRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetFloatImageHeaders headers = new GetFloatImageHeaders();
+        return this.getFloatImageWithOptions(workbookId, sheetId, id, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询浮动图片</p>
+     * 
+     * @param request GetFloatImagesRequest
+     * @param headers GetFloatImagesHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetFloatImagesResponse
+     */
+    public GetFloatImagesResponse getFloatImagesWithOptions(String workbookId, String sheetId, GetFloatImagesRequest request, GetFloatImagesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetFloatImages"),
+            new TeaPair("version", "doc_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/floatImages"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetFloatImagesResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询浮动图片</p>
+     * 
+     * @param request GetFloatImagesRequest
+     * @return GetFloatImagesResponse
+     */
+    public GetFloatImagesResponse getFloatImages(String workbookId, String sheetId, GetFloatImagesRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetFloatImagesHeaders headers = new GetFloatImagesHeaders();
+        return this.getFloatImagesWithOptions(workbookId, sheetId, request, headers, runtime);
     }
 
     /**
@@ -4308,6 +5030,138 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>设置筛选条件</p>
+     * 
+     * @param request SetFilterCriteriaRequest
+     * @param headers SetFilterCriteriaHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SetFilterCriteriaResponse
+     */
+    public SetFilterCriteriaResponse setFilterCriteriaWithOptions(String workbookId, String sheetId, SetFilterCriteriaRequest request, SetFilterCriteriaHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.column)) {
+            body.put("column", request.column);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.filterCriteria)) {
+            body.put("filterCriteria", request.filterCriteria);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SetFilterCriteria"),
+            new TeaPair("version", "doc_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/filter/setColumnFilterCriteria"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SetFilterCriteriaResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>设置筛选条件</p>
+     * 
+     * @param request SetFilterCriteriaRequest
+     * @return SetFilterCriteriaResponse
+     */
+    public SetFilterCriteriaResponse setFilterCriteria(String workbookId, String sheetId, SetFilterCriteriaRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SetFilterCriteriaHeaders headers = new SetFilterCriteriaHeaders();
+        return this.setFilterCriteriaWithOptions(workbookId, sheetId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>设置筛选视图条件</p>
+     * 
+     * @param request SetFilterViewCriteriaRequest
+     * @param headers SetFilterViewCriteriaHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SetFilterViewCriteriaResponse
+     */
+    public SetFilterViewCriteriaResponse setFilterViewCriteriaWithOptions(String workbookId, String sheetId, String filterViewId, SetFilterViewCriteriaRequest request, SetFilterViewCriteriaHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.column)) {
+            body.put("column", request.column);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.filterCriteria)) {
+            body.put("filterCriteria", request.filterCriteria);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SetFilterViewCriteria"),
+            new TeaPair("version", "doc_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/filterViews/" + filterViewId + "/setColumnFilterCriteria"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SetFilterViewCriteriaResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>设置筛选视图条件</p>
+     * 
+     * @param request SetFilterViewCriteriaRequest
+     * @return SetFilterViewCriteriaResponse
+     */
+    public SetFilterViewCriteriaResponse setFilterViewCriteria(String workbookId, String sheetId, String filterViewId, SetFilterViewCriteriaRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SetFilterViewCriteriaHeaders headers = new SetFilterViewCriteriaHeaders();
+        return this.setFilterViewCriteriaWithOptions(workbookId, sheetId, filterViewId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>设置行高</p>
      * 
      * @param request SetRowHeightRequest
@@ -4658,6 +5512,68 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>筛选排序</p>
+     * 
+     * @param request SortFilterRequest
+     * @param headers SortFilterHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SortFilterResponse
+     */
+    public SortFilterResponse sortFilterWithOptions(String workbookId, String sheetId, SortFilterRequest request, SortFilterHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.field)) {
+            body.put("field", request.field);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SortFilter"),
+            new TeaPair("version", "doc_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/filter/sort"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SortFilterResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>筛选排序</p>
+     * 
+     * @param request SortFilterRequest
+     * @return SortFilterResponse
+     */
+    public SortFilterResponse sortFilter(String workbookId, String sheetId, SortFilterRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SortFilterHeaders headers = new SortFilterHeaders();
+        return this.sortFilterWithOptions(workbookId, sheetId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>取消文档酷应用和表格的关联</p>
      * 
      * @param request UnbindCoolAppToSheetRequest
@@ -4714,6 +5630,208 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UnbindCoolAppToSheetHeaders headers = new UnbindCoolAppToSheetHeaders();
         return this.unbindCoolAppToSheetWithOptions(workbookId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新筛选</p>
+     * 
+     * @param request UpdateFilterRequest
+     * @param headers UpdateFilterHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateFilterResponse
+     */
+    public UpdateFilterResponse updateFilterWithOptions(String workbookId, String sheetId, UpdateFilterRequest request, UpdateFilterHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.criteria)) {
+            body.put("criteria", request.criteria);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateFilter"),
+            new TeaPair("version", "doc_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/filter/updateFilter"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateFilterResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新筛选</p>
+     * 
+     * @param request UpdateFilterRequest
+     * @return UpdateFilterResponse
+     */
+    public UpdateFilterResponse updateFilter(String workbookId, String sheetId, UpdateFilterRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateFilterHeaders headers = new UpdateFilterHeaders();
+        return this.updateFilterWithOptions(workbookId, sheetId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新筛选视图</p>
+     * 
+     * @param request UpdateFilterViewRequest
+     * @param headers UpdateFilterViewHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateFilterViewResponse
+     */
+    public UpdateFilterViewResponse updateFilterViewWithOptions(String workbookId, String sheetId, String filterViewId, UpdateFilterViewRequest request, UpdateFilterViewHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.criteria)) {
+            body.put("criteria", request.criteria);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
+            body.put("name", request.name);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.range)) {
+            body.put("range", request.range);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateFilterView"),
+            new TeaPair("version", "doc_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/filterViews/" + filterViewId + ""),
+            new TeaPair("method", "PATCH"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateFilterViewResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新筛选视图</p>
+     * 
+     * @param request UpdateFilterViewRequest
+     * @return UpdateFilterViewResponse
+     */
+    public UpdateFilterViewResponse updateFilterView(String workbookId, String sheetId, String filterViewId, UpdateFilterViewRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateFilterViewHeaders headers = new UpdateFilterViewHeaders();
+        return this.updateFilterViewWithOptions(workbookId, sheetId, filterViewId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新浮动图片</p>
+     * 
+     * @param request UpdateFloatImageRequest
+     * @param headers UpdateFloatImageHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateFloatImageResponse
+     */
+    public UpdateFloatImageResponse updateFloatImageWithOptions(String workbookId, String sheetId, String id, UpdateFloatImageRequest request, UpdateFloatImageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.anchor)) {
+            body.put("anchor", request.anchor);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.coordinate)) {
+            body.put("coordinate", request.coordinate);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.src)) {
+            body.put("src", request.src);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateFloatImage"),
+            new TeaPair("version", "doc_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/floatImages/" + id + ""),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateFloatImageResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新浮动图片</p>
+     * 
+     * @param request UpdateFloatImageRequest
+     * @return UpdateFloatImageResponse
+     */
+    public UpdateFloatImageResponse updateFloatImage(String workbookId, String sheetId, String id, UpdateFloatImageRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateFloatImageHeaders headers = new UpdateFloatImageHeaders();
+        return this.updateFloatImageWithOptions(workbookId, sheetId, id, request, headers, runtime);
     }
 
     /**

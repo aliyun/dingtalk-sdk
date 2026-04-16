@@ -10,6 +10,9 @@ public class GetLoginUserResponseBody extends TeaModel {
     @NameInMap("corpId")
     public String corpId;
 
+    @NameInMap("isAdmin")
+    public Boolean isAdmin;
+
     @NameInMap("openId")
     public String openId;
 
@@ -35,6 +38,14 @@ public class GetLoginUserResponseBody extends TeaModel {
     }
     public String getCorpId() {
         return this.corpId;
+    }
+
+    public GetLoginUserResponseBody setIsAdmin(Boolean isAdmin) {
+        this.isAdmin = isAdmin;
+        return this;
+    }
+    public Boolean getIsAdmin() {
+        return this.isAdmin;
     }
 
     public GetLoginUserResponseBody setOpenId(String openId) {

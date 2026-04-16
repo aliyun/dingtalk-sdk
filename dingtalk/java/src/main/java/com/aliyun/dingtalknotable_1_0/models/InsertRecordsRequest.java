@@ -12,7 +12,7 @@ public class InsertRecordsRequest extends TeaModel {
 
     /**
      * <strong>example:</strong>
-     * <p>union_id</p>
+     * <p>550e8400-e29b-41d4-a716-446655440000</p>
      */
     @NameInMap("clientToken")
     public String clientToken;
