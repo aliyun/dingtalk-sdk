@@ -1685,19 +1685,66 @@ class OpenOrgPerfPlanDTO(TeaModel):
         return self
 
 
+class OpenScoreCardDimensionDTODimensionListIndicatorList(TeaModel):
+    def __init__(
+        self,
+        indicator_id: str = None,
+        origin_code: str = None,
+        origin_id: str = None,
+    ):
+        # This parameter is required.
+        self.indicator_id = indicator_id
+        # This parameter is required.
+        self.origin_code = origin_code
+        # This parameter is required.
+        self.origin_id = origin_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.indicator_id is not None:
+            result['indicatorId'] = self.indicator_id
+        if self.origin_code is not None:
+            result['originCode'] = self.origin_code
+        if self.origin_id is not None:
+            result['originId'] = self.origin_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('indicatorId') is not None:
+            self.indicator_id = m.get('indicatorId')
+        if m.get('originCode') is not None:
+            self.origin_code = m.get('originCode')
+        if m.get('originId') is not None:
+            self.origin_id = m.get('originId')
+        return self
+
+
 class OpenScoreCardDimensionDTODimensionList(TeaModel):
     def __init__(
         self,
         dimension_id: str = None,
         indicator_id_list: List[str] = None,
+        indicator_list: List[OpenScoreCardDimensionDTODimensionListIndicatorList] = None,
     ):
         # This parameter is required.
         self.dimension_id = dimension_id
         # This parameter is required.
         self.indicator_id_list = indicator_id_list
+        self.indicator_list = indicator_list
 
     def validate(self):
-        pass
+        if self.indicator_list:
+            for k in self.indicator_list:
+                if k:
+                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -1709,6 +1756,10 @@ class OpenScoreCardDimensionDTODimensionList(TeaModel):
             result['dimensionId'] = self.dimension_id
         if self.indicator_id_list is not None:
             result['indicatorIdList'] = self.indicator_id_list
+        result['indicatorList'] = []
+        if self.indicator_list is not None:
+            for k in self.indicator_list:
+                result['indicatorList'].append(k.to_map() if k else None)
         return result
 
     def from_map(self, m: dict = None):
@@ -1717,6 +1768,11 @@ class OpenScoreCardDimensionDTODimensionList(TeaModel):
             self.dimension_id = m.get('dimensionId')
         if m.get('indicatorIdList') is not None:
             self.indicator_id_list = m.get('indicatorIdList')
+        self.indicator_list = []
+        if m.get('indicatorList') is not None:
+            for k in m.get('indicatorList'):
+                temp_model = OpenScoreCardDimensionDTODimensionListIndicatorList()
+                self.indicator_list.append(temp_model.from_map(k))
         return self
 
 
@@ -5874,8 +5930,10 @@ class GetDeptScoreCardIndicatorRequest(TeaModel):
     def __init__(
         self,
         ding_team_id: str = None,
+        selected_time: int = None,
     ):
         self.ding_team_id = ding_team_id
+        self.selected_time = selected_time
 
     def validate(self):
         pass
@@ -5888,12 +5946,16 @@ class GetDeptScoreCardIndicatorRequest(TeaModel):
         result = dict()
         if self.ding_team_id is not None:
             result['dingTeamId'] = self.ding_team_id
+        if self.selected_time is not None:
+            result['selectedTime'] = self.selected_time
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('dingTeamId') is not None:
             self.ding_team_id = m.get('dingTeamId')
+        if m.get('selectedTime') is not None:
+            self.selected_time = m.get('selectedTime')
         return self
 
 

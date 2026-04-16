@@ -412,11 +412,13 @@ class GetLoginUserResponseBody(TeaModel):
         self,
         commodity_info: GetLoginUserResponseBodyCommodityInfo = None,
         corp_id: str = None,
+        is_admin: bool = None,
         open_id: str = None,
         union_id: str = None,
     ):
         self.commodity_info = commodity_info
         self.corp_id = corp_id
+        self.is_admin = is_admin
         self.open_id = open_id
         self.union_id = union_id
 
@@ -434,6 +436,8 @@ class GetLoginUserResponseBody(TeaModel):
             result['commodityInfo'] = self.commodity_info.to_map()
         if self.corp_id is not None:
             result['corpId'] = self.corp_id
+        if self.is_admin is not None:
+            result['isAdmin'] = self.is_admin
         if self.open_id is not None:
             result['openId'] = self.open_id
         if self.union_id is not None:
@@ -447,6 +451,8 @@ class GetLoginUserResponseBody(TeaModel):
             self.commodity_info = temp_model.from_map(m['commodityInfo'])
         if m.get('corpId') is not None:
             self.corp_id = m.get('corpId')
+        if m.get('isAdmin') is not None:
+            self.is_admin = m.get('isAdmin')
         if m.get('openId') is not None:
             self.open_id = m.get('openId')
         if m.get('unionId') is not None:

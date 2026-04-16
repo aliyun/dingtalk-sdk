@@ -503,6 +503,455 @@ class BatchGetMinutesDetailsResponse(TeaModel):
         return self
 
 
+class BatchGetVoicePrintIdentifyConfigHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class BatchGetVoicePrintIdentifyConfigRequestItems(TeaModel):
+    def __init__(
+        self,
+        lang: str = None,
+        union_id: str = None,
+    ):
+        self.lang = lang
+        # This parameter is required.
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.lang is not None:
+            result['lang'] = self.lang
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('lang') is not None:
+            self.lang = m.get('lang')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class BatchGetVoicePrintIdentifyConfigRequest(TeaModel):
+    def __init__(
+        self,
+        items: List[BatchGetVoicePrintIdentifyConfigRequestItems] = None,
+    ):
+        # This parameter is required.
+        self.items = items
+
+    def validate(self):
+        if self.items:
+            for k in self.items:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['items'] = []
+        if self.items is not None:
+            for k in self.items:
+                result['items'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.items = []
+        if m.get('items') is not None:
+            for k in m.get('items'):
+                temp_model = BatchGetVoicePrintIdentifyConfigRequestItems()
+                self.items.append(temp_model.from_map(k))
+        return self
+
+
+class BatchGetVoicePrintIdentifyConfigResponseBodyConfigItems(TeaModel):
+    def __init__(
+        self,
+        allow_config_voice_print: bool = None,
+        enable_voice_print: bool = None,
+        has_voice_print_record: bool = None,
+        union_id: str = None,
+    ):
+        self.allow_config_voice_print = allow_config_voice_print
+        self.enable_voice_print = enable_voice_print
+        self.has_voice_print_record = has_voice_print_record
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.allow_config_voice_print is not None:
+            result['allowConfigVoicePrint'] = self.allow_config_voice_print
+        if self.enable_voice_print is not None:
+            result['enableVoicePrint'] = self.enable_voice_print
+        if self.has_voice_print_record is not None:
+            result['hasVoicePrintRecord'] = self.has_voice_print_record
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('allowConfigVoicePrint') is not None:
+            self.allow_config_voice_print = m.get('allowConfigVoicePrint')
+        if m.get('enableVoicePrint') is not None:
+            self.enable_voice_print = m.get('enableVoicePrint')
+        if m.get('hasVoicePrintRecord') is not None:
+            self.has_voice_print_record = m.get('hasVoicePrintRecord')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class BatchGetVoicePrintIdentifyConfigResponseBody(TeaModel):
+    def __init__(
+        self,
+        config_items: List[BatchGetVoicePrintIdentifyConfigResponseBodyConfigItems] = None,
+    ):
+        self.config_items = config_items
+
+    def validate(self):
+        if self.config_items:
+            for k in self.config_items:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['configItems'] = []
+        if self.config_items is not None:
+            for k in self.config_items:
+                result['configItems'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.config_items = []
+        if m.get('configItems') is not None:
+            for k in m.get('configItems'):
+                temp_model = BatchGetVoicePrintIdentifyConfigResponseBodyConfigItems()
+                self.config_items.append(temp_model.from_map(k))
+        return self
+
+
+class BatchGetVoicePrintIdentifyConfigResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: BatchGetVoicePrintIdentifyConfigResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = BatchGetVoicePrintIdentifyConfigResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class BatchToggleVoicePrintSwitchStatusHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class BatchToggleVoicePrintSwitchStatusRequestItems(TeaModel):
+    def __init__(
+        self,
+        open: bool = None,
+        should_clear_voice_print: bool = None,
+        union_id: str = None,
+    ):
+        # This parameter is required.
+        self.open = open
+        self.should_clear_voice_print = should_clear_voice_print
+        # This parameter is required.
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open is not None:
+            result['open'] = self.open
+        if self.should_clear_voice_print is not None:
+            result['shouldClearVoicePrint'] = self.should_clear_voice_print
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('open') is not None:
+            self.open = m.get('open')
+        if m.get('shouldClearVoicePrint') is not None:
+            self.should_clear_voice_print = m.get('shouldClearVoicePrint')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class BatchToggleVoicePrintSwitchStatusRequest(TeaModel):
+    def __init__(
+        self,
+        items: List[BatchToggleVoicePrintSwitchStatusRequestItems] = None,
+    ):
+        # This parameter is required.
+        self.items = items
+
+    def validate(self):
+        if self.items:
+            for k in self.items:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['items'] = []
+        if self.items is not None:
+            for k in self.items:
+                result['items'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.items = []
+        if m.get('items') is not None:
+            for k in m.get('items'):
+                temp_model = BatchToggleVoicePrintSwitchStatusRequestItems()
+                self.items.append(temp_model.from_map(k))
+        return self
+
+
+class BatchToggleVoicePrintSwitchStatusResponseBodyResultItems(TeaModel):
+    def __init__(
+        self,
+        message: str = None,
+        success: bool = None,
+        union_id: str = None,
+    ):
+        self.message = message
+        self.success = success
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.message is not None:
+            result['message'] = self.message
+        if self.success is not None:
+            result['success'] = self.success
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('message') is not None:
+            self.message = m.get('message')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class BatchToggleVoicePrintSwitchStatusResponseBody(TeaModel):
+    def __init__(
+        self,
+        result_items: List[BatchToggleVoicePrintSwitchStatusResponseBodyResultItems] = None,
+    ):
+        self.result_items = result_items
+
+    def validate(self):
+        if self.result_items:
+            for k in self.result_items:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['resultItems'] = []
+        if self.result_items is not None:
+            for k in self.result_items:
+                result['resultItems'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result_items = []
+        if m.get('resultItems') is not None:
+            for k in m.get('resultItems'):
+                temp_model = BatchToggleVoicePrintSwitchStatusResponseBodyResultItems()
+                self.result_items.append(temp_model.from_map(k))
+        return self
+
+
+class BatchToggleVoicePrintSwitchStatusResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: BatchToggleVoicePrintSwitchStatusResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = BatchToggleVoicePrintSwitchStatusResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CreateMinutesByUploadFileHeaders(TeaModel):
     def __init__(
         self,

@@ -1408,6 +1408,270 @@ class Client(OpenApiClient):
         headers = dingtalkdoc__1__0_models.ClearDataHeaders()
         return await self.clear_data_with_options_async(workbook_id, sheet_id, range_address, request, headers, runtime)
 
+    def clear_filter_criteria_with_options(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.ClearFilterCriteriaRequest,
+        headers: dingtalkdoc__1__0_models.ClearFilterCriteriaHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.ClearFilterCriteriaResponse:
+        """
+        @summary 删除筛选条件
+        
+        @param request: ClearFilterCriteriaRequest
+        @param headers: ClearFilterCriteriaHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ClearFilterCriteriaResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.column):
+            body['column'] = request.column
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ClearFilterCriteria',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/filter/clearColumnFilterCriteria',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.ClearFilterCriteriaResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def clear_filter_criteria_with_options_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.ClearFilterCriteriaRequest,
+        headers: dingtalkdoc__1__0_models.ClearFilterCriteriaHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.ClearFilterCriteriaResponse:
+        """
+        @summary 删除筛选条件
+        
+        @param request: ClearFilterCriteriaRequest
+        @param headers: ClearFilterCriteriaHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ClearFilterCriteriaResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.column):
+            body['column'] = request.column
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ClearFilterCriteria',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/filter/clearColumnFilterCriteria',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.ClearFilterCriteriaResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def clear_filter_criteria(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.ClearFilterCriteriaRequest,
+    ) -> dingtalkdoc__1__0_models.ClearFilterCriteriaResponse:
+        """
+        @summary 删除筛选条件
+        
+        @param request: ClearFilterCriteriaRequest
+        @return: ClearFilterCriteriaResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.ClearFilterCriteriaHeaders()
+        return self.clear_filter_criteria_with_options(workbook_id, sheet_id, request, headers, runtime)
+
+    async def clear_filter_criteria_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.ClearFilterCriteriaRequest,
+    ) -> dingtalkdoc__1__0_models.ClearFilterCriteriaResponse:
+        """
+        @summary 删除筛选条件
+        
+        @param request: ClearFilterCriteriaRequest
+        @return: ClearFilterCriteriaResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.ClearFilterCriteriaHeaders()
+        return await self.clear_filter_criteria_with_options_async(workbook_id, sheet_id, request, headers, runtime)
+
+    def clear_filter_view_criteria_with_options(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        filter_view_id: str,
+        request: dingtalkdoc__1__0_models.ClearFilterViewCriteriaRequest,
+        headers: dingtalkdoc__1__0_models.ClearFilterViewCriteriaHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.ClearFilterViewCriteriaResponse:
+        """
+        @summary 删除筛选视图条件
+        
+        @param request: ClearFilterViewCriteriaRequest
+        @param headers: ClearFilterViewCriteriaHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ClearFilterViewCriteriaResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.column):
+            body['column'] = request.column
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ClearFilterViewCriteria',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/filterViews/{filter_view_id}/clearColumnFilterCriteria',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.ClearFilterViewCriteriaResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def clear_filter_view_criteria_with_options_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        filter_view_id: str,
+        request: dingtalkdoc__1__0_models.ClearFilterViewCriteriaRequest,
+        headers: dingtalkdoc__1__0_models.ClearFilterViewCriteriaHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.ClearFilterViewCriteriaResponse:
+        """
+        @summary 删除筛选视图条件
+        
+        @param request: ClearFilterViewCriteriaRequest
+        @param headers: ClearFilterViewCriteriaHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ClearFilterViewCriteriaResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.column):
+            body['column'] = request.column
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ClearFilterViewCriteria',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/filterViews/{filter_view_id}/clearColumnFilterCriteria',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.ClearFilterViewCriteriaResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def clear_filter_view_criteria(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        filter_view_id: str,
+        request: dingtalkdoc__1__0_models.ClearFilterViewCriteriaRequest,
+    ) -> dingtalkdoc__1__0_models.ClearFilterViewCriteriaResponse:
+        """
+        @summary 删除筛选视图条件
+        
+        @param request: ClearFilterViewCriteriaRequest
+        @return: ClearFilterViewCriteriaResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.ClearFilterViewCriteriaHeaders()
+        return self.clear_filter_view_criteria_with_options(workbook_id, sheet_id, filter_view_id, request, headers, runtime)
+
+    async def clear_filter_view_criteria_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        filter_view_id: str,
+        request: dingtalkdoc__1__0_models.ClearFilterViewCriteriaRequest,
+    ) -> dingtalkdoc__1__0_models.ClearFilterViewCriteriaResponse:
+        """
+        @summary 删除筛选视图条件
+        
+        @param request: ClearFilterViewCriteriaRequest
+        @return: ClearFilterViewCriteriaResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.ClearFilterViewCriteriaHeaders()
+        return await self.clear_filter_view_criteria_with_options_async(workbook_id, sheet_id, filter_view_id, request, headers, runtime)
+
     def create_conditional_formatting_rule_with_options(
         self,
         workbook_id: str,
@@ -1683,6 +1947,416 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.CreateDeveloperMetadataHeaders()
         return await self.create_developer_metadata_with_options_async(workbook_id, request, headers, runtime)
+
+    def create_filter_with_options(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.CreateFilterRequest,
+        headers: dingtalkdoc__1__0_models.CreateFilterHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.CreateFilterResponse:
+        """
+        @summary 创建筛选
+        
+        @param request: CreateFilterRequest
+        @param headers: CreateFilterHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateFilterResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.criteria):
+            body['criteria'] = request.criteria
+        if not UtilClient.is_unset(request.range):
+            body['range'] = request.range
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateFilter',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/createFilter',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.CreateFilterResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_filter_with_options_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.CreateFilterRequest,
+        headers: dingtalkdoc__1__0_models.CreateFilterHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.CreateFilterResponse:
+        """
+        @summary 创建筛选
+        
+        @param request: CreateFilterRequest
+        @param headers: CreateFilterHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateFilterResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.criteria):
+            body['criteria'] = request.criteria
+        if not UtilClient.is_unset(request.range):
+            body['range'] = request.range
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateFilter',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/createFilter',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.CreateFilterResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_filter(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.CreateFilterRequest,
+    ) -> dingtalkdoc__1__0_models.CreateFilterResponse:
+        """
+        @summary 创建筛选
+        
+        @param request: CreateFilterRequest
+        @return: CreateFilterResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.CreateFilterHeaders()
+        return self.create_filter_with_options(workbook_id, sheet_id, request, headers, runtime)
+
+    async def create_filter_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.CreateFilterRequest,
+    ) -> dingtalkdoc__1__0_models.CreateFilterResponse:
+        """
+        @summary 创建筛选
+        
+        @param request: CreateFilterRequest
+        @return: CreateFilterResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.CreateFilterHeaders()
+        return await self.create_filter_with_options_async(workbook_id, sheet_id, request, headers, runtime)
+
+    def create_filter_view_with_options(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.CreateFilterViewRequest,
+        headers: dingtalkdoc__1__0_models.CreateFilterViewHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.CreateFilterViewResponse:
+        """
+        @summary 创建筛选视图
+        
+        @param request: CreateFilterViewRequest
+        @param headers: CreateFilterViewHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateFilterViewResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.criteria):
+            body['criteria'] = request.criteria
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.range):
+            body['range'] = request.range
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateFilterView',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/filterViews',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.CreateFilterViewResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_filter_view_with_options_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.CreateFilterViewRequest,
+        headers: dingtalkdoc__1__0_models.CreateFilterViewHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.CreateFilterViewResponse:
+        """
+        @summary 创建筛选视图
+        
+        @param request: CreateFilterViewRequest
+        @param headers: CreateFilterViewHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateFilterViewResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.criteria):
+            body['criteria'] = request.criteria
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.range):
+            body['range'] = request.range
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateFilterView',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/filterViews',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.CreateFilterViewResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_filter_view(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.CreateFilterViewRequest,
+    ) -> dingtalkdoc__1__0_models.CreateFilterViewResponse:
+        """
+        @summary 创建筛选视图
+        
+        @param request: CreateFilterViewRequest
+        @return: CreateFilterViewResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.CreateFilterViewHeaders()
+        return self.create_filter_view_with_options(workbook_id, sheet_id, request, headers, runtime)
+
+    async def create_filter_view_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.CreateFilterViewRequest,
+    ) -> dingtalkdoc__1__0_models.CreateFilterViewResponse:
+        """
+        @summary 创建筛选视图
+        
+        @param request: CreateFilterViewRequest
+        @return: CreateFilterViewResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.CreateFilterViewHeaders()
+        return await self.create_filter_view_with_options_async(workbook_id, sheet_id, request, headers, runtime)
+
+    def create_float_image_with_options(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.CreateFloatImageRequest,
+        headers: dingtalkdoc__1__0_models.CreateFloatImageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.CreateFloatImageResponse:
+        """
+        @summary 创建浮动图片
+        
+        @param request: CreateFloatImageRequest
+        @param headers: CreateFloatImageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateFloatImageResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.anchor):
+            body['anchor'] = request.anchor
+        if not UtilClient.is_unset(request.coordinate):
+            body['coordinate'] = request.coordinate
+        if not UtilClient.is_unset(request.src):
+            body['src'] = request.src
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateFloatImage',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/floatImages',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.CreateFloatImageResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_float_image_with_options_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.CreateFloatImageRequest,
+        headers: dingtalkdoc__1__0_models.CreateFloatImageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.CreateFloatImageResponse:
+        """
+        @summary 创建浮动图片
+        
+        @param request: CreateFloatImageRequest
+        @param headers: CreateFloatImageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateFloatImageResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.anchor):
+            body['anchor'] = request.anchor
+        if not UtilClient.is_unset(request.coordinate):
+            body['coordinate'] = request.coordinate
+        if not UtilClient.is_unset(request.src):
+            body['src'] = request.src
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateFloatImage',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/floatImages',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.CreateFloatImageResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_float_image(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.CreateFloatImageRequest,
+    ) -> dingtalkdoc__1__0_models.CreateFloatImageResponse:
+        """
+        @summary 创建浮动图片
+        
+        @param request: CreateFloatImageRequest
+        @return: CreateFloatImageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.CreateFloatImageHeaders()
+        return self.create_float_image_with_options(workbook_id, sheet_id, request, headers, runtime)
+
+    async def create_float_image_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.CreateFloatImageRequest,
+    ) -> dingtalkdoc__1__0_models.CreateFloatImageResponse:
+        """
+        @summary 创建浮动图片
+        
+        @param request: CreateFloatImageRequest
+        @return: CreateFloatImageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.CreateFloatImageHeaders()
+        return await self.create_float_image_with_options_async(workbook_id, sheet_id, request, headers, runtime)
 
     def create_range_protection_with_options(
         self,
@@ -2471,6 +3145,380 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.DeleteDropdownListsHeaders()
         return await self.delete_dropdown_lists_with_options_async(workbook_id, sheet_id, range_address, request, headers, runtime)
+
+    def delete_filter_with_options(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.DeleteFilterRequest,
+        headers: dingtalkdoc__1__0_models.DeleteFilterHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.DeleteFilterResponse:
+        """
+        @summary 删除筛选
+        
+        @param request: DeleteFilterRequest
+        @param headers: DeleteFilterHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteFilterResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DeleteFilter',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/deleteFilter',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.DeleteFilterResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def delete_filter_with_options_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.DeleteFilterRequest,
+        headers: dingtalkdoc__1__0_models.DeleteFilterHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.DeleteFilterResponse:
+        """
+        @summary 删除筛选
+        
+        @param request: DeleteFilterRequest
+        @param headers: DeleteFilterHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteFilterResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DeleteFilter',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/deleteFilter',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.DeleteFilterResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def delete_filter(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.DeleteFilterRequest,
+    ) -> dingtalkdoc__1__0_models.DeleteFilterResponse:
+        """
+        @summary 删除筛选
+        
+        @param request: DeleteFilterRequest
+        @return: DeleteFilterResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.DeleteFilterHeaders()
+        return self.delete_filter_with_options(workbook_id, sheet_id, request, headers, runtime)
+
+    async def delete_filter_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.DeleteFilterRequest,
+    ) -> dingtalkdoc__1__0_models.DeleteFilterResponse:
+        """
+        @summary 删除筛选
+        
+        @param request: DeleteFilterRequest
+        @return: DeleteFilterResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.DeleteFilterHeaders()
+        return await self.delete_filter_with_options_async(workbook_id, sheet_id, request, headers, runtime)
+
+    def delete_filter_view_with_options(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        filter_view_id: str,
+        request: dingtalkdoc__1__0_models.DeleteFilterViewRequest,
+        headers: dingtalkdoc__1__0_models.DeleteFilterViewHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.DeleteFilterViewResponse:
+        """
+        @summary 删除筛选视图
+        
+        @param request: DeleteFilterViewRequest
+        @param headers: DeleteFilterViewHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteFilterViewResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DeleteFilterView',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/filterViews/{filter_view_id}',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.DeleteFilterViewResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def delete_filter_view_with_options_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        filter_view_id: str,
+        request: dingtalkdoc__1__0_models.DeleteFilterViewRequest,
+        headers: dingtalkdoc__1__0_models.DeleteFilterViewHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.DeleteFilterViewResponse:
+        """
+        @summary 删除筛选视图
+        
+        @param request: DeleteFilterViewRequest
+        @param headers: DeleteFilterViewHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteFilterViewResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DeleteFilterView',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/filterViews/{filter_view_id}',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.DeleteFilterViewResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def delete_filter_view(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        filter_view_id: str,
+        request: dingtalkdoc__1__0_models.DeleteFilterViewRequest,
+    ) -> dingtalkdoc__1__0_models.DeleteFilterViewResponse:
+        """
+        @summary 删除筛选视图
+        
+        @param request: DeleteFilterViewRequest
+        @return: DeleteFilterViewResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.DeleteFilterViewHeaders()
+        return self.delete_filter_view_with_options(workbook_id, sheet_id, filter_view_id, request, headers, runtime)
+
+    async def delete_filter_view_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        filter_view_id: str,
+        request: dingtalkdoc__1__0_models.DeleteFilterViewRequest,
+    ) -> dingtalkdoc__1__0_models.DeleteFilterViewResponse:
+        """
+        @summary 删除筛选视图
+        
+        @param request: DeleteFilterViewRequest
+        @return: DeleteFilterViewResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.DeleteFilterViewHeaders()
+        return await self.delete_filter_view_with_options_async(workbook_id, sheet_id, filter_view_id, request, headers, runtime)
+
+    def delete_float_image_with_options(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        id: str,
+        request: dingtalkdoc__1__0_models.DeleteFloatImageRequest,
+        headers: dingtalkdoc__1__0_models.DeleteFloatImageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.DeleteFloatImageResponse:
+        """
+        @summary 删除浮动图片
+        
+        @param request: DeleteFloatImageRequest
+        @param headers: DeleteFloatImageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteFloatImageResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DeleteFloatImage',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/floatImages/{id}',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.DeleteFloatImageResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def delete_float_image_with_options_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        id: str,
+        request: dingtalkdoc__1__0_models.DeleteFloatImageRequest,
+        headers: dingtalkdoc__1__0_models.DeleteFloatImageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.DeleteFloatImageResponse:
+        """
+        @summary 删除浮动图片
+        
+        @param request: DeleteFloatImageRequest
+        @param headers: DeleteFloatImageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteFloatImageResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DeleteFloatImage',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/floatImages/{id}',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.DeleteFloatImageResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def delete_float_image(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        id: str,
+        request: dingtalkdoc__1__0_models.DeleteFloatImageRequest,
+    ) -> dingtalkdoc__1__0_models.DeleteFloatImageResponse:
+        """
+        @summary 删除浮动图片
+        
+        @param request: DeleteFloatImageRequest
+        @return: DeleteFloatImageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.DeleteFloatImageHeaders()
+        return self.delete_float_image_with_options(workbook_id, sheet_id, id, request, headers, runtime)
+
+    async def delete_float_image_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        id: str,
+        request: dingtalkdoc__1__0_models.DeleteFloatImageRequest,
+    ) -> dingtalkdoc__1__0_models.DeleteFloatImageResponse:
+        """
+        @summary 删除浮动图片
+        
+        @param request: DeleteFloatImageRequest
+        @return: DeleteFloatImageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.DeleteFloatImageHeaders()
+        return await self.delete_float_image_with_options_async(workbook_id, sheet_id, id, request, headers, runtime)
 
     def delete_range_protection_with_options(
         self,
@@ -5299,6 +6347,498 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.GetDeveloperMetadataHeaders()
         return await self.get_developer_metadata_with_options_async(workbook_id, developer_metadata_id, request, headers, runtime)
+
+    def get_filter_with_options(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.GetFilterRequest,
+        headers: dingtalkdoc__1__0_models.GetFilterHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.GetFilterResponse:
+        """
+        @summary 获取筛选
+        
+        @param request: GetFilterRequest
+        @param headers: GetFilterHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFilterResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetFilter',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/filter/getFilter',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.GetFilterResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_filter_with_options_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.GetFilterRequest,
+        headers: dingtalkdoc__1__0_models.GetFilterHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.GetFilterResponse:
+        """
+        @summary 获取筛选
+        
+        @param request: GetFilterRequest
+        @param headers: GetFilterHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFilterResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetFilter',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/filter/getFilter',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.GetFilterResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_filter(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.GetFilterRequest,
+    ) -> dingtalkdoc__1__0_models.GetFilterResponse:
+        """
+        @summary 获取筛选
+        
+        @param request: GetFilterRequest
+        @return: GetFilterResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.GetFilterHeaders()
+        return self.get_filter_with_options(workbook_id, sheet_id, request, headers, runtime)
+
+    async def get_filter_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.GetFilterRequest,
+    ) -> dingtalkdoc__1__0_models.GetFilterResponse:
+        """
+        @summary 获取筛选
+        
+        @param request: GetFilterRequest
+        @return: GetFilterResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.GetFilterHeaders()
+        return await self.get_filter_with_options_async(workbook_id, sheet_id, request, headers, runtime)
+
+    def get_filter_views_with_options(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.GetFilterViewsRequest,
+        headers: dingtalkdoc__1__0_models.GetFilterViewsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.GetFilterViewsResponse:
+        """
+        @summary 获取筛选视图列表
+        
+        @param request: GetFilterViewsRequest
+        @param headers: GetFilterViewsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFilterViewsResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetFilterViews',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/filterViews',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.GetFilterViewsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_filter_views_with_options_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.GetFilterViewsRequest,
+        headers: dingtalkdoc__1__0_models.GetFilterViewsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.GetFilterViewsResponse:
+        """
+        @summary 获取筛选视图列表
+        
+        @param request: GetFilterViewsRequest
+        @param headers: GetFilterViewsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFilterViewsResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetFilterViews',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/filterViews',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.GetFilterViewsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_filter_views(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.GetFilterViewsRequest,
+    ) -> dingtalkdoc__1__0_models.GetFilterViewsResponse:
+        """
+        @summary 获取筛选视图列表
+        
+        @param request: GetFilterViewsRequest
+        @return: GetFilterViewsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.GetFilterViewsHeaders()
+        return self.get_filter_views_with_options(workbook_id, sheet_id, request, headers, runtime)
+
+    async def get_filter_views_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.GetFilterViewsRequest,
+    ) -> dingtalkdoc__1__0_models.GetFilterViewsResponse:
+        """
+        @summary 获取筛选视图列表
+        
+        @param request: GetFilterViewsRequest
+        @return: GetFilterViewsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.GetFilterViewsHeaders()
+        return await self.get_filter_views_with_options_async(workbook_id, sheet_id, request, headers, runtime)
+
+    def get_float_image_with_options(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        id: str,
+        request: dingtalkdoc__1__0_models.GetFloatImageRequest,
+        headers: dingtalkdoc__1__0_models.GetFloatImageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.GetFloatImageResponse:
+        """
+        @summary 获取浮动图片
+        
+        @param request: GetFloatImageRequest
+        @param headers: GetFloatImageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFloatImageResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetFloatImage',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/floatImages/{id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.GetFloatImageResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_float_image_with_options_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        id: str,
+        request: dingtalkdoc__1__0_models.GetFloatImageRequest,
+        headers: dingtalkdoc__1__0_models.GetFloatImageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.GetFloatImageResponse:
+        """
+        @summary 获取浮动图片
+        
+        @param request: GetFloatImageRequest
+        @param headers: GetFloatImageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFloatImageResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetFloatImage',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/floatImages/{id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.GetFloatImageResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_float_image(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        id: str,
+        request: dingtalkdoc__1__0_models.GetFloatImageRequest,
+    ) -> dingtalkdoc__1__0_models.GetFloatImageResponse:
+        """
+        @summary 获取浮动图片
+        
+        @param request: GetFloatImageRequest
+        @return: GetFloatImageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.GetFloatImageHeaders()
+        return self.get_float_image_with_options(workbook_id, sheet_id, id, request, headers, runtime)
+
+    async def get_float_image_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        id: str,
+        request: dingtalkdoc__1__0_models.GetFloatImageRequest,
+    ) -> dingtalkdoc__1__0_models.GetFloatImageResponse:
+        """
+        @summary 获取浮动图片
+        
+        @param request: GetFloatImageRequest
+        @return: GetFloatImageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.GetFloatImageHeaders()
+        return await self.get_float_image_with_options_async(workbook_id, sheet_id, id, request, headers, runtime)
+
+    def get_float_images_with_options(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.GetFloatImagesRequest,
+        headers: dingtalkdoc__1__0_models.GetFloatImagesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.GetFloatImagesResponse:
+        """
+        @summary 查询浮动图片
+        
+        @param request: GetFloatImagesRequest
+        @param headers: GetFloatImagesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFloatImagesResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetFloatImages',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/floatImages',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.GetFloatImagesResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_float_images_with_options_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.GetFloatImagesRequest,
+        headers: dingtalkdoc__1__0_models.GetFloatImagesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.GetFloatImagesResponse:
+        """
+        @summary 查询浮动图片
+        
+        @param request: GetFloatImagesRequest
+        @param headers: GetFloatImagesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFloatImagesResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetFloatImages',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/floatImages',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.GetFloatImagesResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_float_images(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.GetFloatImagesRequest,
+    ) -> dingtalkdoc__1__0_models.GetFloatImagesResponse:
+        """
+        @summary 查询浮动图片
+        
+        @param request: GetFloatImagesRequest
+        @return: GetFloatImagesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.GetFloatImagesHeaders()
+        return self.get_float_images_with_options(workbook_id, sheet_id, request, headers, runtime)
+
+    async def get_float_images_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.GetFloatImagesRequest,
+    ) -> dingtalkdoc__1__0_models.GetFloatImagesResponse:
+        """
+        @summary 查询浮动图片
+        
+        @param request: GetFloatImagesRequest
+        @return: GetFloatImagesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.GetFloatImagesHeaders()
+        return await self.get_float_images_with_options_async(workbook_id, sheet_id, request, headers, runtime)
 
     def get_import_document_mark_with_options(
         self,
@@ -8650,6 +10190,278 @@ class Client(OpenApiClient):
         headers = dingtalkdoc__1__0_models.SetColumnsWidthHeaders()
         return await self.set_columns_width_with_options_async(workbook_id, sheet_id, request, headers, runtime)
 
+    def set_filter_criteria_with_options(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.SetFilterCriteriaRequest,
+        headers: dingtalkdoc__1__0_models.SetFilterCriteriaHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.SetFilterCriteriaResponse:
+        """
+        @summary 设置筛选条件
+        
+        @param request: SetFilterCriteriaRequest
+        @param headers: SetFilterCriteriaHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SetFilterCriteriaResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.column):
+            body['column'] = request.column
+        if not UtilClient.is_unset(request.filter_criteria):
+            body['filterCriteria'] = request.filter_criteria
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SetFilterCriteria',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/filter/setColumnFilterCriteria',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.SetFilterCriteriaResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def set_filter_criteria_with_options_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.SetFilterCriteriaRequest,
+        headers: dingtalkdoc__1__0_models.SetFilterCriteriaHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.SetFilterCriteriaResponse:
+        """
+        @summary 设置筛选条件
+        
+        @param request: SetFilterCriteriaRequest
+        @param headers: SetFilterCriteriaHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SetFilterCriteriaResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.column):
+            body['column'] = request.column
+        if not UtilClient.is_unset(request.filter_criteria):
+            body['filterCriteria'] = request.filter_criteria
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SetFilterCriteria',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/filter/setColumnFilterCriteria',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.SetFilterCriteriaResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def set_filter_criteria(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.SetFilterCriteriaRequest,
+    ) -> dingtalkdoc__1__0_models.SetFilterCriteriaResponse:
+        """
+        @summary 设置筛选条件
+        
+        @param request: SetFilterCriteriaRequest
+        @return: SetFilterCriteriaResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.SetFilterCriteriaHeaders()
+        return self.set_filter_criteria_with_options(workbook_id, sheet_id, request, headers, runtime)
+
+    async def set_filter_criteria_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.SetFilterCriteriaRequest,
+    ) -> dingtalkdoc__1__0_models.SetFilterCriteriaResponse:
+        """
+        @summary 设置筛选条件
+        
+        @param request: SetFilterCriteriaRequest
+        @return: SetFilterCriteriaResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.SetFilterCriteriaHeaders()
+        return await self.set_filter_criteria_with_options_async(workbook_id, sheet_id, request, headers, runtime)
+
+    def set_filter_view_criteria_with_options(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        filter_view_id: str,
+        request: dingtalkdoc__1__0_models.SetFilterViewCriteriaRequest,
+        headers: dingtalkdoc__1__0_models.SetFilterViewCriteriaHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.SetFilterViewCriteriaResponse:
+        """
+        @summary 设置筛选视图条件
+        
+        @param request: SetFilterViewCriteriaRequest
+        @param headers: SetFilterViewCriteriaHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SetFilterViewCriteriaResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.column):
+            body['column'] = request.column
+        if not UtilClient.is_unset(request.filter_criteria):
+            body['filterCriteria'] = request.filter_criteria
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SetFilterViewCriteria',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/filterViews/{filter_view_id}/setColumnFilterCriteria',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.SetFilterViewCriteriaResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def set_filter_view_criteria_with_options_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        filter_view_id: str,
+        request: dingtalkdoc__1__0_models.SetFilterViewCriteriaRequest,
+        headers: dingtalkdoc__1__0_models.SetFilterViewCriteriaHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.SetFilterViewCriteriaResponse:
+        """
+        @summary 设置筛选视图条件
+        
+        @param request: SetFilterViewCriteriaRequest
+        @param headers: SetFilterViewCriteriaHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SetFilterViewCriteriaResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.column):
+            body['column'] = request.column
+        if not UtilClient.is_unset(request.filter_criteria):
+            body['filterCriteria'] = request.filter_criteria
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SetFilterViewCriteria',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/filterViews/{filter_view_id}/setColumnFilterCriteria',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.SetFilterViewCriteriaResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def set_filter_view_criteria(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        filter_view_id: str,
+        request: dingtalkdoc__1__0_models.SetFilterViewCriteriaRequest,
+    ) -> dingtalkdoc__1__0_models.SetFilterViewCriteriaResponse:
+        """
+        @summary 设置筛选视图条件
+        
+        @param request: SetFilterViewCriteriaRequest
+        @return: SetFilterViewCriteriaResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.SetFilterViewCriteriaHeaders()
+        return self.set_filter_view_criteria_with_options(workbook_id, sheet_id, filter_view_id, request, headers, runtime)
+
+    async def set_filter_view_criteria_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        filter_view_id: str,
+        request: dingtalkdoc__1__0_models.SetFilterViewCriteriaRequest,
+    ) -> dingtalkdoc__1__0_models.SetFilterViewCriteriaResponse:
+        """
+        @summary 设置筛选视图条件
+        
+        @param request: SetFilterViewCriteriaRequest
+        @return: SetFilterViewCriteriaResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.SetFilterViewCriteriaHeaders()
+        return await self.set_filter_view_criteria_with_options_async(workbook_id, sheet_id, filter_view_id, request, headers, runtime)
+
     def set_row_height_with_options(
         self,
         workbook_id: str,
@@ -9340,6 +11152,136 @@ class Client(OpenApiClient):
         headers = dingtalkdoc__1__0_models.SheetFindAllHeaders()
         return await self.sheet_find_all_with_options_async(workbook_id, sheet_id, request, headers, runtime)
 
+    def sort_filter_with_options(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.SortFilterRequest,
+        headers: dingtalkdoc__1__0_models.SortFilterHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.SortFilterResponse:
+        """
+        @summary 筛选排序
+        
+        @param request: SortFilterRequest
+        @param headers: SortFilterHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SortFilterResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.field):
+            body['field'] = request.field
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SortFilter',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/filter/sort',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.SortFilterResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def sort_filter_with_options_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.SortFilterRequest,
+        headers: dingtalkdoc__1__0_models.SortFilterHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.SortFilterResponse:
+        """
+        @summary 筛选排序
+        
+        @param request: SortFilterRequest
+        @param headers: SortFilterHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SortFilterResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.field):
+            body['field'] = request.field
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SortFilter',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/filter/sort',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.SortFilterResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def sort_filter(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.SortFilterRequest,
+    ) -> dingtalkdoc__1__0_models.SortFilterResponse:
+        """
+        @summary 筛选排序
+        
+        @param request: SortFilterRequest
+        @return: SortFilterResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.SortFilterHeaders()
+        return self.sort_filter_with_options(workbook_id, sheet_id, request, headers, runtime)
+
+    async def sort_filter_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.SortFilterRequest,
+    ) -> dingtalkdoc__1__0_models.SortFilterResponse:
+        """
+        @summary 筛选排序
+        
+        @param request: SortFilterRequest
+        @return: SortFilterResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.SortFilterHeaders()
+        return await self.sort_filter_with_options_async(workbook_id, sheet_id, request, headers, runtime)
+
     def unbind_cool_app_to_sheet_with_options(
         self,
         workbook_id: str,
@@ -9461,6 +11403,420 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.UnbindCoolAppToSheetHeaders()
         return await self.unbind_cool_app_to_sheet_with_options_async(workbook_id, request, headers, runtime)
+
+    def update_filter_with_options(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.UpdateFilterRequest,
+        headers: dingtalkdoc__1__0_models.UpdateFilterHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.UpdateFilterResponse:
+        """
+        @summary 更新筛选
+        
+        @param request: UpdateFilterRequest
+        @param headers: UpdateFilterHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateFilterResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.criteria):
+            body['criteria'] = request.criteria
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateFilter',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/filter/updateFilter',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.UpdateFilterResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_filter_with_options_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.UpdateFilterRequest,
+        headers: dingtalkdoc__1__0_models.UpdateFilterHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.UpdateFilterResponse:
+        """
+        @summary 更新筛选
+        
+        @param request: UpdateFilterRequest
+        @param headers: UpdateFilterHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateFilterResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.criteria):
+            body['criteria'] = request.criteria
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateFilter',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/filter/updateFilter',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.UpdateFilterResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_filter(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.UpdateFilterRequest,
+    ) -> dingtalkdoc__1__0_models.UpdateFilterResponse:
+        """
+        @summary 更新筛选
+        
+        @param request: UpdateFilterRequest
+        @return: UpdateFilterResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.UpdateFilterHeaders()
+        return self.update_filter_with_options(workbook_id, sheet_id, request, headers, runtime)
+
+    async def update_filter_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        request: dingtalkdoc__1__0_models.UpdateFilterRequest,
+    ) -> dingtalkdoc__1__0_models.UpdateFilterResponse:
+        """
+        @summary 更新筛选
+        
+        @param request: UpdateFilterRequest
+        @return: UpdateFilterResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.UpdateFilterHeaders()
+        return await self.update_filter_with_options_async(workbook_id, sheet_id, request, headers, runtime)
+
+    def update_filter_view_with_options(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        filter_view_id: str,
+        request: dingtalkdoc__1__0_models.UpdateFilterViewRequest,
+        headers: dingtalkdoc__1__0_models.UpdateFilterViewHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.UpdateFilterViewResponse:
+        """
+        @summary 更新筛选视图
+        
+        @param request: UpdateFilterViewRequest
+        @param headers: UpdateFilterViewHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateFilterViewResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.criteria):
+            body['criteria'] = request.criteria
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.range):
+            body['range'] = request.range
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateFilterView',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/filterViews/{filter_view_id}',
+            method='PATCH',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.UpdateFilterViewResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_filter_view_with_options_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        filter_view_id: str,
+        request: dingtalkdoc__1__0_models.UpdateFilterViewRequest,
+        headers: dingtalkdoc__1__0_models.UpdateFilterViewHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.UpdateFilterViewResponse:
+        """
+        @summary 更新筛选视图
+        
+        @param request: UpdateFilterViewRequest
+        @param headers: UpdateFilterViewHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateFilterViewResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.criteria):
+            body['criteria'] = request.criteria
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.range):
+            body['range'] = request.range
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateFilterView',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/filterViews/{filter_view_id}',
+            method='PATCH',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.UpdateFilterViewResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_filter_view(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        filter_view_id: str,
+        request: dingtalkdoc__1__0_models.UpdateFilterViewRequest,
+    ) -> dingtalkdoc__1__0_models.UpdateFilterViewResponse:
+        """
+        @summary 更新筛选视图
+        
+        @param request: UpdateFilterViewRequest
+        @return: UpdateFilterViewResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.UpdateFilterViewHeaders()
+        return self.update_filter_view_with_options(workbook_id, sheet_id, filter_view_id, request, headers, runtime)
+
+    async def update_filter_view_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        filter_view_id: str,
+        request: dingtalkdoc__1__0_models.UpdateFilterViewRequest,
+    ) -> dingtalkdoc__1__0_models.UpdateFilterViewResponse:
+        """
+        @summary 更新筛选视图
+        
+        @param request: UpdateFilterViewRequest
+        @return: UpdateFilterViewResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.UpdateFilterViewHeaders()
+        return await self.update_filter_view_with_options_async(workbook_id, sheet_id, filter_view_id, request, headers, runtime)
+
+    def update_float_image_with_options(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        id: str,
+        request: dingtalkdoc__1__0_models.UpdateFloatImageRequest,
+        headers: dingtalkdoc__1__0_models.UpdateFloatImageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.UpdateFloatImageResponse:
+        """
+        @summary 更新浮动图片
+        
+        @param request: UpdateFloatImageRequest
+        @param headers: UpdateFloatImageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateFloatImageResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.anchor):
+            body['anchor'] = request.anchor
+        if not UtilClient.is_unset(request.coordinate):
+            body['coordinate'] = request.coordinate
+        if not UtilClient.is_unset(request.src):
+            body['src'] = request.src
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateFloatImage',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/floatImages/{id}',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.UpdateFloatImageResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_float_image_with_options_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        id: str,
+        request: dingtalkdoc__1__0_models.UpdateFloatImageRequest,
+        headers: dingtalkdoc__1__0_models.UpdateFloatImageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.UpdateFloatImageResponse:
+        """
+        @summary 更新浮动图片
+        
+        @param request: UpdateFloatImageRequest
+        @param headers: UpdateFloatImageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateFloatImageResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.anchor):
+            body['anchor'] = request.anchor
+        if not UtilClient.is_unset(request.coordinate):
+            body['coordinate'] = request.coordinate
+        if not UtilClient.is_unset(request.src):
+            body['src'] = request.src
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateFloatImage',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/floatImages/{id}',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.UpdateFloatImageResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_float_image(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        id: str,
+        request: dingtalkdoc__1__0_models.UpdateFloatImageRequest,
+    ) -> dingtalkdoc__1__0_models.UpdateFloatImageResponse:
+        """
+        @summary 更新浮动图片
+        
+        @param request: UpdateFloatImageRequest
+        @return: UpdateFloatImageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.UpdateFloatImageHeaders()
+        return self.update_float_image_with_options(workbook_id, sheet_id, id, request, headers, runtime)
+
+    async def update_float_image_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        id: str,
+        request: dingtalkdoc__1__0_models.UpdateFloatImageRequest,
+    ) -> dingtalkdoc__1__0_models.UpdateFloatImageResponse:
+        """
+        @summary 更新浮动图片
+        
+        @param request: UpdateFloatImageRequest
+        @return: UpdateFloatImageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.UpdateFloatImageHeaders()
+        return await self.update_float_image_with_options_async(workbook_id, sheet_id, id, request, headers, runtime)
 
     def update_range_with_options(
         self,

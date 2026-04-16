@@ -2726,6 +2726,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.ding_team_id):
             query['dingTeamId'] = request.ding_team_id
+        if not UtilClient.is_unset(request.selected_time):
+            query['selectedTime'] = request.selected_time
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2769,6 +2771,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.ding_team_id):
             query['dingTeamId'] = request.ding_team_id
+        if not UtilClient.is_unset(request.selected_time):
+            query['selectedTime'] = request.selected_time
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

@@ -764,8 +764,6 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.action_type):
             body['actionType'] = request.action_type
-        if not UtilClient.is_unset(request.operator_user_id):
-            body['operatorUserId'] = request.operator_user_id
         if not UtilClient.is_unset(request.send_notification):
             body['sendNotification'] = request.send_notification
         if not UtilClient.is_unset(request.token):
@@ -813,8 +811,6 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.action_type):
             body['actionType'] = request.action_type
-        if not UtilClient.is_unset(request.operator_user_id):
-            body['operatorUserId'] = request.operator_user_id
         if not UtilClient.is_unset(request.send_notification):
             body['sendNotification'] = request.send_notification
         if not UtilClient.is_unset(request.token):

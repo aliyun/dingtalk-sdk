@@ -294,6 +294,234 @@ class Client(OpenApiClient):
         headers = dingtalkminutes__1__0_models.BatchGetMinutesDetailsHeaders()
         return await self.batch_get_minutes_details_with_options_async(request, headers, runtime)
 
+    def batch_get_voice_print_identify_config_with_options(
+        self,
+        request: dingtalkminutes__1__0_models.BatchGetVoicePrintIdentifyConfigRequest,
+        headers: dingtalkminutes__1__0_models.BatchGetVoicePrintIdentifyConfigHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkminutes__1__0_models.BatchGetVoicePrintIdentifyConfigResponse:
+        """
+        @summary 批量查询声纹配置信息
+        
+        @param request: BatchGetVoicePrintIdentifyConfigRequest
+        @param headers: BatchGetVoicePrintIdentifyConfigHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchGetVoicePrintIdentifyConfigResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.items):
+            body['items'] = request.items
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='BatchGetVoicePrintIdentifyConfig',
+            version='minutes_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/minutes/voicePrint/configs/batchGet',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkminutes__1__0_models.BatchGetVoicePrintIdentifyConfigResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def batch_get_voice_print_identify_config_with_options_async(
+        self,
+        request: dingtalkminutes__1__0_models.BatchGetVoicePrintIdentifyConfigRequest,
+        headers: dingtalkminutes__1__0_models.BatchGetVoicePrintIdentifyConfigHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkminutes__1__0_models.BatchGetVoicePrintIdentifyConfigResponse:
+        """
+        @summary 批量查询声纹配置信息
+        
+        @param request: BatchGetVoicePrintIdentifyConfigRequest
+        @param headers: BatchGetVoicePrintIdentifyConfigHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchGetVoicePrintIdentifyConfigResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.items):
+            body['items'] = request.items
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='BatchGetVoicePrintIdentifyConfig',
+            version='minutes_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/minutes/voicePrint/configs/batchGet',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkminutes__1__0_models.BatchGetVoicePrintIdentifyConfigResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def batch_get_voice_print_identify_config(
+        self,
+        request: dingtalkminutes__1__0_models.BatchGetVoicePrintIdentifyConfigRequest,
+    ) -> dingtalkminutes__1__0_models.BatchGetVoicePrintIdentifyConfigResponse:
+        """
+        @summary 批量查询声纹配置信息
+        
+        @param request: BatchGetVoicePrintIdentifyConfigRequest
+        @return: BatchGetVoicePrintIdentifyConfigResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkminutes__1__0_models.BatchGetVoicePrintIdentifyConfigHeaders()
+        return self.batch_get_voice_print_identify_config_with_options(request, headers, runtime)
+
+    async def batch_get_voice_print_identify_config_async(
+        self,
+        request: dingtalkminutes__1__0_models.BatchGetVoicePrintIdentifyConfigRequest,
+    ) -> dingtalkminutes__1__0_models.BatchGetVoicePrintIdentifyConfigResponse:
+        """
+        @summary 批量查询声纹配置信息
+        
+        @param request: BatchGetVoicePrintIdentifyConfigRequest
+        @return: BatchGetVoicePrintIdentifyConfigResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkminutes__1__0_models.BatchGetVoicePrintIdentifyConfigHeaders()
+        return await self.batch_get_voice_print_identify_config_with_options_async(request, headers, runtime)
+
+    def batch_toggle_voice_print_switch_status_with_options(
+        self,
+        request: dingtalkminutes__1__0_models.BatchToggleVoicePrintSwitchStatusRequest,
+        headers: dingtalkminutes__1__0_models.BatchToggleVoicePrintSwitchStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkminutes__1__0_models.BatchToggleVoicePrintSwitchStatusResponse:
+        """
+        @summary 批量设置声纹开关状态
+        
+        @param request: BatchToggleVoicePrintSwitchStatusRequest
+        @param headers: BatchToggleVoicePrintSwitchStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchToggleVoicePrintSwitchStatusResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.items):
+            body['items'] = request.items
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='BatchToggleVoicePrintSwitchStatus',
+            version='minutes_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/minutes/voicePrint/switches/batchToggle',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkminutes__1__0_models.BatchToggleVoicePrintSwitchStatusResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def batch_toggle_voice_print_switch_status_with_options_async(
+        self,
+        request: dingtalkminutes__1__0_models.BatchToggleVoicePrintSwitchStatusRequest,
+        headers: dingtalkminutes__1__0_models.BatchToggleVoicePrintSwitchStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkminutes__1__0_models.BatchToggleVoicePrintSwitchStatusResponse:
+        """
+        @summary 批量设置声纹开关状态
+        
+        @param request: BatchToggleVoicePrintSwitchStatusRequest
+        @param headers: BatchToggleVoicePrintSwitchStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchToggleVoicePrintSwitchStatusResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.items):
+            body['items'] = request.items
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='BatchToggleVoicePrintSwitchStatus',
+            version='minutes_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/minutes/voicePrint/switches/batchToggle',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkminutes__1__0_models.BatchToggleVoicePrintSwitchStatusResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def batch_toggle_voice_print_switch_status(
+        self,
+        request: dingtalkminutes__1__0_models.BatchToggleVoicePrintSwitchStatusRequest,
+    ) -> dingtalkminutes__1__0_models.BatchToggleVoicePrintSwitchStatusResponse:
+        """
+        @summary 批量设置声纹开关状态
+        
+        @param request: BatchToggleVoicePrintSwitchStatusRequest
+        @return: BatchToggleVoicePrintSwitchStatusResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkminutes__1__0_models.BatchToggleVoicePrintSwitchStatusHeaders()
+        return self.batch_toggle_voice_print_switch_status_with_options(request, headers, runtime)
+
+    async def batch_toggle_voice_print_switch_status_async(
+        self,
+        request: dingtalkminutes__1__0_models.BatchToggleVoicePrintSwitchStatusRequest,
+    ) -> dingtalkminutes__1__0_models.BatchToggleVoicePrintSwitchStatusResponse:
+        """
+        @summary 批量设置声纹开关状态
+        
+        @param request: BatchToggleVoicePrintSwitchStatusRequest
+        @return: BatchToggleVoicePrintSwitchStatusResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkminutes__1__0_models.BatchToggleVoicePrintSwitchStatusHeaders()
+        return await self.batch_toggle_voice_print_switch_status_with_options_async(request, headers, runtime)
+
     def create_minutes_by_upload_file_with_options(
         self,
         request: dingtalkminutes__1__0_models.CreateMinutesByUploadFileRequest,

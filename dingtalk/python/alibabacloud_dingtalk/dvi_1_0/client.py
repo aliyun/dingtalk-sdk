@@ -2776,6 +2776,120 @@ class Client(OpenApiClient):
         headers = dingtalkdvi__1__0_models.QueryDeviceStatusHeaders()
         return await self.query_device_status_with_options_async(request, headers, runtime)
 
+    def query_file_info_by_minutes_id_with_options(
+        self,
+        request: dingtalkdvi__1__0_models.QueryFileInfoByMinutesIdRequest,
+        headers: dingtalkdvi__1__0_models.QueryFileInfoByMinutesIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.QueryFileInfoByMinutesIdResponse:
+        """
+        @summary 根据听记ID获取A1音频文件信息
+        
+        @param request: QueryFileInfoByMinutesIdRequest
+        @param headers: QueryFileInfoByMinutesIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryFileInfoByMinutesIdResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.minutes_id):
+            query['minutesId'] = request.minutes_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryFileInfoByMinutesId',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/audios/minutes',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.QueryFileInfoByMinutesIdResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_file_info_by_minutes_id_with_options_async(
+        self,
+        request: dingtalkdvi__1__0_models.QueryFileInfoByMinutesIdRequest,
+        headers: dingtalkdvi__1__0_models.QueryFileInfoByMinutesIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.QueryFileInfoByMinutesIdResponse:
+        """
+        @summary 根据听记ID获取A1音频文件信息
+        
+        @param request: QueryFileInfoByMinutesIdRequest
+        @param headers: QueryFileInfoByMinutesIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryFileInfoByMinutesIdResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.minutes_id):
+            query['minutesId'] = request.minutes_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryFileInfoByMinutesId',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/audios/minutes',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.QueryFileInfoByMinutesIdResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_file_info_by_minutes_id(
+        self,
+        request: dingtalkdvi__1__0_models.QueryFileInfoByMinutesIdRequest,
+    ) -> dingtalkdvi__1__0_models.QueryFileInfoByMinutesIdResponse:
+        """
+        @summary 根据听记ID获取A1音频文件信息
+        
+        @param request: QueryFileInfoByMinutesIdRequest
+        @return: QueryFileInfoByMinutesIdResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.QueryFileInfoByMinutesIdHeaders()
+        return self.query_file_info_by_minutes_id_with_options(request, headers, runtime)
+
+    async def query_file_info_by_minutes_id_async(
+        self,
+        request: dingtalkdvi__1__0_models.QueryFileInfoByMinutesIdRequest,
+    ) -> dingtalkdvi__1__0_models.QueryFileInfoByMinutesIdResponse:
+        """
+        @summary 根据听记ID获取A1音频文件信息
+        
+        @param request: QueryFileInfoByMinutesIdRequest
+        @return: QueryFileInfoByMinutesIdResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.QueryFileInfoByMinutesIdHeaders()
+        return await self.query_file_info_by_minutes_id_with_options_async(request, headers, runtime)
+
     def submit_asr_task_with_options(
         self,
         request: dingtalkdvi__1__0_models.SubmitAsrTaskRequest,

@@ -1,7 +1,203 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.model import TeaModel
-from typing import Dict, List, Any
+from typing import List, Dict, Any
+
+
+class CriteriaValueConditions(TeaModel):
+    def __init__(
+        self,
+        operator: str = None,
+        value: str = None,
+    ):
+        self.operator = operator
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operator is not None:
+            result['operator'] = self.operator
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operator') is not None:
+            self.operator = m.get('operator')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class CriteriaValue(TeaModel):
+    def __init__(
+        self,
+        filter_type: str = None,
+        visible_values: List[str] = None,
+        conditions: List[CriteriaValueConditions] = None,
+        condition_operator: str = None,
+        background_color: str = None,
+        font_color: str = None,
+    ):
+        self.filter_type = filter_type
+        self.visible_values = visible_values
+        self.conditions = conditions
+        self.condition_operator = condition_operator
+        self.background_color = background_color
+        self.font_color = font_color
+
+    def validate(self):
+        if self.conditions:
+            for k in self.conditions:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.filter_type is not None:
+            result['filterType'] = self.filter_type
+        if self.visible_values is not None:
+            result['visibleValues'] = self.visible_values
+        result['conditions'] = []
+        if self.conditions is not None:
+            for k in self.conditions:
+                result['conditions'].append(k.to_map() if k else None)
+        if self.condition_operator is not None:
+            result['conditionOperator'] = self.condition_operator
+        if self.background_color is not None:
+            result['backgroundColor'] = self.background_color
+        if self.font_color is not None:
+            result['fontColor'] = self.font_color
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('filterType') is not None:
+            self.filter_type = m.get('filterType')
+        if m.get('visibleValues') is not None:
+            self.visible_values = m.get('visibleValues')
+        self.conditions = []
+        if m.get('conditions') is not None:
+            for k in m.get('conditions'):
+                temp_model = CriteriaValueConditions()
+                self.conditions.append(temp_model.from_map(k))
+        if m.get('conditionOperator') is not None:
+            self.condition_operator = m.get('conditionOperator')
+        if m.get('backgroundColor') is not None:
+            self.background_color = m.get('backgroundColor')
+        if m.get('fontColor') is not None:
+            self.font_color = m.get('fontColor')
+        return self
+
+
+class FilterViewsCriteriaValueConditions(TeaModel):
+    def __init__(
+        self,
+        operator: str = None,
+        value: str = None,
+    ):
+        self.operator = operator
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operator is not None:
+            result['operator'] = self.operator
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operator') is not None:
+            self.operator = m.get('operator')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class FilterViewsCriteriaValue(TeaModel):
+    def __init__(
+        self,
+        filter_type: str = None,
+        visible_values: List[str] = None,
+        conditions: List[FilterViewsCriteriaValueConditions] = None,
+        condition_operator: str = None,
+        background_color: str = None,
+        font_color: str = None,
+    ):
+        self.filter_type = filter_type
+        self.visible_values = visible_values
+        self.conditions = conditions
+        self.condition_operator = condition_operator
+        self.background_color = background_color
+        self.font_color = font_color
+
+    def validate(self):
+        if self.conditions:
+            for k in self.conditions:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.filter_type is not None:
+            result['filterType'] = self.filter_type
+        if self.visible_values is not None:
+            result['visibleValues'] = self.visible_values
+        result['conditions'] = []
+        if self.conditions is not None:
+            for k in self.conditions:
+                result['conditions'].append(k.to_map() if k else None)
+        if self.condition_operator is not None:
+            result['conditionOperator'] = self.condition_operator
+        if self.background_color is not None:
+            result['backgroundColor'] = self.background_color
+        if self.font_color is not None:
+            result['fontColor'] = self.font_color
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('filterType') is not None:
+            self.filter_type = m.get('filterType')
+        if m.get('visibleValues') is not None:
+            self.visible_values = m.get('visibleValues')
+        self.conditions = []
+        if m.get('conditions') is not None:
+            for k in m.get('conditions'):
+                temp_model = FilterViewsCriteriaValueConditions()
+                self.conditions.append(temp_model.from_map(k))
+        if m.get('conditionOperator') is not None:
+            self.condition_operator = m.get('conditionOperator')
+        if m.get('backgroundColor') is not None:
+            self.background_color = m.get('backgroundColor')
+        if m.get('fontColor') is not None:
+            self.font_color = m.get('fontColor')
+        return self
 
 
 class AttachmentsMapValue(TeaModel):
@@ -2067,6 +2263,278 @@ class ClearDataResponse(TeaModel):
         return self
 
 
+class ClearFilterCriteriaHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ClearFilterCriteriaRequest(TeaModel):
+    def __init__(
+        self,
+        column: int = None,
+        operator_id: str = None,
+    ):
+        # This parameter is required.
+        self.column = column
+        # This parameter is required.
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.column is not None:
+            result['column'] = self.column
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('column') is not None:
+            self.column = m.get('column')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class ClearFilterCriteriaResponseBody(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+    ):
+        self.id = id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        return self
+
+
+class ClearFilterCriteriaResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ClearFilterCriteriaResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ClearFilterCriteriaResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ClearFilterViewCriteriaHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ClearFilterViewCriteriaRequest(TeaModel):
+    def __init__(
+        self,
+        column: int = None,
+        operator_id: str = None,
+    ):
+        # This parameter is required.
+        self.column = column
+        # This parameter is required.
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.column is not None:
+            result['column'] = self.column
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('column') is not None:
+            self.column = m.get('column')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class ClearFilterViewCriteriaResponseBody(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+    ):
+        self.id = id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        return self
+
+
+class ClearFilterViewCriteriaResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ClearFilterViewCriteriaResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ClearFilterViewCriteriaResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CreateConditionalFormattingRuleHeaders(TeaModel):
     def __init__(
         self,
@@ -2546,6 +3014,700 @@ class CreateDeveloperMetadataResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateDeveloperMetadataResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CreateFilterHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateFilterRequest(TeaModel):
+    def __init__(
+        self,
+        criteria: Dict[str, CriteriaValue] = None,
+        range: str = None,
+        operator_id: str = None,
+    ):
+        self.criteria = criteria
+        # This parameter is required.
+        self.range = range
+        # This parameter is required.
+        self.operator_id = operator_id
+
+    def validate(self):
+        if self.criteria:
+            for v in self.criteria.values():
+                if v:
+                    v.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['criteria'] = {}
+        if self.criteria is not None:
+            for k, v in self.criteria.items():
+                result['criteria'][k] = v.to_map()
+        if self.range is not None:
+            result['range'] = self.range
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.criteria = {}
+        if m.get('criteria') is not None:
+            for k, v in m.get('criteria').items():
+                temp_model = CriteriaValue()
+                self.criteria[k] = temp_model.from_map(v)
+        if m.get('range') is not None:
+            self.range = m.get('range')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class CreateFilterResponseBody(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+    ):
+        self.id = id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        return self
+
+
+class CreateFilterResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CreateFilterResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CreateFilterResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CreateFilterViewHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateFilterViewRequest(TeaModel):
+    def __init__(
+        self,
+        criteria: Dict[str, CriteriaValue] = None,
+        name: str = None,
+        range: str = None,
+        operator_id: str = None,
+    ):
+        self.criteria = criteria
+        # This parameter is required.
+        self.name = name
+        # This parameter is required.
+        self.range = range
+        # This parameter is required.
+        self.operator_id = operator_id
+
+    def validate(self):
+        if self.criteria:
+            for v in self.criteria.values():
+                if v:
+                    v.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['criteria'] = {}
+        if self.criteria is not None:
+            for k, v in self.criteria.items():
+                result['criteria'][k] = v.to_map()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.range is not None:
+            result['range'] = self.range
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.criteria = {}
+        if m.get('criteria') is not None:
+            for k, v in m.get('criteria').items():
+                temp_model = CriteriaValue()
+                self.criteria[k] = temp_model.from_map(v)
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('range') is not None:
+            self.range = m.get('range')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class CreateFilterViewResponseBody(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+        name: str = None,
+        range: str = None,
+    ):
+        self.id = id
+        self.name = name
+        self.range = range
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.range is not None:
+            result['range'] = self.range
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('range') is not None:
+            self.range = m.get('range')
+        return self
+
+
+class CreateFilterViewResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CreateFilterViewResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CreateFilterViewResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CreateFloatImageHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateFloatImageRequestAnchor(TeaModel):
+    def __init__(
+        self,
+        col: int = None,
+        row: int = None,
+    ):
+        # This parameter is required.
+        self.col = col
+        # This parameter is required.
+        self.row = row
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.col is not None:
+            result['col'] = self.col
+        if self.row is not None:
+            result['row'] = self.row
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('col') is not None:
+            self.col = m.get('col')
+        if m.get('row') is not None:
+            self.row = m.get('row')
+        return self
+
+
+class CreateFloatImageRequestCoordinate(TeaModel):
+    def __init__(
+        self,
+        height: float = None,
+        offset_x: float = None,
+        offset_y: float = None,
+        width: float = None,
+    ):
+        # This parameter is required.
+        self.height = height
+        # This parameter is required.
+        self.offset_x = offset_x
+        # This parameter is required.
+        self.offset_y = offset_y
+        # This parameter is required.
+        self.width = width
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.height is not None:
+            result['height'] = self.height
+        if self.offset_x is not None:
+            result['offsetX'] = self.offset_x
+        if self.offset_y is not None:
+            result['offsetY'] = self.offset_y
+        if self.width is not None:
+            result['width'] = self.width
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('height') is not None:
+            self.height = m.get('height')
+        if m.get('offsetX') is not None:
+            self.offset_x = m.get('offsetX')
+        if m.get('offsetY') is not None:
+            self.offset_y = m.get('offsetY')
+        if m.get('width') is not None:
+            self.width = m.get('width')
+        return self
+
+
+class CreateFloatImageRequest(TeaModel):
+    def __init__(
+        self,
+        anchor: CreateFloatImageRequestAnchor = None,
+        coordinate: CreateFloatImageRequestCoordinate = None,
+        src: str = None,
+        operator_id: str = None,
+    ):
+        # This parameter is required.
+        self.anchor = anchor
+        # This parameter is required.
+        self.coordinate = coordinate
+        # This parameter is required.
+        self.src = src
+        # This parameter is required.
+        self.operator_id = operator_id
+
+    def validate(self):
+        if self.anchor:
+            self.anchor.validate()
+        if self.coordinate:
+            self.coordinate.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.anchor is not None:
+            result['anchor'] = self.anchor.to_map()
+        if self.coordinate is not None:
+            result['coordinate'] = self.coordinate.to_map()
+        if self.src is not None:
+            result['src'] = self.src
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('anchor') is not None:
+            temp_model = CreateFloatImageRequestAnchor()
+            self.anchor = temp_model.from_map(m['anchor'])
+        if m.get('coordinate') is not None:
+            temp_model = CreateFloatImageRequestCoordinate()
+            self.coordinate = temp_model.from_map(m['coordinate'])
+        if m.get('src') is not None:
+            self.src = m.get('src')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class CreateFloatImageResponseBodyResultAnchor(TeaModel):
+    def __init__(
+        self,
+        col: int = None,
+        row: int = None,
+    ):
+        self.col = col
+        self.row = row
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.col is not None:
+            result['col'] = self.col
+        if self.row is not None:
+            result['row'] = self.row
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('col') is not None:
+            self.col = m.get('col')
+        if m.get('row') is not None:
+            self.row = m.get('row')
+        return self
+
+
+class CreateFloatImageResponseBodyResultCoordinate(TeaModel):
+    def __init__(
+        self,
+        height: float = None,
+        offset_x: float = None,
+        offset_y: float = None,
+        width: float = None,
+    ):
+        self.height = height
+        self.offset_x = offset_x
+        self.offset_y = offset_y
+        self.width = width
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.height is not None:
+            result['height'] = self.height
+        if self.offset_x is not None:
+            result['offsetX'] = self.offset_x
+        if self.offset_y is not None:
+            result['offsetY'] = self.offset_y
+        if self.width is not None:
+            result['width'] = self.width
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('height') is not None:
+            self.height = m.get('height')
+        if m.get('offsetX') is not None:
+            self.offset_x = m.get('offsetX')
+        if m.get('offsetY') is not None:
+            self.offset_y = m.get('offsetY')
+        if m.get('width') is not None:
+            self.width = m.get('width')
+        return self
+
+
+class CreateFloatImageResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        anchor: CreateFloatImageResponseBodyResultAnchor = None,
+        coordinate: CreateFloatImageResponseBodyResultCoordinate = None,
+        id: str = None,
+        src: str = None,
+    ):
+        self.anchor = anchor
+        self.coordinate = coordinate
+        self.id = id
+        self.src = src
+
+    def validate(self):
+        if self.anchor:
+            self.anchor.validate()
+        if self.coordinate:
+            self.coordinate.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.anchor is not None:
+            result['anchor'] = self.anchor.to_map()
+        if self.coordinate is not None:
+            result['coordinate'] = self.coordinate.to_map()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.src is not None:
+            result['src'] = self.src
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('anchor') is not None:
+            temp_model = CreateFloatImageResponseBodyResultAnchor()
+            self.anchor = temp_model.from_map(m['anchor'])
+        if m.get('coordinate') is not None:
+            temp_model = CreateFloatImageResponseBodyResultCoordinate()
+            self.coordinate = temp_model.from_map(m['coordinate'])
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('src') is not None:
+            self.src = m.get('src')
+        return self
+
+
+class CreateFloatImageResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: CreateFloatImageResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = CreateFloatImageResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class CreateFloatImageResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CreateFloatImageResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CreateFloatImageResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -3597,6 +4759,393 @@ class DeleteDropdownListsResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = DeleteDropdownListsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DeleteFilterHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeleteFilterRequest(TeaModel):
+    def __init__(
+        self,
+        operator_id: str = None,
+    ):
+        # This parameter is required.
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class DeleteFilterResponseBody(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+    ):
+        self.id = id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        return self
+
+
+class DeleteFilterResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: DeleteFilterResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = DeleteFilterResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DeleteFilterViewHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeleteFilterViewRequest(TeaModel):
+    def __init__(
+        self,
+        operator_id: str = None,
+    ):
+        # This parameter is required.
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class DeleteFilterViewResponseBody(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+    ):
+        self.id = id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        return self
+
+
+class DeleteFilterViewResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: DeleteFilterViewResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = DeleteFilterViewResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DeleteFloatImageHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeleteFloatImageRequest(TeaModel):
+    def __init__(
+        self,
+        operator_id: str = None,
+    ):
+        # This parameter is required.
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class DeleteFloatImageResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class DeleteFloatImageResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: DeleteFloatImageResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = DeleteFloatImageResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -7283,6 +8832,875 @@ class GetDeveloperMetadataResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetDeveloperMetadataResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetFilterHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetFilterRequest(TeaModel):
+    def __init__(
+        self,
+        operator_id: str = None,
+    ):
+        # This parameter is required.
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class GetFilterResponseBody(TeaModel):
+    def __init__(
+        self,
+        criteria: Dict[str, CriteriaValue] = None,
+        id: str = None,
+        range: str = None,
+    ):
+        self.criteria = criteria
+        self.id = id
+        self.range = range
+
+    def validate(self):
+        if self.criteria:
+            for v in self.criteria.values():
+                if v:
+                    v.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['criteria'] = {}
+        if self.criteria is not None:
+            for k, v in self.criteria.items():
+                result['criteria'][k] = v.to_map()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.range is not None:
+            result['range'] = self.range
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.criteria = {}
+        if m.get('criteria') is not None:
+            for k, v in m.get('criteria').items():
+                temp_model = CriteriaValue()
+                self.criteria[k] = temp_model.from_map(v)
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('range') is not None:
+            self.range = m.get('range')
+        return self
+
+
+class GetFilterResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetFilterResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetFilterResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetFilterViewsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetFilterViewsRequest(TeaModel):
+    def __init__(
+        self,
+        operator_id: str = None,
+    ):
+        # This parameter is required.
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class GetFilterViewsResponseBodyFilterViews(TeaModel):
+    def __init__(
+        self,
+        criteria: Dict[str, FilterViewsCriteriaValue] = None,
+        id: str = None,
+        name: str = None,
+        range: str = None,
+    ):
+        self.criteria = criteria
+        self.id = id
+        self.name = name
+        self.range = range
+
+    def validate(self):
+        if self.criteria:
+            for v in self.criteria.values():
+                if v:
+                    v.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['criteria'] = {}
+        if self.criteria is not None:
+            for k, v in self.criteria.items():
+                result['criteria'][k] = v.to_map()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.range is not None:
+            result['range'] = self.range
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.criteria = {}
+        if m.get('criteria') is not None:
+            for k, v in m.get('criteria').items():
+                temp_model = FilterViewsCriteriaValue()
+                self.criteria[k] = temp_model.from_map(v)
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('range') is not None:
+            self.range = m.get('range')
+        return self
+
+
+class GetFilterViewsResponseBody(TeaModel):
+    def __init__(
+        self,
+        filter_views: List[GetFilterViewsResponseBodyFilterViews] = None,
+    ):
+        self.filter_views = filter_views
+
+    def validate(self):
+        if self.filter_views:
+            for k in self.filter_views:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['filterViews'] = []
+        if self.filter_views is not None:
+            for k in self.filter_views:
+                result['filterViews'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.filter_views = []
+        if m.get('filterViews') is not None:
+            for k in m.get('filterViews'):
+                temp_model = GetFilterViewsResponseBodyFilterViews()
+                self.filter_views.append(temp_model.from_map(k))
+        return self
+
+
+class GetFilterViewsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetFilterViewsResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetFilterViewsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetFloatImageHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetFloatImageRequest(TeaModel):
+    def __init__(
+        self,
+        operator_id: str = None,
+    ):
+        # This parameter is required.
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class GetFloatImageResponseBodyResultAnchor(TeaModel):
+    def __init__(
+        self,
+        col: int = None,
+        row: int = None,
+    ):
+        self.col = col
+        self.row = row
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.col is not None:
+            result['col'] = self.col
+        if self.row is not None:
+            result['row'] = self.row
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('col') is not None:
+            self.col = m.get('col')
+        if m.get('row') is not None:
+            self.row = m.get('row')
+        return self
+
+
+class GetFloatImageResponseBodyResultCoordinate(TeaModel):
+    def __init__(
+        self,
+        height: float = None,
+        offset_x: float = None,
+        offset_y: float = None,
+        width: float = None,
+    ):
+        self.height = height
+        self.offset_x = offset_x
+        self.offset_y = offset_y
+        self.width = width
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.height is not None:
+            result['height'] = self.height
+        if self.offset_x is not None:
+            result['offsetX'] = self.offset_x
+        if self.offset_y is not None:
+            result['offsetY'] = self.offset_y
+        if self.width is not None:
+            result['width'] = self.width
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('height') is not None:
+            self.height = m.get('height')
+        if m.get('offsetX') is not None:
+            self.offset_x = m.get('offsetX')
+        if m.get('offsetY') is not None:
+            self.offset_y = m.get('offsetY')
+        if m.get('width') is not None:
+            self.width = m.get('width')
+        return self
+
+
+class GetFloatImageResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        anchor: GetFloatImageResponseBodyResultAnchor = None,
+        coordinate: GetFloatImageResponseBodyResultCoordinate = None,
+        id: str = None,
+        src: str = None,
+    ):
+        self.anchor = anchor
+        self.coordinate = coordinate
+        self.id = id
+        self.src = src
+
+    def validate(self):
+        if self.anchor:
+            self.anchor.validate()
+        if self.coordinate:
+            self.coordinate.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.anchor is not None:
+            result['anchor'] = self.anchor.to_map()
+        if self.coordinate is not None:
+            result['coordinate'] = self.coordinate.to_map()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.src is not None:
+            result['src'] = self.src
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('anchor') is not None:
+            temp_model = GetFloatImageResponseBodyResultAnchor()
+            self.anchor = temp_model.from_map(m['anchor'])
+        if m.get('coordinate') is not None:
+            temp_model = GetFloatImageResponseBodyResultCoordinate()
+            self.coordinate = temp_model.from_map(m['coordinate'])
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('src') is not None:
+            self.src = m.get('src')
+        return self
+
+
+class GetFloatImageResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: GetFloatImageResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = GetFloatImageResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class GetFloatImageResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetFloatImageResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetFloatImageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetFloatImagesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetFloatImagesRequest(TeaModel):
+    def __init__(
+        self,
+        operator_id: str = None,
+    ):
+        # This parameter is required.
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class GetFloatImagesResponseBodyValueAnchor(TeaModel):
+    def __init__(
+        self,
+        col: int = None,
+        row: int = None,
+    ):
+        self.col = col
+        self.row = row
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.col is not None:
+            result['col'] = self.col
+        if self.row is not None:
+            result['row'] = self.row
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('col') is not None:
+            self.col = m.get('col')
+        if m.get('row') is not None:
+            self.row = m.get('row')
+        return self
+
+
+class GetFloatImagesResponseBodyValueCoordinate(TeaModel):
+    def __init__(
+        self,
+        height: float = None,
+        offset_x: float = None,
+        offset_y: float = None,
+        width: float = None,
+    ):
+        self.height = height
+        self.offset_x = offset_x
+        self.offset_y = offset_y
+        self.width = width
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.height is not None:
+            result['height'] = self.height
+        if self.offset_x is not None:
+            result['offsetX'] = self.offset_x
+        if self.offset_y is not None:
+            result['offsetY'] = self.offset_y
+        if self.width is not None:
+            result['width'] = self.width
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('height') is not None:
+            self.height = m.get('height')
+        if m.get('offsetX') is not None:
+            self.offset_x = m.get('offsetX')
+        if m.get('offsetY') is not None:
+            self.offset_y = m.get('offsetY')
+        if m.get('width') is not None:
+            self.width = m.get('width')
+        return self
+
+
+class GetFloatImagesResponseBodyValue(TeaModel):
+    def __init__(
+        self,
+        anchor: GetFloatImagesResponseBodyValueAnchor = None,
+        coordinate: GetFloatImagesResponseBodyValueCoordinate = None,
+        id: str = None,
+        src: str = None,
+    ):
+        self.anchor = anchor
+        self.coordinate = coordinate
+        self.id = id
+        self.src = src
+
+    def validate(self):
+        if self.anchor:
+            self.anchor.validate()
+        if self.coordinate:
+            self.coordinate.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.anchor is not None:
+            result['anchor'] = self.anchor.to_map()
+        if self.coordinate is not None:
+            result['coordinate'] = self.coordinate.to_map()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.src is not None:
+            result['src'] = self.src
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('anchor') is not None:
+            temp_model = GetFloatImagesResponseBodyValueAnchor()
+            self.anchor = temp_model.from_map(m['anchor'])
+        if m.get('coordinate') is not None:
+            temp_model = GetFloatImagesResponseBodyValueCoordinate()
+            self.coordinate = temp_model.from_map(m['coordinate'])
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('src') is not None:
+            self.src = m.get('src')
+        return self
+
+
+class GetFloatImagesResponseBody(TeaModel):
+    def __init__(
+        self,
+        value: List[GetFloatImagesResponseBodyValue] = None,
+    ):
+        self.value = value
+
+    def validate(self):
+        if self.value:
+            for k in self.value:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['value'] = []
+        if self.value is not None:
+            for k in self.value:
+                result['value'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.value = []
+        if m.get('value') is not None:
+            for k in m.get('value'):
+                temp_model = GetFloatImagesResponseBodyValue()
+                self.value.append(temp_model.from_map(k))
+        return self
+
+
+class GetFloatImagesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetFloatImagesResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetFloatImagesResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -12798,6 +15216,494 @@ class SetColumnsWidthResponse(TeaModel):
         return self
 
 
+class SetFilterCriteriaHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SetFilterCriteriaRequestFilterCriteriaConditions(TeaModel):
+    def __init__(
+        self,
+        operator: str = None,
+        value: str = None,
+    ):
+        self.operator = operator
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operator is not None:
+            result['operator'] = self.operator
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operator') is not None:
+            self.operator = m.get('operator')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class SetFilterCriteriaRequestFilterCriteria(TeaModel):
+    def __init__(
+        self,
+        background_color: str = None,
+        condition_operator: str = None,
+        conditions: List[SetFilterCriteriaRequestFilterCriteriaConditions] = None,
+        filter_type: str = None,
+        font_color: str = None,
+        visible_values: List[str] = None,
+    ):
+        self.background_color = background_color
+        self.condition_operator = condition_operator
+        self.conditions = conditions
+        # This parameter is required.
+        self.filter_type = filter_type
+        self.font_color = font_color
+        self.visible_values = visible_values
+
+    def validate(self):
+        if self.conditions:
+            for k in self.conditions:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.background_color is not None:
+            result['backgroundColor'] = self.background_color
+        if self.condition_operator is not None:
+            result['conditionOperator'] = self.condition_operator
+        result['conditions'] = []
+        if self.conditions is not None:
+            for k in self.conditions:
+                result['conditions'].append(k.to_map() if k else None)
+        if self.filter_type is not None:
+            result['filterType'] = self.filter_type
+        if self.font_color is not None:
+            result['fontColor'] = self.font_color
+        if self.visible_values is not None:
+            result['visibleValues'] = self.visible_values
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('backgroundColor') is not None:
+            self.background_color = m.get('backgroundColor')
+        if m.get('conditionOperator') is not None:
+            self.condition_operator = m.get('conditionOperator')
+        self.conditions = []
+        if m.get('conditions') is not None:
+            for k in m.get('conditions'):
+                temp_model = SetFilterCriteriaRequestFilterCriteriaConditions()
+                self.conditions.append(temp_model.from_map(k))
+        if m.get('filterType') is not None:
+            self.filter_type = m.get('filterType')
+        if m.get('fontColor') is not None:
+            self.font_color = m.get('fontColor')
+        if m.get('visibleValues') is not None:
+            self.visible_values = m.get('visibleValues')
+        return self
+
+
+class SetFilterCriteriaRequest(TeaModel):
+    def __init__(
+        self,
+        column: int = None,
+        filter_criteria: SetFilterCriteriaRequestFilterCriteria = None,
+        operator_id: str = None,
+    ):
+        # This parameter is required.
+        self.column = column
+        # This parameter is required.
+        self.filter_criteria = filter_criteria
+        # This parameter is required.
+        self.operator_id = operator_id
+
+    def validate(self):
+        if self.filter_criteria:
+            self.filter_criteria.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.column is not None:
+            result['column'] = self.column
+        if self.filter_criteria is not None:
+            result['filterCriteria'] = self.filter_criteria.to_map()
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('column') is not None:
+            self.column = m.get('column')
+        if m.get('filterCriteria') is not None:
+            temp_model = SetFilterCriteriaRequestFilterCriteria()
+            self.filter_criteria = temp_model.from_map(m['filterCriteria'])
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class SetFilterCriteriaResponseBody(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+    ):
+        self.id = id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        return self
+
+
+class SetFilterCriteriaResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: SetFilterCriteriaResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = SetFilterCriteriaResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SetFilterViewCriteriaHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SetFilterViewCriteriaRequestFilterCriteriaConditions(TeaModel):
+    def __init__(
+        self,
+        operator: str = None,
+        value: str = None,
+    ):
+        self.operator = operator
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operator is not None:
+            result['operator'] = self.operator
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operator') is not None:
+            self.operator = m.get('operator')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class SetFilterViewCriteriaRequestFilterCriteria(TeaModel):
+    def __init__(
+        self,
+        background_color: str = None,
+        condition_operator: str = None,
+        conditions: List[SetFilterViewCriteriaRequestFilterCriteriaConditions] = None,
+        filter_type: str = None,
+        font_color: str = None,
+        visible_values: List[str] = None,
+    ):
+        self.background_color = background_color
+        self.condition_operator = condition_operator
+        self.conditions = conditions
+        # This parameter is required.
+        self.filter_type = filter_type
+        self.font_color = font_color
+        self.visible_values = visible_values
+
+    def validate(self):
+        if self.conditions:
+            for k in self.conditions:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.background_color is not None:
+            result['backgroundColor'] = self.background_color
+        if self.condition_operator is not None:
+            result['conditionOperator'] = self.condition_operator
+        result['conditions'] = []
+        if self.conditions is not None:
+            for k in self.conditions:
+                result['conditions'].append(k.to_map() if k else None)
+        if self.filter_type is not None:
+            result['filterType'] = self.filter_type
+        if self.font_color is not None:
+            result['fontColor'] = self.font_color
+        if self.visible_values is not None:
+            result['visibleValues'] = self.visible_values
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('backgroundColor') is not None:
+            self.background_color = m.get('backgroundColor')
+        if m.get('conditionOperator') is not None:
+            self.condition_operator = m.get('conditionOperator')
+        self.conditions = []
+        if m.get('conditions') is not None:
+            for k in m.get('conditions'):
+                temp_model = SetFilterViewCriteriaRequestFilterCriteriaConditions()
+                self.conditions.append(temp_model.from_map(k))
+        if m.get('filterType') is not None:
+            self.filter_type = m.get('filterType')
+        if m.get('fontColor') is not None:
+            self.font_color = m.get('fontColor')
+        if m.get('visibleValues') is not None:
+            self.visible_values = m.get('visibleValues')
+        return self
+
+
+class SetFilterViewCriteriaRequest(TeaModel):
+    def __init__(
+        self,
+        column: int = None,
+        filter_criteria: SetFilterViewCriteriaRequestFilterCriteria = None,
+        operator_id: str = None,
+    ):
+        # This parameter is required.
+        self.column = column
+        # This parameter is required.
+        self.filter_criteria = filter_criteria
+        # This parameter is required.
+        self.operator_id = operator_id
+
+    def validate(self):
+        if self.filter_criteria:
+            self.filter_criteria.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.column is not None:
+            result['column'] = self.column
+        if self.filter_criteria is not None:
+            result['filterCriteria'] = self.filter_criteria.to_map()
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('column') is not None:
+            self.column = m.get('column')
+        if m.get('filterCriteria') is not None:
+            temp_model = SetFilterViewCriteriaRequestFilterCriteria()
+            self.filter_criteria = temp_model.from_map(m['filterCriteria'])
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class SetFilterViewCriteriaResponseBody(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+    ):
+        self.id = id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        return self
+
+
+class SetFilterViewCriteriaResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: SetFilterViewCriteriaResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = SetFilterViewCriteriaResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class SetRowHeightHeaders(TeaModel):
     def __init__(
         self,
@@ -13664,6 +16570,178 @@ class SheetFindAllResponse(TeaModel):
         return self
 
 
+class SortFilterHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SortFilterRequestField(TeaModel):
+    def __init__(
+        self,
+        ascending: bool = None,
+        column: int = None,
+    ):
+        self.ascending = ascending
+        # This parameter is required.
+        self.column = column
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ascending is not None:
+            result['ascending'] = self.ascending
+        if self.column is not None:
+            result['column'] = self.column
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('ascending') is not None:
+            self.ascending = m.get('ascending')
+        if m.get('column') is not None:
+            self.column = m.get('column')
+        return self
+
+
+class SortFilterRequest(TeaModel):
+    def __init__(
+        self,
+        field: SortFilterRequestField = None,
+        operator_id: str = None,
+    ):
+        # This parameter is required.
+        self.field = field
+        # This parameter is required.
+        self.operator_id = operator_id
+
+    def validate(self):
+        if self.field:
+            self.field.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.field is not None:
+            result['field'] = self.field.to_map()
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('field') is not None:
+            temp_model = SortFilterRequestField()
+            self.field = temp_model.from_map(m['field'])
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class SortFilterResponseBody(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+    ):
+        self.id = id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        return self
+
+
+class SortFilterResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: SortFilterResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = SortFilterResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class UnbindCoolAppToSheetHeaders(TeaModel):
     def __init__(
         self,
@@ -13795,6 +16873,683 @@ class UnbindCoolAppToSheetResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UnbindCoolAppToSheetResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateFilterHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateFilterRequest(TeaModel):
+    def __init__(
+        self,
+        criteria: Dict[str, CriteriaValue] = None,
+        operator_id: str = None,
+    ):
+        # This parameter is required.
+        self.criteria = criteria
+        # This parameter is required.
+        self.operator_id = operator_id
+
+    def validate(self):
+        if self.criteria:
+            for v in self.criteria.values():
+                if v:
+                    v.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['criteria'] = {}
+        if self.criteria is not None:
+            for k, v in self.criteria.items():
+                result['criteria'][k] = v.to_map()
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.criteria = {}
+        if m.get('criteria') is not None:
+            for k, v in m.get('criteria').items():
+                temp_model = CriteriaValue()
+                self.criteria[k] = temp_model.from_map(v)
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class UpdateFilterResponseBody(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+    ):
+        self.id = id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        return self
+
+
+class UpdateFilterResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdateFilterResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdateFilterResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateFilterViewHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateFilterViewRequest(TeaModel):
+    def __init__(
+        self,
+        criteria: Dict[str, CriteriaValue] = None,
+        name: str = None,
+        range: str = None,
+        operator_id: str = None,
+    ):
+        self.criteria = criteria
+        self.name = name
+        self.range = range
+        # This parameter is required.
+        self.operator_id = operator_id
+
+    def validate(self):
+        if self.criteria:
+            for v in self.criteria.values():
+                if v:
+                    v.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['criteria'] = {}
+        if self.criteria is not None:
+            for k, v in self.criteria.items():
+                result['criteria'][k] = v.to_map()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.range is not None:
+            result['range'] = self.range
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.criteria = {}
+        if m.get('criteria') is not None:
+            for k, v in m.get('criteria').items():
+                temp_model = CriteriaValue()
+                self.criteria[k] = temp_model.from_map(v)
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('range') is not None:
+            self.range = m.get('range')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class UpdateFilterViewResponseBody(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+        name: str = None,
+        range: str = None,
+    ):
+        self.id = id
+        self.name = name
+        self.range = range
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.range is not None:
+            result['range'] = self.range
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('range') is not None:
+            self.range = m.get('range')
+        return self
+
+
+class UpdateFilterViewResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdateFilterViewResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdateFilterViewResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateFloatImageHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateFloatImageRequestAnchor(TeaModel):
+    def __init__(
+        self,
+        col: int = None,
+        row: int = None,
+    ):
+        self.col = col
+        self.row = row
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.col is not None:
+            result['col'] = self.col
+        if self.row is not None:
+            result['row'] = self.row
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('col') is not None:
+            self.col = m.get('col')
+        if m.get('row') is not None:
+            self.row = m.get('row')
+        return self
+
+
+class UpdateFloatImageRequestCoordinate(TeaModel):
+    def __init__(
+        self,
+        height: float = None,
+        offset_x: float = None,
+        offset_y: float = None,
+        width: float = None,
+    ):
+        self.height = height
+        self.offset_x = offset_x
+        self.offset_y = offset_y
+        self.width = width
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.height is not None:
+            result['height'] = self.height
+        if self.offset_x is not None:
+            result['offsetX'] = self.offset_x
+        if self.offset_y is not None:
+            result['offsetY'] = self.offset_y
+        if self.width is not None:
+            result['width'] = self.width
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('height') is not None:
+            self.height = m.get('height')
+        if m.get('offsetX') is not None:
+            self.offset_x = m.get('offsetX')
+        if m.get('offsetY') is not None:
+            self.offset_y = m.get('offsetY')
+        if m.get('width') is not None:
+            self.width = m.get('width')
+        return self
+
+
+class UpdateFloatImageRequest(TeaModel):
+    def __init__(
+        self,
+        anchor: UpdateFloatImageRequestAnchor = None,
+        coordinate: UpdateFloatImageRequestCoordinate = None,
+        src: str = None,
+        operator_id: str = None,
+    ):
+        self.anchor = anchor
+        self.coordinate = coordinate
+        self.src = src
+        # This parameter is required.
+        self.operator_id = operator_id
+
+    def validate(self):
+        if self.anchor:
+            self.anchor.validate()
+        if self.coordinate:
+            self.coordinate.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.anchor is not None:
+            result['anchor'] = self.anchor.to_map()
+        if self.coordinate is not None:
+            result['coordinate'] = self.coordinate.to_map()
+        if self.src is not None:
+            result['src'] = self.src
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('anchor') is not None:
+            temp_model = UpdateFloatImageRequestAnchor()
+            self.anchor = temp_model.from_map(m['anchor'])
+        if m.get('coordinate') is not None:
+            temp_model = UpdateFloatImageRequestCoordinate()
+            self.coordinate = temp_model.from_map(m['coordinate'])
+        if m.get('src') is not None:
+            self.src = m.get('src')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class UpdateFloatImageResponseBodyResultAnchor(TeaModel):
+    def __init__(
+        self,
+        col: int = None,
+        row: int = None,
+    ):
+        self.col = col
+        self.row = row
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.col is not None:
+            result['col'] = self.col
+        if self.row is not None:
+            result['row'] = self.row
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('col') is not None:
+            self.col = m.get('col')
+        if m.get('row') is not None:
+            self.row = m.get('row')
+        return self
+
+
+class UpdateFloatImageResponseBodyResultCoordinate(TeaModel):
+    def __init__(
+        self,
+        height: float = None,
+        offset_x: float = None,
+        offset_y: float = None,
+        width: float = None,
+    ):
+        self.height = height
+        self.offset_x = offset_x
+        self.offset_y = offset_y
+        self.width = width
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.height is not None:
+            result['height'] = self.height
+        if self.offset_x is not None:
+            result['offsetX'] = self.offset_x
+        if self.offset_y is not None:
+            result['offsetY'] = self.offset_y
+        if self.width is not None:
+            result['width'] = self.width
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('height') is not None:
+            self.height = m.get('height')
+        if m.get('offsetX') is not None:
+            self.offset_x = m.get('offsetX')
+        if m.get('offsetY') is not None:
+            self.offset_y = m.get('offsetY')
+        if m.get('width') is not None:
+            self.width = m.get('width')
+        return self
+
+
+class UpdateFloatImageResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        anchor: UpdateFloatImageResponseBodyResultAnchor = None,
+        coordinate: UpdateFloatImageResponseBodyResultCoordinate = None,
+        id: str = None,
+        src: str = None,
+    ):
+        self.anchor = anchor
+        self.coordinate = coordinate
+        self.id = id
+        self.src = src
+
+    def validate(self):
+        if self.anchor:
+            self.anchor.validate()
+        if self.coordinate:
+            self.coordinate.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.anchor is not None:
+            result['anchor'] = self.anchor.to_map()
+        if self.coordinate is not None:
+            result['coordinate'] = self.coordinate.to_map()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.src is not None:
+            result['src'] = self.src
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('anchor') is not None:
+            temp_model = UpdateFloatImageResponseBodyResultAnchor()
+            self.anchor = temp_model.from_map(m['anchor'])
+        if m.get('coordinate') is not None:
+            temp_model = UpdateFloatImageResponseBodyResultCoordinate()
+            self.coordinate = temp_model.from_map(m['coordinate'])
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('src') is not None:
+            self.src = m.get('src')
+        return self
+
+
+class UpdateFloatImageResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: UpdateFloatImageResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = UpdateFloatImageResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class UpdateFloatImageResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdateFloatImageResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdateFloatImageResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

@@ -975,14 +975,11 @@ class DeleteCustomRobotRequest(TeaModel):
     def __init__(
         self,
         action_type: str = None,
-        operator_user_id: str = None,
         send_notification: bool = None,
         token: str = None,
     ):
         # This parameter is required.
         self.action_type = action_type
-        # This parameter is required.
-        self.operator_user_id = operator_user_id
         # This parameter is required.
         self.send_notification = send_notification
         # This parameter is required.
@@ -999,8 +996,6 @@ class DeleteCustomRobotRequest(TeaModel):
         result = dict()
         if self.action_type is not None:
             result['actionType'] = self.action_type
-        if self.operator_user_id is not None:
-            result['operatorUserId'] = self.operator_user_id
         if self.send_notification is not None:
             result['sendNotification'] = self.send_notification
         if self.token is not None:
@@ -1011,8 +1006,6 @@ class DeleteCustomRobotRequest(TeaModel):
         m = m or dict()
         if m.get('actionType') is not None:
             self.action_type = m.get('actionType')
-        if m.get('operatorUserId') is not None:
-            self.operator_user_id = m.get('operatorUserId')
         if m.get('sendNotification') is not None:
             self.send_notification = m.get('sendNotification')
         if m.get('token') is not None:
