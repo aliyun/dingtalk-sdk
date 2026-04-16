@@ -30,6 +30,33 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0.Models
             [Validation(Required=false)]
             public List<string> IndicatorIdList { get; set; }
 
+            [NameInMap("indicatorList")]
+            [Validation(Required=false)]
+            public List<OpenScoreCardDimensionDTODimensionListIndicatorList> IndicatorList { get; set; }
+            public class OpenScoreCardDimensionDTODimensionListIndicatorList : TeaModel {
+                /// <summary>
+                /// <para>This parameter is required.</para>
+                /// </summary>
+                [NameInMap("indicatorId")]
+                [Validation(Required=false)]
+                public string IndicatorId { get; set; }
+
+                /// <summary>
+                /// <para>This parameter is required.</para>
+                /// </summary>
+                [NameInMap("originCode")]
+                [Validation(Required=false)]
+                public string OriginCode { get; set; }
+
+                /// <summary>
+                /// <para>This parameter is required.</para>
+                /// </summary>
+                [NameInMap("originId")]
+                [Validation(Required=false)]
+                public string OriginId { get; set; }
+
+            }
+
         }
 
         /// <summary>

@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0.Models
         [Validation(Required=false)]
         public string DingTeamId { get; set; }
 
+        [NameInMap("selectedTime")]
+        [Validation(Required=false)]
+        public long? SelectedTime { get; set; }
+
     }
 
 }

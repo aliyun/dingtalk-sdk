@@ -398,6 +398,302 @@ namespace AlibabaCloud.SDK.Dingtalkminutes_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>批量查询声纹配置信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BatchGetVoicePrintIdentifyConfigRequest
+        /// </param>
+        /// <param name="headers">
+        /// BatchGetVoicePrintIdentifyConfigHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchGetVoicePrintIdentifyConfigResponse
+        /// </returns>
+        public BatchGetVoicePrintIdentifyConfigResponse BatchGetVoicePrintIdentifyConfigWithOptions(BatchGetVoicePrintIdentifyConfigRequest request, BatchGetVoicePrintIdentifyConfigHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Items))
+            {
+                body["items"] = request.Items;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BatchGetVoicePrintIdentifyConfig",
+                Version = "minutes_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/minutes/voicePrint/configs/batchGet",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BatchGetVoicePrintIdentifyConfigResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量查询声纹配置信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BatchGetVoicePrintIdentifyConfigRequest
+        /// </param>
+        /// <param name="headers">
+        /// BatchGetVoicePrintIdentifyConfigHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchGetVoicePrintIdentifyConfigResponse
+        /// </returns>
+        public async Task<BatchGetVoicePrintIdentifyConfigResponse> BatchGetVoicePrintIdentifyConfigWithOptionsAsync(BatchGetVoicePrintIdentifyConfigRequest request, BatchGetVoicePrintIdentifyConfigHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Items))
+            {
+                body["items"] = request.Items;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BatchGetVoicePrintIdentifyConfig",
+                Version = "minutes_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/minutes/voicePrint/configs/batchGet",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BatchGetVoicePrintIdentifyConfigResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量查询声纹配置信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BatchGetVoicePrintIdentifyConfigRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchGetVoicePrintIdentifyConfigResponse
+        /// </returns>
+        public BatchGetVoicePrintIdentifyConfigResponse BatchGetVoicePrintIdentifyConfig(BatchGetVoicePrintIdentifyConfigRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            BatchGetVoicePrintIdentifyConfigHeaders headers = new BatchGetVoicePrintIdentifyConfigHeaders();
+            return BatchGetVoicePrintIdentifyConfigWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量查询声纹配置信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BatchGetVoicePrintIdentifyConfigRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchGetVoicePrintIdentifyConfigResponse
+        /// </returns>
+        public async Task<BatchGetVoicePrintIdentifyConfigResponse> BatchGetVoicePrintIdentifyConfigAsync(BatchGetVoicePrintIdentifyConfigRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            BatchGetVoicePrintIdentifyConfigHeaders headers = new BatchGetVoicePrintIdentifyConfigHeaders();
+            return await BatchGetVoicePrintIdentifyConfigWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量设置声纹开关状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BatchToggleVoicePrintSwitchStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// BatchToggleVoicePrintSwitchStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchToggleVoicePrintSwitchStatusResponse
+        /// </returns>
+        public BatchToggleVoicePrintSwitchStatusResponse BatchToggleVoicePrintSwitchStatusWithOptions(BatchToggleVoicePrintSwitchStatusRequest request, BatchToggleVoicePrintSwitchStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Items))
+            {
+                body["items"] = request.Items;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BatchToggleVoicePrintSwitchStatus",
+                Version = "minutes_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/minutes/voicePrint/switches/batchToggle",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BatchToggleVoicePrintSwitchStatusResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量设置声纹开关状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BatchToggleVoicePrintSwitchStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// BatchToggleVoicePrintSwitchStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchToggleVoicePrintSwitchStatusResponse
+        /// </returns>
+        public async Task<BatchToggleVoicePrintSwitchStatusResponse> BatchToggleVoicePrintSwitchStatusWithOptionsAsync(BatchToggleVoicePrintSwitchStatusRequest request, BatchToggleVoicePrintSwitchStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Items))
+            {
+                body["items"] = request.Items;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BatchToggleVoicePrintSwitchStatus",
+                Version = "minutes_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/minutes/voicePrint/switches/batchToggle",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BatchToggleVoicePrintSwitchStatusResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量设置声纹开关状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BatchToggleVoicePrintSwitchStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchToggleVoicePrintSwitchStatusResponse
+        /// </returns>
+        public BatchToggleVoicePrintSwitchStatusResponse BatchToggleVoicePrintSwitchStatus(BatchToggleVoicePrintSwitchStatusRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            BatchToggleVoicePrintSwitchStatusHeaders headers = new BatchToggleVoicePrintSwitchStatusHeaders();
+            return BatchToggleVoicePrintSwitchStatusWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量设置声纹开关状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BatchToggleVoicePrintSwitchStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchToggleVoicePrintSwitchStatusResponse
+        /// </returns>
+        public async Task<BatchToggleVoicePrintSwitchStatusResponse> BatchToggleVoicePrintSwitchStatusAsync(BatchToggleVoicePrintSwitchStatusRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            BatchToggleVoicePrintSwitchStatusHeaders headers = new BatchToggleVoicePrintSwitchStatusHeaders();
+            return await BatchToggleVoicePrintSwitchStatusWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>从上传的媒体文件创建闪记</para>
         /// </summary>
         /// 

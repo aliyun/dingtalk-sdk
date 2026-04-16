@@ -3690,6 +3690,154 @@ namespace AlibabaCloud.SDK.Dingtalkdvi_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>根据听记ID获取A1音频文件信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryFileInfoByMinutesIdRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryFileInfoByMinutesIdHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryFileInfoByMinutesIdResponse
+        /// </returns>
+        public QueryFileInfoByMinutesIdResponse QueryFileInfoByMinutesIdWithOptions(QueryFileInfoByMinutesIdRequest request, QueryFileInfoByMinutesIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MinutesId))
+            {
+                query["minutesId"] = request.MinutesId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryFileInfoByMinutesId",
+                Version = "dvi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dvi/audios/minutes",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryFileInfoByMinutesIdResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据听记ID获取A1音频文件信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryFileInfoByMinutesIdRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryFileInfoByMinutesIdHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryFileInfoByMinutesIdResponse
+        /// </returns>
+        public async Task<QueryFileInfoByMinutesIdResponse> QueryFileInfoByMinutesIdWithOptionsAsync(QueryFileInfoByMinutesIdRequest request, QueryFileInfoByMinutesIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MinutesId))
+            {
+                query["minutesId"] = request.MinutesId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryFileInfoByMinutesId",
+                Version = "dvi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dvi/audios/minutes",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryFileInfoByMinutesIdResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据听记ID获取A1音频文件信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryFileInfoByMinutesIdRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryFileInfoByMinutesIdResponse
+        /// </returns>
+        public QueryFileInfoByMinutesIdResponse QueryFileInfoByMinutesId(QueryFileInfoByMinutesIdRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryFileInfoByMinutesIdHeaders headers = new QueryFileInfoByMinutesIdHeaders();
+            return QueryFileInfoByMinutesIdWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据听记ID获取A1音频文件信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryFileInfoByMinutesIdRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryFileInfoByMinutesIdResponse
+        /// </returns>
+        public async Task<QueryFileInfoByMinutesIdResponse> QueryFileInfoByMinutesIdAsync(QueryFileInfoByMinutesIdRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryFileInfoByMinutesIdHeaders headers = new QueryFileInfoByMinutesIdHeaders();
+            return await QueryFileInfoByMinutesIdWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>asr离线任务</para>
         /// </summary>
         /// 

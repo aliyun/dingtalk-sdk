@@ -23,6 +23,10 @@ namespace AlibabaCloud.SDK.Dingtalkai_global_e_c_1_0.Models
         [Validation(Required=false)]
         public string CorpId { get; set; }
 
+        [NameInMap("isAdmin")]
+        [Validation(Required=false)]
+        public bool? IsAdmin { get; set; }
+
         [NameInMap("openId")]
         [Validation(Required=false)]
         public string OpenId { get; set; }

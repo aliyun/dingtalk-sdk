@@ -27,7 +27,7 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0.Models
 
         /// <summary>
         /// <b>Example:</b>
-        /// <para>union_id</para>
+        /// <para>550e8400-e29b-41d4-a716-446655440000</para>
         /// </summary>
         [NameInMap("clientToken")]
         [Validation(Required=false)]

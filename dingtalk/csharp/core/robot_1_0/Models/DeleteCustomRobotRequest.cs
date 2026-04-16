@@ -19,13 +19,6 @@ namespace AlibabaCloud.SDK.Dingtalkrobot_1_0.Models
         /// <summary>
         /// <para>This parameter is required.</para>
         /// </summary>
-        [NameInMap("operatorUserId")]
-        [Validation(Required=false)]
-        public string OperatorUserId { get; set; }
-
-        /// <summary>
-        /// <para>This parameter is required.</para>
-        /// </summary>
         [NameInMap("sendNotification")]
         [Validation(Required=false)]
         public bool? SendNotification { get; set; }

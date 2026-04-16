@@ -1774,6 +1774,326 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>删除筛选条件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ClearFilterCriteriaRequest
+        /// </param>
+        /// <param name="headers">
+        /// ClearFilterCriteriaHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ClearFilterCriteriaResponse
+        /// </returns>
+        public ClearFilterCriteriaResponse ClearFilterCriteriaWithOptions(string workbookId, string sheetId, ClearFilterCriteriaRequest request, ClearFilterCriteriaHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Column))
+            {
+                body["column"] = request.Column;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ClearFilterCriteria",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/filter/clearColumnFilterCriteria",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ClearFilterCriteriaResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除筛选条件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ClearFilterCriteriaRequest
+        /// </param>
+        /// <param name="headers">
+        /// ClearFilterCriteriaHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ClearFilterCriteriaResponse
+        /// </returns>
+        public async Task<ClearFilterCriteriaResponse> ClearFilterCriteriaWithOptionsAsync(string workbookId, string sheetId, ClearFilterCriteriaRequest request, ClearFilterCriteriaHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Column))
+            {
+                body["column"] = request.Column;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ClearFilterCriteria",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/filter/clearColumnFilterCriteria",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ClearFilterCriteriaResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除筛选条件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ClearFilterCriteriaRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ClearFilterCriteriaResponse
+        /// </returns>
+        public ClearFilterCriteriaResponse ClearFilterCriteria(string workbookId, string sheetId, ClearFilterCriteriaRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ClearFilterCriteriaHeaders headers = new ClearFilterCriteriaHeaders();
+            return ClearFilterCriteriaWithOptions(workbookId, sheetId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除筛选条件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ClearFilterCriteriaRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ClearFilterCriteriaResponse
+        /// </returns>
+        public async Task<ClearFilterCriteriaResponse> ClearFilterCriteriaAsync(string workbookId, string sheetId, ClearFilterCriteriaRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ClearFilterCriteriaHeaders headers = new ClearFilterCriteriaHeaders();
+            return await ClearFilterCriteriaWithOptionsAsync(workbookId, sheetId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除筛选视图条件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ClearFilterViewCriteriaRequest
+        /// </param>
+        /// <param name="headers">
+        /// ClearFilterViewCriteriaHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ClearFilterViewCriteriaResponse
+        /// </returns>
+        public ClearFilterViewCriteriaResponse ClearFilterViewCriteriaWithOptions(string workbookId, string sheetId, string filterViewId, ClearFilterViewCriteriaRequest request, ClearFilterViewCriteriaHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Column))
+            {
+                body["column"] = request.Column;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ClearFilterViewCriteria",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/filterViews/" + filterViewId + "/clearColumnFilterCriteria",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ClearFilterViewCriteriaResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除筛选视图条件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ClearFilterViewCriteriaRequest
+        /// </param>
+        /// <param name="headers">
+        /// ClearFilterViewCriteriaHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ClearFilterViewCriteriaResponse
+        /// </returns>
+        public async Task<ClearFilterViewCriteriaResponse> ClearFilterViewCriteriaWithOptionsAsync(string workbookId, string sheetId, string filterViewId, ClearFilterViewCriteriaRequest request, ClearFilterViewCriteriaHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Column))
+            {
+                body["column"] = request.Column;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ClearFilterViewCriteria",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/filterViews/" + filterViewId + "/clearColumnFilterCriteria",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ClearFilterViewCriteriaResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除筛选视图条件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ClearFilterViewCriteriaRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ClearFilterViewCriteriaResponse
+        /// </returns>
+        public ClearFilterViewCriteriaResponse ClearFilterViewCriteria(string workbookId, string sheetId, string filterViewId, ClearFilterViewCriteriaRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ClearFilterViewCriteriaHeaders headers = new ClearFilterViewCriteriaHeaders();
+            return ClearFilterViewCriteriaWithOptions(workbookId, sheetId, filterViewId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除筛选视图条件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ClearFilterViewCriteriaRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ClearFilterViewCriteriaResponse
+        /// </returns>
+        public async Task<ClearFilterViewCriteriaResponse> ClearFilterViewCriteriaAsync(string workbookId, string sheetId, string filterViewId, ClearFilterViewCriteriaRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ClearFilterViewCriteriaHeaders headers = new ClearFilterViewCriteriaHeaders();
+            return await ClearFilterViewCriteriaWithOptionsAsync(workbookId, sheetId, filterViewId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>创建条件格式</para>
         /// </summary>
         /// 
@@ -2130,6 +2450,526 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             CreateDeveloperMetadataHeaders headers = new CreateDeveloperMetadataHeaders();
             return await CreateDeveloperMetadataWithOptionsAsync(workbookId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建筛选</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateFilterRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateFilterHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateFilterResponse
+        /// </returns>
+        public CreateFilterResponse CreateFilterWithOptions(string workbookId, string sheetId, CreateFilterRequest request, CreateFilterHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Criteria))
+            {
+                body["criteria"] = request.Criteria;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Range))
+            {
+                body["range"] = request.Range;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateFilter",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/createFilter",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateFilterResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建筛选</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateFilterRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateFilterHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateFilterResponse
+        /// </returns>
+        public async Task<CreateFilterResponse> CreateFilterWithOptionsAsync(string workbookId, string sheetId, CreateFilterRequest request, CreateFilterHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Criteria))
+            {
+                body["criteria"] = request.Criteria;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Range))
+            {
+                body["range"] = request.Range;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateFilter",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/createFilter",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateFilterResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建筛选</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateFilterRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateFilterResponse
+        /// </returns>
+        public CreateFilterResponse CreateFilter(string workbookId, string sheetId, CreateFilterRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateFilterHeaders headers = new CreateFilterHeaders();
+            return CreateFilterWithOptions(workbookId, sheetId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建筛选</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateFilterRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateFilterResponse
+        /// </returns>
+        public async Task<CreateFilterResponse> CreateFilterAsync(string workbookId, string sheetId, CreateFilterRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateFilterHeaders headers = new CreateFilterHeaders();
+            return await CreateFilterWithOptionsAsync(workbookId, sheetId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建筛选视图</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateFilterViewRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateFilterViewHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateFilterViewResponse
+        /// </returns>
+        public CreateFilterViewResponse CreateFilterViewWithOptions(string workbookId, string sheetId, CreateFilterViewRequest request, CreateFilterViewHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Criteria))
+            {
+                body["criteria"] = request.Criteria;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Range))
+            {
+                body["range"] = request.Range;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateFilterView",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/filterViews",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateFilterViewResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建筛选视图</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateFilterViewRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateFilterViewHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateFilterViewResponse
+        /// </returns>
+        public async Task<CreateFilterViewResponse> CreateFilterViewWithOptionsAsync(string workbookId, string sheetId, CreateFilterViewRequest request, CreateFilterViewHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Criteria))
+            {
+                body["criteria"] = request.Criteria;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Range))
+            {
+                body["range"] = request.Range;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateFilterView",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/filterViews",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateFilterViewResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建筛选视图</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateFilterViewRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateFilterViewResponse
+        /// </returns>
+        public CreateFilterViewResponse CreateFilterView(string workbookId, string sheetId, CreateFilterViewRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateFilterViewHeaders headers = new CreateFilterViewHeaders();
+            return CreateFilterViewWithOptions(workbookId, sheetId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建筛选视图</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateFilterViewRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateFilterViewResponse
+        /// </returns>
+        public async Task<CreateFilterViewResponse> CreateFilterViewAsync(string workbookId, string sheetId, CreateFilterViewRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateFilterViewHeaders headers = new CreateFilterViewHeaders();
+            return await CreateFilterViewWithOptionsAsync(workbookId, sheetId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建浮动图片</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateFloatImageRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateFloatImageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateFloatImageResponse
+        /// </returns>
+        public CreateFloatImageResponse CreateFloatImageWithOptions(string workbookId, string sheetId, CreateFloatImageRequest request, CreateFloatImageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Anchor))
+            {
+                body["anchor"] = request.Anchor;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Coordinate))
+            {
+                body["coordinate"] = request.Coordinate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Src))
+            {
+                body["src"] = request.Src;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateFloatImage",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/floatImages",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateFloatImageResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建浮动图片</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateFloatImageRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateFloatImageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateFloatImageResponse
+        /// </returns>
+        public async Task<CreateFloatImageResponse> CreateFloatImageWithOptionsAsync(string workbookId, string sheetId, CreateFloatImageRequest request, CreateFloatImageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Anchor))
+            {
+                body["anchor"] = request.Anchor;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Coordinate))
+            {
+                body["coordinate"] = request.Coordinate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Src))
+            {
+                body["src"] = request.Src;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateFloatImage",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/floatImages",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateFloatImageResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建浮动图片</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateFloatImageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateFloatImageResponse
+        /// </returns>
+        public CreateFloatImageResponse CreateFloatImage(string workbookId, string sheetId, CreateFloatImageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateFloatImageHeaders headers = new CreateFloatImageHeaders();
+            return CreateFloatImageWithOptions(workbookId, sheetId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建浮动图片</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateFloatImageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateFloatImageResponse
+        /// </returns>
+        public async Task<CreateFloatImageResponse> CreateFloatImageAsync(string workbookId, string sheetId, CreateFloatImageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateFloatImageHeaders headers = new CreateFloatImageHeaders();
+            return await CreateFloatImageWithOptionsAsync(workbookId, sheetId, request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>
@@ -3134,6 +3974,450 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             DeleteDropdownListsHeaders headers = new DeleteDropdownListsHeaders();
             return await DeleteDropdownListsWithOptionsAsync(workbookId, sheetId, rangeAddress, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除筛选</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteFilterRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteFilterHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteFilterResponse
+        /// </returns>
+        public DeleteFilterResponse DeleteFilterWithOptions(string workbookId, string sheetId, DeleteFilterRequest request, DeleteFilterHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteFilter",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/deleteFilter",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteFilterResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除筛选</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteFilterRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteFilterHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteFilterResponse
+        /// </returns>
+        public async Task<DeleteFilterResponse> DeleteFilterWithOptionsAsync(string workbookId, string sheetId, DeleteFilterRequest request, DeleteFilterHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteFilter",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/deleteFilter",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteFilterResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除筛选</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteFilterRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteFilterResponse
+        /// </returns>
+        public DeleteFilterResponse DeleteFilter(string workbookId, string sheetId, DeleteFilterRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteFilterHeaders headers = new DeleteFilterHeaders();
+            return DeleteFilterWithOptions(workbookId, sheetId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除筛选</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteFilterRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteFilterResponse
+        /// </returns>
+        public async Task<DeleteFilterResponse> DeleteFilterAsync(string workbookId, string sheetId, DeleteFilterRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteFilterHeaders headers = new DeleteFilterHeaders();
+            return await DeleteFilterWithOptionsAsync(workbookId, sheetId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除筛选视图</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteFilterViewRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteFilterViewHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteFilterViewResponse
+        /// </returns>
+        public DeleteFilterViewResponse DeleteFilterViewWithOptions(string workbookId, string sheetId, string filterViewId, DeleteFilterViewRequest request, DeleteFilterViewHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteFilterView",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/filterViews/" + filterViewId,
+                Method = "DELETE",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteFilterViewResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除筛选视图</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteFilterViewRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteFilterViewHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteFilterViewResponse
+        /// </returns>
+        public async Task<DeleteFilterViewResponse> DeleteFilterViewWithOptionsAsync(string workbookId, string sheetId, string filterViewId, DeleteFilterViewRequest request, DeleteFilterViewHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteFilterView",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/filterViews/" + filterViewId,
+                Method = "DELETE",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteFilterViewResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除筛选视图</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteFilterViewRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteFilterViewResponse
+        /// </returns>
+        public DeleteFilterViewResponse DeleteFilterView(string workbookId, string sheetId, string filterViewId, DeleteFilterViewRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteFilterViewHeaders headers = new DeleteFilterViewHeaders();
+            return DeleteFilterViewWithOptions(workbookId, sheetId, filterViewId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除筛选视图</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteFilterViewRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteFilterViewResponse
+        /// </returns>
+        public async Task<DeleteFilterViewResponse> DeleteFilterViewAsync(string workbookId, string sheetId, string filterViewId, DeleteFilterViewRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteFilterViewHeaders headers = new DeleteFilterViewHeaders();
+            return await DeleteFilterViewWithOptionsAsync(workbookId, sheetId, filterViewId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除浮动图片</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteFloatImageRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteFloatImageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteFloatImageResponse
+        /// </returns>
+        public DeleteFloatImageResponse DeleteFloatImageWithOptions(string workbookId, string sheetId, string id, DeleteFloatImageRequest request, DeleteFloatImageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteFloatImage",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/floatImages/" + id,
+                Method = "DELETE",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteFloatImageResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除浮动图片</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteFloatImageRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteFloatImageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteFloatImageResponse
+        /// </returns>
+        public async Task<DeleteFloatImageResponse> DeleteFloatImageWithOptionsAsync(string workbookId, string sheetId, string id, DeleteFloatImageRequest request, DeleteFloatImageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteFloatImage",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/floatImages/" + id,
+                Method = "DELETE",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteFloatImageResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除浮动图片</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteFloatImageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteFloatImageResponse
+        /// </returns>
+        public DeleteFloatImageResponse DeleteFloatImage(string workbookId, string sheetId, string id, DeleteFloatImageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteFloatImageHeaders headers = new DeleteFloatImageHeaders();
+            return DeleteFloatImageWithOptions(workbookId, sheetId, id, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除浮动图片</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteFloatImageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteFloatImageResponse
+        /// </returns>
+        public async Task<DeleteFloatImageResponse> DeleteFloatImageAsync(string workbookId, string sheetId, string id, DeleteFloatImageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteFloatImageHeaders headers = new DeleteFloatImageHeaders();
+            return await DeleteFloatImageWithOptionsAsync(workbookId, sheetId, id, request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>
@@ -6738,6 +8022,598 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetDeveloperMetadataHeaders headers = new GetDeveloperMetadataHeaders();
             return await GetDeveloperMetadataWithOptionsAsync(workbookId, developerMetadataId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取筛选</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetFilterRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetFilterHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFilterResponse
+        /// </returns>
+        public GetFilterResponse GetFilterWithOptions(string workbookId, string sheetId, GetFilterRequest request, GetFilterHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetFilter",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/filter/getFilter",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetFilterResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取筛选</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetFilterRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetFilterHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFilterResponse
+        /// </returns>
+        public async Task<GetFilterResponse> GetFilterWithOptionsAsync(string workbookId, string sheetId, GetFilterRequest request, GetFilterHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetFilter",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/filter/getFilter",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetFilterResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取筛选</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetFilterRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFilterResponse
+        /// </returns>
+        public GetFilterResponse GetFilter(string workbookId, string sheetId, GetFilterRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetFilterHeaders headers = new GetFilterHeaders();
+            return GetFilterWithOptions(workbookId, sheetId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取筛选</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetFilterRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFilterResponse
+        /// </returns>
+        public async Task<GetFilterResponse> GetFilterAsync(string workbookId, string sheetId, GetFilterRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetFilterHeaders headers = new GetFilterHeaders();
+            return await GetFilterWithOptionsAsync(workbookId, sheetId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取筛选视图列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetFilterViewsRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetFilterViewsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFilterViewsResponse
+        /// </returns>
+        public GetFilterViewsResponse GetFilterViewsWithOptions(string workbookId, string sheetId, GetFilterViewsRequest request, GetFilterViewsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetFilterViews",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/filterViews",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetFilterViewsResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取筛选视图列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetFilterViewsRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetFilterViewsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFilterViewsResponse
+        /// </returns>
+        public async Task<GetFilterViewsResponse> GetFilterViewsWithOptionsAsync(string workbookId, string sheetId, GetFilterViewsRequest request, GetFilterViewsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetFilterViews",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/filterViews",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetFilterViewsResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取筛选视图列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetFilterViewsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFilterViewsResponse
+        /// </returns>
+        public GetFilterViewsResponse GetFilterViews(string workbookId, string sheetId, GetFilterViewsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetFilterViewsHeaders headers = new GetFilterViewsHeaders();
+            return GetFilterViewsWithOptions(workbookId, sheetId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取筛选视图列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetFilterViewsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFilterViewsResponse
+        /// </returns>
+        public async Task<GetFilterViewsResponse> GetFilterViewsAsync(string workbookId, string sheetId, GetFilterViewsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetFilterViewsHeaders headers = new GetFilterViewsHeaders();
+            return await GetFilterViewsWithOptionsAsync(workbookId, sheetId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取浮动图片</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetFloatImageRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetFloatImageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFloatImageResponse
+        /// </returns>
+        public GetFloatImageResponse GetFloatImageWithOptions(string workbookId, string sheetId, string id, GetFloatImageRequest request, GetFloatImageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetFloatImage",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/floatImages/" + id,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetFloatImageResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取浮动图片</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetFloatImageRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetFloatImageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFloatImageResponse
+        /// </returns>
+        public async Task<GetFloatImageResponse> GetFloatImageWithOptionsAsync(string workbookId, string sheetId, string id, GetFloatImageRequest request, GetFloatImageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetFloatImage",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/floatImages/" + id,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetFloatImageResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取浮动图片</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetFloatImageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFloatImageResponse
+        /// </returns>
+        public GetFloatImageResponse GetFloatImage(string workbookId, string sheetId, string id, GetFloatImageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetFloatImageHeaders headers = new GetFloatImageHeaders();
+            return GetFloatImageWithOptions(workbookId, sheetId, id, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取浮动图片</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetFloatImageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFloatImageResponse
+        /// </returns>
+        public async Task<GetFloatImageResponse> GetFloatImageAsync(string workbookId, string sheetId, string id, GetFloatImageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetFloatImageHeaders headers = new GetFloatImageHeaders();
+            return await GetFloatImageWithOptionsAsync(workbookId, sheetId, id, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询浮动图片</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetFloatImagesRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetFloatImagesHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFloatImagesResponse
+        /// </returns>
+        public GetFloatImagesResponse GetFloatImagesWithOptions(string workbookId, string sheetId, GetFloatImagesRequest request, GetFloatImagesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetFloatImages",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/floatImages",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetFloatImagesResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询浮动图片</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetFloatImagesRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetFloatImagesHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFloatImagesResponse
+        /// </returns>
+        public async Task<GetFloatImagesResponse> GetFloatImagesWithOptionsAsync(string workbookId, string sheetId, GetFloatImagesRequest request, GetFloatImagesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetFloatImages",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/floatImages",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetFloatImagesResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询浮动图片</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetFloatImagesRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFloatImagesResponse
+        /// </returns>
+        public GetFloatImagesResponse GetFloatImages(string workbookId, string sheetId, GetFloatImagesRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetFloatImagesHeaders headers = new GetFloatImagesHeaders();
+            return GetFloatImagesWithOptions(workbookId, sheetId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询浮动图片</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetFloatImagesRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFloatImagesResponse
+        /// </returns>
+        public async Task<GetFloatImagesResponse> GetFloatImagesAsync(string workbookId, string sheetId, GetFloatImagesRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetFloatImagesHeaders headers = new GetFloatImagesHeaders();
+            return await GetFloatImagesWithOptionsAsync(workbookId, sheetId, request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>
@@ -11010,6 +12886,342 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>设置筛选条件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetFilterCriteriaRequest
+        /// </param>
+        /// <param name="headers">
+        /// SetFilterCriteriaHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetFilterCriteriaResponse
+        /// </returns>
+        public SetFilterCriteriaResponse SetFilterCriteriaWithOptions(string workbookId, string sheetId, SetFilterCriteriaRequest request, SetFilterCriteriaHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Column))
+            {
+                body["column"] = request.Column;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FilterCriteria))
+            {
+                body["filterCriteria"] = request.FilterCriteria;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SetFilterCriteria",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/filter/setColumnFilterCriteria",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SetFilterCriteriaResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>设置筛选条件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetFilterCriteriaRequest
+        /// </param>
+        /// <param name="headers">
+        /// SetFilterCriteriaHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetFilterCriteriaResponse
+        /// </returns>
+        public async Task<SetFilterCriteriaResponse> SetFilterCriteriaWithOptionsAsync(string workbookId, string sheetId, SetFilterCriteriaRequest request, SetFilterCriteriaHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Column))
+            {
+                body["column"] = request.Column;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FilterCriteria))
+            {
+                body["filterCriteria"] = request.FilterCriteria;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SetFilterCriteria",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/filter/setColumnFilterCriteria",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SetFilterCriteriaResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>设置筛选条件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetFilterCriteriaRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetFilterCriteriaResponse
+        /// </returns>
+        public SetFilterCriteriaResponse SetFilterCriteria(string workbookId, string sheetId, SetFilterCriteriaRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SetFilterCriteriaHeaders headers = new SetFilterCriteriaHeaders();
+            return SetFilterCriteriaWithOptions(workbookId, sheetId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>设置筛选条件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetFilterCriteriaRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetFilterCriteriaResponse
+        /// </returns>
+        public async Task<SetFilterCriteriaResponse> SetFilterCriteriaAsync(string workbookId, string sheetId, SetFilterCriteriaRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SetFilterCriteriaHeaders headers = new SetFilterCriteriaHeaders();
+            return await SetFilterCriteriaWithOptionsAsync(workbookId, sheetId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>设置筛选视图条件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetFilterViewCriteriaRequest
+        /// </param>
+        /// <param name="headers">
+        /// SetFilterViewCriteriaHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetFilterViewCriteriaResponse
+        /// </returns>
+        public SetFilterViewCriteriaResponse SetFilterViewCriteriaWithOptions(string workbookId, string sheetId, string filterViewId, SetFilterViewCriteriaRequest request, SetFilterViewCriteriaHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Column))
+            {
+                body["column"] = request.Column;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FilterCriteria))
+            {
+                body["filterCriteria"] = request.FilterCriteria;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SetFilterViewCriteria",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/filterViews/" + filterViewId + "/setColumnFilterCriteria",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SetFilterViewCriteriaResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>设置筛选视图条件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetFilterViewCriteriaRequest
+        /// </param>
+        /// <param name="headers">
+        /// SetFilterViewCriteriaHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetFilterViewCriteriaResponse
+        /// </returns>
+        public async Task<SetFilterViewCriteriaResponse> SetFilterViewCriteriaWithOptionsAsync(string workbookId, string sheetId, string filterViewId, SetFilterViewCriteriaRequest request, SetFilterViewCriteriaHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Column))
+            {
+                body["column"] = request.Column;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FilterCriteria))
+            {
+                body["filterCriteria"] = request.FilterCriteria;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SetFilterViewCriteria",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/filterViews/" + filterViewId + "/setColumnFilterCriteria",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SetFilterViewCriteriaResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>设置筛选视图条件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetFilterViewCriteriaRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetFilterViewCriteriaResponse
+        /// </returns>
+        public SetFilterViewCriteriaResponse SetFilterViewCriteria(string workbookId, string sheetId, string filterViewId, SetFilterViewCriteriaRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SetFilterViewCriteriaHeaders headers = new SetFilterViewCriteriaHeaders();
+            return SetFilterViewCriteriaWithOptions(workbookId, sheetId, filterViewId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>设置筛选视图条件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetFilterViewCriteriaRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetFilterViewCriteriaResponse
+        /// </returns>
+        public async Task<SetFilterViewCriteriaResponse> SetFilterViewCriteriaAsync(string workbookId, string sheetId, string filterViewId, SetFilterViewCriteriaRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SetFilterViewCriteriaHeaders headers = new SetFilterViewCriteriaHeaders();
+            return await SetFilterViewCriteriaWithOptionsAsync(workbookId, sheetId, filterViewId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>设置行高</para>
         /// </summary>
         /// 
@@ -11890,6 +14102,166 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>筛选排序</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SortFilterRequest
+        /// </param>
+        /// <param name="headers">
+        /// SortFilterHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SortFilterResponse
+        /// </returns>
+        public SortFilterResponse SortFilterWithOptions(string workbookId, string sheetId, SortFilterRequest request, SortFilterHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Field))
+            {
+                body["field"] = request.Field;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SortFilter",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/filter/sort",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SortFilterResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>筛选排序</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SortFilterRequest
+        /// </param>
+        /// <param name="headers">
+        /// SortFilterHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SortFilterResponse
+        /// </returns>
+        public async Task<SortFilterResponse> SortFilterWithOptionsAsync(string workbookId, string sheetId, SortFilterRequest request, SortFilterHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Field))
+            {
+                body["field"] = request.Field;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SortFilter",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/filter/sort",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SortFilterResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>筛选排序</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SortFilterRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SortFilterResponse
+        /// </returns>
+        public SortFilterResponse SortFilter(string workbookId, string sheetId, SortFilterRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SortFilterHeaders headers = new SortFilterHeaders();
+            return SortFilterWithOptions(workbookId, sheetId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>筛选排序</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SortFilterRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SortFilterResponse
+        /// </returns>
+        public async Task<SortFilterResponse> SortFilterAsync(string workbookId, string sheetId, SortFilterRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SortFilterHeaders headers = new SortFilterHeaders();
+            return await SortFilterWithOptionsAsync(workbookId, sheetId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>取消文档酷应用和表格的关联</para>
         /// </summary>
         /// 
@@ -12042,6 +14414,518 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             UnbindCoolAppToSheetHeaders headers = new UnbindCoolAppToSheetHeaders();
             return await UnbindCoolAppToSheetWithOptionsAsync(workbookId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新筛选</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateFilterRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateFilterHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateFilterResponse
+        /// </returns>
+        public UpdateFilterResponse UpdateFilterWithOptions(string workbookId, string sheetId, UpdateFilterRequest request, UpdateFilterHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Criteria))
+            {
+                body["criteria"] = request.Criteria;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateFilter",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/filter/updateFilter",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateFilterResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新筛选</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateFilterRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateFilterHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateFilterResponse
+        /// </returns>
+        public async Task<UpdateFilterResponse> UpdateFilterWithOptionsAsync(string workbookId, string sheetId, UpdateFilterRequest request, UpdateFilterHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Criteria))
+            {
+                body["criteria"] = request.Criteria;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateFilter",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/filter/updateFilter",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateFilterResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新筛选</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateFilterRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateFilterResponse
+        /// </returns>
+        public UpdateFilterResponse UpdateFilter(string workbookId, string sheetId, UpdateFilterRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateFilterHeaders headers = new UpdateFilterHeaders();
+            return UpdateFilterWithOptions(workbookId, sheetId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新筛选</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateFilterRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateFilterResponse
+        /// </returns>
+        public async Task<UpdateFilterResponse> UpdateFilterAsync(string workbookId, string sheetId, UpdateFilterRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateFilterHeaders headers = new UpdateFilterHeaders();
+            return await UpdateFilterWithOptionsAsync(workbookId, sheetId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新筛选视图</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateFilterViewRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateFilterViewHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateFilterViewResponse
+        /// </returns>
+        public UpdateFilterViewResponse UpdateFilterViewWithOptions(string workbookId, string sheetId, string filterViewId, UpdateFilterViewRequest request, UpdateFilterViewHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Criteria))
+            {
+                body["criteria"] = request.Criteria;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Range))
+            {
+                body["range"] = request.Range;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateFilterView",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/filterViews/" + filterViewId,
+                Method = "PATCH",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateFilterViewResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新筛选视图</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateFilterViewRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateFilterViewHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateFilterViewResponse
+        /// </returns>
+        public async Task<UpdateFilterViewResponse> UpdateFilterViewWithOptionsAsync(string workbookId, string sheetId, string filterViewId, UpdateFilterViewRequest request, UpdateFilterViewHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Criteria))
+            {
+                body["criteria"] = request.Criteria;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Range))
+            {
+                body["range"] = request.Range;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateFilterView",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/filterViews/" + filterViewId,
+                Method = "PATCH",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateFilterViewResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新筛选视图</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateFilterViewRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateFilterViewResponse
+        /// </returns>
+        public UpdateFilterViewResponse UpdateFilterView(string workbookId, string sheetId, string filterViewId, UpdateFilterViewRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateFilterViewHeaders headers = new UpdateFilterViewHeaders();
+            return UpdateFilterViewWithOptions(workbookId, sheetId, filterViewId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新筛选视图</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateFilterViewRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateFilterViewResponse
+        /// </returns>
+        public async Task<UpdateFilterViewResponse> UpdateFilterViewAsync(string workbookId, string sheetId, string filterViewId, UpdateFilterViewRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateFilterViewHeaders headers = new UpdateFilterViewHeaders();
+            return await UpdateFilterViewWithOptionsAsync(workbookId, sheetId, filterViewId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新浮动图片</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateFloatImageRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateFloatImageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateFloatImageResponse
+        /// </returns>
+        public UpdateFloatImageResponse UpdateFloatImageWithOptions(string workbookId, string sheetId, string id, UpdateFloatImageRequest request, UpdateFloatImageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Anchor))
+            {
+                body["anchor"] = request.Anchor;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Coordinate))
+            {
+                body["coordinate"] = request.Coordinate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Src))
+            {
+                body["src"] = request.Src;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateFloatImage",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/floatImages/" + id,
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateFloatImageResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新浮动图片</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateFloatImageRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateFloatImageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateFloatImageResponse
+        /// </returns>
+        public async Task<UpdateFloatImageResponse> UpdateFloatImageWithOptionsAsync(string workbookId, string sheetId, string id, UpdateFloatImageRequest request, UpdateFloatImageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Anchor))
+            {
+                body["anchor"] = request.Anchor;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Coordinate))
+            {
+                body["coordinate"] = request.Coordinate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Src))
+            {
+                body["src"] = request.Src;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateFloatImage",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/floatImages/" + id,
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateFloatImageResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新浮动图片</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateFloatImageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateFloatImageResponse
+        /// </returns>
+        public UpdateFloatImageResponse UpdateFloatImage(string workbookId, string sheetId, string id, UpdateFloatImageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateFloatImageHeaders headers = new UpdateFloatImageHeaders();
+            return UpdateFloatImageWithOptions(workbookId, sheetId, id, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新浮动图片</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateFloatImageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateFloatImageResponse
+        /// </returns>
+        public async Task<UpdateFloatImageResponse> UpdateFloatImageAsync(string workbookId, string sheetId, string id, UpdateFloatImageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateFloatImageHeaders headers = new UpdateFloatImageHeaders();
+            return await UpdateFloatImageWithOptionsAsync(workbookId, sheetId, id, request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>
