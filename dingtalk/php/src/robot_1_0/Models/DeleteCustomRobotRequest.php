@@ -18,13 +18,6 @@ class DeleteCustomRobotRequest extends Model
     /**
      * @description This parameter is required.
      *
-     * @var string
-     */
-    public $operatorUserId;
-
-    /**
-     * @description This parameter is required.
-     *
      * @var bool
      */
     public $sendNotification;
@@ -37,7 +30,6 @@ class DeleteCustomRobotRequest extends Model
     public $token;
     protected $_name = [
         'actionType' => 'actionType',
-        'operatorUserId' => 'operatorUserId',
         'sendNotification' => 'sendNotification',
         'token' => 'token',
     ];
@@ -49,9 +41,6 @@ class DeleteCustomRobotRequest extends Model
         $res = [];
         if (null !== $this->actionType) {
             $res['actionType'] = $this->actionType;
-        }
-        if (null !== $this->operatorUserId) {
-            $res['operatorUserId'] = $this->operatorUserId;
         }
         if (null !== $this->sendNotification) {
             $res['sendNotification'] = $this->sendNotification;
@@ -73,9 +62,6 @@ class DeleteCustomRobotRequest extends Model
         $model = new self();
         if (isset($map['actionType'])) {
             $model->actionType = $map['actionType'];
-        }
-        if (isset($map['operatorUserId'])) {
-            $model->operatorUserId = $map['operatorUserId'];
         }
         if (isset($map['sendNotification'])) {
             $model->sendNotification = $map['sendNotification'];

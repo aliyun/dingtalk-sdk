@@ -35,6 +35,12 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\BindCoolAppToSheetResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\ClearDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\ClearDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\ClearDataResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\ClearFilterCriteriaHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\ClearFilterCriteriaRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\ClearFilterCriteriaResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\ClearFilterViewCriteriaHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\ClearFilterViewCriteriaRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\ClearFilterViewCriteriaResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\ClearHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\ClearRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\ClearResponse;
@@ -44,6 +50,15 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateConditionalFormattingRuleRes
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateDeveloperMetadataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateDeveloperMetadataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateDeveloperMetadataResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateFilterHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateFilterRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateFilterResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateFilterViewHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateFilterViewRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateFilterViewResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateFloatImageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateFloatImageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateFloatImageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateRangeProtectionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateRangeProtectionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateRangeProtectionResponse;
@@ -62,6 +77,15 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteColumnsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteDropdownListsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteDropdownListsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteDropdownListsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteFilterHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteFilterRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteFilterResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteFilterViewHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteFilterViewRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteFilterViewResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteFloatImageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteFloatImageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteFloatImageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteRangeProtectionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteRangeProtectionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DeleteRangeProtectionResponse;
@@ -128,6 +152,18 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetAllSheetsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetDeveloperMetadataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetDeveloperMetadataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetDeveloperMetadataResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetFilterHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetFilterRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetFilterResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetFilterViewsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetFilterViewsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetFilterViewsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetFloatImageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetFloatImageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetFloatImageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetFloatImagesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetFloatImagesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetFloatImagesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetImportDocumentMarkHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetImportDocumentMarkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetImportDocumentMarkResponse;
@@ -205,6 +241,12 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetColumnsWidthResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetColumnWidthHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetColumnWidthRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetColumnWidthResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetFilterCriteriaHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetFilterCriteriaRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetFilterCriteriaResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetFilterViewCriteriaHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetFilterViewCriteriaRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetFilterViewCriteriaResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetRowHeightHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetRowHeightRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetRowHeightResponse;
@@ -220,9 +262,21 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SheetAutofitRowsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SheetFindAllHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SheetFindAllRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SheetFindAllResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SortFilterHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SortFilterRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SortFilterResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\UnbindCoolAppToSheetHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\UnbindCoolAppToSheetRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\UnbindCoolAppToSheetResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\UpdateFilterHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\UpdateFilterRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\UpdateFilterResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\UpdateFilterViewHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\UpdateFilterViewRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\UpdateFilterViewResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\UpdateFloatImageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\UpdateFloatImageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\UpdateFloatImageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\UpdateRangeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\UpdateRangeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\UpdateRangeResponse;
@@ -959,6 +1013,140 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除筛选条件
+     *  *
+     * @param string                     $workbookId
+     * @param string                     $sheetId
+     * @param ClearFilterCriteriaRequest $request    ClearFilterCriteriaRequest
+     * @param ClearFilterCriteriaHeaders $headers    ClearFilterCriteriaHeaders
+     * @param RuntimeOptions             $runtime    runtime options for this request RuntimeOptions
+     *
+     * @return ClearFilterCriteriaResponse ClearFilterCriteriaResponse
+     */
+    public function clearFilterCriteriaWithOptions($workbookId, $sheetId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->column)) {
+            $body['column'] = $request->column;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'ClearFilterCriteria',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/filter/clearColumnFilterCriteria',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return ClearFilterCriteriaResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 删除筛选条件
+     *  *
+     * @param string                     $workbookId
+     * @param string                     $sheetId
+     * @param ClearFilterCriteriaRequest $request    ClearFilterCriteriaRequest
+     *
+     * @return ClearFilterCriteriaResponse ClearFilterCriteriaResponse
+     */
+    public function clearFilterCriteria($workbookId, $sheetId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ClearFilterCriteriaHeaders([]);
+
+        return $this->clearFilterCriteriaWithOptions($workbookId, $sheetId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 删除筛选视图条件
+     *  *
+     * @param string                         $workbookId
+     * @param string                         $sheetId
+     * @param string                         $filterViewId
+     * @param ClearFilterViewCriteriaRequest $request      ClearFilterViewCriteriaRequest
+     * @param ClearFilterViewCriteriaHeaders $headers      ClearFilterViewCriteriaHeaders
+     * @param RuntimeOptions                 $runtime      runtime options for this request RuntimeOptions
+     *
+     * @return ClearFilterViewCriteriaResponse ClearFilterViewCriteriaResponse
+     */
+    public function clearFilterViewCriteriaWithOptions($workbookId, $sheetId, $filterViewId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->column)) {
+            $body['column'] = $request->column;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'ClearFilterViewCriteria',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/filterViews/' . $filterViewId . '/clearColumnFilterCriteria',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return ClearFilterViewCriteriaResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 删除筛选视图条件
+     *  *
+     * @param string                         $workbookId
+     * @param string                         $sheetId
+     * @param string                         $filterViewId
+     * @param ClearFilterViewCriteriaRequest $request      ClearFilterViewCriteriaRequest
+     *
+     * @return ClearFilterViewCriteriaResponse ClearFilterViewCriteriaResponse
+     */
+    public function clearFilterViewCriteria($workbookId, $sheetId, $filterViewId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ClearFilterViewCriteriaHeaders([]);
+
+        return $this->clearFilterViewCriteriaWithOptions($workbookId, $sheetId, $filterViewId, $request, $headers, $runtime);
+    }
+
+    /**
      * @summary 创建条件格式
      *  *
      * @param string                                 $workbookId
@@ -1101,6 +1289,219 @@ class Dingtalk extends OpenApiClient
         $headers = new CreateDeveloperMetadataHeaders([]);
 
         return $this->createDeveloperMetadataWithOptions($workbookId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 创建筛选
+     *  *
+     * @param string              $workbookId
+     * @param string              $sheetId
+     * @param CreateFilterRequest $request    CreateFilterRequest
+     * @param CreateFilterHeaders $headers    CreateFilterHeaders
+     * @param RuntimeOptions      $runtime    runtime options for this request RuntimeOptions
+     *
+     * @return CreateFilterResponse CreateFilterResponse
+     */
+    public function createFilterWithOptions($workbookId, $sheetId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->criteria)) {
+            $body['criteria'] = $request->criteria;
+        }
+        if (!Utils::isUnset($request->range)) {
+            $body['range'] = $request->range;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'CreateFilter',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/createFilter',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CreateFilterResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建筛选
+     *  *
+     * @param string              $workbookId
+     * @param string              $sheetId
+     * @param CreateFilterRequest $request    CreateFilterRequest
+     *
+     * @return CreateFilterResponse CreateFilterResponse
+     */
+    public function createFilter($workbookId, $sheetId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateFilterHeaders([]);
+
+        return $this->createFilterWithOptions($workbookId, $sheetId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 创建筛选视图
+     *  *
+     * @param string                  $workbookId
+     * @param string                  $sheetId
+     * @param CreateFilterViewRequest $request    CreateFilterViewRequest
+     * @param CreateFilterViewHeaders $headers    CreateFilterViewHeaders
+     * @param RuntimeOptions          $runtime    runtime options for this request RuntimeOptions
+     *
+     * @return CreateFilterViewResponse CreateFilterViewResponse
+     */
+    public function createFilterViewWithOptions($workbookId, $sheetId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->criteria)) {
+            $body['criteria'] = $request->criteria;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->range)) {
+            $body['range'] = $request->range;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'CreateFilterView',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/filterViews',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CreateFilterViewResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建筛选视图
+     *  *
+     * @param string                  $workbookId
+     * @param string                  $sheetId
+     * @param CreateFilterViewRequest $request    CreateFilterViewRequest
+     *
+     * @return CreateFilterViewResponse CreateFilterViewResponse
+     */
+    public function createFilterView($workbookId, $sheetId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateFilterViewHeaders([]);
+
+        return $this->createFilterViewWithOptions($workbookId, $sheetId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 创建浮动图片
+     *  *
+     * @param string                  $workbookId
+     * @param string                  $sheetId
+     * @param CreateFloatImageRequest $request    CreateFloatImageRequest
+     * @param CreateFloatImageHeaders $headers    CreateFloatImageHeaders
+     * @param RuntimeOptions          $runtime    runtime options for this request RuntimeOptions
+     *
+     * @return CreateFloatImageResponse CreateFloatImageResponse
+     */
+    public function createFloatImageWithOptions($workbookId, $sheetId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->anchor)) {
+            $body['anchor'] = $request->anchor;
+        }
+        if (!Utils::isUnset($request->coordinate)) {
+            $body['coordinate'] = $request->coordinate;
+        }
+        if (!Utils::isUnset($request->src)) {
+            $body['src'] = $request->src;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'CreateFloatImage',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/floatImages',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CreateFloatImageResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建浮动图片
+     *  *
+     * @param string                  $workbookId
+     * @param string                  $sheetId
+     * @param CreateFloatImageRequest $request    CreateFloatImageRequest
+     *
+     * @return CreateFloatImageResponse CreateFloatImageResponse
+     */
+    public function createFloatImage($workbookId, $sheetId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateFloatImageHeaders([]);
+
+        return $this->createFloatImageWithOptions($workbookId, $sheetId, $request, $headers, $runtime);
     }
 
     /**
@@ -1508,6 +1909,193 @@ class Dingtalk extends OpenApiClient
         $headers = new DeleteDropdownListsHeaders([]);
 
         return $this->deleteDropdownListsWithOptions($workbookId, $sheetId, $rangeAddress, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 删除筛选
+     *  *
+     * @param string              $workbookId
+     * @param string              $sheetId
+     * @param DeleteFilterRequest $request    DeleteFilterRequest
+     * @param DeleteFilterHeaders $headers    DeleteFilterHeaders
+     * @param RuntimeOptions      $runtime    runtime options for this request RuntimeOptions
+     *
+     * @return DeleteFilterResponse DeleteFilterResponse
+     */
+    public function deleteFilterWithOptions($workbookId, $sheetId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'DeleteFilter',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/deleteFilter',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return DeleteFilterResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 删除筛选
+     *  *
+     * @param string              $workbookId
+     * @param string              $sheetId
+     * @param DeleteFilterRequest $request    DeleteFilterRequest
+     *
+     * @return DeleteFilterResponse DeleteFilterResponse
+     */
+    public function deleteFilter($workbookId, $sheetId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteFilterHeaders([]);
+
+        return $this->deleteFilterWithOptions($workbookId, $sheetId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 删除筛选视图
+     *  *
+     * @param string                  $workbookId
+     * @param string                  $sheetId
+     * @param string                  $filterViewId
+     * @param DeleteFilterViewRequest $request      DeleteFilterViewRequest
+     * @param DeleteFilterViewHeaders $headers      DeleteFilterViewHeaders
+     * @param RuntimeOptions          $runtime      runtime options for this request RuntimeOptions
+     *
+     * @return DeleteFilterViewResponse DeleteFilterViewResponse
+     */
+    public function deleteFilterViewWithOptions($workbookId, $sheetId, $filterViewId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'DeleteFilterView',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/filterViews/' . $filterViewId . '',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return DeleteFilterViewResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 删除筛选视图
+     *  *
+     * @param string                  $workbookId
+     * @param string                  $sheetId
+     * @param string                  $filterViewId
+     * @param DeleteFilterViewRequest $request      DeleteFilterViewRequest
+     *
+     * @return DeleteFilterViewResponse DeleteFilterViewResponse
+     */
+    public function deleteFilterView($workbookId, $sheetId, $filterViewId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteFilterViewHeaders([]);
+
+        return $this->deleteFilterViewWithOptions($workbookId, $sheetId, $filterViewId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 删除浮动图片
+     *  *
+     * @param string                  $workbookId
+     * @param string                  $sheetId
+     * @param string                  $id
+     * @param DeleteFloatImageRequest $request    DeleteFloatImageRequest
+     * @param DeleteFloatImageHeaders $headers    DeleteFloatImageHeaders
+     * @param RuntimeOptions          $runtime    runtime options for this request RuntimeOptions
+     *
+     * @return DeleteFloatImageResponse DeleteFloatImageResponse
+     */
+    public function deleteFloatImageWithOptions($workbookId, $sheetId, $id, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'DeleteFloatImage',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/floatImages/' . $id . '',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return DeleteFloatImageResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 删除浮动图片
+     *  *
+     * @param string                  $workbookId
+     * @param string                  $sheetId
+     * @param string                  $id
+     * @param DeleteFloatImageRequest $request    DeleteFloatImageRequest
+     *
+     * @return DeleteFloatImageResponse DeleteFloatImageResponse
+     */
+    public function deleteFloatImage($workbookId, $sheetId, $id, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteFloatImageHeaders([]);
+
+        return $this->deleteFloatImageWithOptions($workbookId, $sheetId, $id, $request, $headers, $runtime);
     }
 
     /**
@@ -2961,6 +3549,252 @@ class Dingtalk extends OpenApiClient
         $headers = new GetDeveloperMetadataHeaders([]);
 
         return $this->getDeveloperMetadataWithOptions($workbookId, $developerMetadataId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取筛选
+     *  *
+     * @param string           $workbookId
+     * @param string           $sheetId
+     * @param GetFilterRequest $request    GetFilterRequest
+     * @param GetFilterHeaders $headers    GetFilterHeaders
+     * @param RuntimeOptions   $runtime    runtime options for this request RuntimeOptions
+     *
+     * @return GetFilterResponse GetFilterResponse
+     */
+    public function getFilterWithOptions($workbookId, $sheetId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'GetFilter',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/filter/getFilter',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetFilterResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取筛选
+     *  *
+     * @param string           $workbookId
+     * @param string           $sheetId
+     * @param GetFilterRequest $request    GetFilterRequest
+     *
+     * @return GetFilterResponse GetFilterResponse
+     */
+    public function getFilter($workbookId, $sheetId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetFilterHeaders([]);
+
+        return $this->getFilterWithOptions($workbookId, $sheetId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取筛选视图列表
+     *  *
+     * @param string                $workbookId
+     * @param string                $sheetId
+     * @param GetFilterViewsRequest $request    GetFilterViewsRequest
+     * @param GetFilterViewsHeaders $headers    GetFilterViewsHeaders
+     * @param RuntimeOptions        $runtime    runtime options for this request RuntimeOptions
+     *
+     * @return GetFilterViewsResponse GetFilterViewsResponse
+     */
+    public function getFilterViewsWithOptions($workbookId, $sheetId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'GetFilterViews',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/filterViews',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetFilterViewsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取筛选视图列表
+     *  *
+     * @param string                $workbookId
+     * @param string                $sheetId
+     * @param GetFilterViewsRequest $request    GetFilterViewsRequest
+     *
+     * @return GetFilterViewsResponse GetFilterViewsResponse
+     */
+    public function getFilterViews($workbookId, $sheetId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetFilterViewsHeaders([]);
+
+        return $this->getFilterViewsWithOptions($workbookId, $sheetId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取浮动图片
+     *  *
+     * @param string               $workbookId
+     * @param string               $sheetId
+     * @param string               $id
+     * @param GetFloatImageRequest $request    GetFloatImageRequest
+     * @param GetFloatImageHeaders $headers    GetFloatImageHeaders
+     * @param RuntimeOptions       $runtime    runtime options for this request RuntimeOptions
+     *
+     * @return GetFloatImageResponse GetFloatImageResponse
+     */
+    public function getFloatImageWithOptions($workbookId, $sheetId, $id, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'GetFloatImage',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/floatImages/' . $id . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetFloatImageResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取浮动图片
+     *  *
+     * @param string               $workbookId
+     * @param string               $sheetId
+     * @param string               $id
+     * @param GetFloatImageRequest $request    GetFloatImageRequest
+     *
+     * @return GetFloatImageResponse GetFloatImageResponse
+     */
+    public function getFloatImage($workbookId, $sheetId, $id, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetFloatImageHeaders([]);
+
+        return $this->getFloatImageWithOptions($workbookId, $sheetId, $id, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询浮动图片
+     *  *
+     * @param string                $workbookId
+     * @param string                $sheetId
+     * @param GetFloatImagesRequest $request    GetFloatImagesRequest
+     * @param GetFloatImagesHeaders $headers    GetFloatImagesHeaders
+     * @param RuntimeOptions        $runtime    runtime options for this request RuntimeOptions
+     *
+     * @return GetFloatImagesResponse GetFloatImagesResponse
+     */
+    public function getFloatImagesWithOptions($workbookId, $sheetId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'GetFloatImages',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/floatImages',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetFloatImagesResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询浮动图片
+     *  *
+     * @param string                $workbookId
+     * @param string                $sheetId
+     * @param GetFloatImagesRequest $request    GetFloatImagesRequest
+     *
+     * @return GetFloatImagesResponse GetFloatImagesResponse
+     */
+    public function getFloatImages($workbookId, $sheetId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetFloatImagesHeaders([]);
+
+        return $this->getFloatImagesWithOptions($workbookId, $sheetId, $request, $headers, $runtime);
     }
 
     /**
@@ -4690,6 +5524,146 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 设置筛选条件
+     *  *
+     * @param string                   $workbookId
+     * @param string                   $sheetId
+     * @param SetFilterCriteriaRequest $request    SetFilterCriteriaRequest
+     * @param SetFilterCriteriaHeaders $headers    SetFilterCriteriaHeaders
+     * @param RuntimeOptions           $runtime    runtime options for this request RuntimeOptions
+     *
+     * @return SetFilterCriteriaResponse SetFilterCriteriaResponse
+     */
+    public function setFilterCriteriaWithOptions($workbookId, $sheetId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->column)) {
+            $body['column'] = $request->column;
+        }
+        if (!Utils::isUnset($request->filterCriteria)) {
+            $body['filterCriteria'] = $request->filterCriteria;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'SetFilterCriteria',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/filter/setColumnFilterCriteria',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return SetFilterCriteriaResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 设置筛选条件
+     *  *
+     * @param string                   $workbookId
+     * @param string                   $sheetId
+     * @param SetFilterCriteriaRequest $request    SetFilterCriteriaRequest
+     *
+     * @return SetFilterCriteriaResponse SetFilterCriteriaResponse
+     */
+    public function setFilterCriteria($workbookId, $sheetId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SetFilterCriteriaHeaders([]);
+
+        return $this->setFilterCriteriaWithOptions($workbookId, $sheetId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 设置筛选视图条件
+     *  *
+     * @param string                       $workbookId
+     * @param string                       $sheetId
+     * @param string                       $filterViewId
+     * @param SetFilterViewCriteriaRequest $request      SetFilterViewCriteriaRequest
+     * @param SetFilterViewCriteriaHeaders $headers      SetFilterViewCriteriaHeaders
+     * @param RuntimeOptions               $runtime      runtime options for this request RuntimeOptions
+     *
+     * @return SetFilterViewCriteriaResponse SetFilterViewCriteriaResponse
+     */
+    public function setFilterViewCriteriaWithOptions($workbookId, $sheetId, $filterViewId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->column)) {
+            $body['column'] = $request->column;
+        }
+        if (!Utils::isUnset($request->filterCriteria)) {
+            $body['filterCriteria'] = $request->filterCriteria;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'SetFilterViewCriteria',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/filterViews/' . $filterViewId . '/setColumnFilterCriteria',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return SetFilterViewCriteriaResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 设置筛选视图条件
+     *  *
+     * @param string                       $workbookId
+     * @param string                       $sheetId
+     * @param string                       $filterViewId
+     * @param SetFilterViewCriteriaRequest $request      SetFilterViewCriteriaRequest
+     *
+     * @return SetFilterViewCriteriaResponse SetFilterViewCriteriaResponse
+     */
+    public function setFilterViewCriteria($workbookId, $sheetId, $filterViewId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SetFilterViewCriteriaHeaders([]);
+
+        return $this->setFilterViewCriteriaWithOptions($workbookId, $sheetId, $filterViewId, $request, $headers, $runtime);
+    }
+
+    /**
      * @summary 设置行高
      *  *
      * @param string              $workbookId
@@ -5050,6 +6024,72 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 筛选排序
+     *  *
+     * @param string            $workbookId
+     * @param string            $sheetId
+     * @param SortFilterRequest $request    SortFilterRequest
+     * @param SortFilterHeaders $headers    SortFilterHeaders
+     * @param RuntimeOptions    $runtime    runtime options for this request RuntimeOptions
+     *
+     * @return SortFilterResponse SortFilterResponse
+     */
+    public function sortFilterWithOptions($workbookId, $sheetId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->field)) {
+            $body['field'] = $request->field;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'SortFilter',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/filter/sort',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return SortFilterResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 筛选排序
+     *  *
+     * @param string            $workbookId
+     * @param string            $sheetId
+     * @param SortFilterRequest $request    SortFilterRequest
+     *
+     * @return SortFilterResponse SortFilterResponse
+     */
+    public function sortFilter($workbookId, $sheetId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SortFilterHeaders([]);
+
+        return $this->sortFilterWithOptions($workbookId, $sheetId, $request, $headers, $runtime);
+    }
+
+    /**
      * @summary 取消文档酷应用和表格的关联
      *  *
      * @param string                      $workbookId
@@ -5109,6 +6149,220 @@ class Dingtalk extends OpenApiClient
         $headers = new UnbindCoolAppToSheetHeaders([]);
 
         return $this->unbindCoolAppToSheetWithOptions($workbookId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更新筛选
+     *  *
+     * @param string              $workbookId
+     * @param string              $sheetId
+     * @param UpdateFilterRequest $request    UpdateFilterRequest
+     * @param UpdateFilterHeaders $headers    UpdateFilterHeaders
+     * @param RuntimeOptions      $runtime    runtime options for this request RuntimeOptions
+     *
+     * @return UpdateFilterResponse UpdateFilterResponse
+     */
+    public function updateFilterWithOptions($workbookId, $sheetId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->criteria)) {
+            $body['criteria'] = $request->criteria;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'UpdateFilter',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/filter/updateFilter',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UpdateFilterResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新筛选
+     *  *
+     * @param string              $workbookId
+     * @param string              $sheetId
+     * @param UpdateFilterRequest $request    UpdateFilterRequest
+     *
+     * @return UpdateFilterResponse UpdateFilterResponse
+     */
+    public function updateFilter($workbookId, $sheetId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateFilterHeaders([]);
+
+        return $this->updateFilterWithOptions($workbookId, $sheetId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更新筛选视图
+     *  *
+     * @param string                  $workbookId
+     * @param string                  $sheetId
+     * @param string                  $filterViewId
+     * @param UpdateFilterViewRequest $request      UpdateFilterViewRequest
+     * @param UpdateFilterViewHeaders $headers      UpdateFilterViewHeaders
+     * @param RuntimeOptions          $runtime      runtime options for this request RuntimeOptions
+     *
+     * @return UpdateFilterViewResponse UpdateFilterViewResponse
+     */
+    public function updateFilterViewWithOptions($workbookId, $sheetId, $filterViewId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->criteria)) {
+            $body['criteria'] = $request->criteria;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->range)) {
+            $body['range'] = $request->range;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'UpdateFilterView',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/filterViews/' . $filterViewId . '',
+            'method' => 'PATCH',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UpdateFilterViewResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新筛选视图
+     *  *
+     * @param string                  $workbookId
+     * @param string                  $sheetId
+     * @param string                  $filterViewId
+     * @param UpdateFilterViewRequest $request      UpdateFilterViewRequest
+     *
+     * @return UpdateFilterViewResponse UpdateFilterViewResponse
+     */
+    public function updateFilterView($workbookId, $sheetId, $filterViewId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateFilterViewHeaders([]);
+
+        return $this->updateFilterViewWithOptions($workbookId, $sheetId, $filterViewId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更新浮动图片
+     *  *
+     * @param string                  $workbookId
+     * @param string                  $sheetId
+     * @param string                  $id
+     * @param UpdateFloatImageRequest $request    UpdateFloatImageRequest
+     * @param UpdateFloatImageHeaders $headers    UpdateFloatImageHeaders
+     * @param RuntimeOptions          $runtime    runtime options for this request RuntimeOptions
+     *
+     * @return UpdateFloatImageResponse UpdateFloatImageResponse
+     */
+    public function updateFloatImageWithOptions($workbookId, $sheetId, $id, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->anchor)) {
+            $body['anchor'] = $request->anchor;
+        }
+        if (!Utils::isUnset($request->coordinate)) {
+            $body['coordinate'] = $request->coordinate;
+        }
+        if (!Utils::isUnset($request->src)) {
+            $body['src'] = $request->src;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'UpdateFloatImage',
+            'version' => 'doc_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/floatImages/' . $id . '',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UpdateFloatImageResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新浮动图片
+     *  *
+     * @param string                  $workbookId
+     * @param string                  $sheetId
+     * @param string                  $id
+     * @param UpdateFloatImageRequest $request    UpdateFloatImageRequest
+     *
+     * @return UpdateFloatImageResponse UpdateFloatImageResponse
+     */
+    public function updateFloatImage($workbookId, $sheetId, $id, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateFloatImageHeaders([]);
+
+        return $this->updateFloatImageWithOptions($workbookId, $sheetId, $id, $request, $headers, $runtime);
     }
 
     /**

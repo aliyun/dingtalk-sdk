@@ -72,6 +72,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\QueryDeviceDetailResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\QueryDeviceStatusHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\QueryDeviceStatusRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\QueryDeviceStatusResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\QueryFileInfoByMinutesIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\QueryFileInfoByMinutesIdRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\QueryFileInfoByMinutesIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\SubmitAsrTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\SubmitAsrTaskRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\SubmitAsrTaskResponse;
@@ -1518,6 +1521,63 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryDeviceStatusHeaders([]);
 
         return $this->queryDeviceStatusWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 根据听记ID获取A1音频文件信息
+     *  *
+     * @param QueryFileInfoByMinutesIdRequest $request QueryFileInfoByMinutesIdRequest
+     * @param QueryFileInfoByMinutesIdHeaders $headers QueryFileInfoByMinutesIdHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryFileInfoByMinutesIdResponse QueryFileInfoByMinutesIdResponse
+     */
+    public function queryFileInfoByMinutesIdWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->minutesId)) {
+            $query['minutesId'] = $request->minutesId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'QueryFileInfoByMinutesId',
+            'version' => 'dvi_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/dvi/audios/minutes',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryFileInfoByMinutesIdResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 根据听记ID获取A1音频文件信息
+     *  *
+     * @param QueryFileInfoByMinutesIdRequest $request QueryFileInfoByMinutesIdRequest
+     *
+     * @return QueryFileInfoByMinutesIdResponse QueryFileInfoByMinutesIdResponse
+     */
+    public function queryFileInfoByMinutesId($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryFileInfoByMinutesIdHeaders([]);
+
+        return $this->queryFileInfoByMinutesIdWithOptions($request, $headers, $runtime);
     }
 
     /**

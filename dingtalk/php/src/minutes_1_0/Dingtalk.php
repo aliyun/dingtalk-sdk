@@ -11,6 +11,12 @@ use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\AdminSearchMinutesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\BatchGetMinutesDetailsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\BatchGetMinutesDetailsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\BatchGetMinutesDetailsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\BatchGetVoicePrintIdentifyConfigHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\BatchGetVoicePrintIdentifyConfigRequest;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\BatchGetVoicePrintIdentifyConfigResponse;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\BatchToggleVoicePrintSwitchStatusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\BatchToggleVoicePrintSwitchStatusRequest;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\BatchToggleVoicePrintSwitchStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\CreateMinutesByUploadFileHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\CreateMinutesByUploadFileRequest;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\CreateMinutesByUploadFileResponse;
@@ -257,6 +263,120 @@ class Dingtalk extends OpenApiClient
         $headers = new BatchGetMinutesDetailsHeaders([]);
 
         return $this->batchGetMinutesDetailsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 批量查询声纹配置信息
+     *  *
+     * @param BatchGetVoicePrintIdentifyConfigRequest $request BatchGetVoicePrintIdentifyConfigRequest
+     * @param BatchGetVoicePrintIdentifyConfigHeaders $headers BatchGetVoicePrintIdentifyConfigHeaders
+     * @param RuntimeOptions                          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return BatchGetVoicePrintIdentifyConfigResponse BatchGetVoicePrintIdentifyConfigResponse
+     */
+    public function batchGetVoicePrintIdentifyConfigWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->items)) {
+            $body['items'] = $request->items;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'BatchGetVoicePrintIdentifyConfig',
+            'version' => 'minutes_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/minutes/voicePrint/configs/batchGet',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return BatchGetVoicePrintIdentifyConfigResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 批量查询声纹配置信息
+     *  *
+     * @param BatchGetVoicePrintIdentifyConfigRequest $request BatchGetVoicePrintIdentifyConfigRequest
+     *
+     * @return BatchGetVoicePrintIdentifyConfigResponse BatchGetVoicePrintIdentifyConfigResponse
+     */
+    public function batchGetVoicePrintIdentifyConfig($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchGetVoicePrintIdentifyConfigHeaders([]);
+
+        return $this->batchGetVoicePrintIdentifyConfigWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 批量设置声纹开关状态
+     *  *
+     * @param BatchToggleVoicePrintSwitchStatusRequest $request BatchToggleVoicePrintSwitchStatusRequest
+     * @param BatchToggleVoicePrintSwitchStatusHeaders $headers BatchToggleVoicePrintSwitchStatusHeaders
+     * @param RuntimeOptions                           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return BatchToggleVoicePrintSwitchStatusResponse BatchToggleVoicePrintSwitchStatusResponse
+     */
+    public function batchToggleVoicePrintSwitchStatusWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->items)) {
+            $body['items'] = $request->items;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'BatchToggleVoicePrintSwitchStatus',
+            'version' => 'minutes_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/minutes/voicePrint/switches/batchToggle',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return BatchToggleVoicePrintSwitchStatusResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 批量设置声纹开关状态
+     *  *
+     * @param BatchToggleVoicePrintSwitchStatusRequest $request BatchToggleVoicePrintSwitchStatusRequest
+     *
+     * @return BatchToggleVoicePrintSwitchStatusResponse BatchToggleVoicePrintSwitchStatusResponse
+     */
+    public function batchToggleVoicePrintSwitchStatus($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchToggleVoicePrintSwitchStatusHeaders([]);
+
+        return $this->batchToggleVoicePrintSwitchStatusWithOptions($request, $headers, $runtime);
     }
 
     /**

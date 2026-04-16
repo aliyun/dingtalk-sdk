@@ -20,6 +20,11 @@ class GetLoginUserResponseBody extends Model
     public $corpId;
 
     /**
+     * @var bool
+     */
+    public $isAdmin;
+
+    /**
      * @var string
      */
     public $openId;
@@ -31,6 +36,7 @@ class GetLoginUserResponseBody extends Model
     protected $_name = [
         'commodityInfo' => 'commodityInfo',
         'corpId' => 'corpId',
+        'isAdmin' => 'isAdmin',
         'openId' => 'openId',
         'unionId' => 'unionId',
     ];
@@ -45,6 +51,9 @@ class GetLoginUserResponseBody extends Model
         }
         if (null !== $this->corpId) {
             $res['corpId'] = $this->corpId;
+        }
+        if (null !== $this->isAdmin) {
+            $res['isAdmin'] = $this->isAdmin;
         }
         if (null !== $this->openId) {
             $res['openId'] = $this->openId;
@@ -69,6 +78,9 @@ class GetLoginUserResponseBody extends Model
         }
         if (isset($map['corpId'])) {
             $model->corpId = $map['corpId'];
+        }
+        if (isset($map['isAdmin'])) {
+            $model->isAdmin = $map['isAdmin'];
         }
         if (isset($map['openId'])) {
             $model->openId = $map['openId'];

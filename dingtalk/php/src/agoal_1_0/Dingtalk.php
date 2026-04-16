@@ -1493,6 +1493,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->dingTeamId)) {
             $query['dingTeamId'] = $request->dingTeamId;
         }
+        if (!Utils::isUnset($request->selectedTime)) {
+            $query['selectedTime'] = $request->selectedTime;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;

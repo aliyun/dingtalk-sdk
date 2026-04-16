@@ -12,8 +12,14 @@ class GetDeptScoreCardIndicatorRequest extends Model
      * @var string
      */
     public $dingTeamId;
+
+    /**
+     * @var int
+     */
+    public $selectedTime;
     protected $_name = [
         'dingTeamId' => 'dingTeamId',
+        'selectedTime' => 'selectedTime',
     ];
 
     public function validate() {}
@@ -23,6 +29,9 @@ class GetDeptScoreCardIndicatorRequest extends Model
         $res = [];
         if (null !== $this->dingTeamId) {
             $res['dingTeamId'] = $this->dingTeamId;
+        }
+        if (null !== $this->selectedTime) {
+            $res['selectedTime'] = $this->selectedTime;
         }
 
         return $res;
@@ -38,6 +47,9 @@ class GetDeptScoreCardIndicatorRequest extends Model
         $model = new self();
         if (isset($map['dingTeamId'])) {
             $model->dingTeamId = $map['dingTeamId'];
+        }
+        if (isset($map['selectedTime'])) {
+            $model->selectedTime = $map['selectedTime'];
         }
 
         return $model;

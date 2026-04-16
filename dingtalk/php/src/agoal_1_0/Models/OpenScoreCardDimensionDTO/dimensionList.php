@@ -4,6 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\OpenScoreCardDimensionDTO;
 
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\OpenScoreCardDimensionDTO\dimensionList\indicatorList;
 use AlibabaCloud\Tea\Model;
 
 class dimensionList extends Model
@@ -21,9 +22,15 @@ class dimensionList extends Model
      * @var string[]
      */
     public $indicatorIdList;
+
+    /**
+     * @var indicatorList[]
+     */
+    public $indicatorList;
     protected $_name = [
         'dimensionId' => 'dimensionId',
         'indicatorIdList' => 'indicatorIdList',
+        'indicatorList' => 'indicatorList',
     ];
 
     public function validate() {}
@@ -36,6 +43,15 @@ class dimensionList extends Model
         }
         if (null !== $this->indicatorIdList) {
             $res['indicatorIdList'] = $this->indicatorIdList;
+        }
+        if (null !== $this->indicatorList) {
+            $res['indicatorList'] = [];
+            if (null !== $this->indicatorList && \is_array($this->indicatorList)) {
+                $n = 0;
+                foreach ($this->indicatorList as $item) {
+                    $res['indicatorList'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
 
         return $res;
@@ -55,6 +71,15 @@ class dimensionList extends Model
         if (isset($map['indicatorIdList'])) {
             if (!empty($map['indicatorIdList'])) {
                 $model->indicatorIdList = $map['indicatorIdList'];
+            }
+        }
+        if (isset($map['indicatorList'])) {
+            if (!empty($map['indicatorList'])) {
+                $model->indicatorList = [];
+                $n = 0;
+                foreach ($map['indicatorList'] as $item) {
+                    $model->indicatorList[$n++] = null !== $item ? indicatorList::fromMap($item) : $item;
+                }
             }
         }
 
