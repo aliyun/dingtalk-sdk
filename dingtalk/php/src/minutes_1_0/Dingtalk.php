@@ -685,6 +685,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->summaryTemplateType)) {
             $body['summaryTemplateType'] = $request->summaryTemplateType;
         }
+        if (!Utils::isUnset($request->userContext)) {
+            $body['userContext'] = $request->userContext;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;

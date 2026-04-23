@@ -24,6 +24,11 @@ class GetInnerAppInfoResponseBody extends Model
     public $customerAppId;
 
     /**
+     * @var bool
+     */
+    public $hideDingNavBar;
+
+    /**
      * @var string
      */
     public $mobileLoginAddressKey;
@@ -107,10 +112,16 @@ class GetInnerAppInfoResponseBody extends Model
      * @var string
      */
     public $pcTransferUrl;
+
+    /**
+     * @var string[]
+     */
+    public $ssoH5PageType;
     protected $_name = [
         'agentId' => 'agentId',
         'appName' => 'appName',
         'customerAppId' => 'customerAppId',
+        'hideDingNavBar' => 'hideDingNavBar',
         'mobileLoginAddressKey' => 'mobileLoginAddressKey',
         'mobileLoginLoginUrl' => 'mobileLoginLoginUrl',
         'mobileLoginRequestMethod' => 'mobileLoginRequestMethod',
@@ -128,6 +139,7 @@ class GetInnerAppInfoResponseBody extends Model
         'pcLoginRequestMethod' => 'pcLoginRequestMethod',
         'pcOriginalHomepageUrl' => 'pcOriginalHomepageUrl',
         'pcTransferUrl' => 'pcTransferUrl',
+        'ssoH5PageType' => 'ssoH5PageType',
     ];
 
     public function validate() {}
@@ -143,6 +155,9 @@ class GetInnerAppInfoResponseBody extends Model
         }
         if (null !== $this->customerAppId) {
             $res['customerAppId'] = $this->customerAppId;
+        }
+        if (null !== $this->hideDingNavBar) {
+            $res['hideDingNavBar'] = $this->hideDingNavBar;
         }
         if (null !== $this->mobileLoginAddressKey) {
             $res['mobileLoginAddressKey'] = $this->mobileLoginAddressKey;
@@ -195,6 +210,9 @@ class GetInnerAppInfoResponseBody extends Model
         if (null !== $this->pcTransferUrl) {
             $res['pcTransferUrl'] = $this->pcTransferUrl;
         }
+        if (null !== $this->ssoH5PageType) {
+            $res['ssoH5PageType'] = $this->ssoH5PageType;
+        }
 
         return $res;
     }
@@ -215,6 +233,9 @@ class GetInnerAppInfoResponseBody extends Model
         }
         if (isset($map['customerAppId'])) {
             $model->customerAppId = $map['customerAppId'];
+        }
+        if (isset($map['hideDingNavBar'])) {
+            $model->hideDingNavBar = $map['hideDingNavBar'];
         }
         if (isset($map['mobileLoginAddressKey'])) {
             $model->mobileLoginAddressKey = $map['mobileLoginAddressKey'];
@@ -266,6 +287,11 @@ class GetInnerAppInfoResponseBody extends Model
         }
         if (isset($map['pcTransferUrl'])) {
             $model->pcTransferUrl = $map['pcTransferUrl'];
+        }
+        if (isset($map['ssoH5PageType'])) {
+            if (!empty($map['ssoH5PageType'])) {
+                $model->ssoH5PageType = $map['ssoH5PageType'];
+            }
         }
 
         return $model;

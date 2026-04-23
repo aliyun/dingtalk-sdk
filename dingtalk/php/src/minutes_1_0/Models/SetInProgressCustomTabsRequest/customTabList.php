@@ -41,6 +41,13 @@ class customTabList extends Model
     public $pcUrl;
 
     /**
+     * @example tab_1
+     *
+     * @var string
+     */
+    public $tabId;
+
+    /**
      * @description This parameter is required.
      *
      * @example https://example.com/app/minutes/analysis_h5
@@ -53,6 +60,7 @@ class customTabList extends Model
         'defaultLocale' => 'defaultLocale',
         'nameI18nMap' => 'nameI18nMap',
         'pcUrl' => 'pcUrl',
+        'tabId' => 'tabId',
         'url' => 'url',
     ];
 
@@ -72,6 +80,9 @@ class customTabList extends Model
         }
         if (null !== $this->pcUrl) {
             $res['pcUrl'] = $this->pcUrl;
+        }
+        if (null !== $this->tabId) {
+            $res['tabId'] = $this->tabId;
         }
         if (null !== $this->url) {
             $res['url'] = $this->url;
@@ -99,6 +110,9 @@ class customTabList extends Model
         }
         if (isset($map['pcUrl'])) {
             $model->pcUrl = $map['pcUrl'];
+        }
+        if (isset($map['tabId'])) {
+            $model->tabId = $map['tabId'];
         }
         if (isset($map['url'])) {
             $model->url = $map['url'];

@@ -139,6 +139,9 @@ use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainLabelDataQueryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainLabelDataUpsertHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainLabelDataUpsertRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainLabelDataUpsertResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainLabelEmpDeleteHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainLabelEmpDeleteRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainLabelEmpDeleteResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainLabelMetaHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainLabelMetaRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrbrain_1_0\Models\HrbrainLabelMetaResponse;
@@ -2807,6 +2810,66 @@ class Dingtalk extends OpenApiClient
         $headers = new HrbrainLabelDataUpsertHeaders([]);
 
         return $this->hrbrainLabelDataUpsertWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 删除标签下指定人员
+     *  *
+     * @param HrbrainLabelEmpDeleteRequest $request HrbrainLabelEmpDeleteRequest
+     * @param HrbrainLabelEmpDeleteHeaders $headers HrbrainLabelEmpDeleteHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return HrbrainLabelEmpDeleteResponse HrbrainLabelEmpDeleteResponse
+     */
+    public function hrbrainLabelEmpDeleteWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->labelCode)) {
+            $body['labelCode'] = $request->labelCode;
+        }
+        if (!Utils::isUnset($request->workNos)) {
+            $body['workNos'] = $request->workNos;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'HrbrainLabelEmpDelete',
+            'version' => 'hrbrain_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrbrain/labels/delete',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return HrbrainLabelEmpDeleteResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 删除标签下指定人员
+     *  *
+     * @param HrbrainLabelEmpDeleteRequest $request HrbrainLabelEmpDeleteRequest
+     *
+     * @return HrbrainLabelEmpDeleteResponse HrbrainLabelEmpDeleteResponse
+     */
+    public function hrbrainLabelEmpDelete($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new HrbrainLabelEmpDeleteHeaders([]);
+
+        return $this->hrbrainLabelEmpDeleteWithOptions($request, $headers, $runtime);
     }
 
     /**

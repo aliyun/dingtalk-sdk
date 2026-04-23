@@ -34,6 +34,11 @@ class GenerateSummaryRequest extends Model
     public $summaryTemplateType;
 
     /**
+     * @var string
+     */
+    public $userContext;
+
+    /**
      * @description This parameter is required.
      *
      * @example lJcRnm39OsU4jlFVmRGXXXXX
@@ -45,6 +50,7 @@ class GenerateSummaryRequest extends Model
         'diyTemplateVersion' => 'diyTemplateVersion',
         'summaryTemplateId' => 'summaryTemplateId',
         'summaryTemplateType' => 'summaryTemplateType',
+        'userContext' => 'userContext',
         'unionId' => 'unionId',
     ];
 
@@ -61,6 +67,9 @@ class GenerateSummaryRequest extends Model
         }
         if (null !== $this->summaryTemplateType) {
             $res['summaryTemplateType'] = $this->summaryTemplateType;
+        }
+        if (null !== $this->userContext) {
+            $res['userContext'] = $this->userContext;
         }
         if (null !== $this->unionId) {
             $res['unionId'] = $this->unionId;
@@ -85,6 +94,9 @@ class GenerateSummaryRequest extends Model
         }
         if (isset($map['summaryTemplateType'])) {
             $model->summaryTemplateType = $map['summaryTemplateType'];
+        }
+        if (isset($map['userContext'])) {
+            $model->userContext = $map['userContext'];
         }
         if (isset($map['unionId'])) {
             $model->unionId = $map['unionId'];
