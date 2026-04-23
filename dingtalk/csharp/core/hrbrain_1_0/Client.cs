@@ -6812,6 +6812,162 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>删除标签下指定人员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainLabelEmpDeleteRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainLabelEmpDeleteHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainLabelEmpDeleteResponse
+        /// </returns>
+        public HrbrainLabelEmpDeleteResponse HrbrainLabelEmpDeleteWithOptions(HrbrainLabelEmpDeleteRequest request, HrbrainLabelEmpDeleteHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LabelCode))
+            {
+                body["labelCode"] = request.LabelCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WorkNos))
+            {
+                body["workNos"] = request.WorkNos;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrbrainLabelEmpDelete",
+                Version = "hrbrain_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrbrain/labels/delete",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrbrainLabelEmpDeleteResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除标签下指定人员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainLabelEmpDeleteRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainLabelEmpDeleteHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainLabelEmpDeleteResponse
+        /// </returns>
+        public async Task<HrbrainLabelEmpDeleteResponse> HrbrainLabelEmpDeleteWithOptionsAsync(HrbrainLabelEmpDeleteRequest request, HrbrainLabelEmpDeleteHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LabelCode))
+            {
+                body["labelCode"] = request.LabelCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WorkNos))
+            {
+                body["workNos"] = request.WorkNos;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrbrainLabelEmpDelete",
+                Version = "hrbrain_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrbrain/labels/delete",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrbrainLabelEmpDeleteResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除标签下指定人员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainLabelEmpDeleteRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainLabelEmpDeleteResponse
+        /// </returns>
+        public HrbrainLabelEmpDeleteResponse HrbrainLabelEmpDelete(HrbrainLabelEmpDeleteRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrbrainLabelEmpDeleteHeaders headers = new HrbrainLabelEmpDeleteHeaders();
+            return HrbrainLabelEmpDeleteWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除标签下指定人员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainLabelEmpDeleteRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainLabelEmpDeleteResponse
+        /// </returns>
+        public async Task<HrbrainLabelEmpDeleteResponse> HrbrainLabelEmpDeleteAsync(HrbrainLabelEmpDeleteRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrbrainLabelEmpDeleteHeaders headers = new HrbrainLabelEmpDeleteHeaders();
+            return await HrbrainLabelEmpDeleteWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>标签元数据</para>
         /// </summary>
         /// 

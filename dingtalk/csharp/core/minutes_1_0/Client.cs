@@ -1451,6 +1451,10 @@ namespace AlibabaCloud.SDK.Dingtalkminutes_1_0
             {
                 body["summaryTemplateType"] = request.SummaryTemplateType;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserContext))
+            {
+                body["userContext"] = request.UserContext;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -1519,6 +1523,10 @@ namespace AlibabaCloud.SDK.Dingtalkminutes_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SummaryTemplateType))
             {
                 body["summaryTemplateType"] = request.SummaryTemplateType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserContext))
+            {
+                body["userContext"] = request.UserContext;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

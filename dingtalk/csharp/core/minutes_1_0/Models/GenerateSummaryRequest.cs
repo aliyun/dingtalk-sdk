@@ -37,6 +37,10 @@ namespace AlibabaCloud.SDK.Dingtalkminutes_1_0.Models
         [Validation(Required=false)]
         public string SummaryTemplateType { get; set; }
 
+        [NameInMap("userContext")]
+        [Validation(Required=false)]
+        public string UserContext { get; set; }
+
         /// <summary>
         /// <para>This parameter is required.</para>
         /// 

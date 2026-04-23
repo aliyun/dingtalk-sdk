@@ -52,6 +52,14 @@ namespace AlibabaCloud.SDK.Dingtalkminutes_1_0.Models
             public string PcUrl { get; set; }
 
             /// <summary>
+            /// <b>Example:</b>
+            /// <para>tab_1</para>
+            /// </summary>
+            [NameInMap("tabId")]
+            [Validation(Required=false)]
+            public string TabId { get; set; }
+
+            /// <summary>
             /// <para>This parameter is required.</para>
             /// 
             /// <b>Example:</b>

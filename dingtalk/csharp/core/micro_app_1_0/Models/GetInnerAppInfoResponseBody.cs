@@ -21,6 +21,10 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
         [Validation(Required=false)]
         public string CustomerAppId { get; set; }
 
+        [NameInMap("hideDingNavBar")]
+        [Validation(Required=false)]
+        public bool? HideDingNavBar { get; set; }
+
         [NameInMap("mobileLoginAddressKey")]
         [Validation(Required=false)]
         public string MobileLoginAddressKey { get; set; }
@@ -88,6 +92,10 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
         [NameInMap("pcTransferUrl")]
         [Validation(Required=false)]
         public string PcTransferUrl { get; set; }
+
+        [NameInMap("ssoH5PageType")]
+        [Validation(Required=false)]
+        public List<string> SsoH5PageType { get; set; }
 
     }
 
