@@ -73,6 +73,13 @@ public class SetInProgressCustomTabsRequest extends TeaModel {
         public String pcUrl;
 
         /**
+         * <strong>example:</strong>
+         * <p>tab_1</p>
+         */
+        @NameInMap("tabId")
+        public String tabId;
+
+        /**
          * <p>This parameter is required.</p>
          * 
          * <strong>example:</strong>
@@ -116,6 +123,14 @@ public class SetInProgressCustomTabsRequest extends TeaModel {
         }
         public String getPcUrl() {
             return this.pcUrl;
+        }
+
+        public SetInProgressCustomTabsRequestCustomTabList setTabId(String tabId) {
+            this.tabId = tabId;
+            return this;
+        }
+        public String getTabId() {
+            return this.tabId;
         }
 
         public SetInProgressCustomTabsRequestCustomTabList setUrl(String url) {

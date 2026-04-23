@@ -29,6 +29,9 @@ public class GenerateSummaryRequest extends TeaModel {
     @NameInMap("summaryTemplateType")
     public String summaryTemplateType;
 
+    @NameInMap("userContext")
+    public String userContext;
+
     /**
      * <p>This parameter is required.</p>
      * 
@@ -65,6 +68,14 @@ public class GenerateSummaryRequest extends TeaModel {
     }
     public String getSummaryTemplateType() {
         return this.summaryTemplateType;
+    }
+
+    public GenerateSummaryRequest setUserContext(String userContext) {
+        this.userContext = userContext;
+        return this;
+    }
+    public String getUserContext() {
+        return this.userContext;
     }
 
     public GenerateSummaryRequest setUnionId(String unionId) {

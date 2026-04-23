@@ -13,6 +13,9 @@ public class GetInnerAppInfoResponseBody extends TeaModel {
     @NameInMap("customerAppId")
     public String customerAppId;
 
+    @NameInMap("hideDingNavBar")
+    public Boolean hideDingNavBar;
+
     @NameInMap("mobileLoginAddressKey")
     public String mobileLoginAddressKey;
 
@@ -64,6 +67,9 @@ public class GetInnerAppInfoResponseBody extends TeaModel {
     @NameInMap("pcTransferUrl")
     public String pcTransferUrl;
 
+    @NameInMap("ssoH5PageType")
+    public java.util.List<String> ssoH5PageType;
+
     public static GetInnerAppInfoResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetInnerAppInfoResponseBody self = new GetInnerAppInfoResponseBody();
         return TeaModel.build(map, self);
@@ -91,6 +97,14 @@ public class GetInnerAppInfoResponseBody extends TeaModel {
     }
     public String getCustomerAppId() {
         return this.customerAppId;
+    }
+
+    public GetInnerAppInfoResponseBody setHideDingNavBar(Boolean hideDingNavBar) {
+        this.hideDingNavBar = hideDingNavBar;
+        return this;
+    }
+    public Boolean getHideDingNavBar() {
+        return this.hideDingNavBar;
     }
 
     public GetInnerAppInfoResponseBody setMobileLoginAddressKey(String mobileLoginAddressKey) {
@@ -227,6 +241,14 @@ public class GetInnerAppInfoResponseBody extends TeaModel {
     }
     public String getPcTransferUrl() {
         return this.pcTransferUrl;
+    }
+
+    public GetInnerAppInfoResponseBody setSsoH5PageType(java.util.List<String> ssoH5PageType) {
+        this.ssoH5PageType = ssoH5PageType;
+        return this;
+    }
+    public java.util.List<String> getSsoH5PageType() {
+        return this.ssoH5PageType;
     }
 
 }
