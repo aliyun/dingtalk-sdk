@@ -1076,6 +1076,8 @@ class Client(OpenApiClient):
             body['summaryTemplateId'] = request.summary_template_id
         if not UtilClient.is_unset(request.summary_template_type):
             body['summaryTemplateType'] = request.summary_template_type
+        if not UtilClient.is_unset(request.user_context):
+            body['userContext'] = request.user_context
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1128,6 +1130,8 @@ class Client(OpenApiClient):
             body['summaryTemplateId'] = request.summary_template_id
         if not UtilClient.is_unset(request.summary_template_type):
             body['summaryTemplateType'] = request.summary_template_type
+        if not UtilClient.is_unset(request.user_context):
+            body['userContext'] = request.user_context
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

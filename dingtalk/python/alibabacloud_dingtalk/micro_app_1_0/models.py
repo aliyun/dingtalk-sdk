@@ -2336,6 +2336,7 @@ class GetInnerAppInfoResponseBody(TeaModel):
         agent_id: int = None,
         app_name: str = None,
         customer_app_id: str = None,
+        hide_ding_nav_bar: bool = None,
         mobile_login_address_key: str = None,
         mobile_login_login_url: str = None,
         mobile_login_request_method: str = None,
@@ -2353,10 +2354,12 @@ class GetInnerAppInfoResponseBody(TeaModel):
         pc_login_request_method: str = None,
         pc_original_homepage_url: str = None,
         pc_transfer_url: str = None,
+        sso_h5page_type: List[str] = None,
     ):
         self.agent_id = agent_id
         self.app_name = app_name
         self.customer_app_id = customer_app_id
+        self.hide_ding_nav_bar = hide_ding_nav_bar
         self.mobile_login_address_key = mobile_login_address_key
         self.mobile_login_login_url = mobile_login_login_url
         self.mobile_login_request_method = mobile_login_request_method
@@ -2374,6 +2377,7 @@ class GetInnerAppInfoResponseBody(TeaModel):
         self.pc_login_request_method = pc_login_request_method
         self.pc_original_homepage_url = pc_original_homepage_url
         self.pc_transfer_url = pc_transfer_url
+        self.sso_h5page_type = sso_h5page_type
 
     def validate(self):
         pass
@@ -2390,6 +2394,8 @@ class GetInnerAppInfoResponseBody(TeaModel):
             result['appName'] = self.app_name
         if self.customer_app_id is not None:
             result['customerAppId'] = self.customer_app_id
+        if self.hide_ding_nav_bar is not None:
+            result['hideDingNavBar'] = self.hide_ding_nav_bar
         if self.mobile_login_address_key is not None:
             result['mobileLoginAddressKey'] = self.mobile_login_address_key
         if self.mobile_login_login_url is not None:
@@ -2424,6 +2430,8 @@ class GetInnerAppInfoResponseBody(TeaModel):
             result['pcOriginalHomepageUrl'] = self.pc_original_homepage_url
         if self.pc_transfer_url is not None:
             result['pcTransferUrl'] = self.pc_transfer_url
+        if self.sso_h5page_type is not None:
+            result['ssoH5PageType'] = self.sso_h5page_type
         return result
 
     def from_map(self, m: dict = None):
@@ -2434,6 +2442,8 @@ class GetInnerAppInfoResponseBody(TeaModel):
             self.app_name = m.get('appName')
         if m.get('customerAppId') is not None:
             self.customer_app_id = m.get('customerAppId')
+        if m.get('hideDingNavBar') is not None:
+            self.hide_ding_nav_bar = m.get('hideDingNavBar')
         if m.get('mobileLoginAddressKey') is not None:
             self.mobile_login_address_key = m.get('mobileLoginAddressKey')
         if m.get('mobileLoginLoginUrl') is not None:
@@ -2468,6 +2478,8 @@ class GetInnerAppInfoResponseBody(TeaModel):
             self.pc_original_homepage_url = m.get('pcOriginalHomepageUrl')
         if m.get('pcTransferUrl') is not None:
             self.pc_transfer_url = m.get('pcTransferUrl')
+        if m.get('ssoH5PageType') is not None:
+            self.sso_h5page_type = m.get('ssoH5PageType')
         return self
 
 

@@ -1644,6 +1644,7 @@ class GenerateSummaryRequest(TeaModel):
         diy_template_version: str = None,
         summary_template_id: str = None,
         summary_template_type: str = None,
+        user_context: str = None,
         union_id: str = None,
     ):
         self.diy_template_version = diy_template_version
@@ -1651,6 +1652,7 @@ class GenerateSummaryRequest(TeaModel):
         self.summary_template_id = summary_template_id
         # This parameter is required.
         self.summary_template_type = summary_template_type
+        self.user_context = user_context
         # This parameter is required.
         self.union_id = union_id
 
@@ -1669,6 +1671,8 @@ class GenerateSummaryRequest(TeaModel):
             result['summaryTemplateId'] = self.summary_template_id
         if self.summary_template_type is not None:
             result['summaryTemplateType'] = self.summary_template_type
+        if self.user_context is not None:
+            result['userContext'] = self.user_context
         if self.union_id is not None:
             result['unionId'] = self.union_id
         return result
@@ -1681,6 +1685,8 @@ class GenerateSummaryRequest(TeaModel):
             self.summary_template_id = m.get('summaryTemplateId')
         if m.get('summaryTemplateType') is not None:
             self.summary_template_type = m.get('summaryTemplateType')
+        if m.get('userContext') is not None:
+            self.user_context = m.get('userContext')
         if m.get('unionId') is not None:
             self.union_id = m.get('unionId')
         return self
@@ -5912,6 +5918,7 @@ class SetInProgressCustomTabsRequestCustomTabList(TeaModel):
         default_locale: str = None,
         name_i18n_map: Dict[str, Any] = None,
         pc_url: str = None,
+        tab_id: str = None,
         url: str = None,
     ):
         # This parameter is required.
@@ -5921,6 +5928,7 @@ class SetInProgressCustomTabsRequestCustomTabList(TeaModel):
         # This parameter is required.
         self.name_i18n_map = name_i18n_map
         self.pc_url = pc_url
+        self.tab_id = tab_id
         # This parameter is required.
         self.url = url
 
@@ -5941,6 +5949,8 @@ class SetInProgressCustomTabsRequestCustomTabList(TeaModel):
             result['nameI18nMap'] = self.name_i18n_map
         if self.pc_url is not None:
             result['pcUrl'] = self.pc_url
+        if self.tab_id is not None:
+            result['tabId'] = self.tab_id
         if self.url is not None:
             result['url'] = self.url
         return result
@@ -5955,6 +5965,8 @@ class SetInProgressCustomTabsRequestCustomTabList(TeaModel):
             self.name_i18n_map = m.get('nameI18nMap')
         if m.get('pcUrl') is not None:
             self.pc_url = m.get('pcUrl')
+        if m.get('tabId') is not None:
+            self.tab_id = m.get('tabId')
         if m.get('url') is not None:
             self.url = m.get('url')
         return self
