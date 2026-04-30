@@ -37,6 +37,9 @@ public class HrbrainLabelMetaUpdateRequest extends TeaModel {
     @NameInMap("required")
     public Boolean required;
 
+    @NameInMap("scenes")
+    public java.util.List<String> scenes;
+
     public static HrbrainLabelMetaUpdateRequest build(java.util.Map<String, ?> map) throws Exception {
         HrbrainLabelMetaUpdateRequest self = new HrbrainLabelMetaUpdateRequest();
         return TeaModel.build(map, self);
@@ -120,6 +123,14 @@ public class HrbrainLabelMetaUpdateRequest extends TeaModel {
     }
     public Boolean getRequired() {
         return this.required;
+    }
+
+    public HrbrainLabelMetaUpdateRequest setScenes(java.util.List<String> scenes) {
+        this.scenes = scenes;
+        return this;
+    }
+    public java.util.List<String> getScenes() {
+        return this.scenes;
     }
 
 }

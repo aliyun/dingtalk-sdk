@@ -58,6 +58,9 @@ public class UpdateScheduleConfSettingsRequest extends TeaModel {
         @NameInMap("allowAllParticipantsStart")
         public Integer allowAllParticipantsStart;
 
+        @NameInMap("enableAiAgentStatus")
+        public Boolean enableAiAgentStatus;
+
         @NameInMap("receiverType")
         public Integer receiverType;
 
@@ -78,6 +81,14 @@ public class UpdateScheduleConfSettingsRequest extends TeaModel {
         }
         public Integer getAllowAllParticipantsStart() {
             return this.allowAllParticipantsStart;
+        }
+
+        public UpdateScheduleConfSettingsRequestScheduleConfSettingModelAiAgentSummarySetting setEnableAiAgentStatus(Boolean enableAiAgentStatus) {
+            this.enableAiAgentStatus = enableAiAgentStatus;
+            return this;
+        }
+        public Boolean getEnableAiAgentStatus() {
+            return this.enableAiAgentStatus;
         }
 
         public UpdateScheduleConfSettingsRequestScheduleConfSettingModelAiAgentSummarySetting setReceiverType(Integer receiverType) {

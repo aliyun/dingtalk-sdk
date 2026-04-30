@@ -2843,6 +2843,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("required", request.required);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.scenes)) {
+            body.put("scenes", request.scenes);
+        }
+
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;

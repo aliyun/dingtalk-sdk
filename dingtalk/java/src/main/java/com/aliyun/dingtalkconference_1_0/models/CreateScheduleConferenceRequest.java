@@ -92,6 +92,9 @@ public class CreateScheduleConferenceRequest extends TeaModel {
         @NameInMap("allowAllParticipantsStart")
         public Integer allowAllParticipantsStart;
 
+        @NameInMap("enableAiAgentStatus")
+        public Boolean enableAiAgentStatus;
+
         @NameInMap("receiverType")
         public Integer receiverType;
 
@@ -116,6 +119,14 @@ public class CreateScheduleConferenceRequest extends TeaModel {
         }
         public Integer getAllowAllParticipantsStart() {
             return this.allowAllParticipantsStart;
+        }
+
+        public CreateScheduleConferenceRequestScheduleConfSettingModelAiAgentSummarySetting setEnableAiAgentStatus(Boolean enableAiAgentStatus) {
+            this.enableAiAgentStatus = enableAiAgentStatus;
+            return this;
+        }
+        public Boolean getEnableAiAgentStatus() {
+            return this.enableAiAgentStatus;
         }
 
         public CreateScheduleConferenceRequestScheduleConfSettingModelAiAgentSummarySetting setReceiverType(Integer receiverType) {

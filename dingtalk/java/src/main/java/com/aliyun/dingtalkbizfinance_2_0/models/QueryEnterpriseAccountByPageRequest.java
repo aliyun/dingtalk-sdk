@@ -22,6 +22,9 @@ public class QueryEnterpriseAccountByPageRequest extends TeaModel {
     @NameInMap("pageSize")
     public Long pageSize;
 
+    @NameInMap("startStatus")
+    public Boolean startStatus;
+
     public static QueryEnterpriseAccountByPageRequest build(java.util.Map<String, ?> map) throws Exception {
         QueryEnterpriseAccountByPageRequest self = new QueryEnterpriseAccountByPageRequest();
         return TeaModel.build(map, self);
@@ -41,6 +44,14 @@ public class QueryEnterpriseAccountByPageRequest extends TeaModel {
     }
     public Long getPageSize() {
         return this.pageSize;
+    }
+
+    public QueryEnterpriseAccountByPageRequest setStartStatus(Boolean startStatus) {
+        this.startStatus = startStatus;
+        return this;
+    }
+    public Boolean getStartStatus() {
+        return this.startStatus;
     }
 
 }

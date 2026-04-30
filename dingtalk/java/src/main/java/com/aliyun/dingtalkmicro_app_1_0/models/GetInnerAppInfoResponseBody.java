@@ -16,6 +16,9 @@ public class GetInnerAppInfoResponseBody extends TeaModel {
     @NameInMap("hideDingNavBar")
     public Boolean hideDingNavBar;
 
+    @NameInMap("mobileEffectiveHomepageUrl")
+    public String mobileEffectiveHomepageUrl;
+
     @NameInMap("mobileLoginAddressKey")
     public String mobileLoginAddressKey;
 
@@ -105,6 +108,14 @@ public class GetInnerAppInfoResponseBody extends TeaModel {
     }
     public Boolean getHideDingNavBar() {
         return this.hideDingNavBar;
+    }
+
+    public GetInnerAppInfoResponseBody setMobileEffectiveHomepageUrl(String mobileEffectiveHomepageUrl) {
+        this.mobileEffectiveHomepageUrl = mobileEffectiveHomepageUrl;
+        return this;
+    }
+    public String getMobileEffectiveHomepageUrl() {
+        return this.mobileEffectiveHomepageUrl;
     }
 
     public GetInnerAppInfoResponseBody setMobileLoginAddressKey(String mobileLoginAddressKey) {

@@ -1216,6 +1216,98 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>退回流程实例</p>
+     * 
+     * @param request RestartInstanceRequest
+     * @param headers RestartInstanceHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return RestartInstanceResponse
+     */
+    public RestartInstanceResponse restartInstanceWithOptions(RestartInstanceRequest request, RestartInstanceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.appType)) {
+            body.put("appType", request.appType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.currentActivityId)) {
+            body.put("currentActivityId", request.currentActivityId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.envProfile)) {
+            body.put("envProfile", request.envProfile);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.formUuid)) {
+            body.put("formUuid", request.formUuid);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.procInstanceId)) {
+            body.put("procInstanceId", request.procInstanceId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.remark)) {
+            body.put("remark", request.remark);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.systemToken)) {
+            body.put("systemToken", request.systemToken);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.targetActivityId)) {
+            body.put("targetActivityId", request.targetActivityId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.taskId)) {
+            body.put("taskId", request.taskId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "RestartInstance"),
+            new TeaPair("version", "yida_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/yida/processes/instances/restartInstance"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "none")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new RestartInstanceResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>退回流程实例</p>
+     * 
+     * @param request RestartInstanceRequest
+     * @return RestartInstanceResponse
+     */
+    public RestartInstanceResponse restartInstance(RestartInstanceRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        RestartInstanceHeaders headers = new RestartInstanceHeaders();
+        return this.restartInstanceWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>修改/新增矩阵明细数据</p>
      * 
      * @param request SaveAndUpdateMatrixDataRequest
