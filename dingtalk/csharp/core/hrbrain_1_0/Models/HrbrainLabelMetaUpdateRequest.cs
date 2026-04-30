@@ -52,6 +52,10 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0.Models
         [Validation(Required=false)]
         public bool? Required { get; set; }
 
+        [NameInMap("scenes")]
+        [Validation(Required=false)]
+        public List<string> Scenes { get; set; }
+
     }
 
 }

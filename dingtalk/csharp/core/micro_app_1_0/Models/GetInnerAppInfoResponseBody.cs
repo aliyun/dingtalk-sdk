@@ -25,6 +25,10 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
         [Validation(Required=false)]
         public bool? HideDingNavBar { get; set; }
 
+        [NameInMap("mobileEffectiveHomepageUrl")]
+        [Validation(Required=false)]
+        public string MobileEffectiveHomepageUrl { get; set; }
+
         [NameInMap("mobileLoginAddressKey")]
         [Validation(Required=false)]
         public string MobileLoginAddressKey { get; set; }

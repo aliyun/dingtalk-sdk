@@ -6,32 +6,32 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0.Models
+namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
-    public class QueryEnterpriseAccountByPageRequest : TeaModel {
+    public class GetGroupMembersByUserTokenRequest : TeaModel {
         /// <summary>
         /// <para>This parameter is required.</para>
         /// 
         /// <b>Example:</b>
-        /// <para>1</para>
+        /// <para>200</para>
         /// </summary>
-        [NameInMap("pageNumber")]
+        [NameInMap("maxResults")]
         [Validation(Required=false)]
-        public long? PageNumber { get; set; }
+        public long? MaxResults { get; set; }
+
+        [NameInMap("nextToken")]
+        [Validation(Required=false)]
+        public string NextToken { get; set; }
 
         /// <summary>
         /// <para>This parameter is required.</para>
         /// 
         /// <b>Example:</b>
-        /// <para>10</para>
+        /// <para>cidXXXXXXX</para>
         /// </summary>
-        [NameInMap("pageSize")]
+        [NameInMap("openConversationId")]
         [Validation(Required=false)]
-        public long? PageSize { get; set; }
-
-        [NameInMap("startStatus")]
-        [Validation(Required=false)]
-        public bool? StartStatus { get; set; }
+        public string OpenConversationId { get; set; }
 
     }
 

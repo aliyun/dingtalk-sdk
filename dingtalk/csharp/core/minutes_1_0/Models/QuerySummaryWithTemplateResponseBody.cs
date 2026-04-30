@@ -9,9 +9,17 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkminutes_1_0.Models
 {
     public class QuerySummaryWithTemplateResponseBody : TeaModel {
+        [NameInMap("generatingStatus")]
+        [Validation(Required=false)]
+        public string GeneratingStatus { get; set; }
+
         [NameInMap("summaryText")]
         [Validation(Required=false)]
         public string SummaryText { get; set; }
+
+        [NameInMap("visualGeneratingStatus")]
+        [Validation(Required=false)]
+        public string VisualGeneratingStatus { get; set; }
 
     }
 

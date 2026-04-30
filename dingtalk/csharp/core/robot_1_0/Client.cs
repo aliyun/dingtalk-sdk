@@ -30,6 +30,162 @@ namespace AlibabaCloud.SDK.Dingtalkrobot_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>群内安装企业机器人</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddOrgRobotInstanceToGroupRequest
+        /// </param>
+        /// <param name="headers">
+        /// AddOrgRobotInstanceToGroupHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddOrgRobotInstanceToGroupResponse
+        /// </returns>
+        public AddOrgRobotInstanceToGroupResponse AddOrgRobotInstanceToGroupWithOptions(AddOrgRobotInstanceToGroupRequest request, AddOrgRobotInstanceToGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RobotCode))
+            {
+                body["robotCode"] = request.RobotCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddOrgRobotInstanceToGroup",
+                Version = "robot_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/robot/groups/orgRobots/add",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AddOrgRobotInstanceToGroupResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>群内安装企业机器人</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddOrgRobotInstanceToGroupRequest
+        /// </param>
+        /// <param name="headers">
+        /// AddOrgRobotInstanceToGroupHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddOrgRobotInstanceToGroupResponse
+        /// </returns>
+        public async Task<AddOrgRobotInstanceToGroupResponse> AddOrgRobotInstanceToGroupWithOptionsAsync(AddOrgRobotInstanceToGroupRequest request, AddOrgRobotInstanceToGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RobotCode))
+            {
+                body["robotCode"] = request.RobotCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddOrgRobotInstanceToGroup",
+                Version = "robot_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/robot/groups/orgRobots/add",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AddOrgRobotInstanceToGroupResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>群内安装企业机器人</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddOrgRobotInstanceToGroupRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddOrgRobotInstanceToGroupResponse
+        /// </returns>
+        public AddOrgRobotInstanceToGroupResponse AddOrgRobotInstanceToGroup(AddOrgRobotInstanceToGroupRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddOrgRobotInstanceToGroupHeaders headers = new AddOrgRobotInstanceToGroupHeaders();
+            return AddOrgRobotInstanceToGroupWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>群内安装企业机器人</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddOrgRobotInstanceToGroupRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddOrgRobotInstanceToGroupResponse
+        /// </returns>
+        public async Task<AddOrgRobotInstanceToGroupResponse> AddOrgRobotInstanceToGroupAsync(AddOrgRobotInstanceToGroupRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddOrgRobotInstanceToGroupHeaders headers = new AddOrgRobotInstanceToGroupHeaders();
+            return await AddOrgRobotInstanceToGroupWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>批量查询人与机器人会话机器人消息是否已读</para>
         /// </summary>
         /// 

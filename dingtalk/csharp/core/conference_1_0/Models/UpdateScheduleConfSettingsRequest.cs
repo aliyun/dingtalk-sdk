@@ -31,6 +31,10 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
                 [Validation(Required=false)]
                 public int? AllowAllParticipantsStart { get; set; }
 
+                [NameInMap("enableAiAgentStatus")]
+                [Validation(Required=false)]
+                public bool? EnableAiAgentStatus { get; set; }
+
                 [NameInMap("receiverType")]
                 [Validation(Required=false)]
                 public int? ReceiverType { get; set; }

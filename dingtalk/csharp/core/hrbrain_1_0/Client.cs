@@ -7356,6 +7356,10 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             {
                 body["required"] = request.Required;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Scenes))
+            {
+                body["scenes"] = request.Scenes;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -7446,6 +7450,10 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Required))
             {
                 body["required"] = request.Required;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Scenes))
+            {
+                body["scenes"] = request.Scenes;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
