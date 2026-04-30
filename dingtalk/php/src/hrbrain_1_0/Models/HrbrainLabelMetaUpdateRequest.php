@@ -59,6 +59,11 @@ class HrbrainLabelMetaUpdateRequest extends Model
      * @var bool
      */
     public $required;
+
+    /**
+     * @var string[]
+     */
+    public $scenes;
     protected $_name = [
         'categoryCode' => 'categoryCode',
         'code' => 'code',
@@ -70,6 +75,7 @@ class HrbrainLabelMetaUpdateRequest extends Model
         'options' => 'options',
         'permission' => 'permission',
         'required' => 'required',
+        'scenes' => 'scenes',
     ];
 
     public function validate() {}
@@ -106,6 +112,9 @@ class HrbrainLabelMetaUpdateRequest extends Model
         }
         if (null !== $this->required) {
             $res['required'] = $this->required;
+        }
+        if (null !== $this->scenes) {
+            $res['scenes'] = $this->scenes;
         }
 
         return $res;
@@ -150,6 +159,11 @@ class HrbrainLabelMetaUpdateRequest extends Model
         }
         if (isset($map['required'])) {
             $model->required = $map['required'];
+        }
+        if (isset($map['scenes'])) {
+            if (!empty($map['scenes'])) {
+                $model->scenes = $map['scenes'];
+            }
         }
 
         return $model;

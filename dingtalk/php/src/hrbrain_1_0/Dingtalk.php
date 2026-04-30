@@ -3041,6 +3041,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->required)) {
             $body['required'] = $request->required;
         }
+        if (!Utils::isUnset($request->scenes)) {
+            $body['scenes'] = $request->scenes;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;

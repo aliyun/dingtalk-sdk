@@ -23,6 +23,10 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\AnnualCertificationAuditRespon
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\BatchApproveUnionApplyHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\BatchApproveUnionApplyRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\BatchApproveUnionApplyResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\BatchGetUserHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\BatchGetUserRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\BatchGetUserResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\BatchGetUserShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\BatchUpdateExternalTitleHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\BatchUpdateExternalTitleRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\BatchUpdateExternalTitleResponse;
@@ -789,6 +793,68 @@ class Dingtalk extends OpenApiClient
         $headers = new BatchApproveUnionApplyHeaders([]);
 
         return $this->batchApproveUnionApplyWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 批量查询用户信息
+     *  *
+     * @param BatchGetUserRequest $tmpReq  BatchGetUserRequest
+     * @param BatchGetUserHeaders $headers BatchGetUserHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
+     *
+     * @return BatchGetUserResponse BatchGetUserResponse
+     */
+    public function batchGetUserWithOptions($tmpReq, $headers, $runtime)
+    {
+        Utils::validateModel($tmpReq);
+        $request = new BatchGetUserShrinkRequest([]);
+        OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->userIdList)) {
+            $request->userIdListShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->userIdList, 'userIdList', 'json');
+        }
+        $query = [];
+        if (!Utils::isUnset($request->userIdListShrink)) {
+            $query['userIdList'] = $request->userIdListShrink;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'BatchGetUser',
+            'version' => 'contact_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contact/users/batch/get',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return BatchGetUserResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 批量查询用户信息
+     *  *
+     * @param BatchGetUserRequest $request BatchGetUserRequest
+     *
+     * @return BatchGetUserResponse BatchGetUserResponse
+     */
+    public function batchGetUser($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchGetUserHeaders([]);
+
+        return $this->batchGetUserWithOptions($request, $headers, $runtime);
     }
 
     /**

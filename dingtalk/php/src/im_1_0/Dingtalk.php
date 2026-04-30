@@ -103,6 +103,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetFamilySchoolConversationMsgRespo
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetFamilySchoolConversationsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetFamilySchoolConversationsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetFamilySchoolConversationsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetGroupMembersByUserTokenHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetGroupMembersByUserTokenRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetGroupMembersByUserTokenResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetInnerGroupMembersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetInnerGroupMembersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetInnerGroupMembersResponse;
@@ -2525,6 +2528,69 @@ class Dingtalk extends OpenApiClient
         $headers = new GetFamilySchoolConversationsHeaders([]);
 
         return $this->getFamilySchoolConversationsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 以用户身份获取群成员
+     *  *
+     * @param GetGroupMembersByUserTokenRequest $request GetGroupMembersByUserTokenRequest
+     * @param GetGroupMembersByUserTokenHeaders $headers GetGroupMembersByUserTokenHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetGroupMembersByUserTokenResponse GetGroupMembersByUserTokenResponse
+     */
+    public function getGroupMembersByUserTokenWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            $body['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $body['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'GetGroupMembersByUserToken',
+            'version' => 'im_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/im/me/chat/members/batchQuery',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetGroupMembersByUserTokenResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 以用户身份获取群成员
+     *  *
+     * @param GetGroupMembersByUserTokenRequest $request GetGroupMembersByUserTokenRequest
+     *
+     * @return GetGroupMembersByUserTokenResponse GetGroupMembersByUserTokenResponse
+     */
+    public function getGroupMembersByUserToken($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetGroupMembersByUserTokenHeaders([]);
+
+        return $this->getGroupMembersByUserTokenWithOptions($request, $headers, $runtime);
     }
 
     /**

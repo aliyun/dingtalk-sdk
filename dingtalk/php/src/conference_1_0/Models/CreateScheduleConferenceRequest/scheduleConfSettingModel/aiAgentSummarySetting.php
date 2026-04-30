@@ -14,6 +14,11 @@ class aiAgentSummarySetting extends Model
     public $allowAllParticipantsStart;
 
     /**
+     * @var bool
+     */
+    public $enableAiAgentStatus;
+
+    /**
      * @var int
      */
     public $receiverType;
@@ -31,6 +36,7 @@ class aiAgentSummarySetting extends Model
     public $value;
     protected $_name = [
         'allowAllParticipantsStart' => 'allowAllParticipantsStart',
+        'enableAiAgentStatus' => 'enableAiAgentStatus',
         'receiverType' => 'receiverType',
         'restrictShareMinutesSummaryOnly' => 'restrictShareMinutesSummaryOnly',
         'value' => 'value',
@@ -43,6 +49,9 @@ class aiAgentSummarySetting extends Model
         $res = [];
         if (null !== $this->allowAllParticipantsStart) {
             $res['allowAllParticipantsStart'] = $this->allowAllParticipantsStart;
+        }
+        if (null !== $this->enableAiAgentStatus) {
+            $res['enableAiAgentStatus'] = $this->enableAiAgentStatus;
         }
         if (null !== $this->receiverType) {
             $res['receiverType'] = $this->receiverType;
@@ -67,6 +76,9 @@ class aiAgentSummarySetting extends Model
         $model = new self();
         if (isset($map['allowAllParticipantsStart'])) {
             $model->allowAllParticipantsStart = $map['allowAllParticipantsStart'];
+        }
+        if (isset($map['enableAiAgentStatus'])) {
+            $model->enableAiAgentStatus = $map['enableAiAgentStatus'];
         }
         if (isset($map['receiverType'])) {
             $model->receiverType = $map['receiverType'];

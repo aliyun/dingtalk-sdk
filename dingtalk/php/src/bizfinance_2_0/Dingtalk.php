@@ -2779,6 +2779,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->pageSize)) {
             $query['pageSize'] = $request->pageSize;
         }
+        if (!Utils::isUnset($request->startStatus)) {
+            $query['startStatus'] = $request->startStatus;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;

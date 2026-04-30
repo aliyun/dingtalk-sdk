@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vrobot_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\AddOrgRobotInstanceToGroupHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\AddOrgRobotInstanceToGroupRequest;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\AddOrgRobotInstanceToGroupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\BatchOTOQueryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\BatchOTOQueryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\BatchOTOQueryResponse;
@@ -101,6 +104,66 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @summary 群内安装企业机器人
+     *  *
+     * @param AddOrgRobotInstanceToGroupRequest $request AddOrgRobotInstanceToGroupRequest
+     * @param AddOrgRobotInstanceToGroupHeaders $headers AddOrgRobotInstanceToGroupHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AddOrgRobotInstanceToGroupResponse AddOrgRobotInstanceToGroupResponse
+     */
+    public function addOrgRobotInstanceToGroupWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->robotCode)) {
+            $body['robotCode'] = $request->robotCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'AddOrgRobotInstanceToGroup',
+            'version' => 'robot_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/robot/groups/orgRobots/add',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return AddOrgRobotInstanceToGroupResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 群内安装企业机器人
+     *  *
+     * @param AddOrgRobotInstanceToGroupRequest $request AddOrgRobotInstanceToGroupRequest
+     *
+     * @return AddOrgRobotInstanceToGroupResponse AddOrgRobotInstanceToGroupResponse
+     */
+    public function addOrgRobotInstanceToGroup($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddOrgRobotInstanceToGroupHeaders([]);
+
+        return $this->addOrgRobotInstanceToGroupWithOptions($request, $headers, $runtime);
     }
 
     /**

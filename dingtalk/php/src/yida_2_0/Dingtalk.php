@@ -47,6 +47,9 @@ use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\GetMatrixDetailByIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\GetRoleDetailByIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\GetRoleDetailByIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\GetRoleDetailByIdResponse;
+use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\RestartInstanceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\RestartInstanceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\RestartInstanceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\SaveAndUpdateMatrixDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\SaveAndUpdateMatrixDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_2_0\Models\SaveAndUpdateMatrixDataResponse;
@@ -1211,6 +1214,90 @@ class Dingtalk extends OpenApiClient
         $headers = new GetRoleDetailByIdHeaders([]);
 
         return $this->getRoleDetailByIdWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 退回流程实例
+     *  *
+     * @param RestartInstanceRequest $request RestartInstanceRequest
+     * @param RestartInstanceHeaders $headers RestartInstanceHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return RestartInstanceResponse RestartInstanceResponse
+     */
+    public function restartInstanceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appType)) {
+            $body['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->currentActivityId)) {
+            $body['currentActivityId'] = $request->currentActivityId;
+        }
+        if (!Utils::isUnset($request->envProfile)) {
+            $body['envProfile'] = $request->envProfile;
+        }
+        if (!Utils::isUnset($request->formUuid)) {
+            $body['formUuid'] = $request->formUuid;
+        }
+        if (!Utils::isUnset($request->procInstanceId)) {
+            $body['procInstanceId'] = $request->procInstanceId;
+        }
+        if (!Utils::isUnset($request->remark)) {
+            $body['remark'] = $request->remark;
+        }
+        if (!Utils::isUnset($request->systemToken)) {
+            $body['systemToken'] = $request->systemToken;
+        }
+        if (!Utils::isUnset($request->targetActivityId)) {
+            $body['targetActivityId'] = $request->targetActivityId;
+        }
+        if (!Utils::isUnset($request->taskId)) {
+            $body['taskId'] = $request->taskId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'RestartInstance',
+            'version' => 'yida_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/yida/processes/instances/restartInstance',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'none',
+        ]);
+
+        return RestartInstanceResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 退回流程实例
+     *  *
+     * @param RestartInstanceRequest $request RestartInstanceRequest
+     *
+     * @return RestartInstanceResponse RestartInstanceResponse
+     */
+    public function restartInstance($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RestartInstanceHeaders([]);
+
+        return $this->restartInstanceWithOptions($request, $headers, $runtime);
     }
 
     /**

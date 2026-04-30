@@ -25,9 +25,15 @@ class QueryEnterpriseAccountByPageRequest extends Model
      * @var int
      */
     public $pageSize;
+
+    /**
+     * @var bool
+     */
+    public $startStatus;
     protected $_name = [
         'pageNumber' => 'pageNumber',
         'pageSize' => 'pageSize',
+        'startStatus' => 'startStatus',
     ];
 
     public function validate() {}
@@ -40,6 +46,9 @@ class QueryEnterpriseAccountByPageRequest extends Model
         }
         if (null !== $this->pageSize) {
             $res['pageSize'] = $this->pageSize;
+        }
+        if (null !== $this->startStatus) {
+            $res['startStatus'] = $this->startStatus;
         }
 
         return $res;
@@ -58,6 +67,9 @@ class QueryEnterpriseAccountByPageRequest extends Model
         }
         if (isset($map['pageSize'])) {
             $model->pageSize = $map['pageSize'];
+        }
+        if (isset($map['startStatus'])) {
+            $model->startStatus = $map['startStatus'];
         }
 
         return $model;

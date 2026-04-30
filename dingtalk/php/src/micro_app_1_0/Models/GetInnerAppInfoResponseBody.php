@@ -31,6 +31,11 @@ class GetInnerAppInfoResponseBody extends Model
     /**
      * @var string
      */
+    public $mobileEffectiveHomepageUrl;
+
+    /**
+     * @var string
+     */
     public $mobileLoginAddressKey;
 
     /**
@@ -122,6 +127,7 @@ class GetInnerAppInfoResponseBody extends Model
         'appName' => 'appName',
         'customerAppId' => 'customerAppId',
         'hideDingNavBar' => 'hideDingNavBar',
+        'mobileEffectiveHomepageUrl' => 'mobileEffectiveHomepageUrl',
         'mobileLoginAddressKey' => 'mobileLoginAddressKey',
         'mobileLoginLoginUrl' => 'mobileLoginLoginUrl',
         'mobileLoginRequestMethod' => 'mobileLoginRequestMethod',
@@ -158,6 +164,9 @@ class GetInnerAppInfoResponseBody extends Model
         }
         if (null !== $this->hideDingNavBar) {
             $res['hideDingNavBar'] = $this->hideDingNavBar;
+        }
+        if (null !== $this->mobileEffectiveHomepageUrl) {
+            $res['mobileEffectiveHomepageUrl'] = $this->mobileEffectiveHomepageUrl;
         }
         if (null !== $this->mobileLoginAddressKey) {
             $res['mobileLoginAddressKey'] = $this->mobileLoginAddressKey;
@@ -236,6 +245,9 @@ class GetInnerAppInfoResponseBody extends Model
         }
         if (isset($map['hideDingNavBar'])) {
             $model->hideDingNavBar = $map['hideDingNavBar'];
+        }
+        if (isset($map['mobileEffectiveHomepageUrl'])) {
+            $model->mobileEffectiveHomepageUrl = $map['mobileEffectiveHomepageUrl'];
         }
         if (isset($map['mobileLoginAddressKey'])) {
             $model->mobileLoginAddressKey = $map['mobileLoginAddressKey'];
