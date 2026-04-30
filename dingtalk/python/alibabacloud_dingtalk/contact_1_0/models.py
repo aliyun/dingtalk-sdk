@@ -1292,6 +1292,252 @@ class BatchApproveUnionApplyResponse(TeaModel):
         return self
 
 
+class BatchGetUserHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class BatchGetUserRequest(TeaModel):
+    def __init__(
+        self,
+        user_id_list: List[str] = None,
+    ):
+        # This parameter is required.
+        self.user_id_list = user_id_list
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user_id_list is not None:
+            result['userIdList'] = self.user_id_list
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userIdList') is not None:
+            self.user_id_list = m.get('userIdList')
+        return self
+
+
+class BatchGetUserShrinkRequest(TeaModel):
+    def __init__(
+        self,
+        user_id_list_shrink: str = None,
+    ):
+        # This parameter is required.
+        self.user_id_list_shrink = user_id_list_shrink
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user_id_list_shrink is not None:
+            result['userIdList'] = self.user_id_list_shrink
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userIdList') is not None:
+            self.user_id_list_shrink = m.get('userIdList')
+        return self
+
+
+class BatchGetUserResponseBodyUserList(TeaModel):
+    def __init__(
+        self,
+        job_number: str = None,
+        mobile: str = None,
+        name: str = None,
+        nickname: str = None,
+        remark: str = None,
+        senior: bool = None,
+        state_code: str = None,
+        unionid: str = None,
+        userid: str = None,
+    ):
+        self.job_number = job_number
+        self.mobile = mobile
+        self.name = name
+        self.nickname = nickname
+        self.remark = remark
+        self.senior = senior
+        self.state_code = state_code
+        self.unionid = unionid
+        self.userid = userid
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.job_number is not None:
+            result['job_number'] = self.job_number
+        if self.mobile is not None:
+            result['mobile'] = self.mobile
+        if self.name is not None:
+            result['name'] = self.name
+        if self.nickname is not None:
+            result['nickname'] = self.nickname
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.senior is not None:
+            result['senior'] = self.senior
+        if self.state_code is not None:
+            result['state_code'] = self.state_code
+        if self.unionid is not None:
+            result['unionid'] = self.unionid
+        if self.userid is not None:
+            result['userid'] = self.userid
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('job_number') is not None:
+            self.job_number = m.get('job_number')
+        if m.get('mobile') is not None:
+            self.mobile = m.get('mobile')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('nickname') is not None:
+            self.nickname = m.get('nickname')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        if m.get('senior') is not None:
+            self.senior = m.get('senior')
+        if m.get('state_code') is not None:
+            self.state_code = m.get('state_code')
+        if m.get('unionid') is not None:
+            self.unionid = m.get('unionid')
+        if m.get('userid') is not None:
+            self.userid = m.get('userid')
+        return self
+
+
+class BatchGetUserResponseBody(TeaModel):
+    def __init__(
+        self,
+        unauthorized_user_id_list: List[str] = None,
+        user_list: List[BatchGetUserResponseBodyUserList] = None,
+    ):
+        self.unauthorized_user_id_list = unauthorized_user_id_list
+        self.user_list = user_list
+
+    def validate(self):
+        if self.user_list:
+            for k in self.user_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.unauthorized_user_id_list is not None:
+            result['unauthorizedUserIdList'] = self.unauthorized_user_id_list
+        result['userList'] = []
+        if self.user_list is not None:
+            for k in self.user_list:
+                result['userList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('unauthorizedUserIdList') is not None:
+            self.unauthorized_user_id_list = m.get('unauthorizedUserIdList')
+        self.user_list = []
+        if m.get('userList') is not None:
+            for k in m.get('userList'):
+                temp_model = BatchGetUserResponseBodyUserList()
+                self.user_list.append(temp_model.from_map(k))
+        return self
+
+
+class BatchGetUserResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: BatchGetUserResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = BatchGetUserResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class BatchUpdateExternalTitleHeaders(TeaModel):
     def __init__(
         self,

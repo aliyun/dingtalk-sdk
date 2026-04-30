@@ -2337,6 +2337,7 @@ class GetInnerAppInfoResponseBody(TeaModel):
         app_name: str = None,
         customer_app_id: str = None,
         hide_ding_nav_bar: bool = None,
+        mobile_effective_homepage_url: str = None,
         mobile_login_address_key: str = None,
         mobile_login_login_url: str = None,
         mobile_login_request_method: str = None,
@@ -2360,6 +2361,7 @@ class GetInnerAppInfoResponseBody(TeaModel):
         self.app_name = app_name
         self.customer_app_id = customer_app_id
         self.hide_ding_nav_bar = hide_ding_nav_bar
+        self.mobile_effective_homepage_url = mobile_effective_homepage_url
         self.mobile_login_address_key = mobile_login_address_key
         self.mobile_login_login_url = mobile_login_login_url
         self.mobile_login_request_method = mobile_login_request_method
@@ -2396,6 +2398,8 @@ class GetInnerAppInfoResponseBody(TeaModel):
             result['customerAppId'] = self.customer_app_id
         if self.hide_ding_nav_bar is not None:
             result['hideDingNavBar'] = self.hide_ding_nav_bar
+        if self.mobile_effective_homepage_url is not None:
+            result['mobileEffectiveHomepageUrl'] = self.mobile_effective_homepage_url
         if self.mobile_login_address_key is not None:
             result['mobileLoginAddressKey'] = self.mobile_login_address_key
         if self.mobile_login_login_url is not None:
@@ -2444,6 +2448,8 @@ class GetInnerAppInfoResponseBody(TeaModel):
             self.customer_app_id = m.get('customerAppId')
         if m.get('hideDingNavBar') is not None:
             self.hide_ding_nav_bar = m.get('hideDingNavBar')
+        if m.get('mobileEffectiveHomepageUrl') is not None:
+            self.mobile_effective_homepage_url = m.get('mobileEffectiveHomepageUrl')
         if m.get('mobileLoginAddressKey') is not None:
             self.mobile_login_address_key = m.get('mobileLoginAddressKey')
         if m.get('mobileLoginLoginUrl') is not None:

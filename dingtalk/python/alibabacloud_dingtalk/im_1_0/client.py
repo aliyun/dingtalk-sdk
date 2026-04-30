@@ -4044,6 +4044,128 @@ class Client(OpenApiClient):
         headers = dingtalkim__1__0_models.GetFamilySchoolConversationsHeaders()
         return await self.get_family_school_conversations_with_options_async(request, headers, runtime)
 
+    def get_group_members_by_user_token_with_options(
+        self,
+        request: dingtalkim__1__0_models.GetGroupMembersByUserTokenRequest,
+        headers: dingtalkim__1__0_models.GetGroupMembersByUserTokenHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.GetGroupMembersByUserTokenResponse:
+        """
+        @summary 以用户身份获取群成员
+        
+        @param request: GetGroupMembersByUserTokenRequest
+        @param headers: GetGroupMembersByUserTokenHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetGroupMembersByUserTokenResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetGroupMembersByUserToken',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/me/chat/members/batchQuery',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.GetGroupMembersByUserTokenResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_group_members_by_user_token_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.GetGroupMembersByUserTokenRequest,
+        headers: dingtalkim__1__0_models.GetGroupMembersByUserTokenHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.GetGroupMembersByUserTokenResponse:
+        """
+        @summary 以用户身份获取群成员
+        
+        @param request: GetGroupMembersByUserTokenRequest
+        @param headers: GetGroupMembersByUserTokenHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetGroupMembersByUserTokenResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetGroupMembersByUserToken',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/me/chat/members/batchQuery',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.GetGroupMembersByUserTokenResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_group_members_by_user_token(
+        self,
+        request: dingtalkim__1__0_models.GetGroupMembersByUserTokenRequest,
+    ) -> dingtalkim__1__0_models.GetGroupMembersByUserTokenResponse:
+        """
+        @summary 以用户身份获取群成员
+        
+        @param request: GetGroupMembersByUserTokenRequest
+        @return: GetGroupMembersByUserTokenResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.GetGroupMembersByUserTokenHeaders()
+        return self.get_group_members_by_user_token_with_options(request, headers, runtime)
+
+    async def get_group_members_by_user_token_async(
+        self,
+        request: dingtalkim__1__0_models.GetGroupMembersByUserTokenRequest,
+    ) -> dingtalkim__1__0_models.GetGroupMembersByUserTokenResponse:
+        """
+        @summary 以用户身份获取群成员
+        
+        @param request: GetGroupMembersByUserTokenRequest
+        @return: GetGroupMembersByUserTokenResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.GetGroupMembersByUserTokenHeaders()
+        return await self.get_group_members_by_user_token_with_options_async(request, headers, runtime)
+
     def get_inner_group_members_with_options(
         self,
         request: dingtalkim__1__0_models.GetInnerGroupMembersRequest,

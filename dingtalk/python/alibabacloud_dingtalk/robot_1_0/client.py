@@ -26,6 +26,124 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def add_org_robot_instance_to_group_with_options(
+        self,
+        request: dingtalkrobot__1__0_models.AddOrgRobotInstanceToGroupRequest,
+        headers: dingtalkrobot__1__0_models.AddOrgRobotInstanceToGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.AddOrgRobotInstanceToGroupResponse:
+        """
+        @summary 群内安装企业机器人
+        
+        @param request: AddOrgRobotInstanceToGroupRequest
+        @param headers: AddOrgRobotInstanceToGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddOrgRobotInstanceToGroupResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddOrgRobotInstanceToGroup',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/groups/orgRobots/add',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.AddOrgRobotInstanceToGroupResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def add_org_robot_instance_to_group_with_options_async(
+        self,
+        request: dingtalkrobot__1__0_models.AddOrgRobotInstanceToGroupRequest,
+        headers: dingtalkrobot__1__0_models.AddOrgRobotInstanceToGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.AddOrgRobotInstanceToGroupResponse:
+        """
+        @summary 群内安装企业机器人
+        
+        @param request: AddOrgRobotInstanceToGroupRequest
+        @param headers: AddOrgRobotInstanceToGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddOrgRobotInstanceToGroupResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddOrgRobotInstanceToGroup',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/groups/orgRobots/add',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.AddOrgRobotInstanceToGroupResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def add_org_robot_instance_to_group(
+        self,
+        request: dingtalkrobot__1__0_models.AddOrgRobotInstanceToGroupRequest,
+    ) -> dingtalkrobot__1__0_models.AddOrgRobotInstanceToGroupResponse:
+        """
+        @summary 群内安装企业机器人
+        
+        @param request: AddOrgRobotInstanceToGroupRequest
+        @return: AddOrgRobotInstanceToGroupResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.AddOrgRobotInstanceToGroupHeaders()
+        return self.add_org_robot_instance_to_group_with_options(request, headers, runtime)
+
+    async def add_org_robot_instance_to_group_async(
+        self,
+        request: dingtalkrobot__1__0_models.AddOrgRobotInstanceToGroupRequest,
+    ) -> dingtalkrobot__1__0_models.AddOrgRobotInstanceToGroupResponse:
+        """
+        @summary 群内安装企业机器人
+        
+        @param request: AddOrgRobotInstanceToGroupRequest
+        @return: AddOrgRobotInstanceToGroupResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.AddOrgRobotInstanceToGroupHeaders()
+        return await self.add_org_robot_instance_to_group_with_options_async(request, headers, runtime)
+
     def batch_otoquery_with_options(
         self,
         request: dingtalkrobot__1__0_models.BatchOTOQueryRequest,

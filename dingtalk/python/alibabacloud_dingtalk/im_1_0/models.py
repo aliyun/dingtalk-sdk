@@ -5553,6 +5553,184 @@ class GetFamilySchoolConversationsResponse(TeaModel):
         return self
 
 
+class GetGroupMembersByUserTokenHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetGroupMembersByUserTokenRequest(TeaModel):
+    def __init__(
+        self,
+        max_results: int = None,
+        next_token: str = None,
+        open_conversation_id: str = None,
+    ):
+        # This parameter is required.
+        self.max_results = max_results
+        self.next_token = next_token
+        # This parameter is required.
+        self.open_conversation_id = open_conversation_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        return self
+
+
+class GetGroupMembersByUserTokenResponseBody(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        member_union_ids: List[str] = None,
+        member_user_ids: List[str] = None,
+        next_token: str = None,
+        staff_id_nick_map: Dict[str, str] = None,
+        success: bool = None,
+        union_id_nick_map: Dict[str, str] = None,
+    ):
+        self.has_more = has_more
+        self.member_union_ids = member_union_ids
+        self.member_user_ids = member_user_ids
+        self.next_token = next_token
+        self.staff_id_nick_map = staff_id_nick_map
+        self.success = success
+        self.union_id_nick_map = union_id_nick_map
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        if self.member_union_ids is not None:
+            result['memberUnionIds'] = self.member_union_ids
+        if self.member_user_ids is not None:
+            result['memberUserIds'] = self.member_user_ids
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.staff_id_nick_map is not None:
+            result['staffIdNickMap'] = self.staff_id_nick_map
+        if self.success is not None:
+            result['success'] = self.success
+        if self.union_id_nick_map is not None:
+            result['unionIdNickMap'] = self.union_id_nick_map
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        if m.get('memberUnionIds') is not None:
+            self.member_union_ids = m.get('memberUnionIds')
+        if m.get('memberUserIds') is not None:
+            self.member_user_ids = m.get('memberUserIds')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('staffIdNickMap') is not None:
+            self.staff_id_nick_map = m.get('staffIdNickMap')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        if m.get('unionIdNickMap') is not None:
+            self.union_id_nick_map = m.get('unionIdNickMap')
+        return self
+
+
+class GetGroupMembersByUserTokenResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetGroupMembersByUserTokenResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetGroupMembersByUserTokenResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetInnerGroupMembersHeaders(TeaModel):
     def __init__(
         self,

@@ -3352,6 +3352,144 @@ class Client(OpenApiClient):
         headers = dingtalkassistant__1__0_models.LogListHeaders()
         return await self.log_list_with_options_async(request, headers, runtime)
 
+    def page_list_new_aicredits_usage_record_with_options(
+        self,
+        request: dingtalkassistant__1__0_models.PageListNewAICreditsUsageRecordRequest,
+        headers: dingtalkassistant__1__0_models.PageListNewAICreditsUsageRecordHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkassistant__1__0_models.PageListNewAICreditsUsageRecordResponse:
+        """
+        @summary 分页查询新算粒的使用记录
+        
+        @param request: PageListNewAICreditsUsageRecordRequest
+        @param headers: PageListNewAICreditsUsageRecordHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PageListNewAICreditsUsageRecordResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.end_time):
+            query['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.scenario_name):
+            query['scenarioName'] = request.scenario_name
+        if not UtilClient.is_unset(request.start_time):
+            query['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        if not UtilClient.is_unset(request.user_name):
+            query['userName'] = request.user_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='PageListNewAICreditsUsageRecord',
+            version='assistant_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/assistant/aiCredits/pageListNewAICreditsUsageRecord',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkassistant__1__0_models.PageListNewAICreditsUsageRecordResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def page_list_new_aicredits_usage_record_with_options_async(
+        self,
+        request: dingtalkassistant__1__0_models.PageListNewAICreditsUsageRecordRequest,
+        headers: dingtalkassistant__1__0_models.PageListNewAICreditsUsageRecordHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkassistant__1__0_models.PageListNewAICreditsUsageRecordResponse:
+        """
+        @summary 分页查询新算粒的使用记录
+        
+        @param request: PageListNewAICreditsUsageRecordRequest
+        @param headers: PageListNewAICreditsUsageRecordHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PageListNewAICreditsUsageRecordResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.end_time):
+            query['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.scenario_name):
+            query['scenarioName'] = request.scenario_name
+        if not UtilClient.is_unset(request.start_time):
+            query['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        if not UtilClient.is_unset(request.user_name):
+            query['userName'] = request.user_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='PageListNewAICreditsUsageRecord',
+            version='assistant_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/assistant/aiCredits/pageListNewAICreditsUsageRecord',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkassistant__1__0_models.PageListNewAICreditsUsageRecordResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def page_list_new_aicredits_usage_record(
+        self,
+        request: dingtalkassistant__1__0_models.PageListNewAICreditsUsageRecordRequest,
+    ) -> dingtalkassistant__1__0_models.PageListNewAICreditsUsageRecordResponse:
+        """
+        @summary 分页查询新算粒的使用记录
+        
+        @param request: PageListNewAICreditsUsageRecordRequest
+        @return: PageListNewAICreditsUsageRecordResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkassistant__1__0_models.PageListNewAICreditsUsageRecordHeaders()
+        return self.page_list_new_aicredits_usage_record_with_options(request, headers, runtime)
+
+    async def page_list_new_aicredits_usage_record_async(
+        self,
+        request: dingtalkassistant__1__0_models.PageListNewAICreditsUsageRecordRequest,
+    ) -> dingtalkassistant__1__0_models.PageListNewAICreditsUsageRecordResponse:
+        """
+        @summary 分页查询新算粒的使用记录
+        
+        @param request: PageListNewAICreditsUsageRecordRequest
+        @return: PageListNewAICreditsUsageRecordResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkassistant__1__0_models.PageListNewAICreditsUsageRecordHeaders()
+        return await self.page_list_new_aicredits_usage_record_with_options_async(request, headers, runtime)
+
     def relearn_knowledge_with_options(
         self,
         request: dingtalkassistant__1__0_models.RelearnKnowledgeRequest,

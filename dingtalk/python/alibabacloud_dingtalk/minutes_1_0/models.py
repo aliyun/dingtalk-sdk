@@ -4874,9 +4874,13 @@ class QuerySummaryWithTemplateRequest(TeaModel):
 class QuerySummaryWithTemplateResponseBody(TeaModel):
     def __init__(
         self,
+        generating_status: str = None,
         summary_text: str = None,
+        visual_generating_status: str = None,
     ):
+        self.generating_status = generating_status
         self.summary_text = summary_text
+        self.visual_generating_status = visual_generating_status
 
     def validate(self):
         pass
@@ -4887,14 +4891,22 @@ class QuerySummaryWithTemplateResponseBody(TeaModel):
             return _map
 
         result = dict()
+        if self.generating_status is not None:
+            result['generatingStatus'] = self.generating_status
         if self.summary_text is not None:
             result['summaryText'] = self.summary_text
+        if self.visual_generating_status is not None:
+            result['visualGeneratingStatus'] = self.visual_generating_status
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('generatingStatus') is not None:
+            self.generating_status = m.get('generatingStatus')
         if m.get('summaryText') is not None:
             self.summary_text = m.get('summaryText')
+        if m.get('visualGeneratingStatus') is not None:
+            self.visual_generating_status = m.get('visualGeneratingStatus')
         return self
 
 

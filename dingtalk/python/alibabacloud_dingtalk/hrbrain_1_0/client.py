@@ -5626,6 +5626,8 @@ class Client(OpenApiClient):
             body['permission'] = request.permission
         if not UtilClient.is_unset(request.required):
             body['required'] = request.required
+        if not UtilClient.is_unset(request.scenes):
+            body['scenes'] = request.scenes
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -5687,6 +5689,8 @@ class Client(OpenApiClient):
             body['permission'] = request.permission
         if not UtilClient.is_unset(request.required):
             body['required'] = request.required
+        if not UtilClient.is_unset(request.scenes):
+            body['scenes'] = request.scenes
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

@@ -10347,6 +10347,7 @@ class HrbrainLabelMetaUpdateRequest(TeaModel):
         options: List[Dict[str, Any]] = None,
         permission: Dict[str, Any] = None,
         required: bool = None,
+        scenes: List[str] = None,
     ):
         self.category_code = category_code
         # This parameter is required.
@@ -10359,6 +10360,7 @@ class HrbrainLabelMetaUpdateRequest(TeaModel):
         self.options = options
         self.permission = permission
         self.required = required
+        self.scenes = scenes
 
     def validate(self):
         pass
@@ -10389,6 +10391,8 @@ class HrbrainLabelMetaUpdateRequest(TeaModel):
             result['permission'] = self.permission
         if self.required is not None:
             result['required'] = self.required
+        if self.scenes is not None:
+            result['scenes'] = self.scenes
         return result
 
     def from_map(self, m: dict = None):
@@ -10413,6 +10417,8 @@ class HrbrainLabelMetaUpdateRequest(TeaModel):
             self.permission = m.get('permission')
         if m.get('required') is not None:
             self.required = m.get('required')
+        if m.get('scenes') is not None:
+            self.scenes = m.get('scenes')
         return self
 
 

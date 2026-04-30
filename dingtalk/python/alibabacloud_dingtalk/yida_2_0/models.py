@@ -3791,6 +3791,161 @@ class GetRoleDetailByIdResponse(TeaModel):
         return self
 
 
+class RestartInstanceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class RestartInstanceRequest(TeaModel):
+    def __init__(
+        self,
+        app_type: str = None,
+        current_activity_id: str = None,
+        env_profile: str = None,
+        form_uuid: str = None,
+        proc_instance_id: str = None,
+        remark: str = None,
+        system_token: str = None,
+        target_activity_id: str = None,
+        task_id: str = None,
+        user_id: str = None,
+    ):
+        # This parameter is required.
+        self.app_type = app_type
+        # This parameter is required.
+        self.current_activity_id = current_activity_id
+        self.env_profile = env_profile
+        # This parameter is required.
+        self.form_uuid = form_uuid
+        # This parameter is required.
+        self.proc_instance_id = proc_instance_id
+        self.remark = remark
+        # This parameter is required.
+        self.system_token = system_token
+        # This parameter is required.
+        self.target_activity_id = target_activity_id
+        # This parameter is required.
+        self.task_id = task_id
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_type is not None:
+            result['appType'] = self.app_type
+        if self.current_activity_id is not None:
+            result['currentActivityId'] = self.current_activity_id
+        if self.env_profile is not None:
+            result['envProfile'] = self.env_profile
+        if self.form_uuid is not None:
+            result['formUuid'] = self.form_uuid
+        if self.proc_instance_id is not None:
+            result['procInstanceId'] = self.proc_instance_id
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.system_token is not None:
+            result['systemToken'] = self.system_token
+        if self.target_activity_id is not None:
+            result['targetActivityId'] = self.target_activity_id
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appType') is not None:
+            self.app_type = m.get('appType')
+        if m.get('currentActivityId') is not None:
+            self.current_activity_id = m.get('currentActivityId')
+        if m.get('envProfile') is not None:
+            self.env_profile = m.get('envProfile')
+        if m.get('formUuid') is not None:
+            self.form_uuid = m.get('formUuid')
+        if m.get('procInstanceId') is not None:
+            self.proc_instance_id = m.get('procInstanceId')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        if m.get('systemToken') is not None:
+            self.system_token = m.get('systemToken')
+        if m.get('targetActivityId') is not None:
+            self.target_activity_id = m.get('targetActivityId')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class RestartInstanceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        return self
+
+
 class SaveAndUpdateMatrixDataHeaders(TeaModel):
     def __init__(
         self,

@@ -1253,11 +1253,13 @@ class CreateScheduleConferenceRequestScheduleConfSettingModelAiAgentSummarySetti
     def __init__(
         self,
         allow_all_participants_start: int = None,
+        enable_ai_agent_status: bool = None,
         receiver_type: int = None,
         restrict_share_minutes_summary_only: int = None,
         value: str = None,
     ):
         self.allow_all_participants_start = allow_all_participants_start
+        self.enable_ai_agent_status = enable_ai_agent_status
         self.receiver_type = receiver_type
         self.restrict_share_minutes_summary_only = restrict_share_minutes_summary_only
         self.value = value
@@ -1273,6 +1275,8 @@ class CreateScheduleConferenceRequestScheduleConfSettingModelAiAgentSummarySetti
         result = dict()
         if self.allow_all_participants_start is not None:
             result['allowAllParticipantsStart'] = self.allow_all_participants_start
+        if self.enable_ai_agent_status is not None:
+            result['enableAiAgentStatus'] = self.enable_ai_agent_status
         if self.receiver_type is not None:
             result['receiverType'] = self.receiver_type
         if self.restrict_share_minutes_summary_only is not None:
@@ -1285,6 +1289,8 @@ class CreateScheduleConferenceRequestScheduleConfSettingModelAiAgentSummarySetti
         m = m or dict()
         if m.get('allowAllParticipantsStart') is not None:
             self.allow_all_participants_start = m.get('allowAllParticipantsStart')
+        if m.get('enableAiAgentStatus') is not None:
+            self.enable_ai_agent_status = m.get('enableAiAgentStatus')
         if m.get('receiverType') is not None:
             self.receiver_type = m.get('receiverType')
         if m.get('restrictShareMinutesSummaryOnly') is not None:
@@ -10188,11 +10194,13 @@ class UpdateScheduleConfSettingsRequestScheduleConfSettingModelAiAgentSummarySet
     def __init__(
         self,
         allow_all_participants_start: int = None,
+        enable_ai_agent_status: bool = None,
         receiver_type: int = None,
         restrict_share_minutes_summary_only: int = None,
         value: str = None,
     ):
         self.allow_all_participants_start = allow_all_participants_start
+        self.enable_ai_agent_status = enable_ai_agent_status
         self.receiver_type = receiver_type
         self.restrict_share_minutes_summary_only = restrict_share_minutes_summary_only
         self.value = value
@@ -10208,6 +10216,8 @@ class UpdateScheduleConfSettingsRequestScheduleConfSettingModelAiAgentSummarySet
         result = dict()
         if self.allow_all_participants_start is not None:
             result['allowAllParticipantsStart'] = self.allow_all_participants_start
+        if self.enable_ai_agent_status is not None:
+            result['enableAiAgentStatus'] = self.enable_ai_agent_status
         if self.receiver_type is not None:
             result['receiverType'] = self.receiver_type
         if self.restrict_share_minutes_summary_only is not None:
@@ -10220,6 +10230,8 @@ class UpdateScheduleConfSettingsRequestScheduleConfSettingModelAiAgentSummarySet
         m = m or dict()
         if m.get('allowAllParticipantsStart') is not None:
             self.allow_all_participants_start = m.get('allowAllParticipantsStart')
+        if m.get('enableAiAgentStatus') is not None:
+            self.enable_ai_agent_status = m.get('enableAiAgentStatus')
         if m.get('receiverType') is not None:
             self.receiver_type = m.get('receiverType')
         if m.get('restrictShareMinutesSummaryOnly') is not None:

@@ -2054,6 +2054,156 @@ class Client(OpenApiClient):
         headers = dingtalkyida__2__0_models.GetRoleDetailByIdHeaders()
         return await self.get_role_detail_by_id_with_options_async(request, headers, runtime)
 
+    def restart_instance_with_options(
+        self,
+        request: dingtalkyida__2__0_models.RestartInstanceRequest,
+        headers: dingtalkyida__2__0_models.RestartInstanceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__2__0_models.RestartInstanceResponse:
+        """
+        @summary 退回流程实例
+        
+        @param request: RestartInstanceRequest
+        @param headers: RestartInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RestartInstanceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_type):
+            body['appType'] = request.app_type
+        if not UtilClient.is_unset(request.current_activity_id):
+            body['currentActivityId'] = request.current_activity_id
+        if not UtilClient.is_unset(request.env_profile):
+            body['envProfile'] = request.env_profile
+        if not UtilClient.is_unset(request.form_uuid):
+            body['formUuid'] = request.form_uuid
+        if not UtilClient.is_unset(request.proc_instance_id):
+            body['procInstanceId'] = request.proc_instance_id
+        if not UtilClient.is_unset(request.remark):
+            body['remark'] = request.remark
+        if not UtilClient.is_unset(request.system_token):
+            body['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.target_activity_id):
+            body['targetActivityId'] = request.target_activity_id
+        if not UtilClient.is_unset(request.task_id):
+            body['taskId'] = request.task_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='RestartInstance',
+            version='yida_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/yida/processes/instances/restartInstance',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='none'
+        )
+        return TeaCore.from_map(
+            dingtalkyida__2__0_models.RestartInstanceResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def restart_instance_with_options_async(
+        self,
+        request: dingtalkyida__2__0_models.RestartInstanceRequest,
+        headers: dingtalkyida__2__0_models.RestartInstanceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkyida__2__0_models.RestartInstanceResponse:
+        """
+        @summary 退回流程实例
+        
+        @param request: RestartInstanceRequest
+        @param headers: RestartInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RestartInstanceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_type):
+            body['appType'] = request.app_type
+        if not UtilClient.is_unset(request.current_activity_id):
+            body['currentActivityId'] = request.current_activity_id
+        if not UtilClient.is_unset(request.env_profile):
+            body['envProfile'] = request.env_profile
+        if not UtilClient.is_unset(request.form_uuid):
+            body['formUuid'] = request.form_uuid
+        if not UtilClient.is_unset(request.proc_instance_id):
+            body['procInstanceId'] = request.proc_instance_id
+        if not UtilClient.is_unset(request.remark):
+            body['remark'] = request.remark
+        if not UtilClient.is_unset(request.system_token):
+            body['systemToken'] = request.system_token
+        if not UtilClient.is_unset(request.target_activity_id):
+            body['targetActivityId'] = request.target_activity_id
+        if not UtilClient.is_unset(request.task_id):
+            body['taskId'] = request.task_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='RestartInstance',
+            version='yida_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/yida/processes/instances/restartInstance',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='none'
+        )
+        return TeaCore.from_map(
+            dingtalkyida__2__0_models.RestartInstanceResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def restart_instance(
+        self,
+        request: dingtalkyida__2__0_models.RestartInstanceRequest,
+    ) -> dingtalkyida__2__0_models.RestartInstanceResponse:
+        """
+        @summary 退回流程实例
+        
+        @param request: RestartInstanceRequest
+        @return: RestartInstanceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__2__0_models.RestartInstanceHeaders()
+        return self.restart_instance_with_options(request, headers, runtime)
+
+    async def restart_instance_async(
+        self,
+        request: dingtalkyida__2__0_models.RestartInstanceRequest,
+    ) -> dingtalkyida__2__0_models.RestartInstanceResponse:
+        """
+        @summary 退回流程实例
+        
+        @param request: RestartInstanceRequest
+        @return: RestartInstanceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkyida__2__0_models.RestartInstanceHeaders()
+        return await self.restart_instance_with_options_async(request, headers, runtime)
+
     def save_and_update_matrix_data_with_options(
         self,
         request: dingtalkyida__2__0_models.SaveAndUpdateMatrixDataRequest,

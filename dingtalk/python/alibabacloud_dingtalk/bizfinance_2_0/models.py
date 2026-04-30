@@ -7759,11 +7759,13 @@ class QueryEnterpriseAccountByPageRequest(TeaModel):
         self,
         page_number: int = None,
         page_size: int = None,
+        start_status: bool = None,
     ):
         # This parameter is required.
         self.page_number = page_number
         # This parameter is required.
         self.page_size = page_size
+        self.start_status = start_status
 
     def validate(self):
         pass
@@ -7778,6 +7780,8 @@ class QueryEnterpriseAccountByPageRequest(TeaModel):
             result['pageNumber'] = self.page_number
         if self.page_size is not None:
             result['pageSize'] = self.page_size
+        if self.start_status is not None:
+            result['startStatus'] = self.start_status
         return result
 
     def from_map(self, m: dict = None):
@@ -7786,6 +7790,8 @@ class QueryEnterpriseAccountByPageRequest(TeaModel):
             self.page_number = m.get('pageNumber')
         if m.get('pageSize') is not None:
             self.page_size = m.get('pageSize')
+        if m.get('startStatus') is not None:
+            self.start_status = m.get('startStatus')
         return self
 
 

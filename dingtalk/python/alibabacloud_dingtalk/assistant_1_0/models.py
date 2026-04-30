@@ -5584,6 +5584,253 @@ class LogListResponse(TeaModel):
         return self
 
 
+class PageListNewAICreditsUsageRecordHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class PageListNewAICreditsUsageRecordRequest(TeaModel):
+    def __init__(
+        self,
+        end_time: str = None,
+        page_number: int = None,
+        page_size: int = None,
+        scenario_name: str = None,
+        start_time: str = None,
+        user_id: str = None,
+        user_name: str = None,
+    ):
+        self.end_time = end_time
+        self.page_number = page_number
+        self.page_size = page_size
+        self.scenario_name = scenario_name
+        self.start_time = start_time
+        self.user_id = user_id
+        self.user_name = user_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.scenario_name is not None:
+            result['scenarioName'] = self.scenario_name
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.user_name is not None:
+            result['userName'] = self.user_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('scenarioName') is not None:
+            self.scenario_name = m.get('scenarioName')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('userName') is not None:
+            self.user_name = m.get('userName')
+        return self
+
+
+class PageListNewAICreditsUsageRecordResponseBodyDataList(TeaModel):
+    def __init__(
+        self,
+        ability_name: str = None,
+        ai_credits_used_num: str = None,
+        biz_id: str = None,
+        is_time_free: str = None,
+        scenario_name: str = None,
+        task_name: str = None,
+        usage_time: str = None,
+        user_name: str = None,
+    ):
+        self.ability_name = ability_name
+        self.ai_credits_used_num = ai_credits_used_num
+        self.biz_id = biz_id
+        self.is_time_free = is_time_free
+        self.scenario_name = scenario_name
+        self.task_name = task_name
+        self.usage_time = usage_time
+        self.user_name = user_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ability_name is not None:
+            result['abilityName'] = self.ability_name
+        if self.ai_credits_used_num is not None:
+            result['aiCreditsUsedNum'] = self.ai_credits_used_num
+        if self.biz_id is not None:
+            result['bizId'] = self.biz_id
+        if self.is_time_free is not None:
+            result['isTimeFree'] = self.is_time_free
+        if self.scenario_name is not None:
+            result['scenarioName'] = self.scenario_name
+        if self.task_name is not None:
+            result['taskName'] = self.task_name
+        if self.usage_time is not None:
+            result['usageTime'] = self.usage_time
+        if self.user_name is not None:
+            result['userName'] = self.user_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('abilityName') is not None:
+            self.ability_name = m.get('abilityName')
+        if m.get('aiCreditsUsedNum') is not None:
+            self.ai_credits_used_num = m.get('aiCreditsUsedNum')
+        if m.get('bizId') is not None:
+            self.biz_id = m.get('bizId')
+        if m.get('isTimeFree') is not None:
+            self.is_time_free = m.get('isTimeFree')
+        if m.get('scenarioName') is not None:
+            self.scenario_name = m.get('scenarioName')
+        if m.get('taskName') is not None:
+            self.task_name = m.get('taskName')
+        if m.get('usageTime') is not None:
+            self.usage_time = m.get('usageTime')
+        if m.get('userName') is not None:
+            self.user_name = m.get('userName')
+        return self
+
+
+class PageListNewAICreditsUsageRecordResponseBody(TeaModel):
+    def __init__(
+        self,
+        data_list: List[PageListNewAICreditsUsageRecordResponseBodyDataList] = None,
+        total_count: int = None,
+    ):
+        self.data_list = data_list
+        self.total_count = total_count
+
+    def validate(self):
+        if self.data_list:
+            for k in self.data_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['dataList'] = []
+        if self.data_list is not None:
+            for k in self.data_list:
+                result['dataList'].append(k.to_map() if k else None)
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.data_list = []
+        if m.get('dataList') is not None:
+            for k in m.get('dataList'):
+                temp_model = PageListNewAICreditsUsageRecordResponseBodyDataList()
+                self.data_list.append(temp_model.from_map(k))
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class PageListNewAICreditsUsageRecordResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: PageListNewAICreditsUsageRecordResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = PageListNewAICreditsUsageRecordResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class RelearnKnowledgeHeaders(TeaModel):
     def __init__(
         self,

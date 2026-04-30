@@ -888,6 +888,128 @@ class Client(OpenApiClient):
         headers = dingtalkcontact__1__0_models.BatchApproveUnionApplyHeaders()
         return await self.batch_approve_union_apply_with_options_async(request, headers, runtime)
 
+    def batch_get_user_with_options(
+        self,
+        tmp_req: dingtalkcontact__1__0_models.BatchGetUserRequest,
+        headers: dingtalkcontact__1__0_models.BatchGetUserHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.BatchGetUserResponse:
+        """
+        @summary 批量查询用户信息
+        
+        @param tmp_req: BatchGetUserRequest
+        @param headers: BatchGetUserHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchGetUserResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkcontact__1__0_models.BatchGetUserShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.user_id_list):
+            request.user_id_list_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.user_id_list, 'userIdList', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.user_id_list_shrink):
+            query['userIdList'] = request.user_id_list_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='BatchGetUser',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/users/batch/get',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.BatchGetUserResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def batch_get_user_with_options_async(
+        self,
+        tmp_req: dingtalkcontact__1__0_models.BatchGetUserRequest,
+        headers: dingtalkcontact__1__0_models.BatchGetUserHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.BatchGetUserResponse:
+        """
+        @summary 批量查询用户信息
+        
+        @param tmp_req: BatchGetUserRequest
+        @param headers: BatchGetUserHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchGetUserResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkcontact__1__0_models.BatchGetUserShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.user_id_list):
+            request.user_id_list_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.user_id_list, 'userIdList', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.user_id_list_shrink):
+            query['userIdList'] = request.user_id_list_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='BatchGetUser',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/users/batch/get',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.BatchGetUserResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def batch_get_user(
+        self,
+        request: dingtalkcontact__1__0_models.BatchGetUserRequest,
+    ) -> dingtalkcontact__1__0_models.BatchGetUserResponse:
+        """
+        @summary 批量查询用户信息
+        
+        @param request: BatchGetUserRequest
+        @return: BatchGetUserResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.BatchGetUserHeaders()
+        return self.batch_get_user_with_options(request, headers, runtime)
+
+    async def batch_get_user_async(
+        self,
+        request: dingtalkcontact__1__0_models.BatchGetUserRequest,
+    ) -> dingtalkcontact__1__0_models.BatchGetUserResponse:
+        """
+        @summary 批量查询用户信息
+        
+        @param request: BatchGetUserRequest
+        @return: BatchGetUserResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.BatchGetUserHeaders()
+        return await self.batch_get_user_with_options_async(request, headers, runtime)
+
     def batch_update_external_title_with_options(
         self,
         request: dingtalkcontact__1__0_models.BatchUpdateExternalTitleRequest,
