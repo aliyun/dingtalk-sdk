@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         [Validation(Required=false)]
         public List<BatchGetUserResponseBodyUserList> UserList { get; set; }
         public class BatchGetUserResponseBodyUserList : TeaModel {
+            [NameInMap("avatar")]
+            [Validation(Required=false)]
+            public string Avatar { get; set; }
+
             [NameInMap("job_number")]
             [Validation(Required=false)]
             public string JobNumber { get; set; }

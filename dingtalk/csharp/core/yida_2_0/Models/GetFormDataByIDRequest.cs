@@ -10,12 +10,25 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0.Models
 {
     public class GetFormDataByIDRequest : TeaModel {
         /// <summary>
+        /// <para>This parameter is required.</para>
+        /// 
         /// <b>Example:</b>
         /// <para>APP_PBKT0MFBEBTDO8T7SLVP</para>
         /// </summary>
         [NameInMap("appType")]
         [Validation(Required=false)]
         public string AppType { get; set; }
+
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>vpc,sgp_vpc</para>
+        /// 
+        /// <b>if can be null:</b>
+        /// <c>true</c>
+        /// </summary>
+        [NameInMap("env")]
+        [Validation(Required=false)]
+        public string Env { get; set; }
 
         /// <summary>
         /// <b>Example:</b>
@@ -34,6 +47,8 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0.Models
         public string Language { get; set; }
 
         /// <summary>
+        /// <para>This parameter is required.</para>
+        /// 
         /// <b>Example:</b>
         /// <para>hexxx</para>
         /// </summary>
@@ -49,6 +64,9 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0.Models
         [Validation(Required=false)]
         public bool? UseAlias { get; set; }
 
+        /// <summary>
+        /// <para>This parameter is required.</para>
+        /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]
         public string UserId { get; set; }

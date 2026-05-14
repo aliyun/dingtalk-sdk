@@ -38,6 +38,17 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public string Content { get; set; }
 
         /// <summary>
+        /// <b>Example:</b>
+        /// <para>vpc,sgp_vpc</para>
+        /// 
+        /// <b>if can be null:</b>
+        /// <c>true</c>
+        /// </summary>
+        [NameInMap("env")]
+        [Validation(Required=false)]
+        public string Env { get; set; }
+
+        /// <summary>
         /// <para>This parameter is required.</para>
         /// 
         /// <b>Example:</b>
@@ -46,6 +57,14 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         [NameInMap("formInstanceId")]
         [Validation(Required=false)]
         public string FormInstanceId { get; set; }
+
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>FORM-EF6Y4G8WO2FN0SUB43TDQ3CGC3FMFQ1G9400RCJ3</para>
+        /// </summary>
+        [NameInMap("formUuid")]
+        [Validation(Required=false)]
+        public string FormUuid { get; set; }
 
         /// <summary>
         /// <b>Example:</b>

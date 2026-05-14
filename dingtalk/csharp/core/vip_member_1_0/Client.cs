@@ -66,6 +66,10 @@ namespace AlibabaCloud.SDK.Dingtalkvip_member_1_0
             {
                 body["duration"] = request.Duration;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extension))
+            {
+                body["extension"] = request.Extension;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Mobile))
             {
                 body["mobile"] = request.Mobile;
@@ -140,6 +144,10 @@ namespace AlibabaCloud.SDK.Dingtalkvip_member_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Duration))
             {
                 body["duration"] = request.Duration;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extension))
+            {
+                body["extension"] = request.Extension;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Mobile))
             {

@@ -13,7 +13,7 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0.Models
         /// <para>This parameter is required.</para>
         /// 
         /// <b>Example:</b>
-        /// <para>APP_XCE0EVXS6DYG3YDYC5RD</para>
+        /// <para>APP_XCEXXX</para>
         /// </summary>
         [NameInMap("appType")]
         [Validation(Required=false)]
@@ -21,11 +21,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0.Models
 
         /// <summary>
         /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>node_xxx</para>
         /// </summary>
         [NameInMap("currentActivityId")]
         [Validation(Required=false)]
         public string CurrentActivityId { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>vpc（国内、默认）/ sgp_vpc（海外）</para>
+        /// </summary>
         [NameInMap("envProfile")]
         [Validation(Required=false)]
         public string EnvProfile { get; set; }
@@ -34,7 +41,7 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0.Models
         /// <para>This parameter is required.</para>
         /// 
         /// <b>Example:</b>
-        /// <para>FORM-GX866MC1NC1VOFF6WVQW33FD16E23L3CPMKVKA</para>
+        /// <para>FORM-XXX</para>
         /// </summary>
         [NameInMap("formUuid")]
         [Validation(Required=false)]
@@ -55,7 +62,7 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0.Models
         /// <para>This parameter is required.</para>
         /// 
         /// <b>Example:</b>
-        /// <para>09866181UTZVVD4R3DC955FNKIM52HVPU5WWK7</para>
+        /// <para>098661XXX</para>
         /// </summary>
         [NameInMap("systemToken")]
         [Validation(Required=false)]
@@ -63,6 +70,9 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0.Models
 
         /// <summary>
         /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>sid-restartevent</para>
         /// </summary>
         [NameInMap("targetActivityId")]
         [Validation(Required=false)]
@@ -72,7 +82,7 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0.Models
         /// <para>This parameter is required.</para>
         /// 
         /// <b>Example:</b>
-        /// <para>task-123</para>
+        /// <para>123XXX</para>
         /// </summary>
         [NameInMap("taskId")]
         [Validation(Required=false)]
@@ -82,7 +92,7 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0.Models
         /// <para>This parameter is required.</para>
         /// 
         /// <b>Example:</b>
-        /// <para>ding173982232112232</para>
+        /// <para>173XXX</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

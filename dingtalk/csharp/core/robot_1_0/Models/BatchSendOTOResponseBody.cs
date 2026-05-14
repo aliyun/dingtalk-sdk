@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkrobot_1_0.Models
 {
     public class BatchSendOTOResponseBody : TeaModel {
+        [NameInMap("filteredStaffIdList")]
+        [Validation(Required=false)]
+        public List<string> FilteredStaffIdList { get; set; }
+
         [NameInMap("flowControlledStaffIdList")]
         [Validation(Required=false)]
         public List<string> FlowControlledStaffIdList { get; set; }

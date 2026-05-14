@@ -10986,6 +10986,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
             GetPublicDevicesShrinkRequest request = new GetPublicDevicesShrinkRequest();
             AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.EncryptDeviceIdList))
+            {
+                request.EncryptDeviceIdListShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.EncryptDeviceIdList, "encryptDeviceIdList", "json");
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.SerialNumberList))
             {
                 request.SerialNumberListShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.SerialNumberList, "serialNumberList", "json");
@@ -10994,6 +10998,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceUuid))
             {
                 query["deviceUuid"] = request.DeviceUuid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EncryptDeviceIdListShrink))
+            {
+                query["encryptDeviceIdList"] = request.EncryptDeviceIdListShrink;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
             {
@@ -11083,6 +11091,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
             GetPublicDevicesShrinkRequest request = new GetPublicDevicesShrinkRequest();
             AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.EncryptDeviceIdList))
+            {
+                request.EncryptDeviceIdListShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.EncryptDeviceIdList, "encryptDeviceIdList", "json");
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.SerialNumberList))
             {
                 request.SerialNumberListShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.SerialNumberList, "serialNumberList", "json");
@@ -11091,6 +11103,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceUuid))
             {
                 query["deviceUuid"] = request.DeviceUuid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EncryptDeviceIdListShrink))
+            {
+                query["encryptDeviceIdList"] = request.EncryptDeviceIdListShrink;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
             {
@@ -16929,6 +16945,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             {
                 body["msgTypeList"] = request.MsgTypeList;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MsgSource))
+            {
+                body["msg_source"] = request.MsgSource;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
             {
                 body["page_number"] = request.PageNumber;
@@ -17007,6 +17027,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MsgTypeList))
             {
                 body["msgTypeList"] = request.MsgTypeList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MsgSource))
+            {
+                body["msg_source"] = request.MsgSource;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
             {

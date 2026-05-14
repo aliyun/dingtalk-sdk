@@ -22,6 +22,14 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         public List<string> MsgTypeList { get; set; }
 
         /// <summary>
+        /// <b>Example:</b>
+        /// <para>2</para>
+        /// </summary>
+        [NameInMap("msg_source")]
+        [Validation(Required=false)]
+        public int? MsgSource { get; set; }
+
+        /// <summary>
         /// <para>This parameter is required.</para>
         /// 
         /// <b>Example:</b>

@@ -95,6 +95,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             [Validation(Required=false)]
             public string Did { get; set; }
 
+            [NameInMap("encryptDeviceId")]
+            [Validation(Required=false)]
+            public string EncryptDeviceId { get; set; }
+
             /// <summary>
             /// <b>Example:</b>
             /// <para>1671767361000</para>

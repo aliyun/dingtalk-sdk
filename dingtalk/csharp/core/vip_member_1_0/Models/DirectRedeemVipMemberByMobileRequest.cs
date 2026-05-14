@@ -25,6 +25,14 @@ namespace AlibabaCloud.SDK.Dingtalkvip_member_1_0.Models
         [Validation(Required=false)]
         public long? Duration { get; set; }
 
+        /// <summary>
+        /// <b>if can be null:</b>
+        /// <c>true</c>
+        /// </summary>
+        [NameInMap("extension")]
+        [Validation(Required=false)]
+        public string Extension { get; set; }
+
         [NameInMap("mobile")]
         [Validation(Required=false)]
         public string Mobile { get; set; }

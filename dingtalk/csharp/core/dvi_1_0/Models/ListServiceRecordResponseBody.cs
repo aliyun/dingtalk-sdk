@@ -33,6 +33,14 @@ namespace AlibabaCloud.SDK.Dingtalkdvi_1_0.Models
             [Validation(Required=false)]
             public long? EndTimestamp { get; set; }
 
+            [NameInMap("outBizData")]
+            [Validation(Required=false)]
+            public string OutBizData { get; set; }
+
+            [NameInMap("qualityInspectionScore")]
+            [Validation(Required=false)]
+            public int? QualityInspectionScore { get; set; }
+
             [NameInMap("recordId")]
             [Validation(Required=false)]
             public string RecordId { get; set; }

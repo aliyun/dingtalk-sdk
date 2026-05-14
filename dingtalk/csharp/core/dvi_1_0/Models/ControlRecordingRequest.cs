@@ -26,6 +26,14 @@ namespace AlibabaCloud.SDK.Dingtalkdvi_1_0.Models
         [Validation(Required=false)]
         public bool? Agree { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>20260423112233</para>
+        /// </summary>
+        [NameInMap("outBizData")]
+        [Validation(Required=false)]
+        public string OutBizData { get; set; }
+
         [NameInMap("teamCode")]
         [Validation(Required=false)]
         public string TeamCode { get; set; }

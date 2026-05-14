@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         [Validation(Required=false)]
         public string DeviceUuid { get; set; }
 
+        [NameInMap("encryptDeviceIdList")]
+        [Validation(Required=false)]
+        public string EncryptDeviceIdListShrink { get; set; }
+
         /// <summary>
         /// <b>Example:</b>
         /// <para>1671767361000</para>

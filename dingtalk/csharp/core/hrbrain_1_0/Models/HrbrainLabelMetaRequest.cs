@@ -13,6 +13,14 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0.Models
         [Validation(Required=false)]
         public List<string> CategoryCodes { get; set; }
 
+        [NameInMap("gmtModifiedEnd")]
+        [Validation(Required=false)]
+        public string GmtModifiedEnd { get; set; }
+
+        [NameInMap("gmtModifiedStart")]
+        [Validation(Required=false)]
+        public string GmtModifiedStart { get; set; }
+
         [NameInMap("labelCode")]
         [Validation(Required=false)]
         public string LabelCode { get; set; }
