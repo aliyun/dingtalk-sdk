@@ -4719,12 +4719,18 @@ class Dingtalk extends OpenApiClient
         Utils::validateModel($tmpReq);
         $request = new GetPublicDevicesShrinkRequest([]);
         OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->encryptDeviceIdList)) {
+            $request->encryptDeviceIdListShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->encryptDeviceIdList, 'encryptDeviceIdList', 'json');
+        }
         if (!Utils::isUnset($tmpReq->serialNumberList)) {
             $request->serialNumberListShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->serialNumberList, 'serialNumberList', 'json');
         }
         $query = [];
         if (!Utils::isUnset($request->deviceUuid)) {
             $query['deviceUuid'] = $request->deviceUuid;
+        }
+        if (!Utils::isUnset($request->encryptDeviceIdListShrink)) {
+            $query['encryptDeviceIdList'] = $request->encryptDeviceIdListShrink;
         }
         if (!Utils::isUnset($request->endTime)) {
             $query['endTime'] = $request->endTime;
@@ -7014,6 +7020,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->msgTypeList)) {
             $body['msgTypeList'] = $request->msgTypeList;
+        }
+        if (!Utils::isUnset($request->msgSource)) {
+            $body['msg_source'] = $request->msgSource;
         }
         if (!Utils::isUnset($request->pageNumber)) {
             $body['page_number'] = $request->pageNumber;

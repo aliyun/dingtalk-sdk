@@ -39,6 +39,13 @@ class GetInstanceIdListRequest extends Model
     public $createToTimeGMT;
 
     /**
+     * @example vpc,sgp_vpc
+     *
+     * @var string
+     */
+    public $env;
+
+    /**
      * @description This parameter is required.
      *
      * @example FORM-EF6Y4G8WO2FN0SUB43TDQ3CGC3FMFQ1G9400RCJ3
@@ -135,6 +142,7 @@ class GetInstanceIdListRequest extends Model
         'approvedResult' => 'approvedResult',
         'createFromTimeGMT' => 'createFromTimeGMT',
         'createToTimeGMT' => 'createToTimeGMT',
+        'env' => 'env',
         'formUuid' => 'formUuid',
         'instanceStatus' => 'instanceStatus',
         'language' => 'language',
@@ -166,6 +174,9 @@ class GetInstanceIdListRequest extends Model
         }
         if (null !== $this->createToTimeGMT) {
             $res['createToTimeGMT'] = $this->createToTimeGMT;
+        }
+        if (null !== $this->env) {
+            $res['env'] = $this->env;
         }
         if (null !== $this->formUuid) {
             $res['formUuid'] = $this->formUuid;
@@ -229,6 +240,9 @@ class GetInstanceIdListRequest extends Model
         }
         if (isset($map['createToTimeGMT'])) {
             $model->createToTimeGMT = $map['createToTimeGMT'];
+        }
+        if (isset($map['env'])) {
+            $model->env = $map['env'];
         }
         if (isset($map['formUuid'])) {
             $model->formUuid = $map['formUuid'];

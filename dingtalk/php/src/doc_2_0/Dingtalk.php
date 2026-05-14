@@ -195,6 +195,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SearchTemplatesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ShareUrlHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ShareUrlRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\ShareUrlResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SubmitExportJobHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SubmitExportJobRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SubmitExportJobResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SubmitGetContentJobHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SubmitGetContentJobRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\SubmitGetContentJobResponse;
@@ -4211,6 +4214,69 @@ class Dingtalk extends OpenApiClient
         $headers = new ShareUrlHeaders([]);
 
         return $this->shareUrlWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 通过dentryUuid提交文档导出任务
+     *  *
+     * @param SubmitExportJobRequest $request SubmitExportJobRequest
+     * @param SubmitExportJobHeaders $headers SubmitExportJobHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SubmitExportJobResponse SubmitExportJobResponse
+     */
+    public function submitExportJobWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dentryUuid)) {
+            $body['dentryUuid'] = $request->dentryUuid;
+        }
+        if (!Utils::isUnset($request->operatorId)) {
+            $body['operatorId'] = $request->operatorId;
+        }
+        if (!Utils::isUnset($request->targetFormat)) {
+            $body['targetFormat'] = $request->targetFormat;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'SubmitExportJob',
+            'version' => 'doc_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/doc/me/export/submit',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return SubmitExportJobResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 通过dentryUuid提交文档导出任务
+     *  *
+     * @param SubmitExportJobRequest $request SubmitExportJobRequest
+     *
+     * @return SubmitExportJobResponse SubmitExportJobResponse
+     */
+    public function submitExportJob($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SubmitExportJobHeaders([]);
+
+        return $this->submitExportJobWithOptions($request, $headers, $runtime);
     }
 
     /**

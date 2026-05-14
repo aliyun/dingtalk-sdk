@@ -11,6 +11,11 @@ class userList extends Model
     /**
      * @var string
      */
+    public $avatar;
+
+    /**
+     * @var string
+     */
     public $jobNumber;
 
     /**
@@ -53,6 +58,7 @@ class userList extends Model
      */
     public $userid;
     protected $_name = [
+        'avatar' => 'avatar',
         'jobNumber' => 'job_number',
         'mobile' => 'mobile',
         'name' => 'name',
@@ -69,6 +75,9 @@ class userList extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->avatar) {
+            $res['avatar'] = $this->avatar;
+        }
         if (null !== $this->jobNumber) {
             $res['job_number'] = $this->jobNumber;
         }
@@ -108,6 +117,9 @@ class userList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['avatar'])) {
+            $model->avatar = $map['avatar'];
+        }
         if (isset($map['job_number'])) {
             $model->jobNumber = $map['job_number'];
         }

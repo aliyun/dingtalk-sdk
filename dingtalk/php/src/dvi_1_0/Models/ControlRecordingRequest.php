@@ -25,6 +25,13 @@ class ControlRecordingRequest extends Model
     public $agree;
 
     /**
+     * @example 20260423112233
+     *
+     * @var string
+     */
+    public $outBizData;
+
+    /**
      * @var string
      */
     public $teamCode;
@@ -38,6 +45,7 @@ class ControlRecordingRequest extends Model
     protected $_name = [
         'action' => 'action',
         'agree' => 'agree',
+        'outBizData' => 'outBizData',
         'teamCode' => 'teamCode',
         'userId' => 'userId',
     ];
@@ -52,6 +60,9 @@ class ControlRecordingRequest extends Model
         }
         if (null !== $this->agree) {
             $res['agree'] = $this->agree;
+        }
+        if (null !== $this->outBizData) {
+            $res['outBizData'] = $this->outBizData;
         }
         if (null !== $this->teamCode) {
             $res['teamCode'] = $this->teamCode;
@@ -76,6 +87,9 @@ class ControlRecordingRequest extends Model
         }
         if (isset($map['agree'])) {
             $model->agree = $map['agree'];
+        }
+        if (isset($map['outBizData'])) {
+            $model->outBizData = $map['outBizData'];
         }
         if (isset($map['teamCode'])) {
             $model->teamCode = $map['teamCode'];

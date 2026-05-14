@@ -11,6 +11,11 @@ class BatchSendOTOResponseBody extends Model
     /**
      * @var string[]
      */
+    public $filteredStaffIdList;
+
+    /**
+     * @var string[]
+     */
     public $flowControlledStaffIdList;
 
     /**
@@ -23,6 +28,7 @@ class BatchSendOTOResponseBody extends Model
      */
     public $processQueryKey;
     protected $_name = [
+        'filteredStaffIdList' => 'filteredStaffIdList',
         'flowControlledStaffIdList' => 'flowControlledStaffIdList',
         'invalidStaffIdList' => 'invalidStaffIdList',
         'processQueryKey' => 'processQueryKey',
@@ -33,6 +39,9 @@ class BatchSendOTOResponseBody extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->filteredStaffIdList) {
+            $res['filteredStaffIdList'] = $this->filteredStaffIdList;
+        }
         if (null !== $this->flowControlledStaffIdList) {
             $res['flowControlledStaffIdList'] = $this->flowControlledStaffIdList;
         }
@@ -54,6 +63,11 @@ class BatchSendOTOResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['filteredStaffIdList'])) {
+            if (!empty($map['filteredStaffIdList'])) {
+                $model->filteredStaffIdList = $map['filteredStaffIdList'];
+            }
+        }
         if (isset($map['flowControlledStaffIdList'])) {
             if (!empty($map['flowControlledStaffIdList'])) {
                 $model->flowControlledStaffIdList = $map['flowControlledStaffIdList'];

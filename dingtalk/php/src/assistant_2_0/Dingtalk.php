@@ -19,6 +19,9 @@ use AlibabaCloud\SDK\Dingtalk\Vassistant_2_0\Models\DeleteAssistantThreadRespons
 use AlibabaCloud\SDK\Dingtalk\Vassistant_2_0\Models\ListAssistantMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_2_0\Models\ListAssistantMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_2_0\Models\ListAssistantMessageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_2_0\Models\PageListAICreditsUsageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_2_0\Models\PageListAICreditsUsageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_2_0\Models\PageListAICreditsUsageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_2_0\Models\RetrieveAssistantMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_2_0\Models\RetrieveAssistantMessageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_2_0\Models\RetrieveAssistantThreadHeaders;
@@ -368,6 +371,81 @@ class Dingtalk extends OpenApiClient
         $headers = new ListAssistantMessageHeaders([]);
 
         return $this->listAssistantMessageWithOptions($threadId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 分页查询算粒使用记录
+     *  *
+     * @param PageListAICreditsUsageRequest $request PageListAICreditsUsageRequest
+     * @param PageListAICreditsUsageHeaders $headers PageListAICreditsUsageHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return PageListAICreditsUsageResponse PageListAICreditsUsageResponse
+     */
+    public function pageListAICreditsUsageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->endTime)) {
+            $query['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            $query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->scenarioName)) {
+            $query['scenarioName'] = $request->scenarioName;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            $query['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->userName)) {
+            $query['userName'] = $request->userName;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'PageListAICreditsUsage',
+            'version' => 'assistant_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/assistant/aiCredits/pageListAICreditsUsage',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return PageListAICreditsUsageResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 分页查询算粒使用记录
+     *  *
+     * @param PageListAICreditsUsageRequest $request PageListAICreditsUsageRequest
+     *
+     * @return PageListAICreditsUsageResponse PageListAICreditsUsageResponse
+     */
+    public function pageListAICreditsUsage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PageListAICreditsUsageHeaders([]);
+
+        return $this->pageListAICreditsUsageWithOptions($request, $headers, $runtime);
     }
 
     /**

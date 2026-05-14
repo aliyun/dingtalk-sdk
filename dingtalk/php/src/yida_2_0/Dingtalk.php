@@ -724,6 +724,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->appType)) {
             $query['appType'] = $request->appType;
         }
+        if (!Utils::isUnset($request->env)) {
+            $query['env'] = $request->env;
+        }
         if (!Utils::isUnset($request->formUuid)) {
             $query['formUuid'] = $request->formUuid;
         }
@@ -797,6 +800,9 @@ class Dingtalk extends OpenApiClient
         $query = [];
         if (!Utils::isUnset($request->appType)) {
             $query['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->env)) {
+            $query['env'] = $request->env;
         }
         if (!Utils::isUnset($request->formUuid)) {
             $query['formUuid'] = $request->formUuid;
@@ -886,6 +892,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->createToTimeGMT)) {
             $body['createToTimeGMT'] = $request->createToTimeGMT;
+        }
+        if (!Utils::isUnset($request->env)) {
+            $body['env'] = $request->env;
         }
         if (!Utils::isUnset($request->formUuid)) {
             $body['formUuid'] = $request->formUuid;
@@ -1759,6 +1768,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->departmentId)) {
             $body['departmentId'] = $request->departmentId;
+        }
+        if (!Utils::isUnset($request->env)) {
+            $body['env'] = $request->env;
         }
         if (!Utils::isUnset($request->formDataJson)) {
             $body['formDataJson'] = $request->formDataJson;

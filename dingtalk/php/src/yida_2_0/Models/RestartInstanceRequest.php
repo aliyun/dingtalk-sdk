@@ -11,7 +11,7 @@ class RestartInstanceRequest extends Model
     /**
      * @description This parameter is required.
      *
-     * @example APP_XCE0EVXS6DYG3YDYC5RD
+     * @example APP_XCEXXX
      *
      * @var string
      */
@@ -20,11 +20,15 @@ class RestartInstanceRequest extends Model
     /**
      * @description This parameter is required.
      *
+     * @example node_xxx
+     *
      * @var string
      */
     public $currentActivityId;
 
     /**
+     * @example vpc（国内、默认）/ sgp_vpc（海外）
+     *
      * @var string
      */
     public $envProfile;
@@ -32,7 +36,7 @@ class RestartInstanceRequest extends Model
     /**
      * @description This parameter is required.
      *
-     * @example FORM-GX866MC1NC1VOFF6WVQW33FD16E23L3CPMKVKA
+     * @example FORM-XXX
      *
      * @var string
      */
@@ -53,7 +57,7 @@ class RestartInstanceRequest extends Model
     /**
      * @description This parameter is required.
      *
-     * @example 09866181UTZVVD4R3DC955FNKIM52HVPU5WWK7
+     * @example 098661XXX
      *
      * @var string
      */
@@ -62,6 +66,8 @@ class RestartInstanceRequest extends Model
     /**
      * @description This parameter is required.
      *
+     * @example sid-restartevent
+     *
      * @var string
      */
     public $targetActivityId;
@@ -69,7 +75,7 @@ class RestartInstanceRequest extends Model
     /**
      * @description This parameter is required.
      *
-     * @example task-123
+     * @example 123XXX
      *
      * @var string
      */
@@ -78,7 +84,7 @@ class RestartInstanceRequest extends Model
     /**
      * @description This parameter is required.
      *
-     * @example ding173982232112232
+     * @example 173XXX
      *
      * @var string
      */

@@ -33,6 +33,16 @@ class result extends Model
     /**
      * @var string
      */
+    public $outBizData;
+
+    /**
+     * @var int
+     */
+    public $qualityInspectionScore;
+
+    /**
+     * @var string
+     */
     public $recordId;
 
     /**
@@ -59,6 +69,8 @@ class result extends Model
         'deviceSn' => 'deviceSn',
         'duration' => 'duration',
         'endTimestamp' => 'endTimestamp',
+        'outBizData' => 'outBizData',
+        'qualityInspectionScore' => 'qualityInspectionScore',
         'recordId' => 'recordId',
         'startTimestamp' => 'startTimestamp',
         'team' => 'team',
@@ -82,6 +94,12 @@ class result extends Model
         }
         if (null !== $this->endTimestamp) {
             $res['endTimestamp'] = $this->endTimestamp;
+        }
+        if (null !== $this->outBizData) {
+            $res['outBizData'] = $this->outBizData;
+        }
+        if (null !== $this->qualityInspectionScore) {
+            $res['qualityInspectionScore'] = $this->qualityInspectionScore;
         }
         if (null !== $this->recordId) {
             $res['recordId'] = $this->recordId;
@@ -121,6 +139,12 @@ class result extends Model
         }
         if (isset($map['endTimestamp'])) {
             $model->endTimestamp = $map['endTimestamp'];
+        }
+        if (isset($map['outBizData'])) {
+            $model->outBizData = $map['outBizData'];
+        }
+        if (isset($map['qualityInspectionScore'])) {
+            $model->qualityInspectionScore = $map['qualityInspectionScore'];
         }
         if (isset($map['recordId'])) {
             $model->recordId = $map['recordId'];

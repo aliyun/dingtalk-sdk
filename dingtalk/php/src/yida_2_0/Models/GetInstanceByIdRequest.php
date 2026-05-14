@@ -18,6 +18,13 @@ class GetInstanceByIdRequest extends Model
     public $appType;
 
     /**
+     * @example vpc,sgp_vpc
+     *
+     * @var string
+     */
+    public $env;
+
+    /**
      * @example FORM-ADFC8E8E5ADE4B2F8FC2316CFC42A55CJLWZ
      *
      * @var string
@@ -57,6 +64,7 @@ class GetInstanceByIdRequest extends Model
     public $userId;
     protected $_name = [
         'appType' => 'appType',
+        'env' => 'env',
         'formUuid' => 'formUuid',
         'language' => 'language',
         'systemToken' => 'systemToken',
@@ -71,6 +79,9 @@ class GetInstanceByIdRequest extends Model
         $res = [];
         if (null !== $this->appType) {
             $res['appType'] = $this->appType;
+        }
+        if (null !== $this->env) {
+            $res['env'] = $this->env;
         }
         if (null !== $this->formUuid) {
             $res['formUuid'] = $this->formUuid;
@@ -101,6 +112,9 @@ class GetInstanceByIdRequest extends Model
         $model = new self();
         if (isset($map['appType'])) {
             $model->appType = $map['appType'];
+        }
+        if (isset($map['env'])) {
+            $model->env = $map['env'];
         }
         if (isset($map['formUuid'])) {
             $model->formUuid = $map['formUuid'];

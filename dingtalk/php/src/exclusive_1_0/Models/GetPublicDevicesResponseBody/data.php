@@ -44,6 +44,11 @@ class data extends Model
     public $did;
 
     /**
+     * @var string
+     */
+    public $encryptDeviceId;
+
+    /**
      * @example 1671767361000
      *
      * @var int
@@ -101,6 +106,7 @@ class data extends Model
         'deviceStaffs' => 'deviceStaffs',
         'deviceUuid' => 'deviceUuid',
         'did' => 'did',
+        'encryptDeviceId' => 'encryptDeviceId',
         'gmtCreate' => 'gmtCreate',
         'gmtModified' => 'gmtModified',
         'macAddress' => 'macAddress',
@@ -151,6 +157,9 @@ class data extends Model
         }
         if (null !== $this->did) {
             $res['did'] = $this->did;
+        }
+        if (null !== $this->encryptDeviceId) {
+            $res['encryptDeviceId'] = $this->encryptDeviceId;
         }
         if (null !== $this->gmtCreate) {
             $res['gmtCreate'] = $this->gmtCreate;
@@ -223,6 +232,9 @@ class data extends Model
         }
         if (isset($map['did'])) {
             $model->did = $map['did'];
+        }
+        if (isset($map['encryptDeviceId'])) {
+            $model->encryptDeviceId = $map['encryptDeviceId'];
         }
         if (isset($map['gmtCreate'])) {
             $model->gmtCreate = $map['gmtCreate'];

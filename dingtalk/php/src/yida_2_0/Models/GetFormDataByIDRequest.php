@@ -9,11 +9,20 @@ use AlibabaCloud\Tea\Model;
 class GetFormDataByIDRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example APP_PBKT0MFBEBTDO8T7SLVP
      *
      * @var string
      */
     public $appType;
+
+    /**
+     * @example vpc,sgp_vpc
+     *
+     * @var string
+     */
+    public $env;
 
     /**
      * @example FORM-AA28579F69644FC19A47FE267457E664ZVR1
@@ -30,6 +39,8 @@ class GetFormDataByIDRequest extends Model
     public $language;
 
     /**
+     * @description This parameter is required.
+     *
      * @example hexxx
      *
      * @var string
@@ -44,11 +55,14 @@ class GetFormDataByIDRequest extends Model
     public $useAlias;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $userId;
     protected $_name = [
         'appType' => 'appType',
+        'env' => 'env',
         'formUuid' => 'formUuid',
         'language' => 'language',
         'systemToken' => 'systemToken',
@@ -63,6 +77,9 @@ class GetFormDataByIDRequest extends Model
         $res = [];
         if (null !== $this->appType) {
             $res['appType'] = $this->appType;
+        }
+        if (null !== $this->env) {
+            $res['env'] = $this->env;
         }
         if (null !== $this->formUuid) {
             $res['formUuid'] = $this->formUuid;
@@ -93,6 +110,9 @@ class GetFormDataByIDRequest extends Model
         $model = new self();
         if (isset($map['appType'])) {
             $model->appType = $map['appType'];
+        }
+        if (isset($map['env'])) {
+            $model->env = $map['env'];
         }
         if (isset($map['formUuid'])) {
             $model->formUuid = $map['formUuid'];

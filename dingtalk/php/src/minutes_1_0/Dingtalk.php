@@ -71,6 +71,12 @@ use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryOrgDiyTemplatesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryScheduleConfMinutesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryScheduleConfMinutesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryScheduleConfMinutesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QuerySmartDeviceAiSceneByIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QuerySmartDeviceAiSceneByIdRequest;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QuerySmartDeviceAiSceneByIdResponse;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QuerySmartDeviceAiScenePromptTemplateByIdsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QuerySmartDeviceAiScenePromptTemplateByIdsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QuerySmartDeviceAiScenePromptTemplateByIdsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QuerySmartDeviceAiSummaryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QuerySmartDeviceAiSummaryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QuerySmartDeviceAiSummaryResponse;
@@ -1529,6 +1535,123 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryScheduleConfMinutesHeaders([]);
 
         return $this->queryScheduleConfMinutesWithOptions($scheduleConferenceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询A1分析小助理
+     *  *
+     * @param QuerySmartDeviceAiSceneByIdRequest $request QuerySmartDeviceAiSceneByIdRequest
+     * @param QuerySmartDeviceAiSceneByIdHeaders $headers QuerySmartDeviceAiSceneByIdHeaders
+     * @param RuntimeOptions                     $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QuerySmartDeviceAiSceneByIdResponse QuerySmartDeviceAiSceneByIdResponse
+     */
+    public function querySmartDeviceAiSceneByIdWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->agentInstanceId)) {
+            $body['agentInstanceId'] = $request->agentInstanceId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'QuerySmartDeviceAiSceneById',
+            'version' => 'minutes_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/minutes/smartdevice/aiscene',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QuerySmartDeviceAiSceneByIdResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询A1分析小助理
+     *  *
+     * @param QuerySmartDeviceAiSceneByIdRequest $request QuerySmartDeviceAiSceneByIdRequest
+     *
+     * @return QuerySmartDeviceAiSceneByIdResponse QuerySmartDeviceAiSceneByIdResponse
+     */
+    public function querySmartDeviceAiSceneById($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QuerySmartDeviceAiSceneByIdHeaders([]);
+
+        return $this->querySmartDeviceAiSceneByIdWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询A1分析小助理能力模板
+     *  *
+     * @param QuerySmartDeviceAiScenePromptTemplateByIdsRequest $request QuerySmartDeviceAiScenePromptTemplateByIdsRequest
+     * @param QuerySmartDeviceAiScenePromptTemplateByIdsHeaders $headers QuerySmartDeviceAiScenePromptTemplateByIdsHeaders
+     * @param RuntimeOptions                                    $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QuerySmartDeviceAiScenePromptTemplateByIdsResponse QuerySmartDeviceAiScenePromptTemplateByIdsResponse
+     */
+    public function querySmartDeviceAiScenePromptTemplateByIdsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->agentInstanceId)) {
+            $body['agentInstanceId'] = $request->agentInstanceId;
+        }
+        if (!Utils::isUnset($request->agentPromptTemplateIds)) {
+            $body['agentPromptTemplateIds'] = $request->agentPromptTemplateIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'QuerySmartDeviceAiScenePromptTemplateByIds',
+            'version' => 'minutes_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/minutes/smartdevice/aiscene/promptTemplate',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QuerySmartDeviceAiScenePromptTemplateByIdsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询A1分析小助理能力模板
+     *  *
+     * @param QuerySmartDeviceAiScenePromptTemplateByIdsRequest $request QuerySmartDeviceAiScenePromptTemplateByIdsRequest
+     *
+     * @return QuerySmartDeviceAiScenePromptTemplateByIdsResponse QuerySmartDeviceAiScenePromptTemplateByIdsResponse
+     */
+    public function querySmartDeviceAiScenePromptTemplateByIds($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QuerySmartDeviceAiScenePromptTemplateByIdsHeaders([]);
+
+        return $this->querySmartDeviceAiScenePromptTemplateByIdsWithOptions($request, $headers, $runtime);
     }
 
     /**

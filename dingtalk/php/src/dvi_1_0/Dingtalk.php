@@ -5,14 +5,23 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vdvi_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\BatchQueryUserDeviceStatusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\BatchQueryUserDeviceStatusRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\BatchQueryUserDeviceStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\ControlRecordingHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\ControlRecordingRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\ControlRecordingResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\CreateAsrTranscriptionHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\CreateAsrTranscriptionRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\CreateAsrTranscriptionResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\CreateRecordingScheduleHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\CreateRecordingScheduleRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\CreateRecordingScheduleResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\DeleteRecordingScheduleHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\DeleteRecordingScheduleResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetAsrTranscriptionHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetAsrTranscriptionRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetAsrTranscriptionResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetAudioFileDownloadInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetAudioFileDownloadInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetAudioFileDownloadInfoResponse;
@@ -36,6 +45,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetServiceChatSummaryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetServiceQualityInspectionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetServiceQualityInspectionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetServiceQualityInspectionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetServiceRecordHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetServiceRecordRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetServiceRecordResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetServiceRecordTranscriptHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetServiceRecordTranscriptRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetServiceRecordTranscriptResponse;
@@ -75,6 +87,12 @@ use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\QueryDeviceStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\QueryFileInfoByMinutesIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\QueryFileInfoByMinutesIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\QueryFileInfoByMinutesIdResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\QueryUserDeviceLocationHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\QueryUserDeviceLocationRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\QueryUserDeviceLocationResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\SubmitAgentTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\SubmitAgentTaskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\SubmitAgentTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\SubmitAsrTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\SubmitAsrTaskRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\SubmitAsrTaskResponse;
@@ -108,6 +126,63 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 按 userId 列表批量查询用户绑定设备的状态
+     *  *
+     * @param BatchQueryUserDeviceStatusRequest $request BatchQueryUserDeviceStatusRequest
+     * @param BatchQueryUserDeviceStatusHeaders $headers BatchQueryUserDeviceStatusHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
+     *
+     * @return BatchQueryUserDeviceStatusResponse BatchQueryUserDeviceStatusResponse
+     */
+    public function batchQueryUserDeviceStatusWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->userIdList)) {
+            $body['userIdList'] = $request->userIdList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'BatchQueryUserDeviceStatus',
+            'version' => 'dvi_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/dvi/device/batchQueryUserDeviceStatus',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return BatchQueryUserDeviceStatusResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 按 userId 列表批量查询用户绑定设备的状态
+     *  *
+     * @param BatchQueryUserDeviceStatusRequest $request BatchQueryUserDeviceStatusRequest
+     *
+     * @return BatchQueryUserDeviceStatusResponse BatchQueryUserDeviceStatusResponse
+     */
+    public function batchQueryUserDeviceStatus($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchQueryUserDeviceStatusHeaders([]);
+
+        return $this->batchQueryUserDeviceStatusWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 设备录音启停控制
      *  *
      * @param ControlRecordingRequest $request ControlRecordingRequest
@@ -125,6 +200,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->agree)) {
             $body['agree'] = $request->agree;
+        }
+        if (!Utils::isUnset($request->outBizData)) {
+            $body['outBizData'] = $request->outBizData;
         }
         if (!Utils::isUnset($request->teamCode)) {
             $body['teamCode'] = $request->teamCode;
@@ -171,6 +249,66 @@ class Dingtalk extends OpenApiClient
         $headers = new ControlRecordingHeaders([]);
 
         return $this->controlRecordingWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 创建ASR离线转写任务
+     *  *
+     * @param CreateAsrTranscriptionRequest $request CreateAsrTranscriptionRequest
+     * @param CreateAsrTranscriptionHeaders $headers CreateAsrTranscriptionHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateAsrTranscriptionResponse CreateAsrTranscriptionResponse
+     */
+    public function createAsrTranscriptionWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizKey)) {
+            $body['bizKey'] = $request->bizKey;
+        }
+        if (!Utils::isUnset($request->url)) {
+            $body['url'] = $request->url;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'CreateAsrTranscription',
+            'version' => 'dvi_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/dvi/asr/transcriptions',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CreateAsrTranscriptionResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建ASR离线转写任务
+     *  *
+     * @param CreateAsrTranscriptionRequest $request CreateAsrTranscriptionRequest
+     *
+     * @return CreateAsrTranscriptionResponse CreateAsrTranscriptionResponse
+     */
+    public function createAsrTranscription($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateAsrTranscriptionHeaders([]);
+
+        return $this->createAsrTranscriptionWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -282,6 +420,69 @@ class Dingtalk extends OpenApiClient
         $headers = new DeleteRecordingScheduleHeaders([]);
 
         return $this->deleteRecordingScheduleWithOptions($taskId, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询ASR转写结果
+     *  *
+     * @param GetAsrTranscriptionRequest $request GetAsrTranscriptionRequest
+     * @param GetAsrTranscriptionHeaders $headers GetAsrTranscriptionHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetAsrTranscriptionResponse GetAsrTranscriptionResponse
+     */
+    public function getAsrTranscriptionWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->taskId)) {
+            $query['taskId'] = $request->taskId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'GetAsrTranscription',
+            'version' => 'dvi_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/dvi/asr/transcriptions',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetAsrTranscriptionResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询ASR转写结果
+     *  *
+     * @param GetAsrTranscriptionRequest $request GetAsrTranscriptionRequest
+     *
+     * @return GetAsrTranscriptionResponse GetAsrTranscriptionResponse
+     */
+    public function getAsrTranscription($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetAsrTranscriptionHeaders([]);
+
+        return $this->getAsrTranscriptionWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -738,6 +939,63 @@ class Dingtalk extends OpenApiClient
         $headers = new GetServiceQualityInspectionHeaders([]);
 
         return $this->getServiceQualityInspectionWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取单条服务记录
+     *  *
+     * @param GetServiceRecordRequest $request GetServiceRecordRequest
+     * @param GetServiceRecordHeaders $headers GetServiceRecordHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetServiceRecordResponse GetServiceRecordResponse
+     */
+    public function getServiceRecordWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->id)) {
+            $query['id'] = $request->id;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'GetServiceRecord',
+            'version' => 'dvi_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/dvi/service-record',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetServiceRecordResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取单条服务记录
+     *  *
+     * @param GetServiceRecordRequest $request GetServiceRecordRequest
+     *
+     * @return GetServiceRecordResponse GetServiceRecordResponse
+     */
+    public function getServiceRecord($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetServiceRecordHeaders([]);
+
+        return $this->getServiceRecordWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -1578,6 +1836,138 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryFileInfoByMinutesIdHeaders([]);
 
         return $this->queryFileInfoByMinutesIdWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 根据员工 userId 查询其当前绑定设备在指定时间范围内的位置（轨迹）信息
+     *  *
+     * @param QueryUserDeviceLocationRequest $request QueryUserDeviceLocationRequest
+     * @param QueryUserDeviceLocationHeaders $headers QueryUserDeviceLocationHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryUserDeviceLocationResponse QueryUserDeviceLocationResponse
+     */
+    public function queryUserDeviceLocationWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->endTime)) {
+            $query['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->sn)) {
+            $query['sn'] = $request->sn;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            $query['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'QueryUserDeviceLocation',
+            'version' => 'dvi_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/dvi/device/queryUserDeviceLocation',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryUserDeviceLocationResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 根据员工 userId 查询其当前绑定设备在指定时间范围内的位置（轨迹）信息
+     *  *
+     * @param QueryUserDeviceLocationRequest $request QueryUserDeviceLocationRequest
+     *
+     * @return QueryUserDeviceLocationResponse QueryUserDeviceLocationResponse
+     */
+    public function queryUserDeviceLocation($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryUserDeviceLocationHeaders([]);
+
+        return $this->queryUserDeviceLocationWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 提交agent异步任务
+     *  *
+     * @param SubmitAgentTaskRequest $request SubmitAgentTaskRequest
+     * @param SubmitAgentTaskHeaders $headers SubmitAgentTaskHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SubmitAgentTaskResponse SubmitAgentTaskResponse
+     */
+    public function submitAgentTaskWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->agentCode)) {
+            $query['agentCode'] = $request->agentCode;
+        }
+        if (!Utils::isUnset($request->bizIdentify)) {
+            $query['bizIdentify'] = $request->bizIdentify;
+        }
+        if (!Utils::isUnset($request->input)) {
+            $query['input'] = $request->input;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'SubmitAgentTask',
+            'version' => 'dvi_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/dvi/agenttask/submit',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return SubmitAgentTaskResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 提交agent异步任务
+     *  *
+     * @param SubmitAgentTaskRequest $request SubmitAgentTaskRequest
+     *
+     * @return SubmitAgentTaskResponse SubmitAgentTaskResponse
+     */
+    public function submitAgentTask($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SubmitAgentTaskHeaders([]);
+
+        return $this->submitAgentTaskWithOptions($request, $headers, $runtime);
     }
 
     /**

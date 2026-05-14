@@ -17,6 +17,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\AddOrgTextEmotionResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\AddRobotToConversationHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\AddRobotToConversationRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\AddRobotToConversationResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\AddSceneGroupMemberHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\AddSceneGroupMemberRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\AddSceneGroupMemberResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\AddUnfurlingRegisterHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\AddUnfurlingRegisterRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\AddUnfurlingRegisterResponse;
@@ -67,12 +70,18 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateGroupConversationResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateGroupFromOldGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateGroupFromOldGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateGroupFromOldGroupResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateGroupHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateGroupRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateGroupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateInterconnectionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateInterconnectionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateInterconnectionResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateSceneGroupConversationHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateSceneGroupConversationRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateSceneGroupConversationResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateSceneGroupHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateSceneGroupRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateSceneGroupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateStoreGroupConversationHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateStoreGroupConversationRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateStoreGroupConversationResponse;
@@ -311,6 +320,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\RemoveGroupMemberResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\RemoveRobotFromConversationHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\RemoveRobotFromConversationRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\RemoveRobotFromConversationResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\RemoveSceneGroupMemberHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\RemoveSceneGroupMemberRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\RemoveSceneGroupMemberResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SearchInnerGroupsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SearchInnerGroupsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SearchInnerGroupsResponse;
@@ -368,12 +380,15 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateCustomGroupRoleResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateGroupAvatarHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateGroupAvatarRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateGroupAvatarResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateGroupNameHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateGroupNameRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateGroupNameResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateGroupPermissionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateGroupPermissionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateGroupPermissionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateGroupRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateGroupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateGroupSubAdminHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateGroupSubAdminRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateGroupSubAdminResponse;
@@ -392,6 +407,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateRobotInOrgResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateRobotInteractiveCardHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateRobotInteractiveCardRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateRobotInteractiveCardResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateSceneGroupHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateSceneGroupRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateSceneGroupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateSceneGroupTemplateMessageOpenStatusHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateSceneGroupTemplateMessageOpenStatusRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateSceneGroupTemplateMessageOpenStatusResponse;
@@ -632,6 +650,69 @@ class Dingtalk extends OpenApiClient
         $headers = new AddRobotToConversationHeaders([]);
 
         return $this->addRobotToConversationWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 场景群加人
+     *  *
+     * @param AddSceneGroupMemberRequest $request AddSceneGroupMemberRequest
+     * @param AddSceneGroupMemberHeaders $headers AddSceneGroupMemberHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AddSceneGroupMemberResponse AddSceneGroupMemberResponse
+     */
+    public function addSceneGroupMemberWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['open_conversation_id'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->unionIds)) {
+            $body['union_ids'] = $request->unionIds;
+        }
+        if (!Utils::isUnset($request->userIds)) {
+            $body['user_ids'] = $request->userIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'AddSceneGroupMember',
+            'version' => 'im_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/im/sceneGroup/member/add',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return AddSceneGroupMemberResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 场景群加人
+     *  *
+     * @param AddSceneGroupMemberRequest $request AddSceneGroupMemberRequest
+     *
+     * @return AddSceneGroupMemberResponse AddSceneGroupMemberResponse
+     */
+    public function addSceneGroupMember($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddSceneGroupMemberHeaders([]);
+
+        return $this->addSceneGroupMemberWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -1613,6 +1694,84 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建群会话
+     *  *
+     * @param CreateGroupRequest $request CreateGroupRequest
+     * @param CreateGroupHeaders $headers CreateGroupHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateGroupResponse CreateGroupResponse
+     */
+    public function createGroupWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->conversationTag)) {
+            $body['conversationTag'] = $request->conversationTag;
+        }
+        if (!Utils::isUnset($request->extidlist)) {
+            $body['extidlist'] = $request->extidlist;
+        }
+        if (!Utils::isUnset($request->icon)) {
+            $body['icon'] = $request->icon;
+        }
+        if (!Utils::isUnset($request->managementOptions)) {
+            $body['managementOptions'] = $request->managementOptions;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->owner)) {
+            $body['owner'] = $request->owner;
+        }
+        if (!Utils::isUnset($request->ownerType)) {
+            $body['ownerType'] = $request->ownerType;
+        }
+        if (!Utils::isUnset($request->useridlist)) {
+            $body['useridlist'] = $request->useridlist;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'CreateGroup',
+            'version' => 'im_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/im/group/create',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CreateGroupResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建群会话
+     *  *
+     * @param CreateGroupRequest $request CreateGroupRequest
+     *
+     * @return CreateGroupResponse CreateGroupResponse
+     */
+    public function createGroup($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateGroupHeaders([]);
+
+        return $this->createGroupWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 创建互通群（支持普通互通群、跨钉两人群）
      *  *
      * @param CreateGroupConversationRequest $request CreateGroupConversationRequest
@@ -1814,6 +1973,84 @@ class Dingtalk extends OpenApiClient
         $headers = new CreateInterconnectionHeaders([]);
 
         return $this->createInterconnectionWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 创建场景群会话
+     *  *
+     * @param CreateSceneGroupRequest $request CreateSceneGroupRequest
+     * @param CreateSceneGroupHeaders $headers CreateSceneGroupHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateSceneGroupResponse CreateSceneGroupResponse
+     */
+    public function createSceneGroupWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->icon)) {
+            $body['icon'] = $request->icon;
+        }
+        if (!Utils::isUnset($request->managementOptions)) {
+            $body['management_options'] = $request->managementOptions;
+        }
+        if (!Utils::isUnset($request->ownerUserId)) {
+            $body['owner_user_id'] = $request->ownerUserId;
+        }
+        if (!Utils::isUnset($request->subadminIds)) {
+            $body['subadmin_ids'] = $request->subadminIds;
+        }
+        if (!Utils::isUnset($request->templateId)) {
+            $body['template_id'] = $request->templateId;
+        }
+        if (!Utils::isUnset($request->title)) {
+            $body['title'] = $request->title;
+        }
+        if (!Utils::isUnset($request->userIds)) {
+            $body['user_ids'] = $request->userIds;
+        }
+        if (!Utils::isUnset($request->uuid)) {
+            $body['uuid'] = $request->uuid;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'CreateSceneGroup',
+            'version' => 'im_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/im/sceneGroup/create',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CreateSceneGroupResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建场景群会话
+     *  *
+     * @param CreateSceneGroupRequest $request CreateSceneGroupRequest
+     *
+     * @return CreateSceneGroupResponse CreateSceneGroupResponse
+     */
+    public function createSceneGroup($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateSceneGroupHeaders([]);
+
+        return $this->createSceneGroupWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -6901,6 +7138,69 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 场景群删人
+     *  *
+     * @param RemoveSceneGroupMemberRequest $request RemoveSceneGroupMemberRequest
+     * @param RemoveSceneGroupMemberHeaders $headers RemoveSceneGroupMemberHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return RemoveSceneGroupMemberResponse RemoveSceneGroupMemberResponse
+     */
+    public function removeSceneGroupMemberWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['open_conversation_id'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->unionIds)) {
+            $body['union_ids'] = $request->unionIds;
+        }
+        if (!Utils::isUnset($request->userIds)) {
+            $body['user_ids'] = $request->userIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'RemoveSceneGroupMember',
+            'version' => 'im_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/im/sceneGroup/member/delete',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return RemoveSceneGroupMemberResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 场景群删人
+     *  *
+     * @param RemoveSceneGroupMemberRequest $request RemoveSceneGroupMemberRequest
+     *
+     * @return RemoveSceneGroupMemberResponse RemoveSceneGroupMemberResponse
+     */
+    public function removeSceneGroupMember($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RemoveSceneGroupMemberHeaders([]);
+
+        return $this->removeSceneGroupMemberWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 根据关键词搜索企业内部群
      *  *
      * @param SearchInnerGroupsRequest $request SearchInnerGroupsRequest
@@ -8080,6 +8380,90 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 修改群会话
+     *  *
+     * @param UpdateGroupRequest $request UpdateGroupRequest
+     * @param UpdateGroupHeaders $headers UpdateGroupHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateGroupResponse UpdateGroupResponse
+     */
+    public function updateGroupWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->addExtidlist)) {
+            $body['add_extidlist'] = $request->addExtidlist;
+        }
+        if (!Utils::isUnset($request->addUseridlist)) {
+            $body['add_useridlist'] = $request->addUseridlist;
+        }
+        if (!Utils::isUnset($request->chatid)) {
+            $body['chatid'] = $request->chatid;
+        }
+        if (!Utils::isUnset($request->delExtidlist)) {
+            $body['del_extidlist'] = $request->delExtidlist;
+        }
+        if (!Utils::isUnset($request->delUseridlist)) {
+            $body['del_useridlist'] = $request->delUseridlist;
+        }
+        if (!Utils::isUnset($request->icon)) {
+            $body['icon'] = $request->icon;
+        }
+        if (!Utils::isUnset($request->managementOptions)) {
+            $body['managementOptions'] = $request->managementOptions;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->owner)) {
+            $body['owner'] = $request->owner;
+        }
+        if (!Utils::isUnset($request->ownerType)) {
+            $body['ownerType'] = $request->ownerType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'UpdateGroup',
+            'version' => 'im_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/im/group/update',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UpdateGroupResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 修改群会话
+     *  *
+     * @param UpdateGroupRequest $request UpdateGroupRequest
+     *
+     * @return UpdateGroupResponse UpdateGroupResponse
+     */
+    public function updateGroup($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateGroupHeaders([]);
+
+        return $this->updateGroupWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 修改群头像
      *  *
      * @param UpdateGroupAvatarRequest $request UpdateGroupAvatarRequest
@@ -8674,6 +9058,78 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateRobotInteractiveCardHeaders([]);
 
         return $this->updateRobotInteractiveCardWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更新场景群
+     *  *
+     * @param UpdateSceneGroupRequest $request UpdateSceneGroupRequest
+     * @param UpdateSceneGroupHeaders $headers UpdateSceneGroupHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateSceneGroupResponse UpdateSceneGroupResponse
+     */
+    public function updateSceneGroupWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->icon)) {
+            $body['icon'] = $request->icon;
+        }
+        if (!Utils::isUnset($request->managementOptions)) {
+            $body['management_options'] = $request->managementOptions;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['open_conversation_id'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->ownerUnionId)) {
+            $body['owner_union_id'] = $request->ownerUnionId;
+        }
+        if (!Utils::isUnset($request->ownerUserId)) {
+            $body['owner_user_id'] = $request->ownerUserId;
+        }
+        if (!Utils::isUnset($request->title)) {
+            $body['title'] = $request->title;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'UpdateSceneGroup',
+            'version' => 'im_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/im/sceneGroup/update',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UpdateSceneGroupResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新场景群
+     *  *
+     * @param UpdateSceneGroupRequest $request UpdateSceneGroupRequest
+     *
+     * @return UpdateSceneGroupResponse UpdateSceneGroupResponse
+     */
+    public function updateSceneGroup($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateSceneGroupHeaders([]);
+
+        return $this->updateSceneGroupWithOptions($request, $headers, $runtime);
     }
 
     /**

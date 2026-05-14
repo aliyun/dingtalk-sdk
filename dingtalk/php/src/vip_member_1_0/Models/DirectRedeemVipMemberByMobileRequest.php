@@ -31,6 +31,11 @@ class DirectRedeemVipMemberByMobileRequest extends Model
     /**
      * @var string
      */
+    public $extension;
+
+    /**
+     * @var string
+     */
     public $mobile;
 
     /**
@@ -42,6 +47,7 @@ class DirectRedeemVipMemberByMobileRequest extends Model
         'channel' => 'channel',
         'dingtalkId' => 'dingtalkId',
         'duration' => 'duration',
+        'extension' => 'extension',
         'mobile' => 'mobile',
         'uuid' => 'uuid',
     ];
@@ -62,6 +68,9 @@ class DirectRedeemVipMemberByMobileRequest extends Model
         }
         if (null !== $this->duration) {
             $res['duration'] = $this->duration;
+        }
+        if (null !== $this->extension) {
+            $res['extension'] = $this->extension;
         }
         if (null !== $this->mobile) {
             $res['mobile'] = $this->mobile;
@@ -92,6 +101,9 @@ class DirectRedeemVipMemberByMobileRequest extends Model
         }
         if (isset($map['duration'])) {
             $model->duration = $map['duration'];
+        }
+        if (isset($map['extension'])) {
+            $model->extension = $map['extension'];
         }
         if (isset($map['mobile'])) {
             $model->mobile = $map['mobile'];

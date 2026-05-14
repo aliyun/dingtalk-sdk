@@ -65,6 +65,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->duration)) {
             $body['duration'] = $request->duration;
         }
+        if (!Utils::isUnset($request->extension)) {
+            $body['extension'] = $request->extension;
+        }
         if (!Utils::isUnset($request->mobile)) {
             $body['mobile'] = $request->mobile;
         }

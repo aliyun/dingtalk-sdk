@@ -21,6 +21,13 @@ class QueryMsgSendRecordsRequest extends Model
     public $msgTypeList;
 
     /**
+     * @example 2
+     *
+     * @var int
+     */
+    public $msgSource;
+
+    /**
      * @description This parameter is required.
      *
      * @example 1
@@ -63,6 +70,7 @@ class QueryMsgSendRecordsRequest extends Model
     protected $_name = [
         'endTime' => 'end_time',
         'msgTypeList' => 'msgTypeList',
+        'msgSource' => 'msg_source',
         'pageNumber' => 'page_number',
         'pageSize' => 'page_size',
         'startTime' => 'start_time',
@@ -80,6 +88,9 @@ class QueryMsgSendRecordsRequest extends Model
         }
         if (null !== $this->msgTypeList) {
             $res['msgTypeList'] = $this->msgTypeList;
+        }
+        if (null !== $this->msgSource) {
+            $res['msg_source'] = $this->msgSource;
         }
         if (null !== $this->pageNumber) {
             $res['page_number'] = $this->pageNumber;
@@ -115,6 +126,9 @@ class QueryMsgSendRecordsRequest extends Model
             if (!empty($map['msgTypeList'])) {
                 $model->msgTypeList = $map['msgTypeList'];
             }
+        }
+        if (isset($map['msg_source'])) {
+            $model->msgSource = $map['msg_source'];
         }
         if (isset($map['page_number'])) {
             $model->pageNumber = $map['page_number'];

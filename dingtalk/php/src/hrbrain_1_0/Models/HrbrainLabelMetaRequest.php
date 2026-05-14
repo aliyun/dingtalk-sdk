@@ -16,6 +16,16 @@ class HrbrainLabelMetaRequest extends Model
     /**
      * @var string
      */
+    public $gmtModifiedEnd;
+
+    /**
+     * @var string
+     */
+    public $gmtModifiedStart;
+
+    /**
+     * @var string
+     */
     public $labelCode;
 
     /**
@@ -29,6 +39,8 @@ class HrbrainLabelMetaRequest extends Model
     public $nextToken;
     protected $_name = [
         'categoryCodes' => 'categoryCodes',
+        'gmtModifiedEnd' => 'gmtModifiedEnd',
+        'gmtModifiedStart' => 'gmtModifiedStart',
         'labelCode' => 'labelCode',
         'maxResults' => 'maxResults',
         'nextToken' => 'nextToken',
@@ -41,6 +53,12 @@ class HrbrainLabelMetaRequest extends Model
         $res = [];
         if (null !== $this->categoryCodes) {
             $res['categoryCodes'] = $this->categoryCodes;
+        }
+        if (null !== $this->gmtModifiedEnd) {
+            $res['gmtModifiedEnd'] = $this->gmtModifiedEnd;
+        }
+        if (null !== $this->gmtModifiedStart) {
+            $res['gmtModifiedStart'] = $this->gmtModifiedStart;
         }
         if (null !== $this->labelCode) {
             $res['labelCode'] = $this->labelCode;
@@ -67,6 +85,12 @@ class HrbrainLabelMetaRequest extends Model
             if (!empty($map['categoryCodes'])) {
                 $model->categoryCodes = $map['categoryCodes'];
             }
+        }
+        if (isset($map['gmtModifiedEnd'])) {
+            $model->gmtModifiedEnd = $map['gmtModifiedEnd'];
+        }
+        if (isset($map['gmtModifiedStart'])) {
+            $model->gmtModifiedStart = $map['gmtModifiedStart'];
         }
         if (isset($map['labelCode'])) {
             $model->labelCode = $map['labelCode'];

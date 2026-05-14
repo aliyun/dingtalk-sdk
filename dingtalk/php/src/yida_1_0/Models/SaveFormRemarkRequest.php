@@ -34,6 +34,13 @@ class SaveFormRemarkRequest extends Model
     public $content;
 
     /**
+     * @example vpc,sgp_vpc
+     *
+     * @var string
+     */
+    public $env;
+
+    /**
      * @description This parameter is required.
      *
      * @example 33f6d221-17f8-42b7-836a-682b95a046c2
@@ -41,6 +48,13 @@ class SaveFormRemarkRequest extends Model
      * @var string
      */
     public $formInstanceId;
+
+    /**
+     * @example FORM-EF6Y4G8WO2FN0SUB43TDQ3CGC3FMFQ1G9400RCJ3
+     *
+     * @var string
+     */
+    public $formUuid;
 
     /**
      * @example zh_CN
@@ -77,7 +91,9 @@ class SaveFormRemarkRequest extends Model
         'appType' => 'appType',
         'atUserId' => 'atUserId',
         'content' => 'content',
+        'env' => 'env',
         'formInstanceId' => 'formInstanceId',
+        'formUuid' => 'formUuid',
         'language' => 'language',
         'replyId' => 'replyId',
         'systemToken' => 'systemToken',
@@ -98,8 +114,14 @@ class SaveFormRemarkRequest extends Model
         if (null !== $this->content) {
             $res['content'] = $this->content;
         }
+        if (null !== $this->env) {
+            $res['env'] = $this->env;
+        }
         if (null !== $this->formInstanceId) {
             $res['formInstanceId'] = $this->formInstanceId;
+        }
+        if (null !== $this->formUuid) {
+            $res['formUuid'] = $this->formUuid;
         }
         if (null !== $this->language) {
             $res['language'] = $this->language;
@@ -134,8 +156,14 @@ class SaveFormRemarkRequest extends Model
         if (isset($map['content'])) {
             $model->content = $map['content'];
         }
+        if (isset($map['env'])) {
+            $model->env = $map['env'];
+        }
         if (isset($map['formInstanceId'])) {
             $model->formInstanceId = $map['formInstanceId'];
+        }
+        if (isset($map['formUuid'])) {
+            $model->formUuid = $map['formUuid'];
         }
         if (isset($map['language'])) {
             $model->language = $map['language'];

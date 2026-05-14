@@ -18,6 +18,13 @@ class items extends Model
     public $createTime;
 
     /**
+     * @example 2
+     *
+     * @var int
+     */
+    public $msgSource;
+
+    /**
      * @description This parameter is required.
      *
      * @example text
@@ -59,6 +66,7 @@ class items extends Model
     public $title;
     protected $_name = [
         'createTime' => 'create_time',
+        'msgSource' => 'msg_source',
         'msgType' => 'msg_type',
         'operatorUserId' => 'operator_user_id',
         'sendTime' => 'send_time',
@@ -73,6 +81,9 @@ class items extends Model
         $res = [];
         if (null !== $this->createTime) {
             $res['create_time'] = $this->createTime;
+        }
+        if (null !== $this->msgSource) {
+            $res['msg_source'] = $this->msgSource;
         }
         if (null !== $this->msgType) {
             $res['msg_type'] = $this->msgType;
@@ -103,6 +114,9 @@ class items extends Model
         $model = new self();
         if (isset($map['create_time'])) {
             $model->createTime = $map['create_time'];
+        }
+        if (isset($map['msg_source'])) {
+            $model->msgSource = $map['msg_source'];
         }
         if (isset($map['msg_type'])) {
             $model->msgType = $map['msg_type'];

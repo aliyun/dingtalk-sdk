@@ -18,6 +18,13 @@ class GetProcessDesignByCodeRequest extends Model
     public $appType;
 
     /**
+     * @example vpc,sgp_vpc
+     *
+     * @var string
+     */
+    public $env;
+
+    /**
      * @description This parameter is required.
      *
      * @var string
@@ -50,6 +57,7 @@ class GetProcessDesignByCodeRequest extends Model
     public $userId;
     protected $_name = [
         'appType' => 'appType',
+        'env' => 'env',
         'processCode' => 'processCode',
         'processId' => 'processId',
         'systemToken' => 'systemToken',
@@ -63,6 +71,9 @@ class GetProcessDesignByCodeRequest extends Model
         $res = [];
         if (null !== $this->appType) {
             $res['appType'] = $this->appType;
+        }
+        if (null !== $this->env) {
+            $res['env'] = $this->env;
         }
         if (null !== $this->processCode) {
             $res['processCode'] = $this->processCode;
@@ -90,6 +101,9 @@ class GetProcessDesignByCodeRequest extends Model
         $model = new self();
         if (isset($map['appType'])) {
             $model->appType = $map['appType'];
+        }
+        if (isset($map['env'])) {
+            $model->env = $map['env'];
         }
         if (isset($map['processCode'])) {
             $model->processCode = $map['processCode'];

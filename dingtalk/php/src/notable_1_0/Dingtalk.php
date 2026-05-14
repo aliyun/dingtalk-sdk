@@ -62,12 +62,18 @@ use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\ListRecordsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\PrepareSetRichTextHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\PrepareSetRichTextRequest;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\PrepareSetRichTextResponse;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\QueryChangedRecordIdsByClientTokenHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\QueryChangedRecordIdsByClientTokenRequest;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\QueryChangedRecordIdsByClientTokenResponse;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\QueryDocAllRolesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\QueryDocAllRolesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\QueryDocAllRolesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\RebuildRoleMembersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\RebuildRoleMembersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\RebuildRoleMembersResponse;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\TruncateSheetRecordsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\TruncateSheetRecordsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\TruncateSheetRecordsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\UpdateFieldHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\UpdateFieldRequest;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\UpdateFieldResponse;
@@ -1338,6 +1344,70 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 根据 clientToken 查询变更记录 ID
+     *  *
+     * @param string                                    $baseId
+     * @param QueryChangedRecordIdsByClientTokenRequest $request QueryChangedRecordIdsByClientTokenRequest
+     * @param QueryChangedRecordIdsByClientTokenHeaders $headers QueryChangedRecordIdsByClientTokenHeaders
+     * @param RuntimeOptions                            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryChangedRecordIdsByClientTokenResponse QueryChangedRecordIdsByClientTokenResponse
+     */
+    public function queryChangedRecordIdsByClientTokenWithOptions($baseId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->clientToken)) {
+            $body['clientToken'] = $request->clientToken;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'QueryChangedRecordIdsByClientToken',
+            'version' => 'notable_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/notable/bases/' . $baseId . '/changedRecordIds/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryChangedRecordIdsByClientTokenResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 根据 clientToken 查询变更记录 ID
+     *  *
+     * @param string                                    $baseId
+     * @param QueryChangedRecordIdsByClientTokenRequest $request QueryChangedRecordIdsByClientTokenRequest
+     *
+     * @return QueryChangedRecordIdsByClientTokenResponse QueryChangedRecordIdsByClientTokenResponse
+     */
+    public function queryChangedRecordIdsByClientToken($baseId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryChangedRecordIdsByClientTokenHeaders([]);
+
+        return $this->queryChangedRecordIdsByClientTokenWithOptions($baseId, $request, $headers, $runtime);
+    }
+
+    /**
      * @summary 查询文档所有角色和角色成员
      *  *
      * @param string                  $baseId
@@ -1461,6 +1531,67 @@ class Dingtalk extends OpenApiClient
         $headers = new RebuildRoleMembersHeaders([]);
 
         return $this->rebuildRoleMembersWithOptions($baseId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 清空表格记录
+     *  *
+     * @param string                      $baseId
+     * @param string                      $sheetIdOrName
+     * @param TruncateSheetRecordsRequest $request       TruncateSheetRecordsRequest
+     * @param TruncateSheetRecordsHeaders $headers       TruncateSheetRecordsHeaders
+     * @param RuntimeOptions              $runtime       runtime options for this request RuntimeOptions
+     *
+     * @return TruncateSheetRecordsResponse TruncateSheetRecordsResponse
+     */
+    public function truncateSheetRecordsWithOptions($baseId, $sheetIdOrName, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'TruncateSheetRecords',
+            'version' => 'notable_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/notable/bases/' . $baseId . '/sheets/' . $sheetIdOrName . '/records/truncate',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return TruncateSheetRecordsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 清空表格记录
+     *  *
+     * @param string                      $baseId
+     * @param string                      $sheetIdOrName
+     * @param TruncateSheetRecordsRequest $request       TruncateSheetRecordsRequest
+     *
+     * @return TruncateSheetRecordsResponse TruncateSheetRecordsResponse
+     */
+    public function truncateSheetRecords($baseId, $sheetIdOrName, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new TruncateSheetRecordsHeaders([]);
+
+        return $this->truncateSheetRecordsWithOptions($baseId, $sheetIdOrName, $request, $headers, $runtime);
     }
 
     /**

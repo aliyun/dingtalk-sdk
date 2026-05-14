@@ -14,6 +14,11 @@ class GetPublicDevicesRequest extends Model
     public $deviceUuid;
 
     /**
+     * @var string[]
+     */
+    public $encryptDeviceIdList;
+
+    /**
      * @example 1671767361000
      *
      * @var int
@@ -75,6 +80,7 @@ class GetPublicDevicesRequest extends Model
     public $title;
     protected $_name = [
         'deviceUuid' => 'deviceUuid',
+        'encryptDeviceIdList' => 'encryptDeviceIdList',
         'endTime' => 'endTime',
         'macAddress' => 'macAddress',
         'pageNumber' => 'pageNumber',
@@ -93,6 +99,9 @@ class GetPublicDevicesRequest extends Model
         $res = [];
         if (null !== $this->deviceUuid) {
             $res['deviceUuid'] = $this->deviceUuid;
+        }
+        if (null !== $this->encryptDeviceIdList) {
+            $res['encryptDeviceIdList'] = $this->encryptDeviceIdList;
         }
         if (null !== $this->endTime) {
             $res['endTime'] = $this->endTime;
@@ -135,6 +144,11 @@ class GetPublicDevicesRequest extends Model
         $model = new self();
         if (isset($map['deviceUuid'])) {
             $model->deviceUuid = $map['deviceUuid'];
+        }
+        if (isset($map['encryptDeviceIdList'])) {
+            if (!empty($map['encryptDeviceIdList'])) {
+                $model->encryptDeviceIdList = $map['encryptDeviceIdList'];
+            }
         }
         if (isset($map['endTime'])) {
             $model->endTime = $map['endTime'];

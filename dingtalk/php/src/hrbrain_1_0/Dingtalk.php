@@ -2888,6 +2888,12 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->categoryCodes)) {
             $body['categoryCodes'] = $request->categoryCodes;
         }
+        if (!Utils::isUnset($request->gmtModifiedEnd)) {
+            $body['gmtModifiedEnd'] = $request->gmtModifiedEnd;
+        }
+        if (!Utils::isUnset($request->gmtModifiedStart)) {
+            $body['gmtModifiedStart'] = $request->gmtModifiedStart;
+        }
         if (!Utils::isUnset($request->labelCode)) {
             $body['labelCode'] = $request->labelCode;
         }
