@@ -32,6 +32,9 @@ public class BatchGetUserResponseBody extends TeaModel {
     }
 
     public static class BatchGetUserResponseBodyUserList extends TeaModel {
+        @NameInMap("avatar")
+        public String avatar;
+
         @NameInMap("job_number")
         public String jobNumber;
 
@@ -62,6 +65,14 @@ public class BatchGetUserResponseBody extends TeaModel {
         public static BatchGetUserResponseBodyUserList build(java.util.Map<String, ?> map) throws Exception {
             BatchGetUserResponseBodyUserList self = new BatchGetUserResponseBodyUserList();
             return TeaModel.build(map, self);
+        }
+
+        public BatchGetUserResponseBodyUserList setAvatar(String avatar) {
+            this.avatar = avatar;
+            return this;
+        }
+        public String getAvatar() {
+            return this.avatar;
         }
 
         public BatchGetUserResponseBodyUserList setJobNumber(String jobNumber) {

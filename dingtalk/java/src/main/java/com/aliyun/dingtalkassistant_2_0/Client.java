@@ -324,6 +324,86 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>分页查询算粒使用记录</p>
+     * 
+     * @param request PageListAICreditsUsageRequest
+     * @param headers PageListAICreditsUsageHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return PageListAICreditsUsageResponse
+     */
+    public PageListAICreditsUsageResponse pageListAICreditsUsageWithOptions(PageListAICreditsUsageRequest request, PageListAICreditsUsageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.endTime)) {
+            query.put("endTime", request.endTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {
+            query.put("pageNumber", request.pageNumber);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
+            query.put("pageSize", request.pageSize);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.scenarioName)) {
+            query.put("scenarioName", request.scenarioName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.startTime)) {
+            query.put("startTime", request.startTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userName)) {
+            query.put("userName", request.userName);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "PageListAICreditsUsage"),
+            new TeaPair("version", "assistant_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/assistant/aiCredits/pageListAICreditsUsage"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new PageListAICreditsUsageResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>分页查询算粒使用记录</p>
+     * 
+     * @param request PageListAICreditsUsageRequest
+     * @return PageListAICreditsUsageResponse
+     */
+    public PageListAICreditsUsageResponse pageListAICreditsUsage(PageListAICreditsUsageRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        PageListAICreditsUsageHeaders headers = new PageListAICreditsUsageHeaders();
+        return this.pageListAICreditsUsageWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>获取AI助理的消息体</p>
      * 
      * @param headers RetrieveAssistantMessageHeaders

@@ -4,6 +4,9 @@ package com.aliyun.dingtalkrobot_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchSendOTOResponseBody extends TeaModel {
+    @NameInMap("filteredStaffIdList")
+    public java.util.List<String> filteredStaffIdList;
+
     @NameInMap("flowControlledStaffIdList")
     public java.util.List<String> flowControlledStaffIdList;
 
@@ -16,6 +19,14 @@ public class BatchSendOTOResponseBody extends TeaModel {
     public static BatchSendOTOResponseBody build(java.util.Map<String, ?> map) throws Exception {
         BatchSendOTOResponseBody self = new BatchSendOTOResponseBody();
         return TeaModel.build(map, self);
+    }
+
+    public BatchSendOTOResponseBody setFilteredStaffIdList(java.util.List<String> filteredStaffIdList) {
+        this.filteredStaffIdList = filteredStaffIdList;
+        return this;
+    }
+    public java.util.List<String> getFilteredStaffIdList() {
+        return this.filteredStaffIdList;
     }
 
     public BatchSendOTOResponseBody setFlowControlledStaffIdList(java.util.List<String> flowControlledStaffIdList) {

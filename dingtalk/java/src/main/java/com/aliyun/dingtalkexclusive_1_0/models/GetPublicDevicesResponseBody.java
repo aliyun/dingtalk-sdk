@@ -187,6 +187,9 @@ public class GetPublicDevicesResponseBody extends TeaModel {
         @NameInMap("did")
         public String did;
 
+        @NameInMap("encryptDeviceId")
+        public String encryptDeviceId;
+
         /**
          * <strong>example:</strong>
          * <p>1671767361000</p>
@@ -286,6 +289,14 @@ public class GetPublicDevicesResponseBody extends TeaModel {
         }
         public String getDid() {
             return this.did;
+        }
+
+        public GetPublicDevicesResponseBodyData setEncryptDeviceId(String encryptDeviceId) {
+            this.encryptDeviceId = encryptDeviceId;
+            return this;
+        }
+        public String getEncryptDeviceId() {
+            return this.encryptDeviceId;
         }
 
         public GetPublicDevicesResponseBodyData setGmtCreate(Long gmtCreate) {

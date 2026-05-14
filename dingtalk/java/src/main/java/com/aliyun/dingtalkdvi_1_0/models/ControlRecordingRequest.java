@@ -19,6 +19,13 @@ public class ControlRecordingRequest extends TeaModel {
     @NameInMap("agree")
     public Boolean agree;
 
+    /**
+     * <strong>example:</strong>
+     * <p>20260423112233</p>
+     */
+    @NameInMap("outBizData")
+    public String outBizData;
+
     @NameInMap("teamCode")
     public String teamCode;
 
@@ -47,6 +54,14 @@ public class ControlRecordingRequest extends TeaModel {
     }
     public Boolean getAgree() {
         return this.agree;
+    }
+
+    public ControlRecordingRequest setOutBizData(String outBizData) {
+        this.outBizData = outBizData;
+        return this;
+    }
+    public String getOutBizData() {
+        return this.outBizData;
     }
 
     public ControlRecordingRequest setTeamCode(String teamCode) {

@@ -46,6 +46,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("duration", request.duration);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.extension)) {
+            body.put("extension", request.extension);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.mobile)) {
             body.put("mobile", request.mobile);
         }

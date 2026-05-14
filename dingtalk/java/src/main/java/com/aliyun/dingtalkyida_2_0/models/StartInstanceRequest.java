@@ -21,6 +21,16 @@ public class StartInstanceRequest extends TeaModel {
     public String departmentId;
 
     /**
+     * <strong>example:</strong>
+     * <p>vpc,sgp_vpc</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
+    @NameInMap("env")
+    public String env;
+
+    /**
      * <p>This parameter is required.</p>
      * 
      * <strong>example:</strong>
@@ -103,6 +113,14 @@ public class StartInstanceRequest extends TeaModel {
     }
     public String getDepartmentId() {
         return this.departmentId;
+    }
+
+    public StartInstanceRequest setEnv(String env) {
+        this.env = env;
+        return this;
+    }
+    public String getEnv() {
+        return this.env;
     }
 
     public StartInstanceRequest setFormDataJson(String formDataJson) {

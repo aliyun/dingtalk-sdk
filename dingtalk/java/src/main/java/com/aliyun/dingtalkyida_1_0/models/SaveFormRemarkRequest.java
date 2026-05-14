@@ -30,6 +30,16 @@ public class SaveFormRemarkRequest extends TeaModel {
     public String content;
 
     /**
+     * <strong>example:</strong>
+     * <p>vpc,sgp_vpc</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
+    @NameInMap("env")
+    public String env;
+
+    /**
      * <p>This parameter is required.</p>
      * 
      * <strong>example:</strong>
@@ -37,6 +47,13 @@ public class SaveFormRemarkRequest extends TeaModel {
      */
     @NameInMap("formInstanceId")
     public String formInstanceId;
+
+    /**
+     * <strong>example:</strong>
+     * <p>FORM-EF6Y4G8WO2FN0SUB43TDQ3CGC3FMFQ1G9400RCJ3</p>
+     */
+    @NameInMap("formUuid")
+    public String formUuid;
 
     /**
      * <strong>example:</strong>
@@ -99,12 +116,28 @@ public class SaveFormRemarkRequest extends TeaModel {
         return this.content;
     }
 
+    public SaveFormRemarkRequest setEnv(String env) {
+        this.env = env;
+        return this;
+    }
+    public String getEnv() {
+        return this.env;
+    }
+
     public SaveFormRemarkRequest setFormInstanceId(String formInstanceId) {
         this.formInstanceId = formInstanceId;
         return this;
     }
     public String getFormInstanceId() {
         return this.formInstanceId;
+    }
+
+    public SaveFormRemarkRequest setFormUuid(String formUuid) {
+        this.formUuid = formUuid;
+        return this;
+    }
+    public String getFormUuid() {
+        return this.formUuid;
     }
 
     public SaveFormRemarkRequest setLanguage(String language) {

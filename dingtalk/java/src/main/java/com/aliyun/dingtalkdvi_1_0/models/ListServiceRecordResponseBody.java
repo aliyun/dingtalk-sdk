@@ -115,6 +115,12 @@ public class ListServiceRecordResponseBody extends TeaModel {
         @NameInMap("endTimestamp")
         public Long endTimestamp;
 
+        @NameInMap("outBizData")
+        public String outBizData;
+
+        @NameInMap("qualityInspectionScore")
+        public Integer qualityInspectionScore;
+
         @NameInMap("recordId")
         public String recordId;
 
@@ -165,6 +171,22 @@ public class ListServiceRecordResponseBody extends TeaModel {
         }
         public Long getEndTimestamp() {
             return this.endTimestamp;
+        }
+
+        public ListServiceRecordResponseBodyResult setOutBizData(String outBizData) {
+            this.outBizData = outBizData;
+            return this;
+        }
+        public String getOutBizData() {
+            return this.outBizData;
+        }
+
+        public ListServiceRecordResponseBodyResult setQualityInspectionScore(Integer qualityInspectionScore) {
+            this.qualityInspectionScore = qualityInspectionScore;
+            return this;
+        }
+        public Integer getQualityInspectionScore() {
+            return this.qualityInspectionScore;
         }
 
         public ListServiceRecordResponseBodyResult setRecordId(String recordId) {

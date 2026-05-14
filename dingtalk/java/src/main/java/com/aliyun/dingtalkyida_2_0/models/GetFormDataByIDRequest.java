@@ -5,11 +5,23 @@ import com.aliyun.tea.*;
 
 public class GetFormDataByIDRequest extends TeaModel {
     /**
+     * <p>This parameter is required.</p>
+     * 
      * <strong>example:</strong>
      * <p>APP_PBKT0MFBEBTDO8T7SLVP</p>
      */
     @NameInMap("appType")
     public String appType;
+
+    /**
+     * <strong>example:</strong>
+     * <p>vpc,sgp_vpc</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
+    @NameInMap("env")
+    public String env;
 
     /**
      * <strong>example:</strong>
@@ -26,6 +38,8 @@ public class GetFormDataByIDRequest extends TeaModel {
     public String language;
 
     /**
+     * <p>This parameter is required.</p>
+     * 
      * <strong>example:</strong>
      * <p>hexxx</p>
      */
@@ -39,6 +53,9 @@ public class GetFormDataByIDRequest extends TeaModel {
     @NameInMap("useAlias")
     public Boolean useAlias;
 
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("userId")
     public String userId;
 
@@ -53,6 +70,14 @@ public class GetFormDataByIDRequest extends TeaModel {
     }
     public String getAppType() {
         return this.appType;
+    }
+
+    public GetFormDataByIDRequest setEnv(String env) {
+        this.env = env;
+        return this;
+    }
+    public String getEnv() {
+        return this.env;
     }
 
     public GetFormDataByIDRequest setFormUuid(String formUuid) {

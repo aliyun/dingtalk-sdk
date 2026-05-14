@@ -15,6 +15,13 @@ public class QueryMsgSendRecordsRequest extends TeaModel {
     public java.util.List<String> msgTypeList;
 
     /**
+     * <strong>example:</strong>
+     * <p>2</p>
+     */
+    @NameInMap("msg_source")
+    public Integer msgSource;
+
+    /**
      * <p>This parameter is required.</p>
      * 
      * <strong>example:</strong>
@@ -74,6 +81,14 @@ public class QueryMsgSendRecordsRequest extends TeaModel {
     }
     public java.util.List<String> getMsgTypeList() {
         return this.msgTypeList;
+    }
+
+    public QueryMsgSendRecordsRequest setMsgSource(Integer msgSource) {
+        this.msgSource = msgSource;
+        return this;
+    }
+    public Integer getMsgSource() {
+        return this.msgSource;
     }
 
     public QueryMsgSendRecordsRequest setPageNumber(Integer pageNumber) {

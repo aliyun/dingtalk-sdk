@@ -1430,6 +1430,122 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>查询A1分析小助理</p>
+     * 
+     * @param request QuerySmartDeviceAiSceneByIdRequest
+     * @param headers QuerySmartDeviceAiSceneByIdHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QuerySmartDeviceAiSceneByIdResponse
+     */
+    public QuerySmartDeviceAiSceneByIdResponse querySmartDeviceAiSceneByIdWithOptions(QuerySmartDeviceAiSceneByIdRequest request, QuerySmartDeviceAiSceneByIdHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.agentInstanceId)) {
+            body.put("agentInstanceId", request.agentInstanceId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QuerySmartDeviceAiSceneById"),
+            new TeaPair("version", "minutes_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/minutes/smartdevice/aiscene"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QuerySmartDeviceAiSceneByIdResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询A1分析小助理</p>
+     * 
+     * @param request QuerySmartDeviceAiSceneByIdRequest
+     * @return QuerySmartDeviceAiSceneByIdResponse
+     */
+    public QuerySmartDeviceAiSceneByIdResponse querySmartDeviceAiSceneById(QuerySmartDeviceAiSceneByIdRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QuerySmartDeviceAiSceneByIdHeaders headers = new QuerySmartDeviceAiSceneByIdHeaders();
+        return this.querySmartDeviceAiSceneByIdWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询A1分析小助理能力模板</p>
+     * 
+     * @param request QuerySmartDeviceAiScenePromptTemplateByIdsRequest
+     * @param headers QuerySmartDeviceAiScenePromptTemplateByIdsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QuerySmartDeviceAiScenePromptTemplateByIdsResponse
+     */
+    public QuerySmartDeviceAiScenePromptTemplateByIdsResponse querySmartDeviceAiScenePromptTemplateByIdsWithOptions(QuerySmartDeviceAiScenePromptTemplateByIdsRequest request, QuerySmartDeviceAiScenePromptTemplateByIdsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.agentInstanceId)) {
+            body.put("agentInstanceId", request.agentInstanceId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.agentPromptTemplateIds)) {
+            body.put("agentPromptTemplateIds", request.agentPromptTemplateIds);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QuerySmartDeviceAiScenePromptTemplateByIds"),
+            new TeaPair("version", "minutes_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/minutes/smartdevice/aiscene/promptTemplate"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QuerySmartDeviceAiScenePromptTemplateByIdsResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询A1分析小助理能力模板</p>
+     * 
+     * @param request QuerySmartDeviceAiScenePromptTemplateByIdsRequest
+     * @return QuerySmartDeviceAiScenePromptTemplateByIdsResponse
+     */
+    public QuerySmartDeviceAiScenePromptTemplateByIdsResponse querySmartDeviceAiScenePromptTemplateByIds(QuerySmartDeviceAiScenePromptTemplateByIdsRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QuerySmartDeviceAiScenePromptTemplateByIdsHeaders headers = new QuerySmartDeviceAiScenePromptTemplateByIdsHeaders();
+        return this.querySmartDeviceAiScenePromptTemplateByIdsWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>查询DingTalkA1小助理分析</p>
      * 
      * @param request QuerySmartDeviceAiSummaryRequest

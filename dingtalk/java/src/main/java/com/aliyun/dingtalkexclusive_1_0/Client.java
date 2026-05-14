@@ -4301,6 +4301,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.Common.validateModel(tmpReq);
         GetPublicDevicesShrinkRequest request = new GetPublicDevicesShrinkRequest();
         com.aliyun.openapiutil.Client.convert(tmpReq, request);
+        if (!com.aliyun.teautil.Common.isUnset(tmpReq.encryptDeviceIdList)) {
+            request.encryptDeviceIdListShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(tmpReq.encryptDeviceIdList, "encryptDeviceIdList", "json");
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(tmpReq.serialNumberList)) {
             request.serialNumberListShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(tmpReq.serialNumberList, "serialNumberList", "json");
         }
@@ -4308,6 +4312,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.deviceUuid)) {
             query.put("deviceUuid", request.deviceUuid);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.encryptDeviceIdListShrink)) {
+            query.put("encryptDeviceIdList", request.encryptDeviceIdListShrink);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.endTime)) {
@@ -6634,6 +6642,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.msgTypeList)) {
             body.put("msgTypeList", request.msgTypeList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.msgSource)) {
+            body.put("msg_source", request.msgSource);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {

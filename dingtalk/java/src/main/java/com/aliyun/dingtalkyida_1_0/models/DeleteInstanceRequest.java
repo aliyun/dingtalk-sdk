@@ -15,6 +15,16 @@ public class DeleteInstanceRequest extends TeaModel {
 
     /**
      * <strong>example:</strong>
+     * <p>vpc,sgp_vpc</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
+    @NameInMap("env")
+    public String env;
+
+    /**
+     * <strong>example:</strong>
      * <p>zh_CN</p>
      */
     @NameInMap("language")
@@ -58,6 +68,14 @@ public class DeleteInstanceRequest extends TeaModel {
     }
     public String getAppType() {
         return this.appType;
+    }
+
+    public DeleteInstanceRequest setEnv(String env) {
+        this.env = env;
+        return this;
+    }
+    public String getEnv() {
+        return this.env;
     }
 
     public DeleteInstanceRequest setLanguage(String language) {

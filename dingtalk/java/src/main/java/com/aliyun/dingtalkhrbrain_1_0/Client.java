@@ -2679,6 +2679,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("categoryCodes", request.categoryCodes);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.gmtModifiedEnd)) {
+            body.put("gmtModifiedEnd", request.gmtModifiedEnd);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.gmtModifiedStart)) {
+            body.put("gmtModifiedStart", request.gmtModifiedStart);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.labelCode)) {
             body.put("labelCode", request.labelCode);
         }

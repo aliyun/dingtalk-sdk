@@ -8,17 +8,24 @@ public class RestartInstanceRequest extends TeaModel {
      * <p>This parameter is required.</p>
      * 
      * <strong>example:</strong>
-     * <p>APP_XCE0EVXS6DYG3YDYC5RD</p>
+     * <p>APP_XCEXXX</p>
      */
     @NameInMap("appType")
     public String appType;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>node_xxx</p>
      */
     @NameInMap("currentActivityId")
     public String currentActivityId;
 
+    /**
+     * <strong>example:</strong>
+     * <p>vpc（国内、默认）/ sgp_vpc（海外）</p>
+     */
     @NameInMap("envProfile")
     public String envProfile;
 
@@ -26,7 +33,7 @@ public class RestartInstanceRequest extends TeaModel {
      * <p>This parameter is required.</p>
      * 
      * <strong>example:</strong>
-     * <p>FORM-GX866MC1NC1VOFF6WVQW33FD16E23L3CPMKVKA</p>
+     * <p>FORM-XXX</p>
      */
     @NameInMap("formUuid")
     public String formUuid;
@@ -44,13 +51,16 @@ public class RestartInstanceRequest extends TeaModel {
      * <p>This parameter is required.</p>
      * 
      * <strong>example:</strong>
-     * <p>09866181UTZVVD4R3DC955FNKIM52HVPU5WWK7</p>
+     * <p>098661XXX</p>
      */
     @NameInMap("systemToken")
     public String systemToken;
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>sid-restartevent</p>
      */
     @NameInMap("targetActivityId")
     public String targetActivityId;
@@ -59,7 +69,7 @@ public class RestartInstanceRequest extends TeaModel {
      * <p>This parameter is required.</p>
      * 
      * <strong>example:</strong>
-     * <p>task-123</p>
+     * <p>123XXX</p>
      */
     @NameInMap("taskId")
     public String taskId;
@@ -68,7 +78,7 @@ public class RestartInstanceRequest extends TeaModel {
      * <p>This parameter is required.</p>
      * 
      * <strong>example:</strong>
-     * <p>ding173982232112232</p>
+     * <p>173XXX</p>
      */
     @NameInMap("userId")
     public String userId;

@@ -7,6 +7,9 @@ public class GetPublicDevicesRequest extends TeaModel {
     @NameInMap("deviceUuid")
     public String deviceUuid;
 
+    @NameInMap("encryptDeviceIdList")
+    public java.util.List<String> encryptDeviceIdList;
+
     /**
      * <strong>example:</strong>
      * <p>1671767361000</p>
@@ -77,6 +80,14 @@ public class GetPublicDevicesRequest extends TeaModel {
     }
     public String getDeviceUuid() {
         return this.deviceUuid;
+    }
+
+    public GetPublicDevicesRequest setEncryptDeviceIdList(java.util.List<String> encryptDeviceIdList) {
+        this.encryptDeviceIdList = encryptDeviceIdList;
+        return this;
+    }
+    public java.util.List<String> getEncryptDeviceIdList() {
+        return this.encryptDeviceIdList;
     }
 
     public GetPublicDevicesRequest setEndTime(Long endTime) {

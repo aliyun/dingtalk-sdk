@@ -15,6 +15,16 @@ public class GetInstanceByIdRequest extends TeaModel {
 
     /**
      * <strong>example:</strong>
+     * <p>vpc,sgp_vpc</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
+    @NameInMap("env")
+    public String env;
+
+    /**
+     * <strong>example:</strong>
      * <p>FORM-ADFC8E8E5ADE4B2F8FC2316CFC42A55CJLWZ</p>
      */
     @NameInMap("formUuid")
@@ -63,6 +73,14 @@ public class GetInstanceByIdRequest extends TeaModel {
     }
     public String getAppType() {
         return this.appType;
+    }
+
+    public GetInstanceByIdRequest setEnv(String env) {
+        this.env = env;
+        return this;
+    }
+    public String getEnv() {
+        return this.env;
     }
 
     public GetInstanceByIdRequest setFormUuid(String formUuid) {

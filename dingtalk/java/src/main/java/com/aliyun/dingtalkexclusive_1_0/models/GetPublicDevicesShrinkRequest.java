@@ -7,6 +7,9 @@ public class GetPublicDevicesShrinkRequest extends TeaModel {
     @NameInMap("deviceUuid")
     public String deviceUuid;
 
+    @NameInMap("encryptDeviceIdList")
+    public String encryptDeviceIdListShrink;
+
     /**
      * <strong>example:</strong>
      * <p>1671767361000</p>
@@ -77,6 +80,14 @@ public class GetPublicDevicesShrinkRequest extends TeaModel {
     }
     public String getDeviceUuid() {
         return this.deviceUuid;
+    }
+
+    public GetPublicDevicesShrinkRequest setEncryptDeviceIdListShrink(String encryptDeviceIdListShrink) {
+        this.encryptDeviceIdListShrink = encryptDeviceIdListShrink;
+        return this;
+    }
+    public String getEncryptDeviceIdListShrink() {
+        return this.encryptDeviceIdListShrink;
     }
 
     public GetPublicDevicesShrinkRequest setEndTime(Long endTime) {

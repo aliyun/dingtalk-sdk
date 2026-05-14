@@ -53,6 +53,13 @@ public class QueryMsgSendRecordsResponseBody extends TeaModel {
         public Long createTime;
 
         /**
+         * <strong>example:</strong>
+         * <p>2</p>
+         */
+        @NameInMap("msg_source")
+        public Integer msgSource;
+
+        /**
          * <p>This parameter is required.</p>
          * 
          * <strong>example:</strong>
@@ -104,6 +111,14 @@ public class QueryMsgSendRecordsResponseBody extends TeaModel {
         }
         public Long getCreateTime() {
             return this.createTime;
+        }
+
+        public QueryMsgSendRecordsResponseBodyResultItems setMsgSource(Integer msgSource) {
+            this.msgSource = msgSource;
+            return this;
+        }
+        public Integer getMsgSource() {
+            return this.msgSource;
         }
 
         public QueryMsgSendRecordsResponseBodyResultItems setMsgType(String msgType) {

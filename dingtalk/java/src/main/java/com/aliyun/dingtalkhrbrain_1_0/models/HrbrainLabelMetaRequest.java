@@ -7,6 +7,12 @@ public class HrbrainLabelMetaRequest extends TeaModel {
     @NameInMap("categoryCodes")
     public java.util.List<String> categoryCodes;
 
+    @NameInMap("gmtModifiedEnd")
+    public String gmtModifiedEnd;
+
+    @NameInMap("gmtModifiedStart")
+    public String gmtModifiedStart;
+
     @NameInMap("labelCode")
     public String labelCode;
 
@@ -27,6 +33,22 @@ public class HrbrainLabelMetaRequest extends TeaModel {
     }
     public java.util.List<String> getCategoryCodes() {
         return this.categoryCodes;
+    }
+
+    public HrbrainLabelMetaRequest setGmtModifiedEnd(String gmtModifiedEnd) {
+        this.gmtModifiedEnd = gmtModifiedEnd;
+        return this;
+    }
+    public String getGmtModifiedEnd() {
+        return this.gmtModifiedEnd;
+    }
+
+    public HrbrainLabelMetaRequest setGmtModifiedStart(String gmtModifiedStart) {
+        this.gmtModifiedStart = gmtModifiedStart;
+        return this;
+    }
+    public String getGmtModifiedStart() {
+        return this.gmtModifiedStart;
     }
 
     public HrbrainLabelMetaRequest setLabelCode(String labelCode) {

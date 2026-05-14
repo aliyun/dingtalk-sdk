@@ -16,6 +16,13 @@ public class DirectRedeemVipMemberByMobileRequest extends TeaModel {
     @NameInMap("duration")
     public Long duration;
 
+    /**
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
+    @NameInMap("extension")
+    public String extension;
+
     @NameInMap("mobile")
     public String mobile;
 
@@ -57,6 +64,14 @@ public class DirectRedeemVipMemberByMobileRequest extends TeaModel {
     }
     public Long getDuration() {
         return this.duration;
+    }
+
+    public DirectRedeemVipMemberByMobileRequest setExtension(String extension) {
+        this.extension = extension;
+        return this;
+    }
+    public String getExtension() {
+        return this.extension;
     }
 
     public DirectRedeemVipMemberByMobileRequest setMobile(String mobile) {

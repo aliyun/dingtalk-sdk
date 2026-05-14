@@ -3934,6 +3934,70 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>通过dentryUuid提交文档导出任务</p>
+     * 
+     * @param request SubmitExportJobRequest
+     * @param headers SubmitExportJobHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SubmitExportJobResponse
+     */
+    public SubmitExportJobResponse submitExportJobWithOptions(SubmitExportJobRequest request, SubmitExportJobHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.dentryUuid)) {
+            body.put("dentryUuid", request.dentryUuid);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            body.put("operatorId", request.operatorId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.targetFormat)) {
+            body.put("targetFormat", request.targetFormat);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SubmitExportJob"),
+            new TeaPair("version", "doc_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/doc/me/export/submit"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SubmitExportJobResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>通过dentryUuid提交文档导出任务</p>
+     * 
+     * @param request SubmitExportJobRequest
+     * @return SubmitExportJobResponse
+     */
+    public SubmitExportJobResponse submitExportJob(SubmitExportJobRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SubmitExportJobHeaders headers = new SubmitExportJobHeaders();
+        return this.submitExportJobWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>提交文档内容获取任务</p>
      * 
      * @param request SubmitGetContentJobRequest
