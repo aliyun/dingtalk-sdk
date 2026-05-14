@@ -2758,6 +2758,238 @@ class Client(OpenApiClient):
         headers = dingtalkminutes__1__0_models.QueryScheduleConfMinutesHeaders()
         return await self.query_schedule_conf_minutes_with_options_async(schedule_conference_id, request, headers, runtime)
 
+    def query_smart_device_ai_scene_by_id_with_options(
+        self,
+        request: dingtalkminutes__1__0_models.QuerySmartDeviceAiSceneByIdRequest,
+        headers: dingtalkminutes__1__0_models.QuerySmartDeviceAiSceneByIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkminutes__1__0_models.QuerySmartDeviceAiSceneByIdResponse:
+        """
+        @summary 查询A1分析小助理
+        
+        @param request: QuerySmartDeviceAiSceneByIdRequest
+        @param headers: QuerySmartDeviceAiSceneByIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QuerySmartDeviceAiSceneByIdResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.agent_instance_id):
+            body['agentInstanceId'] = request.agent_instance_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QuerySmartDeviceAiSceneById',
+            version='minutes_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/minutes/smartdevice/aiscene',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkminutes__1__0_models.QuerySmartDeviceAiSceneByIdResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_smart_device_ai_scene_by_id_with_options_async(
+        self,
+        request: dingtalkminutes__1__0_models.QuerySmartDeviceAiSceneByIdRequest,
+        headers: dingtalkminutes__1__0_models.QuerySmartDeviceAiSceneByIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkminutes__1__0_models.QuerySmartDeviceAiSceneByIdResponse:
+        """
+        @summary 查询A1分析小助理
+        
+        @param request: QuerySmartDeviceAiSceneByIdRequest
+        @param headers: QuerySmartDeviceAiSceneByIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QuerySmartDeviceAiSceneByIdResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.agent_instance_id):
+            body['agentInstanceId'] = request.agent_instance_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QuerySmartDeviceAiSceneById',
+            version='minutes_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/minutes/smartdevice/aiscene',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkminutes__1__0_models.QuerySmartDeviceAiSceneByIdResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_smart_device_ai_scene_by_id(
+        self,
+        request: dingtalkminutes__1__0_models.QuerySmartDeviceAiSceneByIdRequest,
+    ) -> dingtalkminutes__1__0_models.QuerySmartDeviceAiSceneByIdResponse:
+        """
+        @summary 查询A1分析小助理
+        
+        @param request: QuerySmartDeviceAiSceneByIdRequest
+        @return: QuerySmartDeviceAiSceneByIdResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkminutes__1__0_models.QuerySmartDeviceAiSceneByIdHeaders()
+        return self.query_smart_device_ai_scene_by_id_with_options(request, headers, runtime)
+
+    async def query_smart_device_ai_scene_by_id_async(
+        self,
+        request: dingtalkminutes__1__0_models.QuerySmartDeviceAiSceneByIdRequest,
+    ) -> dingtalkminutes__1__0_models.QuerySmartDeviceAiSceneByIdResponse:
+        """
+        @summary 查询A1分析小助理
+        
+        @param request: QuerySmartDeviceAiSceneByIdRequest
+        @return: QuerySmartDeviceAiSceneByIdResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkminutes__1__0_models.QuerySmartDeviceAiSceneByIdHeaders()
+        return await self.query_smart_device_ai_scene_by_id_with_options_async(request, headers, runtime)
+
+    def query_smart_device_ai_scene_prompt_template_by_ids_with_options(
+        self,
+        request: dingtalkminutes__1__0_models.QuerySmartDeviceAiScenePromptTemplateByIdsRequest,
+        headers: dingtalkminutes__1__0_models.QuerySmartDeviceAiScenePromptTemplateByIdsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkminutes__1__0_models.QuerySmartDeviceAiScenePromptTemplateByIdsResponse:
+        """
+        @summary 查询A1分析小助理能力模板
+        
+        @param request: QuerySmartDeviceAiScenePromptTemplateByIdsRequest
+        @param headers: QuerySmartDeviceAiScenePromptTemplateByIdsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QuerySmartDeviceAiScenePromptTemplateByIdsResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.agent_instance_id):
+            body['agentInstanceId'] = request.agent_instance_id
+        if not UtilClient.is_unset(request.agent_prompt_template_ids):
+            body['agentPromptTemplateIds'] = request.agent_prompt_template_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QuerySmartDeviceAiScenePromptTemplateByIds',
+            version='minutes_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/minutes/smartdevice/aiscene/promptTemplate',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkminutes__1__0_models.QuerySmartDeviceAiScenePromptTemplateByIdsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_smart_device_ai_scene_prompt_template_by_ids_with_options_async(
+        self,
+        request: dingtalkminutes__1__0_models.QuerySmartDeviceAiScenePromptTemplateByIdsRequest,
+        headers: dingtalkminutes__1__0_models.QuerySmartDeviceAiScenePromptTemplateByIdsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkminutes__1__0_models.QuerySmartDeviceAiScenePromptTemplateByIdsResponse:
+        """
+        @summary 查询A1分析小助理能力模板
+        
+        @param request: QuerySmartDeviceAiScenePromptTemplateByIdsRequest
+        @param headers: QuerySmartDeviceAiScenePromptTemplateByIdsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QuerySmartDeviceAiScenePromptTemplateByIdsResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.agent_instance_id):
+            body['agentInstanceId'] = request.agent_instance_id
+        if not UtilClient.is_unset(request.agent_prompt_template_ids):
+            body['agentPromptTemplateIds'] = request.agent_prompt_template_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QuerySmartDeviceAiScenePromptTemplateByIds',
+            version='minutes_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/minutes/smartdevice/aiscene/promptTemplate',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkminutes__1__0_models.QuerySmartDeviceAiScenePromptTemplateByIdsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_smart_device_ai_scene_prompt_template_by_ids(
+        self,
+        request: dingtalkminutes__1__0_models.QuerySmartDeviceAiScenePromptTemplateByIdsRequest,
+    ) -> dingtalkminutes__1__0_models.QuerySmartDeviceAiScenePromptTemplateByIdsResponse:
+        """
+        @summary 查询A1分析小助理能力模板
+        
+        @param request: QuerySmartDeviceAiScenePromptTemplateByIdsRequest
+        @return: QuerySmartDeviceAiScenePromptTemplateByIdsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkminutes__1__0_models.QuerySmartDeviceAiScenePromptTemplateByIdsHeaders()
+        return self.query_smart_device_ai_scene_prompt_template_by_ids_with_options(request, headers, runtime)
+
+    async def query_smart_device_ai_scene_prompt_template_by_ids_async(
+        self,
+        request: dingtalkminutes__1__0_models.QuerySmartDeviceAiScenePromptTemplateByIdsRequest,
+    ) -> dingtalkminutes__1__0_models.QuerySmartDeviceAiScenePromptTemplateByIdsResponse:
+        """
+        @summary 查询A1分析小助理能力模板
+        
+        @param request: QuerySmartDeviceAiScenePromptTemplateByIdsRequest
+        @return: QuerySmartDeviceAiScenePromptTemplateByIdsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkminutes__1__0_models.QuerySmartDeviceAiScenePromptTemplateByIdsHeaders()
+        return await self.query_smart_device_ai_scene_prompt_template_by_ids_with_options_async(request, headers, runtime)
+
     def query_smart_device_ai_summary_with_options(
         self,
         request: dingtalkminutes__1__0_models.QuerySmartDeviceAiSummaryRequest,

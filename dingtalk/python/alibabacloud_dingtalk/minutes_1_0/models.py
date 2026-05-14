@@ -4567,6 +4567,949 @@ class QueryScheduleConfMinutesResponse(TeaModel):
         return self
 
 
+class QuerySmartDeviceAiSceneByIdHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QuerySmartDeviceAiSceneByIdRequest(TeaModel):
+    def __init__(
+        self,
+        agent_instance_id: str = None,
+    ):
+        self.agent_instance_id = agent_instance_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.agent_instance_id is not None:
+            result['agentInstanceId'] = self.agent_instance_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('agentInstanceId') is not None:
+            self.agent_instance_id = m.get('agentInstanceId')
+        return self
+
+
+class QuerySmartDeviceAiSceneByIdResponseBodyAgentDeviceList(TeaModel):
+    def __init__(
+        self,
+        dev_serv_id: int = None,
+        device_id: int = None,
+        device_name: str = None,
+        sn: str = None,
+    ):
+        self.dev_serv_id = dev_serv_id
+        self.device_id = device_id
+        self.device_name = device_name
+        self.sn = sn
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dev_serv_id is not None:
+            result['devServId'] = self.dev_serv_id
+        if self.device_id is not None:
+            result['deviceId'] = self.device_id
+        if self.device_name is not None:
+            result['deviceName'] = self.device_name
+        if self.sn is not None:
+            result['sn'] = self.sn
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('devServId') is not None:
+            self.dev_serv_id = m.get('devServId')
+        if m.get('deviceId') is not None:
+            self.device_id = m.get('deviceId')
+        if m.get('deviceName') is not None:
+            self.device_name = m.get('deviceName')
+        if m.get('sn') is not None:
+            self.sn = m.get('sn')
+        return self
+
+
+class QuerySmartDeviceAiSceneByIdResponseBodyAgentIsvAiScene(TeaModel):
+    def __init__(
+        self,
+        isv_app_id: str = None,
+        isv_app_state: int = None,
+        isv_corp_id: str = None,
+        isv_type: int = None,
+    ):
+        self.isv_app_id = isv_app_id
+        self.isv_app_state = isv_app_state
+        self.isv_corp_id = isv_corp_id
+        self.isv_type = isv_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.isv_app_id is not None:
+            result['isvAppId'] = self.isv_app_id
+        if self.isv_app_state is not None:
+            result['isvAppState'] = self.isv_app_state
+        if self.isv_corp_id is not None:
+            result['isvCorpId'] = self.isv_corp_id
+        if self.isv_type is not None:
+            result['isvType'] = self.isv_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('isvAppId') is not None:
+            self.isv_app_id = m.get('isvAppId')
+        if m.get('isvAppState') is not None:
+            self.isv_app_state = m.get('isvAppState')
+        if m.get('isvCorpId') is not None:
+            self.isv_corp_id = m.get('isvCorpId')
+        if m.get('isvType') is not None:
+            self.isv_type = m.get('isvType')
+        return self
+
+
+class QuerySmartDeviceAiSceneByIdResponseBodyAgentLlmModel(TeaModel):
+    def __init__(
+        self,
+        model_id: str = None,
+        model_name: str = None,
+    ):
+        self.model_id = model_id
+        self.model_name = model_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.model_id is not None:
+            result['modelId'] = self.model_id
+        if self.model_name is not None:
+            result['modelName'] = self.model_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('modelId') is not None:
+            self.model_id = m.get('modelId')
+        if m.get('modelName') is not None:
+            self.model_name = m.get('modelName')
+        return self
+
+
+class QuerySmartDeviceAiSceneByIdResponseBodyAgentMinutesTemplates(TeaModel):
+    def __init__(
+        self,
+        category: str = None,
+        description: str = None,
+        icon_url: str = None,
+        template_id: str = None,
+        title: str = None,
+    ):
+        self.category = category
+        self.description = description
+        self.icon_url = icon_url
+        self.template_id = template_id
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.category is not None:
+            result['category'] = self.category
+        if self.description is not None:
+            result['description'] = self.description
+        if self.icon_url is not None:
+            result['iconUrl'] = self.icon_url
+        if self.template_id is not None:
+            result['templateId'] = self.template_id
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('category') is not None:
+            self.category = m.get('category')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('iconUrl') is not None:
+            self.icon_url = m.get('iconUrl')
+        if m.get('templateId') is not None:
+            self.template_id = m.get('templateId')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class QuerySmartDeviceAiSceneByIdResponseBodyAgentProjectList(TeaModel):
+    def __init__(
+        self,
+        project_id: str = None,
+        project_name: str = None,
+    ):
+        self.project_id = project_id
+        self.project_name = project_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.project_id is not None:
+            result['projectId'] = self.project_id
+        if self.project_name is not None:
+            result['projectName'] = self.project_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('projectId') is not None:
+            self.project_id = m.get('projectId')
+        if m.get('projectName') is not None:
+            self.project_name = m.get('projectName')
+        return self
+
+
+class QuerySmartDeviceAiSceneByIdResponseBodyAgentSyncCollabSheetConfig(TeaModel):
+    def __init__(
+        self,
+        agent_prompt_template_ids: List[str] = None,
+        collab_sheet_name: str = None,
+        collab_sheet_url: str = None,
+        corp_id: str = None,
+        dentry_uuid: str = None,
+        sheet_id: str = None,
+        sync_collab_sheet: bool = None,
+    ):
+        self.agent_prompt_template_ids = agent_prompt_template_ids
+        self.collab_sheet_name = collab_sheet_name
+        self.collab_sheet_url = collab_sheet_url
+        self.corp_id = corp_id
+        self.dentry_uuid = dentry_uuid
+        self.sheet_id = sheet_id
+        self.sync_collab_sheet = sync_collab_sheet
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.agent_prompt_template_ids is not None:
+            result['agentPromptTemplateIds'] = self.agent_prompt_template_ids
+        if self.collab_sheet_name is not None:
+            result['collabSheetName'] = self.collab_sheet_name
+        if self.collab_sheet_url is not None:
+            result['collabSheetUrl'] = self.collab_sheet_url
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.dentry_uuid is not None:
+            result['dentryUuid'] = self.dentry_uuid
+        if self.sheet_id is not None:
+            result['sheetId'] = self.sheet_id
+        if self.sync_collab_sheet is not None:
+            result['syncCollabSheet'] = self.sync_collab_sheet
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('agentPromptTemplateIds') is not None:
+            self.agent_prompt_template_ids = m.get('agentPromptTemplateIds')
+        if m.get('collabSheetName') is not None:
+            self.collab_sheet_name = m.get('collabSheetName')
+        if m.get('collabSheetUrl') is not None:
+            self.collab_sheet_url = m.get('collabSheetUrl')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('dentryUuid') is not None:
+            self.dentry_uuid = m.get('dentryUuid')
+        if m.get('sheetId') is not None:
+            self.sheet_id = m.get('sheetId')
+        if m.get('syncCollabSheet') is not None:
+            self.sync_collab_sheet = m.get('syncCollabSheet')
+        return self
+
+
+class QuerySmartDeviceAiSceneByIdResponseBodyAgentSyncIsvSystemConfigs(TeaModel):
+    def __init__(
+        self,
+        description: str = None,
+        isv_system_key: str = None,
+        state: str = None,
+        title: str = None,
+    ):
+        self.description = description
+        self.isv_system_key = isv_system_key
+        self.state = state
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.description is not None:
+            result['description'] = self.description
+        if self.isv_system_key is not None:
+            result['isvSystemKey'] = self.isv_system_key
+        if self.state is not None:
+            result['state'] = self.state
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('isvSystemKey') is not None:
+            self.isv_system_key = m.get('isvSystemKey')
+        if m.get('state') is not None:
+            self.state = m.get('state')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class QuerySmartDeviceAiSceneByIdResponseBodyAgentSyncYidaConfig(TeaModel):
+    def __init__(
+        self,
+        app_code: str = None,
+        corp_id: str = None,
+        form_name: str = None,
+        form_uuid: str = None,
+        sync_yida: bool = None,
+    ):
+        self.app_code = app_code
+        self.corp_id = corp_id
+        self.form_name = form_name
+        self.form_uuid = form_uuid
+        self.sync_yida = sync_yida
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_code is not None:
+            result['appCode'] = self.app_code
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.form_name is not None:
+            result['formName'] = self.form_name
+        if self.form_uuid is not None:
+            result['formUuid'] = self.form_uuid
+        if self.sync_yida is not None:
+            result['syncYida'] = self.sync_yida
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appCode') is not None:
+            self.app_code = m.get('appCode')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('formName') is not None:
+            self.form_name = m.get('formName')
+        if m.get('formUuid') is not None:
+            self.form_uuid = m.get('formUuid')
+        if m.get('syncYida') is not None:
+            self.sync_yida = m.get('syncYida')
+        return self
+
+
+class QuerySmartDeviceAiSceneByIdResponseBodyAgent(TeaModel):
+    def __init__(
+        self,
+        agent_id: str = None,
+        agent_instance_id: str = None,
+        agent_name: str = None,
+        all_file_groups: bool = None,
+        attributes: Dict[str, Any] = None,
+        avatar_url: str = None,
+        belonging_id: str = None,
+        belonging_type: int = None,
+        country: str = None,
+        creator_union_id: str = None,
+        description: str = None,
+        device_list: List[QuerySmartDeviceAiSceneByIdResponseBodyAgentDeviceList] = None,
+        isv_ai_scene: QuerySmartDeviceAiSceneByIdResponseBodyAgentIsvAiScene = None,
+        keywords: List[str] = None,
+        llm_model: QuerySmartDeviceAiSceneByIdResponseBodyAgentLlmModel = None,
+        mail: str = None,
+        mail_option: str = None,
+        minutes_templates: List[QuerySmartDeviceAiSceneByIdResponseBodyAgentMinutesTemplates] = None,
+        project_list: List[QuerySmartDeviceAiSceneByIdResponseBodyAgentProjectList] = None,
+        prompt: str = None,
+        prompt_template_ids: List[str] = None,
+        state: int = None,
+        sync_collab_sheet_config: QuerySmartDeviceAiSceneByIdResponseBodyAgentSyncCollabSheetConfig = None,
+        sync_isv_system_configs: List[QuerySmartDeviceAiSceneByIdResponseBodyAgentSyncIsvSystemConfigs] = None,
+        sync_yida_config: QuerySmartDeviceAiSceneByIdResponseBodyAgentSyncYidaConfig = None,
+    ):
+        self.agent_id = agent_id
+        self.agent_instance_id = agent_instance_id
+        self.agent_name = agent_name
+        self.all_file_groups = all_file_groups
+        self.attributes = attributes
+        self.avatar_url = avatar_url
+        self.belonging_id = belonging_id
+        self.belonging_type = belonging_type
+        self.country = country
+        self.creator_union_id = creator_union_id
+        self.description = description
+        self.device_list = device_list
+        self.isv_ai_scene = isv_ai_scene
+        self.keywords = keywords
+        self.llm_model = llm_model
+        self.mail = mail
+        self.mail_option = mail_option
+        self.minutes_templates = minutes_templates
+        self.project_list = project_list
+        self.prompt = prompt
+        self.prompt_template_ids = prompt_template_ids
+        self.state = state
+        self.sync_collab_sheet_config = sync_collab_sheet_config
+        self.sync_isv_system_configs = sync_isv_system_configs
+        self.sync_yida_config = sync_yida_config
+
+    def validate(self):
+        if self.device_list:
+            for k in self.device_list:
+                if k:
+                    k.validate()
+        if self.isv_ai_scene:
+            self.isv_ai_scene.validate()
+        if self.llm_model:
+            self.llm_model.validate()
+        if self.minutes_templates:
+            for k in self.minutes_templates:
+                if k:
+                    k.validate()
+        if self.project_list:
+            for k in self.project_list:
+                if k:
+                    k.validate()
+        if self.sync_collab_sheet_config:
+            self.sync_collab_sheet_config.validate()
+        if self.sync_isv_system_configs:
+            for k in self.sync_isv_system_configs:
+                if k:
+                    k.validate()
+        if self.sync_yida_config:
+            self.sync_yida_config.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.agent_id is not None:
+            result['agentId'] = self.agent_id
+        if self.agent_instance_id is not None:
+            result['agentInstanceId'] = self.agent_instance_id
+        if self.agent_name is not None:
+            result['agentName'] = self.agent_name
+        if self.all_file_groups is not None:
+            result['allFileGroups'] = self.all_file_groups
+        if self.attributes is not None:
+            result['attributes'] = self.attributes
+        if self.avatar_url is not None:
+            result['avatarUrl'] = self.avatar_url
+        if self.belonging_id is not None:
+            result['belongingId'] = self.belonging_id
+        if self.belonging_type is not None:
+            result['belongingType'] = self.belonging_type
+        if self.country is not None:
+            result['country'] = self.country
+        if self.creator_union_id is not None:
+            result['creatorUnionId'] = self.creator_union_id
+        if self.description is not None:
+            result['description'] = self.description
+        result['deviceList'] = []
+        if self.device_list is not None:
+            for k in self.device_list:
+                result['deviceList'].append(k.to_map() if k else None)
+        if self.isv_ai_scene is not None:
+            result['isvAiScene'] = self.isv_ai_scene.to_map()
+        if self.keywords is not None:
+            result['keywords'] = self.keywords
+        if self.llm_model is not None:
+            result['llmModel'] = self.llm_model.to_map()
+        if self.mail is not None:
+            result['mail'] = self.mail
+        if self.mail_option is not None:
+            result['mailOption'] = self.mail_option
+        result['minutesTemplates'] = []
+        if self.minutes_templates is not None:
+            for k in self.minutes_templates:
+                result['minutesTemplates'].append(k.to_map() if k else None)
+        result['projectList'] = []
+        if self.project_list is not None:
+            for k in self.project_list:
+                result['projectList'].append(k.to_map() if k else None)
+        if self.prompt is not None:
+            result['prompt'] = self.prompt
+        if self.prompt_template_ids is not None:
+            result['promptTemplateIds'] = self.prompt_template_ids
+        if self.state is not None:
+            result['state'] = self.state
+        if self.sync_collab_sheet_config is not None:
+            result['syncCollabSheetConfig'] = self.sync_collab_sheet_config.to_map()
+        result['syncIsvSystemConfigs'] = []
+        if self.sync_isv_system_configs is not None:
+            for k in self.sync_isv_system_configs:
+                result['syncIsvSystemConfigs'].append(k.to_map() if k else None)
+        if self.sync_yida_config is not None:
+            result['syncYidaConfig'] = self.sync_yida_config.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('agentId') is not None:
+            self.agent_id = m.get('agentId')
+        if m.get('agentInstanceId') is not None:
+            self.agent_instance_id = m.get('agentInstanceId')
+        if m.get('agentName') is not None:
+            self.agent_name = m.get('agentName')
+        if m.get('allFileGroups') is not None:
+            self.all_file_groups = m.get('allFileGroups')
+        if m.get('attributes') is not None:
+            self.attributes = m.get('attributes')
+        if m.get('avatarUrl') is not None:
+            self.avatar_url = m.get('avatarUrl')
+        if m.get('belongingId') is not None:
+            self.belonging_id = m.get('belongingId')
+        if m.get('belongingType') is not None:
+            self.belonging_type = m.get('belongingType')
+        if m.get('country') is not None:
+            self.country = m.get('country')
+        if m.get('creatorUnionId') is not None:
+            self.creator_union_id = m.get('creatorUnionId')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        self.device_list = []
+        if m.get('deviceList') is not None:
+            for k in m.get('deviceList'):
+                temp_model = QuerySmartDeviceAiSceneByIdResponseBodyAgentDeviceList()
+                self.device_list.append(temp_model.from_map(k))
+        if m.get('isvAiScene') is not None:
+            temp_model = QuerySmartDeviceAiSceneByIdResponseBodyAgentIsvAiScene()
+            self.isv_ai_scene = temp_model.from_map(m['isvAiScene'])
+        if m.get('keywords') is not None:
+            self.keywords = m.get('keywords')
+        if m.get('llmModel') is not None:
+            temp_model = QuerySmartDeviceAiSceneByIdResponseBodyAgentLlmModel()
+            self.llm_model = temp_model.from_map(m['llmModel'])
+        if m.get('mail') is not None:
+            self.mail = m.get('mail')
+        if m.get('mailOption') is not None:
+            self.mail_option = m.get('mailOption')
+        self.minutes_templates = []
+        if m.get('minutesTemplates') is not None:
+            for k in m.get('minutesTemplates'):
+                temp_model = QuerySmartDeviceAiSceneByIdResponseBodyAgentMinutesTemplates()
+                self.minutes_templates.append(temp_model.from_map(k))
+        self.project_list = []
+        if m.get('projectList') is not None:
+            for k in m.get('projectList'):
+                temp_model = QuerySmartDeviceAiSceneByIdResponseBodyAgentProjectList()
+                self.project_list.append(temp_model.from_map(k))
+        if m.get('prompt') is not None:
+            self.prompt = m.get('prompt')
+        if m.get('promptTemplateIds') is not None:
+            self.prompt_template_ids = m.get('promptTemplateIds')
+        if m.get('state') is not None:
+            self.state = m.get('state')
+        if m.get('syncCollabSheetConfig') is not None:
+            temp_model = QuerySmartDeviceAiSceneByIdResponseBodyAgentSyncCollabSheetConfig()
+            self.sync_collab_sheet_config = temp_model.from_map(m['syncCollabSheetConfig'])
+        self.sync_isv_system_configs = []
+        if m.get('syncIsvSystemConfigs') is not None:
+            for k in m.get('syncIsvSystemConfigs'):
+                temp_model = QuerySmartDeviceAiSceneByIdResponseBodyAgentSyncIsvSystemConfigs()
+                self.sync_isv_system_configs.append(temp_model.from_map(k))
+        if m.get('syncYidaConfig') is not None:
+            temp_model = QuerySmartDeviceAiSceneByIdResponseBodyAgentSyncYidaConfig()
+            self.sync_yida_config = temp_model.from_map(m['syncYidaConfig'])
+        return self
+
+
+class QuerySmartDeviceAiSceneByIdResponseBody(TeaModel):
+    def __init__(
+        self,
+        agent: QuerySmartDeviceAiSceneByIdResponseBodyAgent = None,
+    ):
+        self.agent = agent
+
+    def validate(self):
+        if self.agent:
+            self.agent.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.agent is not None:
+            result['agent'] = self.agent.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('agent') is not None:
+            temp_model = QuerySmartDeviceAiSceneByIdResponseBodyAgent()
+            self.agent = temp_model.from_map(m['agent'])
+        return self
+
+
+class QuerySmartDeviceAiSceneByIdResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QuerySmartDeviceAiSceneByIdResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QuerySmartDeviceAiSceneByIdResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QuerySmartDeviceAiScenePromptTemplateByIdsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QuerySmartDeviceAiScenePromptTemplateByIdsRequest(TeaModel):
+    def __init__(
+        self,
+        agent_instance_id: str = None,
+        agent_prompt_template_ids: List[str] = None,
+    ):
+        self.agent_instance_id = agent_instance_id
+        self.agent_prompt_template_ids = agent_prompt_template_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.agent_instance_id is not None:
+            result['agentInstanceId'] = self.agent_instance_id
+        if self.agent_prompt_template_ids is not None:
+            result['agentPromptTemplateIds'] = self.agent_prompt_template_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('agentInstanceId') is not None:
+            self.agent_instance_id = m.get('agentInstanceId')
+        if m.get('agentPromptTemplateIds') is not None:
+            self.agent_prompt_template_ids = m.get('agentPromptTemplateIds')
+        return self
+
+
+class QuerySmartDeviceAiScenePromptTemplateByIdsResponseBodyAgentPromptTemplates(TeaModel):
+    def __init__(
+        self,
+        agent_prompt_template_id: str = None,
+        avatar_url: str = None,
+        belonging_id: str = None,
+        belonging_type: str = None,
+        category: str = None,
+        country: str = None,
+        creator_union_id: str = None,
+        description: str = None,
+        order: str = None,
+        prompt: str = None,
+        title: str = None,
+    ):
+        self.agent_prompt_template_id = agent_prompt_template_id
+        self.avatar_url = avatar_url
+        self.belonging_id = belonging_id
+        self.belonging_type = belonging_type
+        self.category = category
+        self.country = country
+        self.creator_union_id = creator_union_id
+        self.description = description
+        self.order = order
+        self.prompt = prompt
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.agent_prompt_template_id is not None:
+            result['agentPromptTemplateId'] = self.agent_prompt_template_id
+        if self.avatar_url is not None:
+            result['avatarUrl'] = self.avatar_url
+        if self.belonging_id is not None:
+            result['belongingId'] = self.belonging_id
+        if self.belonging_type is not None:
+            result['belongingType'] = self.belonging_type
+        if self.category is not None:
+            result['category'] = self.category
+        if self.country is not None:
+            result['country'] = self.country
+        if self.creator_union_id is not None:
+            result['creatorUnionId'] = self.creator_union_id
+        if self.description is not None:
+            result['description'] = self.description
+        if self.order is not None:
+            result['order'] = self.order
+        if self.prompt is not None:
+            result['prompt'] = self.prompt
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('agentPromptTemplateId') is not None:
+            self.agent_prompt_template_id = m.get('agentPromptTemplateId')
+        if m.get('avatarUrl') is not None:
+            self.avatar_url = m.get('avatarUrl')
+        if m.get('belongingId') is not None:
+            self.belonging_id = m.get('belongingId')
+        if m.get('belongingType') is not None:
+            self.belonging_type = m.get('belongingType')
+        if m.get('category') is not None:
+            self.category = m.get('category')
+        if m.get('country') is not None:
+            self.country = m.get('country')
+        if m.get('creatorUnionId') is not None:
+            self.creator_union_id = m.get('creatorUnionId')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('order') is not None:
+            self.order = m.get('order')
+        if m.get('prompt') is not None:
+            self.prompt = m.get('prompt')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class QuerySmartDeviceAiScenePromptTemplateByIdsResponseBody(TeaModel):
+    def __init__(
+        self,
+        agent_prompt_templates: List[QuerySmartDeviceAiScenePromptTemplateByIdsResponseBodyAgentPromptTemplates] = None,
+    ):
+        self.agent_prompt_templates = agent_prompt_templates
+
+    def validate(self):
+        if self.agent_prompt_templates:
+            for k in self.agent_prompt_templates:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['agentPromptTemplates'] = []
+        if self.agent_prompt_templates is not None:
+            for k in self.agent_prompt_templates:
+                result['agentPromptTemplates'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.agent_prompt_templates = []
+        if m.get('agentPromptTemplates') is not None:
+            for k in m.get('agentPromptTemplates'):
+                temp_model = QuerySmartDeviceAiScenePromptTemplateByIdsResponseBodyAgentPromptTemplates()
+                self.agent_prompt_templates.append(temp_model.from_map(k))
+        return self
+
+
+class QuerySmartDeviceAiScenePromptTemplateByIdsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QuerySmartDeviceAiScenePromptTemplateByIdsResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QuerySmartDeviceAiScenePromptTemplateByIdsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QuerySmartDeviceAiSummaryHeaders(TeaModel):
     def __init__(
         self,

@@ -868,10 +868,12 @@ class BatchSendOTORequest(TeaModel):
 class BatchSendOTOResponseBody(TeaModel):
     def __init__(
         self,
+        filtered_staff_id_list: List[str] = None,
         flow_controlled_staff_id_list: List[str] = None,
         invalid_staff_id_list: List[str] = None,
         process_query_key: str = None,
     ):
+        self.filtered_staff_id_list = filtered_staff_id_list
         self.flow_controlled_staff_id_list = flow_controlled_staff_id_list
         self.invalid_staff_id_list = invalid_staff_id_list
         self.process_query_key = process_query_key
@@ -885,6 +887,8 @@ class BatchSendOTOResponseBody(TeaModel):
             return _map
 
         result = dict()
+        if self.filtered_staff_id_list is not None:
+            result['filteredStaffIdList'] = self.filtered_staff_id_list
         if self.flow_controlled_staff_id_list is not None:
             result['flowControlledStaffIdList'] = self.flow_controlled_staff_id_list
         if self.invalid_staff_id_list is not None:
@@ -895,6 +899,8 @@ class BatchSendOTOResponseBody(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('filteredStaffIdList') is not None:
+            self.filtered_staff_id_list = m.get('filteredStaffIdList')
         if m.get('flowControlledStaffIdList') is not None:
             self.flow_controlled_staff_id_list = m.get('flowControlledStaffIdList')
         if m.get('invalidStaffIdList') is not None:

@@ -50,6 +50,8 @@ class Client(OpenApiClient):
             body['dingtalkId'] = request.dingtalk_id
         if not UtilClient.is_unset(request.duration):
             body['duration'] = request.duration
+        if not UtilClient.is_unset(request.extension):
+            body['extension'] = request.extension
         if not UtilClient.is_unset(request.mobile):
             body['mobile'] = request.mobile
         if not UtilClient.is_unset(request.uuid):
@@ -103,6 +105,8 @@ class Client(OpenApiClient):
             body['dingtalkId'] = request.dingtalk_id
         if not UtilClient.is_unset(request.duration):
             body['duration'] = request.duration
+        if not UtilClient.is_unset(request.extension):
+            body['extension'] = request.extension
         if not UtilClient.is_unset(request.mobile):
             body['mobile'] = request.mobile
         if not UtilClient.is_unset(request.uuid):

@@ -408,6 +408,128 @@ class Client(OpenApiClient):
         headers = dingtalkim__1__0_models.AddRobotToConversationHeaders()
         return await self.add_robot_to_conversation_with_options_async(request, headers, runtime)
 
+    def add_scene_group_member_with_options(
+        self,
+        request: dingtalkim__1__0_models.AddSceneGroupMemberRequest,
+        headers: dingtalkim__1__0_models.AddSceneGroupMemberHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.AddSceneGroupMemberResponse:
+        """
+        @summary 场景群加人
+        
+        @param request: AddSceneGroupMemberRequest
+        @param headers: AddSceneGroupMemberHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddSceneGroupMemberResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['open_conversation_id'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.union_ids):
+            body['union_ids'] = request.union_ids
+        if not UtilClient.is_unset(request.user_ids):
+            body['user_ids'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddSceneGroupMember',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/sceneGroup/member/add',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.AddSceneGroupMemberResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def add_scene_group_member_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.AddSceneGroupMemberRequest,
+        headers: dingtalkim__1__0_models.AddSceneGroupMemberHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.AddSceneGroupMemberResponse:
+        """
+        @summary 场景群加人
+        
+        @param request: AddSceneGroupMemberRequest
+        @param headers: AddSceneGroupMemberHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddSceneGroupMemberResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['open_conversation_id'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.union_ids):
+            body['union_ids'] = request.union_ids
+        if not UtilClient.is_unset(request.user_ids):
+            body['user_ids'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddSceneGroupMember',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/sceneGroup/member/add',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.AddSceneGroupMemberResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def add_scene_group_member(
+        self,
+        request: dingtalkim__1__0_models.AddSceneGroupMemberRequest,
+    ) -> dingtalkim__1__0_models.AddSceneGroupMemberResponse:
+        """
+        @summary 场景群加人
+        
+        @param request: AddSceneGroupMemberRequest
+        @return: AddSceneGroupMemberResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.AddSceneGroupMemberHeaders()
+        return self.add_scene_group_member_with_options(request, headers, runtime)
+
+    async def add_scene_group_member_async(
+        self,
+        request: dingtalkim__1__0_models.AddSceneGroupMemberRequest,
+    ) -> dingtalkim__1__0_models.AddSceneGroupMemberResponse:
+        """
+        @summary 场景群加人
+        
+        @param request: AddSceneGroupMemberRequest
+        @return: AddSceneGroupMemberResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.AddSceneGroupMemberHeaders()
+        return await self.add_scene_group_member_with_options_async(request, headers, runtime)
+
     def add_unfurling_register_with_options(
         self,
         request: dingtalkim__1__0_models.AddUnfurlingRegisterRequest,
@@ -2288,6 +2410,148 @@ class Client(OpenApiClient):
         headers = dingtalkim__1__0_models.CreateCustomUserRolesHeaders()
         return await self.create_custom_user_roles_with_options_async(request, headers, runtime)
 
+    def create_group_with_options(
+        self,
+        request: dingtalkim__1__0_models.CreateGroupRequest,
+        headers: dingtalkim__1__0_models.CreateGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.CreateGroupResponse:
+        """
+        @summary 创建群会话
+        
+        @param request: CreateGroupRequest
+        @param headers: CreateGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateGroupResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.conversation_tag):
+            body['conversationTag'] = request.conversation_tag
+        if not UtilClient.is_unset(request.extidlist):
+            body['extidlist'] = request.extidlist
+        if not UtilClient.is_unset(request.icon):
+            body['icon'] = request.icon
+        if not UtilClient.is_unset(request.management_options):
+            body['managementOptions'] = request.management_options
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.owner):
+            body['owner'] = request.owner
+        if not UtilClient.is_unset(request.owner_type):
+            body['ownerType'] = request.owner_type
+        if not UtilClient.is_unset(request.useridlist):
+            body['useridlist'] = request.useridlist
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateGroup',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/group/create',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.CreateGroupResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_group_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.CreateGroupRequest,
+        headers: dingtalkim__1__0_models.CreateGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.CreateGroupResponse:
+        """
+        @summary 创建群会话
+        
+        @param request: CreateGroupRequest
+        @param headers: CreateGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateGroupResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.conversation_tag):
+            body['conversationTag'] = request.conversation_tag
+        if not UtilClient.is_unset(request.extidlist):
+            body['extidlist'] = request.extidlist
+        if not UtilClient.is_unset(request.icon):
+            body['icon'] = request.icon
+        if not UtilClient.is_unset(request.management_options):
+            body['managementOptions'] = request.management_options
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.owner):
+            body['owner'] = request.owner
+        if not UtilClient.is_unset(request.owner_type):
+            body['ownerType'] = request.owner_type
+        if not UtilClient.is_unset(request.useridlist):
+            body['useridlist'] = request.useridlist
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateGroup',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/group/create',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.CreateGroupResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_group(
+        self,
+        request: dingtalkim__1__0_models.CreateGroupRequest,
+    ) -> dingtalkim__1__0_models.CreateGroupResponse:
+        """
+        @summary 创建群会话
+        
+        @param request: CreateGroupRequest
+        @return: CreateGroupResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.CreateGroupHeaders()
+        return self.create_group_with_options(request, headers, runtime)
+
+    async def create_group_async(
+        self,
+        request: dingtalkim__1__0_models.CreateGroupRequest,
+    ) -> dingtalkim__1__0_models.CreateGroupResponse:
+        """
+        @summary 创建群会话
+        
+        @param request: CreateGroupRequest
+        @return: CreateGroupResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.CreateGroupHeaders()
+        return await self.create_group_with_options_async(request, headers, runtime)
+
     def create_group_conversation_with_options(
         self,
         request: dingtalkim__1__0_models.CreateGroupConversationRequest,
@@ -2673,6 +2937,148 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.CreateInterconnectionHeaders()
         return await self.create_interconnection_with_options_async(request, headers, runtime)
+
+    def create_scene_group_with_options(
+        self,
+        request: dingtalkim__1__0_models.CreateSceneGroupRequest,
+        headers: dingtalkim__1__0_models.CreateSceneGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.CreateSceneGroupResponse:
+        """
+        @summary 创建场景群会话
+        
+        @param request: CreateSceneGroupRequest
+        @param headers: CreateSceneGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateSceneGroupResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.icon):
+            body['icon'] = request.icon
+        if not UtilClient.is_unset(request.management_options):
+            body['management_options'] = request.management_options
+        if not UtilClient.is_unset(request.owner_user_id):
+            body['owner_user_id'] = request.owner_user_id
+        if not UtilClient.is_unset(request.subadmin_ids):
+            body['subadmin_ids'] = request.subadmin_ids
+        if not UtilClient.is_unset(request.template_id):
+            body['template_id'] = request.template_id
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.user_ids):
+            body['user_ids'] = request.user_ids
+        if not UtilClient.is_unset(request.uuid):
+            body['uuid'] = request.uuid
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateSceneGroup',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/sceneGroup/create',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.CreateSceneGroupResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_scene_group_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.CreateSceneGroupRequest,
+        headers: dingtalkim__1__0_models.CreateSceneGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.CreateSceneGroupResponse:
+        """
+        @summary 创建场景群会话
+        
+        @param request: CreateSceneGroupRequest
+        @param headers: CreateSceneGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateSceneGroupResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.icon):
+            body['icon'] = request.icon
+        if not UtilClient.is_unset(request.management_options):
+            body['management_options'] = request.management_options
+        if not UtilClient.is_unset(request.owner_user_id):
+            body['owner_user_id'] = request.owner_user_id
+        if not UtilClient.is_unset(request.subadmin_ids):
+            body['subadmin_ids'] = request.subadmin_ids
+        if not UtilClient.is_unset(request.template_id):
+            body['template_id'] = request.template_id
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.user_ids):
+            body['user_ids'] = request.user_ids
+        if not UtilClient.is_unset(request.uuid):
+            body['uuid'] = request.uuid
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateSceneGroup',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/sceneGroup/create',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.CreateSceneGroupResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_scene_group(
+        self,
+        request: dingtalkim__1__0_models.CreateSceneGroupRequest,
+    ) -> dingtalkim__1__0_models.CreateSceneGroupResponse:
+        """
+        @summary 创建场景群会话
+        
+        @param request: CreateSceneGroupRequest
+        @return: CreateSceneGroupResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.CreateSceneGroupHeaders()
+        return self.create_scene_group_with_options(request, headers, runtime)
+
+    async def create_scene_group_async(
+        self,
+        request: dingtalkim__1__0_models.CreateSceneGroupRequest,
+    ) -> dingtalkim__1__0_models.CreateSceneGroupResponse:
+        """
+        @summary 创建场景群会话
+        
+        @param request: CreateSceneGroupRequest
+        @return: CreateSceneGroupResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.CreateSceneGroupHeaders()
+        return await self.create_scene_group_with_options_async(request, headers, runtime)
 
     def create_scene_group_conversation_with_options(
         self,
@@ -12478,6 +12884,128 @@ class Client(OpenApiClient):
         headers = dingtalkim__1__0_models.RemoveRobotFromConversationHeaders()
         return await self.remove_robot_from_conversation_with_options_async(request, headers, runtime)
 
+    def remove_scene_group_member_with_options(
+        self,
+        request: dingtalkim__1__0_models.RemoveSceneGroupMemberRequest,
+        headers: dingtalkim__1__0_models.RemoveSceneGroupMemberHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.RemoveSceneGroupMemberResponse:
+        """
+        @summary 场景群删人
+        
+        @param request: RemoveSceneGroupMemberRequest
+        @param headers: RemoveSceneGroupMemberHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RemoveSceneGroupMemberResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['open_conversation_id'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.union_ids):
+            body['union_ids'] = request.union_ids
+        if not UtilClient.is_unset(request.user_ids):
+            body['user_ids'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='RemoveSceneGroupMember',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/sceneGroup/member/delete',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.RemoveSceneGroupMemberResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def remove_scene_group_member_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.RemoveSceneGroupMemberRequest,
+        headers: dingtalkim__1__0_models.RemoveSceneGroupMemberHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.RemoveSceneGroupMemberResponse:
+        """
+        @summary 场景群删人
+        
+        @param request: RemoveSceneGroupMemberRequest
+        @param headers: RemoveSceneGroupMemberHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RemoveSceneGroupMemberResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['open_conversation_id'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.union_ids):
+            body['union_ids'] = request.union_ids
+        if not UtilClient.is_unset(request.user_ids):
+            body['user_ids'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='RemoveSceneGroupMember',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/sceneGroup/member/delete',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.RemoveSceneGroupMemberResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def remove_scene_group_member(
+        self,
+        request: dingtalkim__1__0_models.RemoveSceneGroupMemberRequest,
+    ) -> dingtalkim__1__0_models.RemoveSceneGroupMemberResponse:
+        """
+        @summary 场景群删人
+        
+        @param request: RemoveSceneGroupMemberRequest
+        @return: RemoveSceneGroupMemberResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.RemoveSceneGroupMemberHeaders()
+        return self.remove_scene_group_member_with_options(request, headers, runtime)
+
+    async def remove_scene_group_member_async(
+        self,
+        request: dingtalkim__1__0_models.RemoveSceneGroupMemberRequest,
+    ) -> dingtalkim__1__0_models.RemoveSceneGroupMemberResponse:
+        """
+        @summary 场景群删人
+        
+        @param request: RemoveSceneGroupMemberRequest
+        @return: RemoveSceneGroupMemberResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.RemoveSceneGroupMemberHeaders()
+        return await self.remove_scene_group_member_with_options_async(request, headers, runtime)
+
     def search_inner_groups_with_options(
         self,
         request: dingtalkim__1__0_models.SearchInnerGroupsRequest,
@@ -14658,6 +15186,156 @@ class Client(OpenApiClient):
         headers = dingtalkim__1__0_models.UpdateCustomGroupRoleHeaders()
         return await self.update_custom_group_role_with_options_async(request, headers, runtime)
 
+    def update_group_with_options(
+        self,
+        request: dingtalkim__1__0_models.UpdateGroupRequest,
+        headers: dingtalkim__1__0_models.UpdateGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.UpdateGroupResponse:
+        """
+        @summary 修改群会话
+        
+        @param request: UpdateGroupRequest
+        @param headers: UpdateGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateGroupResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.add_extidlist):
+            body['add_extidlist'] = request.add_extidlist
+        if not UtilClient.is_unset(request.add_useridlist):
+            body['add_useridlist'] = request.add_useridlist
+        if not UtilClient.is_unset(request.chatid):
+            body['chatid'] = request.chatid
+        if not UtilClient.is_unset(request.del_extidlist):
+            body['del_extidlist'] = request.del_extidlist
+        if not UtilClient.is_unset(request.del_useridlist):
+            body['del_useridlist'] = request.del_useridlist
+        if not UtilClient.is_unset(request.icon):
+            body['icon'] = request.icon
+        if not UtilClient.is_unset(request.management_options):
+            body['managementOptions'] = request.management_options
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.owner):
+            body['owner'] = request.owner
+        if not UtilClient.is_unset(request.owner_type):
+            body['ownerType'] = request.owner_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateGroup',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/group/update',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.UpdateGroupResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_group_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.UpdateGroupRequest,
+        headers: dingtalkim__1__0_models.UpdateGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.UpdateGroupResponse:
+        """
+        @summary 修改群会话
+        
+        @param request: UpdateGroupRequest
+        @param headers: UpdateGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateGroupResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.add_extidlist):
+            body['add_extidlist'] = request.add_extidlist
+        if not UtilClient.is_unset(request.add_useridlist):
+            body['add_useridlist'] = request.add_useridlist
+        if not UtilClient.is_unset(request.chatid):
+            body['chatid'] = request.chatid
+        if not UtilClient.is_unset(request.del_extidlist):
+            body['del_extidlist'] = request.del_extidlist
+        if not UtilClient.is_unset(request.del_useridlist):
+            body['del_useridlist'] = request.del_useridlist
+        if not UtilClient.is_unset(request.icon):
+            body['icon'] = request.icon
+        if not UtilClient.is_unset(request.management_options):
+            body['managementOptions'] = request.management_options
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.owner):
+            body['owner'] = request.owner
+        if not UtilClient.is_unset(request.owner_type):
+            body['ownerType'] = request.owner_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateGroup',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/group/update',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.UpdateGroupResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_group(
+        self,
+        request: dingtalkim__1__0_models.UpdateGroupRequest,
+    ) -> dingtalkim__1__0_models.UpdateGroupResponse:
+        """
+        @summary 修改群会话
+        
+        @param request: UpdateGroupRequest
+        @return: UpdateGroupResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.UpdateGroupHeaders()
+        return self.update_group_with_options(request, headers, runtime)
+
+    async def update_group_async(
+        self,
+        request: dingtalkim__1__0_models.UpdateGroupRequest,
+    ) -> dingtalkim__1__0_models.UpdateGroupResponse:
+        """
+        @summary 修改群会话
+        
+        @param request: UpdateGroupRequest
+        @return: UpdateGroupResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.UpdateGroupHeaders()
+        return await self.update_group_with_options_async(request, headers, runtime)
+
     def update_group_avatar_with_options(
         self,
         request: dingtalkim__1__0_models.UpdateGroupAvatarRequest,
@@ -15795,6 +16473,140 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.UpdateRobotInteractiveCardHeaders()
         return await self.update_robot_interactive_card_with_options_async(request, headers, runtime)
+
+    def update_scene_group_with_options(
+        self,
+        request: dingtalkim__1__0_models.UpdateSceneGroupRequest,
+        headers: dingtalkim__1__0_models.UpdateSceneGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.UpdateSceneGroupResponse:
+        """
+        @summary 更新场景群
+        
+        @param request: UpdateSceneGroupRequest
+        @param headers: UpdateSceneGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateSceneGroupResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.icon):
+            body['icon'] = request.icon
+        if not UtilClient.is_unset(request.management_options):
+            body['management_options'] = request.management_options
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['open_conversation_id'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.owner_union_id):
+            body['owner_union_id'] = request.owner_union_id
+        if not UtilClient.is_unset(request.owner_user_id):
+            body['owner_user_id'] = request.owner_user_id
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateSceneGroup',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/sceneGroup/update',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.UpdateSceneGroupResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_scene_group_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.UpdateSceneGroupRequest,
+        headers: dingtalkim__1__0_models.UpdateSceneGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.UpdateSceneGroupResponse:
+        """
+        @summary 更新场景群
+        
+        @param request: UpdateSceneGroupRequest
+        @param headers: UpdateSceneGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateSceneGroupResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.icon):
+            body['icon'] = request.icon
+        if not UtilClient.is_unset(request.management_options):
+            body['management_options'] = request.management_options
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['open_conversation_id'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.owner_union_id):
+            body['owner_union_id'] = request.owner_union_id
+        if not UtilClient.is_unset(request.owner_user_id):
+            body['owner_user_id'] = request.owner_user_id
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateSceneGroup',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/sceneGroup/update',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.UpdateSceneGroupResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_scene_group(
+        self,
+        request: dingtalkim__1__0_models.UpdateSceneGroupRequest,
+    ) -> dingtalkim__1__0_models.UpdateSceneGroupResponse:
+        """
+        @summary 更新场景群
+        
+        @param request: UpdateSceneGroupRequest
+        @return: UpdateSceneGroupResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.UpdateSceneGroupHeaders()
+        return self.update_scene_group_with_options(request, headers, runtime)
+
+    async def update_scene_group_async(
+        self,
+        request: dingtalkim__1__0_models.UpdateSceneGroupRequest,
+    ) -> dingtalkim__1__0_models.UpdateSceneGroupResponse:
+        """
+        @summary 更新场景群
+        
+        @param request: UpdateSceneGroupRequest
+        @return: UpdateSceneGroupResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.UpdateSceneGroupHeaders()
+        return await self.update_scene_group_with_options_async(request, headers, runtime)
 
     def update_scene_group_template_message_open_status_with_options(
         self,

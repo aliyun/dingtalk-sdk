@@ -8275,11 +8275,15 @@ class Client(OpenApiClient):
         UtilClient.validate_model(tmp_req)
         request = dingtalkexclusive__1__0_models.GetPublicDevicesShrinkRequest()
         OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.encrypt_device_id_list):
+            request.encrypt_device_id_list_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.encrypt_device_id_list, 'encryptDeviceIdList', 'json')
         if not UtilClient.is_unset(tmp_req.serial_number_list):
             request.serial_number_list_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.serial_number_list, 'serialNumberList', 'json')
         query = {}
         if not UtilClient.is_unset(request.device_uuid):
             query['deviceUuid'] = request.device_uuid
+        if not UtilClient.is_unset(request.encrypt_device_id_list_shrink):
+            query['encryptDeviceIdList'] = request.encrypt_device_id_list_shrink
         if not UtilClient.is_unset(request.end_time):
             query['endTime'] = request.end_time
         if not UtilClient.is_unset(request.mac_address):
@@ -8340,11 +8344,15 @@ class Client(OpenApiClient):
         UtilClient.validate_model(tmp_req)
         request = dingtalkexclusive__1__0_models.GetPublicDevicesShrinkRequest()
         OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.encrypt_device_id_list):
+            request.encrypt_device_id_list_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.encrypt_device_id_list, 'encryptDeviceIdList', 'json')
         if not UtilClient.is_unset(tmp_req.serial_number_list):
             request.serial_number_list_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.serial_number_list, 'serialNumberList', 'json')
         query = {}
         if not UtilClient.is_unset(request.device_uuid):
             query['deviceUuid'] = request.device_uuid
+        if not UtilClient.is_unset(request.encrypt_device_id_list_shrink):
+            query['encryptDeviceIdList'] = request.encrypt_device_id_list_shrink
         if not UtilClient.is_unset(request.end_time):
             query['endTime'] = request.end_time
         if not UtilClient.is_unset(request.mac_address):
@@ -12690,6 +12698,8 @@ class Client(OpenApiClient):
             body['end_time'] = request.end_time
         if not UtilClient.is_unset(request.msg_type_list):
             body['msgTypeList'] = request.msg_type_list
+        if not UtilClient.is_unset(request.msg_source):
+            body['msg_source'] = request.msg_source
         if not UtilClient.is_unset(request.page_number):
             body['page_number'] = request.page_number
         if not UtilClient.is_unset(request.page_size):
@@ -12745,6 +12755,8 @@ class Client(OpenApiClient):
             body['end_time'] = request.end_time
         if not UtilClient.is_unset(request.msg_type_list):
             body['msgTypeList'] = request.msg_type_list
+        if not UtilClient.is_unset(request.msg_source):
+            body['msg_source'] = request.msg_source
         if not UtilClient.is_unset(request.page_number):
             body['page_number'] = request.page_number
         if not UtilClient.is_unset(request.page_size):

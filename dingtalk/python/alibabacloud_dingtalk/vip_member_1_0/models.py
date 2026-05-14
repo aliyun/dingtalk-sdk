@@ -44,6 +44,7 @@ class DirectRedeemVipMemberByMobileRequest(TeaModel):
         channel: str = None,
         dingtalk_id: str = None,
         duration: int = None,
+        extension: str = None,
         mobile: str = None,
         uuid: str = None,
     ):
@@ -51,6 +52,7 @@ class DirectRedeemVipMemberByMobileRequest(TeaModel):
         self.channel = channel
         self.dingtalk_id = dingtalk_id
         self.duration = duration
+        self.extension = extension
         self.mobile = mobile
         self.uuid = uuid
 
@@ -71,6 +73,8 @@ class DirectRedeemVipMemberByMobileRequest(TeaModel):
             result['dingtalkId'] = self.dingtalk_id
         if self.duration is not None:
             result['duration'] = self.duration
+        if self.extension is not None:
+            result['extension'] = self.extension
         if self.mobile is not None:
             result['mobile'] = self.mobile
         if self.uuid is not None:
@@ -87,6 +91,8 @@ class DirectRedeemVipMemberByMobileRequest(TeaModel):
             self.dingtalk_id = m.get('dingtalkId')
         if m.get('duration') is not None:
             self.duration = m.get('duration')
+        if m.get('extension') is not None:
+            self.extension = m.get('extension')
         if m.get('mobile') is not None:
             self.mobile = m.get('mobile')
         if m.get('uuid') is not None:

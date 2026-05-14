@@ -2452,6 +2452,132 @@ class Client(OpenApiClient):
         headers = dingtalknotable__1__0_models.PrepareSetRichTextHeaders()
         return await self.prepare_set_rich_text_with_options_async(base_id, request, headers, runtime)
 
+    def query_changed_record_ids_by_client_token_with_options(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.QueryChangedRecordIdsByClientTokenRequest,
+        headers: dingtalknotable__1__0_models.QueryChangedRecordIdsByClientTokenHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.QueryChangedRecordIdsByClientTokenResponse:
+        """
+        @summary 根据 clientToken 查询变更记录 ID
+        
+        @param request: QueryChangedRecordIdsByClientTokenRequest
+        @param headers: QueryChangedRecordIdsByClientTokenHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryChangedRecordIdsByClientTokenResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.client_token):
+            body['clientToken'] = request.client_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryChangedRecordIdsByClientToken',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/bases/{base_id}/changedRecordIds/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.QueryChangedRecordIdsByClientTokenResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_changed_record_ids_by_client_token_with_options_async(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.QueryChangedRecordIdsByClientTokenRequest,
+        headers: dingtalknotable__1__0_models.QueryChangedRecordIdsByClientTokenHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.QueryChangedRecordIdsByClientTokenResponse:
+        """
+        @summary 根据 clientToken 查询变更记录 ID
+        
+        @param request: QueryChangedRecordIdsByClientTokenRequest
+        @param headers: QueryChangedRecordIdsByClientTokenHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryChangedRecordIdsByClientTokenResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.client_token):
+            body['clientToken'] = request.client_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryChangedRecordIdsByClientToken',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/bases/{base_id}/changedRecordIds/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.QueryChangedRecordIdsByClientTokenResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_changed_record_ids_by_client_token(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.QueryChangedRecordIdsByClientTokenRequest,
+    ) -> dingtalknotable__1__0_models.QueryChangedRecordIdsByClientTokenResponse:
+        """
+        @summary 根据 clientToken 查询变更记录 ID
+        
+        @param request: QueryChangedRecordIdsByClientTokenRequest
+        @return: QueryChangedRecordIdsByClientTokenResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.QueryChangedRecordIdsByClientTokenHeaders()
+        return self.query_changed_record_ids_by_client_token_with_options(base_id, request, headers, runtime)
+
+    async def query_changed_record_ids_by_client_token_async(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.QueryChangedRecordIdsByClientTokenRequest,
+    ) -> dingtalknotable__1__0_models.QueryChangedRecordIdsByClientTokenResponse:
+        """
+        @summary 根据 clientToken 查询变更记录 ID
+        
+        @param request: QueryChangedRecordIdsByClientTokenRequest
+        @return: QueryChangedRecordIdsByClientTokenResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.QueryChangedRecordIdsByClientTokenHeaders()
+        return await self.query_changed_record_ids_by_client_token_with_options_async(base_id, request, headers, runtime)
+
     def query_doc_all_roles_with_options(
         self,
         base_id: str,
@@ -2699,6 +2825,128 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.RebuildRoleMembersHeaders()
         return await self.rebuild_role_members_with_options_async(base_id, request, headers, runtime)
+
+    def truncate_sheet_records_with_options(
+        self,
+        base_id: str,
+        sheet_id_or_name: str,
+        request: dingtalknotable__1__0_models.TruncateSheetRecordsRequest,
+        headers: dingtalknotable__1__0_models.TruncateSheetRecordsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.TruncateSheetRecordsResponse:
+        """
+        @summary 清空表格记录
+        
+        @param request: TruncateSheetRecordsRequest
+        @param headers: TruncateSheetRecordsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TruncateSheetRecordsResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='TruncateSheetRecords',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/bases/{base_id}/sheets/{sheet_id_or_name}/records/truncate',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.TruncateSheetRecordsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def truncate_sheet_records_with_options_async(
+        self,
+        base_id: str,
+        sheet_id_or_name: str,
+        request: dingtalknotable__1__0_models.TruncateSheetRecordsRequest,
+        headers: dingtalknotable__1__0_models.TruncateSheetRecordsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.TruncateSheetRecordsResponse:
+        """
+        @summary 清空表格记录
+        
+        @param request: TruncateSheetRecordsRequest
+        @param headers: TruncateSheetRecordsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: TruncateSheetRecordsResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='TruncateSheetRecords',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/bases/{base_id}/sheets/{sheet_id_or_name}/records/truncate',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.TruncateSheetRecordsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def truncate_sheet_records(
+        self,
+        base_id: str,
+        sheet_id_or_name: str,
+        request: dingtalknotable__1__0_models.TruncateSheetRecordsRequest,
+    ) -> dingtalknotable__1__0_models.TruncateSheetRecordsResponse:
+        """
+        @summary 清空表格记录
+        
+        @param request: TruncateSheetRecordsRequest
+        @return: TruncateSheetRecordsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.TruncateSheetRecordsHeaders()
+        return self.truncate_sheet_records_with_options(base_id, sheet_id_or_name, request, headers, runtime)
+
+    async def truncate_sheet_records_async(
+        self,
+        base_id: str,
+        sheet_id_or_name: str,
+        request: dingtalknotable__1__0_models.TruncateSheetRecordsRequest,
+    ) -> dingtalknotable__1__0_models.TruncateSheetRecordsResponse:
+        """
+        @summary 清空表格记录
+        
+        @param request: TruncateSheetRecordsRequest
+        @return: TruncateSheetRecordsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.TruncateSheetRecordsHeaders()
+        return await self.truncate_sheet_records_with_options_async(base_id, sheet_id_or_name, request, headers, runtime)
 
     def update_field_with_options(
         self,

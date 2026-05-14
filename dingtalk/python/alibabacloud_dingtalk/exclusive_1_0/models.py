@@ -13244,6 +13244,7 @@ class GetPublicDevicesRequest(TeaModel):
     def __init__(
         self,
         device_uuid: str = None,
+        encrypt_device_id_list: List[str] = None,
         end_time: int = None,
         mac_address: str = None,
         page_number: int = None,
@@ -13255,6 +13256,7 @@ class GetPublicDevicesRequest(TeaModel):
         title: str = None,
     ):
         self.device_uuid = device_uuid
+        self.encrypt_device_id_list = encrypt_device_id_list
         self.end_time = end_time
         self.mac_address = mac_address
         self.page_number = page_number
@@ -13276,6 +13278,8 @@ class GetPublicDevicesRequest(TeaModel):
         result = dict()
         if self.device_uuid is not None:
             result['deviceUuid'] = self.device_uuid
+        if self.encrypt_device_id_list is not None:
+            result['encryptDeviceIdList'] = self.encrypt_device_id_list
         if self.end_time is not None:
             result['endTime'] = self.end_time
         if self.mac_address is not None:
@@ -13300,6 +13304,8 @@ class GetPublicDevicesRequest(TeaModel):
         m = m or dict()
         if m.get('deviceUuid') is not None:
             self.device_uuid = m.get('deviceUuid')
+        if m.get('encryptDeviceIdList') is not None:
+            self.encrypt_device_id_list = m.get('encryptDeviceIdList')
         if m.get('endTime') is not None:
             self.end_time = m.get('endTime')
         if m.get('macAddress') is not None:
@@ -13325,6 +13331,7 @@ class GetPublicDevicesShrinkRequest(TeaModel):
     def __init__(
         self,
         device_uuid: str = None,
+        encrypt_device_id_list_shrink: str = None,
         end_time: int = None,
         mac_address: str = None,
         page_number: int = None,
@@ -13336,6 +13343,7 @@ class GetPublicDevicesShrinkRequest(TeaModel):
         title: str = None,
     ):
         self.device_uuid = device_uuid
+        self.encrypt_device_id_list_shrink = encrypt_device_id_list_shrink
         self.end_time = end_time
         self.mac_address = mac_address
         self.page_number = page_number
@@ -13357,6 +13365,8 @@ class GetPublicDevicesShrinkRequest(TeaModel):
         result = dict()
         if self.device_uuid is not None:
             result['deviceUuid'] = self.device_uuid
+        if self.encrypt_device_id_list_shrink is not None:
+            result['encryptDeviceIdList'] = self.encrypt_device_id_list_shrink
         if self.end_time is not None:
             result['endTime'] = self.end_time
         if self.mac_address is not None:
@@ -13381,6 +13391,8 @@ class GetPublicDevicesShrinkRequest(TeaModel):
         m = m or dict()
         if m.get('deviceUuid') is not None:
             self.device_uuid = m.get('deviceUuid')
+        if m.get('encryptDeviceIdList') is not None:
+            self.encrypt_device_id_list_shrink = m.get('encryptDeviceIdList')
         if m.get('endTime') is not None:
             self.end_time = m.get('endTime')
         if m.get('macAddress') is not None:
@@ -13510,6 +13522,7 @@ class GetPublicDevicesResponseBodyData(TeaModel):
         device_staffs: List[GetPublicDevicesResponseBodyDataDeviceStaffs] = None,
         device_uuid: str = None,
         did: str = None,
+        encrypt_device_id: str = None,
         gmt_create: int = None,
         gmt_modified: int = None,
         mac_address: str = None,
@@ -13525,6 +13538,7 @@ class GetPublicDevicesResponseBodyData(TeaModel):
         self.device_staffs = device_staffs
         self.device_uuid = device_uuid
         self.did = did
+        self.encrypt_device_id = encrypt_device_id
         self.gmt_create = gmt_create
         self.gmt_modified = gmt_modified
         self.mac_address = mac_address
@@ -13572,6 +13586,8 @@ class GetPublicDevicesResponseBodyData(TeaModel):
             result['deviceUuid'] = self.device_uuid
         if self.did is not None:
             result['did'] = self.did
+        if self.encrypt_device_id is not None:
+            result['encryptDeviceId'] = self.encrypt_device_id
         if self.gmt_create is not None:
             result['gmtCreate'] = self.gmt_create
         if self.gmt_modified is not None:
@@ -13613,6 +13629,8 @@ class GetPublicDevicesResponseBodyData(TeaModel):
             self.device_uuid = m.get('deviceUuid')
         if m.get('did') is not None:
             self.did = m.get('did')
+        if m.get('encryptDeviceId') is not None:
+            self.encrypt_device_id = m.get('encryptDeviceId')
         if m.get('gmtCreate') is not None:
             self.gmt_create = m.get('gmtCreate')
         if m.get('gmtModified') is not None:
@@ -21265,6 +21283,7 @@ class QueryMsgSendRecordsRequest(TeaModel):
         self,
         end_time: int = None,
         msg_type_list: List[str] = None,
+        msg_source: int = None,
         page_number: int = None,
         page_size: int = None,
         start_time: int = None,
@@ -21273,6 +21292,7 @@ class QueryMsgSendRecordsRequest(TeaModel):
     ):
         self.end_time = end_time
         self.msg_type_list = msg_type_list
+        self.msg_source = msg_source
         # This parameter is required.
         self.page_number = page_number
         # This parameter is required.
@@ -21295,6 +21315,8 @@ class QueryMsgSendRecordsRequest(TeaModel):
             result['end_time'] = self.end_time
         if self.msg_type_list is not None:
             result['msgTypeList'] = self.msg_type_list
+        if self.msg_source is not None:
+            result['msg_source'] = self.msg_source
         if self.page_number is not None:
             result['page_number'] = self.page_number
         if self.page_size is not None:
@@ -21313,6 +21335,8 @@ class QueryMsgSendRecordsRequest(TeaModel):
             self.end_time = m.get('end_time')
         if m.get('msgTypeList') is not None:
             self.msg_type_list = m.get('msgTypeList')
+        if m.get('msg_source') is not None:
+            self.msg_source = m.get('msg_source')
         if m.get('page_number') is not None:
             self.page_number = m.get('page_number')
         if m.get('page_size') is not None:
@@ -21330,6 +21354,7 @@ class QueryMsgSendRecordsResponseBodyResultItems(TeaModel):
     def __init__(
         self,
         create_time: int = None,
+        msg_source: int = None,
         msg_type: str = None,
         operator_user_id: str = None,
         send_time: int = None,
@@ -21338,6 +21363,7 @@ class QueryMsgSendRecordsResponseBodyResultItems(TeaModel):
     ):
         # This parameter is required.
         self.create_time = create_time
+        self.msg_source = msg_source
         # This parameter is required.
         self.msg_type = msg_type
         self.operator_user_id = operator_user_id
@@ -21358,6 +21384,8 @@ class QueryMsgSendRecordsResponseBodyResultItems(TeaModel):
         result = dict()
         if self.create_time is not None:
             result['create_time'] = self.create_time
+        if self.msg_source is not None:
+            result['msg_source'] = self.msg_source
         if self.msg_type is not None:
             result['msg_type'] = self.msg_type
         if self.operator_user_id is not None:
@@ -21374,6 +21402,8 @@ class QueryMsgSendRecordsResponseBodyResultItems(TeaModel):
         m = m or dict()
         if m.get('create_time') is not None:
             self.create_time = m.get('create_time')
+        if m.get('msg_source') is not None:
+            self.msg_source = m.get('msg_source')
         if m.get('msg_type') is not None:
             self.msg_type = m.get('msg_type')
         if m.get('operator_user_id') is not None:

@@ -5364,6 +5364,10 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.category_codes):
             body['categoryCodes'] = request.category_codes
+        if not UtilClient.is_unset(request.gmt_modified_end):
+            body['gmtModifiedEnd'] = request.gmt_modified_end
+        if not UtilClient.is_unset(request.gmt_modified_start):
+            body['gmtModifiedStart'] = request.gmt_modified_start
         if not UtilClient.is_unset(request.label_code):
             body['labelCode'] = request.label_code
         if not UtilClient.is_unset(request.max_results):
@@ -5413,6 +5417,10 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.category_codes):
             body['categoryCodes'] = request.category_codes
+        if not UtilClient.is_unset(request.gmt_modified_end):
+            body['gmtModifiedEnd'] = request.gmt_modified_end
+        if not UtilClient.is_unset(request.gmt_modified_start):
+            body['gmtModifiedStart'] = request.gmt_modified_start
         if not UtilClient.is_unset(request.label_code):
             body['labelCode'] = request.label_code
         if not UtilClient.is_unset(request.max_results):

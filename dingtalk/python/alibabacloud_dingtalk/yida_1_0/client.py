@@ -1598,6 +1598,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.app_type):
             query['appType'] = request.app_type
+        if not UtilClient.is_unset(request.env):
+            query['env'] = request.env
         if not UtilClient.is_unset(request.language):
             query['language'] = request.language
         if not UtilClient.is_unset(request.process_instance_id):
@@ -1649,6 +1651,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.app_type):
             query['appType'] = request.app_type
+        if not UtilClient.is_unset(request.env):
+            query['env'] = request.env
         if not UtilClient.is_unset(request.language):
             query['language'] = request.language
         if not UtilClient.is_unset(request.process_instance_id):
@@ -5036,6 +5040,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.app_type):
             query['appType'] = request.app_type
+        if not UtilClient.is_unset(request.env):
+            query['env'] = request.env
         if not UtilClient.is_unset(request.language):
             query['language'] = request.language
         if not UtilClient.is_unset(request.process_instance_ids):
@@ -5087,6 +5093,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.app_type):
             query['appType'] = request.app_type
+        if not UtilClient.is_unset(request.env):
+            query['env'] = request.env
         if not UtilClient.is_unset(request.language):
             query['language'] = request.language
         if not UtilClient.is_unset(request.process_instance_ids):
@@ -6400,6 +6408,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.app_type):
             query['appType'] = request.app_type
+        if not UtilClient.is_unset(request.env):
+            query['env'] = request.env
         if not UtilClient.is_unset(request.process_code):
             query['processCode'] = request.process_code
         if not UtilClient.is_unset(request.process_id):
@@ -6451,6 +6461,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.app_type):
             query['appType'] = request.app_type
+        if not UtilClient.is_unset(request.env):
+            query['env'] = request.env
         if not UtilClient.is_unset(request.process_code):
             query['processCode'] = request.process_code
         if not UtilClient.is_unset(request.process_id):
@@ -9086,6 +9098,8 @@ class Client(OpenApiClient):
             body['appType'] = request.app_type
         if not UtilClient.is_unset(request.department_id):
             body['departmentId'] = request.department_id
+        if not UtilClient.is_unset(request.env):
+            body['env'] = request.env
         if not UtilClient.is_unset(request.form_data_json):
             body['formDataJson'] = request.form_data_json
         if not UtilClient.is_unset(request.form_uuid):
@@ -9143,6 +9157,8 @@ class Client(OpenApiClient):
             body['appType'] = request.app_type
         if not UtilClient.is_unset(request.department_id):
             body['departmentId'] = request.department_id
+        if not UtilClient.is_unset(request.env):
+            body['env'] = request.env
         if not UtilClient.is_unset(request.form_data_json):
             body['formDataJson'] = request.form_data_json
         if not UtilClient.is_unset(request.form_uuid):
@@ -10570,8 +10586,12 @@ class Client(OpenApiClient):
             body['atUserId'] = request.at_user_id
         if not UtilClient.is_unset(request.content):
             body['content'] = request.content
+        if not UtilClient.is_unset(request.env):
+            body['env'] = request.env
         if not UtilClient.is_unset(request.form_instance_id):
             body['formInstanceId'] = request.form_instance_id
+        if not UtilClient.is_unset(request.form_uuid):
+            body['formUuid'] = request.form_uuid
         if not UtilClient.is_unset(request.language):
             body['language'] = request.language
         if not UtilClient.is_unset(request.reply_id):
@@ -10627,8 +10647,12 @@ class Client(OpenApiClient):
             body['atUserId'] = request.at_user_id
         if not UtilClient.is_unset(request.content):
             body['content'] = request.content
+        if not UtilClient.is_unset(request.env):
+            body['env'] = request.env
         if not UtilClient.is_unset(request.form_instance_id):
             body['formInstanceId'] = request.form_instance_id
+        if not UtilClient.is_unset(request.form_uuid):
+            body['formUuid'] = request.form_uuid
         if not UtilClient.is_unset(request.language):
             body['language'] = request.language
         if not UtilClient.is_unset(request.reply_id):
@@ -12228,6 +12252,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.app_type):
             query['appType'] = request.app_type
+        if not UtilClient.is_unset(request.env):
+            query['env'] = request.env
         if not UtilClient.is_unset(request.language):
             query['language'] = request.language
         if not UtilClient.is_unset(request.process_instance_id):
@@ -12279,6 +12305,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.app_type):
             query['appType'] = request.app_type
+        if not UtilClient.is_unset(request.env):
+            query['env'] = request.env
         if not UtilClient.is_unset(request.language):
             query['language'] = request.language
         if not UtilClient.is_unset(request.process_instance_id):

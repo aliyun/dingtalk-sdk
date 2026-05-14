@@ -1384,6 +1384,7 @@ class BatchGetUserShrinkRequest(TeaModel):
 class BatchGetUserResponseBodyUserList(TeaModel):
     def __init__(
         self,
+        avatar: str = None,
         job_number: str = None,
         mobile: str = None,
         name: str = None,
@@ -1394,6 +1395,7 @@ class BatchGetUserResponseBodyUserList(TeaModel):
         unionid: str = None,
         userid: str = None,
     ):
+        self.avatar = avatar
         self.job_number = job_number
         self.mobile = mobile
         self.name = name
@@ -1413,6 +1415,8 @@ class BatchGetUserResponseBodyUserList(TeaModel):
             return _map
 
         result = dict()
+        if self.avatar is not None:
+            result['avatar'] = self.avatar
         if self.job_number is not None:
             result['job_number'] = self.job_number
         if self.mobile is not None:
@@ -1435,6 +1439,8 @@ class BatchGetUserResponseBodyUserList(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('avatar') is not None:
+            self.avatar = m.get('avatar')
         if m.get('job_number') is not None:
             self.job_number = m.get('job_number')
         if m.get('mobile') is not None:

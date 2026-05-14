@@ -1627,17 +1627,22 @@ class GetFormDataByIDRequest(TeaModel):
     def __init__(
         self,
         app_type: str = None,
+        env: str = None,
         form_uuid: str = None,
         language: str = None,
         system_token: str = None,
         use_alias: bool = None,
         user_id: str = None,
     ):
+        # This parameter is required.
         self.app_type = app_type
+        self.env = env
         self.form_uuid = form_uuid
         self.language = language
+        # This parameter is required.
         self.system_token = system_token
         self.use_alias = use_alias
+        # This parameter is required.
         self.user_id = user_id
 
     def validate(self):
@@ -1651,6 +1656,8 @@ class GetFormDataByIDRequest(TeaModel):
         result = dict()
         if self.app_type is not None:
             result['appType'] = self.app_type
+        if self.env is not None:
+            result['env'] = self.env
         if self.form_uuid is not None:
             result['formUuid'] = self.form_uuid
         if self.language is not None:
@@ -1667,6 +1674,8 @@ class GetFormDataByIDRequest(TeaModel):
         m = m or dict()
         if m.get('appType') is not None:
             self.app_type = m.get('appType')
+        if m.get('env') is not None:
+            self.env = m.get('env')
         if m.get('formUuid') is not None:
             self.form_uuid = m.get('formUuid')
         if m.get('language') is not None:
@@ -1891,6 +1900,7 @@ class GetInstanceByIdRequest(TeaModel):
     def __init__(
         self,
         app_type: str = None,
+        env: str = None,
         form_uuid: str = None,
         language: str = None,
         system_token: str = None,
@@ -1899,6 +1909,7 @@ class GetInstanceByIdRequest(TeaModel):
     ):
         # This parameter is required.
         self.app_type = app_type
+        self.env = env
         self.form_uuid = form_uuid
         self.language = language
         # This parameter is required.
@@ -1918,6 +1929,8 @@ class GetInstanceByIdRequest(TeaModel):
         result = dict()
         if self.app_type is not None:
             result['appType'] = self.app_type
+        if self.env is not None:
+            result['env'] = self.env
         if self.form_uuid is not None:
             result['formUuid'] = self.form_uuid
         if self.language is not None:
@@ -1934,6 +1947,8 @@ class GetInstanceByIdRequest(TeaModel):
         m = m or dict()
         if m.get('appType') is not None:
             self.app_type = m.get('appType')
+        if m.get('env') is not None:
+            self.env = m.get('env')
         if m.get('formUuid') is not None:
             self.form_uuid = m.get('formUuid')
         if m.get('language') is not None:
@@ -2304,6 +2319,7 @@ class GetInstanceIdListRequest(TeaModel):
         approved_result: str = None,
         create_from_time_gmt: str = None,
         create_to_time_gmt: str = None,
+        env: str = None,
         form_uuid: str = None,
         instance_status: str = None,
         language: str = None,
@@ -2323,6 +2339,7 @@ class GetInstanceIdListRequest(TeaModel):
         self.approved_result = approved_result
         self.create_from_time_gmt = create_from_time_gmt
         self.create_to_time_gmt = create_to_time_gmt
+        self.env = env
         # This parameter is required.
         self.form_uuid = form_uuid
         self.instance_status = instance_status
@@ -2357,6 +2374,8 @@ class GetInstanceIdListRequest(TeaModel):
             result['createFromTimeGMT'] = self.create_from_time_gmt
         if self.create_to_time_gmt is not None:
             result['createToTimeGMT'] = self.create_to_time_gmt
+        if self.env is not None:
+            result['env'] = self.env
         if self.form_uuid is not None:
             result['formUuid'] = self.form_uuid
         if self.instance_status is not None:
@@ -2395,6 +2414,8 @@ class GetInstanceIdListRequest(TeaModel):
             self.create_from_time_gmt = m.get('createFromTimeGMT')
         if m.get('createToTimeGMT') is not None:
             self.create_to_time_gmt = m.get('createToTimeGMT')
+        if m.get('env') is not None:
+            self.env = m.get('env')
         if m.get('formUuid') is not None:
             self.form_uuid = m.get('formUuid')
         if m.get('instanceStatus') is not None:
@@ -5518,6 +5539,7 @@ class StartInstanceRequest(TeaModel):
         self,
         app_type: str = None,
         department_id: str = None,
+        env: str = None,
         form_data_json: str = None,
         form_uuid: str = None,
         language: str = None,
@@ -5530,6 +5552,7 @@ class StartInstanceRequest(TeaModel):
         # This parameter is required.
         self.app_type = app_type
         self.department_id = department_id
+        self.env = env
         # This parameter is required.
         self.form_data_json = form_data_json
         # This parameter is required.
@@ -5556,6 +5579,8 @@ class StartInstanceRequest(TeaModel):
             result['appType'] = self.app_type
         if self.department_id is not None:
             result['departmentId'] = self.department_id
+        if self.env is not None:
+            result['env'] = self.env
         if self.form_data_json is not None:
             result['formDataJson'] = self.form_data_json
         if self.form_uuid is not None:
@@ -5580,6 +5605,8 @@ class StartInstanceRequest(TeaModel):
             self.app_type = m.get('appType')
         if m.get('departmentId') is not None:
             self.department_id = m.get('departmentId')
+        if m.get('env') is not None:
+            self.env = m.get('env')
         if m.get('formDataJson') is not None:
             self.form_data_json = m.get('formDataJson')
         if m.get('formUuid') is not None:

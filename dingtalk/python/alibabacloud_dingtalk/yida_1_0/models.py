@@ -2118,6 +2118,7 @@ class DeleteInstanceRequest(TeaModel):
     def __init__(
         self,
         app_type: str = None,
+        env: str = None,
         language: str = None,
         process_instance_id: str = None,
         system_token: str = None,
@@ -2125,6 +2126,7 @@ class DeleteInstanceRequest(TeaModel):
     ):
         # This parameter is required.
         self.app_type = app_type
+        self.env = env
         self.language = language
         # This parameter is required.
         self.process_instance_id = process_instance_id
@@ -2144,6 +2146,8 @@ class DeleteInstanceRequest(TeaModel):
         result = dict()
         if self.app_type is not None:
             result['appType'] = self.app_type
+        if self.env is not None:
+            result['env'] = self.env
         if self.language is not None:
             result['language'] = self.language
         if self.process_instance_id is not None:
@@ -2158,6 +2162,8 @@ class DeleteInstanceRequest(TeaModel):
         m = m or dict()
         if m.get('appType') is not None:
             self.app_type = m.get('appType')
+        if m.get('env') is not None:
+            self.env = m.get('env')
         if m.get('language') is not None:
             self.language = m.get('language')
         if m.get('processInstanceId') is not None:
@@ -7996,6 +8002,7 @@ class GetInstancesByIdListRequest(TeaModel):
     def __init__(
         self,
         app_type: str = None,
+        env: str = None,
         language: str = None,
         process_instance_ids: str = None,
         system_token: str = None,
@@ -8003,6 +8010,7 @@ class GetInstancesByIdListRequest(TeaModel):
     ):
         # This parameter is required.
         self.app_type = app_type
+        self.env = env
         self.language = language
         # This parameter is required.
         self.process_instance_ids = process_instance_ids
@@ -8022,6 +8030,8 @@ class GetInstancesByIdListRequest(TeaModel):
         result = dict()
         if self.app_type is not None:
             result['appType'] = self.app_type
+        if self.env is not None:
+            result['env'] = self.env
         if self.language is not None:
             result['language'] = self.language
         if self.process_instance_ids is not None:
@@ -8036,6 +8046,8 @@ class GetInstancesByIdListRequest(TeaModel):
         m = m or dict()
         if m.get('appType') is not None:
             self.app_type = m.get('appType')
+        if m.get('env') is not None:
+            self.env = m.get('env')
         if m.get('language') is not None:
             self.language = m.get('language')
         if m.get('processInstanceIds') is not None:
@@ -11965,6 +11977,7 @@ class GetProcessDesignByCodeRequest(TeaModel):
     def __init__(
         self,
         app_type: str = None,
+        env: str = None,
         process_code: str = None,
         process_id: int = None,
         system_token: str = None,
@@ -11972,6 +11985,7 @@ class GetProcessDesignByCodeRequest(TeaModel):
     ):
         # This parameter is required.
         self.app_type = app_type
+        self.env = env
         # This parameter is required.
         self.process_code = process_code
         self.process_id = process_id
@@ -11991,6 +12005,8 @@ class GetProcessDesignByCodeRequest(TeaModel):
         result = dict()
         if self.app_type is not None:
             result['appType'] = self.app_type
+        if self.env is not None:
+            result['env'] = self.env
         if self.process_code is not None:
             result['processCode'] = self.process_code
         if self.process_id is not None:
@@ -12005,6 +12021,8 @@ class GetProcessDesignByCodeRequest(TeaModel):
         m = m or dict()
         if m.get('appType') is not None:
             self.app_type = m.get('appType')
+        if m.get('env') is not None:
+            self.env = m.get('env')
         if m.get('processCode') is not None:
             self.process_code = m.get('processCode')
         if m.get('processId') is not None:
@@ -17461,6 +17479,7 @@ class PreviewPublishedProcessRequest(TeaModel):
         self,
         app_type: str = None,
         department_id: str = None,
+        env: str = None,
         form_data_json: str = None,
         form_uuid: str = None,
         language: str = None,
@@ -17471,6 +17490,7 @@ class PreviewPublishedProcessRequest(TeaModel):
         # This parameter is required.
         self.app_type = app_type
         self.department_id = department_id
+        self.env = env
         # This parameter is required.
         self.form_data_json = form_data_json
         # This parameter is required.
@@ -17495,6 +17515,8 @@ class PreviewPublishedProcessRequest(TeaModel):
             result['appType'] = self.app_type
         if self.department_id is not None:
             result['departmentId'] = self.department_id
+        if self.env is not None:
+            result['env'] = self.env
         if self.form_data_json is not None:
             result['formDataJson'] = self.form_data_json
         if self.form_uuid is not None:
@@ -17515,6 +17537,8 @@ class PreviewPublishedProcessRequest(TeaModel):
             self.app_type = m.get('appType')
         if m.get('departmentId') is not None:
             self.department_id = m.get('departmentId')
+        if m.get('env') is not None:
+            self.env = m.get('env')
         if m.get('formDataJson') is not None:
             self.form_data_json = m.get('formDataJson')
         if m.get('formUuid') is not None:
@@ -19462,7 +19486,9 @@ class SaveFormRemarkRequest(TeaModel):
         app_type: str = None,
         at_user_id: str = None,
         content: str = None,
+        env: str = None,
         form_instance_id: str = None,
+        form_uuid: str = None,
         language: str = None,
         reply_id: int = None,
         system_token: str = None,
@@ -19473,8 +19499,10 @@ class SaveFormRemarkRequest(TeaModel):
         self.at_user_id = at_user_id
         # This parameter is required.
         self.content = content
+        self.env = env
         # This parameter is required.
         self.form_instance_id = form_instance_id
+        self.form_uuid = form_uuid
         self.language = language
         self.reply_id = reply_id
         # This parameter is required.
@@ -19497,8 +19525,12 @@ class SaveFormRemarkRequest(TeaModel):
             result['atUserId'] = self.at_user_id
         if self.content is not None:
             result['content'] = self.content
+        if self.env is not None:
+            result['env'] = self.env
         if self.form_instance_id is not None:
             result['formInstanceId'] = self.form_instance_id
+        if self.form_uuid is not None:
+            result['formUuid'] = self.form_uuid
         if self.language is not None:
             result['language'] = self.language
         if self.reply_id is not None:
@@ -19517,8 +19549,12 @@ class SaveFormRemarkRequest(TeaModel):
             self.at_user_id = m.get('atUserId')
         if m.get('content') is not None:
             self.content = m.get('content')
+        if m.get('env') is not None:
+            self.env = m.get('env')
         if m.get('formInstanceId') is not None:
             self.form_instance_id = m.get('formInstanceId')
+        if m.get('formUuid') is not None:
+            self.form_uuid = m.get('formUuid')
         if m.get('language') is not None:
             self.language = m.get('language')
         if m.get('replyId') is not None:
@@ -22666,6 +22702,7 @@ class TerminateInstanceRequest(TeaModel):
     def __init__(
         self,
         app_type: str = None,
+        env: str = None,
         language: str = None,
         process_instance_id: str = None,
         system_token: str = None,
@@ -22673,6 +22710,7 @@ class TerminateInstanceRequest(TeaModel):
     ):
         # This parameter is required.
         self.app_type = app_type
+        self.env = env
         self.language = language
         # This parameter is required.
         self.process_instance_id = process_instance_id
@@ -22692,6 +22730,8 @@ class TerminateInstanceRequest(TeaModel):
         result = dict()
         if self.app_type is not None:
             result['appType'] = self.app_type
+        if self.env is not None:
+            result['env'] = self.env
         if self.language is not None:
             result['language'] = self.language
         if self.process_instance_id is not None:
@@ -22706,6 +22746,8 @@ class TerminateInstanceRequest(TeaModel):
         m = m or dict()
         if m.get('appType') is not None:
             self.app_type = m.get('appType')
+        if m.get('env') is not None:
+            self.env = m.get('env')
         if m.get('language') is not None:
             self.language = m.get('language')
         if m.get('processInstanceId') is not None:

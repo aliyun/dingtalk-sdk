@@ -7798,6 +7798,128 @@ class Client(OpenApiClient):
         headers = dingtalkdoc__2__0_models.ShareUrlHeaders()
         return await self.share_url_with_options_async(request, headers, runtime)
 
+    def submit_export_job_with_options(
+        self,
+        request: dingtalkdoc__2__0_models.SubmitExportJobRequest,
+        headers: dingtalkdoc__2__0_models.SubmitExportJobHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.SubmitExportJobResponse:
+        """
+        @summary 通过dentryUuid提交文档导出任务
+        
+        @param request: SubmitExportJobRequest
+        @param headers: SubmitExportJobHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SubmitExportJobResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.dentry_uuid):
+            body['dentryUuid'] = request.dentry_uuid
+        if not UtilClient.is_unset(request.operator_id):
+            body['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.target_format):
+            body['targetFormat'] = request.target_format
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SubmitExportJob',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/me/export/submit',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.SubmitExportJobResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def submit_export_job_with_options_async(
+        self,
+        request: dingtalkdoc__2__0_models.SubmitExportJobRequest,
+        headers: dingtalkdoc__2__0_models.SubmitExportJobHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.SubmitExportJobResponse:
+        """
+        @summary 通过dentryUuid提交文档导出任务
+        
+        @param request: SubmitExportJobRequest
+        @param headers: SubmitExportJobHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SubmitExportJobResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.dentry_uuid):
+            body['dentryUuid'] = request.dentry_uuid
+        if not UtilClient.is_unset(request.operator_id):
+            body['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.target_format):
+            body['targetFormat'] = request.target_format
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SubmitExportJob',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/me/export/submit',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.SubmitExportJobResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def submit_export_job(
+        self,
+        request: dingtalkdoc__2__0_models.SubmitExportJobRequest,
+    ) -> dingtalkdoc__2__0_models.SubmitExportJobResponse:
+        """
+        @summary 通过dentryUuid提交文档导出任务
+        
+        @param request: SubmitExportJobRequest
+        @return: SubmitExportJobResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.SubmitExportJobHeaders()
+        return self.submit_export_job_with_options(request, headers, runtime)
+
+    async def submit_export_job_async(
+        self,
+        request: dingtalkdoc__2__0_models.SubmitExportJobRequest,
+    ) -> dingtalkdoc__2__0_models.SubmitExportJobResponse:
+        """
+        @summary 通过dentryUuid提交文档导出任务
+        
+        @param request: SubmitExportJobRequest
+        @return: SubmitExportJobResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.SubmitExportJobHeaders()
+        return await self.submit_export_job_with_options_async(request, headers, runtime)
+
     def submit_get_content_job_with_options(
         self,
         dentry_uuid: str,
