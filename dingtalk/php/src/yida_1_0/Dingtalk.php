@@ -3051,6 +3051,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->env)) {
             $query['env'] = $request->env;
         }
+        if (!Utils::isUnset($request->formUuid)) {
+            $query['formUuid'] = $request->formUuid;
+        }
         if (!Utils::isUnset($request->language)) {
             $query['language'] = $request->language;
         }

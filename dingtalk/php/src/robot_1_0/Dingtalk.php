@@ -83,6 +83,9 @@ use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\SendRobotDingMessageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\SetRobotPluginHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\SetRobotPluginRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\SetRobotPluginResponse;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\UpdateCustomRobotOutgoingHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\UpdateCustomRobotOutgoingRequest;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\UpdateCustomRobotOutgoingResponse;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\UpdateInstalledRobotHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\UpdateInstalledRobotRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\UpdateInstalledRobotResponse;
@@ -1766,6 +1769,66 @@ class Dingtalk extends OpenApiClient
         $headers = new SetRobotPluginHeaders([]);
 
         return $this->setRobotPluginWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更新自定义机器人回调地址
+     *  *
+     * @param UpdateCustomRobotOutgoingRequest $request UpdateCustomRobotOutgoingRequest
+     * @param UpdateCustomRobotOutgoingHeaders $headers UpdateCustomRobotOutgoingHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateCustomRobotOutgoingResponse UpdateCustomRobotOutgoingResponse
+     */
+    public function updateCustomRobotOutgoingWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->outgoingUrl)) {
+            $body['outgoingUrl'] = $request->outgoingUrl;
+        }
+        if (!Utils::isUnset($request->token)) {
+            $body['token'] = $request->token;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'UpdateCustomRobotOutgoing',
+            'version' => 'robot_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/robot/custom/outgoing/update',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UpdateCustomRobotOutgoingResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新自定义机器人回调地址
+     *  *
+     * @param UpdateCustomRobotOutgoingRequest $request UpdateCustomRobotOutgoingRequest
+     *
+     * @return UpdateCustomRobotOutgoingResponse UpdateCustomRobotOutgoingResponse
+     */
+    public function updateCustomRobotOutgoing($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateCustomRobotOutgoingHeaders([]);
+
+        return $this->updateCustomRobotOutgoingWithOptions($request, $headers, $runtime);
     }
 
     /**

@@ -96,6 +96,10 @@ use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\SubmitAgentTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\SubmitAsrTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\SubmitAsrTaskRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\SubmitAsrTaskResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\SubmitCustomerSplitDataHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\SubmitCustomerSplitDataRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\SubmitCustomerSplitDataResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\SubmitCustomerSplitDataShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\UpdateDeviceBindingHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\UpdateDeviceBindingRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\UpdateDeviceBindingResponse;
@@ -2043,6 +2047,71 @@ class Dingtalk extends OpenApiClient
         $headers = new SubmitAsrTaskHeaders([]);
 
         return $this->submitAsrTaskWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 提交切客数据
+     *  *
+     * @param SubmitCustomerSplitDataRequest $tmpReq  SubmitCustomerSplitDataRequest
+     * @param SubmitCustomerSplitDataHeaders $headers SubmitCustomerSplitDataHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SubmitCustomerSplitDataResponse SubmitCustomerSplitDataResponse
+     */
+    public function submitCustomerSplitDataWithOptions($tmpReq, $headers, $runtime)
+    {
+        Utils::validateModel($tmpReq);
+        $request = new SubmitCustomerSplitDataShrinkRequest([]);
+        OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->splitParams)) {
+            $request->splitParamsShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->splitParams, 'splitParams', 'json');
+        }
+        $query = [];
+        if (!Utils::isUnset($request->splitParamsShrink)) {
+            $query['splitParams'] = $request->splitParamsShrink;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'SubmitCustomerSplitData',
+            'version' => 'dvi_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/dvi/customersplit/submit',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return SubmitCustomerSplitDataResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 提交切客数据
+     *  *
+     * @param SubmitCustomerSplitDataRequest $request SubmitCustomerSplitDataRequest
+     *
+     * @return SubmitCustomerSplitDataResponse SubmitCustomerSplitDataResponse
+     */
+    public function submitCustomerSplitData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SubmitCustomerSplitDataHeaders([]);
+
+        return $this->submitCustomerSplitDataWithOptions($request, $headers, $runtime);
     }
 
     /**

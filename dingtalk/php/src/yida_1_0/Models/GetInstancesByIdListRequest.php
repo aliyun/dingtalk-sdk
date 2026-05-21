@@ -25,6 +25,13 @@ class GetInstancesByIdListRequest extends Model
     public $env;
 
     /**
+     * @example FORM-THISISFORMUUID
+     *
+     * @var string
+     */
+    public $formUuid;
+
+    /**
      * @example zh_CN
      *
      * @var string
@@ -60,6 +67,7 @@ class GetInstancesByIdListRequest extends Model
     protected $_name = [
         'appType' => 'appType',
         'env' => 'env',
+        'formUuid' => 'formUuid',
         'language' => 'language',
         'processInstanceIds' => 'processInstanceIds',
         'systemToken' => 'systemToken',
@@ -76,6 +84,9 @@ class GetInstancesByIdListRequest extends Model
         }
         if (null !== $this->env) {
             $res['env'] = $this->env;
+        }
+        if (null !== $this->formUuid) {
+            $res['formUuid'] = $this->formUuid;
         }
         if (null !== $this->language) {
             $res['language'] = $this->language;
@@ -106,6 +117,9 @@ class GetInstancesByIdListRequest extends Model
         }
         if (isset($map['env'])) {
             $model->env = $map['env'];
+        }
+        if (isset($map['formUuid'])) {
+            $model->formUuid = $map['formUuid'];
         }
         if (isset($map['language'])) {
             $model->language = $map['language'];

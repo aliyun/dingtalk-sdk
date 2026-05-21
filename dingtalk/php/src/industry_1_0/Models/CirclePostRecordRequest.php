@@ -21,6 +21,11 @@ class CirclePostRecordRequest extends Model
     /**
      * @var int
      */
+    public $lastPostId;
+
+    /**
+     * @var int
+     */
     public $size;
 
     /**
@@ -30,6 +35,7 @@ class CirclePostRecordRequest extends Model
     protected $_name = [
         'direction' => 'direction',
         'endTime' => 'endTime',
+        'lastPostId' => 'lastPostId',
         'size' => 'size',
         'startTime' => 'startTime',
     ];
@@ -44,6 +50,9 @@ class CirclePostRecordRequest extends Model
         }
         if (null !== $this->endTime) {
             $res['endTime'] = $this->endTime;
+        }
+        if (null !== $this->lastPostId) {
+            $res['lastPostId'] = $this->lastPostId;
         }
         if (null !== $this->size) {
             $res['size'] = $this->size;
@@ -68,6 +77,9 @@ class CirclePostRecordRequest extends Model
         }
         if (isset($map['endTime'])) {
             $model->endTime = $map['endTime'];
+        }
+        if (isset($map['lastPostId'])) {
+            $model->lastPostId = $map['lastPostId'];
         }
         if (isset($map['size'])) {
             $model->size = $map['size'];

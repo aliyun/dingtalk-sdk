@@ -4007,6 +4007,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->endTime)) {
             $body['endTime'] = $request->endTime;
         }
+        if (!Utils::isUnset($request->lastPostId)) {
+            $body['lastPostId'] = $request->lastPostId;
+        }
         if (!Utils::isUnset($request->size)) {
             $body['size'] = $request->size;
         }
