@@ -32,6 +32,14 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 
         /// <summary>
         /// <b>Example:</b>
+        /// <para>FORM-THISISFORMUUID</para>
+        /// </summary>
+        [NameInMap("formUuid")]
+        [Validation(Required=false)]
+        public string FormUuid { get; set; }
+
+        /// <summary>
+        /// <b>Example:</b>
         /// <para>zh_CN</para>
         /// </summary>
         [NameInMap("language")]

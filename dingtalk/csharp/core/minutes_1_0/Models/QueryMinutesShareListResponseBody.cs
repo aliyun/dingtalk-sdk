@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkminutes_1_0.Models
         [Validation(Required=false)]
         public List<QueryMinutesShareListResponseBodyMinutesDetails> MinutesDetails { get; set; }
         public class QueryMinutesShareListResponseBodyMinutesDetails : TeaModel {
+            [NameInMap("bizOrder")]
+            [Validation(Required=false)]
+            public string BizOrder { get; set; }
+
             [NameInMap("bizType")]
             [Validation(Required=false)]
             public int? BizType { get; set; }

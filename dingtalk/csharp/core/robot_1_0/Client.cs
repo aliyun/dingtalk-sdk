@@ -4358,6 +4358,162 @@ namespace AlibabaCloud.SDK.Dingtalkrobot_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>更新自定义机器人回调地址</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateCustomRobotOutgoingRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateCustomRobotOutgoingHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateCustomRobotOutgoingResponse
+        /// </returns>
+        public UpdateCustomRobotOutgoingResponse UpdateCustomRobotOutgoingWithOptions(UpdateCustomRobotOutgoingRequest request, UpdateCustomRobotOutgoingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutgoingUrl))
+            {
+                body["outgoingUrl"] = request.OutgoingUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Token))
+            {
+                body["token"] = request.Token;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateCustomRobotOutgoing",
+                Version = "robot_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/robot/custom/outgoing/update",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateCustomRobotOutgoingResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新自定义机器人回调地址</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateCustomRobotOutgoingRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateCustomRobotOutgoingHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateCustomRobotOutgoingResponse
+        /// </returns>
+        public async Task<UpdateCustomRobotOutgoingResponse> UpdateCustomRobotOutgoingWithOptionsAsync(UpdateCustomRobotOutgoingRequest request, UpdateCustomRobotOutgoingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutgoingUrl))
+            {
+                body["outgoingUrl"] = request.OutgoingUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Token))
+            {
+                body["token"] = request.Token;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateCustomRobotOutgoing",
+                Version = "robot_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/robot/custom/outgoing/update",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateCustomRobotOutgoingResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新自定义机器人回调地址</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateCustomRobotOutgoingRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateCustomRobotOutgoingResponse
+        /// </returns>
+        public UpdateCustomRobotOutgoingResponse UpdateCustomRobotOutgoing(UpdateCustomRobotOutgoingRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateCustomRobotOutgoingHeaders headers = new UpdateCustomRobotOutgoingHeaders();
+            return UpdateCustomRobotOutgoingWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新自定义机器人回调地址</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateCustomRobotOutgoingRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateCustomRobotOutgoingResponse
+        /// </returns>
+        public async Task<UpdateCustomRobotOutgoingResponse> UpdateCustomRobotOutgoingAsync(UpdateCustomRobotOutgoingRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateCustomRobotOutgoingHeaders headers = new UpdateCustomRobotOutgoingHeaders();
+            return await UpdateCustomRobotOutgoingWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>更新安装到组织的机器人信息</para>
         /// </summary>
         /// 

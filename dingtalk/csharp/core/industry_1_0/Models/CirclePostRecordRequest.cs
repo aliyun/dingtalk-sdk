@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         [Validation(Required=false)]
         public long? EndTime { get; set; }
 
+        [NameInMap("lastPostId")]
+        [Validation(Required=false)]
+        public long? LastPostId { get; set; }
+
         [NameInMap("size")]
         [Validation(Required=false)]
         public long? Size { get; set; }

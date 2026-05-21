@@ -7070,6 +7070,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0
             {
                 query["env"] = request.Env;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FormUuid))
+            {
+                query["formUuid"] = request.FormUuid;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Language))
             {
                 query["language"] = request.Language;
@@ -7144,6 +7148,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Env))
             {
                 query["env"] = request.Env;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FormUuid))
+            {
+                query["formUuid"] = request.FormUuid;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Language))
             {
