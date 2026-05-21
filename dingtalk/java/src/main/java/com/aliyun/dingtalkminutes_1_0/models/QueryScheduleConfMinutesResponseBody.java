@@ -21,6 +21,9 @@ public class QueryScheduleConfMinutesResponseBody extends TeaModel {
     }
 
     public static class QueryScheduleConfMinutesResponseBodyMinutesDetails extends TeaModel {
+        @NameInMap("bizOrder")
+        public String bizOrder;
+
         @NameInMap("bizType")
         public Integer bizType;
 
@@ -54,6 +57,14 @@ public class QueryScheduleConfMinutesResponseBody extends TeaModel {
         public static QueryScheduleConfMinutesResponseBodyMinutesDetails build(java.util.Map<String, ?> map) throws Exception {
             QueryScheduleConfMinutesResponseBodyMinutesDetails self = new QueryScheduleConfMinutesResponseBodyMinutesDetails();
             return TeaModel.build(map, self);
+        }
+
+        public QueryScheduleConfMinutesResponseBodyMinutesDetails setBizOrder(String bizOrder) {
+            this.bizOrder = bizOrder;
+            return this;
+        }
+        public String getBizOrder() {
+            return this.bizOrder;
         }
 
         public QueryScheduleConfMinutesResponseBodyMinutesDetails setBizType(Integer bizType) {

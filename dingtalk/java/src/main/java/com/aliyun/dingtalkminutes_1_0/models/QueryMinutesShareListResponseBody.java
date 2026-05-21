@@ -43,6 +43,9 @@ public class QueryMinutesShareListResponseBody extends TeaModel {
     }
 
     public static class QueryMinutesShareListResponseBodyMinutesDetails extends TeaModel {
+        @NameInMap("bizOrder")
+        public String bizOrder;
+
         @NameInMap("bizType")
         public Integer bizType;
 
@@ -76,6 +79,14 @@ public class QueryMinutesShareListResponseBody extends TeaModel {
         public static QueryMinutesShareListResponseBodyMinutesDetails build(java.util.Map<String, ?> map) throws Exception {
             QueryMinutesShareListResponseBodyMinutesDetails self = new QueryMinutesShareListResponseBodyMinutesDetails();
             return TeaModel.build(map, self);
+        }
+
+        public QueryMinutesShareListResponseBodyMinutesDetails setBizOrder(String bizOrder) {
+            this.bizOrder = bizOrder;
+            return this;
+        }
+        public String getBizOrder() {
+            return this.bizOrder;
         }
 
         public QueryMinutesShareListResponseBodyMinutesDetails setBizType(Integer bizType) {

@@ -25,6 +25,13 @@ public class GetInstancesByIdListRequest extends TeaModel {
 
     /**
      * <strong>example:</strong>
+     * <p>FORM-THISISFORMUUID</p>
+     */
+    @NameInMap("formUuid")
+    public String formUuid;
+
+    /**
+     * <strong>example:</strong>
      * <p>zh_CN</p>
      */
     @NameInMap("language")
@@ -76,6 +83,14 @@ public class GetInstancesByIdListRequest extends TeaModel {
     }
     public String getEnv() {
         return this.env;
+    }
+
+    public GetInstancesByIdListRequest setFormUuid(String formUuid) {
+        this.formUuid = formUuid;
+        return this;
+    }
+    public String getFormUuid() {
+        return this.formUuid;
     }
 
     public GetInstancesByIdListRequest setLanguage(String language) {

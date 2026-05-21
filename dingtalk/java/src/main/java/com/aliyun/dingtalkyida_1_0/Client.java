@@ -2896,6 +2896,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("env", request.env);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.formUuid)) {
+            query.put("formUuid", request.formUuid);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.language)) {
             query.put("language", request.language);
         }

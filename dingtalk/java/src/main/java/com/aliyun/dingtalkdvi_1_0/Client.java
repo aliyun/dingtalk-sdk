@@ -1956,6 +1956,72 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>提交切客数据</p>
+     * 
+     * @param tmpReq SubmitCustomerSplitDataRequest
+     * @param headers SubmitCustomerSplitDataHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SubmitCustomerSplitDataResponse
+     */
+    public SubmitCustomerSplitDataResponse submitCustomerSplitDataWithOptions(SubmitCustomerSplitDataRequest tmpReq, SubmitCustomerSplitDataHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(tmpReq);
+        SubmitCustomerSplitDataShrinkRequest request = new SubmitCustomerSplitDataShrinkRequest();
+        com.aliyun.openapiutil.Client.convert(tmpReq, request);
+        if (!com.aliyun.teautil.Common.isUnset(tmpReq.splitParams)) {
+            request.splitParamsShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(tmpReq.splitParams, "splitParams", "json");
+        }
+
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.splitParamsShrink)) {
+            query.put("splitParams", request.splitParamsShrink);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SubmitCustomerSplitData"),
+            new TeaPair("version", "dvi_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/dvi/customersplit/submit"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SubmitCustomerSplitDataResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>提交切客数据</p>
+     * 
+     * @param request SubmitCustomerSplitDataRequest
+     * @return SubmitCustomerSplitDataResponse
+     */
+    public SubmitCustomerSplitDataResponse submitCustomerSplitData(SubmitCustomerSplitDataRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SubmitCustomerSplitDataHeaders headers = new SubmitCustomerSplitDataHeaders();
+        return this.submitCustomerSplitDataWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>更新设备绑定关系</p>
      * 
      * @param request UpdateDeviceBindingRequest

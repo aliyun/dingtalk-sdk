@@ -43,6 +43,9 @@ public class QueryCreateMinutesListResponseBody extends TeaModel {
     }
 
     public static class QueryCreateMinutesListResponseBodyMinutesDetails extends TeaModel {
+        @NameInMap("bizOrder")
+        public String bizOrder;
+
         @NameInMap("bizType")
         public Integer bizType;
 
@@ -76,6 +79,14 @@ public class QueryCreateMinutesListResponseBody extends TeaModel {
         public static QueryCreateMinutesListResponseBodyMinutesDetails build(java.util.Map<String, ?> map) throws Exception {
             QueryCreateMinutesListResponseBodyMinutesDetails self = new QueryCreateMinutesListResponseBodyMinutesDetails();
             return TeaModel.build(map, self);
+        }
+
+        public QueryCreateMinutesListResponseBodyMinutesDetails setBizOrder(String bizOrder) {
+            this.bizOrder = bizOrder;
+            return this;
+        }
+        public String getBizOrder() {
+            return this.bizOrder;
         }
 
         public QueryCreateMinutesListResponseBodyMinutesDetails setBizType(Integer bizType) {

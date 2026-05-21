@@ -21,6 +21,9 @@ public class BatchGetMinutesDetailsResponseBody extends TeaModel {
     }
 
     public static class BatchGetMinutesDetailsResponseBodyMinutesDetails extends TeaModel {
+        @NameInMap("bizOrder")
+        public String bizOrder;
+
         @NameInMap("bizType")
         public Integer bizType;
 
@@ -54,6 +57,14 @@ public class BatchGetMinutesDetailsResponseBody extends TeaModel {
         public static BatchGetMinutesDetailsResponseBodyMinutesDetails build(java.util.Map<String, ?> map) throws Exception {
             BatchGetMinutesDetailsResponseBodyMinutesDetails self = new BatchGetMinutesDetailsResponseBodyMinutesDetails();
             return TeaModel.build(map, self);
+        }
+
+        public BatchGetMinutesDetailsResponseBodyMinutesDetails setBizOrder(String bizOrder) {
+            this.bizOrder = bizOrder;
+            return this;
+        }
+        public String getBizOrder() {
+            return this.bizOrder;
         }
 
         public BatchGetMinutesDetailsResponseBodyMinutesDetails setBizType(Integer bizType) {

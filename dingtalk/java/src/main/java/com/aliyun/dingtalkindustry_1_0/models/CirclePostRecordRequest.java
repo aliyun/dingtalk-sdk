@@ -10,6 +10,9 @@ public class CirclePostRecordRequest extends TeaModel {
     @NameInMap("endTime")
     public Long endTime;
 
+    @NameInMap("lastPostId")
+    public Long lastPostId;
+
     @NameInMap("size")
     public Long size;
 
@@ -35,6 +38,14 @@ public class CirclePostRecordRequest extends TeaModel {
     }
     public Long getEndTime() {
         return this.endTime;
+    }
+
+    public CirclePostRecordRequest setLastPostId(Long lastPostId) {
+        this.lastPostId = lastPostId;
+        return this;
+    }
+    public Long getLastPostId() {
+        return this.lastPostId;
     }
 
     public CirclePostRecordRequest setSize(Long size) {
