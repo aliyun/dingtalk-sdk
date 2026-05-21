@@ -6604,6 +6604,8 @@ class Client(OpenApiClient):
             body['direction'] = request.direction
         if not UtilClient.is_unset(request.end_time):
             body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.last_post_id):
+            body['lastPostId'] = request.last_post_id
         if not UtilClient.is_unset(request.size):
             body['size'] = request.size
         if not UtilClient.is_unset(request.start_time):
@@ -6653,6 +6655,8 @@ class Client(OpenApiClient):
             body['direction'] = request.direction
         if not UtilClient.is_unset(request.end_time):
             body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.last_post_id):
+            body['lastPostId'] = request.last_post_id
         if not UtilClient.is_unset(request.size):
             body['size'] = request.size
         if not UtilClient.is_unset(request.start_time):

@@ -10003,11 +10003,13 @@ class CirclePostRecordRequest(TeaModel):
         self,
         direction: int = None,
         end_time: int = None,
+        last_post_id: int = None,
         size: int = None,
         start_time: int = None,
     ):
         self.direction = direction
         self.end_time = end_time
+        self.last_post_id = last_post_id
         self.size = size
         self.start_time = start_time
 
@@ -10024,6 +10026,8 @@ class CirclePostRecordRequest(TeaModel):
             result['direction'] = self.direction
         if self.end_time is not None:
             result['endTime'] = self.end_time
+        if self.last_post_id is not None:
+            result['lastPostId'] = self.last_post_id
         if self.size is not None:
             result['size'] = self.size
         if self.start_time is not None:
@@ -10036,6 +10040,8 @@ class CirclePostRecordRequest(TeaModel):
             self.direction = m.get('direction')
         if m.get('endTime') is not None:
             self.end_time = m.get('endTime')
+        if m.get('lastPostId') is not None:
+            self.last_post_id = m.get('lastPostId')
         if m.get('size') is not None:
             self.size = m.get('size')
         if m.get('startTime') is not None:

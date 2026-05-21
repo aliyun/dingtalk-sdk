@@ -3752,6 +3752,132 @@ class Client(OpenApiClient):
         headers = dingtalkdvi__1__0_models.SubmitAsrTaskHeaders()
         return await self.submit_asr_task_with_options_async(request, headers, runtime)
 
+    def submit_customer_split_data_with_options(
+        self,
+        tmp_req: dingtalkdvi__1__0_models.SubmitCustomerSplitDataRequest,
+        headers: dingtalkdvi__1__0_models.SubmitCustomerSplitDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.SubmitCustomerSplitDataResponse:
+        """
+        @summary 提交切客数据
+        
+        @param tmp_req: SubmitCustomerSplitDataRequest
+        @param headers: SubmitCustomerSplitDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SubmitCustomerSplitDataResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkdvi__1__0_models.SubmitCustomerSplitDataShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.split_params):
+            request.split_params_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.split_params, 'splitParams', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.split_params_shrink):
+            query['splitParams'] = request.split_params_shrink
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SubmitCustomerSplitData',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/customersplit/submit',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.SubmitCustomerSplitDataResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def submit_customer_split_data_with_options_async(
+        self,
+        tmp_req: dingtalkdvi__1__0_models.SubmitCustomerSplitDataRequest,
+        headers: dingtalkdvi__1__0_models.SubmitCustomerSplitDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.SubmitCustomerSplitDataResponse:
+        """
+        @summary 提交切客数据
+        
+        @param tmp_req: SubmitCustomerSplitDataRequest
+        @param headers: SubmitCustomerSplitDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SubmitCustomerSplitDataResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkdvi__1__0_models.SubmitCustomerSplitDataShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.split_params):
+            request.split_params_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.split_params, 'splitParams', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.split_params_shrink):
+            query['splitParams'] = request.split_params_shrink
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SubmitCustomerSplitData',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/customersplit/submit',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.SubmitCustomerSplitDataResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def submit_customer_split_data(
+        self,
+        request: dingtalkdvi__1__0_models.SubmitCustomerSplitDataRequest,
+    ) -> dingtalkdvi__1__0_models.SubmitCustomerSplitDataResponse:
+        """
+        @summary 提交切客数据
+        
+        @param request: SubmitCustomerSplitDataRequest
+        @return: SubmitCustomerSplitDataResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.SubmitCustomerSplitDataHeaders()
+        return self.submit_customer_split_data_with_options(request, headers, runtime)
+
+    async def submit_customer_split_data_async(
+        self,
+        request: dingtalkdvi__1__0_models.SubmitCustomerSplitDataRequest,
+    ) -> dingtalkdvi__1__0_models.SubmitCustomerSplitDataResponse:
+        """
+        @summary 提交切客数据
+        
+        @param request: SubmitCustomerSplitDataRequest
+        @return: SubmitCustomerSplitDataResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.SubmitCustomerSplitDataHeaders()
+        return await self.submit_customer_split_data_with_options_async(request, headers, runtime)
+
     def update_device_binding_with_options(
         self,
         request: dingtalkdvi__1__0_models.UpdateDeviceBindingRequest,

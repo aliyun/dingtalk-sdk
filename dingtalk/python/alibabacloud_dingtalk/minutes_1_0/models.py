@@ -349,6 +349,7 @@ class BatchGetMinutesDetailsRequest(TeaModel):
 class BatchGetMinutesDetailsResponseBodyMinutesDetails(TeaModel):
     def __init__(
         self,
+        biz_order: str = None,
         biz_type: int = None,
         creator_nick: str = None,
         creator_union_id: str = None,
@@ -360,6 +361,7 @@ class BatchGetMinutesDetailsResponseBodyMinutesDetails(TeaModel):
         task_uuid: str = None,
         title: str = None,
     ):
+        self.biz_order = biz_order
         self.biz_type = biz_type
         self.creator_nick = creator_nick
         self.creator_union_id = creator_union_id
@@ -380,6 +382,8 @@ class BatchGetMinutesDetailsResponseBodyMinutesDetails(TeaModel):
             return _map
 
         result = dict()
+        if self.biz_order is not None:
+            result['bizOrder'] = self.biz_order
         if self.biz_type is not None:
             result['bizType'] = self.biz_type
         if self.creator_nick is not None:
@@ -404,6 +408,8 @@ class BatchGetMinutesDetailsResponseBodyMinutesDetails(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('bizOrder') is not None:
+            self.biz_order = m.get('bizOrder')
         if m.get('bizType') is not None:
             self.biz_type = m.get('bizType')
         if m.get('creatorNick') is not None:
@@ -1980,6 +1986,7 @@ class QueryBizMinutesRequest(TeaModel):
 class QueryBizMinutesResponseBodyMinutesDetails(TeaModel):
     def __init__(
         self,
+        biz_order: str = None,
         biz_type: int = None,
         creator_nick: str = None,
         creator_union_id: str = None,
@@ -1991,6 +1998,7 @@ class QueryBizMinutesResponseBodyMinutesDetails(TeaModel):
         task_uuid: str = None,
         title: str = None,
     ):
+        self.biz_order = biz_order
         self.biz_type = biz_type
         self.creator_nick = creator_nick
         self.creator_union_id = creator_union_id
@@ -2011,6 +2019,8 @@ class QueryBizMinutesResponseBodyMinutesDetails(TeaModel):
             return _map
 
         result = dict()
+        if self.biz_order is not None:
+            result['bizOrder'] = self.biz_order
         if self.biz_type is not None:
             result['bizType'] = self.biz_type
         if self.creator_nick is not None:
@@ -2035,6 +2045,8 @@ class QueryBizMinutesResponseBodyMinutesDetails(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('bizOrder') is not None:
+            self.biz_order = m.get('bizOrder')
         if m.get('bizType') is not None:
             self.biz_type = m.get('bizType')
         if m.get('creatorNick') is not None:
@@ -2211,6 +2223,7 @@ class QueryCreateMinutesListRequest(TeaModel):
 class QueryCreateMinutesListResponseBodyMinutesDetails(TeaModel):
     def __init__(
         self,
+        biz_order: str = None,
         biz_type: int = None,
         creator_nick: str = None,
         creator_union_id: str = None,
@@ -2222,6 +2235,7 @@ class QueryCreateMinutesListResponseBodyMinutesDetails(TeaModel):
         task_uuid: str = None,
         title: str = None,
     ):
+        self.biz_order = biz_order
         self.biz_type = biz_type
         self.creator_nick = creator_nick
         self.creator_union_id = creator_union_id
@@ -2242,6 +2256,8 @@ class QueryCreateMinutesListResponseBodyMinutesDetails(TeaModel):
             return _map
 
         result = dict()
+        if self.biz_order is not None:
+            result['bizOrder'] = self.biz_order
         if self.biz_type is not None:
             result['bizType'] = self.biz_type
         if self.creator_nick is not None:
@@ -2266,6 +2282,8 @@ class QueryCreateMinutesListResponseBodyMinutesDetails(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('bizOrder') is not None:
+            self.biz_order = m.get('bizOrder')
         if m.get('bizType') is not None:
             self.biz_type = m.get('bizType')
         if m.get('creatorNick') is not None:
@@ -3143,6 +3161,7 @@ class QueryMinutesShareListRequest(TeaModel):
 class QueryMinutesShareListResponseBodyMinutesDetails(TeaModel):
     def __init__(
         self,
+        biz_order: str = None,
         biz_type: int = None,
         creator_nick: str = None,
         creator_union_id: str = None,
@@ -3154,6 +3173,7 @@ class QueryMinutesShareListResponseBodyMinutesDetails(TeaModel):
         task_uuid: str = None,
         title: str = None,
     ):
+        self.biz_order = biz_order
         self.biz_type = biz_type
         self.creator_nick = creator_nick
         self.creator_union_id = creator_union_id
@@ -3174,6 +3194,8 @@ class QueryMinutesShareListResponseBodyMinutesDetails(TeaModel):
             return _map
 
         result = dict()
+        if self.biz_order is not None:
+            result['bizOrder'] = self.biz_order
         if self.biz_type is not None:
             result['bizType'] = self.biz_type
         if self.creator_nick is not None:
@@ -3198,6 +3220,8 @@ class QueryMinutesShareListResponseBodyMinutesDetails(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('bizOrder') is not None:
+            self.biz_order = m.get('bizOrder')
         if m.get('bizType') is not None:
             self.biz_type = m.get('bizType')
         if m.get('creatorNick') is not None:
@@ -4413,6 +4437,7 @@ class QueryScheduleConfMinutesRequest(TeaModel):
 class QueryScheduleConfMinutesResponseBodyMinutesDetails(TeaModel):
     def __init__(
         self,
+        biz_order: str = None,
         biz_type: int = None,
         creator_nick: str = None,
         creator_union_id: str = None,
@@ -4424,6 +4449,7 @@ class QueryScheduleConfMinutesResponseBodyMinutesDetails(TeaModel):
         task_uuid: str = None,
         title: str = None,
     ):
+        self.biz_order = biz_order
         self.biz_type = biz_type
         self.creator_nick = creator_nick
         self.creator_union_id = creator_union_id
@@ -4444,6 +4470,8 @@ class QueryScheduleConfMinutesResponseBodyMinutesDetails(TeaModel):
             return _map
 
         result = dict()
+        if self.biz_order is not None:
+            result['bizOrder'] = self.biz_order
         if self.biz_type is not None:
             result['bizType'] = self.biz_type
         if self.creator_nick is not None:
@@ -4468,6 +4496,8 @@ class QueryScheduleConfMinutesResponseBodyMinutesDetails(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('bizOrder') is not None:
+            self.biz_order = m.get('bizOrder')
         if m.get('bizType') is not None:
             self.biz_type = m.get('bizType')
         if m.get('creatorNick') is not None:

@@ -5042,6 +5042,8 @@ class Client(OpenApiClient):
             query['appType'] = request.app_type
         if not UtilClient.is_unset(request.env):
             query['env'] = request.env
+        if not UtilClient.is_unset(request.form_uuid):
+            query['formUuid'] = request.form_uuid
         if not UtilClient.is_unset(request.language):
             query['language'] = request.language
         if not UtilClient.is_unset(request.process_instance_ids):
@@ -5095,6 +5097,8 @@ class Client(OpenApiClient):
             query['appType'] = request.app_type
         if not UtilClient.is_unset(request.env):
             query['env'] = request.env
+        if not UtilClient.is_unset(request.form_uuid):
+            query['formUuid'] = request.form_uuid
         if not UtilClient.is_unset(request.language):
             query['language'] = request.language
         if not UtilClient.is_unset(request.process_instance_ids):

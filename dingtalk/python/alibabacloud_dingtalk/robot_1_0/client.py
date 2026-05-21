@@ -3230,6 +3230,124 @@ class Client(OpenApiClient):
         headers = dingtalkrobot__1__0_models.SetRobotPluginHeaders()
         return await self.set_robot_plugin_with_options_async(request, headers, runtime)
 
+    def update_custom_robot_outgoing_with_options(
+        self,
+        request: dingtalkrobot__1__0_models.UpdateCustomRobotOutgoingRequest,
+        headers: dingtalkrobot__1__0_models.UpdateCustomRobotOutgoingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.UpdateCustomRobotOutgoingResponse:
+        """
+        @summary 更新自定义机器人回调地址
+        
+        @param request: UpdateCustomRobotOutgoingRequest
+        @param headers: UpdateCustomRobotOutgoingHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateCustomRobotOutgoingResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.outgoing_url):
+            body['outgoingUrl'] = request.outgoing_url
+        if not UtilClient.is_unset(request.token):
+            body['token'] = request.token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateCustomRobotOutgoing',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/custom/outgoing/update',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.UpdateCustomRobotOutgoingResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_custom_robot_outgoing_with_options_async(
+        self,
+        request: dingtalkrobot__1__0_models.UpdateCustomRobotOutgoingRequest,
+        headers: dingtalkrobot__1__0_models.UpdateCustomRobotOutgoingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.UpdateCustomRobotOutgoingResponse:
+        """
+        @summary 更新自定义机器人回调地址
+        
+        @param request: UpdateCustomRobotOutgoingRequest
+        @param headers: UpdateCustomRobotOutgoingHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateCustomRobotOutgoingResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.outgoing_url):
+            body['outgoingUrl'] = request.outgoing_url
+        if not UtilClient.is_unset(request.token):
+            body['token'] = request.token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateCustomRobotOutgoing',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/custom/outgoing/update',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.UpdateCustomRobotOutgoingResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_custom_robot_outgoing(
+        self,
+        request: dingtalkrobot__1__0_models.UpdateCustomRobotOutgoingRequest,
+    ) -> dingtalkrobot__1__0_models.UpdateCustomRobotOutgoingResponse:
+        """
+        @summary 更新自定义机器人回调地址
+        
+        @param request: UpdateCustomRobotOutgoingRequest
+        @return: UpdateCustomRobotOutgoingResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.UpdateCustomRobotOutgoingHeaders()
+        return self.update_custom_robot_outgoing_with_options(request, headers, runtime)
+
+    async def update_custom_robot_outgoing_async(
+        self,
+        request: dingtalkrobot__1__0_models.UpdateCustomRobotOutgoingRequest,
+    ) -> dingtalkrobot__1__0_models.UpdateCustomRobotOutgoingResponse:
+        """
+        @summary 更新自定义机器人回调地址
+        
+        @param request: UpdateCustomRobotOutgoingRequest
+        @return: UpdateCustomRobotOutgoingResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.UpdateCustomRobotOutgoingHeaders()
+        return await self.update_custom_robot_outgoing_with_options_async(request, headers, runtime)
+
     def update_installed_robot_with_options(
         self,
         request: dingtalkrobot__1__0_models.UpdateInstalledRobotRequest,

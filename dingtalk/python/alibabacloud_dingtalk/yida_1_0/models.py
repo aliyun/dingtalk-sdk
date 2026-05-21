@@ -8003,6 +8003,7 @@ class GetInstancesByIdListRequest(TeaModel):
         self,
         app_type: str = None,
         env: str = None,
+        form_uuid: str = None,
         language: str = None,
         process_instance_ids: str = None,
         system_token: str = None,
@@ -8011,6 +8012,7 @@ class GetInstancesByIdListRequest(TeaModel):
         # This parameter is required.
         self.app_type = app_type
         self.env = env
+        self.form_uuid = form_uuid
         self.language = language
         # This parameter is required.
         self.process_instance_ids = process_instance_ids
@@ -8032,6 +8034,8 @@ class GetInstancesByIdListRequest(TeaModel):
             result['appType'] = self.app_type
         if self.env is not None:
             result['env'] = self.env
+        if self.form_uuid is not None:
+            result['formUuid'] = self.form_uuid
         if self.language is not None:
             result['language'] = self.language
         if self.process_instance_ids is not None:
@@ -8048,6 +8052,8 @@ class GetInstancesByIdListRequest(TeaModel):
             self.app_type = m.get('appType')
         if m.get('env') is not None:
             self.env = m.get('env')
+        if m.get('formUuid') is not None:
+            self.form_uuid = m.get('formUuid')
         if m.get('language') is not None:
             self.language = m.get('language')
         if m.get('processInstanceIds') is not None:
