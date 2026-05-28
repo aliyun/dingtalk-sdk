@@ -1281,6 +1281,194 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>创建企业智能体应用</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateAgentRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateAgentHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateAgentResponse
+        /// </returns>
+        public CreateAgentResponse CreateAgentWithOptions(CreateAgentRequest request, CreateAgentHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppName))
+            {
+                body["appName"] = request.AppName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Desc))
+            {
+                body["desc"] = request.Desc;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PreviewMediaId))
+            {
+                body["previewMediaId"] = request.PreviewMediaId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RobotMediaId))
+            {
+                body["robotMediaId"] = request.RobotMediaId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RobotName))
+            {
+                body["robotName"] = request.RobotName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Userid))
+            {
+                body["userid"] = request.Userid;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateAgent",
+                Version = "microApp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/microApp/agent/create",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateAgentResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建企业智能体应用</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateAgentRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateAgentHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateAgentResponse
+        /// </returns>
+        public async Task<CreateAgentResponse> CreateAgentWithOptionsAsync(CreateAgentRequest request, CreateAgentHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppName))
+            {
+                body["appName"] = request.AppName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Desc))
+            {
+                body["desc"] = request.Desc;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PreviewMediaId))
+            {
+                body["previewMediaId"] = request.PreviewMediaId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RobotMediaId))
+            {
+                body["robotMediaId"] = request.RobotMediaId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RobotName))
+            {
+                body["robotName"] = request.RobotName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Userid))
+            {
+                body["userid"] = request.Userid;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateAgent",
+                Version = "microApp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/microApp/agent/create",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateAgentResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建企业智能体应用</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateAgentRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateAgentResponse
+        /// </returns>
+        public CreateAgentResponse CreateAgent(CreateAgentRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateAgentHeaders headers = new CreateAgentHeaders();
+            return CreateAgentWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建企业智能体应用</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateAgentRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateAgentResponse
+        /// </returns>
+        public async Task<CreateAgentResponse> CreateAgentAsync(CreateAgentRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateAgentHeaders headers = new CreateAgentHeaders();
+            return await CreateAgentWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>创建Apaas应用</para>
         /// </summary>
         /// 
@@ -2925,6 +3113,154 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>查询企业内部应用审核详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetPublishAuditRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetPublishAuditHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetPublishAuditResponse
+        /// </returns>
+        public GetPublishAuditResponse GetPublishAuditWithOptions(GetPublishAuditRequest request, GetPublishAuditHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AuditId))
+            {
+                body["auditId"] = request.AuditId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetPublishAudit",
+                Version = "microApp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/microApp/enterpriseSelfBuiltPublishAudit/detail",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetPublishAuditResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询企业内部应用审核详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetPublishAuditRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetPublishAuditHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetPublishAuditResponse
+        /// </returns>
+        public async Task<GetPublishAuditResponse> GetPublishAuditWithOptionsAsync(GetPublishAuditRequest request, GetPublishAuditHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AuditId))
+            {
+                body["auditId"] = request.AuditId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetPublishAudit",
+                Version = "microApp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/microApp/enterpriseSelfBuiltPublishAudit/detail",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetPublishAuditResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询企业内部应用审核详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetPublishAuditRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetPublishAuditResponse
+        /// </returns>
+        public GetPublishAuditResponse GetPublishAudit(GetPublishAuditRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetPublishAuditHeaders headers = new GetPublishAuditHeaders();
+            return GetPublishAuditWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询企业内部应用审核详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetPublishAuditRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetPublishAuditResponse
+        /// </returns>
+        public async Task<GetPublishAuditResponse> GetPublishAuditAsync(GetPublishAuditRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetPublishAuditHeaders headers = new GetPublishAuditHeaders();
+            return await GetPublishAuditWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>用户是否拥有开发者权限</para>
         /// </summary>
         /// 
@@ -4127,6 +4463,162 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             ListInnerAppVersionHeaders headers = new ListInnerAppVersionHeaders();
             return await ListInnerAppVersionWithOptionsAsync(agentId, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>分页查询待审核发布审核单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListPendingPublishAuditsRequest
+        /// </param>
+        /// <param name="headers">
+        /// ListPendingPublishAuditsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListPendingPublishAuditsResponse
+        /// </returns>
+        public ListPendingPublishAuditsResponse ListPendingPublishAuditsWithOptions(ListPendingPublishAuditsRequest request, ListPendingPublishAuditsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                body["pageSize"] = request.PageSize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageToken))
+            {
+                body["pageToken"] = request.PageToken;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ListPendingPublishAudits",
+                Version = "microApp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/microApp/enterpriseSelfBuiltPublishAudit/pendingList",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ListPendingPublishAuditsResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>分页查询待审核发布审核单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListPendingPublishAuditsRequest
+        /// </param>
+        /// <param name="headers">
+        /// ListPendingPublishAuditsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListPendingPublishAuditsResponse
+        /// </returns>
+        public async Task<ListPendingPublishAuditsResponse> ListPendingPublishAuditsWithOptionsAsync(ListPendingPublishAuditsRequest request, ListPendingPublishAuditsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                body["pageSize"] = request.PageSize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageToken))
+            {
+                body["pageToken"] = request.PageToken;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ListPendingPublishAudits",
+                Version = "microApp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/microApp/enterpriseSelfBuiltPublishAudit/pendingList",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ListPendingPublishAuditsResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>分页查询待审核发布审核单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListPendingPublishAuditsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListPendingPublishAuditsResponse
+        /// </returns>
+        public ListPendingPublishAuditsResponse ListPendingPublishAudits(ListPendingPublishAuditsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListPendingPublishAuditsHeaders headers = new ListPendingPublishAuditsHeaders();
+            return ListPendingPublishAuditsWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>分页查询待审核发布审核单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListPendingPublishAuditsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListPendingPublishAuditsResponse
+        /// </returns>
+        public async Task<ListPendingPublishAuditsResponse> ListPendingPublishAuditsAsync(ListPendingPublishAuditsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListPendingPublishAuditsHeaders headers = new ListPendingPublishAuditsHeaders();
+            return await ListPendingPublishAuditsWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>
@@ -6267,6 +6759,194 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             UpdateInnerAppHeaders headers = new UpdateInnerAppHeaders();
             return await UpdateInnerAppWithOptionsAsync(agentId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>回写审核结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdatePublishAuditResultRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdatePublishAuditResultHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdatePublishAuditResultResponse
+        /// </returns>
+        public UpdatePublishAuditResultResponse UpdatePublishAuditResultWithOptions(UpdatePublishAuditResultRequest request, UpdatePublishAuditResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AgentId))
+            {
+                body["agentId"] = request.AgentId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AuditId))
+            {
+                body["auditId"] = request.AuditId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                body["operatorId"] = request.OperatorId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RejectReason))
+            {
+                body["rejectReason"] = request.RejectReason;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Status))
+            {
+                body["status"] = request.Status;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VersionId))
+            {
+                body["versionId"] = request.VersionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdatePublishAuditResult",
+                Version = "microApp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/microApp/enterprisePublishAudit/submitResult",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdatePublishAuditResultResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>回写审核结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdatePublishAuditResultRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdatePublishAuditResultHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdatePublishAuditResultResponse
+        /// </returns>
+        public async Task<UpdatePublishAuditResultResponse> UpdatePublishAuditResultWithOptionsAsync(UpdatePublishAuditResultRequest request, UpdatePublishAuditResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AgentId))
+            {
+                body["agentId"] = request.AgentId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AuditId))
+            {
+                body["auditId"] = request.AuditId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                body["operatorId"] = request.OperatorId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RejectReason))
+            {
+                body["rejectReason"] = request.RejectReason;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Status))
+            {
+                body["status"] = request.Status;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VersionId))
+            {
+                body["versionId"] = request.VersionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdatePublishAuditResult",
+                Version = "microApp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/microApp/enterprisePublishAudit/submitResult",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdatePublishAuditResultResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>回写审核结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdatePublishAuditResultRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdatePublishAuditResultResponse
+        /// </returns>
+        public UpdatePublishAuditResultResponse UpdatePublishAuditResult(UpdatePublishAuditResultRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdatePublishAuditResultHeaders headers = new UpdatePublishAuditResultHeaders();
+            return UpdatePublishAuditResultWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>回写审核结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdatePublishAuditResultRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdatePublishAuditResultResponse
+        /// </returns>
+        public async Task<UpdatePublishAuditResultResponse> UpdatePublishAuditResultAsync(UpdatePublishAuditResultRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdatePublishAuditResultHeaders headers = new UpdatePublishAuditResultHeaders();
+            return await UpdatePublishAuditResultWithOptionsAsync(request, headers, runtime);
         }
 
     }

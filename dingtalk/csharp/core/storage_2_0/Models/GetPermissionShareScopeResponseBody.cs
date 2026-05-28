@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_2_0.Models
         [Validation(Required=false)]
         public string Scope { get; set; }
 
+        [NameInMap("scopeWithRole")]
+        [Validation(Required=false)]
+        public string ScopeWithRole { get; set; }
+
     }
 
 }

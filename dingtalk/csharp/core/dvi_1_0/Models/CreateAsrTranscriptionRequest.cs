@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkdvi_1_0.Models
         [Validation(Required=false)]
         public string BizKey { get; set; }
 
+        [NameInMap("phrases")]
+        [Validation(Required=false)]
+        public List<string> Phrases { get; set; }
+
         /// <summary>
         /// <para>This parameter is required.</para>
         /// </summary>

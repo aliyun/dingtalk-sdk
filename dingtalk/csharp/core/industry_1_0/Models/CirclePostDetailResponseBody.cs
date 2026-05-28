@@ -37,9 +37,17 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
             [Validation(Required=false)]
             public long? LikeCount { get; set; }
 
+            [NameInMap("mediaFileIdList")]
+            [Validation(Required=false)]
+            public List<string> MediaFileIdList { get; set; }
+
             [NameInMap("mediaUrlList")]
             [Validation(Required=false)]
             public List<string> MediaUrlList { get; set; }
+
+            [NameInMap("outfitType")]
+            [Validation(Required=false)]
+            public string OutfitType { get; set; }
 
             [NameInMap("postId")]
             [Validation(Required=false)]
@@ -70,6 +78,10 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
                 public string ProductName { get; set; }
 
             }
+
+            [NameInMap("score")]
+            [Validation(Required=false)]
+            public double? Score { get; set; }
 
             [NameInMap("status")]
             [Validation(Required=false)]

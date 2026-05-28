@@ -4386,6 +4386,10 @@ namespace AlibabaCloud.SDK.Dingtalkrobot_1_0
             {
                 body["token"] = request.Token;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserCustomToken))
+            {
+                body["userCustomToken"] = request.UserCustomToken;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -4444,6 +4448,10 @@ namespace AlibabaCloud.SDK.Dingtalkrobot_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Token))
             {
                 body["token"] = request.Token;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserCustomToken))
+            {
+                body["userCustomToken"] = request.UserCustomToken;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

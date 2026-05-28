@@ -21,9 +21,27 @@ namespace AlibabaCloud.SDK.Dingtalkdvi_1_0.Models
                 [Validation(Required=false)]
                 public List<GetServiceQualityInspectionResponseBodyResultGroupListItemList> ItemList { get; set; }
                 public class GetServiceQualityInspectionResponseBodyResultGroupListItemList : TeaModel {
+                    [NameInMap("citations")]
+                    [Validation(Required=false)]
+                    public List<GetServiceQualityInspectionResponseBodyResultGroupListItemListCitations> Citations { get; set; }
+                    public class GetServiceQualityInspectionResponseBodyResultGroupListItemListCitations : TeaModel {
+                        [NameInMap("content")]
+                        [Validation(Required=false)]
+                        public string Content { get; set; }
+
+                        [NameInMap("time")]
+                        [Validation(Required=false)]
+                        public long? Time { get; set; }
+
+                    }
+
                     [NameInMap("flowName")]
                     [Validation(Required=false)]
                     public string FlowName { get; set; }
+
+                    [NameInMap("highlights")]
+                    [Validation(Required=false)]
+                    public string Highlights { get; set; }
 
                     [NameInMap("isHit")]
                     [Validation(Required=false)]

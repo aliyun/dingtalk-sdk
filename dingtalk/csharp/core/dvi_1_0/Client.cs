@@ -382,6 +382,10 @@ namespace AlibabaCloud.SDK.Dingtalkdvi_1_0
             {
                 body["bizKey"] = request.BizKey;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Phrases))
+            {
+                body["phrases"] = request.Phrases;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Url))
             {
                 body["url"] = request.Url;
@@ -440,6 +444,10 @@ namespace AlibabaCloud.SDK.Dingtalkdvi_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizKey))
             {
                 body["bizKey"] = request.BizKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Phrases))
+            {
+                body["phrases"] = request.Phrases;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Url))
             {

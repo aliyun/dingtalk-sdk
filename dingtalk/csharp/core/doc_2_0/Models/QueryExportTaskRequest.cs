@@ -6,26 +6,22 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkrobot_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
 {
-    public class UpdateCustomRobotOutgoingRequest : TeaModel {
+    public class QueryExportTaskRequest : TeaModel {
         /// <summary>
         /// <para>This parameter is required.</para>
         /// </summary>
-        [NameInMap("outgoingUrl")]
+        [NameInMap("operatorId")]
         [Validation(Required=false)]
-        public string OutgoingUrl { get; set; }
+        public string OperatorId { get; set; }
 
         /// <summary>
         /// <para>This parameter is required.</para>
         /// </summary>
-        [NameInMap("token")]
+        [NameInMap("taskId")]
         [Validation(Required=false)]
-        public string Token { get; set; }
-
-        [NameInMap("userCustomToken")]
-        [Validation(Required=false)]
-        public string UserCustomToken { get; set; }
+        public string TaskId { get; set; }
 
     }
 
