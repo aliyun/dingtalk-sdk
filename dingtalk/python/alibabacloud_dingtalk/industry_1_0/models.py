@@ -9770,10 +9770,13 @@ class CirclePostDetailResponseBodyResult(TeaModel):
         dislike_count: int = None,
         gmt_create: str = None,
         like_count: int = None,
+        media_file_id_list: List[str] = None,
         media_url_list: List[str] = None,
+        outfit_type: str = None,
         post_id: int = None,
         post_type: str = None,
         products: List[CirclePostDetailResponseBodyResultProducts] = None,
+        score: float = None,
         status: str = None,
         tag_list: List[CirclePostDetailResponseBodyResultTagList] = None,
         title: str = None,
@@ -9787,10 +9790,13 @@ class CirclePostDetailResponseBodyResult(TeaModel):
         self.dislike_count = dislike_count
         self.gmt_create = gmt_create
         self.like_count = like_count
+        self.media_file_id_list = media_file_id_list
         self.media_url_list = media_url_list
+        self.outfit_type = outfit_type
         self.post_id = post_id
         self.post_type = post_type
         self.products = products
+        self.score = score
         self.status = status
         self.tag_list = tag_list
         self.title = title
@@ -9826,8 +9832,12 @@ class CirclePostDetailResponseBodyResult(TeaModel):
             result['gmtCreate'] = self.gmt_create
         if self.like_count is not None:
             result['likeCount'] = self.like_count
+        if self.media_file_id_list is not None:
+            result['mediaFileIdList'] = self.media_file_id_list
         if self.media_url_list is not None:
             result['mediaUrlList'] = self.media_url_list
+        if self.outfit_type is not None:
+            result['outfitType'] = self.outfit_type
         if self.post_id is not None:
             result['postId'] = self.post_id
         if self.post_type is not None:
@@ -9836,6 +9846,8 @@ class CirclePostDetailResponseBodyResult(TeaModel):
         if self.products is not None:
             for k in self.products:
                 result['products'].append(k.to_map() if k else None)
+        if self.score is not None:
+            result['score'] = self.score
         if self.status is not None:
             result['status'] = self.status
         result['tagList'] = []
@@ -9866,8 +9878,12 @@ class CirclePostDetailResponseBodyResult(TeaModel):
             self.gmt_create = m.get('gmtCreate')
         if m.get('likeCount') is not None:
             self.like_count = m.get('likeCount')
+        if m.get('mediaFileIdList') is not None:
+            self.media_file_id_list = m.get('mediaFileIdList')
         if m.get('mediaUrlList') is not None:
             self.media_url_list = m.get('mediaUrlList')
+        if m.get('outfitType') is not None:
+            self.outfit_type = m.get('outfitType')
         if m.get('postId') is not None:
             self.post_id = m.get('postId')
         if m.get('postType') is not None:
@@ -9877,6 +9893,8 @@ class CirclePostDetailResponseBodyResult(TeaModel):
             for k in m.get('products'):
                 temp_model = CirclePostDetailResponseBodyResultProducts()
                 self.products.append(temp_model.from_map(k))
+        if m.get('score') is not None:
+            self.score = m.get('score')
         if m.get('status') is not None:
             self.status = m.get('status')
         self.tag_list = []

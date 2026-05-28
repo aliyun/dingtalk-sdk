@@ -6332,6 +6332,124 @@ class Client(OpenApiClient):
         headers = dingtalkdoc__2__0_models.QueryDocContentHeaders()
         return await self.query_doc_content_with_options_async(dentry_uuid, request, headers, runtime)
 
+    def query_export_task_with_options(
+        self,
+        request: dingtalkdoc__2__0_models.QueryExportTaskRequest,
+        headers: dingtalkdoc__2__0_models.QueryExportTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.QueryExportTaskResponse:
+        """
+        @summary 通过taskId查询文档导出任务状态
+        
+        @param request: QueryExportTaskRequest
+        @param headers: QueryExportTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryExportTaskResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.task_id):
+            query['taskId'] = request.task_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryExportTask',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/me/export/task/query',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.QueryExportTaskResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_export_task_with_options_async(
+        self,
+        request: dingtalkdoc__2__0_models.QueryExportTaskRequest,
+        headers: dingtalkdoc__2__0_models.QueryExportTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.QueryExportTaskResponse:
+        """
+        @summary 通过taskId查询文档导出任务状态
+        
+        @param request: QueryExportTaskRequest
+        @param headers: QueryExportTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryExportTaskResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.task_id):
+            query['taskId'] = request.task_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryExportTask',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/me/export/task/query',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.QueryExportTaskResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_export_task(
+        self,
+        request: dingtalkdoc__2__0_models.QueryExportTaskRequest,
+    ) -> dingtalkdoc__2__0_models.QueryExportTaskResponse:
+        """
+        @summary 通过taskId查询文档导出任务状态
+        
+        @param request: QueryExportTaskRequest
+        @return: QueryExportTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.QueryExportTaskHeaders()
+        return self.query_export_task_with_options(request, headers, runtime)
+
+    async def query_export_task_async(
+        self,
+        request: dingtalkdoc__2__0_models.QueryExportTaskRequest,
+    ) -> dingtalkdoc__2__0_models.QueryExportTaskResponse:
+        """
+        @summary 通过taskId查询文档导出任务状态
+        
+        @param request: QueryExportTaskRequest
+        @return: QueryExportTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.QueryExportTaskHeaders()
+        return await self.query_export_task_with_options_async(request, headers, runtime)
+
     def query_get_content_job_with_options(
         self,
         dentry_uuid: str,

@@ -4338,11 +4338,13 @@ class UpdateCustomRobotOutgoingRequest(TeaModel):
         self,
         outgoing_url: str = None,
         token: str = None,
+        user_custom_token: str = None,
     ):
         # This parameter is required.
         self.outgoing_url = outgoing_url
         # This parameter is required.
         self.token = token
+        self.user_custom_token = user_custom_token
 
     def validate(self):
         pass
@@ -4357,6 +4359,8 @@ class UpdateCustomRobotOutgoingRequest(TeaModel):
             result['outgoingUrl'] = self.outgoing_url
         if self.token is not None:
             result['token'] = self.token
+        if self.user_custom_token is not None:
+            result['userCustomToken'] = self.user_custom_token
         return result
 
     def from_map(self, m: dict = None):
@@ -4365,6 +4369,8 @@ class UpdateCustomRobotOutgoingRequest(TeaModel):
             self.outgoing_url = m.get('outgoingUrl')
         if m.get('token') is not None:
             self.token = m.get('token')
+        if m.get('userCustomToken') is not None:
+            self.user_custom_token = m.get('userCustomToken')
         return self
 
 

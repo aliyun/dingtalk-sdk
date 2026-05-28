@@ -1749,8 +1749,10 @@ class GetPermissionShareScopeResponseBody(TeaModel):
     def __init__(
         self,
         scope: str = None,
+        scope_with_role: str = None,
     ):
         self.scope = scope
+        self.scope_with_role = scope_with_role
 
     def validate(self):
         pass
@@ -1763,12 +1765,16 @@ class GetPermissionShareScopeResponseBody(TeaModel):
         result = dict()
         if self.scope is not None:
             result['scope'] = self.scope
+        if self.scope_with_role is not None:
+            result['scopeWithRole'] = self.scope_with_role
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('scope') is not None:
             self.scope = m.get('scope')
+        if m.get('scopeWithRole') is not None:
+            self.scope_with_role = m.get('scopeWithRole')
         return self
 
 

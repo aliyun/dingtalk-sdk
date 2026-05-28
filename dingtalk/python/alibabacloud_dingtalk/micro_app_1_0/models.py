@@ -1048,6 +1048,182 @@ class AyunTestOnlineResponse(TeaModel):
         return self
 
 
+class CreateAgentHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateAgentRequest(TeaModel):
+    def __init__(
+        self,
+        app_name: str = None,
+        desc: str = None,
+        preview_media_id: str = None,
+        robot_media_id: str = None,
+        robot_name: str = None,
+        userid: str = None,
+    ):
+        self.app_name = app_name
+        self.desc = desc
+        self.preview_media_id = preview_media_id
+        self.robot_media_id = robot_media_id
+        self.robot_name = robot_name
+        self.userid = userid
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_name is not None:
+            result['appName'] = self.app_name
+        if self.desc is not None:
+            result['desc'] = self.desc
+        if self.preview_media_id is not None:
+            result['previewMediaId'] = self.preview_media_id
+        if self.robot_media_id is not None:
+            result['robotMediaId'] = self.robot_media_id
+        if self.robot_name is not None:
+            result['robotName'] = self.robot_name
+        if self.userid is not None:
+            result['userid'] = self.userid
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appName') is not None:
+            self.app_name = m.get('appName')
+        if m.get('desc') is not None:
+            self.desc = m.get('desc')
+        if m.get('previewMediaId') is not None:
+            self.preview_media_id = m.get('previewMediaId')
+        if m.get('robotMediaId') is not None:
+            self.robot_media_id = m.get('robotMediaId')
+        if m.get('robotName') is not None:
+            self.robot_name = m.get('robotName')
+        if m.get('userid') is not None:
+            self.userid = m.get('userid')
+        return self
+
+
+class CreateAgentResponseBody(TeaModel):
+    def __init__(
+        self,
+        agent_id: str = None,
+        client_id: str = None,
+        client_secret: str = None,
+        robot_code: str = None,
+    ):
+        self.agent_id = agent_id
+        self.client_id = client_id
+        self.client_secret = client_secret
+        self.robot_code = robot_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.agent_id is not None:
+            result['agentId'] = self.agent_id
+        if self.client_id is not None:
+            result['clientId'] = self.client_id
+        if self.client_secret is not None:
+            result['clientSecret'] = self.client_secret
+        if self.robot_code is not None:
+            result['robotCode'] = self.robot_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('agentId') is not None:
+            self.agent_id = m.get('agentId')
+        if m.get('clientId') is not None:
+            self.client_id = m.get('clientId')
+        if m.get('clientSecret') is not None:
+            self.client_secret = m.get('clientSecret')
+        if m.get('robotCode') is not None:
+            self.robot_code = m.get('robotCode')
+        return self
+
+
+class CreateAgentResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CreateAgentResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CreateAgentResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CreateApaasAppHeaders(TeaModel):
     def __init__(
         self,
@@ -2783,6 +2959,241 @@ class GetMicroAppUserAccessResponse(TeaModel):
         return self
 
 
+class GetPublishAuditHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetPublishAuditRequest(TeaModel):
+    def __init__(
+        self,
+        audit_id: str = None,
+    ):
+        self.audit_id = audit_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.audit_id is not None:
+            result['auditId'] = self.audit_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('auditId') is not None:
+            self.audit_id = m.get('auditId')
+        return self
+
+
+class GetPublishAuditResponseBodyAudit(TeaModel):
+    def __init__(
+        self,
+        agent_id: str = None,
+        app_icon: str = None,
+        app_name: str = None,
+        approval_content: str = None,
+        audit_id: str = None,
+        corp_id: str = None,
+        creator_user_id: str = None,
+        release_note: str = None,
+        scene_type: int = None,
+        status: int = None,
+        submit_time: str = None,
+        version: str = None,
+        version_detail_url: str = None,
+        version_id: str = None,
+    ):
+        self.agent_id = agent_id
+        self.app_icon = app_icon
+        self.app_name = app_name
+        self.approval_content = approval_content
+        self.audit_id = audit_id
+        self.corp_id = corp_id
+        self.creator_user_id = creator_user_id
+        self.release_note = release_note
+        self.scene_type = scene_type
+        self.status = status
+        self.submit_time = submit_time
+        self.version = version
+        self.version_detail_url = version_detail_url
+        self.version_id = version_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.agent_id is not None:
+            result['agentId'] = self.agent_id
+        if self.app_icon is not None:
+            result['appIcon'] = self.app_icon
+        if self.app_name is not None:
+            result['appName'] = self.app_name
+        if self.approval_content is not None:
+            result['approvalContent'] = self.approval_content
+        if self.audit_id is not None:
+            result['auditId'] = self.audit_id
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.creator_user_id is not None:
+            result['creatorUserId'] = self.creator_user_id
+        if self.release_note is not None:
+            result['releaseNote'] = self.release_note
+        if self.scene_type is not None:
+            result['sceneType'] = self.scene_type
+        if self.status is not None:
+            result['status'] = self.status
+        if self.submit_time is not None:
+            result['submitTime'] = self.submit_time
+        if self.version is not None:
+            result['version'] = self.version
+        if self.version_detail_url is not None:
+            result['versionDetailUrl'] = self.version_detail_url
+        if self.version_id is not None:
+            result['versionId'] = self.version_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('agentId') is not None:
+            self.agent_id = m.get('agentId')
+        if m.get('appIcon') is not None:
+            self.app_icon = m.get('appIcon')
+        if m.get('appName') is not None:
+            self.app_name = m.get('appName')
+        if m.get('approvalContent') is not None:
+            self.approval_content = m.get('approvalContent')
+        if m.get('auditId') is not None:
+            self.audit_id = m.get('auditId')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('creatorUserId') is not None:
+            self.creator_user_id = m.get('creatorUserId')
+        if m.get('releaseNote') is not None:
+            self.release_note = m.get('releaseNote')
+        if m.get('sceneType') is not None:
+            self.scene_type = m.get('sceneType')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('submitTime') is not None:
+            self.submit_time = m.get('submitTime')
+        if m.get('version') is not None:
+            self.version = m.get('version')
+        if m.get('versionDetailUrl') is not None:
+            self.version_detail_url = m.get('versionDetailUrl')
+        if m.get('versionId') is not None:
+            self.version_id = m.get('versionId')
+        return self
+
+
+class GetPublishAuditResponseBody(TeaModel):
+    def __init__(
+        self,
+        audit: GetPublishAuditResponseBodyAudit = None,
+    ):
+        self.audit = audit
+
+    def validate(self):
+        if self.audit:
+            self.audit.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.audit is not None:
+            result['audit'] = self.audit.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('audit') is not None:
+            temp_model = GetPublishAuditResponseBodyAudit()
+            self.audit = temp_model.from_map(m['audit'])
+        return self
+
+
+class GetPublishAuditResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetPublishAuditResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetPublishAuditResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetUserAppDevAccessHeaders(TeaModel):
     def __init__(
         self,
@@ -4387,6 +4798,229 @@ class ListInnerAppVersionResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ListInnerAppVersionResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ListPendingPublishAuditsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListPendingPublishAuditsRequest(TeaModel):
+    def __init__(
+        self,
+        page_size: int = None,
+        page_token: str = None,
+    ):
+        self.page_size = page_size
+        self.page_token = page_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.page_token is not None:
+            result['pageToken'] = self.page_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('pageToken') is not None:
+            self.page_token = m.get('pageToken')
+        return self
+
+
+class ListPendingPublishAuditsResponseBodyAuditList(TeaModel):
+    def __init__(
+        self,
+        agent_id: str = None,
+        audit_id: str = None,
+        corp_id: str = None,
+        creator_user_id: str = None,
+        scene_type: int = None,
+        status: int = None,
+        submit_time: int = None,
+        version_id: str = None,
+    ):
+        self.agent_id = agent_id
+        self.audit_id = audit_id
+        self.corp_id = corp_id
+        self.creator_user_id = creator_user_id
+        self.scene_type = scene_type
+        self.status = status
+        self.submit_time = submit_time
+        self.version_id = version_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.agent_id is not None:
+            result['agentId'] = self.agent_id
+        if self.audit_id is not None:
+            result['auditId'] = self.audit_id
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.creator_user_id is not None:
+            result['creatorUserId'] = self.creator_user_id
+        if self.scene_type is not None:
+            result['sceneType'] = self.scene_type
+        if self.status is not None:
+            result['status'] = self.status
+        if self.submit_time is not None:
+            result['submitTime'] = self.submit_time
+        if self.version_id is not None:
+            result['versionId'] = self.version_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('agentId') is not None:
+            self.agent_id = m.get('agentId')
+        if m.get('auditId') is not None:
+            self.audit_id = m.get('auditId')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('creatorUserId') is not None:
+            self.creator_user_id = m.get('creatorUserId')
+        if m.get('sceneType') is not None:
+            self.scene_type = m.get('sceneType')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('submitTime') is not None:
+            self.submit_time = m.get('submitTime')
+        if m.get('versionId') is not None:
+            self.version_id = m.get('versionId')
+        return self
+
+
+class ListPendingPublishAuditsResponseBody(TeaModel):
+    def __init__(
+        self,
+        audit_list: List[ListPendingPublishAuditsResponseBodyAuditList] = None,
+        has_more: str = None,
+        next_page_token: str = None,
+    ):
+        self.audit_list = audit_list
+        self.has_more = has_more
+        self.next_page_token = next_page_token
+
+    def validate(self):
+        if self.audit_list:
+            for k in self.audit_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['auditList'] = []
+        if self.audit_list is not None:
+            for k in self.audit_list:
+                result['auditList'].append(k.to_map() if k else None)
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        if self.next_page_token is not None:
+            result['nextPageToken'] = self.next_page_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.audit_list = []
+        if m.get('auditList') is not None:
+            for k in m.get('auditList'):
+                temp_model = ListPendingPublishAuditsResponseBodyAuditList()
+                self.audit_list.append(temp_model.from_map(k))
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        if m.get('nextPageToken') is not None:
+            self.next_page_token = m.get('nextPageToken')
+        return self
+
+
+class ListPendingPublishAuditsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ListPendingPublishAuditsResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ListPendingPublishAuditsResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -6519,6 +7153,176 @@ class UpdateInnerAppResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UpdateInnerAppResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdatePublishAuditResultHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdatePublishAuditResultRequest(TeaModel):
+    def __init__(
+        self,
+        agent_id: str = None,
+        audit_id: str = None,
+        operator_id: str = None,
+        reject_reason: str = None,
+        status: int = None,
+        version_id: str = None,
+    ):
+        self.agent_id = agent_id
+        self.audit_id = audit_id
+        self.operator_id = operator_id
+        self.reject_reason = reject_reason
+        self.status = status
+        self.version_id = version_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.agent_id is not None:
+            result['agentId'] = self.agent_id
+        if self.audit_id is not None:
+            result['auditId'] = self.audit_id
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        if self.reject_reason is not None:
+            result['rejectReason'] = self.reject_reason
+        if self.status is not None:
+            result['status'] = self.status
+        if self.version_id is not None:
+            result['versionId'] = self.version_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('agentId') is not None:
+            self.agent_id = m.get('agentId')
+        if m.get('auditId') is not None:
+            self.audit_id = m.get('auditId')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        if m.get('rejectReason') is not None:
+            self.reject_reason = m.get('rejectReason')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('versionId') is not None:
+            self.version_id = m.get('versionId')
+        return self
+
+
+class UpdatePublishAuditResultResponseBody(TeaModel):
+    def __init__(
+        self,
+        accepted: bool = None,
+        audit_id: str = None,
+        status: str = None,
+    ):
+        self.accepted = accepted
+        self.audit_id = audit_id
+        self.status = status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.accepted is not None:
+            result['accepted'] = self.accepted
+        if self.audit_id is not None:
+            result['auditId'] = self.audit_id
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('accepted') is not None:
+            self.accepted = m.get('accepted')
+        if m.get('auditId') is not None:
+            self.audit_id = m.get('auditId')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class UpdatePublishAuditResultResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdatePublishAuditResultResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdatePublishAuditResultResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

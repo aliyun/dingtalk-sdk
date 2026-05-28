@@ -3250,6 +3250,8 @@ class Client(OpenApiClient):
             body['outgoingUrl'] = request.outgoing_url
         if not UtilClient.is_unset(request.token):
             body['token'] = request.token
+        if not UtilClient.is_unset(request.user_custom_token):
+            body['userCustomToken'] = request.user_custom_token
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -3295,6 +3297,8 @@ class Client(OpenApiClient):
             body['outgoingUrl'] = request.outgoing_url
         if not UtilClient.is_unset(request.token):
             body['token'] = request.token
+        if not UtilClient.is_unset(request.user_custom_token):
+            body['userCustomToken'] = request.user_custom_token
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

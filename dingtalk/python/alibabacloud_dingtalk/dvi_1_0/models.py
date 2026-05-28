@@ -431,9 +431,11 @@ class CreateAsrTranscriptionRequest(TeaModel):
     def __init__(
         self,
         biz_key: str = None,
+        phrases: List[str] = None,
         url: str = None,
     ):
         self.biz_key = biz_key
+        self.phrases = phrases
         # This parameter is required.
         self.url = url
 
@@ -448,6 +450,8 @@ class CreateAsrTranscriptionRequest(TeaModel):
         result = dict()
         if self.biz_key is not None:
             result['bizKey'] = self.biz_key
+        if self.phrases is not None:
+            result['phrases'] = self.phrases
         if self.url is not None:
             result['url'] = self.url
         return result
@@ -456,6 +460,8 @@ class CreateAsrTranscriptionRequest(TeaModel):
         m = m or dict()
         if m.get('bizKey') is not None:
             self.biz_key = m.get('bizKey')
+        if m.get('phrases') is not None:
+            self.phrases = m.get('phrases')
         if m.get('url') is not None:
             self.url = m.get('url')
         return self
@@ -2743,22 +2749,14 @@ class GetServiceQualityInspectionRequest(TeaModel):
         return self
 
 
-class GetServiceQualityInspectionResponseBodyResultGroupListItemList(TeaModel):
+class GetServiceQualityInspectionResponseBodyResultGroupListItemListCitations(TeaModel):
     def __init__(
         self,
-        flow_name: str = None,
-        is_hit: str = None,
-        name: str = None,
-        reason: str = None,
-        score: int = None,
-        script: str = None,
+        content: str = None,
+        time: int = None,
     ):
-        self.flow_name = flow_name
-        self.is_hit = is_hit
-        self.name = name
-        self.reason = reason
-        self.score = score
-        self.script = script
+        self.content = content
+        self.time = time
 
     def validate(self):
         pass
@@ -2769,8 +2767,62 @@ class GetServiceQualityInspectionResponseBodyResultGroupListItemList(TeaModel):
             return _map
 
         result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        if self.time is not None:
+            result['time'] = self.time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('time') is not None:
+            self.time = m.get('time')
+        return self
+
+
+class GetServiceQualityInspectionResponseBodyResultGroupListItemList(TeaModel):
+    def __init__(
+        self,
+        citations: List[GetServiceQualityInspectionResponseBodyResultGroupListItemListCitations] = None,
+        flow_name: str = None,
+        highlights: str = None,
+        is_hit: str = None,
+        name: str = None,
+        reason: str = None,
+        score: int = None,
+        script: str = None,
+    ):
+        self.citations = citations
+        self.flow_name = flow_name
+        self.highlights = highlights
+        self.is_hit = is_hit
+        self.name = name
+        self.reason = reason
+        self.score = score
+        self.script = script
+
+    def validate(self):
+        if self.citations:
+            for k in self.citations:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['citations'] = []
+        if self.citations is not None:
+            for k in self.citations:
+                result['citations'].append(k.to_map() if k else None)
         if self.flow_name is not None:
             result['flowName'] = self.flow_name
+        if self.highlights is not None:
+            result['highlights'] = self.highlights
         if self.is_hit is not None:
             result['isHit'] = self.is_hit
         if self.name is not None:
@@ -2785,8 +2837,15 @@ class GetServiceQualityInspectionResponseBodyResultGroupListItemList(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        self.citations = []
+        if m.get('citations') is not None:
+            for k in m.get('citations'):
+                temp_model = GetServiceQualityInspectionResponseBodyResultGroupListItemListCitations()
+                self.citations.append(temp_model.from_map(k))
         if m.get('flowName') is not None:
             self.flow_name = m.get('flowName')
+        if m.get('highlights') is not None:
+            self.highlights = m.get('highlights')
         if m.get('isHit') is not None:
             self.is_hit = m.get('isHit')
         if m.get('name') is not None:

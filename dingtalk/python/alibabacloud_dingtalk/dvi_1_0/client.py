@@ -288,6 +288,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.biz_key):
             body['bizKey'] = request.biz_key
+        if not UtilClient.is_unset(request.phrases):
+            body['phrases'] = request.phrases
         if not UtilClient.is_unset(request.url):
             body['url'] = request.url
         real_headers = {}
@@ -333,6 +335,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.biz_key):
             body['bizKey'] = request.biz_key
+        if not UtilClient.is_unset(request.phrases):
+            body['phrases'] = request.phrases
         if not UtilClient.is_unset(request.url):
             body['url'] = request.url
         real_headers = {}

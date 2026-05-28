@@ -1014,6 +1014,140 @@ class Client(OpenApiClient):
         headers = {}
         return await self.ayun_test_online_with_options_async(headers, runtime)
 
+    def create_agent_with_options(
+        self,
+        request: dingtalkmicro_app__1__0_models.CreateAgentRequest,
+        headers: dingtalkmicro_app__1__0_models.CreateAgentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.CreateAgentResponse:
+        """
+        @summary 创建企业智能体应用
+        
+        @param request: CreateAgentRequest
+        @param headers: CreateAgentHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateAgentResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_name):
+            body['appName'] = request.app_name
+        if not UtilClient.is_unset(request.desc):
+            body['desc'] = request.desc
+        if not UtilClient.is_unset(request.preview_media_id):
+            body['previewMediaId'] = request.preview_media_id
+        if not UtilClient.is_unset(request.robot_media_id):
+            body['robotMediaId'] = request.robot_media_id
+        if not UtilClient.is_unset(request.robot_name):
+            body['robotName'] = request.robot_name
+        if not UtilClient.is_unset(request.userid):
+            body['userid'] = request.userid
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateAgent',
+            version='microApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/microApp/agent/create',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.CreateAgentResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_agent_with_options_async(
+        self,
+        request: dingtalkmicro_app__1__0_models.CreateAgentRequest,
+        headers: dingtalkmicro_app__1__0_models.CreateAgentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.CreateAgentResponse:
+        """
+        @summary 创建企业智能体应用
+        
+        @param request: CreateAgentRequest
+        @param headers: CreateAgentHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateAgentResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_name):
+            body['appName'] = request.app_name
+        if not UtilClient.is_unset(request.desc):
+            body['desc'] = request.desc
+        if not UtilClient.is_unset(request.preview_media_id):
+            body['previewMediaId'] = request.preview_media_id
+        if not UtilClient.is_unset(request.robot_media_id):
+            body['robotMediaId'] = request.robot_media_id
+        if not UtilClient.is_unset(request.robot_name):
+            body['robotName'] = request.robot_name
+        if not UtilClient.is_unset(request.userid):
+            body['userid'] = request.userid
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateAgent',
+            version='microApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/microApp/agent/create',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.CreateAgentResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_agent(
+        self,
+        request: dingtalkmicro_app__1__0_models.CreateAgentRequest,
+    ) -> dingtalkmicro_app__1__0_models.CreateAgentResponse:
+        """
+        @summary 创建企业智能体应用
+        
+        @param request: CreateAgentRequest
+        @return: CreateAgentResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.CreateAgentHeaders()
+        return self.create_agent_with_options(request, headers, runtime)
+
+    async def create_agent_async(
+        self,
+        request: dingtalkmicro_app__1__0_models.CreateAgentRequest,
+    ) -> dingtalkmicro_app__1__0_models.CreateAgentResponse:
+        """
+        @summary 创建企业智能体应用
+        
+        @param request: CreateAgentRequest
+        @return: CreateAgentResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.CreateAgentHeaders()
+        return await self.create_agent_with_options_async(request, headers, runtime)
+
     def create_apaas_app_with_options(
         self,
         request: dingtalkmicro_app__1__0_models.CreateApaasAppRequest,
@@ -2296,6 +2430,120 @@ class Client(OpenApiClient):
         headers = dingtalkmicro_app__1__0_models.GetMicroAppUserAccessHeaders()
         return await self.get_micro_app_user_access_with_options_async(agent_id, user_id, headers, runtime)
 
+    def get_publish_audit_with_options(
+        self,
+        request: dingtalkmicro_app__1__0_models.GetPublishAuditRequest,
+        headers: dingtalkmicro_app__1__0_models.GetPublishAuditHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.GetPublishAuditResponse:
+        """
+        @summary 查询企业内部应用审核详情
+        
+        @param request: GetPublishAuditRequest
+        @param headers: GetPublishAuditHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetPublishAuditResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.audit_id):
+            body['auditId'] = request.audit_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetPublishAudit',
+            version='microApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/microApp/enterpriseSelfBuiltPublishAudit/detail',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.GetPublishAuditResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_publish_audit_with_options_async(
+        self,
+        request: dingtalkmicro_app__1__0_models.GetPublishAuditRequest,
+        headers: dingtalkmicro_app__1__0_models.GetPublishAuditHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.GetPublishAuditResponse:
+        """
+        @summary 查询企业内部应用审核详情
+        
+        @param request: GetPublishAuditRequest
+        @param headers: GetPublishAuditHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetPublishAuditResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.audit_id):
+            body['auditId'] = request.audit_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetPublishAudit',
+            version='microApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/microApp/enterpriseSelfBuiltPublishAudit/detail',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.GetPublishAuditResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_publish_audit(
+        self,
+        request: dingtalkmicro_app__1__0_models.GetPublishAuditRequest,
+    ) -> dingtalkmicro_app__1__0_models.GetPublishAuditResponse:
+        """
+        @summary 查询企业内部应用审核详情
+        
+        @param request: GetPublishAuditRequest
+        @return: GetPublishAuditResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.GetPublishAuditHeaders()
+        return self.get_publish_audit_with_options(request, headers, runtime)
+
+    async def get_publish_audit_async(
+        self,
+        request: dingtalkmicro_app__1__0_models.GetPublishAuditRequest,
+    ) -> dingtalkmicro_app__1__0_models.GetPublishAuditResponse:
+        """
+        @summary 查询企业内部应用审核详情
+        
+        @param request: GetPublishAuditRequest
+        @return: GetPublishAuditResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.GetPublishAuditHeaders()
+        return await self.get_publish_audit_with_options_async(request, headers, runtime)
+
     def get_user_app_dev_access_with_options(
         self,
         user_id: str,
@@ -3237,6 +3485,124 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkmicro_app__1__0_models.ListInnerAppVersionHeaders()
         return await self.list_inner_app_version_with_options_async(agent_id, headers, runtime)
+
+    def list_pending_publish_audits_with_options(
+        self,
+        request: dingtalkmicro_app__1__0_models.ListPendingPublishAuditsRequest,
+        headers: dingtalkmicro_app__1__0_models.ListPendingPublishAuditsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.ListPendingPublishAuditsResponse:
+        """
+        @summary 分页查询待审核发布审核单
+        
+        @param request: ListPendingPublishAuditsRequest
+        @param headers: ListPendingPublishAuditsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListPendingPublishAuditsResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.page_token):
+            body['pageToken'] = request.page_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ListPendingPublishAudits',
+            version='microApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/microApp/enterpriseSelfBuiltPublishAudit/pendingList',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.ListPendingPublishAuditsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def list_pending_publish_audits_with_options_async(
+        self,
+        request: dingtalkmicro_app__1__0_models.ListPendingPublishAuditsRequest,
+        headers: dingtalkmicro_app__1__0_models.ListPendingPublishAuditsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.ListPendingPublishAuditsResponse:
+        """
+        @summary 分页查询待审核发布审核单
+        
+        @param request: ListPendingPublishAuditsRequest
+        @param headers: ListPendingPublishAuditsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListPendingPublishAuditsResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.page_token):
+            body['pageToken'] = request.page_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ListPendingPublishAudits',
+            version='microApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/microApp/enterpriseSelfBuiltPublishAudit/pendingList',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.ListPendingPublishAuditsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def list_pending_publish_audits(
+        self,
+        request: dingtalkmicro_app__1__0_models.ListPendingPublishAuditsRequest,
+    ) -> dingtalkmicro_app__1__0_models.ListPendingPublishAuditsResponse:
+        """
+        @summary 分页查询待审核发布审核单
+        
+        @param request: ListPendingPublishAuditsRequest
+        @return: ListPendingPublishAuditsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.ListPendingPublishAuditsHeaders()
+        return self.list_pending_publish_audits_with_options(request, headers, runtime)
+
+    async def list_pending_publish_audits_async(
+        self,
+        request: dingtalkmicro_app__1__0_models.ListPendingPublishAuditsRequest,
+    ) -> dingtalkmicro_app__1__0_models.ListPendingPublishAuditsResponse:
+        """
+        @summary 分页查询待审核发布审核单
+        
+        @param request: ListPendingPublishAuditsRequest
+        @return: ListPendingPublishAuditsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.ListPendingPublishAuditsHeaders()
+        return await self.list_pending_publish_audits_with_options_async(request, headers, runtime)
 
     def list_role_info_by_user_with_options(
         self,
@@ -4879,3 +5245,137 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkmicro_app__1__0_models.UpdateInnerAppHeaders()
         return await self.update_inner_app_with_options_async(agent_id, request, headers, runtime)
+
+    def update_publish_audit_result_with_options(
+        self,
+        request: dingtalkmicro_app__1__0_models.UpdatePublishAuditResultRequest,
+        headers: dingtalkmicro_app__1__0_models.UpdatePublishAuditResultHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.UpdatePublishAuditResultResponse:
+        """
+        @summary 回写审核结果
+        
+        @param request: UpdatePublishAuditResultRequest
+        @param headers: UpdatePublishAuditResultHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdatePublishAuditResultResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.agent_id):
+            body['agentId'] = request.agent_id
+        if not UtilClient.is_unset(request.audit_id):
+            body['auditId'] = request.audit_id
+        if not UtilClient.is_unset(request.operator_id):
+            body['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.reject_reason):
+            body['rejectReason'] = request.reject_reason
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        if not UtilClient.is_unset(request.version_id):
+            body['versionId'] = request.version_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdatePublishAuditResult',
+            version='microApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/microApp/enterprisePublishAudit/submitResult',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.UpdatePublishAuditResultResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_publish_audit_result_with_options_async(
+        self,
+        request: dingtalkmicro_app__1__0_models.UpdatePublishAuditResultRequest,
+        headers: dingtalkmicro_app__1__0_models.UpdatePublishAuditResultHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.UpdatePublishAuditResultResponse:
+        """
+        @summary 回写审核结果
+        
+        @param request: UpdatePublishAuditResultRequest
+        @param headers: UpdatePublishAuditResultHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdatePublishAuditResultResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.agent_id):
+            body['agentId'] = request.agent_id
+        if not UtilClient.is_unset(request.audit_id):
+            body['auditId'] = request.audit_id
+        if not UtilClient.is_unset(request.operator_id):
+            body['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.reject_reason):
+            body['rejectReason'] = request.reject_reason
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        if not UtilClient.is_unset(request.version_id):
+            body['versionId'] = request.version_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdatePublishAuditResult',
+            version='microApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/microApp/enterprisePublishAudit/submitResult',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.UpdatePublishAuditResultResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_publish_audit_result(
+        self,
+        request: dingtalkmicro_app__1__0_models.UpdatePublishAuditResultRequest,
+    ) -> dingtalkmicro_app__1__0_models.UpdatePublishAuditResultResponse:
+        """
+        @summary 回写审核结果
+        
+        @param request: UpdatePublishAuditResultRequest
+        @return: UpdatePublishAuditResultResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.UpdatePublishAuditResultHeaders()
+        return self.update_publish_audit_result_with_options(request, headers, runtime)
+
+    async def update_publish_audit_result_async(
+        self,
+        request: dingtalkmicro_app__1__0_models.UpdatePublishAuditResultRequest,
+    ) -> dingtalkmicro_app__1__0_models.UpdatePublishAuditResultResponse:
+        """
+        @summary 回写审核结果
+        
+        @param request: UpdatePublishAuditResultRequest
+        @return: UpdatePublishAuditResultResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.UpdatePublishAuditResultHeaders()
+        return await self.update_publish_audit_result_with_options_async(request, headers, runtime)
