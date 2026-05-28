@@ -132,8 +132,14 @@ public class CirclePostDetailResponseBody extends TeaModel {
         @NameInMap("likeCount")
         public Long likeCount;
 
+        @NameInMap("mediaFileIdList")
+        public java.util.List<String> mediaFileIdList;
+
         @NameInMap("mediaUrlList")
         public java.util.List<String> mediaUrlList;
+
+        @NameInMap("outfitType")
+        public String outfitType;
 
         @NameInMap("postId")
         public Long postId;
@@ -143,6 +149,9 @@ public class CirclePostDetailResponseBody extends TeaModel {
 
         @NameInMap("products")
         public java.util.List<CirclePostDetailResponseBodyResultProducts> products;
+
+        @NameInMap("score")
+        public Double score;
 
         @NameInMap("status")
         public String status;
@@ -215,12 +224,28 @@ public class CirclePostDetailResponseBody extends TeaModel {
             return this.likeCount;
         }
 
+        public CirclePostDetailResponseBodyResult setMediaFileIdList(java.util.List<String> mediaFileIdList) {
+            this.mediaFileIdList = mediaFileIdList;
+            return this;
+        }
+        public java.util.List<String> getMediaFileIdList() {
+            return this.mediaFileIdList;
+        }
+
         public CirclePostDetailResponseBodyResult setMediaUrlList(java.util.List<String> mediaUrlList) {
             this.mediaUrlList = mediaUrlList;
             return this;
         }
         public java.util.List<String> getMediaUrlList() {
             return this.mediaUrlList;
+        }
+
+        public CirclePostDetailResponseBodyResult setOutfitType(String outfitType) {
+            this.outfitType = outfitType;
+            return this;
+        }
+        public String getOutfitType() {
+            return this.outfitType;
         }
 
         public CirclePostDetailResponseBodyResult setPostId(Long postId) {
@@ -245,6 +270,14 @@ public class CirclePostDetailResponseBody extends TeaModel {
         }
         public java.util.List<CirclePostDetailResponseBodyResultProducts> getProducts() {
             return this.products;
+        }
+
+        public CirclePostDetailResponseBodyResult setScore(Double score) {
+            this.score = score;
+            return this;
+        }
+        public Double getScore() {
+            return this.score;
         }
 
         public CirclePostDetailResponseBodyResult setStatus(String status) {

@@ -162,6 +162,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("bizKey", request.bizKey);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.phrases)) {
+            body.put("phrases", request.phrases);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.url)) {
             body.put("url", request.url);
         }

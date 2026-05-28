@@ -20,9 +20,45 @@ public class GetServiceQualityInspectionResponseBody extends TeaModel {
         return this.result;
     }
 
+    public static class GetServiceQualityInspectionResponseBodyResultGroupListItemListCitations extends TeaModel {
+        @NameInMap("content")
+        public String content;
+
+        @NameInMap("time")
+        public Long time;
+
+        public static GetServiceQualityInspectionResponseBodyResultGroupListItemListCitations build(java.util.Map<String, ?> map) throws Exception {
+            GetServiceQualityInspectionResponseBodyResultGroupListItemListCitations self = new GetServiceQualityInspectionResponseBodyResultGroupListItemListCitations();
+            return TeaModel.build(map, self);
+        }
+
+        public GetServiceQualityInspectionResponseBodyResultGroupListItemListCitations setContent(String content) {
+            this.content = content;
+            return this;
+        }
+        public String getContent() {
+            return this.content;
+        }
+
+        public GetServiceQualityInspectionResponseBodyResultGroupListItemListCitations setTime(Long time) {
+            this.time = time;
+            return this;
+        }
+        public Long getTime() {
+            return this.time;
+        }
+
+    }
+
     public static class GetServiceQualityInspectionResponseBodyResultGroupListItemList extends TeaModel {
+        @NameInMap("citations")
+        public java.util.List<GetServiceQualityInspectionResponseBodyResultGroupListItemListCitations> citations;
+
         @NameInMap("flowName")
         public String flowName;
+
+        @NameInMap("highlights")
+        public String highlights;
 
         @NameInMap("isHit")
         public String isHit;
@@ -44,12 +80,28 @@ public class GetServiceQualityInspectionResponseBody extends TeaModel {
             return TeaModel.build(map, self);
         }
 
+        public GetServiceQualityInspectionResponseBodyResultGroupListItemList setCitations(java.util.List<GetServiceQualityInspectionResponseBodyResultGroupListItemListCitations> citations) {
+            this.citations = citations;
+            return this;
+        }
+        public java.util.List<GetServiceQualityInspectionResponseBodyResultGroupListItemListCitations> getCitations() {
+            return this.citations;
+        }
+
         public GetServiceQualityInspectionResponseBodyResultGroupListItemList setFlowName(String flowName) {
             this.flowName = flowName;
             return this;
         }
         public String getFlowName() {
             return this.flowName;
+        }
+
+        public GetServiceQualityInspectionResponseBodyResultGroupListItemList setHighlights(String highlights) {
+            this.highlights = highlights;
+            return this;
+        }
+        public String getHighlights() {
+            return this.highlights;
         }
 
         public GetServiceQualityInspectionResponseBodyResultGroupListItemList setIsHit(String isHit) {

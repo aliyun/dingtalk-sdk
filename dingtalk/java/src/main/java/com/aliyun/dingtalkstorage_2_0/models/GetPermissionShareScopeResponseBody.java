@@ -11,6 +11,9 @@ public class GetPermissionShareScopeResponseBody extends TeaModel {
     @NameInMap("scope")
     public String scope;
 
+    @NameInMap("scopeWithRole")
+    public String scopeWithRole;
+
     public static GetPermissionShareScopeResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetPermissionShareScopeResponseBody self = new GetPermissionShareScopeResponseBody();
         return TeaModel.build(map, self);
@@ -22,6 +25,14 @@ public class GetPermissionShareScopeResponseBody extends TeaModel {
     }
     public String getScope() {
         return this.scope;
+    }
+
+    public GetPermissionShareScopeResponseBody setScopeWithRole(String scopeWithRole) {
+        this.scopeWithRole = scopeWithRole;
+        return this;
+    }
+    public String getScopeWithRole() {
+        return this.scopeWithRole;
     }
 
 }

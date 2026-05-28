@@ -490,6 +490,82 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>创建企业智能体应用</p>
+     * 
+     * @param request CreateAgentRequest
+     * @param headers CreateAgentHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateAgentResponse
+     */
+    public CreateAgentResponse createAgentWithOptions(CreateAgentRequest request, CreateAgentHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.appName)) {
+            body.put("appName", request.appName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.desc)) {
+            body.put("desc", request.desc);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.previewMediaId)) {
+            body.put("previewMediaId", request.previewMediaId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.robotMediaId)) {
+            body.put("robotMediaId", request.robotMediaId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.robotName)) {
+            body.put("robotName", request.robotName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userid)) {
+            body.put("userid", request.userid);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateAgent"),
+            new TeaPair("version", "microApp_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/microApp/agent/create"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateAgentResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>创建企业智能体应用</p>
+     * 
+     * @param request CreateAgentRequest
+     * @return CreateAgentResponse
+     */
+    public CreateAgentResponse createAgent(CreateAgentRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CreateAgentHeaders headers = new CreateAgentHeaders();
+        return this.createAgentWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>创建Apaas应用</p>
      * 
      * @param request CreateApaasAppRequest
@@ -1138,6 +1214,62 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>查询企业内部应用审核详情</p>
+     * 
+     * @param request GetPublishAuditRequest
+     * @param headers GetPublishAuditHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetPublishAuditResponse
+     */
+    public GetPublishAuditResponse getPublishAuditWithOptions(GetPublishAuditRequest request, GetPublishAuditHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.auditId)) {
+            body.put("auditId", request.auditId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetPublishAudit"),
+            new TeaPair("version", "microApp_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/microApp/enterpriseSelfBuiltPublishAudit/detail"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetPublishAuditResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询企业内部应用审核详情</p>
+     * 
+     * @param request GetPublishAuditRequest
+     * @return GetPublishAuditResponse
+     */
+    public GetPublishAuditResponse getPublishAudit(GetPublishAuditRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetPublishAuditHeaders headers = new GetPublishAuditHeaders();
+        return this.getPublishAuditWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>用户是否拥有开发者权限</p>
      * 
      * @param headers GetUserAppDevAccessHeaders
@@ -1595,6 +1727,66 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ListInnerAppVersionHeaders headers = new ListInnerAppVersionHeaders();
         return this.listInnerAppVersionWithOptions(agentId, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>分页查询待审核发布审核单</p>
+     * 
+     * @param request ListPendingPublishAuditsRequest
+     * @param headers ListPendingPublishAuditsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ListPendingPublishAuditsResponse
+     */
+    public ListPendingPublishAuditsResponse listPendingPublishAuditsWithOptions(ListPendingPublishAuditsRequest request, ListPendingPublishAuditsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
+            body.put("pageSize", request.pageSize);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageToken)) {
+            body.put("pageToken", request.pageToken);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ListPendingPublishAudits"),
+            new TeaPair("version", "microApp_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/microApp/enterpriseSelfBuiltPublishAudit/pendingList"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ListPendingPublishAuditsResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>分页查询待审核发布审核单</p>
+     * 
+     * @param request ListPendingPublishAuditsRequest
+     * @return ListPendingPublishAuditsResponse
+     */
+    public ListPendingPublishAuditsResponse listPendingPublishAudits(ListPendingPublishAuditsRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ListPendingPublishAuditsHeaders headers = new ListPendingPublishAuditsHeaders();
+        return this.listPendingPublishAuditsWithOptions(request, headers, runtime);
     }
 
     /**
@@ -2439,5 +2631,81 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateInnerAppHeaders headers = new UpdateInnerAppHeaders();
         return this.updateInnerAppWithOptions(agentId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>回写审核结果</p>
+     * 
+     * @param request UpdatePublishAuditResultRequest
+     * @param headers UpdatePublishAuditResultHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdatePublishAuditResultResponse
+     */
+    public UpdatePublishAuditResultResponse updatePublishAuditResultWithOptions(UpdatePublishAuditResultRequest request, UpdatePublishAuditResultHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.agentId)) {
+            body.put("agentId", request.agentId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.auditId)) {
+            body.put("auditId", request.auditId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            body.put("operatorId", request.operatorId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.rejectReason)) {
+            body.put("rejectReason", request.rejectReason);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.status)) {
+            body.put("status", request.status);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.versionId)) {
+            body.put("versionId", request.versionId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdatePublishAuditResult"),
+            new TeaPair("version", "microApp_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/microApp/enterprisePublishAudit/submitResult"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdatePublishAuditResultResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>回写审核结果</p>
+     * 
+     * @param request UpdatePublishAuditResultRequest
+     * @return UpdatePublishAuditResultResponse
+     */
+    public UpdatePublishAuditResultResponse updatePublishAuditResult(UpdatePublishAuditResultRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdatePublishAuditResultHeaders headers = new UpdatePublishAuditResultHeaders();
+        return this.updatePublishAuditResultWithOptions(request, headers, runtime);
     }
 }

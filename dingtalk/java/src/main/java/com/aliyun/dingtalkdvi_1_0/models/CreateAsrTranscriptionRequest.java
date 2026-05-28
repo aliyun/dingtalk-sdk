@@ -7,6 +7,9 @@ public class CreateAsrTranscriptionRequest extends TeaModel {
     @NameInMap("bizKey")
     public String bizKey;
 
+    @NameInMap("phrases")
+    public java.util.List<String> phrases;
+
     /**
      * <p>This parameter is required.</p>
      */
@@ -24,6 +27,14 @@ public class CreateAsrTranscriptionRequest extends TeaModel {
     }
     public String getBizKey() {
         return this.bizKey;
+    }
+
+    public CreateAsrTranscriptionRequest setPhrases(java.util.List<String> phrases) {
+        this.phrases = phrases;
+        return this;
+    }
+    public java.util.List<String> getPhrases() {
+        return this.phrases;
     }
 
     public CreateAsrTranscriptionRequest setUrl(String url) {

@@ -16,6 +16,9 @@ public class UpdateCustomRobotOutgoingRequest extends TeaModel {
     @NameInMap("token")
     public String token;
 
+    @NameInMap("userCustomToken")
+    public String userCustomToken;
+
     public static UpdateCustomRobotOutgoingRequest build(java.util.Map<String, ?> map) throws Exception {
         UpdateCustomRobotOutgoingRequest self = new UpdateCustomRobotOutgoingRequest();
         return TeaModel.build(map, self);
@@ -35,6 +38,14 @@ public class UpdateCustomRobotOutgoingRequest extends TeaModel {
     }
     public String getToken() {
         return this.token;
+    }
+
+    public UpdateCustomRobotOutgoingRequest setUserCustomToken(String userCustomToken) {
+        this.userCustomToken = userCustomToken;
+        return this;
+    }
+    public String getUserCustomToken() {
+        return this.userCustomToken;
     }
 
 }
