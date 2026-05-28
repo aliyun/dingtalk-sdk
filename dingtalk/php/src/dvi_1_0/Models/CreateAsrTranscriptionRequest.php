@@ -14,6 +14,11 @@ class CreateAsrTranscriptionRequest extends Model
     public $bizKey;
 
     /**
+     * @var string[]
+     */
+    public $phrases;
+
+    /**
      * @description This parameter is required.
      *
      * @var string
@@ -21,6 +26,7 @@ class CreateAsrTranscriptionRequest extends Model
     public $url;
     protected $_name = [
         'bizKey' => 'bizKey',
+        'phrases' => 'phrases',
         'url' => 'url',
     ];
 
@@ -31,6 +37,9 @@ class CreateAsrTranscriptionRequest extends Model
         $res = [];
         if (null !== $this->bizKey) {
             $res['bizKey'] = $this->bizKey;
+        }
+        if (null !== $this->phrases) {
+            $res['phrases'] = $this->phrases;
         }
         if (null !== $this->url) {
             $res['url'] = $this->url;
@@ -49,6 +58,11 @@ class CreateAsrTranscriptionRequest extends Model
         $model = new self();
         if (isset($map['bizKey'])) {
             $model->bizKey = $map['bizKey'];
+        }
+        if (isset($map['phrases'])) {
+            if (!empty($map['phrases'])) {
+                $model->phrases = $map['phrases'];
+            }
         }
         if (isset($map['url'])) {
             $model->url = $map['url'];

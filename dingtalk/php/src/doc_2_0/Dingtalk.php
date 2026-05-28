@@ -160,6 +160,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QueryDentryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QueryDocContentHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QueryDocContentRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QueryDocContentResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QueryExportTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QueryExportTaskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QueryExportTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QueryGetContentJobHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QueryGetContentJobRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\QueryGetContentJobResponse;
@@ -3459,6 +3462,66 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryDocContentHeaders([]);
 
         return $this->queryDocContentWithOptions($dentryUuid, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 通过taskId查询文档导出任务状态
+     *  *
+     * @param QueryExportTaskRequest $request QueryExportTaskRequest
+     * @param QueryExportTaskHeaders $headers QueryExportTaskHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryExportTaskResponse QueryExportTaskResponse
+     */
+    public function queryExportTaskWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        if (!Utils::isUnset($request->taskId)) {
+            $query['taskId'] = $request->taskId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'QueryExportTask',
+            'version' => 'doc_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/doc/me/export/task/query',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryExportTaskResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 通过taskId查询文档导出任务状态
+     *  *
+     * @param QueryExportTaskRequest $request QueryExportTaskRequest
+     *
+     * @return QueryExportTaskResponse QueryExportTaskResponse
+     */
+    public function queryExportTask($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryExportTaskHeaders([]);
+
+        return $this->queryExportTaskWithOptions($request, $headers, $runtime);
     }
 
     /**

@@ -271,6 +271,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->bizKey)) {
             $body['bizKey'] = $request->bizKey;
         }
+        if (!Utils::isUnset($request->phrases)) {
+            $body['phrases'] = $request->phrases;
+        }
         if (!Utils::isUnset($request->url)) {
             $body['url'] = $request->url;
         }

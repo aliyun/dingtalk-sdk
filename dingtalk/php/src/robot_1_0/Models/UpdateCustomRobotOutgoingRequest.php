@@ -21,9 +21,15 @@ class UpdateCustomRobotOutgoingRequest extends Model
      * @var string
      */
     public $token;
+
+    /**
+     * @var string
+     */
+    public $userCustomToken;
     protected $_name = [
         'outgoingUrl' => 'outgoingUrl',
         'token' => 'token',
+        'userCustomToken' => 'userCustomToken',
     ];
 
     public function validate() {}
@@ -36,6 +42,9 @@ class UpdateCustomRobotOutgoingRequest extends Model
         }
         if (null !== $this->token) {
             $res['token'] = $this->token;
+        }
+        if (null !== $this->userCustomToken) {
+            $res['userCustomToken'] = $this->userCustomToken;
         }
 
         return $res;
@@ -54,6 +63,9 @@ class UpdateCustomRobotOutgoingRequest extends Model
         }
         if (isset($map['token'])) {
             $model->token = $map['token'];
+        }
+        if (isset($map['userCustomToken'])) {
+            $model->userCustomToken = $map['userCustomToken'];
         }
 
         return $model;

@@ -14,8 +14,14 @@ class GetPermissionShareScopeResponseBody extends Model
      * @var string
      */
     public $scope;
+
+    /**
+     * @var string
+     */
+    public $scopeWithRole;
     protected $_name = [
         'scope' => 'scope',
+        'scopeWithRole' => 'scopeWithRole',
     ];
 
     public function validate() {}
@@ -25,6 +31,9 @@ class GetPermissionShareScopeResponseBody extends Model
         $res = [];
         if (null !== $this->scope) {
             $res['scope'] = $this->scope;
+        }
+        if (null !== $this->scopeWithRole) {
+            $res['scopeWithRole'] = $this->scopeWithRole;
         }
 
         return $res;
@@ -40,6 +49,9 @@ class GetPermissionShareScopeResponseBody extends Model
         $model = new self();
         if (isset($map['scope'])) {
             $model->scope = $map['scope'];
+        }
+        if (isset($map['scopeWithRole'])) {
+            $model->scopeWithRole = $map['scopeWithRole'];
         }
 
         return $model;

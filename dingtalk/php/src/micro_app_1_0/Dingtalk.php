@@ -22,6 +22,9 @@ use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\AppStatusManagerTestRequest;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\AppStatusManagerTestResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\AyunTestOnlineResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\AyunTestResponse;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\CreateAgentHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\CreateAgentRequest;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\CreateAgentResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\CreateApaasAppHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\CreateApaasAppRequest;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\CreateApaasAppResponse;
@@ -49,6 +52,9 @@ use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetMicroAppScopeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetMicroAppScopeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetMicroAppUserAccessHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetMicroAppUserAccessResponse;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetPublishAuditHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetPublishAuditRequest;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetPublishAuditResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetUserAppDevAccessHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetUserAppDevAccessResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetVersionInfoRequest;
@@ -70,6 +76,9 @@ use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\ListInnerAppRequest;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\ListInnerAppResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\ListInnerAppVersionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\ListInnerAppVersionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\ListPendingPublishAuditsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\ListPendingPublishAuditsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\ListPendingPublishAuditsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\ListRoleInfoByUserHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\ListRoleInfoByUserResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\ListUserVilebleAppHeaders;
@@ -107,6 +116,9 @@ use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\UpdateAppRoleInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\UpdateInnerAppHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\UpdateInnerAppRequest;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\UpdateInnerAppResponse;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\UpdatePublishAuditResultHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\UpdatePublishAuditResultRequest;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\UpdatePublishAuditResultResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\GatewayDingTalk\Client;
@@ -625,6 +637,78 @@ class Dingtalk extends OpenApiClient
         $headers = [];
 
         return $this->ayunTestOnlineWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @summary 创建企业智能体应用
+     *  *
+     * @param CreateAgentRequest $request CreateAgentRequest
+     * @param CreateAgentHeaders $headers CreateAgentHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateAgentResponse CreateAgentResponse
+     */
+    public function createAgentWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appName)) {
+            $body['appName'] = $request->appName;
+        }
+        if (!Utils::isUnset($request->desc)) {
+            $body['desc'] = $request->desc;
+        }
+        if (!Utils::isUnset($request->previewMediaId)) {
+            $body['previewMediaId'] = $request->previewMediaId;
+        }
+        if (!Utils::isUnset($request->robotMediaId)) {
+            $body['robotMediaId'] = $request->robotMediaId;
+        }
+        if (!Utils::isUnset($request->robotName)) {
+            $body['robotName'] = $request->robotName;
+        }
+        if (!Utils::isUnset($request->userid)) {
+            $body['userid'] = $request->userid;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'CreateAgent',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/agent/create',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CreateAgentResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建企业智能体应用
+     *  *
+     * @param CreateAgentRequest $request CreateAgentRequest
+     *
+     * @return CreateAgentResponse CreateAgentResponse
+     */
+    public function createAgent($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateAgentHeaders([]);
+
+        return $this->createAgentWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -1298,6 +1382,63 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询企业内部应用审核详情
+     *  *
+     * @param GetPublishAuditRequest $request GetPublishAuditRequest
+     * @param GetPublishAuditHeaders $headers GetPublishAuditHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetPublishAuditResponse GetPublishAuditResponse
+     */
+    public function getPublishAuditWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->auditId)) {
+            $body['auditId'] = $request->auditId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'GetPublishAudit',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/enterpriseSelfBuiltPublishAudit/detail',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetPublishAuditResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询企业内部应用审核详情
+     *  *
+     * @param GetPublishAuditRequest $request GetPublishAuditRequest
+     *
+     * @return GetPublishAuditResponse GetPublishAuditResponse
+     */
+    public function getPublishAudit($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetPublishAuditHeaders([]);
+
+        return $this->getPublishAuditWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 用户是否拥有开发者权限
      *  *
      * @param string                     $userId
@@ -1776,6 +1917,66 @@ class Dingtalk extends OpenApiClient
         $headers = new ListInnerAppVersionHeaders([]);
 
         return $this->listInnerAppVersionWithOptions($agentId, $headers, $runtime);
+    }
+
+    /**
+     * @summary 分页查询待审核发布审核单
+     *  *
+     * @param ListPendingPublishAuditsRequest $request ListPendingPublishAuditsRequest
+     * @param ListPendingPublishAuditsHeaders $headers ListPendingPublishAuditsHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ListPendingPublishAuditsResponse ListPendingPublishAuditsResponse
+     */
+    public function listPendingPublishAuditsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->pageSize)) {
+            $body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->pageToken)) {
+            $body['pageToken'] = $request->pageToken;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'ListPendingPublishAudits',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/enterpriseSelfBuiltPublishAudit/pendingList',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return ListPendingPublishAuditsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 分页查询待审核发布审核单
+     *  *
+     * @param ListPendingPublishAuditsRequest $request ListPendingPublishAuditsRequest
+     *
+     * @return ListPendingPublishAuditsResponse ListPendingPublishAuditsResponse
+     */
+    public function listPendingPublishAudits($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListPendingPublishAuditsHeaders([]);
+
+        return $this->listPendingPublishAuditsWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -2633,5 +2834,77 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateInnerAppHeaders([]);
 
         return $this->updateInnerAppWithOptions($agentId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 回写审核结果
+     *  *
+     * @param UpdatePublishAuditResultRequest $request UpdatePublishAuditResultRequest
+     * @param UpdatePublishAuditResultHeaders $headers UpdatePublishAuditResultHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdatePublishAuditResultResponse UpdatePublishAuditResultResponse
+     */
+    public function updatePublishAuditResultWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->agentId)) {
+            $body['agentId'] = $request->agentId;
+        }
+        if (!Utils::isUnset($request->auditId)) {
+            $body['auditId'] = $request->auditId;
+        }
+        if (!Utils::isUnset($request->operatorId)) {
+            $body['operatorId'] = $request->operatorId;
+        }
+        if (!Utils::isUnset($request->rejectReason)) {
+            $body['rejectReason'] = $request->rejectReason;
+        }
+        if (!Utils::isUnset($request->status)) {
+            $body['status'] = $request->status;
+        }
+        if (!Utils::isUnset($request->versionId)) {
+            $body['versionId'] = $request->versionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'UpdatePublishAuditResult',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/enterprisePublishAudit/submitResult',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UpdatePublishAuditResultResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 回写审核结果
+     *  *
+     * @param UpdatePublishAuditResultRequest $request UpdatePublishAuditResultRequest
+     *
+     * @return UpdatePublishAuditResultResponse UpdatePublishAuditResultResponse
+     */
+    public function updatePublishAuditResult($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdatePublishAuditResultHeaders([]);
+
+        return $this->updatePublishAuditResultWithOptions($request, $headers, $runtime);
     }
 }

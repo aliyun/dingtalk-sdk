@@ -1790,6 +1790,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->token)) {
             $body['token'] = $request->token;
         }
+        if (!Utils::isUnset($request->userCustomToken)) {
+            $body['userCustomToken'] = $request->userCustomToken;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;

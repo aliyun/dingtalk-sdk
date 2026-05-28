@@ -4,14 +4,25 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetServiceQualityInspectionResponseBody\result\groupList;
 
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetServiceQualityInspectionResponseBody\result\groupList\itemList\citations;
 use AlibabaCloud\Tea\Model;
 
 class itemList extends Model
 {
     /**
+     * @var citations[]
+     */
+    public $citations;
+
+    /**
      * @var string
      */
     public $flowName;
+
+    /**
+     * @var string
+     */
+    public $highlights;
 
     /**
      * @var string
@@ -38,7 +49,9 @@ class itemList extends Model
      */
     public $script;
     protected $_name = [
+        'citations' => 'citations',
         'flowName' => 'flowName',
+        'highlights' => 'highlights',
         'isHit' => 'isHit',
         'name' => 'name',
         'reason' => 'reason',
@@ -51,8 +64,20 @@ class itemList extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->citations) {
+            $res['citations'] = [];
+            if (null !== $this->citations && \is_array($this->citations)) {
+                $n = 0;
+                foreach ($this->citations as $item) {
+                    $res['citations'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
         if (null !== $this->flowName) {
             $res['flowName'] = $this->flowName;
+        }
+        if (null !== $this->highlights) {
+            $res['highlights'] = $this->highlights;
         }
         if (null !== $this->isHit) {
             $res['isHit'] = $this->isHit;
@@ -81,8 +106,20 @@ class itemList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['citations'])) {
+            if (!empty($map['citations'])) {
+                $model->citations = [];
+                $n = 0;
+                foreach ($map['citations'] as $item) {
+                    $model->citations[$n++] = null !== $item ? citations::fromMap($item) : $item;
+                }
+            }
+        }
         if (isset($map['flowName'])) {
             $model->flowName = $map['flowName'];
+        }
+        if (isset($map['highlights'])) {
+            $model->highlights = $map['highlights'];
         }
         if (isset($map['isHit'])) {
             $model->isHit = $map['isHit'];

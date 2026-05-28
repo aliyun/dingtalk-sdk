@@ -43,7 +43,17 @@ class result extends Model
     /**
      * @var string[]
      */
+    public $mediaFileIdList;
+
+    /**
+     * @var string[]
+     */
     public $mediaUrlList;
+
+    /**
+     * @var string
+     */
+    public $outfitType;
 
     /**
      * @var int
@@ -59,6 +69,11 @@ class result extends Model
      * @var products[]
      */
     public $products;
+
+    /**
+     * @var float
+     */
+    public $score;
 
     /**
      * @var string
@@ -96,10 +111,13 @@ class result extends Model
         'dislikeCount' => 'dislikeCount',
         'gmtCreate' => 'gmtCreate',
         'likeCount' => 'likeCount',
+        'mediaFileIdList' => 'mediaFileIdList',
         'mediaUrlList' => 'mediaUrlList',
+        'outfitType' => 'outfitType',
         'postId' => 'postId',
         'postType' => 'postType',
         'products' => 'products',
+        'score' => 'score',
         'status' => 'status',
         'tagList' => 'tagList',
         'title' => 'title',
@@ -131,8 +149,14 @@ class result extends Model
         if (null !== $this->likeCount) {
             $res['likeCount'] = $this->likeCount;
         }
+        if (null !== $this->mediaFileIdList) {
+            $res['mediaFileIdList'] = $this->mediaFileIdList;
+        }
         if (null !== $this->mediaUrlList) {
             $res['mediaUrlList'] = $this->mediaUrlList;
+        }
+        if (null !== $this->outfitType) {
+            $res['outfitType'] = $this->outfitType;
         }
         if (null !== $this->postId) {
             $res['postId'] = $this->postId;
@@ -148,6 +172,9 @@ class result extends Model
                     $res['products'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->score) {
+            $res['score'] = $this->score;
         }
         if (null !== $this->status) {
             $res['status'] = $this->status;
@@ -203,10 +230,18 @@ class result extends Model
         if (isset($map['likeCount'])) {
             $model->likeCount = $map['likeCount'];
         }
+        if (isset($map['mediaFileIdList'])) {
+            if (!empty($map['mediaFileIdList'])) {
+                $model->mediaFileIdList = $map['mediaFileIdList'];
+            }
+        }
         if (isset($map['mediaUrlList'])) {
             if (!empty($map['mediaUrlList'])) {
                 $model->mediaUrlList = $map['mediaUrlList'];
             }
+        }
+        if (isset($map['outfitType'])) {
+            $model->outfitType = $map['outfitType'];
         }
         if (isset($map['postId'])) {
             $model->postId = $map['postId'];
@@ -222,6 +257,9 @@ class result extends Model
                     $model->products[$n++] = null !== $item ? products::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['score'])) {
+            $model->score = $map['score'];
         }
         if (isset($map['status'])) {
             $model->status = $map['status'];
