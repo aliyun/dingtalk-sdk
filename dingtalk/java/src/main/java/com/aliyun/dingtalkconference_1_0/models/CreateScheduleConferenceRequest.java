@@ -92,6 +92,9 @@ public class CreateScheduleConferenceRequest extends TeaModel {
         @NameInMap("allowAllParticipantsStart")
         public Integer allowAllParticipantsStart;
 
+        @NameInMap("allowParticipantShowAiAgentRecord")
+        public Boolean allowParticipantShowAiAgentRecord;
+
         @NameInMap("enableAiAgentStatus")
         public Boolean enableAiAgentStatus;
 
@@ -119,6 +122,14 @@ public class CreateScheduleConferenceRequest extends TeaModel {
         }
         public Integer getAllowAllParticipantsStart() {
             return this.allowAllParticipantsStart;
+        }
+
+        public CreateScheduleConferenceRequestScheduleConfSettingModelAiAgentSummarySetting setAllowParticipantShowAiAgentRecord(Boolean allowParticipantShowAiAgentRecord) {
+            this.allowParticipantShowAiAgentRecord = allowParticipantShowAiAgentRecord;
+            return this;
+        }
+        public Boolean getAllowParticipantShowAiAgentRecord() {
+            return this.allowParticipantShowAiAgentRecord;
         }
 
         public CreateScheduleConferenceRequestScheduleConfSettingModelAiAgentSummarySetting setEnableAiAgentStatus(Boolean enableAiAgentStatus) {

@@ -4,6 +4,9 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListSeniorSettingsRequest extends TeaModel {
+    @NameInMap("permissionCode")
+    public String permissionCode;
+
     /**
      * <p>This parameter is required.</p>
      */
@@ -13,6 +16,14 @@ public class ListSeniorSettingsRequest extends TeaModel {
     public static ListSeniorSettingsRequest build(java.util.Map<String, ?> map) throws Exception {
         ListSeniorSettingsRequest self = new ListSeniorSettingsRequest();
         return TeaModel.build(map, self);
+    }
+
+    public ListSeniorSettingsRequest setPermissionCode(String permissionCode) {
+        this.permissionCode = permissionCode;
+        return this;
+    }
+    public String getPermissionCode() {
+        return this.permissionCode;
     }
 
     public ListSeniorSettingsRequest setSeniorStaffId(String seniorStaffId) {

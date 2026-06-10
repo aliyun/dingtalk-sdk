@@ -306,6 +306,9 @@ public class QueryContractAppsReviewResultResponseBody extends TeaModel {
     }
 
     public static class QueryContractAppsReviewResultResponseBodyResultData extends TeaModel {
+        @NameInMap("reviewDetailUrl")
+        public String reviewDetailUrl;
+
         @NameInMap("reviewRiskDetail")
         public java.util.List<QueryContractAppsReviewResultResponseBodyResultDataReviewRiskDetail> reviewRiskDetail;
 
@@ -318,6 +321,14 @@ public class QueryContractAppsReviewResultResponseBody extends TeaModel {
         public static QueryContractAppsReviewResultResponseBodyResultData build(java.util.Map<String, ?> map) throws Exception {
             QueryContractAppsReviewResultResponseBodyResultData self = new QueryContractAppsReviewResultResponseBodyResultData();
             return TeaModel.build(map, self);
+        }
+
+        public QueryContractAppsReviewResultResponseBodyResultData setReviewDetailUrl(String reviewDetailUrl) {
+            this.reviewDetailUrl = reviewDetailUrl;
+            return this;
+        }
+        public String getReviewDetailUrl() {
+            return this.reviewDetailUrl;
         }
 
         public QueryContractAppsReviewResultResponseBodyResultData setReviewRiskDetail(java.util.List<QueryContractAppsReviewResultResponseBodyResultDataReviewRiskDetail> reviewRiskDetail) {
