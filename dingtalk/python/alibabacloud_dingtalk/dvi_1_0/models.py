@@ -6718,6 +6718,272 @@ class QueryFileInfoByMinutesIdResponse(TeaModel):
         return self
 
 
+class QueryStaffStatisticDataHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryStaffStatisticDataRequest(TeaModel):
+    def __init__(
+        self,
+        day: str = None,
+        max_results: int = None,
+        next_token: str = None,
+        team_code: str = None,
+        user_id: str = None,
+    ):
+        # This parameter is required.
+        self.day = day
+        self.max_results = max_results
+        self.next_token = next_token
+        self.team_code = team_code
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.day is not None:
+            result['day'] = self.day
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.team_code is not None:
+            result['teamCode'] = self.team_code
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('day') is not None:
+            self.day = m.get('day')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('teamCode') is not None:
+            self.team_code = m.get('teamCode')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class QueryStaffStatisticDataResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        average_quality_inspection_score_per_service: float = None,
+        day: str = None,
+        highest_quality_inspection_score: float = None,
+        sale_sop_percentage: Dict[str, Any] = None,
+        service_record_count: int = None,
+        staff_name: str = None,
+        team_code: str = None,
+        team_name: str = None,
+        total_service_time: int = None,
+        user_id: str = None,
+    ):
+        self.average_quality_inspection_score_per_service = average_quality_inspection_score_per_service
+        self.day = day
+        self.highest_quality_inspection_score = highest_quality_inspection_score
+        self.sale_sop_percentage = sale_sop_percentage
+        self.service_record_count = service_record_count
+        self.staff_name = staff_name
+        self.team_code = team_code
+        self.team_name = team_name
+        self.total_service_time = total_service_time
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.average_quality_inspection_score_per_service is not None:
+            result['averageQualityInspectionScorePerService'] = self.average_quality_inspection_score_per_service
+        if self.day is not None:
+            result['day'] = self.day
+        if self.highest_quality_inspection_score is not None:
+            result['highestQualityInspectionScore'] = self.highest_quality_inspection_score
+        if self.sale_sop_percentage is not None:
+            result['saleSopPercentage'] = self.sale_sop_percentage
+        if self.service_record_count is not None:
+            result['serviceRecordCount'] = self.service_record_count
+        if self.staff_name is not None:
+            result['staffName'] = self.staff_name
+        if self.team_code is not None:
+            result['teamCode'] = self.team_code
+        if self.team_name is not None:
+            result['teamName'] = self.team_name
+        if self.total_service_time is not None:
+            result['totalServiceTime'] = self.total_service_time
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('averageQualityInspectionScorePerService') is not None:
+            self.average_quality_inspection_score_per_service = m.get('averageQualityInspectionScorePerService')
+        if m.get('day') is not None:
+            self.day = m.get('day')
+        if m.get('highestQualityInspectionScore') is not None:
+            self.highest_quality_inspection_score = m.get('highestQualityInspectionScore')
+        if m.get('saleSopPercentage') is not None:
+            self.sale_sop_percentage = m.get('saleSopPercentage')
+        if m.get('serviceRecordCount') is not None:
+            self.service_record_count = m.get('serviceRecordCount')
+        if m.get('staffName') is not None:
+            self.staff_name = m.get('staffName')
+        if m.get('teamCode') is not None:
+            self.team_code = m.get('teamCode')
+        if m.get('teamName') is not None:
+            self.team_name = m.get('teamName')
+        if m.get('totalServiceTime') is not None:
+            self.total_service_time = m.get('totalServiceTime')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class QueryStaffStatisticDataResponseBody(TeaModel):
+    def __init__(
+        self,
+        max_results: int = None,
+        next_token: str = None,
+        result: List[QueryStaffStatisticDataResponseBodyResult] = None,
+        success: bool = None,
+        total_count: int = None,
+    ):
+        self.max_results = max_results
+        self.next_token = next_token
+        self.result = result
+        self.success = success
+        self.total_count = total_count
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        if self.success is not None:
+            result['success'] = self.success
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = QueryStaffStatisticDataResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class QueryStaffStatisticDataResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryStaffStatisticDataResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryStaffStatisticDataResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryUserDeviceLocationHeaders(TeaModel):
     def __init__(
         self,

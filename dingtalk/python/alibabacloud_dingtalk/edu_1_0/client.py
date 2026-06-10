@@ -13982,6 +13982,124 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.GetCollegeContactStandardStruDeptDetailHeaders()
         return await self.get_college_contact_standard_stru_dept_detail_with_options_async(request, headers, runtime)
 
+    def get_correct_style_with_options(
+        self,
+        request: dingtalkedu__1__0_models.GetCorrectStyleRequest,
+        headers: dingtalkedu__1__0_models.GetCorrectStyleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.GetCorrectStyleResponse:
+        """
+        @summary 作业批改-查询批改样式
+        
+        @param request: GetCorrectStyleRequest
+        @param headers: GetCorrectStyleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetCorrectStyleResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.task_code):
+            body['taskCode'] = request.task_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetCorrectStyle',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/assignment/getCorrectStyle',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.GetCorrectStyleResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_correct_style_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.GetCorrectStyleRequest,
+        headers: dingtalkedu__1__0_models.GetCorrectStyleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.GetCorrectStyleResponse:
+        """
+        @summary 作业批改-查询批改样式
+        
+        @param request: GetCorrectStyleRequest
+        @param headers: GetCorrectStyleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetCorrectStyleResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.task_code):
+            body['taskCode'] = request.task_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetCorrectStyle',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/assignment/getCorrectStyle',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.GetCorrectStyleResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_correct_style(
+        self,
+        request: dingtalkedu__1__0_models.GetCorrectStyleRequest,
+    ) -> dingtalkedu__1__0_models.GetCorrectStyleResponse:
+        """
+        @summary 作业批改-查询批改样式
+        
+        @param request: GetCorrectStyleRequest
+        @return: GetCorrectStyleResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.GetCorrectStyleHeaders()
+        return self.get_correct_style_with_options(request, headers, runtime)
+
+    async def get_correct_style_async(
+        self,
+        request: dingtalkedu__1__0_models.GetCorrectStyleRequest,
+    ) -> dingtalkedu__1__0_models.GetCorrectStyleResponse:
+        """
+        @summary 作业批改-查询批改样式
+        
+        @param request: GetCorrectStyleRequest
+        @return: GetCorrectStyleResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.GetCorrectStyleHeaders()
+        return await self.get_correct_style_with_options_async(request, headers, runtime)
+
     def get_default_child_with_options(
         self,
         headers: dingtalkedu__1__0_models.GetDefaultChildHeaders,
@@ -20693,6 +20811,140 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkedu__1__0_models.QueryOrderHeaders()
         return await self.query_order_with_options_async(request, headers, runtime)
+
+    def query_org_correct_task_detail_with_options(
+        self,
+        request: dingtalkedu__1__0_models.QueryOrgCorrectTaskDetailRequest,
+        headers: dingtalkedu__1__0_models.QueryOrgCorrectTaskDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QueryOrgCorrectTaskDetailResponse:
+        """
+        @summary 作业批改-查询批改任务明细
+        
+        @param request: QueryOrgCorrectTaskDetailRequest
+        @param headers: QueryOrgCorrectTaskDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryOrgCorrectTaskDetailResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.page_no):
+            body['pageNo'] = request.page_no
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.query_corp_id):
+            body['queryCorpId'] = request.query_corp_id
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.subject_code):
+            body['subjectCode'] = request.subject_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryOrgCorrectTaskDetail',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/assignment/queryTaskDetail',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QueryOrgCorrectTaskDetailResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_org_correct_task_detail_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.QueryOrgCorrectTaskDetailRequest,
+        headers: dingtalkedu__1__0_models.QueryOrgCorrectTaskDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QueryOrgCorrectTaskDetailResponse:
+        """
+        @summary 作业批改-查询批改任务明细
+        
+        @param request: QueryOrgCorrectTaskDetailRequest
+        @param headers: QueryOrgCorrectTaskDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryOrgCorrectTaskDetailResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.page_no):
+            body['pageNo'] = request.page_no
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.query_corp_id):
+            body['queryCorpId'] = request.query_corp_id
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.subject_code):
+            body['subjectCode'] = request.subject_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryOrgCorrectTaskDetail',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/assignment/queryTaskDetail',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QueryOrgCorrectTaskDetailResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_org_correct_task_detail(
+        self,
+        request: dingtalkedu__1__0_models.QueryOrgCorrectTaskDetailRequest,
+    ) -> dingtalkedu__1__0_models.QueryOrgCorrectTaskDetailResponse:
+        """
+        @summary 作业批改-查询批改任务明细
+        
+        @param request: QueryOrgCorrectTaskDetailRequest
+        @return: QueryOrgCorrectTaskDetailResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QueryOrgCorrectTaskDetailHeaders()
+        return self.query_org_correct_task_detail_with_options(request, headers, runtime)
+
+    async def query_org_correct_task_detail_async(
+        self,
+        request: dingtalkedu__1__0_models.QueryOrgCorrectTaskDetailRequest,
+    ) -> dingtalkedu__1__0_models.QueryOrgCorrectTaskDetailResponse:
+        """
+        @summary 作业批改-查询批改任务明细
+        
+        @param request: QueryOrgCorrectTaskDetailRequest
+        @return: QueryOrgCorrectTaskDetailResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QueryOrgCorrectTaskDetailHeaders()
+        return await self.query_org_correct_task_detail_with_options_async(request, headers, runtime)
 
     def query_org_relation_list_with_options(
         self,

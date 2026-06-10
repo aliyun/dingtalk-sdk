@@ -908,6 +908,8 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(tmp_req.user_id_list):
             request.user_id_list_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.user_id_list, 'userIdList', 'json')
         query = {}
+        if not UtilClient.is_unset(request.permission_code):
+            query['permissionCode'] = request.permission_code
         if not UtilClient.is_unset(request.user_id_list_shrink):
             query['userIdList'] = request.user_id_list_shrink
         real_headers = {}
@@ -955,6 +957,8 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(tmp_req.user_id_list):
             request.user_id_list_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.user_id_list, 'userIdList', 'json')
         query = {}
+        if not UtilClient.is_unset(request.permission_code):
+            query['permissionCode'] = request.permission_code
         if not UtilClient.is_unset(request.user_id_list_shrink):
             query['userIdList'] = request.user_id_list_shrink
         real_headers = {}
@@ -6014,6 +6018,8 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         query = {}
+        if not UtilClient.is_unset(request.permission_code):
+            query['permissionCode'] = request.permission_code
         if not UtilClient.is_unset(request.senior_staff_id):
             query['seniorStaffId'] = request.senior_staff_id
         real_headers = {}
@@ -6033,7 +6039,7 @@ class Client(OpenApiClient):
             method='GET',
             auth_type='AK',
             style='ROA',
-            req_body_type='json',
+            req_body_type='none',
             body_type='json'
         )
         return TeaCore.from_map(
@@ -6057,6 +6063,8 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         query = {}
+        if not UtilClient.is_unset(request.permission_code):
+            query['permissionCode'] = request.permission_code
         if not UtilClient.is_unset(request.senior_staff_id):
             query['seniorStaffId'] = request.senior_staff_id
         real_headers = {}
@@ -6076,7 +6084,7 @@ class Client(OpenApiClient):
             method='GET',
             auth_type='AK',
             style='ROA',
-            req_body_type='json',
+            req_body_type='none',
             body_type='json'
         )
         return TeaCore.from_map(
@@ -6111,6 +6119,250 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcontact__1__0_models.ListSeniorSettingsHeaders()
         return await self.list_senior_settings_with_options_async(request, headers, runtime)
+
+    def list_user_group_members_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.ListUserGroupMembersRequest,
+        headers: dingtalkcontact__1__0_models.ListUserGroupMembersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.ListUserGroupMembersResponse:
+        """
+        @summary 查询用户组成员列表
+        
+        @param request: ListUserGroupMembersRequest
+        @param headers: ListUserGroupMembersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListUserGroupMembersResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.group_code):
+            query['groupCode'] = request.group_code
+        if not UtilClient.is_unset(request.offset):
+            query['offset'] = request.offset
+        if not UtilClient.is_unset(request.size):
+            query['size'] = request.size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListUserGroupMembers',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/userGroups/listUserGroupMembers',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.ListUserGroupMembersResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def list_user_group_members_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.ListUserGroupMembersRequest,
+        headers: dingtalkcontact__1__0_models.ListUserGroupMembersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.ListUserGroupMembersResponse:
+        """
+        @summary 查询用户组成员列表
+        
+        @param request: ListUserGroupMembersRequest
+        @param headers: ListUserGroupMembersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListUserGroupMembersResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.group_code):
+            query['groupCode'] = request.group_code
+        if not UtilClient.is_unset(request.offset):
+            query['offset'] = request.offset
+        if not UtilClient.is_unset(request.size):
+            query['size'] = request.size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListUserGroupMembers',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/userGroups/listUserGroupMembers',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.ListUserGroupMembersResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def list_user_group_members(
+        self,
+        request: dingtalkcontact__1__0_models.ListUserGroupMembersRequest,
+    ) -> dingtalkcontact__1__0_models.ListUserGroupMembersResponse:
+        """
+        @summary 查询用户组成员列表
+        
+        @param request: ListUserGroupMembersRequest
+        @return: ListUserGroupMembersResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.ListUserGroupMembersHeaders()
+        return self.list_user_group_members_with_options(request, headers, runtime)
+
+    async def list_user_group_members_async(
+        self,
+        request: dingtalkcontact__1__0_models.ListUserGroupMembersRequest,
+    ) -> dingtalkcontact__1__0_models.ListUserGroupMembersResponse:
+        """
+        @summary 查询用户组成员列表
+        
+        @param request: ListUserGroupMembersRequest
+        @return: ListUserGroupMembersResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.ListUserGroupMembersHeaders()
+        return await self.list_user_group_members_with_options_async(request, headers, runtime)
+
+    def list_user_groups_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.ListUserGroupsRequest,
+        headers: dingtalkcontact__1__0_models.ListUserGroupsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.ListUserGroupsResponse:
+        """
+        @summary 查询用户组列表
+        
+        @param request: ListUserGroupsRequest
+        @param headers: ListUserGroupsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListUserGroupsResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.group_type):
+            query['groupType'] = request.group_type
+        if not UtilClient.is_unset(request.offset):
+            query['offset'] = request.offset
+        if not UtilClient.is_unset(request.size):
+            query['size'] = request.size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListUserGroups',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/userGroups/listUserGroups',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.ListUserGroupsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def list_user_groups_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.ListUserGroupsRequest,
+        headers: dingtalkcontact__1__0_models.ListUserGroupsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.ListUserGroupsResponse:
+        """
+        @summary 查询用户组列表
+        
+        @param request: ListUserGroupsRequest
+        @param headers: ListUserGroupsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListUserGroupsResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.group_type):
+            query['groupType'] = request.group_type
+        if not UtilClient.is_unset(request.offset):
+            query['offset'] = request.offset
+        if not UtilClient.is_unset(request.size):
+            query['size'] = request.size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListUserGroups',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/userGroups/listUserGroups',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.ListUserGroupsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def list_user_groups(
+        self,
+        request: dingtalkcontact__1__0_models.ListUserGroupsRequest,
+    ) -> dingtalkcontact__1__0_models.ListUserGroupsResponse:
+        """
+        @summary 查询用户组列表
+        
+        @param request: ListUserGroupsRequest
+        @return: ListUserGroupsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.ListUserGroupsHeaders()
+        return self.list_user_groups_with_options(request, headers, runtime)
+
+    async def list_user_groups_async(
+        self,
+        request: dingtalkcontact__1__0_models.ListUserGroupsRequest,
+    ) -> dingtalkcontact__1__0_models.ListUserGroupsResponse:
+        """
+        @summary 查询用户组列表
+        
+        @param request: ListUserGroupsRequest
+        @return: ListUserGroupsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.ListUserGroupsHeaders()
+        return await self.list_user_groups_with_options_async(request, headers, runtime)
 
     def modify_org_acc_user_ownness_with_options(
         self,
@@ -12303,6 +12555,242 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcontact__1__0_models.UpdateUserOwnnessHeaders()
         return await self.update_user_ownness_with_options_async(user_id, request, headers, runtime)
+
+    def user_group_add_static_group_members_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.UserGroupAddStaticGroupMembersRequest,
+        headers: dingtalkcontact__1__0_models.UserGroupAddStaticGroupMembersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.UserGroupAddStaticGroupMembersResponse:
+        """
+        @summary 批量添加静态用户组成员
+        
+        @param request: UserGroupAddStaticGroupMembersRequest
+        @param headers: UserGroupAddStaticGroupMembersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UserGroupAddStaticGroupMembersResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.group_code):
+            body['groupCode'] = request.group_code
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UserGroupAddStaticGroupMembers',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/userGroups/addStaticGroupMembers',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.UserGroupAddStaticGroupMembersResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def user_group_add_static_group_members_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.UserGroupAddStaticGroupMembersRequest,
+        headers: dingtalkcontact__1__0_models.UserGroupAddStaticGroupMembersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.UserGroupAddStaticGroupMembersResponse:
+        """
+        @summary 批量添加静态用户组成员
+        
+        @param request: UserGroupAddStaticGroupMembersRequest
+        @param headers: UserGroupAddStaticGroupMembersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UserGroupAddStaticGroupMembersResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.group_code):
+            body['groupCode'] = request.group_code
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UserGroupAddStaticGroupMembers',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/userGroups/addStaticGroupMembers',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.UserGroupAddStaticGroupMembersResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def user_group_add_static_group_members(
+        self,
+        request: dingtalkcontact__1__0_models.UserGroupAddStaticGroupMembersRequest,
+    ) -> dingtalkcontact__1__0_models.UserGroupAddStaticGroupMembersResponse:
+        """
+        @summary 批量添加静态用户组成员
+        
+        @param request: UserGroupAddStaticGroupMembersRequest
+        @return: UserGroupAddStaticGroupMembersResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.UserGroupAddStaticGroupMembersHeaders()
+        return self.user_group_add_static_group_members_with_options(request, headers, runtime)
+
+    async def user_group_add_static_group_members_async(
+        self,
+        request: dingtalkcontact__1__0_models.UserGroupAddStaticGroupMembersRequest,
+    ) -> dingtalkcontact__1__0_models.UserGroupAddStaticGroupMembersResponse:
+        """
+        @summary 批量添加静态用户组成员
+        
+        @param request: UserGroupAddStaticGroupMembersRequest
+        @return: UserGroupAddStaticGroupMembersResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.UserGroupAddStaticGroupMembersHeaders()
+        return await self.user_group_add_static_group_members_with_options_async(request, headers, runtime)
+
+    def user_group_remove_static_group_members_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.UserGroupRemoveStaticGroupMembersRequest,
+        headers: dingtalkcontact__1__0_models.UserGroupRemoveStaticGroupMembersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.UserGroupRemoveStaticGroupMembersResponse:
+        """
+        @summary 批量删除静态用户组成员
+        
+        @param request: UserGroupRemoveStaticGroupMembersRequest
+        @param headers: UserGroupRemoveStaticGroupMembersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UserGroupRemoveStaticGroupMembersResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.group_code):
+            body['groupCode'] = request.group_code
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UserGroupRemoveStaticGroupMembers',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/userGroups/removeStaticGroupMembers',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.UserGroupRemoveStaticGroupMembersResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def user_group_remove_static_group_members_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.UserGroupRemoveStaticGroupMembersRequest,
+        headers: dingtalkcontact__1__0_models.UserGroupRemoveStaticGroupMembersHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.UserGroupRemoveStaticGroupMembersResponse:
+        """
+        @summary 批量删除静态用户组成员
+        
+        @param request: UserGroupRemoveStaticGroupMembersRequest
+        @param headers: UserGroupRemoveStaticGroupMembersHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UserGroupRemoveStaticGroupMembersResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.group_code):
+            body['groupCode'] = request.group_code
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UserGroupRemoveStaticGroupMembers',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/userGroups/removeStaticGroupMembers',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.UserGroupRemoveStaticGroupMembersResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def user_group_remove_static_group_members(
+        self,
+        request: dingtalkcontact__1__0_models.UserGroupRemoveStaticGroupMembersRequest,
+    ) -> dingtalkcontact__1__0_models.UserGroupRemoveStaticGroupMembersResponse:
+        """
+        @summary 批量删除静态用户组成员
+        
+        @param request: UserGroupRemoveStaticGroupMembersRequest
+        @return: UserGroupRemoveStaticGroupMembersResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.UserGroupRemoveStaticGroupMembersHeaders()
+        return self.user_group_remove_static_group_members_with_options(request, headers, runtime)
+
+    async def user_group_remove_static_group_members_async(
+        self,
+        request: dingtalkcontact__1__0_models.UserGroupRemoveStaticGroupMembersRequest,
+    ) -> dingtalkcontact__1__0_models.UserGroupRemoveStaticGroupMembersResponse:
+        """
+        @summary 批量删除静态用户组成员
+        
+        @param request: UserGroupRemoveStaticGroupMembersRequest
+        @return: UserGroupRemoveStaticGroupMembersResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.UserGroupRemoveStaticGroupMembersHeaders()
+        return await self.user_group_remove_static_group_members_with_options_async(request, headers, runtime)
 
     def user_profile_with_options(
         self,

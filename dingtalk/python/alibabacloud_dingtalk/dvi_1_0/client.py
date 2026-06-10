@@ -3366,6 +3366,136 @@ class Client(OpenApiClient):
         headers = dingtalkdvi__1__0_models.QueryFileInfoByMinutesIdHeaders()
         return await self.query_file_info_by_minutes_id_with_options_async(request, headers, runtime)
 
+    def query_staff_statistic_data_with_options(
+        self,
+        request: dingtalkdvi__1__0_models.QueryStaffStatisticDataRequest,
+        headers: dingtalkdvi__1__0_models.QueryStaffStatisticDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.QueryStaffStatisticDataResponse:
+        """
+        @summary 分页查询员工统计数据
+        
+        @param request: QueryStaffStatisticDataRequest
+        @param headers: QueryStaffStatisticDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryStaffStatisticDataResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.day):
+            query['day'] = request.day
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.team_code):
+            query['teamCode'] = request.team_code
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryStaffStatisticData',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/data/staff',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.QueryStaffStatisticDataResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_staff_statistic_data_with_options_async(
+        self,
+        request: dingtalkdvi__1__0_models.QueryStaffStatisticDataRequest,
+        headers: dingtalkdvi__1__0_models.QueryStaffStatisticDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.QueryStaffStatisticDataResponse:
+        """
+        @summary 分页查询员工统计数据
+        
+        @param request: QueryStaffStatisticDataRequest
+        @param headers: QueryStaffStatisticDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryStaffStatisticDataResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.day):
+            query['day'] = request.day
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.team_code):
+            query['teamCode'] = request.team_code
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryStaffStatisticData',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/data/staff',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.QueryStaffStatisticDataResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_staff_statistic_data(
+        self,
+        request: dingtalkdvi__1__0_models.QueryStaffStatisticDataRequest,
+    ) -> dingtalkdvi__1__0_models.QueryStaffStatisticDataResponse:
+        """
+        @summary 分页查询员工统计数据
+        
+        @param request: QueryStaffStatisticDataRequest
+        @return: QueryStaffStatisticDataResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.QueryStaffStatisticDataHeaders()
+        return self.query_staff_statistic_data_with_options(request, headers, runtime)
+
+    async def query_staff_statistic_data_async(
+        self,
+        request: dingtalkdvi__1__0_models.QueryStaffStatisticDataRequest,
+    ) -> dingtalkdvi__1__0_models.QueryStaffStatisticDataResponse:
+        """
+        @summary 分页查询员工统计数据
+        
+        @param request: QueryStaffStatisticDataRequest
+        @return: QueryStaffStatisticDataResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.QueryStaffStatisticDataHeaders()
+        return await self.query_staff_statistic_data_with_options_async(request, headers, runtime)
+
     def query_user_device_location_with_options(
         self,
         request: dingtalkdvi__1__0_models.QueryUserDeviceLocationRequest,

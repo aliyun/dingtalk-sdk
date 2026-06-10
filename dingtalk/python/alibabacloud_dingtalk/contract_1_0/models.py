@@ -7542,10 +7542,12 @@ class QueryContractAppsReviewResultResponseBodyResultDataReviewStatus(TeaModel):
 class QueryContractAppsReviewResultResponseBodyResultData(TeaModel):
     def __init__(
         self,
+        review_detail_url: str = None,
         review_risk_detail: List[QueryContractAppsReviewResultResponseBodyResultDataReviewRiskDetail] = None,
         review_risk_overview: QueryContractAppsReviewResultResponseBodyResultDataReviewRiskOverview = None,
         review_status: QueryContractAppsReviewResultResponseBodyResultDataReviewStatus = None,
     ):
+        self.review_detail_url = review_detail_url
         self.review_risk_detail = review_risk_detail
         self.review_risk_overview = review_risk_overview
         self.review_status = review_status
@@ -7566,6 +7568,8 @@ class QueryContractAppsReviewResultResponseBodyResultData(TeaModel):
             return _map
 
         result = dict()
+        if self.review_detail_url is not None:
+            result['reviewDetailUrl'] = self.review_detail_url
         result['reviewRiskDetail'] = []
         if self.review_risk_detail is not None:
             for k in self.review_risk_detail:
@@ -7578,6 +7582,8 @@ class QueryContractAppsReviewResultResponseBodyResultData(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('reviewDetailUrl') is not None:
+            self.review_detail_url = m.get('reviewDetailUrl')
         self.review_risk_detail = []
         if m.get('reviewRiskDetail') is not None:
             for k in m.get('reviewRiskDetail'):

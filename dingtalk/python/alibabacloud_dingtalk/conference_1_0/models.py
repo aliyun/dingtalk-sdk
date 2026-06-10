@@ -1253,12 +1253,14 @@ class CreateScheduleConferenceRequestScheduleConfSettingModelAiAgentSummarySetti
     def __init__(
         self,
         allow_all_participants_start: int = None,
+        allow_participant_show_ai_agent_record: bool = None,
         enable_ai_agent_status: bool = None,
         receiver_type: int = None,
         restrict_share_minutes_summary_only: int = None,
         value: str = None,
     ):
         self.allow_all_participants_start = allow_all_participants_start
+        self.allow_participant_show_ai_agent_record = allow_participant_show_ai_agent_record
         self.enable_ai_agent_status = enable_ai_agent_status
         self.receiver_type = receiver_type
         self.restrict_share_minutes_summary_only = restrict_share_minutes_summary_only
@@ -1275,6 +1277,8 @@ class CreateScheduleConferenceRequestScheduleConfSettingModelAiAgentSummarySetti
         result = dict()
         if self.allow_all_participants_start is not None:
             result['allowAllParticipantsStart'] = self.allow_all_participants_start
+        if self.allow_participant_show_ai_agent_record is not None:
+            result['allowParticipantShowAiAgentRecord'] = self.allow_participant_show_ai_agent_record
         if self.enable_ai_agent_status is not None:
             result['enableAiAgentStatus'] = self.enable_ai_agent_status
         if self.receiver_type is not None:
@@ -1289,6 +1293,8 @@ class CreateScheduleConferenceRequestScheduleConfSettingModelAiAgentSummarySetti
         m = m or dict()
         if m.get('allowAllParticipantsStart') is not None:
             self.allow_all_participants_start = m.get('allowAllParticipantsStart')
+        if m.get('allowParticipantShowAiAgentRecord') is not None:
+            self.allow_participant_show_ai_agent_record = m.get('allowParticipantShowAiAgentRecord')
         if m.get('enableAiAgentStatus') is not None:
             self.enable_ai_agent_status = m.get('enableAiAgentStatus')
         if m.get('receiverType') is not None:

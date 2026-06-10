@@ -1192,6 +1192,262 @@ class Client(OpenApiClient):
         headers = dingtalknotable__1__0_models.DeleteSheetHeaders()
         return await self.delete_sheet_with_options_async(base_id, sheet_id_or_name, request, headers, runtime)
 
+    def enable_workflow_with_options(
+        self,
+        base_id: str,
+        flow_id: str,
+        request: dingtalknotable__1__0_models.EnableWorkflowRequest,
+        headers: dingtalknotable__1__0_models.EnableWorkflowHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.EnableWorkflowResponse:
+        """
+        @summary 启动单个工作流
+        
+        @param request: EnableWorkflowRequest
+        @param headers: EnableWorkflowHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EnableWorkflowResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='EnableWorkflow',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/bases/{base_id}/workflows/{flow_id}/enable',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.EnableWorkflowResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def enable_workflow_with_options_async(
+        self,
+        base_id: str,
+        flow_id: str,
+        request: dingtalknotable__1__0_models.EnableWorkflowRequest,
+        headers: dingtalknotable__1__0_models.EnableWorkflowHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.EnableWorkflowResponse:
+        """
+        @summary 启动单个工作流
+        
+        @param request: EnableWorkflowRequest
+        @param headers: EnableWorkflowHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EnableWorkflowResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='EnableWorkflow',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/bases/{base_id}/workflows/{flow_id}/enable',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.EnableWorkflowResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def enable_workflow(
+        self,
+        base_id: str,
+        flow_id: str,
+        request: dingtalknotable__1__0_models.EnableWorkflowRequest,
+    ) -> dingtalknotable__1__0_models.EnableWorkflowResponse:
+        """
+        @summary 启动单个工作流
+        
+        @param request: EnableWorkflowRequest
+        @return: EnableWorkflowResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.EnableWorkflowHeaders()
+        return self.enable_workflow_with_options(base_id, flow_id, request, headers, runtime)
+
+    async def enable_workflow_async(
+        self,
+        base_id: str,
+        flow_id: str,
+        request: dingtalknotable__1__0_models.EnableWorkflowRequest,
+    ) -> dingtalknotable__1__0_models.EnableWorkflowResponse:
+        """
+        @summary 启动单个工作流
+        
+        @param request: EnableWorkflowRequest
+        @return: EnableWorkflowResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.EnableWorkflowHeaders()
+        return await self.enable_workflow_with_options_async(base_id, flow_id, request, headers, runtime)
+
+    def execute_import_with_options(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.ExecuteImportRequest,
+        headers: dingtalknotable__1__0_models.ExecuteImportHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.ExecuteImportResponse:
+        """
+        @summary 触发加密导入
+        
+        @param request: ExecuteImportRequest
+        @param headers: ExecuteImportHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ExecuteImportResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.append_config):
+            body['appendConfig'] = request.append_config
+        if not UtilClient.is_unset(request.encryption):
+            body['encryption'] = request.encryption
+        if not UtilClient.is_unset(request.import_id):
+            body['importId'] = request.import_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ExecuteImport',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/bases/{base_id}/import/execute',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.ExecuteImportResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def execute_import_with_options_async(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.ExecuteImportRequest,
+        headers: dingtalknotable__1__0_models.ExecuteImportHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.ExecuteImportResponse:
+        """
+        @summary 触发加密导入
+        
+        @param request: ExecuteImportRequest
+        @param headers: ExecuteImportHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ExecuteImportResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.append_config):
+            body['appendConfig'] = request.append_config
+        if not UtilClient.is_unset(request.encryption):
+            body['encryption'] = request.encryption
+        if not UtilClient.is_unset(request.import_id):
+            body['importId'] = request.import_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ExecuteImport',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/bases/{base_id}/import/execute',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.ExecuteImportResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def execute_import(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.ExecuteImportRequest,
+    ) -> dingtalknotable__1__0_models.ExecuteImportResponse:
+        """
+        @summary 触发加密导入
+        
+        @param request: ExecuteImportRequest
+        @return: ExecuteImportResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.ExecuteImportHeaders()
+        return self.execute_import_with_options(base_id, request, headers, runtime)
+
+    async def execute_import_async(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.ExecuteImportRequest,
+    ) -> dingtalknotable__1__0_models.ExecuteImportResponse:
+        """
+        @summary 触发加密导入
+        
+        @param request: ExecuteImportRequest
+        @return: ExecuteImportResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.ExecuteImportHeaders()
+        return await self.execute_import_with_options_async(base_id, request, headers, runtime)
+
     def get_all_fields_with_options(
         self,
         base_id: str,
@@ -1431,6 +1687,124 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.GetAllSheetsHeaders()
         return await self.get_all_sheets_with_options_async(base_id, request, headers, runtime)
+
+    def get_import_encrypt_public_key_with_options(
+        self,
+        request: dingtalknotable__1__0_models.GetImportEncryptPublicKeyRequest,
+        headers: dingtalknotable__1__0_models.GetImportEncryptPublicKeyHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.GetImportEncryptPublicKeyResponse:
+        """
+        @summary 获取加密导入 RSA 公钥
+        
+        @param request: GetImportEncryptPublicKeyRequest
+        @param headers: GetImportEncryptPublicKeyHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetImportEncryptPublicKeyResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.key_version):
+            query['keyVersion'] = request.key_version
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetImportEncryptPublicKey',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/import/encryptPublicKey',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.GetImportEncryptPublicKeyResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_import_encrypt_public_key_with_options_async(
+        self,
+        request: dingtalknotable__1__0_models.GetImportEncryptPublicKeyRequest,
+        headers: dingtalknotable__1__0_models.GetImportEncryptPublicKeyHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.GetImportEncryptPublicKeyResponse:
+        """
+        @summary 获取加密导入 RSA 公钥
+        
+        @param request: GetImportEncryptPublicKeyRequest
+        @param headers: GetImportEncryptPublicKeyHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetImportEncryptPublicKeyResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.key_version):
+            query['keyVersion'] = request.key_version
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetImportEncryptPublicKey',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/import/encryptPublicKey',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.GetImportEncryptPublicKeyResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_import_encrypt_public_key(
+        self,
+        request: dingtalknotable__1__0_models.GetImportEncryptPublicKeyRequest,
+    ) -> dingtalknotable__1__0_models.GetImportEncryptPublicKeyResponse:
+        """
+        @summary 获取加密导入 RSA 公钥
+        
+        @param request: GetImportEncryptPublicKeyRequest
+        @return: GetImportEncryptPublicKeyResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.GetImportEncryptPublicKeyHeaders()
+        return self.get_import_encrypt_public_key_with_options(request, headers, runtime)
+
+    async def get_import_encrypt_public_key_async(
+        self,
+        request: dingtalknotable__1__0_models.GetImportEncryptPublicKeyRequest,
+    ) -> dingtalknotable__1__0_models.GetImportEncryptPublicKeyResponse:
+        """
+        @summary 获取加密导入 RSA 公钥
+        
+        @param request: GetImportEncryptPublicKeyRequest
+        @return: GetImportEncryptPublicKeyResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.GetImportEncryptPublicKeyHeaders()
+        return await self.get_import_encrypt_public_key_with_options_async(request, headers, runtime)
 
     def get_record_with_options(
         self,
@@ -2326,6 +2700,274 @@ class Client(OpenApiClient):
         headers = dingtalknotable__1__0_models.ListRecordsHeaders()
         return await self.list_records_with_options_async(base_id, sheet_id_or_name, request, headers, runtime)
 
+    def list_workflows_with_options(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.ListWorkflowsRequest,
+        headers: dingtalknotable__1__0_models.ListWorkflowsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.ListWorkflowsResponse:
+        """
+        @summary 查询自动化工作流列表
+        
+        @param request: ListWorkflowsRequest
+        @param headers: ListWorkflowsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListWorkflowsResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.limit):
+            body['limit'] = request.limit
+        if not UtilClient.is_unset(request.offset):
+            body['offset'] = request.offset
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ListWorkflows',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/bases/{base_id}/workflows',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.ListWorkflowsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def list_workflows_with_options_async(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.ListWorkflowsRequest,
+        headers: dingtalknotable__1__0_models.ListWorkflowsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.ListWorkflowsResponse:
+        """
+        @summary 查询自动化工作流列表
+        
+        @param request: ListWorkflowsRequest
+        @param headers: ListWorkflowsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListWorkflowsResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.limit):
+            body['limit'] = request.limit
+        if not UtilClient.is_unset(request.offset):
+            body['offset'] = request.offset
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ListWorkflows',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/bases/{base_id}/workflows',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.ListWorkflowsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def list_workflows(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.ListWorkflowsRequest,
+    ) -> dingtalknotable__1__0_models.ListWorkflowsResponse:
+        """
+        @summary 查询自动化工作流列表
+        
+        @param request: ListWorkflowsRequest
+        @return: ListWorkflowsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.ListWorkflowsHeaders()
+        return self.list_workflows_with_options(base_id, request, headers, runtime)
+
+    async def list_workflows_async(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.ListWorkflowsRequest,
+    ) -> dingtalknotable__1__0_models.ListWorkflowsResponse:
+        """
+        @summary 查询自动化工作流列表
+        
+        @param request: ListWorkflowsRequest
+        @return: ListWorkflowsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.ListWorkflowsHeaders()
+        return await self.list_workflows_with_options_async(base_id, request, headers, runtime)
+
+    def prepare_import_upload_with_options(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.PrepareImportUploadRequest,
+        headers: dingtalknotable__1__0_models.PrepareImportUploadHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.PrepareImportUploadResponse:
+        """
+        @summary 申请加密导入上传链接
+        
+        @param request: PrepareImportUploadRequest
+        @param headers: PrepareImportUploadHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PrepareImportUploadResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.file_extension):
+            body['fileExtension'] = request.file_extension
+        if not UtilClient.is_unset(request.file_name):
+            body['fileName'] = request.file_name
+        if not UtilClient.is_unset(request.file_size):
+            body['fileSize'] = request.file_size
+        if not UtilClient.is_unset(request.table_names):
+            body['tableNames'] = request.table_names
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PrepareImportUpload',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/bases/{base_id}/import/uploadUrl',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.PrepareImportUploadResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def prepare_import_upload_with_options_async(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.PrepareImportUploadRequest,
+        headers: dingtalknotable__1__0_models.PrepareImportUploadHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.PrepareImportUploadResponse:
+        """
+        @summary 申请加密导入上传链接
+        
+        @param request: PrepareImportUploadRequest
+        @param headers: PrepareImportUploadHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PrepareImportUploadResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.file_extension):
+            body['fileExtension'] = request.file_extension
+        if not UtilClient.is_unset(request.file_name):
+            body['fileName'] = request.file_name
+        if not UtilClient.is_unset(request.file_size):
+            body['fileSize'] = request.file_size
+        if not UtilClient.is_unset(request.table_names):
+            body['tableNames'] = request.table_names
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PrepareImportUpload',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/bases/{base_id}/import/uploadUrl',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.PrepareImportUploadResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def prepare_import_upload(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.PrepareImportUploadRequest,
+    ) -> dingtalknotable__1__0_models.PrepareImportUploadResponse:
+        """
+        @summary 申请加密导入上传链接
+        
+        @param request: PrepareImportUploadRequest
+        @return: PrepareImportUploadResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.PrepareImportUploadHeaders()
+        return self.prepare_import_upload_with_options(base_id, request, headers, runtime)
+
+    async def prepare_import_upload_async(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.PrepareImportUploadRequest,
+    ) -> dingtalknotable__1__0_models.PrepareImportUploadResponse:
+        """
+        @summary 申请加密导入上传链接
+        
+        @param request: PrepareImportUploadRequest
+        @return: PrepareImportUploadResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.PrepareImportUploadHeaders()
+        return await self.prepare_import_upload_with_options_async(base_id, request, headers, runtime)
+
     def prepare_set_rich_text_with_options(
         self,
         base_id: str,
@@ -2695,6 +3337,128 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.QueryDocAllRolesHeaders()
         return await self.query_doc_all_roles_with_options_async(base_id, request, headers, runtime)
+
+    def query_import_status_with_options(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.QueryImportStatusRequest,
+        headers: dingtalknotable__1__0_models.QueryImportStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.QueryImportStatusResponse:
+        """
+        @summary 查询导入会话状态
+        
+        @param request: QueryImportStatusRequest
+        @param headers: QueryImportStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryImportStatusResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.import_id):
+            query['importId'] = request.import_id
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryImportStatus',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/bases/{base_id}/import/status',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.QueryImportStatusResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_import_status_with_options_async(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.QueryImportStatusRequest,
+        headers: dingtalknotable__1__0_models.QueryImportStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.QueryImportStatusResponse:
+        """
+        @summary 查询导入会话状态
+        
+        @param request: QueryImportStatusRequest
+        @param headers: QueryImportStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryImportStatusResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.import_id):
+            query['importId'] = request.import_id
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryImportStatus',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/bases/{base_id}/import/status',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.QueryImportStatusResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_import_status(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.QueryImportStatusRequest,
+    ) -> dingtalknotable__1__0_models.QueryImportStatusResponse:
+        """
+        @summary 查询导入会话状态
+        
+        @param request: QueryImportStatusRequest
+        @return: QueryImportStatusResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.QueryImportStatusHeaders()
+        return self.query_import_status_with_options(base_id, request, headers, runtime)
+
+    async def query_import_status_async(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.QueryImportStatusRequest,
+    ) -> dingtalknotable__1__0_models.QueryImportStatusResponse:
+        """
+        @summary 查询导入会话状态
+        
+        @param request: QueryImportStatusRequest
+        @return: QueryImportStatusResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.QueryImportStatusHeaders()
+        return await self.query_import_status_with_options_async(base_id, request, headers, runtime)
 
     def rebuild_role_members_with_options(
         self,

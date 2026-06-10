@@ -1579,6 +1579,388 @@ class DeleteSheetResponse(TeaModel):
         return self
 
 
+class EnableWorkflowHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class EnableWorkflowRequest(TeaModel):
+    def __init__(
+        self,
+        operator_id: str = None,
+    ):
+        # This parameter is required.
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class EnableWorkflowResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class EnableWorkflowResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: EnableWorkflowResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = EnableWorkflowResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ExecuteImportHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ExecuteImportRequestAppendConfig(TeaModel):
+    def __init__(
+        self,
+        field_mapping: Dict[str, str] = None,
+        header_row: int = None,
+        src_sheet_name: str = None,
+        table_id: str = None,
+    ):
+        self.field_mapping = field_mapping
+        self.header_row = header_row
+        self.src_sheet_name = src_sheet_name
+        # This parameter is required.
+        self.table_id = table_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.field_mapping is not None:
+            result['fieldMapping'] = self.field_mapping
+        if self.header_row is not None:
+            result['headerRow'] = self.header_row
+        if self.src_sheet_name is not None:
+            result['srcSheetName'] = self.src_sheet_name
+        if self.table_id is not None:
+            result['tableId'] = self.table_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fieldMapping') is not None:
+            self.field_mapping = m.get('fieldMapping')
+        if m.get('headerRow') is not None:
+            self.header_row = m.get('headerRow')
+        if m.get('srcSheetName') is not None:
+            self.src_sheet_name = m.get('srcSheetName')
+        if m.get('tableId') is not None:
+            self.table_id = m.get('tableId')
+        return self
+
+
+class ExecuteImportRequestEncryption(TeaModel):
+    def __init__(
+        self,
+        algorithm: str = None,
+        encrypted_aes_key: str = None,
+        iv: str = None,
+        key_version: str = None,
+    ):
+        self.algorithm = algorithm
+        # This parameter is required.
+        self.encrypted_aes_key = encrypted_aes_key
+        # This parameter is required.
+        self.iv = iv
+        # This parameter is required.
+        self.key_version = key_version
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.algorithm is not None:
+            result['algorithm'] = self.algorithm
+        if self.encrypted_aes_key is not None:
+            result['encryptedAesKey'] = self.encrypted_aes_key
+        if self.iv is not None:
+            result['iv'] = self.iv
+        if self.key_version is not None:
+            result['keyVersion'] = self.key_version
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('algorithm') is not None:
+            self.algorithm = m.get('algorithm')
+        if m.get('encryptedAesKey') is not None:
+            self.encrypted_aes_key = m.get('encryptedAesKey')
+        if m.get('iv') is not None:
+            self.iv = m.get('iv')
+        if m.get('keyVersion') is not None:
+            self.key_version = m.get('keyVersion')
+        return self
+
+
+class ExecuteImportRequest(TeaModel):
+    def __init__(
+        self,
+        append_config: ExecuteImportRequestAppendConfig = None,
+        encryption: ExecuteImportRequestEncryption = None,
+        import_id: str = None,
+        operator_id: str = None,
+    ):
+        self.append_config = append_config
+        self.encryption = encryption
+        # This parameter is required.
+        self.import_id = import_id
+        # This parameter is required.
+        self.operator_id = operator_id
+
+    def validate(self):
+        if self.append_config:
+            self.append_config.validate()
+        if self.encryption:
+            self.encryption.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.append_config is not None:
+            result['appendConfig'] = self.append_config.to_map()
+        if self.encryption is not None:
+            result['encryption'] = self.encryption.to_map()
+        if self.import_id is not None:
+            result['importId'] = self.import_id
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appendConfig') is not None:
+            temp_model = ExecuteImportRequestAppendConfig()
+            self.append_config = temp_model.from_map(m['appendConfig'])
+        if m.get('encryption') is not None:
+            temp_model = ExecuteImportRequestEncryption()
+            self.encryption = temp_model.from_map(m['encryption'])
+        if m.get('importId') is not None:
+            self.import_id = m.get('importId')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class ExecuteImportResponseBody(TeaModel):
+    def __init__(
+        self,
+        import_id: str = None,
+        status: str = None,
+    ):
+        self.import_id = import_id
+        self.status = status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.import_id is not None:
+            result['importId'] = self.import_id
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('importId') is not None:
+            self.import_id = m.get('importId')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class ExecuteImportResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ExecuteImportResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ExecuteImportResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetAllFieldsHeaders(TeaModel):
     def __init__(
         self,
@@ -1927,6 +2309,159 @@ class GetAllSheetsResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetAllSheetsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetImportEncryptPublicKeyHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetImportEncryptPublicKeyRequest(TeaModel):
+    def __init__(
+        self,
+        key_version: str = None,
+        operator_id: str = None,
+    ):
+        self.key_version = key_version
+        # This parameter is required.
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.key_version is not None:
+            result['keyVersion'] = self.key_version
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('keyVersion') is not None:
+            self.key_version = m.get('keyVersion')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class GetImportEncryptPublicKeyResponseBody(TeaModel):
+    def __init__(
+        self,
+        algorithm: str = None,
+        expire_at: int = None,
+        key_version: str = None,
+        public_key_pem: str = None,
+    ):
+        self.algorithm = algorithm
+        self.expire_at = expire_at
+        self.key_version = key_version
+        self.public_key_pem = public_key_pem
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.algorithm is not None:
+            result['algorithm'] = self.algorithm
+        if self.expire_at is not None:
+            result['expireAt'] = self.expire_at
+        if self.key_version is not None:
+            result['keyVersion'] = self.key_version
+        if self.public_key_pem is not None:
+            result['publicKeyPem'] = self.public_key_pem
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('algorithm') is not None:
+            self.algorithm = m.get('algorithm')
+        if m.get('expireAt') is not None:
+            self.expire_at = m.get('expireAt')
+        if m.get('keyVersion') is not None:
+            self.key_version = m.get('keyVersion')
+        if m.get('publicKeyPem') is not None:
+            self.public_key_pem = m.get('publicKeyPem')
+        return self
+
+
+class GetImportEncryptPublicKeyResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetImportEncryptPublicKeyResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetImportEncryptPublicKeyResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -3537,6 +4072,380 @@ class ListRecordsResponse(TeaModel):
         return self
 
 
+class ListWorkflowsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListWorkflowsRequest(TeaModel):
+    def __init__(
+        self,
+        limit: int = None,
+        offset: int = None,
+        operator_id: str = None,
+    ):
+        self.limit = limit
+        self.offset = offset
+        # This parameter is required.
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.limit is not None:
+            result['limit'] = self.limit
+        if self.offset is not None:
+            result['offset'] = self.offset
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('limit') is not None:
+            self.limit = m.get('limit')
+        if m.get('offset') is not None:
+            self.offset = m.get('offset')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class ListWorkflowsResponseBodyWorkflows(TeaModel):
+    def __init__(
+        self,
+        description: str = None,
+        flow_id: str = None,
+        name: str = None,
+        status: str = None,
+        version_id: str = None,
+    ):
+        self.description = description
+        self.flow_id = flow_id
+        self.name = name
+        self.status = status
+        self.version_id = version_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.description is not None:
+            result['description'] = self.description
+        if self.flow_id is not None:
+            result['flowId'] = self.flow_id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.status is not None:
+            result['status'] = self.status
+        if self.version_id is not None:
+            result['versionId'] = self.version_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('flowId') is not None:
+            self.flow_id = m.get('flowId')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('versionId') is not None:
+            self.version_id = m.get('versionId')
+        return self
+
+
+class ListWorkflowsResponseBody(TeaModel):
+    def __init__(
+        self,
+        total: int = None,
+        workflows: List[ListWorkflowsResponseBodyWorkflows] = None,
+    ):
+        self.total = total
+        self.workflows = workflows
+
+    def validate(self):
+        if self.workflows:
+            for k in self.workflows:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.total is not None:
+            result['total'] = self.total
+        result['workflows'] = []
+        if self.workflows is not None:
+            for k in self.workflows:
+                result['workflows'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('total') is not None:
+            self.total = m.get('total')
+        self.workflows = []
+        if m.get('workflows') is not None:
+            for k in m.get('workflows'):
+                temp_model = ListWorkflowsResponseBodyWorkflows()
+                self.workflows.append(temp_model.from_map(k))
+        return self
+
+
+class ListWorkflowsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ListWorkflowsResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ListWorkflowsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class PrepareImportUploadHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class PrepareImportUploadRequest(TeaModel):
+    def __init__(
+        self,
+        file_extension: str = None,
+        file_name: str = None,
+        file_size: int = None,
+        table_names: List[str] = None,
+        operator_id: str = None,
+    ):
+        # This parameter is required.
+        self.file_extension = file_extension
+        # This parameter is required.
+        self.file_name = file_name
+        # This parameter is required.
+        self.file_size = file_size
+        self.table_names = table_names
+        # This parameter is required.
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_extension is not None:
+            result['fileExtension'] = self.file_extension
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.file_size is not None:
+            result['fileSize'] = self.file_size
+        if self.table_names is not None:
+            result['tableNames'] = self.table_names
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileExtension') is not None:
+            self.file_extension = m.get('fileExtension')
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('fileSize') is not None:
+            self.file_size = m.get('fileSize')
+        if m.get('tableNames') is not None:
+            self.table_names = m.get('tableNames')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class PrepareImportUploadResponseBody(TeaModel):
+    def __init__(
+        self,
+        expire_at: int = None,
+        import_id: str = None,
+        upload_url: str = None,
+    ):
+        self.expire_at = expire_at
+        self.import_id = import_id
+        self.upload_url = upload_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.expire_at is not None:
+            result['expireAt'] = self.expire_at
+        if self.import_id is not None:
+            result['importId'] = self.import_id
+        if self.upload_url is not None:
+            result['uploadUrl'] = self.upload_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('expireAt') is not None:
+            self.expire_at = m.get('expireAt')
+        if m.get('importId') is not None:
+            self.import_id = m.get('importId')
+        if m.get('uploadUrl') is not None:
+            self.upload_url = m.get('uploadUrl')
+        return self
+
+
+class PrepareImportUploadResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: PrepareImportUploadResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = PrepareImportUploadResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class PrepareSetRichTextHeaders(TeaModel):
     def __init__(
         self,
@@ -4253,6 +5162,178 @@ class QueryDocAllRolesResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryDocAllRolesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryImportStatusHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryImportStatusRequest(TeaModel):
+    def __init__(
+        self,
+        import_id: str = None,
+        operator_id: str = None,
+    ):
+        # This parameter is required.
+        self.import_id = import_id
+        # This parameter is required.
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.import_id is not None:
+            result['importId'] = self.import_id
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('importId') is not None:
+            self.import_id = m.get('importId')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class QueryImportStatusResponseBody(TeaModel):
+    def __init__(
+        self,
+        count: int = None,
+        error_code: str = None,
+        error_message: str = None,
+        import_id: str = None,
+        phase: str = None,
+        status: str = None,
+        table_ids: List[str] = None,
+    ):
+        self.count = count
+        self.error_code = error_code
+        self.error_message = error_message
+        self.import_id = import_id
+        self.phase = phase
+        self.status = status
+        self.table_ids = table_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.count is not None:
+            result['count'] = self.count
+        if self.error_code is not None:
+            result['errorCode'] = self.error_code
+        if self.error_message is not None:
+            result['errorMessage'] = self.error_message
+        if self.import_id is not None:
+            result['importId'] = self.import_id
+        if self.phase is not None:
+            result['phase'] = self.phase
+        if self.status is not None:
+            result['status'] = self.status
+        if self.table_ids is not None:
+            result['tableIds'] = self.table_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('count') is not None:
+            self.count = m.get('count')
+        if m.get('errorCode') is not None:
+            self.error_code = m.get('errorCode')
+        if m.get('errorMessage') is not None:
+            self.error_message = m.get('errorMessage')
+        if m.get('importId') is not None:
+            self.import_id = m.get('importId')
+        if m.get('phase') is not None:
+            self.phase = m.get('phase')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('tableIds') is not None:
+            self.table_ids = m.get('tableIds')
+        return self
+
+
+class QueryImportStatusResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryImportStatusResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryImportStatusResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

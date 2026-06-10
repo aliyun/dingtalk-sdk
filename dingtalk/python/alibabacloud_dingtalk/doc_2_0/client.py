@@ -778,6 +778,132 @@ class Client(OpenApiClient):
         headers = dingtalkdoc__2__0_models.CopyDocHeaders()
         return await self.copy_doc_with_options_async(request, headers, runtime)
 
+    def copy_doc_with_app_auth_with_options(
+        self,
+        request: dingtalkdoc__2__0_models.CopyDocWithAppAuthRequest,
+        headers: dingtalkdoc__2__0_models.CopyDocWithAppAuthHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.CopyDocWithAppAuthResponse:
+        """
+        @summary 复制文档（应用授权）
+        
+        @param request: CopyDocWithAppAuthRequest
+        @param headers: CopyDocWithAppAuthHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CopyDocWithAppAuthResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.operator_id):
+            body['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.source_dentry_uuid):
+            body['sourceDentryUuid'] = request.source_dentry_uuid
+        if not UtilClient.is_unset(request.target_parent_dentry_uuid):
+            body['targetParentDentryUuid'] = request.target_parent_dentry_uuid
+        if not UtilClient.is_unset(request.target_pre_dentry_uuid):
+            body['targetPreDentryUuid'] = request.target_pre_dentry_uuid
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CopyDocWithAppAuth',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/app/dentries/copy',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.CopyDocWithAppAuthResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def copy_doc_with_app_auth_with_options_async(
+        self,
+        request: dingtalkdoc__2__0_models.CopyDocWithAppAuthRequest,
+        headers: dingtalkdoc__2__0_models.CopyDocWithAppAuthHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.CopyDocWithAppAuthResponse:
+        """
+        @summary 复制文档（应用授权）
+        
+        @param request: CopyDocWithAppAuthRequest
+        @param headers: CopyDocWithAppAuthHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CopyDocWithAppAuthResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.operator_id):
+            body['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.source_dentry_uuid):
+            body['sourceDentryUuid'] = request.source_dentry_uuid
+        if not UtilClient.is_unset(request.target_parent_dentry_uuid):
+            body['targetParentDentryUuid'] = request.target_parent_dentry_uuid
+        if not UtilClient.is_unset(request.target_pre_dentry_uuid):
+            body['targetPreDentryUuid'] = request.target_pre_dentry_uuid
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CopyDocWithAppAuth',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/app/dentries/copy',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.CopyDocWithAppAuthResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def copy_doc_with_app_auth(
+        self,
+        request: dingtalkdoc__2__0_models.CopyDocWithAppAuthRequest,
+    ) -> dingtalkdoc__2__0_models.CopyDocWithAppAuthResponse:
+        """
+        @summary 复制文档（应用授权）
+        
+        @param request: CopyDocWithAppAuthRequest
+        @return: CopyDocWithAppAuthResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.CopyDocWithAppAuthHeaders()
+        return self.copy_doc_with_app_auth_with_options(request, headers, runtime)
+
+    async def copy_doc_with_app_auth_async(
+        self,
+        request: dingtalkdoc__2__0_models.CopyDocWithAppAuthRequest,
+    ) -> dingtalkdoc__2__0_models.CopyDocWithAppAuthResponse:
+        """
+        @summary 复制文档（应用授权）
+        
+        @param request: CopyDocWithAppAuthRequest
+        @return: CopyDocWithAppAuthResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.CopyDocWithAppAuthHeaders()
+        return await self.copy_doc_with_app_auth_with_options_async(request, headers, runtime)
+
     def copy_workspace_with_options(
         self,
         request: dingtalkdoc__2__0_models.CopyWorkspaceRequest,

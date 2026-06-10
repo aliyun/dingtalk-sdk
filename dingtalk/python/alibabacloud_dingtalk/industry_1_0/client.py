@@ -16410,6 +16410,132 @@ class Client(OpenApiClient):
         headers = dingtalkindustry__1__0_models.OrderConvertHeaders()
         return await self.order_convert_with_options_async(request, headers, runtime)
 
+    def prompt_templates_operate_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.PromptTemplatesOperateRequest,
+        headers: dingtalkindustry__1__0_models.PromptTemplatesOperateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.PromptTemplatesOperateResponse:
+        """
+        @summary 练货模板管理
+        
+        @param request: PromptTemplatesOperateRequest
+        @param headers: PromptTemplatesOperateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PromptTemplatesOperateResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_code):
+            body['bizCode'] = request.biz_code
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.operation):
+            body['operation'] = request.operation
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PromptTemplatesOperate',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/ai/promptTemplates/operate',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.PromptTemplatesOperateResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def prompt_templates_operate_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.PromptTemplatesOperateRequest,
+        headers: dingtalkindustry__1__0_models.PromptTemplatesOperateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.PromptTemplatesOperateResponse:
+        """
+        @summary 练货模板管理
+        
+        @param request: PromptTemplatesOperateRequest
+        @param headers: PromptTemplatesOperateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PromptTemplatesOperateResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_code):
+            body['bizCode'] = request.biz_code
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.operation):
+            body['operation'] = request.operation
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PromptTemplatesOperate',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/ai/promptTemplates/operate',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.PromptTemplatesOperateResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def prompt_templates_operate(
+        self,
+        request: dingtalkindustry__1__0_models.PromptTemplatesOperateRequest,
+    ) -> dingtalkindustry__1__0_models.PromptTemplatesOperateResponse:
+        """
+        @summary 练货模板管理
+        
+        @param request: PromptTemplatesOperateRequest
+        @return: PromptTemplatesOperateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.PromptTemplatesOperateHeaders()
+        return self.prompt_templates_operate_with_options(request, headers, runtime)
+
+    async def prompt_templates_operate_async(
+        self,
+        request: dingtalkindustry__1__0_models.PromptTemplatesOperateRequest,
+    ) -> dingtalkindustry__1__0_models.PromptTemplatesOperateResponse:
+        """
+        @summary 练货模板管理
+        
+        @param request: PromptTemplatesOperateRequest
+        @return: PromptTemplatesOperateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.PromptTemplatesOperateHeaders()
+        return await self.prompt_templates_operate_with_options_async(request, headers, runtime)
+
     def push_ding_message_with_options(
         self,
         request: dingtalkindustry__1__0_models.PushDingMessageRequest,

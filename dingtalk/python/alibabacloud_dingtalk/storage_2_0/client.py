@@ -1278,6 +1278,270 @@ class Client(OpenApiClient):
         headers = dingtalkstorage__2__0_models.ListPermissionsHeaders()
         return await self.list_permissions_with_options_async(dentry_uuid, request, headers, runtime)
 
+    def list_recents_with_options(
+        self,
+        request: dingtalkstorage__2__0_models.ListRecentsRequest,
+        headers: dingtalkstorage__2__0_models.ListRecentsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__2__0_models.ListRecentsResponse:
+        """
+        @summary 获取用户最近访问列表
+        
+        @param request: ListRecentsRequest
+        @param headers: ListRecentsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListRecentsResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.file_types):
+            query['fileTypes'] = request.file_types
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.operate_types):
+            query['operateTypes'] = request.operate_types
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListRecents',
+            version='storage_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/storage/recents/listV2',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__2__0_models.ListRecentsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def list_recents_with_options_async(
+        self,
+        request: dingtalkstorage__2__0_models.ListRecentsRequest,
+        headers: dingtalkstorage__2__0_models.ListRecentsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__2__0_models.ListRecentsResponse:
+        """
+        @summary 获取用户最近访问列表
+        
+        @param request: ListRecentsRequest
+        @param headers: ListRecentsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListRecentsResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.file_types):
+            query['fileTypes'] = request.file_types
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.operate_types):
+            query['operateTypes'] = request.operate_types
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListRecents',
+            version='storage_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/storage/recents/listV2',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__2__0_models.ListRecentsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def list_recents(
+        self,
+        request: dingtalkstorage__2__0_models.ListRecentsRequest,
+    ) -> dingtalkstorage__2__0_models.ListRecentsResponse:
+        """
+        @summary 获取用户最近访问列表
+        
+        @param request: ListRecentsRequest
+        @return: ListRecentsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__2__0_models.ListRecentsHeaders()
+        return self.list_recents_with_options(request, headers, runtime)
+
+    async def list_recents_async(
+        self,
+        request: dingtalkstorage__2__0_models.ListRecentsRequest,
+    ) -> dingtalkstorage__2__0_models.ListRecentsResponse:
+        """
+        @summary 获取用户最近访问列表
+        
+        @param request: ListRecentsRequest
+        @return: ListRecentsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__2__0_models.ListRecentsHeaders()
+        return await self.list_recents_with_options_async(request, headers, runtime)
+
+    def list_stars_with_options(
+        self,
+        request: dingtalkstorage__2__0_models.ListStarsRequest,
+        headers: dingtalkstorage__2__0_models.ListStarsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__2__0_models.ListStarsResponse:
+        """
+        @summary 获取用户收藏列表
+        
+        @param request: ListStarsRequest
+        @param headers: ListStarsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListStarsResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.order_by):
+            query['orderBy'] = request.order_by
+        if not UtilClient.is_unset(request.sort_type):
+            query['sortType'] = request.sort_type
+        if not UtilClient.is_unset(request.support_resource_types):
+            query['supportResourceTypes'] = request.support_resource_types
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListStars',
+            version='storage_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/storage/stars/list',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__2__0_models.ListStarsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def list_stars_with_options_async(
+        self,
+        request: dingtalkstorage__2__0_models.ListStarsRequest,
+        headers: dingtalkstorage__2__0_models.ListStarsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__2__0_models.ListStarsResponse:
+        """
+        @summary 获取用户收藏列表
+        
+        @param request: ListStarsRequest
+        @param headers: ListStarsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListStarsResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.order_by):
+            query['orderBy'] = request.order_by
+        if not UtilClient.is_unset(request.sort_type):
+            query['sortType'] = request.sort_type
+        if not UtilClient.is_unset(request.support_resource_types):
+            query['supportResourceTypes'] = request.support_resource_types
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListStars',
+            version='storage_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/storage/stars/list',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__2__0_models.ListStarsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def list_stars(
+        self,
+        request: dingtalkstorage__2__0_models.ListStarsRequest,
+    ) -> dingtalkstorage__2__0_models.ListStarsResponse:
+        """
+        @summary 获取用户收藏列表
+        
+        @param request: ListStarsRequest
+        @return: ListStarsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__2__0_models.ListStarsHeaders()
+        return self.list_stars_with_options(request, headers, runtime)
+
+    async def list_stars_async(
+        self,
+        request: dingtalkstorage__2__0_models.ListStarsRequest,
+    ) -> dingtalkstorage__2__0_models.ListStarsResponse:
+        """
+        @summary 获取用户收藏列表
+        
+        @param request: ListStarsRequest
+        @return: ListStarsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__2__0_models.ListStarsHeaders()
+        return await self.list_stars_with_options_async(request, headers, runtime)
+
     def manager_get_default_hand_over_user_with_options(
         self,
         request: dingtalkstorage__2__0_models.ManagerGetDefaultHandOverUserRequest,

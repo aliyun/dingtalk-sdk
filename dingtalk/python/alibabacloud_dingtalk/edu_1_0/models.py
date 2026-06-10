@@ -22349,6 +22349,207 @@ class GetCollegeContactStandardStruDeptDetailResponse(TeaModel):
         return self
 
 
+class GetCorrectStyleHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetCorrectStyleRequest(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        task_code: str = None,
+    ):
+        # This parameter is required.
+        self.corp_id = corp_id
+        # This parameter is required.
+        self.task_code = task_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.task_code is not None:
+            result['taskCode'] = self.task_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('taskCode') is not None:
+            self.task_code = m.get('taskCode')
+        return self
+
+
+class GetCorrectStyleResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        check_size_type: str = None,
+        half_check_size_type: str = None,
+        show_paper_score: bool = None,
+        sub_score_display_type: str = None,
+        wrong_size_type: str = None,
+        wrong_style: str = None,
+    ):
+        self.check_size_type = check_size_type
+        self.half_check_size_type = half_check_size_type
+        self.show_paper_score = show_paper_score
+        self.sub_score_display_type = sub_score_display_type
+        self.wrong_size_type = wrong_size_type
+        self.wrong_style = wrong_style
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.check_size_type is not None:
+            result['checkSizeType'] = self.check_size_type
+        if self.half_check_size_type is not None:
+            result['halfCheckSizeType'] = self.half_check_size_type
+        if self.show_paper_score is not None:
+            result['showPaperScore'] = self.show_paper_score
+        if self.sub_score_display_type is not None:
+            result['subScoreDisplayType'] = self.sub_score_display_type
+        if self.wrong_size_type is not None:
+            result['wrongSizeType'] = self.wrong_size_type
+        if self.wrong_style is not None:
+            result['wrongStyle'] = self.wrong_style
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('checkSizeType') is not None:
+            self.check_size_type = m.get('checkSizeType')
+        if m.get('halfCheckSizeType') is not None:
+            self.half_check_size_type = m.get('halfCheckSizeType')
+        if m.get('showPaperScore') is not None:
+            self.show_paper_score = m.get('showPaperScore')
+        if m.get('subScoreDisplayType') is not None:
+            self.sub_score_display_type = m.get('subScoreDisplayType')
+        if m.get('wrongSizeType') is not None:
+            self.wrong_size_type = m.get('wrongSizeType')
+        if m.get('wrongStyle') is not None:
+            self.wrong_style = m.get('wrongStyle')
+        return self
+
+
+class GetCorrectStyleResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: GetCorrectStyleResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = GetCorrectStyleResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class GetCorrectStyleResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetCorrectStyleResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetCorrectStyleResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetDefaultChildHeaders(TeaModel):
     def __init__(
         self,
@@ -35681,6 +35882,312 @@ class QueryOrderResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryOrderResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryOrgCorrectTaskDetailHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryOrgCorrectTaskDetailRequest(TeaModel):
+    def __init__(
+        self,
+        end_time: int = None,
+        page_no: int = None,
+        page_size: int = None,
+        query_corp_id: str = None,
+        start_time: int = None,
+        subject_code: str = None,
+    ):
+        # This parameter is required.
+        self.end_time = end_time
+        # This parameter is required.
+        self.page_no = page_no
+        # This parameter is required.
+        self.page_size = page_size
+        # This parameter is required.
+        self.query_corp_id = query_corp_id
+        # This parameter is required.
+        self.start_time = start_time
+        self.subject_code = subject_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.page_no is not None:
+            result['pageNo'] = self.page_no
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.query_corp_id is not None:
+            result['queryCorpId'] = self.query_corp_id
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.subject_code is not None:
+            result['subjectCode'] = self.subject_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('pageNo') is not None:
+            self.page_no = m.get('pageNo')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('queryCorpId') is not None:
+            self.query_corp_id = m.get('queryCorpId')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('subjectCode') is not None:
+            self.subject_code = m.get('subjectCode')
+        return self
+
+
+class QueryOrgCorrectTaskDetailResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        ai_mark_id: int = None,
+        ai_mark_time: int = None,
+        ai_model: str = None,
+        class_name: str = None,
+        grade_level: int = None,
+        grade_name: str = None,
+        period_code: str = None,
+        scan_device_id: str = None,
+        scan_time: int = None,
+        school_name: str = None,
+        score: float = None,
+        student_name: str = None,
+        task_code: str = None,
+        task_name: str = None,
+        teacher_name: str = None,
+        total_score: float = None,
+    ):
+        self.ai_mark_id = ai_mark_id
+        self.ai_mark_time = ai_mark_time
+        self.ai_model = ai_model
+        self.class_name = class_name
+        self.grade_level = grade_level
+        self.grade_name = grade_name
+        self.period_code = period_code
+        self.scan_device_id = scan_device_id
+        self.scan_time = scan_time
+        self.school_name = school_name
+        self.score = score
+        self.student_name = student_name
+        self.task_code = task_code
+        self.task_name = task_name
+        self.teacher_name = teacher_name
+        self.total_score = total_score
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ai_mark_id is not None:
+            result['aiMarkId'] = self.ai_mark_id
+        if self.ai_mark_time is not None:
+            result['aiMarkTime'] = self.ai_mark_time
+        if self.ai_model is not None:
+            result['aiModel'] = self.ai_model
+        if self.class_name is not None:
+            result['className'] = self.class_name
+        if self.grade_level is not None:
+            result['gradeLevel'] = self.grade_level
+        if self.grade_name is not None:
+            result['gradeName'] = self.grade_name
+        if self.period_code is not None:
+            result['periodCode'] = self.period_code
+        if self.scan_device_id is not None:
+            result['scanDeviceId'] = self.scan_device_id
+        if self.scan_time is not None:
+            result['scanTime'] = self.scan_time
+        if self.school_name is not None:
+            result['schoolName'] = self.school_name
+        if self.score is not None:
+            result['score'] = self.score
+        if self.student_name is not None:
+            result['studentName'] = self.student_name
+        if self.task_code is not None:
+            result['taskCode'] = self.task_code
+        if self.task_name is not None:
+            result['taskName'] = self.task_name
+        if self.teacher_name is not None:
+            result['teacherName'] = self.teacher_name
+        if self.total_score is not None:
+            result['totalScore'] = self.total_score
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('aiMarkId') is not None:
+            self.ai_mark_id = m.get('aiMarkId')
+        if m.get('aiMarkTime') is not None:
+            self.ai_mark_time = m.get('aiMarkTime')
+        if m.get('aiModel') is not None:
+            self.ai_model = m.get('aiModel')
+        if m.get('className') is not None:
+            self.class_name = m.get('className')
+        if m.get('gradeLevel') is not None:
+            self.grade_level = m.get('gradeLevel')
+        if m.get('gradeName') is not None:
+            self.grade_name = m.get('gradeName')
+        if m.get('periodCode') is not None:
+            self.period_code = m.get('periodCode')
+        if m.get('scanDeviceId') is not None:
+            self.scan_device_id = m.get('scanDeviceId')
+        if m.get('scanTime') is not None:
+            self.scan_time = m.get('scanTime')
+        if m.get('schoolName') is not None:
+            self.school_name = m.get('schoolName')
+        if m.get('score') is not None:
+            self.score = m.get('score')
+        if m.get('studentName') is not None:
+            self.student_name = m.get('studentName')
+        if m.get('taskCode') is not None:
+            self.task_code = m.get('taskCode')
+        if m.get('taskName') is not None:
+            self.task_name = m.get('taskName')
+        if m.get('teacherName') is not None:
+            self.teacher_name = m.get('teacherName')
+        if m.get('totalScore') is not None:
+            self.total_score = m.get('totalScore')
+        return self
+
+
+class QueryOrgCorrectTaskDetailResponseBody(TeaModel):
+    def __init__(
+        self,
+        error_code: str = None,
+        error_msg: str = None,
+        result: List[QueryOrgCorrectTaskDetailResponseBodyResult] = None,
+        success: bool = None,
+    ):
+        self.error_code = error_code
+        self.error_msg = error_msg
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.error_code is not None:
+            result['errorCode'] = self.error_code
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('errorCode') is not None:
+            self.error_code = m.get('errorCode')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = QueryOrgCorrectTaskDetailResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class QueryOrgCorrectTaskDetailResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryOrgCorrectTaskDetailResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryOrgCorrectTaskDetailResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

@@ -2437,6 +2437,611 @@ class ListPermissionsResponse(TeaModel):
         return self
 
 
+class ListRecentsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListRecentsRequest(TeaModel):
+    def __init__(
+        self,
+        file_types: List[int] = None,
+        max_results: int = None,
+        next_token: str = None,
+        operate_types: List[int] = None,
+        operator_id: str = None,
+    ):
+        self.file_types = file_types
+        self.max_results = max_results
+        self.next_token = next_token
+        self.operate_types = operate_types
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_types is not None:
+            result['fileTypes'] = self.file_types
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.operate_types is not None:
+            result['operateTypes'] = self.operate_types
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileTypes') is not None:
+            self.file_types = m.get('fileTypes')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('operateTypes') is not None:
+            self.operate_types = m.get('operateTypes')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class ListRecentsResponseBodyRecentDentryListResourceSpaceInfo(TeaModel):
+    def __init__(
+        self,
+        scene_type: str = None,
+    ):
+        self.scene_type = scene_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.scene_type is not None:
+            result['sceneType'] = self.scene_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('sceneType') is not None:
+            self.scene_type = m.get('sceneType')
+        return self
+
+
+class ListRecentsResponseBodyRecentDentryListResource(TeaModel):
+    def __init__(
+        self,
+        dentry_uuid: str = None,
+        drive_dentry_id: str = None,
+        drive_space_id: str = None,
+        extension: str = None,
+        name: str = None,
+        space_info: ListRecentsResponseBodyRecentDentryListResourceSpaceInfo = None,
+        url: str = None,
+    ):
+        self.dentry_uuid = dentry_uuid
+        self.drive_dentry_id = drive_dentry_id
+        self.drive_space_id = drive_space_id
+        self.extension = extension
+        self.name = name
+        self.space_info = space_info
+        self.url = url
+
+    def validate(self):
+        if self.space_info:
+            self.space_info.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dentry_uuid is not None:
+            result['dentryUuid'] = self.dentry_uuid
+        if self.drive_dentry_id is not None:
+            result['driveDentryId'] = self.drive_dentry_id
+        if self.drive_space_id is not None:
+            result['driveSpaceId'] = self.drive_space_id
+        if self.extension is not None:
+            result['extension'] = self.extension
+        if self.name is not None:
+            result['name'] = self.name
+        if self.space_info is not None:
+            result['spaceInfo'] = self.space_info.to_map()
+        if self.url is not None:
+            result['url'] = self.url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dentryUuid') is not None:
+            self.dentry_uuid = m.get('dentryUuid')
+        if m.get('driveDentryId') is not None:
+            self.drive_dentry_id = m.get('driveDentryId')
+        if m.get('driveSpaceId') is not None:
+            self.drive_space_id = m.get('driveSpaceId')
+        if m.get('extension') is not None:
+            self.extension = m.get('extension')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('spaceInfo') is not None:
+            temp_model = ListRecentsResponseBodyRecentDentryListResourceSpaceInfo()
+            self.space_info = temp_model.from_map(m['spaceInfo'])
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        return self
+
+
+class ListRecentsResponseBodyRecentDentryList(TeaModel):
+    def __init__(
+        self,
+        access_time: int = None,
+        deleted: bool = None,
+        icon: str = None,
+        operate_type: int = None,
+        resource: ListRecentsResponseBodyRecentDentryListResource = None,
+    ):
+        self.access_time = access_time
+        self.deleted = deleted
+        self.icon = icon
+        self.operate_type = operate_type
+        self.resource = resource
+
+    def validate(self):
+        if self.resource:
+            self.resource.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.access_time is not None:
+            result['accessTime'] = self.access_time
+        if self.deleted is not None:
+            result['deleted'] = self.deleted
+        if self.icon is not None:
+            result['icon'] = self.icon
+        if self.operate_type is not None:
+            result['operateType'] = self.operate_type
+        if self.resource is not None:
+            result['resource'] = self.resource.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('accessTime') is not None:
+            self.access_time = m.get('accessTime')
+        if m.get('deleted') is not None:
+            self.deleted = m.get('deleted')
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
+        if m.get('operateType') is not None:
+            self.operate_type = m.get('operateType')
+        if m.get('resource') is not None:
+            temp_model = ListRecentsResponseBodyRecentDentryListResource()
+            self.resource = temp_model.from_map(m['resource'])
+        return self
+
+
+class ListRecentsResponseBody(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        next_token: str = None,
+        recent_dentry_list: List[ListRecentsResponseBodyRecentDentryList] = None,
+    ):
+        self.has_more = has_more
+        self.next_token = next_token
+        self.recent_dentry_list = recent_dentry_list
+
+    def validate(self):
+        if self.recent_dentry_list:
+            for k in self.recent_dentry_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        result['recentDentryList'] = []
+        if self.recent_dentry_list is not None:
+            for k in self.recent_dentry_list:
+                result['recentDentryList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        self.recent_dentry_list = []
+        if m.get('recentDentryList') is not None:
+            for k in m.get('recentDentryList'):
+                temp_model = ListRecentsResponseBodyRecentDentryList()
+                self.recent_dentry_list.append(temp_model.from_map(k))
+        return self
+
+
+class ListRecentsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ListRecentsResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ListRecentsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ListStarsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListStarsRequest(TeaModel):
+    def __init__(
+        self,
+        max_results: int = None,
+        next_token: str = None,
+        operator_id: str = None,
+        order_by: str = None,
+        sort_type: str = None,
+        support_resource_types: List[str] = None,
+    ):
+        self.max_results = max_results
+        self.next_token = next_token
+        self.operator_id = operator_id
+        self.order_by = order_by
+        self.sort_type = sort_type
+        self.support_resource_types = support_resource_types
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        if self.order_by is not None:
+            result['orderBy'] = self.order_by
+        if self.sort_type is not None:
+            result['sortType'] = self.sort_type
+        if self.support_resource_types is not None:
+            result['supportResourceTypes'] = self.support_resource_types
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        if m.get('orderBy') is not None:
+            self.order_by = m.get('orderBy')
+        if m.get('sortType') is not None:
+            self.sort_type = m.get('sortType')
+        if m.get('supportResourceTypes') is not None:
+            self.support_resource_types = m.get('supportResourceTypes')
+        return self
+
+
+class ListStarsResponseBodyStarListResource(TeaModel):
+    def __init__(
+        self,
+        content_type: str = None,
+        dentry_type: str = None,
+        dentry_uuid: str = None,
+        name: str = None,
+        url: str = None,
+    ):
+        self.content_type = content_type
+        self.dentry_type = dentry_type
+        self.dentry_uuid = dentry_uuid
+        self.name = name
+        self.url = url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content_type is not None:
+            result['contentType'] = self.content_type
+        if self.dentry_type is not None:
+            result['dentryType'] = self.dentry_type
+        if self.dentry_uuid is not None:
+            result['dentryUuid'] = self.dentry_uuid
+        if self.name is not None:
+            result['name'] = self.name
+        if self.url is not None:
+            result['url'] = self.url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('contentType') is not None:
+            self.content_type = m.get('contentType')
+        if m.get('dentryType') is not None:
+            self.dentry_type = m.get('dentryType')
+        if m.get('dentryUuid') is not None:
+            self.dentry_uuid = m.get('dentryUuid')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        return self
+
+
+class ListStarsResponseBodyStarList(TeaModel):
+    def __init__(
+        self,
+        create_time: str = None,
+        id: str = None,
+        location: str = None,
+        resource: ListStarsResponseBodyStarListResource = None,
+        resource_type: str = None,
+        star_type: int = None,
+    ):
+        self.create_time = create_time
+        self.id = id
+        self.location = location
+        self.resource = resource
+        self.resource_type = resource_type
+        self.star_type = star_type
+
+    def validate(self):
+        if self.resource:
+            self.resource.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.id is not None:
+            result['id'] = self.id
+        if self.location is not None:
+            result['location'] = self.location
+        if self.resource is not None:
+            result['resource'] = self.resource.to_map()
+        if self.resource_type is not None:
+            result['resourceType'] = self.resource_type
+        if self.star_type is not None:
+            result['starType'] = self.star_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('location') is not None:
+            self.location = m.get('location')
+        if m.get('resource') is not None:
+            temp_model = ListStarsResponseBodyStarListResource()
+            self.resource = temp_model.from_map(m['resource'])
+        if m.get('resourceType') is not None:
+            self.resource_type = m.get('resourceType')
+        if m.get('starType') is not None:
+            self.star_type = m.get('starType')
+        return self
+
+
+class ListStarsResponseBody(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        next_token: str = None,
+        star_list: List[ListStarsResponseBodyStarList] = None,
+    ):
+        self.has_more = has_more
+        self.next_token = next_token
+        self.star_list = star_list
+
+    def validate(self):
+        if self.star_list:
+            for k in self.star_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        result['starList'] = []
+        if self.star_list is not None:
+            for k in self.star_list:
+                result['starList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        self.star_list = []
+        if m.get('starList') is not None:
+            for k in m.get('starList'):
+                temp_model = ListStarsResponseBodyStarList()
+                self.star_list.append(temp_model.from_map(k))
+        return self
+
+
+class ListStarsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ListStarsResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ListStarsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class ManagerGetDefaultHandOverUserHeaders(TeaModel):
     def __init__(
         self,
