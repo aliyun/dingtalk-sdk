@@ -386,6 +386,9 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\IndustryMmanufactureMaterialC
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\OrderConvertHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\OrderConvertRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\OrderConvertResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\PromptTemplatesOperateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\PromptTemplatesOperateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\PromptTemplatesOperateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\PushDingMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\PushDingMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\PushDingMessageResponse;
@@ -9226,6 +9229,72 @@ class Dingtalk extends OpenApiClient
         $headers = new OrderConvertHeaders([]);
 
         return $this->orderConvertWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 练货模板管理
+     *  *
+     * @param PromptTemplatesOperateRequest $request PromptTemplatesOperateRequest
+     * @param PromptTemplatesOperateHeaders $headers PromptTemplatesOperateHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return PromptTemplatesOperateResponse PromptTemplatesOperateResponse
+     */
+    public function promptTemplatesOperateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizCode)) {
+            $body['bizCode'] = $request->bizCode;
+        }
+        if (!Utils::isUnset($request->content)) {
+            $body['content'] = $request->content;
+        }
+        if (!Utils::isUnset($request->description)) {
+            $body['description'] = $request->description;
+        }
+        if (!Utils::isUnset($request->operation)) {
+            $body['operation'] = $request->operation;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'PromptTemplatesOperate',
+            'version' => 'industry_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/industry/ai/promptTemplates/operate',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return PromptTemplatesOperateResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 练货模板管理
+     *  *
+     * @param PromptTemplatesOperateRequest $request PromptTemplatesOperateRequest
+     *
+     * @return PromptTemplatesOperateResponse PromptTemplatesOperateResponse
+     */
+    public function promptTemplatesOperate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PromptTemplatesOperateHeaders([]);
+
+        return $this->promptTemplatesOperateWithOptions($request, $headers, $runtime);
     }
 
     /**

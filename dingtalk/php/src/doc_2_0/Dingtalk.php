@@ -23,6 +23,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CopyDentryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CopyDocHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CopyDocRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CopyDocResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CopyDocWithAppAuthHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CopyDocWithAppAuthRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CopyDocWithAppAuthResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CopyWorkspaceAsyncHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CopyWorkspaceAsyncRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CopyWorkspaceAsyncResponse;
@@ -633,6 +636,72 @@ class Dingtalk extends OpenApiClient
         $headers = new CopyDocHeaders([]);
 
         return $this->copyDocWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 复制文档（应用授权）
+     *  *
+     * @param CopyDocWithAppAuthRequest $request CopyDocWithAppAuthRequest
+     * @param CopyDocWithAppAuthHeaders $headers CopyDocWithAppAuthHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CopyDocWithAppAuthResponse CopyDocWithAppAuthResponse
+     */
+    public function copyDocWithAppAuthWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $body['operatorId'] = $request->operatorId;
+        }
+        if (!Utils::isUnset($request->sourceDentryUuid)) {
+            $body['sourceDentryUuid'] = $request->sourceDentryUuid;
+        }
+        if (!Utils::isUnset($request->targetParentDentryUuid)) {
+            $body['targetParentDentryUuid'] = $request->targetParentDentryUuid;
+        }
+        if (!Utils::isUnset($request->targetPreDentryUuid)) {
+            $body['targetPreDentryUuid'] = $request->targetPreDentryUuid;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'CopyDocWithAppAuth',
+            'version' => 'doc_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/doc/app/dentries/copy',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CopyDocWithAppAuthResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 复制文档（应用授权）
+     *  *
+     * @param CopyDocWithAppAuthRequest $request CopyDocWithAppAuthRequest
+     *
+     * @return CopyDocWithAppAuthResponse CopyDocWithAppAuthResponse
+     */
+    public function copyDocWithAppAuth($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CopyDocWithAppAuthHeaders([]);
+
+        return $this->copyDocWithAppAuthWithOptions($request, $headers, $runtime);
     }
 
     /**

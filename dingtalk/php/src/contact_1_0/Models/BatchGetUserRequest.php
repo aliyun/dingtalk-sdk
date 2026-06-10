@@ -9,12 +9,18 @@ use AlibabaCloud\Tea\Model;
 class BatchGetUserRequest extends Model
 {
     /**
+     * @var string
+     */
+    public $permissionCode;
+
+    /**
      * @description This parameter is required.
      *
      * @var string[]
      */
     public $userIdList;
     protected $_name = [
+        'permissionCode' => 'permissionCode',
         'userIdList' => 'userIdList',
     ];
 
@@ -23,6 +29,9 @@ class BatchGetUserRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->permissionCode) {
+            $res['permissionCode'] = $this->permissionCode;
+        }
         if (null !== $this->userIdList) {
             $res['userIdList'] = $this->userIdList;
         }
@@ -38,6 +47,9 @@ class BatchGetUserRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['permissionCode'])) {
+            $model->permissionCode = $map['permissionCode'];
+        }
         if (isset($map['userIdList'])) {
             if (!empty($map['userIdList'])) {
                 $model->userIdList = $map['userIdList'];

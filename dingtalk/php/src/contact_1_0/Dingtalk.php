@@ -148,6 +148,12 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListOwnedOrgByStaffIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListSeniorSettingsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListSeniorSettingsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListSeniorSettingsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListUserGroupMembersHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListUserGroupMembersRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListUserGroupMembersResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListUserGroupsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListUserGroupsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ListUserGroupsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ModifyOrgAccUserOwnnessHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ModifyOrgAccUserOwnnessRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ModifyOrgAccUserOwnnessResponse;
@@ -296,6 +302,12 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateTitleAuditStatusResponse
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateUserOwnnessHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateUserOwnnessRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UpdateUserOwnnessResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UserGroupAddStaticGroupMembersHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UserGroupAddStaticGroupMembersRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UserGroupAddStaticGroupMembersResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UserGroupRemoveStaticGroupMembersHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UserGroupRemoveStaticGroupMembersRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UserGroupRemoveStaticGroupMembersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UserProfileHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UserProfileRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\UserProfileResponse;
@@ -813,6 +825,9 @@ class Dingtalk extends OpenApiClient
             $request->userIdListShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->userIdList, 'userIdList', 'json');
         }
         $query = [];
+        if (!Utils::isUnset($request->permissionCode)) {
+            $query['permissionCode'] = $request->permissionCode;
+        }
         if (!Utils::isUnset($request->userIdListShrink)) {
             $query['userIdList'] = $request->userIdListShrink;
         }
@@ -3423,6 +3438,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $query = [];
+        if (!Utils::isUnset($request->permissionCode)) {
+            $query['permissionCode'] = $request->permissionCode;
+        }
         if (!Utils::isUnset($request->seniorStaffId)) {
             $query['seniorStaffId'] = $request->seniorStaffId;
         }
@@ -3445,7 +3463,7 @@ class Dingtalk extends OpenApiClient
             'method' => 'GET',
             'authType' => 'AK',
             'style' => 'ROA',
-            'reqBodyType' => 'json',
+            'reqBodyType' => 'none',
             'bodyType' => 'json',
         ]);
 
@@ -3465,6 +3483,132 @@ class Dingtalk extends OpenApiClient
         $headers = new ListSeniorSettingsHeaders([]);
 
         return $this->listSeniorSettingsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询用户组成员列表
+     *  *
+     * @param ListUserGroupMembersRequest $request ListUserGroupMembersRequest
+     * @param ListUserGroupMembersHeaders $headers ListUserGroupMembersHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ListUserGroupMembersResponse ListUserGroupMembersResponse
+     */
+    public function listUserGroupMembersWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->groupCode)) {
+            $query['groupCode'] = $request->groupCode;
+        }
+        if (!Utils::isUnset($request->offset)) {
+            $query['offset'] = $request->offset;
+        }
+        if (!Utils::isUnset($request->size)) {
+            $query['size'] = $request->size;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'ListUserGroupMembers',
+            'version' => 'contact_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contact/userGroups/listUserGroupMembers',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return ListUserGroupMembersResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询用户组成员列表
+     *  *
+     * @param ListUserGroupMembersRequest $request ListUserGroupMembersRequest
+     *
+     * @return ListUserGroupMembersResponse ListUserGroupMembersResponse
+     */
+    public function listUserGroupMembers($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListUserGroupMembersHeaders([]);
+
+        return $this->listUserGroupMembersWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询用户组列表
+     *  *
+     * @param ListUserGroupsRequest $request ListUserGroupsRequest
+     * @param ListUserGroupsHeaders $headers ListUserGroupsHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ListUserGroupsResponse ListUserGroupsResponse
+     */
+    public function listUserGroupsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->groupType)) {
+            $query['groupType'] = $request->groupType;
+        }
+        if (!Utils::isUnset($request->offset)) {
+            $query['offset'] = $request->offset;
+        }
+        if (!Utils::isUnset($request->size)) {
+            $query['size'] = $request->size;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'ListUserGroups',
+            'version' => 'contact_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contact/userGroups/listUserGroups',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return ListUserGroupsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询用户组列表
+     *  *
+     * @param ListUserGroupsRequest $request ListUserGroupsRequest
+     *
+     * @return ListUserGroupsResponse ListUserGroupsResponse
+     */
+    public function listUserGroups($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListUserGroupsHeaders([]);
+
+        return $this->listUserGroupsWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -6696,6 +6840,126 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateUserOwnnessHeaders([]);
 
         return $this->updateUserOwnnessWithOptions($userId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 批量添加静态用户组成员
+     *  *
+     * @param UserGroupAddStaticGroupMembersRequest $request UserGroupAddStaticGroupMembersRequest
+     * @param UserGroupAddStaticGroupMembersHeaders $headers UserGroupAddStaticGroupMembersHeaders
+     * @param RuntimeOptions                        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UserGroupAddStaticGroupMembersResponse UserGroupAddStaticGroupMembersResponse
+     */
+    public function userGroupAddStaticGroupMembersWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->groupCode)) {
+            $body['groupCode'] = $request->groupCode;
+        }
+        if (!Utils::isUnset($request->userIds)) {
+            $body['userIds'] = $request->userIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'UserGroupAddStaticGroupMembers',
+            'version' => 'contact_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contact/userGroups/addStaticGroupMembers',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UserGroupAddStaticGroupMembersResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 批量添加静态用户组成员
+     *  *
+     * @param UserGroupAddStaticGroupMembersRequest $request UserGroupAddStaticGroupMembersRequest
+     *
+     * @return UserGroupAddStaticGroupMembersResponse UserGroupAddStaticGroupMembersResponse
+     */
+    public function userGroupAddStaticGroupMembers($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UserGroupAddStaticGroupMembersHeaders([]);
+
+        return $this->userGroupAddStaticGroupMembersWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 批量删除静态用户组成员
+     *  *
+     * @param UserGroupRemoveStaticGroupMembersRequest $request UserGroupRemoveStaticGroupMembersRequest
+     * @param UserGroupRemoveStaticGroupMembersHeaders $headers UserGroupRemoveStaticGroupMembersHeaders
+     * @param RuntimeOptions                           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UserGroupRemoveStaticGroupMembersResponse UserGroupRemoveStaticGroupMembersResponse
+     */
+    public function userGroupRemoveStaticGroupMembersWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->groupCode)) {
+            $body['groupCode'] = $request->groupCode;
+        }
+        if (!Utils::isUnset($request->userIds)) {
+            $body['userIds'] = $request->userIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'UserGroupRemoveStaticGroupMembers',
+            'version' => 'contact_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contact/userGroups/removeStaticGroupMembers',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UserGroupRemoveStaticGroupMembersResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 批量删除静态用户组成员
+     *  *
+     * @param UserGroupRemoveStaticGroupMembersRequest $request UserGroupRemoveStaticGroupMembersRequest
+     *
+     * @return UserGroupRemoveStaticGroupMembersResponse UserGroupRemoveStaticGroupMembersResponse
+     */
+    public function userGroupRemoveStaticGroupMembers($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UserGroupRemoveStaticGroupMembersHeaders([]);
+
+        return $this->userGroupRemoveStaticGroupMembersWithOptions($request, $headers, $runtime);
     }
 
     /**

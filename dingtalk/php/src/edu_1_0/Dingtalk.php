@@ -313,6 +313,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetCollegeContactDeptDetailRespons
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetCollegeContactStandardStruDeptDetailHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetCollegeContactStandardStruDeptDetailRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetCollegeContactStandardStruDeptDetailResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetCorrectStyleHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetCorrectStyleRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetCorrectStyleResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetDefaultChildHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetDefaultChildResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetEduUserIdentityHeaders;
@@ -478,6 +481,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryModelResultByTaskIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrderHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrderRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrderResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrgCorrectTaskDetailHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrgCorrectTaskDetailRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrgCorrectTaskDetailResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrgRelationListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrgRelationListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrgRelationListResponse;
@@ -8214,6 +8220,66 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 作业批改-查询批改样式
+     *  *
+     * @param GetCorrectStyleRequest $request GetCorrectStyleRequest
+     * @param GetCorrectStyleHeaders $headers GetCorrectStyleHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetCorrectStyleResponse GetCorrectStyleResponse
+     */
+    public function getCorrectStyleWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->taskCode)) {
+            $body['taskCode'] = $request->taskCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'GetCorrectStyle',
+            'version' => 'edu_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/edu/assignment/getCorrectStyle',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetCorrectStyleResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 作业批改-查询批改样式
+     *  *
+     * @param GetCorrectStyleRequest $request GetCorrectStyleRequest
+     *
+     * @return GetCorrectStyleResponse GetCorrectStyleResponse
+     */
+    public function getCorrectStyle($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetCorrectStyleHeaders([]);
+
+        return $this->getCorrectStyleWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 获取默认孩子信息
      *  *
      * @param GetDefaultChildHeaders $headers GetDefaultChildHeaders
@@ -11701,6 +11767,78 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryOrderHeaders([]);
 
         return $this->queryOrderWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 作业批改-查询批改任务明细
+     *  *
+     * @param QueryOrgCorrectTaskDetailRequest $request QueryOrgCorrectTaskDetailRequest
+     * @param QueryOrgCorrectTaskDetailHeaders $headers QueryOrgCorrectTaskDetailHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryOrgCorrectTaskDetailResponse QueryOrgCorrectTaskDetailResponse
+     */
+    public function queryOrgCorrectTaskDetailWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->endTime)) {
+            $body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->pageNo)) {
+            $body['pageNo'] = $request->pageNo;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->queryCorpId)) {
+            $body['queryCorpId'] = $request->queryCorpId;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            $body['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->subjectCode)) {
+            $body['subjectCode'] = $request->subjectCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'QueryOrgCorrectTaskDetail',
+            'version' => 'edu_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/edu/assignment/queryTaskDetail',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryOrgCorrectTaskDetailResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 作业批改-查询批改任务明细
+     *  *
+     * @param QueryOrgCorrectTaskDetailRequest $request QueryOrgCorrectTaskDetailRequest
+     *
+     * @return QueryOrgCorrectTaskDetailResponse QueryOrgCorrectTaskDetailResponse
+     */
+    public function queryOrgCorrectTaskDetail($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryOrgCorrectTaskDetailHeaders([]);
+
+        return $this->queryOrgCorrectTaskDetailWithOptions($request, $headers, $runtime);
     }
 
     /**

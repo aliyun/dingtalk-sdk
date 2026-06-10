@@ -12,6 +12,11 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
+     * @var string
+     */
+    public $reviewDetailUrl;
+
+    /**
      * @var reviewRiskDetail[]
      */
     public $reviewRiskDetail;
@@ -26,6 +31,7 @@ class data extends Model
      */
     public $reviewStatus;
     protected $_name = [
+        'reviewDetailUrl' => 'reviewDetailUrl',
         'reviewRiskDetail' => 'reviewRiskDetail',
         'reviewRiskOverview' => 'reviewRiskOverview',
         'reviewStatus' => 'reviewStatus',
@@ -36,6 +42,9 @@ class data extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->reviewDetailUrl) {
+            $res['reviewDetailUrl'] = $this->reviewDetailUrl;
+        }
         if (null !== $this->reviewRiskDetail) {
             $res['reviewRiskDetail'] = [];
             if (null !== $this->reviewRiskDetail && \is_array($this->reviewRiskDetail)) {
@@ -63,6 +72,9 @@ class data extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['reviewDetailUrl'])) {
+            $model->reviewDetailUrl = $map['reviewDetailUrl'];
+        }
         if (isset($map['reviewRiskDetail'])) {
             if (!empty($map['reviewRiskDetail'])) {
                 $model->reviewRiskDetail = [];

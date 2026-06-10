@@ -34,6 +34,12 @@ use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\ListOperationLogsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\ListPermissionsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\ListPermissionsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\ListPermissionsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\ListRecentsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\ListRecentsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\ListRecentsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\ListStarsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\ListStarsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\ListStarsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\ManagerGetDefaultHandOverUserHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\ManagerGetDefaultHandOverUserRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\ManagerGetDefaultHandOverUserResponse;
@@ -717,6 +723,147 @@ class Dingtalk extends OpenApiClient
         $headers = new ListPermissionsHeaders([]);
 
         return $this->listPermissionsWithOptions($dentryUuid, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取用户最近访问列表
+     *  *
+     * @param ListRecentsRequest $request ListRecentsRequest
+     * @param ListRecentsHeaders $headers ListRecentsHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ListRecentsResponse ListRecentsResponse
+     */
+    public function listRecentsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->fileTypes)) {
+            $query['fileTypes'] = $request->fileTypes;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->operateTypes)) {
+            $query['operateTypes'] = $request->operateTypes;
+        }
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'ListRecents',
+            'version' => 'storage_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/storage/recents/listV2',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return ListRecentsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取用户最近访问列表
+     *  *
+     * @param ListRecentsRequest $request ListRecentsRequest
+     *
+     * @return ListRecentsResponse ListRecentsResponse
+     */
+    public function listRecents($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListRecentsHeaders([]);
+
+        return $this->listRecentsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取用户收藏列表
+     *  *
+     * @param ListStarsRequest $request ListStarsRequest
+     * @param ListStarsHeaders $headers ListStarsHeaders
+     * @param RuntimeOptions   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ListStarsResponse ListStarsResponse
+     */
+    public function listStarsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        if (!Utils::isUnset($request->orderBy)) {
+            $query['orderBy'] = $request->orderBy;
+        }
+        if (!Utils::isUnset($request->sortType)) {
+            $query['sortType'] = $request->sortType;
+        }
+        if (!Utils::isUnset($request->supportResourceTypes)) {
+            $query['supportResourceTypes'] = $request->supportResourceTypes;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'ListStars',
+            'version' => 'storage_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/storage/stars/list',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return ListStarsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取用户收藏列表
+     *  *
+     * @param ListStarsRequest $request ListStarsRequest
+     *
+     * @return ListStarsResponse ListStarsResponse
+     */
+    public function listStars($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListStarsHeaders([]);
+
+        return $this->listStarsWithOptions($request, $headers, $runtime);
     }
 
     /**

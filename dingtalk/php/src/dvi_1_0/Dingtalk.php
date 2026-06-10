@@ -87,6 +87,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\QueryDeviceStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\QueryFileInfoByMinutesIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\QueryFileInfoByMinutesIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\QueryFileInfoByMinutesIdResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\QueryStaffStatisticDataHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\QueryStaffStatisticDataRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\QueryStaffStatisticDataResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\QueryUserDeviceLocationHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\QueryUserDeviceLocationRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\QueryUserDeviceLocationResponse;
@@ -1843,6 +1846,75 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryFileInfoByMinutesIdHeaders([]);
 
         return $this->queryFileInfoByMinutesIdWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 分页查询员工统计数据
+     *  *
+     * @param QueryStaffStatisticDataRequest $request QueryStaffStatisticDataRequest
+     * @param QueryStaffStatisticDataHeaders $headers QueryStaffStatisticDataHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryStaffStatisticDataResponse QueryStaffStatisticDataResponse
+     */
+    public function queryStaffStatisticDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->day)) {
+            $query['day'] = $request->day;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->teamCode)) {
+            $query['teamCode'] = $request->teamCode;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'QueryStaffStatisticData',
+            'version' => 'dvi_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/dvi/data/staff',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryStaffStatisticDataResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 分页查询员工统计数据
+     *  *
+     * @param QueryStaffStatisticDataRequest $request QueryStaffStatisticDataRequest
+     *
+     * @return QueryStaffStatisticDataResponse QueryStaffStatisticDataResponse
+     */
+    public function queryStaffStatisticData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryStaffStatisticDataHeaders([]);
+
+        return $this->queryStaffStatisticDataWithOptions($request, $headers, $runtime);
     }
 
     /**

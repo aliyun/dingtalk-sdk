@@ -32,12 +32,21 @@ use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\DeleteRoleResponse;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\DeleteSheetHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\DeleteSheetRequest;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\DeleteSheetResponse;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\EnableWorkflowHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\EnableWorkflowRequest;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\EnableWorkflowResponse;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\ExecuteImportHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\ExecuteImportRequest;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\ExecuteImportResponse;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\GetAllFieldsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\GetAllFieldsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\GetAllFieldsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\GetAllSheetsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\GetAllSheetsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\GetAllSheetsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\GetImportEncryptPublicKeyHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\GetImportEncryptPublicKeyRequest;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\GetImportEncryptPublicKeyResponse;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\GetRecordHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\GetRecordRequest;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\GetRecordResponse;
@@ -59,6 +68,12 @@ use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\InsertRecordsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\ListRecordsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\ListRecordsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\ListRecordsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\ListWorkflowsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\ListWorkflowsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\ListWorkflowsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\PrepareImportUploadHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\PrepareImportUploadRequest;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\PrepareImportUploadResponse;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\PrepareSetRichTextHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\PrepareSetRichTextRequest;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\PrepareSetRichTextResponse;
@@ -68,6 +83,9 @@ use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\QueryChangedRecordIdsByClientT
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\QueryDocAllRolesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\QueryDocAllRolesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\QueryDocAllRolesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\QueryImportStatusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\QueryImportStatusRequest;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\QueryImportStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\RebuildRoleMembersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\RebuildRoleMembersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\RebuildRoleMembersResponse;
@@ -704,6 +722,137 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 启动单个工作流
+     *  *
+     * @param string                $baseId
+     * @param string                $flowId
+     * @param EnableWorkflowRequest $request EnableWorkflowRequest
+     * @param EnableWorkflowHeaders $headers EnableWorkflowHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return EnableWorkflowResponse EnableWorkflowResponse
+     */
+    public function enableWorkflowWithOptions($baseId, $flowId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'EnableWorkflow',
+            'version' => 'notable_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/notable/bases/' . $baseId . '/workflows/' . $flowId . '/enable',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return EnableWorkflowResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 启动单个工作流
+     *  *
+     * @param string                $baseId
+     * @param string                $flowId
+     * @param EnableWorkflowRequest $request EnableWorkflowRequest
+     *
+     * @return EnableWorkflowResponse EnableWorkflowResponse
+     */
+    public function enableWorkflow($baseId, $flowId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new EnableWorkflowHeaders([]);
+
+        return $this->enableWorkflowWithOptions($baseId, $flowId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 触发加密导入
+     *  *
+     * @param string               $baseId
+     * @param ExecuteImportRequest $request ExecuteImportRequest
+     * @param ExecuteImportHeaders $headers ExecuteImportHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ExecuteImportResponse ExecuteImportResponse
+     */
+    public function executeImportWithOptions($baseId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->appendConfig)) {
+            $body['appendConfig'] = $request->appendConfig;
+        }
+        if (!Utils::isUnset($request->encryption)) {
+            $body['encryption'] = $request->encryption;
+        }
+        if (!Utils::isUnset($request->importId)) {
+            $body['importId'] = $request->importId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'ExecuteImport',
+            'version' => 'notable_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/notable/bases/' . $baseId . '/import/execute',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return ExecuteImportResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 触发加密导入
+     *  *
+     * @param string               $baseId
+     * @param ExecuteImportRequest $request ExecuteImportRequest
+     *
+     * @return ExecuteImportResponse ExecuteImportResponse
+     */
+    public function executeImport($baseId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ExecuteImportHeaders([]);
+
+        return $this->executeImportWithOptions($baseId, $request, $headers, $runtime);
+    }
+
+    /**
      * @summary 获取所有字段
      *  *
      * @param string              $baseId
@@ -821,6 +970,66 @@ class Dingtalk extends OpenApiClient
         $headers = new GetAllSheetsHeaders([]);
 
         return $this->getAllSheetsWithOptions($baseId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取加密导入 RSA 公钥
+     *  *
+     * @param GetImportEncryptPublicKeyRequest $request GetImportEncryptPublicKeyRequest
+     * @param GetImportEncryptPublicKeyHeaders $headers GetImportEncryptPublicKeyHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetImportEncryptPublicKeyResponse GetImportEncryptPublicKeyResponse
+     */
+    public function getImportEncryptPublicKeyWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->keyVersion)) {
+            $query['keyVersion'] = $request->keyVersion;
+        }
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'GetImportEncryptPublicKey',
+            'version' => 'notable_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/notable/import/encryptPublicKey',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetImportEncryptPublicKeyResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取加密导入 RSA 公钥
+     *  *
+     * @param GetImportEncryptPublicKeyRequest $request GetImportEncryptPublicKeyRequest
+     *
+     * @return GetImportEncryptPublicKeyResponse GetImportEncryptPublicKeyResponse
+     */
+    public function getImportEncryptPublicKey($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetImportEncryptPublicKeyHeaders([]);
+
+        return $this->getImportEncryptPublicKeyWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -1280,6 +1489,146 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询自动化工作流列表
+     *  *
+     * @param string               $baseId
+     * @param ListWorkflowsRequest $request ListWorkflowsRequest
+     * @param ListWorkflowsHeaders $headers ListWorkflowsHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ListWorkflowsResponse ListWorkflowsResponse
+     */
+    public function listWorkflowsWithOptions($baseId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->limit)) {
+            $body['limit'] = $request->limit;
+        }
+        if (!Utils::isUnset($request->offset)) {
+            $body['offset'] = $request->offset;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'ListWorkflows',
+            'version' => 'notable_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/notable/bases/' . $baseId . '/workflows',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return ListWorkflowsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询自动化工作流列表
+     *  *
+     * @param string               $baseId
+     * @param ListWorkflowsRequest $request ListWorkflowsRequest
+     *
+     * @return ListWorkflowsResponse ListWorkflowsResponse
+     */
+    public function listWorkflows($baseId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListWorkflowsHeaders([]);
+
+        return $this->listWorkflowsWithOptions($baseId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 申请加密导入上传链接
+     *  *
+     * @param string                     $baseId
+     * @param PrepareImportUploadRequest $request PrepareImportUploadRequest
+     * @param PrepareImportUploadHeaders $headers PrepareImportUploadHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return PrepareImportUploadResponse PrepareImportUploadResponse
+     */
+    public function prepareImportUploadWithOptions($baseId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->fileExtension)) {
+            $body['fileExtension'] = $request->fileExtension;
+        }
+        if (!Utils::isUnset($request->fileName)) {
+            $body['fileName'] = $request->fileName;
+        }
+        if (!Utils::isUnset($request->fileSize)) {
+            $body['fileSize'] = $request->fileSize;
+        }
+        if (!Utils::isUnset($request->tableNames)) {
+            $body['tableNames'] = $request->tableNames;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'PrepareImportUpload',
+            'version' => 'notable_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/notable/bases/' . $baseId . '/import/uploadUrl',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return PrepareImportUploadResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 申请加密导入上传链接
+     *  *
+     * @param string                     $baseId
+     * @param PrepareImportUploadRequest $request PrepareImportUploadRequest
+     *
+     * @return PrepareImportUploadResponse PrepareImportUploadResponse
+     */
+    public function prepareImportUpload($baseId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PrepareImportUploadHeaders([]);
+
+        return $this->prepareImportUploadWithOptions($baseId, $request, $headers, $runtime);
+    }
+
+    /**
      * @summary 富文本值预处理
      *  *
      * @param string                    $baseId
@@ -1464,6 +1813,68 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryDocAllRolesHeaders([]);
 
         return $this->queryDocAllRolesWithOptions($baseId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询导入会话状态
+     *  *
+     * @param string                   $baseId
+     * @param QueryImportStatusRequest $request QueryImportStatusRequest
+     * @param QueryImportStatusHeaders $headers QueryImportStatusHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryImportStatusResponse QueryImportStatusResponse
+     */
+    public function queryImportStatusWithOptions($baseId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->importId)) {
+            $query['importId'] = $request->importId;
+        }
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'QueryImportStatus',
+            'version' => 'notable_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/notable/bases/' . $baseId . '/import/status',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryImportStatusResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询导入会话状态
+     *  *
+     * @param string                   $baseId
+     * @param QueryImportStatusRequest $request QueryImportStatusRequest
+     *
+     * @return QueryImportStatusResponse QueryImportStatusResponse
+     */
+    public function queryImportStatus($baseId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryImportStatusHeaders([]);
+
+        return $this->queryImportStatusWithOptions($baseId, $request, $headers, $runtime);
     }
 
     /**
