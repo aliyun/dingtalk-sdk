@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class BatchGetUserRequest : TeaModel {
+        [NameInMap("permissionCode")]
+        [Validation(Required=false)]
+        public string PermissionCode { get; set; }
+
         /// <summary>
         /// <para>This parameter is required.</para>
         /// </summary>

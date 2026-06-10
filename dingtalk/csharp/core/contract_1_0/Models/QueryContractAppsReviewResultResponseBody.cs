@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0.Models
             [Validation(Required=false)]
             public QueryContractAppsReviewResultResponseBodyResultData Data { get; set; }
             public class QueryContractAppsReviewResultResponseBodyResultData : TeaModel {
+                [NameInMap("reviewDetailUrl")]
+                [Validation(Required=false)]
+                public string ReviewDetailUrl { get; set; }
+
                 [NameInMap("reviewRiskDetail")]
                 [Validation(Required=false)]
                 public List<QueryContractAppsReviewResultResponseBodyResultDataReviewRiskDetail> ReviewRiskDetail { get; set; }

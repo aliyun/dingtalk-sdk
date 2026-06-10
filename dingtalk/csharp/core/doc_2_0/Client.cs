@@ -1022,6 +1022,178 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>复制文档（应用授权）</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CopyDocWithAppAuthRequest
+        /// </param>
+        /// <param name="headers">
+        /// CopyDocWithAppAuthHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CopyDocWithAppAuthResponse
+        /// </returns>
+        public CopyDocWithAppAuthResponse CopyDocWithAppAuthWithOptions(CopyDocWithAppAuthRequest request, CopyDocWithAppAuthHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                body["operatorId"] = request.OperatorId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceDentryUuid))
+            {
+                body["sourceDentryUuid"] = request.SourceDentryUuid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetParentDentryUuid))
+            {
+                body["targetParentDentryUuid"] = request.TargetParentDentryUuid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetPreDentryUuid))
+            {
+                body["targetPreDentryUuid"] = request.TargetPreDentryUuid;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CopyDocWithAppAuth",
+                Version = "doc_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/doc/app/dentries/copy",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CopyDocWithAppAuthResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>复制文档（应用授权）</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CopyDocWithAppAuthRequest
+        /// </param>
+        /// <param name="headers">
+        /// CopyDocWithAppAuthHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CopyDocWithAppAuthResponse
+        /// </returns>
+        public async Task<CopyDocWithAppAuthResponse> CopyDocWithAppAuthWithOptionsAsync(CopyDocWithAppAuthRequest request, CopyDocWithAppAuthHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                body["operatorId"] = request.OperatorId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceDentryUuid))
+            {
+                body["sourceDentryUuid"] = request.SourceDentryUuid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetParentDentryUuid))
+            {
+                body["targetParentDentryUuid"] = request.TargetParentDentryUuid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetPreDentryUuid))
+            {
+                body["targetPreDentryUuid"] = request.TargetPreDentryUuid;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CopyDocWithAppAuth",
+                Version = "doc_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/doc/app/dentries/copy",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CopyDocWithAppAuthResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>复制文档（应用授权）</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CopyDocWithAppAuthRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CopyDocWithAppAuthResponse
+        /// </returns>
+        public CopyDocWithAppAuthResponse CopyDocWithAppAuth(CopyDocWithAppAuthRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CopyDocWithAppAuthHeaders headers = new CopyDocWithAppAuthHeaders();
+            return CopyDocWithAppAuthWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>复制文档（应用授权）</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CopyDocWithAppAuthRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CopyDocWithAppAuthResponse
+        /// </returns>
+        public async Task<CopyDocWithAppAuthResponse> CopyDocWithAppAuthAsync(CopyDocWithAppAuthRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CopyDocWithAppAuthHeaders headers = new CopyDocWithAppAuthHeaders();
+            return await CopyDocWithAppAuthWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>拷贝知识库</para>
         /// </summary>
         /// 
