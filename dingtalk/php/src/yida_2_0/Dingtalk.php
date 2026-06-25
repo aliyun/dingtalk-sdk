@@ -116,6 +116,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->corpId)) {
             $body['corpId'] = $request->corpId;
         }
+        if (!Utils::isUnset($request->env)) {
+            $body['env'] = $request->env;
+        }
         if (!Utils::isUnset($request->membersInfo)) {
             $body['membersInfo'] = $request->membersInfo;
         }
@@ -190,6 +193,9 @@ class Dingtalk extends OpenApiClient
         $body = [];
         if (!Utils::isUnset($request->corpId)) {
             $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->env)) {
+            $body['env'] = $request->env;
         }
         if (!Utils::isUnset($request->memberIds)) {
             $body['memberIds'] = $request->memberIds;
@@ -505,6 +511,9 @@ class Dingtalk extends OpenApiClient
         $body = [];
         if (!Utils::isUnset($request->corpId)) {
             $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->env)) {
+            $body['env'] = $request->env;
         }
         if (!Utils::isUnset($request->matrixId)) {
             $body['matrixId'] = $request->matrixId;
@@ -1097,6 +1106,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->corpId)) {
             $query['corpId'] = $request->corpId;
         }
+        if (!Utils::isUnset($request->env)) {
+            $query['env'] = $request->env;
+        }
         if (!Utils::isUnset($request->matrixId)) {
             $query['matrixId'] = $request->matrixId;
         }
@@ -1168,6 +1180,9 @@ class Dingtalk extends OpenApiClient
         $query = [];
         if (!Utils::isUnset($request->corpId)) {
             $query['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->env)) {
+            $query['env'] = $request->env;
         }
         if (!Utils::isUnset($request->pageNumber)) {
             $query['pageNumber'] = $request->pageNumber;
@@ -1327,6 +1342,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->dataJson)) {
             $body['dataJson'] = $request->dataJson;
+        }
+        if (!Utils::isUnset($request->env)) {
+            $body['env'] = $request->env;
         }
         if (!Utils::isUnset($request->matrixId)) {
             $body['matrixId'] = $request->matrixId;

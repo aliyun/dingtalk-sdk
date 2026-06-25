@@ -18,6 +18,13 @@ class DeleteMatrixDataByRowIdsRequest extends Model
     public $corpId;
 
     /**
+     * @example vpc,sgp_vpc
+     *
+     * @var string
+     */
+    public $env;
+
+    /**
      * @description This parameter is required.
      *
      * @example MATRIX-C8I4J40EM81XLWZH61ZK
@@ -50,6 +57,7 @@ class DeleteMatrixDataByRowIdsRequest extends Model
     public $userId;
     protected $_name = [
         'corpId' => 'corpId',
+        'env' => 'env',
         'matrixId' => 'matrixId',
         'rowIds' => 'rowIds',
         'token' => 'token',
@@ -63,6 +71,9 @@ class DeleteMatrixDataByRowIdsRequest extends Model
         $res = [];
         if (null !== $this->corpId) {
             $res['corpId'] = $this->corpId;
+        }
+        if (null !== $this->env) {
+            $res['env'] = $this->env;
         }
         if (null !== $this->matrixId) {
             $res['matrixId'] = $this->matrixId;
@@ -90,6 +101,9 @@ class DeleteMatrixDataByRowIdsRequest extends Model
         $model = new self();
         if (isset($map['corpId'])) {
             $model->corpId = $map['corpId'];
+        }
+        if (isset($map['env'])) {
+            $model->env = $map['env'];
         }
         if (isset($map['matrixId'])) {
             $model->matrixId = $map['matrixId'];

@@ -1404,6 +1404,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->appType)) {
             $body['appType'] = $request->appType;
         }
+        if (!Utils::isUnset($request->env)) {
+            $body['env'] = $request->env;
+        }
         if (!Utils::isUnset($request->outResult)) {
             $body['outResult'] = $request->outResult;
         }
@@ -1631,6 +1634,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->digitalSignUrl)) {
             $body['digitalSignUrl'] = $request->digitalSignUrl;
+        }
+        if (!Utils::isUnset($request->env)) {
+            $body['env'] = $request->env;
         }
         if (!Utils::isUnset($request->formDataJson)) {
             $body['formDataJson'] = $request->formDataJson;
@@ -3928,6 +3934,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->appType)) {
             $query['appType'] = $request->appType;
         }
+        if (!Utils::isUnset($request->env)) {
+            $query['env'] = $request->env;
+        }
         if (!Utils::isUnset($request->language)) {
             $query['language'] = $request->language;
         }
@@ -4137,6 +4146,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->createToTimeGMT)) {
             $query['createToTimeGMT'] = $request->createToTimeGMT;
+        }
+        if (!Utils::isUnset($request->env)) {
+            $query['env'] = $request->env;
         }
         if (!Utils::isUnset($request->keyword)) {
             $query['keyword'] = $request->keyword;
@@ -4631,6 +4643,9 @@ class Dingtalk extends OpenApiClient
         $body = [];
         if (!Utils::isUnset($request->appType)) {
             $body['appType'] = $request->appType;
+        }
+        if (!Utils::isUnset($request->env)) {
+            $body['env'] = $request->env;
         }
         if (!Utils::isUnset($request->formInstanceIdList)) {
             $body['formInstanceIdList'] = $request->formInstanceIdList;
@@ -5410,6 +5425,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->byManager)) {
             $body['byManager'] = $request->byManager;
+        }
+        if (!Utils::isUnset($request->env)) {
+            $body['env'] = $request->env;
         }
         if (!Utils::isUnset($request->language)) {
             $body['language'] = $request->language;

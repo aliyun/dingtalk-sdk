@@ -18,6 +18,13 @@ class ListFormRemarksRequest extends Model
     public $appType;
 
     /**
+     * @example vpc,sgp_vpc
+     *
+     * @var string
+     */
+    public $env;
+
+    /**
      * @example FORM-INST-123
      *
      * @var string[]
@@ -52,6 +59,7 @@ class ListFormRemarksRequest extends Model
     public $userId;
     protected $_name = [
         'appType' => 'appType',
+        'env' => 'env',
         'formInstanceIdList' => 'formInstanceIdList',
         'formUuid' => 'formUuid',
         'systemToken' => 'systemToken',
@@ -65,6 +73,9 @@ class ListFormRemarksRequest extends Model
         $res = [];
         if (null !== $this->appType) {
             $res['appType'] = $this->appType;
+        }
+        if (null !== $this->env) {
+            $res['env'] = $this->env;
         }
         if (null !== $this->formInstanceIdList) {
             $res['formInstanceIdList'] = $this->formInstanceIdList;
@@ -92,6 +103,9 @@ class ListFormRemarksRequest extends Model
         $model = new self();
         if (isset($map['appType'])) {
             $model->appType = $map['appType'];
+        }
+        if (isset($map['env'])) {
+            $model->env = $map['env'];
         }
         if (isset($map['formInstanceIdList'])) {
             if (!empty($map['formInstanceIdList'])) {

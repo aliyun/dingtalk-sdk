@@ -25,6 +25,13 @@ class ExecuteTaskRequest extends Model
     public $digitalSignUrl;
 
     /**
+     * @example vpc,sgp_vpc
+     *
+     * @var string
+     */
+    public $env;
+
+    /**
      * @example 未知
      *
      * @var string
@@ -101,6 +108,7 @@ class ExecuteTaskRequest extends Model
     protected $_name = [
         'appType' => 'appType',
         'digitalSignUrl' => 'digitalSignUrl',
+        'env' => 'env',
         'formDataJson' => 'formDataJson',
         'language' => 'language',
         'noExecuteExpressions' => 'noExecuteExpressions',
@@ -122,6 +130,9 @@ class ExecuteTaskRequest extends Model
         }
         if (null !== $this->digitalSignUrl) {
             $res['digitalSignUrl'] = $this->digitalSignUrl;
+        }
+        if (null !== $this->env) {
+            $res['env'] = $this->env;
         }
         if (null !== $this->formDataJson) {
             $res['formDataJson'] = $this->formDataJson;
@@ -167,6 +178,9 @@ class ExecuteTaskRequest extends Model
         }
         if (isset($map['digitalSignUrl'])) {
             $model->digitalSignUrl = $map['digitalSignUrl'];
+        }
+        if (isset($map['env'])) {
+            $model->env = $map['env'];
         }
         if (isset($map['formDataJson'])) {
             $model->formDataJson = $map['formDataJson'];

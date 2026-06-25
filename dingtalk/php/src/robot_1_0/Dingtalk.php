@@ -59,6 +59,9 @@ use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\QueryBotInstanceInGroupInfoRespo
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\QueryRobotDingReadStatusHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\QueryRobotDingReadStatusRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\QueryRobotDingReadStatusResponse;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\QueryRobotInstanceInGroupInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\QueryRobotInstanceInGroupInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\QueryRobotInstanceInGroupInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\QueryRobotPluginHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\QueryRobotPluginRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\QueryRobotPluginResponse;
@@ -1250,6 +1253,69 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryRobotDingReadStatusHeaders([]);
 
         return $this->queryRobotDingReadStatusWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取机器人所在群信息
+     *  *
+     * @param QueryRobotInstanceInGroupInfoRequest $request QueryRobotInstanceInGroupInfoRequest
+     * @param QueryRobotInstanceInGroupInfoHeaders $headers QueryRobotInstanceInGroupInfoHeaders
+     * @param RuntimeOptions                       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryRobotInstanceInGroupInfoResponse QueryRobotInstanceInGroupInfoResponse
+     */
+    public function queryRobotInstanceInGroupInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->maxResult)) {
+            $body['maxResult'] = $request->maxResult;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $body['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->robotCode)) {
+            $body['robotCode'] = $request->robotCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'QueryRobotInstanceInGroupInfo',
+            'version' => 'robot_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/robot/installed/groups/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryRobotInstanceInGroupInfoResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取机器人所在群信息
+     *  *
+     * @param QueryRobotInstanceInGroupInfoRequest $request QueryRobotInstanceInGroupInfoRequest
+     *
+     * @return QueryRobotInstanceInGroupInfoResponse QueryRobotInstanceInGroupInfoResponse
+     */
+    public function queryRobotInstanceInGroupInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryRobotInstanceInGroupInfoHeaders([]);
+
+        return $this->queryRobotInstanceInGroupInfoWithOptions($request, $headers, $runtime);
     }
 
     /**

@@ -18,6 +18,13 @@ class ExecuteBatchTaskRequest extends Model
     public $appType;
 
     /**
+     * @example vpc,sgp_vpc
+     *
+     * @var string
+     */
+    public $env;
+
+    /**
      * @description This parameter is required.
      *
      * @example 备选值：agree/disagree
@@ -61,6 +68,7 @@ class ExecuteBatchTaskRequest extends Model
     public $userId;
     protected $_name = [
         'appType' => 'appType',
+        'env' => 'env',
         'outResult' => 'outResult',
         'remark' => 'remark',
         'systemToken' => 'systemToken',
@@ -75,6 +83,9 @@ class ExecuteBatchTaskRequest extends Model
         $res = [];
         if (null !== $this->appType) {
             $res['appType'] = $this->appType;
+        }
+        if (null !== $this->env) {
+            $res['env'] = $this->env;
         }
         if (null !== $this->outResult) {
             $res['outResult'] = $this->outResult;
@@ -105,6 +116,9 @@ class ExecuteBatchTaskRequest extends Model
         $model = new self();
         if (isset($map['appType'])) {
             $model->appType = $map['appType'];
+        }
+        if (isset($map['env'])) {
+            $model->env = $map['env'];
         }
         if (isset($map['outResult'])) {
             $model->outResult = $map['outResult'];

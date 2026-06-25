@@ -634,6 +634,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCorrectingDataResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCoursesOfClassHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCoursesOfClassRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCoursesOfClassResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateEssayTaskCorrectionResultHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateEssayTaskCorrectionResultRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateEssayTaskCorrectionResultResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateEvaluatePerformanceCountHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateEvaluatePerformanceCountRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateEvaluatePerformanceCountResponse;
@@ -15372,6 +15375,81 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateCoursesOfClassHeaders([]);
 
         return $this->updateCoursesOfClassWithOptions($classId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 作业批改-更新作文任务批改结果
+     *  *
+     * @param UpdateEssayTaskCorrectionResultRequest $request UpdateEssayTaskCorrectionResultRequest
+     * @param UpdateEssayTaskCorrectionResultHeaders $headers UpdateEssayTaskCorrectionResultHeaders
+     * @param RuntimeOptions                         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateEssayTaskCorrectionResultResponse UpdateEssayTaskCorrectionResultResponse
+     */
+    public function updateEssayTaskCorrectionResultWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->essayTaskId)) {
+            $body['essayTaskId'] = $request->essayTaskId;
+        }
+        if (!Utils::isUnset($request->ext)) {
+            $body['ext'] = $request->ext;
+        }
+        if (!Utils::isUnset($request->failedMsg)) {
+            $body['failedMsg'] = $request->failedMsg;
+        }
+        if (!Utils::isUnset($request->status)) {
+            $body['status'] = $request->status;
+        }
+        if (!Utils::isUnset($request->taskCode)) {
+            $body['taskCode'] = $request->taskCode;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'UpdateEssayTaskCorrectionResult',
+            'version' => 'edu_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/edu/assignment/updateEssayTaskCorrectionResult',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UpdateEssayTaskCorrectionResultResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 作业批改-更新作文任务批改结果
+     *  *
+     * @param UpdateEssayTaskCorrectionResultRequest $request UpdateEssayTaskCorrectionResultRequest
+     *
+     * @return UpdateEssayTaskCorrectionResultResponse UpdateEssayTaskCorrectionResultResponse
+     */
+    public function updateEssayTaskCorrectionResult($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateEssayTaskCorrectionResultHeaders([]);
+
+        return $this->updateEssayTaskCorrectionResultWithOptions($request, $headers, $runtime);
     }
 
     /**

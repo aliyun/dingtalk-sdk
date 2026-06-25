@@ -18,6 +18,13 @@ class GetRoleDetailByIdRequest extends Model
     public $corpId;
 
     /**
+     * @example vpc,sgp_vpc
+     *
+     * @var string
+     */
+    public $env;
+
+    /**
      * @example 100
      *
      * @var int
@@ -57,6 +64,7 @@ class GetRoleDetailByIdRequest extends Model
     public $userId;
     protected $_name = [
         'corpId' => 'corpId',
+        'env' => 'env',
         'pageNumber' => 'pageNumber',
         'pageSize' => 'pageSize',
         'roleUuid' => 'roleUuid',
@@ -71,6 +79,9 @@ class GetRoleDetailByIdRequest extends Model
         $res = [];
         if (null !== $this->corpId) {
             $res['corpId'] = $this->corpId;
+        }
+        if (null !== $this->env) {
+            $res['env'] = $this->env;
         }
         if (null !== $this->pageNumber) {
             $res['pageNumber'] = $this->pageNumber;
@@ -101,6 +112,9 @@ class GetRoleDetailByIdRequest extends Model
         $model = new self();
         if (isset($map['corpId'])) {
             $model->corpId = $map['corpId'];
+        }
+        if (isset($map['env'])) {
+            $model->env = $map['env'];
         }
         if (isset($map['pageNumber'])) {
             $model->pageNumber = $map['pageNumber'];

@@ -9,6 +9,11 @@ use AlibabaCloud\Tea\Model;
 class splitParams extends Model
 {
     /**
+     * @var int
+     */
+    public $endTime;
+
+    /**
      * @var string
      */
     public $outBizData;
@@ -20,6 +25,7 @@ class splitParams extends Model
      */
     public $startTime;
     protected $_name = [
+        'endTime' => 'endTime',
         'outBizData' => 'outBizData',
         'startTime' => 'startTime',
     ];
@@ -29,6 +35,9 @@ class splitParams extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->endTime) {
+            $res['endTime'] = $this->endTime;
+        }
         if (null !== $this->outBizData) {
             $res['outBizData'] = $this->outBizData;
         }
@@ -47,6 +56,9 @@ class splitParams extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['endTime'])) {
+            $model->endTime = $map['endTime'];
+        }
         if (isset($map['outBizData'])) {
             $model->outBizData = $map['outBizData'];
         }

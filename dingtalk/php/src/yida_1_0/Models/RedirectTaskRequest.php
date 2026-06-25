@@ -25,6 +25,13 @@ class RedirectTaskRequest extends Model
     public $byManager;
 
     /**
+     * @example vpc,sgp_vpc
+     *
+     * @var string
+     */
+    public $env;
+
+    /**
      * @example zh_CN
      *
      * @var string
@@ -77,6 +84,7 @@ class RedirectTaskRequest extends Model
     protected $_name = [
         'appType' => 'appType',
         'byManager' => 'byManager',
+        'env' => 'env',
         'language' => 'language',
         'nowActionExecutorId' => 'nowActionExecutorId',
         'processInstanceId' => 'processInstanceId',
@@ -96,6 +104,9 @@ class RedirectTaskRequest extends Model
         }
         if (null !== $this->byManager) {
             $res['byManager'] = $this->byManager;
+        }
+        if (null !== $this->env) {
+            $res['env'] = $this->env;
         }
         if (null !== $this->language) {
             $res['language'] = $this->language;
@@ -135,6 +146,9 @@ class RedirectTaskRequest extends Model
         }
         if (isset($map['byManager'])) {
             $model->byManager = $map['byManager'];
+        }
+        if (isset($map['env'])) {
+            $model->env = $map['env'];
         }
         if (isset($map['language'])) {
             $model->language = $map['language'];

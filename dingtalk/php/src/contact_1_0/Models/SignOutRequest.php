@@ -11,6 +11,11 @@ class SignOutRequest extends Model
     /**
      * @var string
      */
+    public $permissionCode;
+
+    /**
+     * @var string
+     */
     public $reason;
 
     /**
@@ -25,6 +30,7 @@ class SignOutRequest extends Model
      */
     public $userId;
     protected $_name = [
+        'permissionCode' => 'permissionCode',
         'reason' => 'reason',
         'reasonI18nForEmployee' => 'reasonI18nForEmployee',
         'userId' => 'userId',
@@ -35,6 +41,9 @@ class SignOutRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->permissionCode) {
+            $res['permissionCode'] = $this->permissionCode;
+        }
         if (null !== $this->reason) {
             $res['reason'] = $this->reason;
         }
@@ -56,6 +65,9 @@ class SignOutRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['permissionCode'])) {
+            $model->permissionCode = $map['permissionCode'];
+        }
         if (isset($map['reason'])) {
             $model->reason = $map['reason'];
         }

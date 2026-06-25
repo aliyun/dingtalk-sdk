@@ -14,6 +14,13 @@ class GetRunningTasksRequest extends Model
     public $appType;
 
     /**
+     * @example vpc,sgp_vpc
+     *
+     * @var string
+     */
+    public $env;
+
+    /**
      * @var string
      */
     public $language;
@@ -34,6 +41,7 @@ class GetRunningTasksRequest extends Model
     public $userId;
     protected $_name = [
         'appType' => 'appType',
+        'env' => 'env',
         'language' => 'language',
         'processInstanceId' => 'processInstanceId',
         'systemToken' => 'systemToken',
@@ -47,6 +55,9 @@ class GetRunningTasksRequest extends Model
         $res = [];
         if (null !== $this->appType) {
             $res['appType'] = $this->appType;
+        }
+        if (null !== $this->env) {
+            $res['env'] = $this->env;
         }
         if (null !== $this->language) {
             $res['language'] = $this->language;
@@ -74,6 +85,9 @@ class GetRunningTasksRequest extends Model
         $model = new self();
         if (isset($map['appType'])) {
             $model->appType = $map['appType'];
+        }
+        if (isset($map['env'])) {
+            $model->env = $map['env'];
         }
         if (isset($map['language'])) {
             $model->language = $map['language'];

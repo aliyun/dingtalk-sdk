@@ -18,6 +18,13 @@ class BatchAddOrUpdateRoleMembersRequest extends Model
     public $corpId;
 
     /**
+     * @example vpc,sgp_vpc
+     *
+     * @var string
+     */
+    public $env;
+
+    /**
      * @description This parameter is required.
      *
      * @example [{"memberId":"5014533041684xx","manageScopes":"8360866xx,430181xx,429821xx"},{"memberId":"014329103xx","manageScopes":"all"}]
@@ -62,6 +69,7 @@ class BatchAddOrUpdateRoleMembersRequest extends Model
     public $userId;
     protected $_name = [
         'corpId' => 'corpId',
+        'env' => 'env',
         'membersInfo' => 'membersInfo',
         'pageNumber' => 'pageNumber',
         'pageSize' => 'pageSize',
@@ -77,6 +85,9 @@ class BatchAddOrUpdateRoleMembersRequest extends Model
         $res = [];
         if (null !== $this->corpId) {
             $res['corpId'] = $this->corpId;
+        }
+        if (null !== $this->env) {
+            $res['env'] = $this->env;
         }
         if (null !== $this->membersInfo) {
             $res['membersInfo'] = $this->membersInfo;
@@ -110,6 +121,9 @@ class BatchAddOrUpdateRoleMembersRequest extends Model
         $model = new self();
         if (isset($map['corpId'])) {
             $model->corpId = $map['corpId'];
+        }
+        if (isset($map['env'])) {
+            $model->env = $map['env'];
         }
         if (isset($map['membersInfo'])) {
             $model->membersInfo = $map['membersInfo'];

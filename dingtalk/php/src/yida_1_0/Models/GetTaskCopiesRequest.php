@@ -32,6 +32,13 @@ class GetTaskCopiesRequest extends Model
     public $createToTimeGMT;
 
     /**
+     * @example vpc,sgp_vpc
+     *
+     * @var string
+     */
+    public $env;
+
+    /**
      * @var string
      */
     public $keyword;
@@ -81,6 +88,7 @@ class GetTaskCopiesRequest extends Model
         'appType' => 'appType',
         'createFromTimeGMT' => 'createFromTimeGMT',
         'createToTimeGMT' => 'createToTimeGMT',
+        'env' => 'env',
         'keyword' => 'keyword',
         'language' => 'language',
         'pageNumber' => 'pageNumber',
@@ -103,6 +111,9 @@ class GetTaskCopiesRequest extends Model
         }
         if (null !== $this->createToTimeGMT) {
             $res['createToTimeGMT'] = $this->createToTimeGMT;
+        }
+        if (null !== $this->env) {
+            $res['env'] = $this->env;
         }
         if (null !== $this->keyword) {
             $res['keyword'] = $this->keyword;
@@ -145,6 +156,9 @@ class GetTaskCopiesRequest extends Model
         }
         if (isset($map['createToTimeGMT'])) {
             $model->createToTimeGMT = $map['createToTimeGMT'];
+        }
+        if (isset($map['env'])) {
+            $model->env = $map['env'];
         }
         if (isset($map['keyword'])) {
             $model->keyword = $map['keyword'];

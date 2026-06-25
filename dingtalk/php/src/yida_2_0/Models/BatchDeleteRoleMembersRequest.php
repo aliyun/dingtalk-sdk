@@ -18,6 +18,13 @@ class BatchDeleteRoleMembersRequest extends Model
     public $corpId;
 
     /**
+     * @example vpc,sgp_vpc
+     *
+     * @var string
+     */
+    public $env;
+
+    /**
      * @description This parameter is required.
      *
      * @var string
@@ -60,6 +67,7 @@ class BatchDeleteRoleMembersRequest extends Model
     public $userId;
     protected $_name = [
         'corpId' => 'corpId',
+        'env' => 'env',
         'memberIds' => 'memberIds',
         'pageNumber' => 'pageNumber',
         'pageSize' => 'pageSize',
@@ -75,6 +83,9 @@ class BatchDeleteRoleMembersRequest extends Model
         $res = [];
         if (null !== $this->corpId) {
             $res['corpId'] = $this->corpId;
+        }
+        if (null !== $this->env) {
+            $res['env'] = $this->env;
         }
         if (null !== $this->memberIds) {
             $res['memberIds'] = $this->memberIds;
@@ -108,6 +119,9 @@ class BatchDeleteRoleMembersRequest extends Model
         $model = new self();
         if (isset($map['corpId'])) {
             $model->corpId = $map['corpId'];
+        }
+        if (isset($map['env'])) {
+            $model->env = $map['env'];
         }
         if (isset($map['memberIds'])) {
             $model->memberIds = $map['memberIds'];

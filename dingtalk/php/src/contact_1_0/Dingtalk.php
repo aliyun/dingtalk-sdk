@@ -4248,6 +4248,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $query = [];
+        if (!Utils::isUnset($request->permissionCode)) {
+            $query['permissionCode'] = $request->permissionCode;
+        }
         if (!Utils::isUnset($request->userId)) {
             $query['userId'] = $request->userId;
         }
@@ -4270,7 +4273,7 @@ class Dingtalk extends OpenApiClient
             'method' => 'GET',
             'authType' => 'AK',
             'style' => 'ROA',
-            'reqBodyType' => 'json',
+            'reqBodyType' => 'none',
             'bodyType' => 'json',
         ]);
 
@@ -4659,6 +4662,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->permissionCode)) {
+            $body['permissionCode'] = $request->permissionCode;
+        }
         if (!Utils::isUnset($request->reason)) {
             $body['reason'] = $request->reason;
         }
@@ -4719,6 +4725,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->permissionCode)) {
+            $body['permissionCode'] = $request->permissionCode;
+        }
         if (!Utils::isUnset($request->userId)) {
             $body['userId'] = $request->userId;
         }
@@ -4776,6 +4785,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->permissionCode)) {
+            $body['permissionCode'] = $request->permissionCode;
+        }
         if (!Utils::isUnset($request->reason)) {
             $body['reason'] = $request->reason;
         }

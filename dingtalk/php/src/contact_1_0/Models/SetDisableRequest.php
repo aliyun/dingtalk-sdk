@@ -9,6 +9,11 @@ use AlibabaCloud\Tea\Model;
 class SetDisableRequest extends Model
 {
     /**
+     * @var string
+     */
+    public $permissionCode;
+
+    /**
      * @example reasonYYY
      *
      * @var string
@@ -24,6 +29,7 @@ class SetDisableRequest extends Model
      */
     public $userId;
     protected $_name = [
+        'permissionCode' => 'permissionCode',
         'reason' => 'reason',
         'userId' => 'userId',
     ];
@@ -33,6 +39,9 @@ class SetDisableRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->permissionCode) {
+            $res['permissionCode'] = $this->permissionCode;
+        }
         if (null !== $this->reason) {
             $res['reason'] = $this->reason;
         }
@@ -51,6 +60,9 @@ class SetDisableRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['permissionCode'])) {
+            $model->permissionCode = $map['permissionCode'];
+        }
         if (isset($map['reason'])) {
             $model->reason = $map['reason'];
         }

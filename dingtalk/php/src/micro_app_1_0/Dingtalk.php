@@ -31,12 +31,18 @@ use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\CreateApaasAppResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\CreateInnerAppHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\CreateInnerAppRequest;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\CreateInnerAppResponse;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\DeleteAppHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\DeleteAppRequest;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\DeleteAppResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\DeleteAppRoleHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\DeleteAppRoleRequest;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\DeleteAppRoleResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\DeleteInnerAppHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\DeleteInnerAppRequest;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\DeleteInnerAppResponse;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\EnableRobotHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\EnableRobotRequest;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\EnableRobotResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetApaasAppHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetApaasAppResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetAppResourceUseInfoHeaders;
@@ -59,6 +65,9 @@ use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetUserAppDevAccessHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetUserAppDevAccessResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetVersionInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\GetVersionInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\InactiveAppHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\InactiveAppRequest;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\InactiveAppResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\IsOrgMicroAppVisibleByUserIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\IsOrgMicroAppVisibleByUserIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\IsOrgMicroAppVisibleByUserIdResponse;
@@ -83,12 +92,18 @@ use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\ListRoleInfoByUserHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\ListRoleInfoByUserResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\ListUserVilebleAppHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\ListUserVilebleAppResponse;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\OfflineRobotHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\OfflineRobotRequest;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\OfflineRobotResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\PageInnerAppHistoryVersionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\PageInnerAppHistoryVersionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\PageInnerAppHistoryVersionResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\PublishInnerAppVersionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\PublishInnerAppVersionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\PublishInnerAppVersionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\QueryCreateEnterpriseAgentHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\QueryCreateEnterpriseAgentRequest;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\QueryCreateEnterpriseAgentResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\RebuildRoleScopeForAppRoleHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\RebuildRoleScopeForAppRoleRequest;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\RebuildRoleScopeForAppRoleResponse;
@@ -107,6 +122,9 @@ use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\RollbackInnerAppVersionRespo
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\SetMicroAppScopeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\SetMicroAppScopeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\SetMicroAppScopeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\SubmitCreateEnterpriseAgentHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\SubmitCreateEnterpriseAgentRequest;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\SubmitCreateEnterpriseAgentResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\UpdateApaasAppHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\UpdateApaasAppRequest;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\UpdateApaasAppResponse;
@@ -119,6 +137,9 @@ use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\UpdateInnerAppResponse;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\UpdatePublishAuditResultHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\UpdatePublishAuditResultRequest;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\UpdatePublishAuditResultResponse;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\UpdateRobotHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\UpdateRobotRequest;
+use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\UpdateRobotResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\GatewayDingTalk\Client;
@@ -886,6 +907,66 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除应用
+     *  *
+     * @param DeleteAppRequest $request DeleteAppRequest
+     * @param DeleteAppHeaders $headers DeleteAppHeaders
+     * @param RuntimeOptions   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return DeleteAppResponse DeleteAppResponse
+     */
+    public function deleteAppWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->unifiedAppId)) {
+            $body['unifiedAppId'] = $request->unifiedAppId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'DeleteApp',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/app/delete',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return DeleteAppResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 删除应用
+     *  *
+     * @param DeleteAppRequest $request DeleteAppRequest
+     *
+     * @return DeleteAppResponse DeleteAppResponse
+     */
+    public function deleteApp($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteAppHeaders([]);
+
+        return $this->deleteAppWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 删除应用角色
      *  *
      * @param string               $agentId
@@ -1003,6 +1084,66 @@ class Dingtalk extends OpenApiClient
         $headers = new DeleteInnerAppHeaders([]);
 
         return $this->deleteInnerAppWithOptions($agentId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 启用机器人
+     *  *
+     * @param EnableRobotRequest $request EnableRobotRequest
+     * @param EnableRobotHeaders $headers EnableRobotHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
+     *
+     * @return EnableRobotResponse EnableRobotResponse
+     */
+    public function enableRobotWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->unifiedAppId)) {
+            $body['unifiedAppId'] = $request->unifiedAppId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'EnableRobot',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/robot/enable',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return EnableRobotResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 启用机器人
+     *  *
+     * @param EnableRobotRequest $request EnableRobotRequest
+     *
+     * @return EnableRobotResponse EnableRobotResponse
+     */
+    public function enableRobot($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new EnableRobotHeaders([]);
+
+        return $this->enableRobotWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -1540,6 +1681,66 @@ class Dingtalk extends OpenApiClient
         $headers = [];
 
         return $this->getVersionInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 停用应用
+     *  *
+     * @param InactiveAppRequest $request InactiveAppRequest
+     * @param InactiveAppHeaders $headers InactiveAppHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
+     *
+     * @return InactiveAppResponse InactiveAppResponse
+     */
+    public function inactiveAppWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->unifiedAppId)) {
+            $body['unifiedAppId'] = $request->unifiedAppId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'InactiveApp',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/app/inactive',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return InactiveAppResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 停用应用
+     *  *
+     * @param InactiveAppRequest $request InactiveAppRequest
+     *
+     * @return InactiveAppResponse InactiveAppResponse
+     */
+    public function inactiveApp($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new InactiveAppHeaders([]);
+
+        return $this->inactiveAppWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -2084,6 +2285,66 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 停用机器人
+     *  *
+     * @param OfflineRobotRequest $request OfflineRobotRequest
+     * @param OfflineRobotHeaders $headers OfflineRobotHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
+     *
+     * @return OfflineRobotResponse OfflineRobotResponse
+     */
+    public function offlineRobotWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->unifiedAppId)) {
+            $query['unifiedAppId'] = $request->unifiedAppId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'OfflineRobot',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/robot/offline',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return OfflineRobotResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 停用机器人
+     *  *
+     * @param OfflineRobotRequest $request OfflineRobotRequest
+     *
+     * @return OfflineRobotResponse OfflineRobotResponse
+     */
+    public function offlineRobot($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new OfflineRobotHeaders([]);
+
+        return $this->offlineRobotWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 获取企业内部小程序历史版本列表
      *  *
      * @param string                            $agentId
@@ -2211,6 +2472,66 @@ class Dingtalk extends OpenApiClient
         $headers = new PublishInnerAppVersionHeaders([]);
 
         return $this->publishInnerAppVersionWithOptions($agentId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询创建企业自建Agent任务进度
+     *  *
+     * @param QueryCreateEnterpriseAgentRequest $request QueryCreateEnterpriseAgentRequest
+     * @param QueryCreateEnterpriseAgentHeaders $headers QueryCreateEnterpriseAgentHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryCreateEnterpriseAgentResponse QueryCreateEnterpriseAgentResponse
+     */
+    public function queryCreateEnterpriseAgentWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->taskId)) {
+            $body['taskId'] = $request->taskId;
+        }
+        if (!Utils::isUnset($request->userid)) {
+            $body['userid'] = $request->userid;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'QueryCreateEnterpriseAgent',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/agent/create/query',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryCreateEnterpriseAgentResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询创建企业自建Agent任务进度
+     *  *
+     * @param QueryCreateEnterpriseAgentRequest $request QueryCreateEnterpriseAgentRequest
+     *
+     * @return QueryCreateEnterpriseAgentResponse QueryCreateEnterpriseAgentResponse
+     */
+    public function queryCreateEnterpriseAgent($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryCreateEnterpriseAgentHeaders([]);
+
+        return $this->queryCreateEnterpriseAgentWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -2621,6 +2942,81 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 提交创建企业自建Agent
+     *  *
+     * @param SubmitCreateEnterpriseAgentRequest $request SubmitCreateEnterpriseAgentRequest
+     * @param SubmitCreateEnterpriseAgentHeaders $headers SubmitCreateEnterpriseAgentHeaders
+     * @param RuntimeOptions                     $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SubmitCreateEnterpriseAgentResponse SubmitCreateEnterpriseAgentResponse
+     */
+    public function submitCreateEnterpriseAgentWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appName)) {
+            $body['appName'] = $request->appName;
+        }
+        if (!Utils::isUnset($request->desc)) {
+            $body['desc'] = $request->desc;
+        }
+        if (!Utils::isUnset($request->previewMediaId)) {
+            $body['previewMediaId'] = $request->previewMediaId;
+        }
+        if (!Utils::isUnset($request->robotMediaId)) {
+            $body['robotMediaId'] = $request->robotMediaId;
+        }
+        if (!Utils::isUnset($request->robotName)) {
+            $body['robotName'] = $request->robotName;
+        }
+        if (!Utils::isUnset($request->taskId)) {
+            $body['taskId'] = $request->taskId;
+        }
+        if (!Utils::isUnset($request->userid)) {
+            $body['userid'] = $request->userid;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'SubmitCreateEnterpriseAgent',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/enterpriseAgent/submit',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return SubmitCreateEnterpriseAgentResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 提交创建企业自建Agent
+     *  *
+     * @param SubmitCreateEnterpriseAgentRequest $request SubmitCreateEnterpriseAgentRequest
+     *
+     * @return SubmitCreateEnterpriseAgentResponse SubmitCreateEnterpriseAgentResponse
+     */
+    public function submitCreateEnterpriseAgent($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SubmitCreateEnterpriseAgentHeaders([]);
+
+        return $this->submitCreateEnterpriseAgentWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 更新apaas应用
      *  *
      * @param UpdateApaasAppRequest $request UpdateApaasAppRequest
@@ -2906,5 +3302,86 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdatePublishAuditResultHeaders([]);
 
         return $this->updatePublishAuditResultWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更新机器人配置
+     *  *
+     * @param UpdateRobotRequest $request UpdateRobotRequest
+     * @param UpdateRobotHeaders $headers UpdateRobotHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateRobotResponse UpdateRobotResponse
+     */
+    public function updateRobotWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->brief)) {
+            $body['brief'] = $request->brief;
+        }
+        if (!Utils::isUnset($request->chatBotEventUrl)) {
+            $body['chatBotEventUrl'] = $request->chatBotEventUrl;
+        }
+        if (!Utils::isUnset($request->description)) {
+            $body['description'] = $request->description;
+        }
+        if (!Utils::isUnset($request->iconMediaId)) {
+            $body['iconMediaId'] = $request->iconMediaId;
+        }
+        if (!Utils::isUnset($request->mode)) {
+            $body['mode'] = $request->mode;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->outgoingUrl)) {
+            $body['outgoingUrl'] = $request->outgoingUrl;
+        }
+        if (!Utils::isUnset($request->unifiedAppId)) {
+            $body['unifiedAppId'] = $request->unifiedAppId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'UpdateRobot',
+            'version' => 'microApp_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/microApp/robot/update',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UpdateRobotResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新机器人配置
+     *  *
+     * @param UpdateRobotRequest $request UpdateRobotRequest
+     *
+     * @return UpdateRobotResponse UpdateRobotResponse
+     */
+    public function updateRobot($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateRobotHeaders([]);
+
+        return $this->updateRobotWithOptions($request, $headers, $runtime);
     }
 }

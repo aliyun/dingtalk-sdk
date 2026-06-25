@@ -27,6 +27,13 @@ class SaveAndUpdateMatrixDataRequest extends Model
     public $dataJson;
 
     /**
+     * @example vpc,sgp_vpc
+     *
+     * @var string
+     */
+    public $env;
+
+    /**
      * @description This parameter is required.
      *
      * @example MATRIX-C8I4J40EM81XLWZH61ZK
@@ -53,6 +60,7 @@ class SaveAndUpdateMatrixDataRequest extends Model
     protected $_name = [
         'corpId' => 'corpId',
         'dataJson' => 'dataJson',
+        'env' => 'env',
         'matrixId' => 'matrixId',
         'token' => 'token',
         'userId' => 'userId',
@@ -68,6 +76,9 @@ class SaveAndUpdateMatrixDataRequest extends Model
         }
         if (null !== $this->dataJson) {
             $res['dataJson'] = $this->dataJson;
+        }
+        if (null !== $this->env) {
+            $res['env'] = $this->env;
         }
         if (null !== $this->matrixId) {
             $res['matrixId'] = $this->matrixId;
@@ -95,6 +106,9 @@ class SaveAndUpdateMatrixDataRequest extends Model
         }
         if (isset($map['dataJson'])) {
             $model->dataJson = $map['dataJson'];
+        }
+        if (isset($map['env'])) {
+            $model->env = $map['env'];
         }
         if (isset($map['matrixId'])) {
             $model->matrixId = $map['matrixId'];
