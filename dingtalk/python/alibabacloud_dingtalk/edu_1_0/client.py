@@ -27556,6 +27556,144 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.UpdateCoursesOfClassHeaders()
         return await self.update_courses_of_class_with_options_async(class_id, request, headers, runtime)
 
+    def update_essay_task_correction_result_with_options(
+        self,
+        request: dingtalkedu__1__0_models.UpdateEssayTaskCorrectionResultRequest,
+        headers: dingtalkedu__1__0_models.UpdateEssayTaskCorrectionResultHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.UpdateEssayTaskCorrectionResultResponse:
+        """
+        @summary 作业批改-更新作文任务批改结果
+        
+        @param request: UpdateEssayTaskCorrectionResultRequest
+        @param headers: UpdateEssayTaskCorrectionResultHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateEssayTaskCorrectionResultResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.essay_task_id):
+            body['essayTaskId'] = request.essay_task_id
+        if not UtilClient.is_unset(request.ext):
+            body['ext'] = request.ext
+        if not UtilClient.is_unset(request.failed_msg):
+            body['failedMsg'] = request.failed_msg
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        if not UtilClient.is_unset(request.task_code):
+            body['taskCode'] = request.task_code
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateEssayTaskCorrectionResult',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/assignment/updateEssayTaskCorrectionResult',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.UpdateEssayTaskCorrectionResultResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_essay_task_correction_result_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.UpdateEssayTaskCorrectionResultRequest,
+        headers: dingtalkedu__1__0_models.UpdateEssayTaskCorrectionResultHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.UpdateEssayTaskCorrectionResultResponse:
+        """
+        @summary 作业批改-更新作文任务批改结果
+        
+        @param request: UpdateEssayTaskCorrectionResultRequest
+        @param headers: UpdateEssayTaskCorrectionResultHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateEssayTaskCorrectionResultResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.essay_task_id):
+            body['essayTaskId'] = request.essay_task_id
+        if not UtilClient.is_unset(request.ext):
+            body['ext'] = request.ext
+        if not UtilClient.is_unset(request.failed_msg):
+            body['failedMsg'] = request.failed_msg
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        if not UtilClient.is_unset(request.task_code):
+            body['taskCode'] = request.task_code
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateEssayTaskCorrectionResult',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/assignment/updateEssayTaskCorrectionResult',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.UpdateEssayTaskCorrectionResultResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_essay_task_correction_result(
+        self,
+        request: dingtalkedu__1__0_models.UpdateEssayTaskCorrectionResultRequest,
+    ) -> dingtalkedu__1__0_models.UpdateEssayTaskCorrectionResultResponse:
+        """
+        @summary 作业批改-更新作文任务批改结果
+        
+        @param request: UpdateEssayTaskCorrectionResultRequest
+        @return: UpdateEssayTaskCorrectionResultResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.UpdateEssayTaskCorrectionResultHeaders()
+        return self.update_essay_task_correction_result_with_options(request, headers, runtime)
+
+    async def update_essay_task_correction_result_async(
+        self,
+        request: dingtalkedu__1__0_models.UpdateEssayTaskCorrectionResultRequest,
+    ) -> dingtalkedu__1__0_models.UpdateEssayTaskCorrectionResultResponse:
+        """
+        @summary 作业批改-更新作文任务批改结果
+        
+        @param request: UpdateEssayTaskCorrectionResultRequest
+        @return: UpdateEssayTaskCorrectionResultResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.UpdateEssayTaskCorrectionResultHeaders()
+        return await self.update_essay_task_correction_result_with_options_async(request, headers, runtime)
+
     def update_evaluate_performance_count_with_options(
         self,
         request: dingtalkedu__1__0_models.UpdateEvaluatePerformanceCountRequest,

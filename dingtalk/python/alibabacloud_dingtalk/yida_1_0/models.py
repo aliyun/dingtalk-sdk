@@ -2520,6 +2520,7 @@ class ExecuteBatchTaskRequest(TeaModel):
     def __init__(
         self,
         app_type: str = None,
+        env: str = None,
         out_result: str = None,
         remark: str = None,
         system_token: str = None,
@@ -2528,6 +2529,7 @@ class ExecuteBatchTaskRequest(TeaModel):
     ):
         # This parameter is required.
         self.app_type = app_type
+        self.env = env
         # This parameter is required.
         self.out_result = out_result
         self.remark = remark
@@ -2549,6 +2551,8 @@ class ExecuteBatchTaskRequest(TeaModel):
         result = dict()
         if self.app_type is not None:
             result['appType'] = self.app_type
+        if self.env is not None:
+            result['env'] = self.env
         if self.out_result is not None:
             result['outResult'] = self.out_result
         if self.remark is not None:
@@ -2565,6 +2569,8 @@ class ExecuteBatchTaskRequest(TeaModel):
         m = m or dict()
         if m.get('appType') is not None:
             self.app_type = m.get('appType')
+        if m.get('env') is not None:
+            self.env = m.get('env')
         if m.get('outResult') is not None:
             self.out_result = m.get('outResult')
         if m.get('remark') is not None:
@@ -3009,6 +3015,7 @@ class ExecuteTaskRequest(TeaModel):
         self,
         app_type: str = None,
         digital_sign_url: str = None,
+        env: str = None,
         form_data_json: str = None,
         language: str = None,
         no_execute_expressions: str = None,
@@ -3022,6 +3029,7 @@ class ExecuteTaskRequest(TeaModel):
         # This parameter is required.
         self.app_type = app_type
         self.digital_sign_url = digital_sign_url
+        self.env = env
         self.form_data_json = form_data_json
         self.language = language
         self.no_execute_expressions = no_execute_expressions
@@ -3051,6 +3059,8 @@ class ExecuteTaskRequest(TeaModel):
             result['appType'] = self.app_type
         if self.digital_sign_url is not None:
             result['digitalSignUrl'] = self.digital_sign_url
+        if self.env is not None:
+            result['env'] = self.env
         if self.form_data_json is not None:
             result['formDataJson'] = self.form_data_json
         if self.language is not None:
@@ -3077,6 +3087,8 @@ class ExecuteTaskRequest(TeaModel):
             self.app_type = m.get('appType')
         if m.get('digitalSignUrl') is not None:
             self.digital_sign_url = m.get('digitalSignUrl')
+        if m.get('env') is not None:
+            self.env = m.get('env')
         if m.get('formDataJson') is not None:
             self.form_data_json = m.get('formDataJson')
         if m.get('language') is not None:
@@ -12980,12 +12992,14 @@ class GetRunningTasksRequest(TeaModel):
     def __init__(
         self,
         app_type: str = None,
+        env: str = None,
         language: str = None,
         process_instance_id: str = None,
         system_token: str = None,
         user_id: str = None,
     ):
         self.app_type = app_type
+        self.env = env
         self.language = language
         self.process_instance_id = process_instance_id
         self.system_token = system_token
@@ -13002,6 +13016,8 @@ class GetRunningTasksRequest(TeaModel):
         result = dict()
         if self.app_type is not None:
             result['appType'] = self.app_type
+        if self.env is not None:
+            result['env'] = self.env
         if self.language is not None:
             result['language'] = self.language
         if self.process_instance_id is not None:
@@ -13016,6 +13032,8 @@ class GetRunningTasksRequest(TeaModel):
         m = m or dict()
         if m.get('appType') is not None:
             self.app_type = m.get('appType')
+        if m.get('env') is not None:
+            self.env = m.get('env')
         if m.get('language') is not None:
             self.language = m.get('language')
         if m.get('processInstanceId') is not None:
@@ -13761,6 +13779,7 @@ class GetTaskCopiesRequest(TeaModel):
         app_type: str = None,
         create_from_time_gmt: int = None,
         create_to_time_gmt: int = None,
+        env: str = None,
         keyword: str = None,
         language: str = None,
         page_number: int = None,
@@ -13773,6 +13792,7 @@ class GetTaskCopiesRequest(TeaModel):
         self.app_type = app_type
         self.create_from_time_gmt = create_from_time_gmt
         self.create_to_time_gmt = create_to_time_gmt
+        self.env = env
         self.keyword = keyword
         self.language = language
         self.page_number = page_number
@@ -13798,6 +13818,8 @@ class GetTaskCopiesRequest(TeaModel):
             result['createFromTimeGMT'] = self.create_from_time_gmt
         if self.create_to_time_gmt is not None:
             result['createToTimeGMT'] = self.create_to_time_gmt
+        if self.env is not None:
+            result['env'] = self.env
         if self.keyword is not None:
             result['keyword'] = self.keyword
         if self.language is not None:
@@ -13822,6 +13844,8 @@ class GetTaskCopiesRequest(TeaModel):
             self.create_from_time_gmt = m.get('createFromTimeGMT')
         if m.get('createToTimeGMT') is not None:
             self.create_to_time_gmt = m.get('createToTimeGMT')
+        if m.get('env') is not None:
+            self.env = m.get('env')
         if m.get('keyword') is not None:
             self.keyword = m.get('keyword')
         if m.get('language') is not None:
@@ -15813,6 +15837,7 @@ class ListFormRemarksRequest(TeaModel):
     def __init__(
         self,
         app_type: str = None,
+        env: str = None,
         form_instance_id_list: List[str] = None,
         form_uuid: str = None,
         system_token: str = None,
@@ -15820,6 +15845,7 @@ class ListFormRemarksRequest(TeaModel):
     ):
         # This parameter is required.
         self.app_type = app_type
+        self.env = env
         self.form_instance_id_list = form_instance_id_list
         # This parameter is required.
         self.form_uuid = form_uuid
@@ -15839,6 +15865,8 @@ class ListFormRemarksRequest(TeaModel):
         result = dict()
         if self.app_type is not None:
             result['appType'] = self.app_type
+        if self.env is not None:
+            result['env'] = self.env
         if self.form_instance_id_list is not None:
             result['formInstanceIdList'] = self.form_instance_id_list
         if self.form_uuid is not None:
@@ -15853,6 +15881,8 @@ class ListFormRemarksRequest(TeaModel):
         m = m or dict()
         if m.get('appType') is not None:
             self.app_type = m.get('appType')
+        if m.get('env') is not None:
+            self.env = m.get('env')
         if m.get('formInstanceIdList') is not None:
             self.form_instance_id_list = m.get('formInstanceIdList')
         if m.get('formUuid') is not None:
@@ -18175,6 +18205,7 @@ class RedirectTaskRequest(TeaModel):
         self,
         app_type: str = None,
         by_manager: str = None,
+        env: str = None,
         language: str = None,
         now_action_executor_id: str = None,
         process_instance_id: str = None,
@@ -18186,6 +18217,7 @@ class RedirectTaskRequest(TeaModel):
         # This parameter is required.
         self.app_type = app_type
         self.by_manager = by_manager
+        self.env = env
         self.language = language
         # This parameter is required.
         self.now_action_executor_id = now_action_executor_id
@@ -18213,6 +18245,8 @@ class RedirectTaskRequest(TeaModel):
             result['appType'] = self.app_type
         if self.by_manager is not None:
             result['byManager'] = self.by_manager
+        if self.env is not None:
+            result['env'] = self.env
         if self.language is not None:
             result['language'] = self.language
         if self.now_action_executor_id is not None:
@@ -18235,6 +18269,8 @@ class RedirectTaskRequest(TeaModel):
             self.app_type = m.get('appType')
         if m.get('byManager') is not None:
             self.by_manager = m.get('byManager')
+        if m.get('env') is not None:
+            self.env = m.get('env')
         if m.get('language') is not None:
             self.language = m.get('language')
         if m.get('nowActionExecutorId') is not None:

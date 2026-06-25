@@ -1631,6 +1631,158 @@ class CreateInnerAppResponse(TeaModel):
         return self
 
 
+class DeleteAppHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeleteAppRequest(TeaModel):
+    def __init__(
+        self,
+        unified_app_id: str = None,
+        user_id: str = None,
+    ):
+        self.unified_app_id = unified_app_id
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.unified_app_id is not None:
+            result['unifiedAppId'] = self.unified_app_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('unifiedAppId') is not None:
+            self.unified_app_id = m.get('unifiedAppId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class DeleteAppResponseBody(TeaModel):
+    def __init__(
+        self,
+        agent_id: str = None,
+        message: str = None,
+        success: bool = None,
+        unified_app_id: str = None,
+    ):
+        self.agent_id = agent_id
+        self.message = message
+        self.success = success
+        self.unified_app_id = unified_app_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.agent_id is not None:
+            result['agentId'] = self.agent_id
+        if self.message is not None:
+            result['message'] = self.message
+        if self.success is not None:
+            result['success'] = self.success
+        if self.unified_app_id is not None:
+            result['unifiedAppId'] = self.unified_app_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('agentId') is not None:
+            self.agent_id = m.get('agentId')
+        if m.get('message') is not None:
+            self.message = m.get('message')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        if m.get('unifiedAppId') is not None:
+            self.unified_app_id = m.get('unifiedAppId')
+        return self
+
+
+class DeleteAppResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: DeleteAppResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = DeleteAppResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class DeleteAppRoleHeaders(TeaModel):
     def __init__(
         self,
@@ -1885,6 +2037,146 @@ class DeleteInnerAppResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = DeleteInnerAppResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class EnableRobotHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class EnableRobotRequest(TeaModel):
+    def __init__(
+        self,
+        unified_app_id: str = None,
+        user_id: str = None,
+    ):
+        self.unified_app_id = unified_app_id
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.unified_app_id is not None:
+            result['unifiedAppId'] = self.unified_app_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('unifiedAppId') is not None:
+            self.unified_app_id = m.get('unifiedAppId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class EnableRobotResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+        unified_app_id: str = None,
+    ):
+        self.success = success
+        self.unified_app_id = unified_app_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        if self.unified_app_id is not None:
+            result['unifiedAppId'] = self.unified_app_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        if m.get('unifiedAppId') is not None:
+            self.unified_app_id = m.get('unifiedAppId')
+        return self
+
+
+class EnableRobotResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: EnableRobotResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = EnableRobotResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -3416,6 +3708,158 @@ class GetVersionInfoResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetVersionInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class InactiveAppHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class InactiveAppRequest(TeaModel):
+    def __init__(
+        self,
+        unified_app_id: str = None,
+        user_id: str = None,
+    ):
+        self.unified_app_id = unified_app_id
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.unified_app_id is not None:
+            result['unifiedAppId'] = self.unified_app_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('unifiedAppId') is not None:
+            self.unified_app_id = m.get('unifiedAppId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class InactiveAppResponseBody(TeaModel):
+    def __init__(
+        self,
+        agent_id: str = None,
+        message: str = None,
+        success: bool = None,
+        unified_app_id: str = None,
+    ):
+        self.agent_id = agent_id
+        self.message = message
+        self.success = success
+        self.unified_app_id = unified_app_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.agent_id is not None:
+            result['agentId'] = self.agent_id
+        if self.message is not None:
+            result['message'] = self.message
+        if self.success is not None:
+            result['success'] = self.success
+        if self.unified_app_id is not None:
+            result['unifiedAppId'] = self.unified_app_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('agentId') is not None:
+            self.agent_id = m.get('agentId')
+        if m.get('message') is not None:
+            self.message = m.get('message')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        if m.get('unifiedAppId') is not None:
+            self.unified_app_id = m.get('unifiedAppId')
+        return self
+
+
+class InactiveAppResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: InactiveAppResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = InactiveAppResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -5426,6 +5870,146 @@ class ListUserVilebleAppResponse(TeaModel):
         return self
 
 
+class OfflineRobotHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class OfflineRobotRequest(TeaModel):
+    def __init__(
+        self,
+        unified_app_id: str = None,
+        user_id: str = None,
+    ):
+        self.unified_app_id = unified_app_id
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.unified_app_id is not None:
+            result['unifiedAppId'] = self.unified_app_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('unifiedAppId') is not None:
+            self.unified_app_id = m.get('unifiedAppId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class OfflineRobotResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+        unified_app_id: str = None,
+    ):
+        self.success = success
+        self.unified_app_id = unified_app_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        if self.unified_app_id is not None:
+            result['unifiedAppId'] = self.unified_app_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        if m.get('unifiedAppId') is not None:
+            self.unified_app_id = m.get('unifiedAppId')
+        return self
+
+
+class OfflineRobotResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: OfflineRobotResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = OfflineRobotResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class PageInnerAppHistoryVersionHeaders(TeaModel):
     def __init__(
         self,
@@ -5789,6 +6373,212 @@ class PublishInnerAppVersionResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = PublishInnerAppVersionResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryCreateEnterpriseAgentHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryCreateEnterpriseAgentRequest(TeaModel):
+    def __init__(
+        self,
+        task_id: str = None,
+        userid: str = None,
+    ):
+        self.task_id = task_id
+        self.userid = userid
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        if self.userid is not None:
+            result['userid'] = self.userid
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        if m.get('userid') is not None:
+            self.userid = m.get('userid')
+        return self
+
+
+class QueryCreateEnterpriseAgentResponseBody(TeaModel):
+    def __init__(
+        self,
+        agent_id: str = None,
+        client_id: str = None,
+        client_secret: str = None,
+        error_code: str = None,
+        error_msg: str = None,
+        expires_in: int = None,
+        gmt_create: int = None,
+        gmt_modified: int = None,
+        interval: int = None,
+        retry_count: int = None,
+        robot_code: str = None,
+        status: str = None,
+        task_id: str = None,
+    ):
+        self.agent_id = agent_id
+        self.client_id = client_id
+        self.client_secret = client_secret
+        self.error_code = error_code
+        self.error_msg = error_msg
+        self.expires_in = expires_in
+        self.gmt_create = gmt_create
+        self.gmt_modified = gmt_modified
+        self.interval = interval
+        self.retry_count = retry_count
+        self.robot_code = robot_code
+        self.status = status
+        self.task_id = task_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.agent_id is not None:
+            result['agentId'] = self.agent_id
+        if self.client_id is not None:
+            result['clientId'] = self.client_id
+        if self.client_secret is not None:
+            result['clientSecret'] = self.client_secret
+        if self.error_code is not None:
+            result['errorCode'] = self.error_code
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.expires_in is not None:
+            result['expiresIn'] = self.expires_in
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.gmt_modified is not None:
+            result['gmtModified'] = self.gmt_modified
+        if self.interval is not None:
+            result['interval'] = self.interval
+        if self.retry_count is not None:
+            result['retryCount'] = self.retry_count
+        if self.robot_code is not None:
+            result['robotCode'] = self.robot_code
+        if self.status is not None:
+            result['status'] = self.status
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('agentId') is not None:
+            self.agent_id = m.get('agentId')
+        if m.get('clientId') is not None:
+            self.client_id = m.get('clientId')
+        if m.get('clientSecret') is not None:
+            self.client_secret = m.get('clientSecret')
+        if m.get('errorCode') is not None:
+            self.error_code = m.get('errorCode')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('expiresIn') is not None:
+            self.expires_in = m.get('expiresIn')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('gmtModified') is not None:
+            self.gmt_modified = m.get('gmtModified')
+        if m.get('interval') is not None:
+            self.interval = m.get('interval')
+        if m.get('retryCount') is not None:
+            self.retry_count = m.get('retryCount')
+        if m.get('robotCode') is not None:
+            self.robot_code = m.get('robotCode')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        return self
+
+
+class QueryCreateEnterpriseAgentResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryCreateEnterpriseAgentResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryCreateEnterpriseAgentResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -6681,6 +7471,194 @@ class SetMicroAppScopeResponse(TeaModel):
         return self
 
 
+class SubmitCreateEnterpriseAgentHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SubmitCreateEnterpriseAgentRequest(TeaModel):
+    def __init__(
+        self,
+        app_name: str = None,
+        desc: str = None,
+        preview_media_id: str = None,
+        robot_media_id: str = None,
+        robot_name: str = None,
+        task_id: str = None,
+        userid: str = None,
+    ):
+        self.app_name = app_name
+        self.desc = desc
+        self.preview_media_id = preview_media_id
+        self.robot_media_id = robot_media_id
+        self.robot_name = robot_name
+        self.task_id = task_id
+        self.userid = userid
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_name is not None:
+            result['appName'] = self.app_name
+        if self.desc is not None:
+            result['desc'] = self.desc
+        if self.preview_media_id is not None:
+            result['previewMediaId'] = self.preview_media_id
+        if self.robot_media_id is not None:
+            result['robotMediaId'] = self.robot_media_id
+        if self.robot_name is not None:
+            result['robotName'] = self.robot_name
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        if self.userid is not None:
+            result['userid'] = self.userid
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appName') is not None:
+            self.app_name = m.get('appName')
+        if m.get('desc') is not None:
+            self.desc = m.get('desc')
+        if m.get('previewMediaId') is not None:
+            self.preview_media_id = m.get('previewMediaId')
+        if m.get('robotMediaId') is not None:
+            self.robot_media_id = m.get('robotMediaId')
+        if m.get('robotName') is not None:
+            self.robot_name = m.get('robotName')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        if m.get('userid') is not None:
+            self.userid = m.get('userid')
+        return self
+
+
+class SubmitCreateEnterpriseAgentResponseBody(TeaModel):
+    def __init__(
+        self,
+        expires_in: str = None,
+        interval: str = None,
+        retry_count: str = None,
+        status: str = None,
+        task_id: str = None,
+    ):
+        self.expires_in = expires_in
+        self.interval = interval
+        self.retry_count = retry_count
+        self.status = status
+        self.task_id = task_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.expires_in is not None:
+            result['expiresIn'] = self.expires_in
+        if self.interval is not None:
+            result['interval'] = self.interval
+        if self.retry_count is not None:
+            result['retryCount'] = self.retry_count
+        if self.status is not None:
+            result['status'] = self.status
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('expiresIn') is not None:
+            self.expires_in = m.get('expiresIn')
+        if m.get('interval') is not None:
+            self.interval = m.get('interval')
+        if m.get('retryCount') is not None:
+            self.retry_count = m.get('retryCount')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        return self
+
+
+class SubmitCreateEnterpriseAgentResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: SubmitCreateEnterpriseAgentResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = SubmitCreateEnterpriseAgentResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class UpdateApaasAppHeaders(TeaModel):
     def __init__(
         self,
@@ -7323,6 +8301,188 @@ class UpdatePublishAuditResultResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UpdatePublishAuditResultResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateRobotHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateRobotRequest(TeaModel):
+    def __init__(
+        self,
+        brief: str = None,
+        chat_bot_event_url: str = None,
+        description: str = None,
+        icon_media_id: str = None,
+        mode: int = None,
+        name: str = None,
+        outgoing_url: str = None,
+        unified_app_id: str = None,
+        user_id: str = None,
+    ):
+        self.brief = brief
+        self.chat_bot_event_url = chat_bot_event_url
+        self.description = description
+        self.icon_media_id = icon_media_id
+        self.mode = mode
+        self.name = name
+        self.outgoing_url = outgoing_url
+        self.unified_app_id = unified_app_id
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.brief is not None:
+            result['brief'] = self.brief
+        if self.chat_bot_event_url is not None:
+            result['chatBotEventUrl'] = self.chat_bot_event_url
+        if self.description is not None:
+            result['description'] = self.description
+        if self.icon_media_id is not None:
+            result['iconMediaId'] = self.icon_media_id
+        if self.mode is not None:
+            result['mode'] = self.mode
+        if self.name is not None:
+            result['name'] = self.name
+        if self.outgoing_url is not None:
+            result['outgoingUrl'] = self.outgoing_url
+        if self.unified_app_id is not None:
+            result['unifiedAppId'] = self.unified_app_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('brief') is not None:
+            self.brief = m.get('brief')
+        if m.get('chatBotEventUrl') is not None:
+            self.chat_bot_event_url = m.get('chatBotEventUrl')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('iconMediaId') is not None:
+            self.icon_media_id = m.get('iconMediaId')
+        if m.get('mode') is not None:
+            self.mode = m.get('mode')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('outgoingUrl') is not None:
+            self.outgoing_url = m.get('outgoingUrl')
+        if m.get('unifiedAppId') is not None:
+            self.unified_app_id = m.get('unifiedAppId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class UpdateRobotResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+        unified_app_id: str = None,
+    ):
+        self.success = success
+        self.unified_app_id = unified_app_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        if self.unified_app_id is not None:
+            result['unifiedAppId'] = self.unified_app_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        if m.get('unifiedAppId') is not None:
+            self.unified_app_id = m.get('unifiedAppId')
+        return self
+
+
+class UpdateRobotResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdateRobotResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdateRobotResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

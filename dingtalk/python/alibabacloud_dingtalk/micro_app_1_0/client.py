@@ -1456,6 +1456,124 @@ class Client(OpenApiClient):
         headers = dingtalkmicro_app__1__0_models.CreateInnerAppHeaders()
         return await self.create_inner_app_with_options_async(request, headers, runtime)
 
+    def delete_app_with_options(
+        self,
+        request: dingtalkmicro_app__1__0_models.DeleteAppRequest,
+        headers: dingtalkmicro_app__1__0_models.DeleteAppHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.DeleteAppResponse:
+        """
+        @summary 删除应用
+        
+        @param request: DeleteAppRequest
+        @param headers: DeleteAppHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteAppResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.unified_app_id):
+            body['unifiedAppId'] = request.unified_app_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DeleteApp',
+            version='microApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/microApp/app/delete',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.DeleteAppResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def delete_app_with_options_async(
+        self,
+        request: dingtalkmicro_app__1__0_models.DeleteAppRequest,
+        headers: dingtalkmicro_app__1__0_models.DeleteAppHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.DeleteAppResponse:
+        """
+        @summary 删除应用
+        
+        @param request: DeleteAppRequest
+        @param headers: DeleteAppHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteAppResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.unified_app_id):
+            body['unifiedAppId'] = request.unified_app_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DeleteApp',
+            version='microApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/microApp/app/delete',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.DeleteAppResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def delete_app(
+        self,
+        request: dingtalkmicro_app__1__0_models.DeleteAppRequest,
+    ) -> dingtalkmicro_app__1__0_models.DeleteAppResponse:
+        """
+        @summary 删除应用
+        
+        @param request: DeleteAppRequest
+        @return: DeleteAppResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.DeleteAppHeaders()
+        return self.delete_app_with_options(request, headers, runtime)
+
+    async def delete_app_async(
+        self,
+        request: dingtalkmicro_app__1__0_models.DeleteAppRequest,
+    ) -> dingtalkmicro_app__1__0_models.DeleteAppResponse:
+        """
+        @summary 删除应用
+        
+        @param request: DeleteAppRequest
+        @return: DeleteAppResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.DeleteAppHeaders()
+        return await self.delete_app_with_options_async(request, headers, runtime)
+
     def delete_app_role_with_options(
         self,
         agent_id: str,
@@ -1695,6 +1813,124 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkmicro_app__1__0_models.DeleteInnerAppHeaders()
         return await self.delete_inner_app_with_options_async(agent_id, request, headers, runtime)
+
+    def enable_robot_with_options(
+        self,
+        request: dingtalkmicro_app__1__0_models.EnableRobotRequest,
+        headers: dingtalkmicro_app__1__0_models.EnableRobotHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.EnableRobotResponse:
+        """
+        @summary 启用机器人
+        
+        @param request: EnableRobotRequest
+        @param headers: EnableRobotHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EnableRobotResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.unified_app_id):
+            body['unifiedAppId'] = request.unified_app_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='EnableRobot',
+            version='microApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/microApp/robot/enable',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.EnableRobotResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def enable_robot_with_options_async(
+        self,
+        request: dingtalkmicro_app__1__0_models.EnableRobotRequest,
+        headers: dingtalkmicro_app__1__0_models.EnableRobotHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.EnableRobotResponse:
+        """
+        @summary 启用机器人
+        
+        @param request: EnableRobotRequest
+        @param headers: EnableRobotHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EnableRobotResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.unified_app_id):
+            body['unifiedAppId'] = request.unified_app_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='EnableRobot',
+            version='microApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/microApp/robot/enable',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.EnableRobotResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def enable_robot(
+        self,
+        request: dingtalkmicro_app__1__0_models.EnableRobotRequest,
+    ) -> dingtalkmicro_app__1__0_models.EnableRobotResponse:
+        """
+        @summary 启用机器人
+        
+        @param request: EnableRobotRequest
+        @return: EnableRobotResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.EnableRobotHeaders()
+        return self.enable_robot_with_options(request, headers, runtime)
+
+    async def enable_robot_async(
+        self,
+        request: dingtalkmicro_app__1__0_models.EnableRobotRequest,
+    ) -> dingtalkmicro_app__1__0_models.EnableRobotResponse:
+        """
+        @summary 启用机器人
+        
+        @param request: EnableRobotRequest
+        @return: EnableRobotResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.EnableRobotHeaders()
+        return await self.enable_robot_with_options_async(request, headers, runtime)
 
     def get_apaas_app_with_options(
         self,
@@ -2752,6 +2988,124 @@ class Client(OpenApiClient):
         headers = {}
         return await self.get_version_info_with_options_async(request, headers, runtime)
 
+    def inactive_app_with_options(
+        self,
+        request: dingtalkmicro_app__1__0_models.InactiveAppRequest,
+        headers: dingtalkmicro_app__1__0_models.InactiveAppHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.InactiveAppResponse:
+        """
+        @summary 停用应用
+        
+        @param request: InactiveAppRequest
+        @param headers: InactiveAppHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InactiveAppResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.unified_app_id):
+            body['unifiedAppId'] = request.unified_app_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='InactiveApp',
+            version='microApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/microApp/app/inactive',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.InactiveAppResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def inactive_app_with_options_async(
+        self,
+        request: dingtalkmicro_app__1__0_models.InactiveAppRequest,
+        headers: dingtalkmicro_app__1__0_models.InactiveAppHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.InactiveAppResponse:
+        """
+        @summary 停用应用
+        
+        @param request: InactiveAppRequest
+        @param headers: InactiveAppHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InactiveAppResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.unified_app_id):
+            body['unifiedAppId'] = request.unified_app_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='InactiveApp',
+            version='microApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/microApp/app/inactive',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.InactiveAppResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def inactive_app(
+        self,
+        request: dingtalkmicro_app__1__0_models.InactiveAppRequest,
+    ) -> dingtalkmicro_app__1__0_models.InactiveAppResponse:
+        """
+        @summary 停用应用
+        
+        @param request: InactiveAppRequest
+        @return: InactiveAppResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.InactiveAppHeaders()
+        return self.inactive_app_with_options(request, headers, runtime)
+
+    async def inactive_app_async(
+        self,
+        request: dingtalkmicro_app__1__0_models.InactiveAppRequest,
+    ) -> dingtalkmicro_app__1__0_models.InactiveAppResponse:
+        """
+        @summary 停用应用
+        
+        @param request: InactiveAppRequest
+        @return: InactiveAppResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.InactiveAppHeaders()
+        return await self.inactive_app_with_options_async(request, headers, runtime)
+
     def is_org_micro_app_visible_by_user_id_with_options(
         self,
         request: dingtalkmicro_app__1__0_models.IsOrgMicroAppVisibleByUserIdRequest,
@@ -3808,6 +4162,124 @@ class Client(OpenApiClient):
         headers = dingtalkmicro_app__1__0_models.ListUserVilebleAppHeaders()
         return await self.list_user_vileble_app_with_options_async(user_id, headers, runtime)
 
+    def offline_robot_with_options(
+        self,
+        request: dingtalkmicro_app__1__0_models.OfflineRobotRequest,
+        headers: dingtalkmicro_app__1__0_models.OfflineRobotHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.OfflineRobotResponse:
+        """
+        @summary 停用机器人
+        
+        @param request: OfflineRobotRequest
+        @param headers: OfflineRobotHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: OfflineRobotResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.unified_app_id):
+            query['unifiedAppId'] = request.unified_app_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='OfflineRobot',
+            version='microApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/microApp/robot/offline',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.OfflineRobotResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def offline_robot_with_options_async(
+        self,
+        request: dingtalkmicro_app__1__0_models.OfflineRobotRequest,
+        headers: dingtalkmicro_app__1__0_models.OfflineRobotHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.OfflineRobotResponse:
+        """
+        @summary 停用机器人
+        
+        @param request: OfflineRobotRequest
+        @param headers: OfflineRobotHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: OfflineRobotResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.unified_app_id):
+            query['unifiedAppId'] = request.unified_app_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='OfflineRobot',
+            version='microApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/microApp/robot/offline',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.OfflineRobotResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def offline_robot(
+        self,
+        request: dingtalkmicro_app__1__0_models.OfflineRobotRequest,
+    ) -> dingtalkmicro_app__1__0_models.OfflineRobotResponse:
+        """
+        @summary 停用机器人
+        
+        @param request: OfflineRobotRequest
+        @return: OfflineRobotResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.OfflineRobotHeaders()
+        return self.offline_robot_with_options(request, headers, runtime)
+
+    async def offline_robot_async(
+        self,
+        request: dingtalkmicro_app__1__0_models.OfflineRobotRequest,
+    ) -> dingtalkmicro_app__1__0_models.OfflineRobotResponse:
+        """
+        @summary 停用机器人
+        
+        @param request: OfflineRobotRequest
+        @return: OfflineRobotResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.OfflineRobotHeaders()
+        return await self.offline_robot_with_options_async(request, headers, runtime)
+
     def page_inner_app_history_version_with_options(
         self,
         agent_id: str,
@@ -4059,6 +4531,124 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkmicro_app__1__0_models.PublishInnerAppVersionHeaders()
         return await self.publish_inner_app_version_with_options_async(agent_id, request, headers, runtime)
+
+    def query_create_enterprise_agent_with_options(
+        self,
+        request: dingtalkmicro_app__1__0_models.QueryCreateEnterpriseAgentRequest,
+        headers: dingtalkmicro_app__1__0_models.QueryCreateEnterpriseAgentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.QueryCreateEnterpriseAgentResponse:
+        """
+        @summary 查询创建企业自建Agent任务进度
+        
+        @param request: QueryCreateEnterpriseAgentRequest
+        @param headers: QueryCreateEnterpriseAgentHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryCreateEnterpriseAgentResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.task_id):
+            body['taskId'] = request.task_id
+        if not UtilClient.is_unset(request.userid):
+            body['userid'] = request.userid
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryCreateEnterpriseAgent',
+            version='microApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/microApp/agent/create/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.QueryCreateEnterpriseAgentResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_create_enterprise_agent_with_options_async(
+        self,
+        request: dingtalkmicro_app__1__0_models.QueryCreateEnterpriseAgentRequest,
+        headers: dingtalkmicro_app__1__0_models.QueryCreateEnterpriseAgentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.QueryCreateEnterpriseAgentResponse:
+        """
+        @summary 查询创建企业自建Agent任务进度
+        
+        @param request: QueryCreateEnterpriseAgentRequest
+        @param headers: QueryCreateEnterpriseAgentHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryCreateEnterpriseAgentResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.task_id):
+            body['taskId'] = request.task_id
+        if not UtilClient.is_unset(request.userid):
+            body['userid'] = request.userid
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryCreateEnterpriseAgent',
+            version='microApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/microApp/agent/create/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.QueryCreateEnterpriseAgentResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_create_enterprise_agent(
+        self,
+        request: dingtalkmicro_app__1__0_models.QueryCreateEnterpriseAgentRequest,
+    ) -> dingtalkmicro_app__1__0_models.QueryCreateEnterpriseAgentResponse:
+        """
+        @summary 查询创建企业自建Agent任务进度
+        
+        @param request: QueryCreateEnterpriseAgentRequest
+        @return: QueryCreateEnterpriseAgentResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.QueryCreateEnterpriseAgentHeaders()
+        return self.query_create_enterprise_agent_with_options(request, headers, runtime)
+
+    async def query_create_enterprise_agent_async(
+        self,
+        request: dingtalkmicro_app__1__0_models.QueryCreateEnterpriseAgentRequest,
+    ) -> dingtalkmicro_app__1__0_models.QueryCreateEnterpriseAgentResponse:
+        """
+        @summary 查询创建企业自建Agent任务进度
+        
+        @param request: QueryCreateEnterpriseAgentRequest
+        @return: QueryCreateEnterpriseAgentResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.QueryCreateEnterpriseAgentHeaders()
+        return await self.query_create_enterprise_agent_with_options_async(request, headers, runtime)
 
     def rebuild_role_scope_for_app_role_with_options(
         self,
@@ -4840,6 +5430,144 @@ class Client(OpenApiClient):
         headers = dingtalkmicro_app__1__0_models.SetMicroAppScopeHeaders()
         return await self.set_micro_app_scope_with_options_async(agent_id, request, headers, runtime)
 
+    def submit_create_enterprise_agent_with_options(
+        self,
+        request: dingtalkmicro_app__1__0_models.SubmitCreateEnterpriseAgentRequest,
+        headers: dingtalkmicro_app__1__0_models.SubmitCreateEnterpriseAgentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.SubmitCreateEnterpriseAgentResponse:
+        """
+        @summary 提交创建企业自建Agent
+        
+        @param request: SubmitCreateEnterpriseAgentRequest
+        @param headers: SubmitCreateEnterpriseAgentHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SubmitCreateEnterpriseAgentResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_name):
+            body['appName'] = request.app_name
+        if not UtilClient.is_unset(request.desc):
+            body['desc'] = request.desc
+        if not UtilClient.is_unset(request.preview_media_id):
+            body['previewMediaId'] = request.preview_media_id
+        if not UtilClient.is_unset(request.robot_media_id):
+            body['robotMediaId'] = request.robot_media_id
+        if not UtilClient.is_unset(request.robot_name):
+            body['robotName'] = request.robot_name
+        if not UtilClient.is_unset(request.task_id):
+            body['taskId'] = request.task_id
+        if not UtilClient.is_unset(request.userid):
+            body['userid'] = request.userid
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SubmitCreateEnterpriseAgent',
+            version='microApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/microApp/enterpriseAgent/submit',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.SubmitCreateEnterpriseAgentResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def submit_create_enterprise_agent_with_options_async(
+        self,
+        request: dingtalkmicro_app__1__0_models.SubmitCreateEnterpriseAgentRequest,
+        headers: dingtalkmicro_app__1__0_models.SubmitCreateEnterpriseAgentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.SubmitCreateEnterpriseAgentResponse:
+        """
+        @summary 提交创建企业自建Agent
+        
+        @param request: SubmitCreateEnterpriseAgentRequest
+        @param headers: SubmitCreateEnterpriseAgentHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SubmitCreateEnterpriseAgentResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_name):
+            body['appName'] = request.app_name
+        if not UtilClient.is_unset(request.desc):
+            body['desc'] = request.desc
+        if not UtilClient.is_unset(request.preview_media_id):
+            body['previewMediaId'] = request.preview_media_id
+        if not UtilClient.is_unset(request.robot_media_id):
+            body['robotMediaId'] = request.robot_media_id
+        if not UtilClient.is_unset(request.robot_name):
+            body['robotName'] = request.robot_name
+        if not UtilClient.is_unset(request.task_id):
+            body['taskId'] = request.task_id
+        if not UtilClient.is_unset(request.userid):
+            body['userid'] = request.userid
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SubmitCreateEnterpriseAgent',
+            version='microApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/microApp/enterpriseAgent/submit',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.SubmitCreateEnterpriseAgentResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def submit_create_enterprise_agent(
+        self,
+        request: dingtalkmicro_app__1__0_models.SubmitCreateEnterpriseAgentRequest,
+    ) -> dingtalkmicro_app__1__0_models.SubmitCreateEnterpriseAgentResponse:
+        """
+        @summary 提交创建企业自建Agent
+        
+        @param request: SubmitCreateEnterpriseAgentRequest
+        @return: SubmitCreateEnterpriseAgentResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.SubmitCreateEnterpriseAgentHeaders()
+        return self.submit_create_enterprise_agent_with_options(request, headers, runtime)
+
+    async def submit_create_enterprise_agent_async(
+        self,
+        request: dingtalkmicro_app__1__0_models.SubmitCreateEnterpriseAgentRequest,
+    ) -> dingtalkmicro_app__1__0_models.SubmitCreateEnterpriseAgentResponse:
+        """
+        @summary 提交创建企业自建Agent
+        
+        @param request: SubmitCreateEnterpriseAgentRequest
+        @return: SubmitCreateEnterpriseAgentResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.SubmitCreateEnterpriseAgentHeaders()
+        return await self.submit_create_enterprise_agent_with_options_async(request, headers, runtime)
+
     def update_apaas_app_with_options(
         self,
         request: dingtalkmicro_app__1__0_models.UpdateApaasAppRequest,
@@ -5379,3 +6107,149 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkmicro_app__1__0_models.UpdatePublishAuditResultHeaders()
         return await self.update_publish_audit_result_with_options_async(request, headers, runtime)
+
+    def update_robot_with_options(
+        self,
+        request: dingtalkmicro_app__1__0_models.UpdateRobotRequest,
+        headers: dingtalkmicro_app__1__0_models.UpdateRobotHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.UpdateRobotResponse:
+        """
+        @summary 更新机器人配置
+        
+        @param request: UpdateRobotRequest
+        @param headers: UpdateRobotHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateRobotResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.brief):
+            body['brief'] = request.brief
+        if not UtilClient.is_unset(request.chat_bot_event_url):
+            body['chatBotEventUrl'] = request.chat_bot_event_url
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.icon_media_id):
+            body['iconMediaId'] = request.icon_media_id
+        if not UtilClient.is_unset(request.mode):
+            body['mode'] = request.mode
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.outgoing_url):
+            body['outgoingUrl'] = request.outgoing_url
+        if not UtilClient.is_unset(request.unified_app_id):
+            body['unifiedAppId'] = request.unified_app_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateRobot',
+            version='microApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/microApp/robot/update',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.UpdateRobotResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_robot_with_options_async(
+        self,
+        request: dingtalkmicro_app__1__0_models.UpdateRobotRequest,
+        headers: dingtalkmicro_app__1__0_models.UpdateRobotHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmicro_app__1__0_models.UpdateRobotResponse:
+        """
+        @summary 更新机器人配置
+        
+        @param request: UpdateRobotRequest
+        @param headers: UpdateRobotHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateRobotResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.brief):
+            body['brief'] = request.brief
+        if not UtilClient.is_unset(request.chat_bot_event_url):
+            body['chatBotEventUrl'] = request.chat_bot_event_url
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.icon_media_id):
+            body['iconMediaId'] = request.icon_media_id
+        if not UtilClient.is_unset(request.mode):
+            body['mode'] = request.mode
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.outgoing_url):
+            body['outgoingUrl'] = request.outgoing_url
+        if not UtilClient.is_unset(request.unified_app_id):
+            body['unifiedAppId'] = request.unified_app_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateRobot',
+            version='microApp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/microApp/robot/update',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmicro_app__1__0_models.UpdateRobotResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_robot(
+        self,
+        request: dingtalkmicro_app__1__0_models.UpdateRobotRequest,
+    ) -> dingtalkmicro_app__1__0_models.UpdateRobotResponse:
+        """
+        @summary 更新机器人配置
+        
+        @param request: UpdateRobotRequest
+        @return: UpdateRobotResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.UpdateRobotHeaders()
+        return self.update_robot_with_options(request, headers, runtime)
+
+    async def update_robot_async(
+        self,
+        request: dingtalkmicro_app__1__0_models.UpdateRobotRequest,
+    ) -> dingtalkmicro_app__1__0_models.UpdateRobotResponse:
+        """
+        @summary 更新机器人配置
+        
+        @param request: UpdateRobotRequest
+        @return: UpdateRobotResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmicro_app__1__0_models.UpdateRobotHeaders()
+        return await self.update_robot_with_options_async(request, headers, runtime)

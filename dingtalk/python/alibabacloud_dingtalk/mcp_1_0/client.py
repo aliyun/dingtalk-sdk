@@ -257,3 +257,439 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkmcp__1__0_models.DeleteMcpHeaders()
         return await self.delete_mcp_with_options_async(request, headers, runtime)
+
+    def get_mcp_detail_with_options(
+        self,
+        mcp_id: str,
+        headers: dingtalkmcp__1__0_models.GetMcpDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmcp__1__0_models.GetMcpDetailResponse:
+        """
+        @summary 根据mcpId获取MCP详情
+        
+        @param headers: GetMcpDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetMcpDetailResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetMcpDetail',
+            version='mcp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/mcp/mcps/{mcp_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmcp__1__0_models.GetMcpDetailResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_mcp_detail_with_options_async(
+        self,
+        mcp_id: str,
+        headers: dingtalkmcp__1__0_models.GetMcpDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmcp__1__0_models.GetMcpDetailResponse:
+        """
+        @summary 根据mcpId获取MCP详情
+        
+        @param headers: GetMcpDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetMcpDetailResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetMcpDetail',
+            version='mcp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/mcp/mcps/{mcp_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmcp__1__0_models.GetMcpDetailResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_mcp_detail(
+        self,
+        mcp_id: str,
+    ) -> dingtalkmcp__1__0_models.GetMcpDetailResponse:
+        """
+        @summary 根据mcpId获取MCP详情
+        
+        @return: GetMcpDetailResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmcp__1__0_models.GetMcpDetailHeaders()
+        return self.get_mcp_detail_with_options(mcp_id, headers, runtime)
+
+    async def get_mcp_detail_async(
+        self,
+        mcp_id: str,
+    ) -> dingtalkmcp__1__0_models.GetMcpDetailResponse:
+        """
+        @summary 根据mcpId获取MCP详情
+        
+        @return: GetMcpDetailResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmcp__1__0_models.GetMcpDetailHeaders()
+        return await self.get_mcp_detail_with_options_async(mcp_id, headers, runtime)
+
+    def get_skill_detail_with_options(
+        self,
+        skill_id: str,
+        headers: dingtalkmcp__1__0_models.GetSkillDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmcp__1__0_models.GetSkillDetailResponse:
+        """
+        @summary 根据skillId查询Skill详情及安装包下载链接
+        
+        @param headers: GetSkillDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSkillDetailResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetSkillDetail',
+            version='mcp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/mcp/skills/{skill_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmcp__1__0_models.GetSkillDetailResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_skill_detail_with_options_async(
+        self,
+        skill_id: str,
+        headers: dingtalkmcp__1__0_models.GetSkillDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmcp__1__0_models.GetSkillDetailResponse:
+        """
+        @summary 根据skillId查询Skill详情及安装包下载链接
+        
+        @param headers: GetSkillDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSkillDetailResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetSkillDetail',
+            version='mcp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/mcp/skills/{skill_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmcp__1__0_models.GetSkillDetailResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_skill_detail(
+        self,
+        skill_id: str,
+    ) -> dingtalkmcp__1__0_models.GetSkillDetailResponse:
+        """
+        @summary 根据skillId查询Skill详情及安装包下载链接
+        
+        @return: GetSkillDetailResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmcp__1__0_models.GetSkillDetailHeaders()
+        return self.get_skill_detail_with_options(skill_id, headers, runtime)
+
+    async def get_skill_detail_async(
+        self,
+        skill_id: str,
+    ) -> dingtalkmcp__1__0_models.GetSkillDetailResponse:
+        """
+        @summary 根据skillId查询Skill详情及安装包下载链接
+        
+        @return: GetSkillDetailResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmcp__1__0_models.GetSkillDetailHeaders()
+        return await self.get_skill_detail_with_options_async(skill_id, headers, runtime)
+
+    def list_market_mcps_with_options(
+        self,
+        request: dingtalkmcp__1__0_models.ListMarketMcpsRequest,
+        headers: dingtalkmcp__1__0_models.ListMarketMcpsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmcp__1__0_models.ListMarketMcpsResponse:
+        """
+        @summary 查询MCP广场精选MCP列表
+        
+        @param request: ListMarketMcpsRequest
+        @param headers: ListMarketMcpsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListMarketMcpsResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page):
+            query['page'] = request.page
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListMarketMcps',
+            version='mcp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/mcp/mcps',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmcp__1__0_models.ListMarketMcpsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def list_market_mcps_with_options_async(
+        self,
+        request: dingtalkmcp__1__0_models.ListMarketMcpsRequest,
+        headers: dingtalkmcp__1__0_models.ListMarketMcpsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmcp__1__0_models.ListMarketMcpsResponse:
+        """
+        @summary 查询MCP广场精选MCP列表
+        
+        @param request: ListMarketMcpsRequest
+        @param headers: ListMarketMcpsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListMarketMcpsResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page):
+            query['page'] = request.page
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListMarketMcps',
+            version='mcp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/mcp/mcps',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmcp__1__0_models.ListMarketMcpsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def list_market_mcps(
+        self,
+        request: dingtalkmcp__1__0_models.ListMarketMcpsRequest,
+    ) -> dingtalkmcp__1__0_models.ListMarketMcpsResponse:
+        """
+        @summary 查询MCP广场精选MCP列表
+        
+        @param request: ListMarketMcpsRequest
+        @return: ListMarketMcpsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmcp__1__0_models.ListMarketMcpsHeaders()
+        return self.list_market_mcps_with_options(request, headers, runtime)
+
+    async def list_market_mcps_async(
+        self,
+        request: dingtalkmcp__1__0_models.ListMarketMcpsRequest,
+    ) -> dingtalkmcp__1__0_models.ListMarketMcpsResponse:
+        """
+        @summary 查询MCP广场精选MCP列表
+        
+        @param request: ListMarketMcpsRequest
+        @return: ListMarketMcpsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmcp__1__0_models.ListMarketMcpsHeaders()
+        return await self.list_market_mcps_with_options_async(request, headers, runtime)
+
+    def list_skills_with_options(
+        self,
+        request: dingtalkmcp__1__0_models.ListSkillsRequest,
+        headers: dingtalkmcp__1__0_models.ListSkillsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmcp__1__0_models.ListSkillsResponse:
+        """
+        @summary 分页查询Skill广场精选列表
+        
+        @param request: ListSkillsRequest
+        @param headers: ListSkillsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListSkillsResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page):
+            query['page'] = request.page
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListSkills',
+            version='mcp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/mcp/skills',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmcp__1__0_models.ListSkillsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def list_skills_with_options_async(
+        self,
+        request: dingtalkmcp__1__0_models.ListSkillsRequest,
+        headers: dingtalkmcp__1__0_models.ListSkillsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmcp__1__0_models.ListSkillsResponse:
+        """
+        @summary 分页查询Skill广场精选列表
+        
+        @param request: ListSkillsRequest
+        @param headers: ListSkillsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListSkillsResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page):
+            query['page'] = request.page
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListSkills',
+            version='mcp_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/mcp/skills',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmcp__1__0_models.ListSkillsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def list_skills(
+        self,
+        request: dingtalkmcp__1__0_models.ListSkillsRequest,
+    ) -> dingtalkmcp__1__0_models.ListSkillsResponse:
+        """
+        @summary 分页查询Skill广场精选列表
+        
+        @param request: ListSkillsRequest
+        @return: ListSkillsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmcp__1__0_models.ListSkillsHeaders()
+        return self.list_skills_with_options(request, headers, runtime)
+
+    async def list_skills_async(
+        self,
+        request: dingtalkmcp__1__0_models.ListSkillsRequest,
+    ) -> dingtalkmcp__1__0_models.ListSkillsResponse:
+        """
+        @summary 分页查询Skill广场精选列表
+        
+        @param request: ListSkillsRequest
+        @return: ListSkillsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmcp__1__0_models.ListSkillsHeaders()
+        return await self.list_skills_with_options_async(request, headers, runtime)

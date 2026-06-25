@@ -11760,8 +11760,10 @@ class QueryStatusHeaders(TeaModel):
 class QueryStatusRequest(TeaModel):
     def __init__(
         self,
+        permission_code: str = None,
         user_id: str = None,
     ):
+        self.permission_code = permission_code
         # This parameter is required.
         self.user_id = user_id
 
@@ -11774,12 +11776,16 @@ class QueryStatusRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.permission_code is not None:
+            result['permissionCode'] = self.permission_code
         if self.user_id is not None:
             result['userId'] = self.user_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('permissionCode') is not None:
+            self.permission_code = m.get('permissionCode')
         if m.get('userId') is not None:
             self.user_id = m.get('userId')
         return self
@@ -12709,9 +12715,11 @@ class SetDisableHeaders(TeaModel):
 class SetDisableRequest(TeaModel):
     def __init__(
         self,
+        permission_code: str = None,
         reason: str = None,
         user_id: str = None,
     ):
+        self.permission_code = permission_code
         self.reason = reason
         # This parameter is required.
         self.user_id = user_id
@@ -12725,6 +12733,8 @@ class SetDisableRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.permission_code is not None:
+            result['permissionCode'] = self.permission_code
         if self.reason is not None:
             result['reason'] = self.reason
         if self.user_id is not None:
@@ -12733,6 +12743,8 @@ class SetDisableRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('permissionCode') is not None:
+            self.permission_code = m.get('permissionCode')
         if m.get('reason') is not None:
             self.reason = m.get('reason')
         if m.get('userId') is not None:
@@ -12844,8 +12856,10 @@ class SetEnableHeaders(TeaModel):
 class SetEnableRequest(TeaModel):
     def __init__(
         self,
+        permission_code: str = None,
         user_id: str = None,
     ):
+        self.permission_code = permission_code
         # This parameter is required.
         self.user_id = user_id
 
@@ -12858,12 +12872,16 @@ class SetEnableRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.permission_code is not None:
+            result['permissionCode'] = self.permission_code
         if self.user_id is not None:
             result['userId'] = self.user_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('permissionCode') is not None:
+            self.permission_code = m.get('permissionCode')
         if m.get('userId') is not None:
             self.user_id = m.get('userId')
         return self
@@ -12973,10 +12991,12 @@ class SignOutHeaders(TeaModel):
 class SignOutRequest(TeaModel):
     def __init__(
         self,
+        permission_code: str = None,
         reason: str = None,
         reason_i18n_for_employee: Dict[str, str] = None,
         user_id: str = None,
     ):
+        self.permission_code = permission_code
         self.reason = reason
         self.reason_i18n_for_employee = reason_i18n_for_employee
         # This parameter is required.
@@ -12991,6 +13011,8 @@ class SignOutRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.permission_code is not None:
+            result['permissionCode'] = self.permission_code
         if self.reason is not None:
             result['reason'] = self.reason
         if self.reason_i18n_for_employee is not None:
@@ -13001,6 +13023,8 @@ class SignOutRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('permissionCode') is not None:
+            self.permission_code = m.get('permissionCode')
         if m.get('reason') is not None:
             self.reason = m.get('reason')
         if m.get('reasonI18nForEmployee') is not None:

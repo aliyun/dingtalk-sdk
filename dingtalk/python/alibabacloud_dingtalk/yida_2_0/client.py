@@ -44,6 +44,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.corp_id):
             body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.env):
+            body['env'] = request.env
         if not UtilClient.is_unset(request.members_info):
             body['membersInfo'] = request.members_info
         if not UtilClient.is_unset(request.page_number):
@@ -99,6 +101,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.corp_id):
             body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.env):
+            body['env'] = request.env
         if not UtilClient.is_unset(request.members_info):
             body['membersInfo'] = request.members_info
         if not UtilClient.is_unset(request.page_number):
@@ -182,6 +186,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.corp_id):
             body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.env):
+            body['env'] = request.env
         if not UtilClient.is_unset(request.member_ids):
             body['memberIds'] = request.member_ids
         if not UtilClient.is_unset(request.page_number):
@@ -237,6 +243,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.corp_id):
             body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.env):
+            body['env'] = request.env
         if not UtilClient.is_unset(request.member_ids):
             body['memberIds'] = request.member_ids
         if not UtilClient.is_unset(request.page_number):
@@ -754,6 +762,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.corp_id):
             body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.env):
+            body['env'] = request.env
         if not UtilClient.is_unset(request.matrix_id):
             body['matrixId'] = request.matrix_id
         if not UtilClient.is_unset(request.row_ids):
@@ -805,6 +815,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.corp_id):
             body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.env):
+            body['env'] = request.env
         if not UtilClient.is_unset(request.matrix_id):
             body['matrixId'] = request.matrix_id
         if not UtilClient.is_unset(request.row_ids):
@@ -1816,6 +1828,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.corp_id):
             query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.env):
+            query['env'] = request.env
         if not UtilClient.is_unset(request.matrix_id):
             query['matrixId'] = request.matrix_id
         if not UtilClient.is_unset(request.page_number):
@@ -1869,6 +1883,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.corp_id):
             query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.env):
+            query['env'] = request.env
         if not UtilClient.is_unset(request.matrix_id):
             query['matrixId'] = request.matrix_id
         if not UtilClient.is_unset(request.page_number):
@@ -1950,6 +1966,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.corp_id):
             query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.env):
+            query['env'] = request.env
         if not UtilClient.is_unset(request.page_number):
             query['pageNumber'] = request.page_number
         if not UtilClient.is_unset(request.page_size):
@@ -2003,6 +2021,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.corp_id):
             query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.env):
+            query['env'] = request.env
         if not UtilClient.is_unset(request.page_number):
             query['pageNumber'] = request.page_number
         if not UtilClient.is_unset(request.page_size):
@@ -2236,6 +2256,8 @@ class Client(OpenApiClient):
             body['corpId'] = request.corp_id
         if not UtilClient.is_unset(request.data_json):
             body['dataJson'] = request.data_json
+        if not UtilClient.is_unset(request.env):
+            body['env'] = request.env
         if not UtilClient.is_unset(request.matrix_id):
             body['matrixId'] = request.matrix_id
         if not UtilClient.is_unset(request.token):
@@ -2287,6 +2309,8 @@ class Client(OpenApiClient):
             body['corpId'] = request.corp_id
         if not UtilClient.is_unset(request.data_json):
             body['dataJson'] = request.data_json
+        if not UtilClient.is_unset(request.env):
+            body['env'] = request.env
         if not UtilClient.is_unset(request.matrix_id):
             body['matrixId'] = request.matrix_id
         if not UtilClient.is_unset(request.token):

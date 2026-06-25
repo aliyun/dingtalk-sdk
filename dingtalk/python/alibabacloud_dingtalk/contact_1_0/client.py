@@ -7588,6 +7588,8 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         query = {}
+        if not UtilClient.is_unset(request.permission_code):
+            query['permissionCode'] = request.permission_code
         if not UtilClient.is_unset(request.user_id):
             query['userId'] = request.user_id
         real_headers = {}
@@ -7607,7 +7609,7 @@ class Client(OpenApiClient):
             method='GET',
             auth_type='AK',
             style='ROA',
-            req_body_type='json',
+            req_body_type='none',
             body_type='json'
         )
         return TeaCore.from_map(
@@ -7631,6 +7633,8 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         query = {}
+        if not UtilClient.is_unset(request.permission_code):
+            query['permissionCode'] = request.permission_code
         if not UtilClient.is_unset(request.user_id):
             query['userId'] = request.user_id
         real_headers = {}
@@ -7650,7 +7654,7 @@ class Client(OpenApiClient):
             method='GET',
             auth_type='AK',
             style='ROA',
-            req_body_type='json',
+            req_body_type='none',
             body_type='json'
         )
         return TeaCore.from_map(
@@ -8396,6 +8400,8 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.permission_code):
+            body['permissionCode'] = request.permission_code
         if not UtilClient.is_unset(request.reason):
             body['reason'] = request.reason
         if not UtilClient.is_unset(request.user_id):
@@ -8441,6 +8447,8 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.permission_code):
+            body['permissionCode'] = request.permission_code
         if not UtilClient.is_unset(request.reason):
             body['reason'] = request.reason
         if not UtilClient.is_unset(request.user_id):
@@ -8514,6 +8522,8 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.permission_code):
+            body['permissionCode'] = request.permission_code
         if not UtilClient.is_unset(request.user_id):
             body['userId'] = request.user_id
         real_headers = {}
@@ -8557,6 +8567,8 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.permission_code):
+            body['permissionCode'] = request.permission_code
         if not UtilClient.is_unset(request.user_id):
             body['userId'] = request.user_id
         real_headers = {}
@@ -8628,6 +8640,8 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.permission_code):
+            body['permissionCode'] = request.permission_code
         if not UtilClient.is_unset(request.reason):
             body['reason'] = request.reason
         if not UtilClient.is_unset(request.reason_i18n_for_employee):
@@ -8675,6 +8689,8 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.permission_code):
+            body['permissionCode'] = request.permission_code
         if not UtilClient.is_unset(request.reason):
             body['reason'] = request.reason
         if not UtilClient.is_unset(request.reason_i18n_for_employee):

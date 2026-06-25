@@ -7743,9 +7743,11 @@ class SubmitCustomerSplitDataHeaders(TeaModel):
 class SubmitCustomerSplitDataRequestSplitParams(TeaModel):
     def __init__(
         self,
+        end_time: int = None,
         out_biz_data: str = None,
         start_time: int = None,
     ):
+        self.end_time = end_time
         self.out_biz_data = out_biz_data
         # This parameter is required.
         self.start_time = start_time
@@ -7759,6 +7761,8 @@ class SubmitCustomerSplitDataRequestSplitParams(TeaModel):
             return _map
 
         result = dict()
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
         if self.out_biz_data is not None:
             result['outBizData'] = self.out_biz_data
         if self.start_time is not None:
@@ -7767,6 +7771,8 @@ class SubmitCustomerSplitDataRequestSplitParams(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
         if m.get('outBizData') is not None:
             self.out_biz_data = m.get('outBizData')
         if m.get('startTime') is not None:

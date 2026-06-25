@@ -41,6 +41,7 @@ class BatchAddOrUpdateRoleMembersRequest(TeaModel):
     def __init__(
         self,
         corp_id: str = None,
+        env: str = None,
         members_info: str = None,
         page_number: int = None,
         page_size: int = None,
@@ -50,6 +51,7 @@ class BatchAddOrUpdateRoleMembersRequest(TeaModel):
     ):
         # This parameter is required.
         self.corp_id = corp_id
+        self.env = env
         # This parameter is required.
         self.members_info = members_info
         self.page_number = page_number
@@ -72,6 +74,8 @@ class BatchAddOrUpdateRoleMembersRequest(TeaModel):
         result = dict()
         if self.corp_id is not None:
             result['corpId'] = self.corp_id
+        if self.env is not None:
+            result['env'] = self.env
         if self.members_info is not None:
             result['membersInfo'] = self.members_info
         if self.page_number is not None:
@@ -90,6 +94,8 @@ class BatchAddOrUpdateRoleMembersRequest(TeaModel):
         m = m or dict()
         if m.get('corpId') is not None:
             self.corp_id = m.get('corpId')
+        if m.get('env') is not None:
+            self.env = m.get('env')
         if m.get('membersInfo') is not None:
             self.members_info = m.get('membersInfo')
         if m.get('pageNumber') is not None:
@@ -210,6 +216,7 @@ class BatchDeleteRoleMembersRequest(TeaModel):
     def __init__(
         self,
         corp_id: str = None,
+        env: str = None,
         member_ids: str = None,
         page_number: int = None,
         page_size: int = None,
@@ -219,6 +226,7 @@ class BatchDeleteRoleMembersRequest(TeaModel):
     ):
         # This parameter is required.
         self.corp_id = corp_id
+        self.env = env
         # This parameter is required.
         self.member_ids = member_ids
         self.page_number = page_number
@@ -241,6 +249,8 @@ class BatchDeleteRoleMembersRequest(TeaModel):
         result = dict()
         if self.corp_id is not None:
             result['corpId'] = self.corp_id
+        if self.env is not None:
+            result['env'] = self.env
         if self.member_ids is not None:
             result['memberIds'] = self.member_ids
         if self.page_number is not None:
@@ -259,6 +269,8 @@ class BatchDeleteRoleMembersRequest(TeaModel):
         m = m or dict()
         if m.get('corpId') is not None:
             self.corp_id = m.get('corpId')
+        if m.get('env') is not None:
+            self.env = m.get('env')
         if m.get('memberIds') is not None:
             self.member_ids = m.get('memberIds')
         if m.get('pageNumber') is not None:
@@ -953,6 +965,7 @@ class DeleteMatrixDataByRowIdsRequest(TeaModel):
     def __init__(
         self,
         corp_id: str = None,
+        env: str = None,
         matrix_id: str = None,
         row_ids: str = None,
         token: str = None,
@@ -960,6 +973,7 @@ class DeleteMatrixDataByRowIdsRequest(TeaModel):
     ):
         # This parameter is required.
         self.corp_id = corp_id
+        self.env = env
         # This parameter is required.
         self.matrix_id = matrix_id
         # This parameter is required.
@@ -980,6 +994,8 @@ class DeleteMatrixDataByRowIdsRequest(TeaModel):
         result = dict()
         if self.corp_id is not None:
             result['corpId'] = self.corp_id
+        if self.env is not None:
+            result['env'] = self.env
         if self.matrix_id is not None:
             result['matrixId'] = self.matrix_id
         if self.row_ids is not None:
@@ -994,6 +1010,8 @@ class DeleteMatrixDataByRowIdsRequest(TeaModel):
         m = m or dict()
         if m.get('corpId') is not None:
             self.corp_id = m.get('corpId')
+        if m.get('env') is not None:
+            self.env = m.get('env')
         if m.get('matrixId') is not None:
             self.matrix_id = m.get('matrixId')
         if m.get('rowIds') is not None:
@@ -3092,6 +3110,7 @@ class GetMatrixDetailByIdRequest(TeaModel):
     def __init__(
         self,
         corp_id: str = None,
+        env: str = None,
         matrix_id: str = None,
         page_number: int = None,
         page_size: int = None,
@@ -3100,6 +3119,7 @@ class GetMatrixDetailByIdRequest(TeaModel):
     ):
         # This parameter is required.
         self.corp_id = corp_id
+        self.env = env
         # This parameter is required.
         self.matrix_id = matrix_id
         self.page_number = page_number
@@ -3120,6 +3140,8 @@ class GetMatrixDetailByIdRequest(TeaModel):
         result = dict()
         if self.corp_id is not None:
             result['corpId'] = self.corp_id
+        if self.env is not None:
+            result['env'] = self.env
         if self.matrix_id is not None:
             result['matrixId'] = self.matrix_id
         if self.page_number is not None:
@@ -3136,6 +3158,8 @@ class GetMatrixDetailByIdRequest(TeaModel):
         m = m or dict()
         if m.get('corpId') is not None:
             self.corp_id = m.get('corpId')
+        if m.get('env') is not None:
+            self.env = m.get('env')
         if m.get('matrixId') is not None:
             self.matrix_id = m.get('matrixId')
         if m.get('pageNumber') is not None:
@@ -3575,6 +3599,7 @@ class GetRoleDetailByIdRequest(TeaModel):
     def __init__(
         self,
         corp_id: str = None,
+        env: str = None,
         page_number: int = None,
         page_size: int = None,
         role_uuid: str = None,
@@ -3583,6 +3608,7 @@ class GetRoleDetailByIdRequest(TeaModel):
     ):
         # This parameter is required.
         self.corp_id = corp_id
+        self.env = env
         self.page_number = page_number
         self.page_size = page_size
         # This parameter is required.
@@ -3603,6 +3629,8 @@ class GetRoleDetailByIdRequest(TeaModel):
         result = dict()
         if self.corp_id is not None:
             result['corpId'] = self.corp_id
+        if self.env is not None:
+            result['env'] = self.env
         if self.page_number is not None:
             result['pageNumber'] = self.page_number
         if self.page_size is not None:
@@ -3619,6 +3647,8 @@ class GetRoleDetailByIdRequest(TeaModel):
         m = m or dict()
         if m.get('corpId') is not None:
             self.corp_id = m.get('corpId')
+        if m.get('env') is not None:
+            self.env = m.get('env')
         if m.get('pageNumber') is not None:
             self.page_number = m.get('pageNumber')
         if m.get('pageSize') is not None:
@@ -4005,6 +4035,7 @@ class SaveAndUpdateMatrixDataRequest(TeaModel):
         self,
         corp_id: str = None,
         data_json: str = None,
+        env: str = None,
         matrix_id: str = None,
         token: str = None,
         user_id: str = None,
@@ -4013,6 +4044,7 @@ class SaveAndUpdateMatrixDataRequest(TeaModel):
         self.corp_id = corp_id
         # This parameter is required.
         self.data_json = data_json
+        self.env = env
         # This parameter is required.
         self.matrix_id = matrix_id
         # This parameter is required.
@@ -4033,6 +4065,8 @@ class SaveAndUpdateMatrixDataRequest(TeaModel):
             result['corpId'] = self.corp_id
         if self.data_json is not None:
             result['dataJson'] = self.data_json
+        if self.env is not None:
+            result['env'] = self.env
         if self.matrix_id is not None:
             result['matrixId'] = self.matrix_id
         if self.token is not None:
@@ -4047,6 +4081,8 @@ class SaveAndUpdateMatrixDataRequest(TeaModel):
             self.corp_id = m.get('corpId')
         if m.get('dataJson') is not None:
             self.data_json = m.get('dataJson')
+        if m.get('env') is not None:
+            self.env = m.get('env')
         if m.get('matrixId') is not None:
             self.matrix_id = m.get('matrixId')
         if m.get('token') is not None:

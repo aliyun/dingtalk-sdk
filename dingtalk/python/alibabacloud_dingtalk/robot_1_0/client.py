@@ -2234,6 +2234,128 @@ class Client(OpenApiClient):
         headers = dingtalkrobot__1__0_models.QueryRobotDingReadStatusHeaders()
         return await self.query_robot_ding_read_status_with_options_async(request, headers, runtime)
 
+    def query_robot_instance_in_group_info_with_options(
+        self,
+        request: dingtalkrobot__1__0_models.QueryRobotInstanceInGroupInfoRequest,
+        headers: dingtalkrobot__1__0_models.QueryRobotInstanceInGroupInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.QueryRobotInstanceInGroupInfoResponse:
+        """
+        @summary 获取机器人所在群信息
+        
+        @param request: QueryRobotInstanceInGroupInfoRequest
+        @param headers: QueryRobotInstanceInGroupInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryRobotInstanceInGroupInfoResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.max_result):
+            body['maxResult'] = request.max_result
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryRobotInstanceInGroupInfo',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/installed/groups/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.QueryRobotInstanceInGroupInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_robot_instance_in_group_info_with_options_async(
+        self,
+        request: dingtalkrobot__1__0_models.QueryRobotInstanceInGroupInfoRequest,
+        headers: dingtalkrobot__1__0_models.QueryRobotInstanceInGroupInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrobot__1__0_models.QueryRobotInstanceInGroupInfoResponse:
+        """
+        @summary 获取机器人所在群信息
+        
+        @param request: QueryRobotInstanceInGroupInfoRequest
+        @param headers: QueryRobotInstanceInGroupInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryRobotInstanceInGroupInfoResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.max_result):
+            body['maxResult'] = request.max_result
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.robot_code):
+            body['robotCode'] = request.robot_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryRobotInstanceInGroupInfo',
+            version='robot_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/robot/installed/groups/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkrobot__1__0_models.QueryRobotInstanceInGroupInfoResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_robot_instance_in_group_info(
+        self,
+        request: dingtalkrobot__1__0_models.QueryRobotInstanceInGroupInfoRequest,
+    ) -> dingtalkrobot__1__0_models.QueryRobotInstanceInGroupInfoResponse:
+        """
+        @summary 获取机器人所在群信息
+        
+        @param request: QueryRobotInstanceInGroupInfoRequest
+        @return: QueryRobotInstanceInGroupInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.QueryRobotInstanceInGroupInfoHeaders()
+        return self.query_robot_instance_in_group_info_with_options(request, headers, runtime)
+
+    async def query_robot_instance_in_group_info_async(
+        self,
+        request: dingtalkrobot__1__0_models.QueryRobotInstanceInGroupInfoRequest,
+    ) -> dingtalkrobot__1__0_models.QueryRobotInstanceInGroupInfoResponse:
+        """
+        @summary 获取机器人所在群信息
+        
+        @param request: QueryRobotInstanceInGroupInfoRequest
+        @return: QueryRobotInstanceInGroupInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrobot__1__0_models.QueryRobotInstanceInGroupInfoHeaders()
+        return await self.query_robot_instance_in_group_info_with_options_async(request, headers, runtime)
+
     def query_robot_plugin_with_options(
         self,
         request: dingtalkrobot__1__0_models.QueryRobotPluginRequest,
