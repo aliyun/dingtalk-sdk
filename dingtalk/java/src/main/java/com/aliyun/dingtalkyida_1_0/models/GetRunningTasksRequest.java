@@ -7,6 +7,16 @@ public class GetRunningTasksRequest extends TeaModel {
     @NameInMap("appType")
     public String appType;
 
+    /**
+     * <strong>example:</strong>
+     * <p>vpc,sgp_vpc</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
+    @NameInMap("env")
+    public String env;
+
     @NameInMap("language")
     public String language;
 
@@ -30,6 +40,14 @@ public class GetRunningTasksRequest extends TeaModel {
     }
     public String getAppType() {
         return this.appType;
+    }
+
+    public GetRunningTasksRequest setEnv(String env) {
+        this.env = env;
+        return this;
+    }
+    public String getEnv() {
+        return this.env;
     }
 
     public GetRunningTasksRequest setLanguage(String language) {

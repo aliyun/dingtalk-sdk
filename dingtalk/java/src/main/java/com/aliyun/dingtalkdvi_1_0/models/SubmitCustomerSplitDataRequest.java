@@ -38,6 +38,9 @@ public class SubmitCustomerSplitDataRequest extends TeaModel {
     }
 
     public static class SubmitCustomerSplitDataRequestSplitParams extends TeaModel {
+        @NameInMap("endTime")
+        public Long endTime;
+
         @NameInMap("outBizData")
         public String outBizData;
 
@@ -50,6 +53,14 @@ public class SubmitCustomerSplitDataRequest extends TeaModel {
         public static SubmitCustomerSplitDataRequestSplitParams build(java.util.Map<String, ?> map) throws Exception {
             SubmitCustomerSplitDataRequestSplitParams self = new SubmitCustomerSplitDataRequestSplitParams();
             return TeaModel.build(map, self);
+        }
+
+        public SubmitCustomerSplitDataRequestSplitParams setEndTime(Long endTime) {
+            this.endTime = endTime;
+            return this;
+        }
+        public Long getEndTime() {
+            return this.endTime;
         }
 
         public SubmitCustomerSplitDataRequestSplitParams setOutBizData(String outBizData) {

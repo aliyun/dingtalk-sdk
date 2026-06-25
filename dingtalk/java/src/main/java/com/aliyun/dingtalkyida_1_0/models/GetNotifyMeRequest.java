@@ -37,6 +37,9 @@ public class GetNotifyMeRequest extends TeaModel {
     /**
      * <strong>example:</strong>
      * <p>vpc(国内版宜搭)/sgp_vpc(海外版宜搭)</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>true</p>
      */
     @NameInMap("env")
     public String env;

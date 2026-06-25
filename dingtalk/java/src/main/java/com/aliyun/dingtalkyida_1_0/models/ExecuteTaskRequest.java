@@ -22,6 +22,16 @@ public class ExecuteTaskRequest extends TeaModel {
 
     /**
      * <strong>example:</strong>
+     * <p>vpc,sgp_vpc</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
+    @NameInMap("env")
+    public String env;
+
+    /**
+     * <strong>example:</strong>
      * <p>未知</p>
      */
     @NameInMap("formDataJson")
@@ -114,6 +124,14 @@ public class ExecuteTaskRequest extends TeaModel {
     }
     public String getDigitalSignUrl() {
         return this.digitalSignUrl;
+    }
+
+    public ExecuteTaskRequest setEnv(String env) {
+        this.env = env;
+        return this;
+    }
+    public String getEnv() {
+        return this.env;
     }
 
     public ExecuteTaskRequest setFormDataJson(String formDataJson) {

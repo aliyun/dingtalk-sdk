@@ -3928,6 +3928,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public QueryStatusResponse queryStatusWithOptions(QueryStatusRequest request, QueryStatusHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.permissionCode)) {
+            query.put("permissionCode", request.permissionCode);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
             query.put("userId", request.userId);
         }
@@ -3953,7 +3957,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("method", "GET"),
             new TeaPair("authType", "AK"),
             new TeaPair("style", "ROA"),
-            new TeaPair("reqBodyType", "json"),
+            new TeaPair("reqBodyType", "none"),
             new TeaPair("bodyType", "json")
         ));
         return TeaModel.toModel(this.execute(params, req, runtime), new QueryStatusResponse());
@@ -4334,6 +4338,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public SetDisableResponse setDisableWithOptions(SetDisableRequest request, SetDisableHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.permissionCode)) {
+            body.put("permissionCode", request.permissionCode);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.reason)) {
             body.put("reason", request.reason);
         }
@@ -4394,6 +4402,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public SetEnableResponse setEnableWithOptions(SetEnableRequest request, SetEnableHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.permissionCode)) {
+            body.put("permissionCode", request.permissionCode);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
             body.put("userId", request.userId);
         }
@@ -4450,6 +4462,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public SignOutResponse signOutWithOptions(SignOutRequest request, SignOutHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.permissionCode)) {
+            body.put("permissionCode", request.permissionCode);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.reason)) {
             body.put("reason", request.reason);
         }

@@ -14,6 +14,16 @@ public class ExecuteBatchTaskRequest extends TeaModel {
     public String appType;
 
     /**
+     * <strong>example:</strong>
+     * <p>vpc,sgp_vpc</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
+    @NameInMap("env")
+    public String env;
+
+    /**
      * <p>This parameter is required.</p>
      * 
      * <strong>example:</strong>
@@ -67,6 +77,14 @@ public class ExecuteBatchTaskRequest extends TeaModel {
     }
     public String getAppType() {
         return this.appType;
+    }
+
+    public ExecuteBatchTaskRequest setEnv(String env) {
+        this.env = env;
+        return this;
+    }
+    public String getEnv() {
+        return this.env;
     }
 
     public ExecuteBatchTaskRequest setOutResult(String outResult) {

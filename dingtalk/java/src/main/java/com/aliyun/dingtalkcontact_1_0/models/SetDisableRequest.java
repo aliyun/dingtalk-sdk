@@ -4,6 +4,9 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class SetDisableRequest extends TeaModel {
+    @NameInMap("permissionCode")
+    public String permissionCode;
+
     /**
      * <strong>example:</strong>
      * <p>reasonYYY</p>
@@ -23,6 +26,14 @@ public class SetDisableRequest extends TeaModel {
     public static SetDisableRequest build(java.util.Map<String, ?> map) throws Exception {
         SetDisableRequest self = new SetDisableRequest();
         return TeaModel.build(map, self);
+    }
+
+    public SetDisableRequest setPermissionCode(String permissionCode) {
+        this.permissionCode = permissionCode;
+        return this;
+    }
+    public String getPermissionCode() {
+        return this.permissionCode;
     }
 
     public SetDisableRequest setReason(String reason) {

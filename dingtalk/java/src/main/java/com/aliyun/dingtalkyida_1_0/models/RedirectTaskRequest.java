@@ -22,6 +22,16 @@ public class RedirectTaskRequest extends TeaModel {
 
     /**
      * <strong>example:</strong>
+     * <p>vpc,sgp_vpc</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
+    @NameInMap("env")
+    public String env;
+
+    /**
+     * <strong>example:</strong>
      * <p>zh_CN</p>
      */
     @NameInMap("language")
@@ -85,6 +95,14 @@ public class RedirectTaskRequest extends TeaModel {
     }
     public String getByManager() {
         return this.byManager;
+    }
+
+    public RedirectTaskRequest setEnv(String env) {
+        this.env = env;
+        return this;
+    }
+    public String getEnv() {
+        return this.env;
     }
 
     public RedirectTaskRequest setLanguage(String language) {

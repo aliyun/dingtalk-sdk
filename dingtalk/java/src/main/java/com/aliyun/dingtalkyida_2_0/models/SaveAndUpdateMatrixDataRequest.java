@@ -23,6 +23,16 @@ public class SaveAndUpdateMatrixDataRequest extends TeaModel {
     public String dataJson;
 
     /**
+     * <strong>example:</strong>
+     * <p>vpc,sgp_vpc</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
+    @NameInMap("env")
+    public String env;
+
+    /**
      * <p>This parameter is required.</p>
      * 
      * <strong>example:</strong>
@@ -65,6 +75,14 @@ public class SaveAndUpdateMatrixDataRequest extends TeaModel {
     }
     public String getDataJson() {
         return this.dataJson;
+    }
+
+    public SaveAndUpdateMatrixDataRequest setEnv(String env) {
+        this.env = env;
+        return this;
+    }
+    public String getEnv() {
+        return this.env;
     }
 
     public SaveAndUpdateMatrixDataRequest setMatrixId(String matrixId) {

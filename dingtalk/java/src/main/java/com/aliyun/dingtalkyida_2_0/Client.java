@@ -34,6 +34,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("corpId", request.corpId);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.env)) {
+            body.put("env", request.env);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.membersInfo)) {
             body.put("membersInfo", request.membersInfo);
         }
@@ -112,6 +116,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.corpId)) {
             body.put("corpId", request.corpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.env)) {
+            body.put("env", request.env);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.memberIds)) {
@@ -452,6 +460,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.corpId)) {
             body.put("corpId", request.corpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.env)) {
+            body.put("env", request.env);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.matrixId)) {
@@ -1090,6 +1102,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("corpId", request.corpId);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.env)) {
+            query.put("env", request.env);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.matrixId)) {
             query.put("matrixId", request.matrixId);
         }
@@ -1164,6 +1180,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.corpId)) {
             query.put("corpId", request.corpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.env)) {
+            query.put("env", request.env);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {
@@ -1336,6 +1356,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.dataJson)) {
             body.put("dataJson", request.dataJson);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.env)) {
+            body.put("env", request.env);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.matrixId)) {

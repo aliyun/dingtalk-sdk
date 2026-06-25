@@ -15,6 +15,16 @@ public class GetRoleDetailByIdRequest extends TeaModel {
 
     /**
      * <strong>example:</strong>
+     * <p>vpc,sgp_vpc</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
+    @NameInMap("env")
+    public String env;
+
+    /**
+     * <strong>example:</strong>
      * <p>100</p>
      */
     @NameInMap("pageNumber")
@@ -62,6 +72,14 @@ public class GetRoleDetailByIdRequest extends TeaModel {
     }
     public String getCorpId() {
         return this.corpId;
+    }
+
+    public GetRoleDetailByIdRequest setEnv(String env) {
+        this.env = env;
+        return this;
+    }
+    public String getEnv() {
+        return this.env;
     }
 
     public GetRoleDetailByIdRequest setPageNumber(Integer pageNumber) {

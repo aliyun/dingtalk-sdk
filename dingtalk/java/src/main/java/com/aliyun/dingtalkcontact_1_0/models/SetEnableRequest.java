@@ -4,6 +4,9 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class SetEnableRequest extends TeaModel {
+    @NameInMap("permissionCode")
+    public String permissionCode;
+
     /**
      * <p>This parameter is required.</p>
      * 
@@ -16,6 +19,14 @@ public class SetEnableRequest extends TeaModel {
     public static SetEnableRequest build(java.util.Map<String, ?> map) throws Exception {
         SetEnableRequest self = new SetEnableRequest();
         return TeaModel.build(map, self);
+    }
+
+    public SetEnableRequest setPermissionCode(String permissionCode) {
+        this.permissionCode = permissionCode;
+        return this;
+    }
+    public String getPermissionCode() {
+        return this.permissionCode;
     }
 
     public SetEnableRequest setUserId(String userId) {

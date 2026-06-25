@@ -27,6 +27,16 @@ public class GetTaskCopiesRequest extends TeaModel {
     @NameInMap("createToTimeGMT")
     public Long createToTimeGMT;
 
+    /**
+     * <strong>example:</strong>
+     * <p>vpc,sgp_vpc</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
+    @NameInMap("env")
+    public String env;
+
     @NameInMap("keyword")
     public String keyword;
 
@@ -97,6 +107,14 @@ public class GetTaskCopiesRequest extends TeaModel {
     }
     public Long getCreateToTimeGMT() {
         return this.createToTimeGMT;
+    }
+
+    public GetTaskCopiesRequest setEnv(String env) {
+        this.env = env;
+        return this;
+    }
+    public String getEnv() {
+        return this.env;
     }
 
     public GetTaskCopiesRequest setKeyword(String keyword) {

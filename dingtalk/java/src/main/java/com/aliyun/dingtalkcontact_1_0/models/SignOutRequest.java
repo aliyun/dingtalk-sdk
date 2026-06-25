@@ -4,6 +4,9 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class SignOutRequest extends TeaModel {
+    @NameInMap("permissionCode")
+    public String permissionCode;
+
     @NameInMap("reason")
     public String reason;
 
@@ -19,6 +22,14 @@ public class SignOutRequest extends TeaModel {
     public static SignOutRequest build(java.util.Map<String, ?> map) throws Exception {
         SignOutRequest self = new SignOutRequest();
         return TeaModel.build(map, self);
+    }
+
+    public SignOutRequest setPermissionCode(String permissionCode) {
+        this.permissionCode = permissionCode;
+        return this;
+    }
+    public String getPermissionCode() {
+        return this.permissionCode;
     }
 
     public SignOutRequest setReason(String reason) {

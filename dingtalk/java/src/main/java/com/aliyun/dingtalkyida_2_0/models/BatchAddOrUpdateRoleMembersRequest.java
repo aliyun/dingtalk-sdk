@@ -14,6 +14,16 @@ public class BatchAddOrUpdateRoleMembersRequest extends TeaModel {
     public String corpId;
 
     /**
+     * <strong>example:</strong>
+     * <p>vpc,sgp_vpc</p>
+     * 
+     * <strong>if can be null:</strong>
+     * <p>true</p>
+     */
+    @NameInMap("env")
+    public String env;
+
+    /**
      * <p>This parameter is required.</p>
      * 
      * <strong>example:</strong>
@@ -63,6 +73,14 @@ public class BatchAddOrUpdateRoleMembersRequest extends TeaModel {
     }
     public String getCorpId() {
         return this.corpId;
+    }
+
+    public BatchAddOrUpdateRoleMembersRequest setEnv(String env) {
+        this.env = env;
+        return this;
+    }
+    public String getEnv() {
+        return this.env;
     }
 
     public BatchAddOrUpdateRoleMembersRequest setMembersInfo(String membersInfo) {
