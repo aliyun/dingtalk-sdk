@@ -29,6 +29,17 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 
         /// <summary>
         /// <b>Example:</b>
+        /// <para>vpc,sgp_vpc</para>
+        /// 
+        /// <b>if can be null:</b>
+        /// <c>true</c>
+        /// </summary>
+        [NameInMap("env")]
+        [Validation(Required=false)]
+        public string Env { get; set; }
+
+        /// <summary>
+        /// <b>Example:</b>
         /// <para>未知</para>
         /// </summary>
         [NameInMap("formDataJson")]

@@ -16,6 +16,10 @@ namespace AlibabaCloud.SDK.Dingtalkdvi_1_0.Models
         [Validation(Required=false)]
         public List<SubmitCustomerSplitDataRequestSplitParams> SplitParams { get; set; }
         public class SubmitCustomerSplitDataRequestSplitParams : TeaModel {
+            [NameInMap("endTime")]
+            [Validation(Required=false)]
+            public long? EndTime { get; set; }
+
             [NameInMap("outBizData")]
             [Validation(Required=false)]
             public string OutBizData { get; set; }

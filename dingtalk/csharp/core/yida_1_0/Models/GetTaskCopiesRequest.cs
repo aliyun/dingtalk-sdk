@@ -35,6 +35,17 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         [Validation(Required=false)]
         public long? CreateToTimeGMT { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>vpc,sgp_vpc</para>
+        /// 
+        /// <b>if can be null:</b>
+        /// <c>true</c>
+        /// </summary>
+        [NameInMap("env")]
+        [Validation(Required=false)]
+        public string Env { get; set; }
+
         [NameInMap("keyword")]
         [Validation(Required=false)]
         public string Keyword { get; set; }

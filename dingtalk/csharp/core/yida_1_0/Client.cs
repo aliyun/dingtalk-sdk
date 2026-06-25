@@ -2826,6 +2826,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0
             {
                 body["appType"] = request.AppType;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Env))
+            {
+                body["env"] = request.Env;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutResult))
             {
                 body["outResult"] = request.OutResult;
@@ -2900,6 +2904,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppType))
             {
                 body["appType"] = request.AppType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Env))
+            {
+                body["env"] = request.Env;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutResult))
             {
@@ -3418,6 +3426,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0
             {
                 body["digitalSignUrl"] = request.DigitalSignUrl;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Env))
+            {
+                body["env"] = request.Env;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FormDataJson))
             {
                 body["formDataJson"] = request.FormDataJson;
@@ -3512,6 +3524,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DigitalSignUrl))
             {
                 body["digitalSignUrl"] = request.DigitalSignUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Env))
+            {
+                body["env"] = request.Env;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FormDataJson))
             {
@@ -9338,6 +9354,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0
             {
                 query["appType"] = request.AppType;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Env))
+            {
+                query["env"] = request.Env;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Language))
             {
                 query["language"] = request.Language;
@@ -9408,6 +9428,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppType))
             {
                 query["appType"] = request.AppType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Env))
+            {
+                query["env"] = request.Env;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Language))
             {
@@ -9878,6 +9902,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0
             {
                 query["createToTimeGMT"] = request.CreateToTimeGMT;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Env))
+            {
+                query["env"] = request.Env;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Keyword))
             {
                 query["keyword"] = request.Keyword;
@@ -9968,6 +9996,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreateToTimeGMT))
             {
                 query["createToTimeGMT"] = request.CreateToTimeGMT;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Env))
+            {
+                query["env"] = request.Env;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Keyword))
             {
@@ -11154,6 +11186,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0
             {
                 body["appType"] = request.AppType;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Env))
+            {
+                body["env"] = request.Env;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FormInstanceIdList))
             {
                 body["formInstanceIdList"] = request.FormInstanceIdList;
@@ -11224,6 +11260,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppType))
             {
                 body["appType"] = request.AppType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Env))
+            {
+                body["env"] = request.Env;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FormInstanceIdList))
             {
@@ -13182,6 +13222,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0
             {
                 body["byManager"] = request.ByManager;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Env))
+            {
+                body["env"] = request.Env;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Language))
             {
                 body["language"] = request.Language;
@@ -13268,6 +13312,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ByManager))
             {
                 body["byManager"] = request.ByManager;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Env))
+            {
+                body["env"] = request.Env;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Language))
             {

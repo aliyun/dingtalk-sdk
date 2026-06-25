@@ -38214,6 +38214,202 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>作业批改-更新作文任务批改结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateEssayTaskCorrectionResultRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateEssayTaskCorrectionResultHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateEssayTaskCorrectionResultResponse
+        /// </returns>
+        public UpdateEssayTaskCorrectionResultResponse UpdateEssayTaskCorrectionResultWithOptions(UpdateEssayTaskCorrectionResultRequest request, UpdateEssayTaskCorrectionResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                body["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EssayTaskId))
+            {
+                body["essayTaskId"] = request.EssayTaskId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Ext))
+            {
+                body["ext"] = request.Ext;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FailedMsg))
+            {
+                body["failedMsg"] = request.FailedMsg;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Status))
+            {
+                body["status"] = request.Status;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskCode))
+            {
+                body["taskCode"] = request.TaskCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateEssayTaskCorrectionResult",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/assignment/updateEssayTaskCorrectionResult",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateEssayTaskCorrectionResultResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>作业批改-更新作文任务批改结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateEssayTaskCorrectionResultRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateEssayTaskCorrectionResultHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateEssayTaskCorrectionResultResponse
+        /// </returns>
+        public async Task<UpdateEssayTaskCorrectionResultResponse> UpdateEssayTaskCorrectionResultWithOptionsAsync(UpdateEssayTaskCorrectionResultRequest request, UpdateEssayTaskCorrectionResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                body["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EssayTaskId))
+            {
+                body["essayTaskId"] = request.EssayTaskId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Ext))
+            {
+                body["ext"] = request.Ext;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FailedMsg))
+            {
+                body["failedMsg"] = request.FailedMsg;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Status))
+            {
+                body["status"] = request.Status;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskCode))
+            {
+                body["taskCode"] = request.TaskCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateEssayTaskCorrectionResult",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/assignment/updateEssayTaskCorrectionResult",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateEssayTaskCorrectionResultResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>作业批改-更新作文任务批改结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateEssayTaskCorrectionResultRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateEssayTaskCorrectionResultResponse
+        /// </returns>
+        public UpdateEssayTaskCorrectionResultResponse UpdateEssayTaskCorrectionResult(UpdateEssayTaskCorrectionResultRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateEssayTaskCorrectionResultHeaders headers = new UpdateEssayTaskCorrectionResultHeaders();
+            return UpdateEssayTaskCorrectionResultWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>作业批改-更新作文任务批改结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateEssayTaskCorrectionResultRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateEssayTaskCorrectionResultResponse
+        /// </returns>
+        public async Task<UpdateEssayTaskCorrectionResultResponse> UpdateEssayTaskCorrectionResultAsync(UpdateEssayTaskCorrectionResultRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateEssayTaskCorrectionResultHeaders headers = new UpdateEssayTaskCorrectionResultHeaders();
+            return await UpdateEssayTaskCorrectionResultWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>更新评价表现未读数量</para>
         /// </summary>
         /// 

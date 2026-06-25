@@ -10030,6 +10030,10 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PermissionCode))
+            {
+                query["permissionCode"] = request.PermissionCode;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
                 query["userId"] = request.UserId;
@@ -10057,7 +10061,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryStatusResponse>(Execute(params_, req, runtime));
@@ -10085,6 +10089,10 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PermissionCode))
+            {
+                query["permissionCode"] = request.PermissionCode;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
                 query["userId"] = request.UserId;
@@ -10112,7 +10120,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<QueryStatusResponse>(await ExecuteAsync(params_, req, runtime));
@@ -11086,6 +11094,10 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PermissionCode))
+            {
+                body["permissionCode"] = request.PermissionCode;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Reason))
             {
                 body["reason"] = request.Reason;
@@ -11145,6 +11157,10 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PermissionCode))
+            {
+                body["permissionCode"] = request.PermissionCode;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Reason))
             {
                 body["reason"] = request.Reason;
@@ -11242,6 +11258,10 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PermissionCode))
+            {
+                body["permissionCode"] = request.PermissionCode;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
                 body["userId"] = request.UserId;
@@ -11297,6 +11317,10 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PermissionCode))
+            {
+                body["permissionCode"] = request.PermissionCode;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
                 body["userId"] = request.UserId;
@@ -11390,6 +11414,10 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PermissionCode))
+            {
+                body["permissionCode"] = request.PermissionCode;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Reason))
             {
                 body["reason"] = request.Reason;
@@ -11453,6 +11481,10 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PermissionCode))
+            {
+                body["permissionCode"] = request.PermissionCode;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Reason))
             {
                 body["reason"] = request.Reason;

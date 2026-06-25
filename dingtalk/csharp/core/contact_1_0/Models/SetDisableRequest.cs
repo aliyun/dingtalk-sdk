@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class SetDisableRequest : TeaModel {
+        [NameInMap("permissionCode")]
+        [Validation(Required=false)]
+        public string PermissionCode { get; set; }
+
         /// <summary>
         /// <b>Example:</b>
         /// <para>reasonYYY</para>

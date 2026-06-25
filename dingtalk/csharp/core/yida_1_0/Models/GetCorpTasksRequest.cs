@@ -46,6 +46,9 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         /// <summary>
         /// <b>Example:</b>
         /// <para>vpc(国内版宜搭)/sgp_vpc(海外版宜搭)</para>
+        /// 
+        /// <b>if can be null:</b>
+        /// <c>true</c>
         /// </summary>
         [NameInMap("env")]
         [Validation(Required=false)]

@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class SignOutRequest : TeaModel {
+        [NameInMap("permissionCode")]
+        [Validation(Required=false)]
+        public string PermissionCode { get; set; }
+
         [NameInMap("reason")]
         [Validation(Required=false)]
         public string Reason { get; set; }
