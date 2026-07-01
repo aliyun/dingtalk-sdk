@@ -69,6 +69,10 @@ namespace AlibabaCloud.SDK.Dingtalkdvi_1_0.Models
                 [Validation(Required=false)]
                 public string Name { get; set; }
 
+                [NameInMap("score")]
+                [Validation(Required=false)]
+                public int? Score { get; set; }
+
             }
 
             [NameInMap("score")]

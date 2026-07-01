@@ -62,6 +62,14 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         public SetRightPanelRequestWebWndParams WebWndParams { get; set; }
         public class SetRightPanelRequestWebWndParams : TeaModel {
             /// <summary>
+            /// <b>Example:</b>
+            /// <para>xxxxx</para>
+            /// </summary>
+            [NameInMap("closeTipContent")]
+            [Validation(Required=false)]
+            public string CloseTipContent { get; set; }
+
+            /// <summary>
             /// <para>This parameter is required.</para>
             /// 
             /// <b>Example:</b>

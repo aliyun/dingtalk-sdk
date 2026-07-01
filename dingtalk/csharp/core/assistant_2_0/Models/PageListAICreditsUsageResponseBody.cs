@@ -25,6 +25,10 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_2_0.Models
             [Validation(Required=false)]
             public string BizId { get; set; }
 
+            [NameInMap("deptName")]
+            [Validation(Required=false)]
+            public string DeptName { get; set; }
+
             [NameInMap("isTimeFree")]
             [Validation(Required=false)]
             public bool? IsTimeFree { get; set; }
@@ -40,6 +44,10 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_2_0.Models
             [NameInMap("usageTime")]
             [Validation(Required=false)]
             public string UsageTime { get; set; }
+
+            [NameInMap("userId")]
+            [Validation(Required=false)]
+            public string UserId { get; set; }
 
             [NameInMap("userName")]
             [Validation(Required=false)]

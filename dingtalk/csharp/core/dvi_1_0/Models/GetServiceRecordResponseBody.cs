@@ -41,6 +41,20 @@ namespace AlibabaCloud.SDK.Dingtalkdvi_1_0.Models
             [Validation(Required=false)]
             public string RecordId { get; set; }
 
+            [NameInMap("sceneInfo")]
+            [Validation(Required=false)]
+            public GetServiceRecordResponseBodyResultSceneInfo SceneInfo { get; set; }
+            public class GetServiceRecordResponseBodyResultSceneInfo : TeaModel {
+                [NameInMap("code")]
+                [Validation(Required=false)]
+                public string Code { get; set; }
+
+                [NameInMap("name")]
+                [Validation(Required=false)]
+                public string Name { get; set; }
+
+            }
+
             [NameInMap("startTimestamp")]
             [Validation(Required=false)]
             public long? StartTimestamp { get; set; }

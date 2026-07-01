@@ -3034,6 +3034,154 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>获取分组管理员信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryMeetingRoomGroupAdminRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryMeetingRoomGroupAdminHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryMeetingRoomGroupAdminResponse
+        /// </returns>
+        public QueryMeetingRoomGroupAdminResponse QueryMeetingRoomGroupAdminWithOptions(string groupId, QueryMeetingRoomGroupAdminRequest request, QueryMeetingRoomGroupAdminHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryMeetingRoomGroupAdmin",
+                Version = "rooms_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rooms/groupAdmin/" + groupId,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryMeetingRoomGroupAdminResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取分组管理员信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryMeetingRoomGroupAdminRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryMeetingRoomGroupAdminHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryMeetingRoomGroupAdminResponse
+        /// </returns>
+        public async Task<QueryMeetingRoomGroupAdminResponse> QueryMeetingRoomGroupAdminWithOptionsAsync(string groupId, QueryMeetingRoomGroupAdminRequest request, QueryMeetingRoomGroupAdminHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryMeetingRoomGroupAdmin",
+                Version = "rooms_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rooms/groupAdmin/" + groupId,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryMeetingRoomGroupAdminResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取分组管理员信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryMeetingRoomGroupAdminRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryMeetingRoomGroupAdminResponse
+        /// </returns>
+        public QueryMeetingRoomGroupAdminResponse QueryMeetingRoomGroupAdmin(string groupId, QueryMeetingRoomGroupAdminRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryMeetingRoomGroupAdminHeaders headers = new QueryMeetingRoomGroupAdminHeaders();
+            return QueryMeetingRoomGroupAdminWithOptions(groupId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取分组管理员信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryMeetingRoomGroupAdminRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryMeetingRoomGroupAdminResponse
+        /// </returns>
+        public async Task<QueryMeetingRoomGroupAdminResponse> QueryMeetingRoomGroupAdminAsync(string groupId, QueryMeetingRoomGroupAdminRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryMeetingRoomGroupAdminHeaders headers = new QueryMeetingRoomGroupAdminHeaders();
+            return await QueryMeetingRoomGroupAdminWithOptionsAsync(groupId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>查询会议室分组列表</para>
         /// </summary>
         /// 
