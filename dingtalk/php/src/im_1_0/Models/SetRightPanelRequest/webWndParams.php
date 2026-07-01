@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class webWndParams extends Model
 {
     /**
+     * @example xxxxx
+     *
+     * @var string
+     */
+    public $closeTipContent;
+
+    /**
      * @description This parameter is required.
      *
      * @example https://www.dingtalk.com/
@@ -17,6 +24,7 @@ class webWndParams extends Model
      */
     public $targetURL;
     protected $_name = [
+        'closeTipContent' => 'closeTipContent',
         'targetURL' => 'targetURL',
     ];
 
@@ -25,6 +33,9 @@ class webWndParams extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->closeTipContent) {
+            $res['closeTipContent'] = $this->closeTipContent;
+        }
         if (null !== $this->targetURL) {
             $res['targetURL'] = $this->targetURL;
         }
@@ -40,6 +51,9 @@ class webWndParams extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['closeTipContent'])) {
+            $model->closeTipContent = $map['closeTipContent'];
+        }
         if (isset($map['targetURL'])) {
             $model->targetURL = $map['targetURL'];
         }

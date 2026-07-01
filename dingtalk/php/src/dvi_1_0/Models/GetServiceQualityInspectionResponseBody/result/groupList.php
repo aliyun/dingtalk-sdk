@@ -18,9 +18,15 @@ class groupList extends Model
      * @var string
      */
     public $name;
+
+    /**
+     * @var int
+     */
+    public $score;
     protected $_name = [
         'itemList' => 'itemList',
         'name' => 'name',
+        'score' => 'score',
     ];
 
     public function validate() {}
@@ -39,6 +45,9 @@ class groupList extends Model
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
+        }
+        if (null !== $this->score) {
+            $res['score'] = $this->score;
         }
 
         return $res;
@@ -63,6 +72,9 @@ class groupList extends Model
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];
+        }
+        if (isset($map['score'])) {
+            $model->score = $map['score'];
         }
 
         return $model;

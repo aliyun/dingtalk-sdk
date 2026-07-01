@@ -24,6 +24,11 @@ class dataList extends Model
     public $bizId;
 
     /**
+     * @var string
+     */
+    public $deptName;
+
+    /**
      * @var bool
      */
     public $isTimeFree;
@@ -46,15 +51,22 @@ class dataList extends Model
     /**
      * @var string
      */
+    public $userId;
+
+    /**
+     * @var string
+     */
     public $userName;
     protected $_name = [
         'abilityName' => 'abilityName',
         'aiCreditsUsedNum' => 'aiCreditsUsedNum',
         'bizId' => 'bizId',
+        'deptName' => 'deptName',
         'isTimeFree' => 'isTimeFree',
         'scenarioName' => 'scenarioName',
         'taskName' => 'taskName',
         'usageTime' => 'usageTime',
+        'userId' => 'userId',
         'userName' => 'userName',
     ];
 
@@ -72,6 +84,9 @@ class dataList extends Model
         if (null !== $this->bizId) {
             $res['bizId'] = $this->bizId;
         }
+        if (null !== $this->deptName) {
+            $res['deptName'] = $this->deptName;
+        }
         if (null !== $this->isTimeFree) {
             $res['isTimeFree'] = $this->isTimeFree;
         }
@@ -83,6 +98,9 @@ class dataList extends Model
         }
         if (null !== $this->usageTime) {
             $res['usageTime'] = $this->usageTime;
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
         if (null !== $this->userName) {
             $res['userName'] = $this->userName;
@@ -108,6 +126,9 @@ class dataList extends Model
         if (isset($map['bizId'])) {
             $model->bizId = $map['bizId'];
         }
+        if (isset($map['deptName'])) {
+            $model->deptName = $map['deptName'];
+        }
         if (isset($map['isTimeFree'])) {
             $model->isTimeFree = $map['isTimeFree'];
         }
@@ -119,6 +140,9 @@ class dataList extends Model
         }
         if (isset($map['usageTime'])) {
             $model->usageTime = $map['usageTime'];
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
         if (isset($map['userName'])) {
             $model->userName = $map['userName'];

@@ -17,6 +17,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\CreateAsrTranscriptionResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\CreateRecordingScheduleHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\CreateRecordingScheduleRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\CreateRecordingScheduleResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\CreateTeamHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\CreateTeamRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\CreateTeamResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\DeleteRecordingScheduleHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\DeleteRecordingScheduleResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetAsrTranscriptionHeaders;
@@ -51,6 +54,12 @@ use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetServiceRecordResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetServiceRecordTranscriptHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetServiceRecordTranscriptRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetServiceRecordTranscriptResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetSolutionConfigHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetSolutionConfigResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetTeamHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetTeamMemberHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetTeamMemberResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetTeamResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetTranscriptSummaryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetTranscriptSummaryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetTranscriptSummaryResponse;
@@ -72,6 +81,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\ListServiceTodoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\ListTeamHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\ListTeamRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\ListTeamResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\ManageTeamMemberHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\ManageTeamMemberRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\ManageTeamMemberResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\QueryAsrTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\QueryAsrTaskRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\QueryAsrTaskResponse;
@@ -109,6 +121,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\UpdateDeviceBindingResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\UpdateRecordingScheduleHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\UpdateRecordingScheduleRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\UpdateRecordingScheduleResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\UpdateTeamHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\UpdateTeamRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\UpdateTeamResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\VideoCustomerSplitHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\VideoCustomerSplitRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\VideoCustomerSplitResponse;
@@ -379,6 +394,81 @@ class Dingtalk extends OpenApiClient
         $headers = new CreateRecordingScheduleHeaders([]);
 
         return $this->createRecordingScheduleWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 创建团队
+     *  *
+     * @param CreateTeamRequest $request CreateTeamRequest
+     * @param CreateTeamHeaders $headers CreateTeamHeaders
+     * @param RuntimeOptions    $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateTeamResponse CreateTeamResponse
+     */
+    public function createTeamWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->adminUserIds)) {
+            $body['adminUserIds'] = $request->adminUserIds;
+        }
+        if (!Utils::isUnset($request->deptIds)) {
+            $body['deptIds'] = $request->deptIds;
+        }
+        if (!Utils::isUnset($request->dialectCode)) {
+            $body['dialectCode'] = $request->dialectCode;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->sceneCodes)) {
+            $body['sceneCodes'] = $request->sceneCodes;
+        }
+        if (!Utils::isUnset($request->solutionCode)) {
+            $body['solutionCode'] = $request->solutionCode;
+        }
+        if (!Utils::isUnset($request->userIds)) {
+            $body['userIds'] = $request->userIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'CreateTeam',
+            'version' => 'dvi_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/dvi/teams',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CreateTeamResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建团队
+     *  *
+     * @param CreateTeamRequest $request CreateTeamRequest
+     *
+     * @return CreateTeamResponse CreateTeamResponse
+     */
+    public function createTeam($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateTeamHeaders([]);
+
+        return $this->createTeamWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -1066,6 +1156,156 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取分析方案配置
+     *  *
+     * @param GetSolutionConfigHeaders $headers GetSolutionConfigHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetSolutionConfigResponse GetSolutionConfigResponse
+     */
+    public function getSolutionConfigWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action' => 'GetSolutionConfig',
+            'version' => 'dvi_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/dvi/solutions/configurations',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetSolutionConfigResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取分析方案配置
+     *  *
+     * @return GetSolutionConfigResponse GetSolutionConfigResponse
+     */
+    public function getSolutionConfig()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetSolutionConfigHeaders([]);
+
+        return $this->getSolutionConfigWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @summary 获取团队信息
+     *  *
+     * @param string         $teamCode
+     * @param GetTeamHeaders $headers  GetTeamHeaders
+     * @param RuntimeOptions $runtime  runtime options for this request RuntimeOptions
+     *
+     * @return GetTeamResponse GetTeamResponse
+     */
+    public function getTeamWithOptions($teamCode, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action' => 'GetTeam',
+            'version' => 'dvi_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/dvi/teams/' . $teamCode . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetTeamResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取团队信息
+     *  *
+     * @param string $teamCode
+     *
+     * @return GetTeamResponse GetTeamResponse
+     */
+    public function getTeam($teamCode)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetTeamHeaders([]);
+
+        return $this->getTeamWithOptions($teamCode, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询团队成员
+     *  *
+     * @param string               $teamCode
+     * @param GetTeamMemberHeaders $headers  GetTeamMemberHeaders
+     * @param RuntimeOptions       $runtime  runtime options for this request RuntimeOptions
+     *
+     * @return GetTeamMemberResponse GetTeamMemberResponse
+     */
+    public function getTeamMemberWithOptions($teamCode, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action' => 'GetTeamMember',
+            'version' => 'dvi_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/dvi/teams/' . $teamCode . '/members',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetTeamMemberResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询团队成员
+     *  *
+     * @param string $teamCode
+     *
+     * @return GetTeamMemberResponse GetTeamMemberResponse
+     */
+    public function getTeamMember($teamCode)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetTeamMemberHeaders([]);
+
+        return $this->getTeamMemberWithOptions($teamCode, $headers, $runtime);
+    }
+
+    /**
      * @summary 获取文件转写的概要信息
      *  *
      * @param GetTranscriptSummaryRequest $request GetTranscriptSummaryRequest
@@ -1531,6 +1771,69 @@ class Dingtalk extends OpenApiClient
         $headers = new ListTeamHeaders([]);
 
         return $this->listTeamWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 团队成员管理
+     *  *
+     * @param ManageTeamMemberRequest $request ManageTeamMemberRequest
+     * @param ManageTeamMemberHeaders $headers ManageTeamMemberHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ManageTeamMemberResponse ManageTeamMemberResponse
+     */
+    public function manageTeamMemberWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->addMembers)) {
+            $body['addMembers'] = $request->addMembers;
+        }
+        if (!Utils::isUnset($request->removeMembers)) {
+            $body['removeMembers'] = $request->removeMembers;
+        }
+        if (!Utils::isUnset($request->teamCode)) {
+            $body['teamCode'] = $request->teamCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'ManageTeamMember',
+            'version' => 'dvi_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/dvi/teams/members',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return ManageTeamMemberResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 团队成员管理
+     *  *
+     * @param ManageTeamMemberRequest $request ManageTeamMemberRequest
+     *
+     * @return ManageTeamMemberResponse ManageTeamMemberResponse
+     */
+    public function manageTeamMember($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ManageTeamMemberHeaders([]);
+
+        return $this->manageTeamMemberWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -2316,6 +2619,72 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateRecordingScheduleHeaders([]);
 
         return $this->updateRecordingScheduleWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 修改团队
+     *  *
+     * @param UpdateTeamRequest $request UpdateTeamRequest
+     * @param UpdateTeamHeaders $headers UpdateTeamHeaders
+     * @param RuntimeOptions    $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateTeamResponse UpdateTeamResponse
+     */
+    public function updateTeamWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dialectCode)) {
+            $body['dialectCode'] = $request->dialectCode;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->sceneCodes)) {
+            $body['sceneCodes'] = $request->sceneCodes;
+        }
+        if (!Utils::isUnset($request->teamCode)) {
+            $body['teamCode'] = $request->teamCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'UpdateTeam',
+            'version' => 'dvi_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/dvi/teams',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UpdateTeamResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 修改团队
+     *  *
+     * @param UpdateTeamRequest $request UpdateTeamRequest
+     *
+     * @return UpdateTeamResponse UpdateTeamResponse
+     */
+    public function updateTeam($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateTeamHeaders([]);
+
+        return $this->updateTeamWithOptions($request, $headers, $runtime);
     }
 
     /**

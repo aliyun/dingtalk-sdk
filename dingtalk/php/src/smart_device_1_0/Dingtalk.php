@@ -8,6 +8,9 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\AddDeviceVideoConferenceMembersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\AddDeviceVideoConferenceMembersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\AddDeviceVideoConferenceMembersResponse;
+use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\ATMDeviceWorkNotifyHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\ATMDeviceWorkNotifyRequest;
+use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\ATMDeviceWorkNotifyResponse;
 use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\CreateDeviceVideoConferenceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\CreateDeviceVideoConferenceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\CreateDeviceVideoConferenceResponse;
@@ -55,6 +58,75 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @summary 发送考勤机工作台消息
+     *  *
+     * @param ATMDeviceWorkNotifyRequest $request ATMDeviceWorkNotifyRequest
+     * @param ATMDeviceWorkNotifyHeaders $headers ATMDeviceWorkNotifyHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ATMDeviceWorkNotifyResponse ATMDeviceWorkNotifyResponse
+     */
+    public function aTMDeviceWorkNotifyWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->creatorCorpId)) {
+            $body['creatorCorpId'] = $request->creatorCorpId;
+        }
+        if (!Utils::isUnset($request->creatorUnionId)) {
+            $body['creatorUnionId'] = $request->creatorUnionId;
+        }
+        if (!Utils::isUnset($request->notifyType)) {
+            $body['notifyType'] = $request->notifyType;
+        }
+        if (!Utils::isUnset($request->paramContent)) {
+            $body['paramContent'] = $request->paramContent;
+        }
+        if (!Utils::isUnset($request->targetUrl)) {
+            $body['targetUrl'] = $request->targetUrl;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'ATMDeviceWorkNotify',
+            'version' => 'smartDevice_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/smartDevice/atm/notify',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return ATMDeviceWorkNotifyResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 发送考勤机工作台消息
+     *  *
+     * @param ATMDeviceWorkNotifyRequest $request ATMDeviceWorkNotifyRequest
+     *
+     * @return ATMDeviceWorkNotifyResponse ATMDeviceWorkNotifyResponse
+     */
+    public function aTMDeviceWorkNotify($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ATMDeviceWorkNotifyHeaders([]);
+
+        return $this->aTMDeviceWorkNotifyWithOptions($request, $headers, $runtime);
     }
 
     /**

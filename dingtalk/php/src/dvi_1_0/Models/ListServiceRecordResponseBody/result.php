@@ -4,6 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\ListServiceRecordResponseBody;
 
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\ListServiceRecordResponseBody\result\sceneInfo;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\ListServiceRecordResponseBody\result\team;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\ListServiceRecordResponseBody\result\user;
 use AlibabaCloud\Tea\Model;
@@ -46,6 +47,11 @@ class result extends Model
     public $recordId;
 
     /**
+     * @var sceneInfo
+     */
+    public $sceneInfo;
+
+    /**
      * @var int
      */
     public $startTimestamp;
@@ -72,6 +78,7 @@ class result extends Model
         'outBizData' => 'outBizData',
         'qualityInspectionScore' => 'qualityInspectionScore',
         'recordId' => 'recordId',
+        'sceneInfo' => 'sceneInfo',
         'startTimestamp' => 'startTimestamp',
         'team' => 'team',
         'user' => 'user',
@@ -103,6 +110,9 @@ class result extends Model
         }
         if (null !== $this->recordId) {
             $res['recordId'] = $this->recordId;
+        }
+        if (null !== $this->sceneInfo) {
+            $res['sceneInfo'] = null !== $this->sceneInfo ? $this->sceneInfo->toMap() : null;
         }
         if (null !== $this->startTimestamp) {
             $res['startTimestamp'] = $this->startTimestamp;
@@ -148,6 +158,9 @@ class result extends Model
         }
         if (isset($map['recordId'])) {
             $model->recordId = $map['recordId'];
+        }
+        if (isset($map['sceneInfo'])) {
+            $model->sceneInfo = sceneInfo::fromMap($map['sceneInfo']);
         }
         if (isset($map['startTimestamp'])) {
             $model->startTimestamp = $map['startTimestamp'];

@@ -51,6 +51,9 @@ use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\QueryMeetingRoomControlPanelList
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\QueryMeetingRoomDeviceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\QueryMeetingRoomDeviceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\QueryMeetingRoomDeviceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\QueryMeetingRoomGroupAdminHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\QueryMeetingRoomGroupAdminRequest;
+use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\QueryMeetingRoomGroupAdminResponse;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\QueryMeetingRoomGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\QueryMeetingRoomGroupListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\QueryMeetingRoomGroupListRequest;
@@ -1269,6 +1272,65 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryMeetingRoomGroupHeaders([]);
 
         return $this->queryMeetingRoomGroupWithOptions($groupId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取分组管理员信息
+     *  *
+     * @param string                            $groupId
+     * @param QueryMeetingRoomGroupAdminRequest $request QueryMeetingRoomGroupAdminRequest
+     * @param QueryMeetingRoomGroupAdminHeaders $headers QueryMeetingRoomGroupAdminHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryMeetingRoomGroupAdminResponse QueryMeetingRoomGroupAdminResponse
+     */
+    public function queryMeetingRoomGroupAdminWithOptions($groupId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'QueryMeetingRoomGroupAdmin',
+            'version' => 'rooms_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/rooms/groupAdmin/' . $groupId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryMeetingRoomGroupAdminResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取分组管理员信息
+     *  *
+     * @param string                            $groupId
+     * @param QueryMeetingRoomGroupAdminRequest $request QueryMeetingRoomGroupAdminRequest
+     *
+     * @return QueryMeetingRoomGroupAdminResponse QueryMeetingRoomGroupAdminResponse
+     */
+    public function queryMeetingRoomGroupAdmin($groupId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryMeetingRoomGroupAdminHeaders([]);
+
+        return $this->queryMeetingRoomGroupAdminWithOptions($groupId, $request, $headers, $runtime);
     }
 
     /**
