@@ -20,6 +20,36 @@ public class GetServiceRecordResponseBody extends TeaModel {
         return this.result;
     }
 
+    public static class GetServiceRecordResponseBodyResultSceneInfo extends TeaModel {
+        @NameInMap("code")
+        public String code;
+
+        @NameInMap("name")
+        public String name;
+
+        public static GetServiceRecordResponseBodyResultSceneInfo build(java.util.Map<String, ?> map) throws Exception {
+            GetServiceRecordResponseBodyResultSceneInfo self = new GetServiceRecordResponseBodyResultSceneInfo();
+            return TeaModel.build(map, self);
+        }
+
+        public GetServiceRecordResponseBodyResultSceneInfo setCode(String code) {
+            this.code = code;
+            return this;
+        }
+        public String getCode() {
+            return this.code;
+        }
+
+        public GetServiceRecordResponseBodyResultSceneInfo setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
+        }
+
+    }
+
     public static class GetServiceRecordResponseBodyResultTeam extends TeaModel {
         @NameInMap("code")
         public String code;
@@ -102,6 +132,9 @@ public class GetServiceRecordResponseBody extends TeaModel {
         @NameInMap("recordId")
         public String recordId;
 
+        @NameInMap("sceneInfo")
+        public GetServiceRecordResponseBodyResultSceneInfo sceneInfo;
+
         @NameInMap("startTimestamp")
         public Long startTimestamp;
 
@@ -173,6 +206,14 @@ public class GetServiceRecordResponseBody extends TeaModel {
         }
         public String getRecordId() {
             return this.recordId;
+        }
+
+        public GetServiceRecordResponseBodyResult setSceneInfo(GetServiceRecordResponseBodyResultSceneInfo sceneInfo) {
+            this.sceneInfo = sceneInfo;
+            return this;
+        }
+        public GetServiceRecordResponseBodyResultSceneInfo getSceneInfo() {
+            return this.sceneInfo;
         }
 
         public GetServiceRecordResponseBodyResult setStartTimestamp(Long startTimestamp) {

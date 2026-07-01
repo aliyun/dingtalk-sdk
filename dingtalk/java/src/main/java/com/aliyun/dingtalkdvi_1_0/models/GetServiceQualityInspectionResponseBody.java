@@ -153,6 +153,9 @@ public class GetServiceQualityInspectionResponseBody extends TeaModel {
         @NameInMap("name")
         public String name;
 
+        @NameInMap("score")
+        public Integer score;
+
         public static GetServiceQualityInspectionResponseBodyResultGroupList build(java.util.Map<String, ?> map) throws Exception {
             GetServiceQualityInspectionResponseBodyResultGroupList self = new GetServiceQualityInspectionResponseBodyResultGroupList();
             return TeaModel.build(map, self);
@@ -172,6 +175,14 @@ public class GetServiceQualityInspectionResponseBody extends TeaModel {
         }
         public String getName() {
             return this.name;
+        }
+
+        public GetServiceQualityInspectionResponseBodyResultGroupList setScore(Integer score) {
+            this.score = score;
+            return this;
+        }
+        public Integer getScore() {
+            return this.score;
         }
 
     }

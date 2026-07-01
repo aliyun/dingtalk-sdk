@@ -42,6 +42,36 @@ public class ListServiceRecordResponseBody extends TeaModel {
         return this.totalCount;
     }
 
+    public static class ListServiceRecordResponseBodyResultSceneInfo extends TeaModel {
+        @NameInMap("code")
+        public String code;
+
+        @NameInMap("name")
+        public String name;
+
+        public static ListServiceRecordResponseBodyResultSceneInfo build(java.util.Map<String, ?> map) throws Exception {
+            ListServiceRecordResponseBodyResultSceneInfo self = new ListServiceRecordResponseBodyResultSceneInfo();
+            return TeaModel.build(map, self);
+        }
+
+        public ListServiceRecordResponseBodyResultSceneInfo setCode(String code) {
+            this.code = code;
+            return this;
+        }
+        public String getCode() {
+            return this.code;
+        }
+
+        public ListServiceRecordResponseBodyResultSceneInfo setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
+        }
+
+    }
+
     public static class ListServiceRecordResponseBodyResultTeam extends TeaModel {
         @NameInMap("code")
         public String code;
@@ -124,6 +154,9 @@ public class ListServiceRecordResponseBody extends TeaModel {
         @NameInMap("recordId")
         public String recordId;
 
+        @NameInMap("sceneInfo")
+        public ListServiceRecordResponseBodyResultSceneInfo sceneInfo;
+
         @NameInMap("startTimestamp")
         public Long startTimestamp;
 
@@ -195,6 +228,14 @@ public class ListServiceRecordResponseBody extends TeaModel {
         }
         public String getRecordId() {
             return this.recordId;
+        }
+
+        public ListServiceRecordResponseBodyResult setSceneInfo(ListServiceRecordResponseBodyResultSceneInfo sceneInfo) {
+            this.sceneInfo = sceneInfo;
+            return this;
+        }
+        public ListServiceRecordResponseBodyResultSceneInfo getSceneInfo() {
+            return this.sceneInfo;
         }
 
         public ListServiceRecordResponseBodyResult setStartTimestamp(Long startTimestamp) {

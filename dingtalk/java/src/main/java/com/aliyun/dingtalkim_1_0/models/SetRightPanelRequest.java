@@ -129,6 +129,13 @@ public class SetRightPanelRequest extends TeaModel {
 
     public static class SetRightPanelRequestWebWndParams extends TeaModel {
         /**
+         * <strong>example:</strong>
+         * <p>xxxxx</p>
+         */
+        @NameInMap("closeTipContent")
+        public String closeTipContent;
+
+        /**
          * <p>This parameter is required.</p>
          * 
          * <strong>example:</strong>
@@ -140,6 +147,14 @@ public class SetRightPanelRequest extends TeaModel {
         public static SetRightPanelRequestWebWndParams build(java.util.Map<String, ?> map) throws Exception {
             SetRightPanelRequestWebWndParams self = new SetRightPanelRequestWebWndParams();
             return TeaModel.build(map, self);
+        }
+
+        public SetRightPanelRequestWebWndParams setCloseTipContent(String closeTipContent) {
+            this.closeTipContent = closeTipContent;
+            return this;
+        }
+        public String getCloseTipContent() {
+            return this.closeTipContent;
         }
 
         public SetRightPanelRequestWebWndParams setTargetURL(String targetURL) {

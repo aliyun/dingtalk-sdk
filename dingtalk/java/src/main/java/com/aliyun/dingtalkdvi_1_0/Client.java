@@ -272,6 +272,86 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>创建团队</p>
+     * 
+     * @param request CreateTeamRequest
+     * @param headers CreateTeamHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateTeamResponse
+     */
+    public CreateTeamResponse createTeamWithOptions(CreateTeamRequest request, CreateTeamHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.adminUserIds)) {
+            body.put("adminUserIds", request.adminUserIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deptIds)) {
+            body.put("deptIds", request.deptIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dialectCode)) {
+            body.put("dialectCode", request.dialectCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
+            body.put("name", request.name);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.sceneCodes)) {
+            body.put("sceneCodes", request.sceneCodes);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.solutionCode)) {
+            body.put("solutionCode", request.solutionCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userIds)) {
+            body.put("userIds", request.userIds);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateTeam"),
+            new TeaPair("version", "dvi_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/dvi/teams"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateTeamResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>创建团队</p>
+     * 
+     * @param request CreateTeamRequest
+     * @return CreateTeamResponse
+     */
+    public CreateTeamResponse createTeam(CreateTeamRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CreateTeamHeaders headers = new CreateTeamHeaders();
+        return this.createTeamWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>删除录制计划</p>
      * 
      * @param headers DeleteRecordingScheduleHeaders
@@ -940,6 +1020,144 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>获取分析方案配置</p>
+     * 
+     * @param headers GetSolutionConfigHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetSolutionConfigResponse
+     */
+    public GetSolutionConfigResponse getSolutionConfigWithOptions(GetSolutionConfigHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetSolutionConfig"),
+            new TeaPair("version", "dvi_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/dvi/solutions/configurations"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetSolutionConfigResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取分析方案配置</p>
+     * @return GetSolutionConfigResponse
+     */
+    public GetSolutionConfigResponse getSolutionConfig() throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetSolutionConfigHeaders headers = new GetSolutionConfigHeaders();
+        return this.getSolutionConfigWithOptions(headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取团队信息</p>
+     * 
+     * @param headers GetTeamHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetTeamResponse
+     */
+    public GetTeamResponse getTeamWithOptions(String teamCode, GetTeamHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetTeam"),
+            new TeaPair("version", "dvi_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/dvi/teams/" + teamCode + ""),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetTeamResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取团队信息</p>
+     * @return GetTeamResponse
+     */
+    public GetTeamResponse getTeam(String teamCode) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetTeamHeaders headers = new GetTeamHeaders();
+        return this.getTeamWithOptions(teamCode, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询团队成员</p>
+     * 
+     * @param headers GetTeamMemberHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetTeamMemberResponse
+     */
+    public GetTeamMemberResponse getTeamMemberWithOptions(String teamCode, GetTeamMemberHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetTeamMember"),
+            new TeaPair("version", "dvi_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/dvi/teams/" + teamCode + "/members"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetTeamMemberResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询团队成员</p>
+     * @return GetTeamMemberResponse
+     */
+    public GetTeamMemberResponse getTeamMember(String teamCode) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetTeamMemberHeaders headers = new GetTeamMemberHeaders();
+        return this.getTeamMemberWithOptions(teamCode, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>获取文件转写的概要信息</p>
      * 
      * @param request GetTranscriptSummaryRequest
@@ -1420,6 +1638,70 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ListTeamHeaders headers = new ListTeamHeaders();
         return this.listTeamWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>团队成员管理</p>
+     * 
+     * @param request ManageTeamMemberRequest
+     * @param headers ManageTeamMemberHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ManageTeamMemberResponse
+     */
+    public ManageTeamMemberResponse manageTeamMemberWithOptions(ManageTeamMemberRequest request, ManageTeamMemberHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.addMembers)) {
+            body.put("addMembers", request.addMembers);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.removeMembers)) {
+            body.put("removeMembers", request.removeMembers);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.teamCode)) {
+            body.put("teamCode", request.teamCode);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ManageTeamMember"),
+            new TeaPair("version", "dvi_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/dvi/teams/members"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ManageTeamMemberResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>团队成员管理</p>
+     * 
+     * @param request ManageTeamMemberRequest
+     * @return ManageTeamMemberResponse
+     */
+    public ManageTeamMemberResponse manageTeamMember(ManageTeamMemberRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ManageTeamMemberHeaders headers = new ManageTeamMemberHeaders();
+        return this.manageTeamMemberWithOptions(request, headers, runtime);
     }
 
     /**
@@ -2226,6 +2508,74 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateRecordingScheduleHeaders headers = new UpdateRecordingScheduleHeaders();
         return this.updateRecordingScheduleWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>修改团队</p>
+     * 
+     * @param request UpdateTeamRequest
+     * @param headers UpdateTeamHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateTeamResponse
+     */
+    public UpdateTeamResponse updateTeamWithOptions(UpdateTeamRequest request, UpdateTeamHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.dialectCode)) {
+            body.put("dialectCode", request.dialectCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
+            body.put("name", request.name);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.sceneCodes)) {
+            body.put("sceneCodes", request.sceneCodes);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.teamCode)) {
+            body.put("teamCode", request.teamCode);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateTeam"),
+            new TeaPair("version", "dvi_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/dvi/teams"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateTeamResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>修改团队</p>
+     * 
+     * @param request UpdateTeamRequest
+     * @return UpdateTeamResponse
+     */
+    public UpdateTeamResponse updateTeam(UpdateTeamRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateTeamHeaders headers = new UpdateTeamHeaders();
+        return this.updateTeamWithOptions(request, headers, runtime);
     }
 
     /**

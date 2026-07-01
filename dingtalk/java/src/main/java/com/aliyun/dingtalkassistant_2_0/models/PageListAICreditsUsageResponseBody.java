@@ -41,6 +41,9 @@ public class PageListAICreditsUsageResponseBody extends TeaModel {
         @NameInMap("bizId")
         public String bizId;
 
+        @NameInMap("deptName")
+        public String deptName;
+
         @NameInMap("isTimeFree")
         public Boolean isTimeFree;
 
@@ -52,6 +55,9 @@ public class PageListAICreditsUsageResponseBody extends TeaModel {
 
         @NameInMap("usageTime")
         public String usageTime;
+
+        @NameInMap("userId")
+        public String userId;
 
         @NameInMap("userName")
         public String userName;
@@ -85,6 +91,14 @@ public class PageListAICreditsUsageResponseBody extends TeaModel {
             return this.bizId;
         }
 
+        public PageListAICreditsUsageResponseBodyDataList setDeptName(String deptName) {
+            this.deptName = deptName;
+            return this;
+        }
+        public String getDeptName() {
+            return this.deptName;
+        }
+
         public PageListAICreditsUsageResponseBodyDataList setIsTimeFree(Boolean isTimeFree) {
             this.isTimeFree = isTimeFree;
             return this;
@@ -115,6 +129,14 @@ public class PageListAICreditsUsageResponseBody extends TeaModel {
         }
         public String getUsageTime() {
             return this.usageTime;
+        }
+
+        public PageListAICreditsUsageResponseBodyDataList setUserId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+        public String getUserId() {
+            return this.userId;
         }
 
         public PageListAICreditsUsageResponseBodyDataList setUserName(String userName) {
