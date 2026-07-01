@@ -803,6 +803,208 @@ class CreateRecordingScheduleResponse(TeaModel):
         return self
 
 
+class CreateTeamHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateTeamRequest(TeaModel):
+    def __init__(
+        self,
+        admin_user_ids: List[str] = None,
+        dept_ids: List[int] = None,
+        dialect_code: str = None,
+        name: str = None,
+        scene_codes: List[str] = None,
+        solution_code: str = None,
+        user_ids: List[str] = None,
+    ):
+        self.admin_user_ids = admin_user_ids
+        self.dept_ids = dept_ids
+        self.dialect_code = dialect_code
+        # This parameter is required.
+        self.name = name
+        # This parameter is required.
+        self.scene_codes = scene_codes
+        # This parameter is required.
+        self.solution_code = solution_code
+        self.user_ids = user_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.admin_user_ids is not None:
+            result['adminUserIds'] = self.admin_user_ids
+        if self.dept_ids is not None:
+            result['deptIds'] = self.dept_ids
+        if self.dialect_code is not None:
+            result['dialectCode'] = self.dialect_code
+        if self.name is not None:
+            result['name'] = self.name
+        if self.scene_codes is not None:
+            result['sceneCodes'] = self.scene_codes
+        if self.solution_code is not None:
+            result['solutionCode'] = self.solution_code
+        if self.user_ids is not None:
+            result['userIds'] = self.user_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('adminUserIds') is not None:
+            self.admin_user_ids = m.get('adminUserIds')
+        if m.get('deptIds') is not None:
+            self.dept_ids = m.get('deptIds')
+        if m.get('dialectCode') is not None:
+            self.dialect_code = m.get('dialectCode')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('sceneCodes') is not None:
+            self.scene_codes = m.get('sceneCodes')
+        if m.get('solutionCode') is not None:
+            self.solution_code = m.get('solutionCode')
+        if m.get('userIds') is not None:
+            self.user_ids = m.get('userIds')
+        return self
+
+
+class CreateTeamResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        team_code: str = None,
+    ):
+        self.name = name
+        self.team_code = team_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.team_code is not None:
+            result['teamCode'] = self.team_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('teamCode') is not None:
+            self.team_code = m.get('teamCode')
+        return self
+
+
+class CreateTeamResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: CreateTeamResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = CreateTeamResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class CreateTeamResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CreateTeamResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CreateTeamResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class DeleteRecordingScheduleHeaders(TeaModel):
     def __init__(
         self,
@@ -2864,9 +3066,11 @@ class GetServiceQualityInspectionResponseBodyResultGroupList(TeaModel):
         self,
         item_list: List[GetServiceQualityInspectionResponseBodyResultGroupListItemList] = None,
         name: str = None,
+        score: int = None,
     ):
         self.item_list = item_list
         self.name = name
+        self.score = score
 
     def validate(self):
         if self.item_list:
@@ -2886,6 +3090,8 @@ class GetServiceQualityInspectionResponseBodyResultGroupList(TeaModel):
                 result['itemList'].append(k.to_map() if k else None)
         if self.name is not None:
             result['name'] = self.name
+        if self.score is not None:
+            result['score'] = self.score
         return result
 
     def from_map(self, m: dict = None):
@@ -2897,6 +3103,8 @@ class GetServiceQualityInspectionResponseBodyResultGroupList(TeaModel):
                 self.item_list.append(temp_model.from_map(k))
         if m.get('name') is not None:
             self.name = m.get('name')
+        if m.get('score') is not None:
+            self.score = m.get('score')
         return self
 
 
@@ -3078,6 +3286,39 @@ class GetServiceRecordRequest(TeaModel):
         return self
 
 
+class GetServiceRecordResponseBodyResultSceneInfo(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        name: str = None,
+    ):
+        self.code = code
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
 class GetServiceRecordResponseBodyResultTeam(TeaModel):
     def __init__(
         self,
@@ -3154,6 +3395,7 @@ class GetServiceRecordResponseBodyResult(TeaModel):
         out_biz_data: str = None,
         quality_inspection_score: int = None,
         record_id: str = None,
+        scene_info: GetServiceRecordResponseBodyResultSceneInfo = None,
         start_timestamp: int = None,
         team: GetServiceRecordResponseBodyResultTeam = None,
         user: GetServiceRecordResponseBodyResultUser = None,
@@ -3166,12 +3408,15 @@ class GetServiceRecordResponseBodyResult(TeaModel):
         self.out_biz_data = out_biz_data
         self.quality_inspection_score = quality_inspection_score
         self.record_id = record_id
+        self.scene_info = scene_info
         self.start_timestamp = start_timestamp
         self.team = team
         self.user = user
         self.valid = valid
 
     def validate(self):
+        if self.scene_info:
+            self.scene_info.validate()
         if self.team:
             self.team.validate()
         if self.user:
@@ -3197,6 +3442,8 @@ class GetServiceRecordResponseBodyResult(TeaModel):
             result['qualityInspectionScore'] = self.quality_inspection_score
         if self.record_id is not None:
             result['recordId'] = self.record_id
+        if self.scene_info is not None:
+            result['sceneInfo'] = self.scene_info.to_map()
         if self.start_timestamp is not None:
             result['startTimestamp'] = self.start_timestamp
         if self.team is not None:
@@ -3223,6 +3470,9 @@ class GetServiceRecordResponseBodyResult(TeaModel):
             self.quality_inspection_score = m.get('qualityInspectionScore')
         if m.get('recordId') is not None:
             self.record_id = m.get('recordId')
+        if m.get('sceneInfo') is not None:
+            temp_model = GetServiceRecordResponseBodyResultSceneInfo()
+            self.scene_info = temp_model.from_map(m['sceneInfo'])
         if m.get('startTimestamp') is not None:
             self.start_timestamp = m.get('startTimestamp')
         if m.get('team') is not None:
@@ -3631,6 +3881,841 @@ class GetServiceRecordTranscriptResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetServiceRecordTranscriptResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetSolutionConfigHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetSolutionConfigResponseBodyResultDialectList(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        name: str = None,
+    ):
+        self.code = code
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
+class GetSolutionConfigResponseBodyResultSolutionListSceneList(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        name: str = None,
+    ):
+        self.code = code
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
+class GetSolutionConfigResponseBodyResultSolutionList(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        name: str = None,
+        scene_list: List[GetSolutionConfigResponseBodyResultSolutionListSceneList] = None,
+    ):
+        self.code = code
+        self.name = name
+        self.scene_list = scene_list
+
+    def validate(self):
+        if self.scene_list:
+            for k in self.scene_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.name is not None:
+            result['name'] = self.name
+        result['sceneList'] = []
+        if self.scene_list is not None:
+            for k in self.scene_list:
+                result['sceneList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        self.scene_list = []
+        if m.get('sceneList') is not None:
+            for k in m.get('sceneList'):
+                temp_model = GetSolutionConfigResponseBodyResultSolutionListSceneList()
+                self.scene_list.append(temp_model.from_map(k))
+        return self
+
+
+class GetSolutionConfigResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        dialect_list: List[GetSolutionConfigResponseBodyResultDialectList] = None,
+        solution_list: List[GetSolutionConfigResponseBodyResultSolutionList] = None,
+    ):
+        self.dialect_list = dialect_list
+        self.solution_list = solution_list
+
+    def validate(self):
+        if self.dialect_list:
+            for k in self.dialect_list:
+                if k:
+                    k.validate()
+        if self.solution_list:
+            for k in self.solution_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['dialectList'] = []
+        if self.dialect_list is not None:
+            for k in self.dialect_list:
+                result['dialectList'].append(k.to_map() if k else None)
+        result['solutionList'] = []
+        if self.solution_list is not None:
+            for k in self.solution_list:
+                result['solutionList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.dialect_list = []
+        if m.get('dialectList') is not None:
+            for k in m.get('dialectList'):
+                temp_model = GetSolutionConfigResponseBodyResultDialectList()
+                self.dialect_list.append(temp_model.from_map(k))
+        self.solution_list = []
+        if m.get('solutionList') is not None:
+            for k in m.get('solutionList'):
+                temp_model = GetSolutionConfigResponseBodyResultSolutionList()
+                self.solution_list.append(temp_model.from_map(k))
+        return self
+
+
+class GetSolutionConfigResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: GetSolutionConfigResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = GetSolutionConfigResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class GetSolutionConfigResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetSolutionConfigResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetSolutionConfigResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetTeamHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetTeamResponseBodyResultSceneList(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        name: str = None,
+    ):
+        self.code = code
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
+class GetTeamResponseBodyResultTagListValueList(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        name: str = None,
+    ):
+        self.code = code
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
+class GetTeamResponseBodyResultTagList(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        name: str = None,
+        value_list: List[GetTeamResponseBodyResultTagListValueList] = None,
+    ):
+        self.code = code
+        self.name = name
+        self.value_list = value_list
+
+    def validate(self):
+        if self.value_list:
+            for k in self.value_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.name is not None:
+            result['name'] = self.name
+        result['valueList'] = []
+        if self.value_list is not None:
+            for k in self.value_list:
+                result['valueList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        self.value_list = []
+        if m.get('valueList') is not None:
+            for k in m.get('valueList'):
+                temp_model = GetTeamResponseBodyResultTagListValueList()
+                self.value_list.append(temp_model.from_map(k))
+        return self
+
+
+class GetTeamResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        dialect_code: str = None,
+        dialect_name: str = None,
+        name: str = None,
+        scene_list: List[GetTeamResponseBodyResultSceneList] = None,
+        solution_code: str = None,
+        solution_name: str = None,
+        tag_list: List[GetTeamResponseBodyResultTagList] = None,
+    ):
+        self.code = code
+        self.dialect_code = dialect_code
+        self.dialect_name = dialect_name
+        self.name = name
+        self.scene_list = scene_list
+        self.solution_code = solution_code
+        self.solution_name = solution_name
+        self.tag_list = tag_list
+
+    def validate(self):
+        if self.scene_list:
+            for k in self.scene_list:
+                if k:
+                    k.validate()
+        if self.tag_list:
+            for k in self.tag_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.dialect_code is not None:
+            result['dialectCode'] = self.dialect_code
+        if self.dialect_name is not None:
+            result['dialectName'] = self.dialect_name
+        if self.name is not None:
+            result['name'] = self.name
+        result['sceneList'] = []
+        if self.scene_list is not None:
+            for k in self.scene_list:
+                result['sceneList'].append(k.to_map() if k else None)
+        if self.solution_code is not None:
+            result['solutionCode'] = self.solution_code
+        if self.solution_name is not None:
+            result['solutionName'] = self.solution_name
+        result['tagList'] = []
+        if self.tag_list is not None:
+            for k in self.tag_list:
+                result['tagList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('dialectCode') is not None:
+            self.dialect_code = m.get('dialectCode')
+        if m.get('dialectName') is not None:
+            self.dialect_name = m.get('dialectName')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        self.scene_list = []
+        if m.get('sceneList') is not None:
+            for k in m.get('sceneList'):
+                temp_model = GetTeamResponseBodyResultSceneList()
+                self.scene_list.append(temp_model.from_map(k))
+        if m.get('solutionCode') is not None:
+            self.solution_code = m.get('solutionCode')
+        if m.get('solutionName') is not None:
+            self.solution_name = m.get('solutionName')
+        self.tag_list = []
+        if m.get('tagList') is not None:
+            for k in m.get('tagList'):
+                temp_model = GetTeamResponseBodyResultTagList()
+                self.tag_list.append(temp_model.from_map(k))
+        return self
+
+
+class GetTeamResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: GetTeamResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = GetTeamResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class GetTeamResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetTeamResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetTeamResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetTeamMemberHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetTeamMemberResponseBodyResultAdmins(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        user_id: str = None,
+    ):
+        self.name = name
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class GetTeamMemberResponseBodyResultDepts(TeaModel):
+    def __init__(
+        self,
+        dept_id: int = None,
+        name: str = None,
+    ):
+        self.dept_id = dept_id
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
+class GetTeamMemberResponseBodyResultMembers(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        user_id: str = None,
+    ):
+        self.name = name
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class GetTeamMemberResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        admins: List[GetTeamMemberResponseBodyResultAdmins] = None,
+        depts: List[GetTeamMemberResponseBodyResultDepts] = None,
+        members: List[GetTeamMemberResponseBodyResultMembers] = None,
+    ):
+        self.admins = admins
+        self.depts = depts
+        self.members = members
+
+    def validate(self):
+        if self.admins:
+            for k in self.admins:
+                if k:
+                    k.validate()
+        if self.depts:
+            for k in self.depts:
+                if k:
+                    k.validate()
+        if self.members:
+            for k in self.members:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['admins'] = []
+        if self.admins is not None:
+            for k in self.admins:
+                result['admins'].append(k.to_map() if k else None)
+        result['depts'] = []
+        if self.depts is not None:
+            for k in self.depts:
+                result['depts'].append(k.to_map() if k else None)
+        result['members'] = []
+        if self.members is not None:
+            for k in self.members:
+                result['members'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.admins = []
+        if m.get('admins') is not None:
+            for k in m.get('admins'):
+                temp_model = GetTeamMemberResponseBodyResultAdmins()
+                self.admins.append(temp_model.from_map(k))
+        self.depts = []
+        if m.get('depts') is not None:
+            for k in m.get('depts'):
+                temp_model = GetTeamMemberResponseBodyResultDepts()
+                self.depts.append(temp_model.from_map(k))
+        self.members = []
+        if m.get('members') is not None:
+            for k in m.get('members'):
+                temp_model = GetTeamMemberResponseBodyResultMembers()
+                self.members.append(temp_model.from_map(k))
+        return self
+
+
+class GetTeamMemberResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: GetTeamMemberResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = GetTeamMemberResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class GetTeamMemberResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetTeamMemberResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetTeamMemberResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -4580,6 +5665,39 @@ class ListServiceRecordRequest(TeaModel):
         return self
 
 
+class ListServiceRecordResponseBodyResultSceneInfo(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        name: str = None,
+    ):
+        self.code = code
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
 class ListServiceRecordResponseBodyResultTeam(TeaModel):
     def __init__(
         self,
@@ -4656,6 +5774,7 @@ class ListServiceRecordResponseBodyResult(TeaModel):
         out_biz_data: str = None,
         quality_inspection_score: int = None,
         record_id: str = None,
+        scene_info: ListServiceRecordResponseBodyResultSceneInfo = None,
         start_timestamp: int = None,
         team: ListServiceRecordResponseBodyResultTeam = None,
         user: ListServiceRecordResponseBodyResultUser = None,
@@ -4668,12 +5787,15 @@ class ListServiceRecordResponseBodyResult(TeaModel):
         self.out_biz_data = out_biz_data
         self.quality_inspection_score = quality_inspection_score
         self.record_id = record_id
+        self.scene_info = scene_info
         self.start_timestamp = start_timestamp
         self.team = team
         self.user = user
         self.valid = valid
 
     def validate(self):
+        if self.scene_info:
+            self.scene_info.validate()
         if self.team:
             self.team.validate()
         if self.user:
@@ -4699,6 +5821,8 @@ class ListServiceRecordResponseBodyResult(TeaModel):
             result['qualityInspectionScore'] = self.quality_inspection_score
         if self.record_id is not None:
             result['recordId'] = self.record_id
+        if self.scene_info is not None:
+            result['sceneInfo'] = self.scene_info.to_map()
         if self.start_timestamp is not None:
             result['startTimestamp'] = self.start_timestamp
         if self.team is not None:
@@ -4725,6 +5849,9 @@ class ListServiceRecordResponseBodyResult(TeaModel):
             self.quality_inspection_score = m.get('qualityInspectionScore')
         if m.get('recordId') is not None:
             self.record_id = m.get('recordId')
+        if m.get('sceneInfo') is not None:
+            temp_model = ListServiceRecordResponseBodyResultSceneInfo()
+            self.scene_info = temp_model.from_map(m['sceneInfo'])
         if m.get('startTimestamp') is not None:
             self.start_timestamp = m.get('startTimestamp')
         if m.get('team') is not None:
@@ -5344,6 +6471,230 @@ class ListTeamResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ListTeamResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ManageTeamMemberHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ManageTeamMemberRequestAddMembers(TeaModel):
+    def __init__(
+        self,
+        admin_user_ids: List[str] = None,
+        dept_ids: List[int] = None,
+        user_ids: List[str] = None,
+    ):
+        self.admin_user_ids = admin_user_ids
+        self.dept_ids = dept_ids
+        self.user_ids = user_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.admin_user_ids is not None:
+            result['adminUserIds'] = self.admin_user_ids
+        if self.dept_ids is not None:
+            result['deptIds'] = self.dept_ids
+        if self.user_ids is not None:
+            result['userIds'] = self.user_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('adminUserIds') is not None:
+            self.admin_user_ids = m.get('adminUserIds')
+        if m.get('deptIds') is not None:
+            self.dept_ids = m.get('deptIds')
+        if m.get('userIds') is not None:
+            self.user_ids = m.get('userIds')
+        return self
+
+
+class ManageTeamMemberRequestRemoveMembers(TeaModel):
+    def __init__(
+        self,
+        admin_user_ids: List[str] = None,
+        dept_ids: List[int] = None,
+        user_ids: List[str] = None,
+    ):
+        self.admin_user_ids = admin_user_ids
+        self.dept_ids = dept_ids
+        self.user_ids = user_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.admin_user_ids is not None:
+            result['adminUserIds'] = self.admin_user_ids
+        if self.dept_ids is not None:
+            result['deptIds'] = self.dept_ids
+        if self.user_ids is not None:
+            result['userIds'] = self.user_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('adminUserIds') is not None:
+            self.admin_user_ids = m.get('adminUserIds')
+        if m.get('deptIds') is not None:
+            self.dept_ids = m.get('deptIds')
+        if m.get('userIds') is not None:
+            self.user_ids = m.get('userIds')
+        return self
+
+
+class ManageTeamMemberRequest(TeaModel):
+    def __init__(
+        self,
+        add_members: ManageTeamMemberRequestAddMembers = None,
+        remove_members: ManageTeamMemberRequestRemoveMembers = None,
+        team_code: str = None,
+    ):
+        self.add_members = add_members
+        self.remove_members = remove_members
+        # This parameter is required.
+        self.team_code = team_code
+
+    def validate(self):
+        if self.add_members:
+            self.add_members.validate()
+        if self.remove_members:
+            self.remove_members.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.add_members is not None:
+            result['addMembers'] = self.add_members.to_map()
+        if self.remove_members is not None:
+            result['removeMembers'] = self.remove_members.to_map()
+        if self.team_code is not None:
+            result['teamCode'] = self.team_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('addMembers') is not None:
+            temp_model = ManageTeamMemberRequestAddMembers()
+            self.add_members = temp_model.from_map(m['addMembers'])
+        if m.get('removeMembers') is not None:
+            temp_model = ManageTeamMemberRequestRemoveMembers()
+            self.remove_members = temp_model.from_map(m['removeMembers'])
+        if m.get('teamCode') is not None:
+            self.team_code = m.get('teamCode')
+        return self
+
+
+class ManageTeamMemberResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class ManageTeamMemberResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ManageTeamMemberResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ManageTeamMemberResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -8254,6 +9605,153 @@ class UpdateRecordingScheduleResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UpdateRecordingScheduleResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateTeamHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateTeamRequest(TeaModel):
+    def __init__(
+        self,
+        dialect_code: str = None,
+        name: str = None,
+        scene_codes: List[str] = None,
+        team_code: str = None,
+    ):
+        self.dialect_code = dialect_code
+        self.name = name
+        self.scene_codes = scene_codes
+        # This parameter is required.
+        self.team_code = team_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dialect_code is not None:
+            result['dialectCode'] = self.dialect_code
+        if self.name is not None:
+            result['name'] = self.name
+        if self.scene_codes is not None:
+            result['sceneCodes'] = self.scene_codes
+        if self.team_code is not None:
+            result['teamCode'] = self.team_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dialectCode') is not None:
+            self.dialect_code = m.get('dialectCode')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('sceneCodes') is not None:
+            self.scene_codes = m.get('sceneCodes')
+        if m.get('teamCode') is not None:
+            self.team_code = m.get('teamCode')
+        return self
+
+
+class UpdateTeamResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class UpdateTeamResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdateTeamResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdateTeamResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

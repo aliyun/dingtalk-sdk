@@ -510,6 +510,144 @@ class Client(OpenApiClient):
         headers = dingtalkdvi__1__0_models.CreateRecordingScheduleHeaders()
         return await self.create_recording_schedule_with_options_async(request, headers, runtime)
 
+    def create_team_with_options(
+        self,
+        request: dingtalkdvi__1__0_models.CreateTeamRequest,
+        headers: dingtalkdvi__1__0_models.CreateTeamHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.CreateTeamResponse:
+        """
+        @summary 创建团队
+        
+        @param request: CreateTeamRequest
+        @param headers: CreateTeamHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateTeamResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.admin_user_ids):
+            body['adminUserIds'] = request.admin_user_ids
+        if not UtilClient.is_unset(request.dept_ids):
+            body['deptIds'] = request.dept_ids
+        if not UtilClient.is_unset(request.dialect_code):
+            body['dialectCode'] = request.dialect_code
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.scene_codes):
+            body['sceneCodes'] = request.scene_codes
+        if not UtilClient.is_unset(request.solution_code):
+            body['solutionCode'] = request.solution_code
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateTeam',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/teams',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.CreateTeamResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_team_with_options_async(
+        self,
+        request: dingtalkdvi__1__0_models.CreateTeamRequest,
+        headers: dingtalkdvi__1__0_models.CreateTeamHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.CreateTeamResponse:
+        """
+        @summary 创建团队
+        
+        @param request: CreateTeamRequest
+        @param headers: CreateTeamHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateTeamResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.admin_user_ids):
+            body['adminUserIds'] = request.admin_user_ids
+        if not UtilClient.is_unset(request.dept_ids):
+            body['deptIds'] = request.dept_ids
+        if not UtilClient.is_unset(request.dialect_code):
+            body['dialectCode'] = request.dialect_code
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.scene_codes):
+            body['sceneCodes'] = request.scene_codes
+        if not UtilClient.is_unset(request.solution_code):
+            body['solutionCode'] = request.solution_code
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateTeam',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/teams',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.CreateTeamResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_team(
+        self,
+        request: dingtalkdvi__1__0_models.CreateTeamRequest,
+    ) -> dingtalkdvi__1__0_models.CreateTeamResponse:
+        """
+        @summary 创建团队
+        
+        @param request: CreateTeamRequest
+        @return: CreateTeamResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.CreateTeamHeaders()
+        return self.create_team_with_options(request, headers, runtime)
+
+    async def create_team_async(
+        self,
+        request: dingtalkdvi__1__0_models.CreateTeamRequest,
+    ) -> dingtalkdvi__1__0_models.CreateTeamResponse:
+        """
+        @summary 创建团队
+        
+        @param request: CreateTeamRequest
+        @return: CreateTeamResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.CreateTeamHeaders()
+        return await self.create_team_with_options_async(request, headers, runtime)
+
     def delete_recording_schedule_with_options(
         self,
         task_id: str,
@@ -1866,6 +2004,298 @@ class Client(OpenApiClient):
         headers = dingtalkdvi__1__0_models.GetServiceRecordTranscriptHeaders()
         return await self.get_service_record_transcript_with_options_async(request, headers, runtime)
 
+    def get_solution_config_with_options(
+        self,
+        headers: dingtalkdvi__1__0_models.GetSolutionConfigHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.GetSolutionConfigResponse:
+        """
+        @summary 获取分析方案配置
+        
+        @param headers: GetSolutionConfigHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSolutionConfigResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetSolutionConfig',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/solutions/configurations',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.GetSolutionConfigResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_solution_config_with_options_async(
+        self,
+        headers: dingtalkdvi__1__0_models.GetSolutionConfigHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.GetSolutionConfigResponse:
+        """
+        @summary 获取分析方案配置
+        
+        @param headers: GetSolutionConfigHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSolutionConfigResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetSolutionConfig',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/solutions/configurations',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.GetSolutionConfigResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_solution_config(self) -> dingtalkdvi__1__0_models.GetSolutionConfigResponse:
+        """
+        @summary 获取分析方案配置
+        
+        @return: GetSolutionConfigResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.GetSolutionConfigHeaders()
+        return self.get_solution_config_with_options(headers, runtime)
+
+    async def get_solution_config_async(self) -> dingtalkdvi__1__0_models.GetSolutionConfigResponse:
+        """
+        @summary 获取分析方案配置
+        
+        @return: GetSolutionConfigResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.GetSolutionConfigHeaders()
+        return await self.get_solution_config_with_options_async(headers, runtime)
+
+    def get_team_with_options(
+        self,
+        team_code: str,
+        headers: dingtalkdvi__1__0_models.GetTeamHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.GetTeamResponse:
+        """
+        @summary 获取团队信息
+        
+        @param headers: GetTeamHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetTeamResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetTeam',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/teams/{team_code}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.GetTeamResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_team_with_options_async(
+        self,
+        team_code: str,
+        headers: dingtalkdvi__1__0_models.GetTeamHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.GetTeamResponse:
+        """
+        @summary 获取团队信息
+        
+        @param headers: GetTeamHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetTeamResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetTeam',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/teams/{team_code}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.GetTeamResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_team(
+        self,
+        team_code: str,
+    ) -> dingtalkdvi__1__0_models.GetTeamResponse:
+        """
+        @summary 获取团队信息
+        
+        @return: GetTeamResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.GetTeamHeaders()
+        return self.get_team_with_options(team_code, headers, runtime)
+
+    async def get_team_async(
+        self,
+        team_code: str,
+    ) -> dingtalkdvi__1__0_models.GetTeamResponse:
+        """
+        @summary 获取团队信息
+        
+        @return: GetTeamResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.GetTeamHeaders()
+        return await self.get_team_with_options_async(team_code, headers, runtime)
+
+    def get_team_member_with_options(
+        self,
+        team_code: str,
+        headers: dingtalkdvi__1__0_models.GetTeamMemberHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.GetTeamMemberResponse:
+        """
+        @summary 查询团队成员
+        
+        @param headers: GetTeamMemberHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetTeamMemberResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetTeamMember',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/teams/{team_code}/members',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.GetTeamMemberResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_team_member_with_options_async(
+        self,
+        team_code: str,
+        headers: dingtalkdvi__1__0_models.GetTeamMemberHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.GetTeamMemberResponse:
+        """
+        @summary 查询团队成员
+        
+        @param headers: GetTeamMemberHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetTeamMemberResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetTeamMember',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/teams/{team_code}/members',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.GetTeamMemberResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_team_member(
+        self,
+        team_code: str,
+    ) -> dingtalkdvi__1__0_models.GetTeamMemberResponse:
+        """
+        @summary 查询团队成员
+        
+        @return: GetTeamMemberResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.GetTeamMemberHeaders()
+        return self.get_team_member_with_options(team_code, headers, runtime)
+
+    async def get_team_member_async(
+        self,
+        team_code: str,
+    ) -> dingtalkdvi__1__0_models.GetTeamMemberResponse:
+        """
+        @summary 查询团队成员
+        
+        @return: GetTeamMemberResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.GetTeamMemberHeaders()
+        return await self.get_team_member_with_options_async(team_code, headers, runtime)
+
     def get_transcript_summary_with_options(
         self,
         request: dingtalkdvi__1__0_models.GetTranscriptSummaryRequest,
@@ -2755,6 +3185,128 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdvi__1__0_models.ListTeamHeaders()
         return await self.list_team_with_options_async(request, headers, runtime)
+
+    def manage_team_member_with_options(
+        self,
+        request: dingtalkdvi__1__0_models.ManageTeamMemberRequest,
+        headers: dingtalkdvi__1__0_models.ManageTeamMemberHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.ManageTeamMemberResponse:
+        """
+        @summary 团队成员管理
+        
+        @param request: ManageTeamMemberRequest
+        @param headers: ManageTeamMemberHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ManageTeamMemberResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.add_members):
+            body['addMembers'] = request.add_members
+        if not UtilClient.is_unset(request.remove_members):
+            body['removeMembers'] = request.remove_members
+        if not UtilClient.is_unset(request.team_code):
+            body['teamCode'] = request.team_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ManageTeamMember',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/teams/members',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.ManageTeamMemberResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def manage_team_member_with_options_async(
+        self,
+        request: dingtalkdvi__1__0_models.ManageTeamMemberRequest,
+        headers: dingtalkdvi__1__0_models.ManageTeamMemberHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.ManageTeamMemberResponse:
+        """
+        @summary 团队成员管理
+        
+        @param request: ManageTeamMemberRequest
+        @param headers: ManageTeamMemberHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ManageTeamMemberResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.add_members):
+            body['addMembers'] = request.add_members
+        if not UtilClient.is_unset(request.remove_members):
+            body['removeMembers'] = request.remove_members
+        if not UtilClient.is_unset(request.team_code):
+            body['teamCode'] = request.team_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ManageTeamMember',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/teams/members',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.ManageTeamMemberResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def manage_team_member(
+        self,
+        request: dingtalkdvi__1__0_models.ManageTeamMemberRequest,
+    ) -> dingtalkdvi__1__0_models.ManageTeamMemberResponse:
+        """
+        @summary 团队成员管理
+        
+        @param request: ManageTeamMemberRequest
+        @return: ManageTeamMemberResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.ManageTeamMemberHeaders()
+        return self.manage_team_member_with_options(request, headers, runtime)
+
+    async def manage_team_member_async(
+        self,
+        request: dingtalkdvi__1__0_models.ManageTeamMemberRequest,
+    ) -> dingtalkdvi__1__0_models.ManageTeamMemberResponse:
+        """
+        @summary 团队成员管理
+        
+        @param request: ManageTeamMemberRequest
+        @return: ManageTeamMemberResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.ManageTeamMemberHeaders()
+        return await self.manage_team_member_with_options_async(request, headers, runtime)
 
     def query_asr_task_with_options(
         self,
@@ -4259,6 +4811,132 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdvi__1__0_models.UpdateRecordingScheduleHeaders()
         return await self.update_recording_schedule_with_options_async(request, headers, runtime)
+
+    def update_team_with_options(
+        self,
+        request: dingtalkdvi__1__0_models.UpdateTeamRequest,
+        headers: dingtalkdvi__1__0_models.UpdateTeamHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.UpdateTeamResponse:
+        """
+        @summary 修改团队
+        
+        @param request: UpdateTeamRequest
+        @param headers: UpdateTeamHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateTeamResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.dialect_code):
+            body['dialectCode'] = request.dialect_code
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.scene_codes):
+            body['sceneCodes'] = request.scene_codes
+        if not UtilClient.is_unset(request.team_code):
+            body['teamCode'] = request.team_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateTeam',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/teams',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.UpdateTeamResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_team_with_options_async(
+        self,
+        request: dingtalkdvi__1__0_models.UpdateTeamRequest,
+        headers: dingtalkdvi__1__0_models.UpdateTeamHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.UpdateTeamResponse:
+        """
+        @summary 修改团队
+        
+        @param request: UpdateTeamRequest
+        @param headers: UpdateTeamHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateTeamResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.dialect_code):
+            body['dialectCode'] = request.dialect_code
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.scene_codes):
+            body['sceneCodes'] = request.scene_codes
+        if not UtilClient.is_unset(request.team_code):
+            body['teamCode'] = request.team_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateTeam',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/teams',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.UpdateTeamResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_team(
+        self,
+        request: dingtalkdvi__1__0_models.UpdateTeamRequest,
+    ) -> dingtalkdvi__1__0_models.UpdateTeamResponse:
+        """
+        @summary 修改团队
+        
+        @param request: UpdateTeamRequest
+        @return: UpdateTeamResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.UpdateTeamHeaders()
+        return self.update_team_with_options(request, headers, runtime)
+
+    async def update_team_async(
+        self,
+        request: dingtalkdvi__1__0_models.UpdateTeamRequest,
+    ) -> dingtalkdvi__1__0_models.UpdateTeamResponse:
+        """
+        @summary 修改团队
+        
+        @param request: UpdateTeamRequest
+        @return: UpdateTeamResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.UpdateTeamHeaders()
+        return await self.update_team_with_options_async(request, headers, runtime)
 
     def video_customer_split_with_options(
         self,

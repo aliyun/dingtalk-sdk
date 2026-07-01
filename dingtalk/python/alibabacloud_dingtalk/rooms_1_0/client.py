@@ -2262,6 +2262,124 @@ class Client(OpenApiClient):
         headers = dingtalkrooms__1__0_models.QueryMeetingRoomGroupHeaders()
         return await self.query_meeting_room_group_with_options_async(group_id, request, headers, runtime)
 
+    def query_meeting_room_group_admin_with_options(
+        self,
+        group_id: str,
+        request: dingtalkrooms__1__0_models.QueryMeetingRoomGroupAdminRequest,
+        headers: dingtalkrooms__1__0_models.QueryMeetingRoomGroupAdminHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrooms__1__0_models.QueryMeetingRoomGroupAdminResponse:
+        """
+        @summary 获取分组管理员信息
+        
+        @param request: QueryMeetingRoomGroupAdminRequest
+        @param headers: QueryMeetingRoomGroupAdminHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryMeetingRoomGroupAdminResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryMeetingRoomGroupAdmin',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/groupAdmin/{group_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkrooms__1__0_models.QueryMeetingRoomGroupAdminResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_meeting_room_group_admin_with_options_async(
+        self,
+        group_id: str,
+        request: dingtalkrooms__1__0_models.QueryMeetingRoomGroupAdminRequest,
+        headers: dingtalkrooms__1__0_models.QueryMeetingRoomGroupAdminHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrooms__1__0_models.QueryMeetingRoomGroupAdminResponse:
+        """
+        @summary 获取分组管理员信息
+        
+        @param request: QueryMeetingRoomGroupAdminRequest
+        @param headers: QueryMeetingRoomGroupAdminHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryMeetingRoomGroupAdminResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryMeetingRoomGroupAdmin',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/groupAdmin/{group_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkrooms__1__0_models.QueryMeetingRoomGroupAdminResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_meeting_room_group_admin(
+        self,
+        group_id: str,
+        request: dingtalkrooms__1__0_models.QueryMeetingRoomGroupAdminRequest,
+    ) -> dingtalkrooms__1__0_models.QueryMeetingRoomGroupAdminResponse:
+        """
+        @summary 获取分组管理员信息
+        
+        @param request: QueryMeetingRoomGroupAdminRequest
+        @return: QueryMeetingRoomGroupAdminResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrooms__1__0_models.QueryMeetingRoomGroupAdminHeaders()
+        return self.query_meeting_room_group_admin_with_options(group_id, request, headers, runtime)
+
+    async def query_meeting_room_group_admin_async(
+        self,
+        group_id: str,
+        request: dingtalkrooms__1__0_models.QueryMeetingRoomGroupAdminRequest,
+    ) -> dingtalkrooms__1__0_models.QueryMeetingRoomGroupAdminResponse:
+        """
+        @summary 获取分组管理员信息
+        
+        @param request: QueryMeetingRoomGroupAdminRequest
+        @return: QueryMeetingRoomGroupAdminResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrooms__1__0_models.QueryMeetingRoomGroupAdminHeaders()
+        return await self.query_meeting_room_group_admin_with_options_async(group_id, request, headers, runtime)
+
     def query_meeting_room_group_list_with_options(
         self,
         request: dingtalkrooms__1__0_models.QueryMeetingRoomGroupListRequest,

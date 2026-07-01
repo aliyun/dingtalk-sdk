@@ -4149,6 +4149,216 @@ class QueryMeetingRoomGroupResponse(TeaModel):
         return self
 
 
+class QueryMeetingRoomGroupAdminHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryMeetingRoomGroupAdminRequest(TeaModel):
+    def __init__(
+        self,
+        union_id: str = None,
+    ):
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class QueryMeetingRoomGroupAdminResponseBodyResultGroupAdmins(TeaModel):
+    def __init__(
+        self,
+        member_id: str = None,
+        member_name: str = None,
+    ):
+        self.member_id = member_id
+        self.member_name = member_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.member_id is not None:
+            result['memberId'] = self.member_id
+        if self.member_name is not None:
+            result['memberName'] = self.member_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('memberId') is not None:
+            self.member_id = m.get('memberId')
+        if m.get('memberName') is not None:
+            self.member_name = m.get('memberName')
+        return self
+
+
+class QueryMeetingRoomGroupAdminResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        group_admins: List[QueryMeetingRoomGroupAdminResponseBodyResultGroupAdmins] = None,
+        group_id: int = None,
+        group_name: str = None,
+    ):
+        self.group_admins = group_admins
+        self.group_id = group_id
+        self.group_name = group_name
+
+    def validate(self):
+        if self.group_admins:
+            for k in self.group_admins:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['groupAdmins'] = []
+        if self.group_admins is not None:
+            for k in self.group_admins:
+                result['groupAdmins'].append(k.to_map() if k else None)
+        if self.group_id is not None:
+            result['groupId'] = self.group_id
+        if self.group_name is not None:
+            result['groupName'] = self.group_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.group_admins = []
+        if m.get('groupAdmins') is not None:
+            for k in m.get('groupAdmins'):
+                temp_model = QueryMeetingRoomGroupAdminResponseBodyResultGroupAdmins()
+                self.group_admins.append(temp_model.from_map(k))
+        if m.get('groupId') is not None:
+            self.group_id = m.get('groupId')
+        if m.get('groupName') is not None:
+            self.group_name = m.get('groupName')
+        return self
+
+
+class QueryMeetingRoomGroupAdminResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: QueryMeetingRoomGroupAdminResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = QueryMeetingRoomGroupAdminResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class QueryMeetingRoomGroupAdminResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryMeetingRoomGroupAdminResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryMeetingRoomGroupAdminResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryMeetingRoomGroupListHeaders(TeaModel):
     def __init__(
         self,

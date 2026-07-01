@@ -21068,8 +21068,10 @@ class SetRightPanelHeaders(TeaModel):
 class SetRightPanelRequestWebWndParams(TeaModel):
     def __init__(
         self,
+        close_tip_content: str = None,
         target_url: str = None,
     ):
+        self.close_tip_content = close_tip_content
         # This parameter is required.
         self.target_url = target_url
 
@@ -21082,12 +21084,16 @@ class SetRightPanelRequestWebWndParams(TeaModel):
             return _map
 
         result = dict()
+        if self.close_tip_content is not None:
+            result['closeTipContent'] = self.close_tip_content
         if self.target_url is not None:
             result['targetURL'] = self.target_url
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('closeTipContent') is not None:
+            self.close_tip_content = m.get('closeTipContent')
         if m.get('targetURL') is not None:
             self.target_url = m.get('targetURL')
         return self

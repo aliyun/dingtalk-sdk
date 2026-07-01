@@ -26,6 +26,136 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def a_tmdevice_work_notify_with_options(
+        self,
+        request: dingtalksmart_device__1__0_models.ATMDeviceWorkNotifyRequest,
+        headers: dingtalksmart_device__1__0_models.ATMDeviceWorkNotifyHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalksmart_device__1__0_models.ATMDeviceWorkNotifyResponse:
+        """
+        @summary 发送考勤机工作台消息
+        
+        @param request: ATMDeviceWorkNotifyRequest
+        @param headers: ATMDeviceWorkNotifyHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ATMDeviceWorkNotifyResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.creator_corp_id):
+            body['creatorCorpId'] = request.creator_corp_id
+        if not UtilClient.is_unset(request.creator_union_id):
+            body['creatorUnionId'] = request.creator_union_id
+        if not UtilClient.is_unset(request.notify_type):
+            body['notifyType'] = request.notify_type
+        if not UtilClient.is_unset(request.param_content):
+            body['paramContent'] = request.param_content
+        if not UtilClient.is_unset(request.target_url):
+            body['targetUrl'] = request.target_url
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ATMDeviceWorkNotify',
+            version='smartDevice_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/smartDevice/atm/notify',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalksmart_device__1__0_models.ATMDeviceWorkNotifyResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def a_tmdevice_work_notify_with_options_async(
+        self,
+        request: dingtalksmart_device__1__0_models.ATMDeviceWorkNotifyRequest,
+        headers: dingtalksmart_device__1__0_models.ATMDeviceWorkNotifyHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalksmart_device__1__0_models.ATMDeviceWorkNotifyResponse:
+        """
+        @summary 发送考勤机工作台消息
+        
+        @param request: ATMDeviceWorkNotifyRequest
+        @param headers: ATMDeviceWorkNotifyHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ATMDeviceWorkNotifyResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.creator_corp_id):
+            body['creatorCorpId'] = request.creator_corp_id
+        if not UtilClient.is_unset(request.creator_union_id):
+            body['creatorUnionId'] = request.creator_union_id
+        if not UtilClient.is_unset(request.notify_type):
+            body['notifyType'] = request.notify_type
+        if not UtilClient.is_unset(request.param_content):
+            body['paramContent'] = request.param_content
+        if not UtilClient.is_unset(request.target_url):
+            body['targetUrl'] = request.target_url
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ATMDeviceWorkNotify',
+            version='smartDevice_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/smartDevice/atm/notify',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalksmart_device__1__0_models.ATMDeviceWorkNotifyResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def a_tmdevice_work_notify(
+        self,
+        request: dingtalksmart_device__1__0_models.ATMDeviceWorkNotifyRequest,
+    ) -> dingtalksmart_device__1__0_models.ATMDeviceWorkNotifyResponse:
+        """
+        @summary 发送考勤机工作台消息
+        
+        @param request: ATMDeviceWorkNotifyRequest
+        @return: ATMDeviceWorkNotifyResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalksmart_device__1__0_models.ATMDeviceWorkNotifyHeaders()
+        return self.a_tmdevice_work_notify_with_options(request, headers, runtime)
+
+    async def a_tmdevice_work_notify_async(
+        self,
+        request: dingtalksmart_device__1__0_models.ATMDeviceWorkNotifyRequest,
+    ) -> dingtalksmart_device__1__0_models.ATMDeviceWorkNotifyResponse:
+        """
+        @summary 发送考勤机工作台消息
+        
+        @param request: ATMDeviceWorkNotifyRequest
+        @return: ATMDeviceWorkNotifyResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalksmart_device__1__0_models.ATMDeviceWorkNotifyHeaders()
+        return await self.a_tmdevice_work_notify_with_options_async(request, headers, runtime)
+
     def add_device_video_conference_members_with_options(
         self,
         device_id: str,

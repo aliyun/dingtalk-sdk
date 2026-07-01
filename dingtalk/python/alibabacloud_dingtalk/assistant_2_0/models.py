@@ -1001,19 +1001,23 @@ class PageListAICreditsUsageResponseBodyDataList(TeaModel):
         ability_name: str = None,
         ai_credits_used_num: float = None,
         biz_id: str = None,
+        dept_name: str = None,
         is_time_free: bool = None,
         scenario_name: str = None,
         task_name: str = None,
         usage_time: str = None,
+        user_id: str = None,
         user_name: str = None,
     ):
         self.ability_name = ability_name
         self.ai_credits_used_num = ai_credits_used_num
         self.biz_id = biz_id
+        self.dept_name = dept_name
         self.is_time_free = is_time_free
         self.scenario_name = scenario_name
         self.task_name = task_name
         self.usage_time = usage_time
+        self.user_id = user_id
         self.user_name = user_name
 
     def validate(self):
@@ -1031,6 +1035,8 @@ class PageListAICreditsUsageResponseBodyDataList(TeaModel):
             result['aiCreditsUsedNum'] = self.ai_credits_used_num
         if self.biz_id is not None:
             result['bizId'] = self.biz_id
+        if self.dept_name is not None:
+            result['deptName'] = self.dept_name
         if self.is_time_free is not None:
             result['isTimeFree'] = self.is_time_free
         if self.scenario_name is not None:
@@ -1039,6 +1045,8 @@ class PageListAICreditsUsageResponseBodyDataList(TeaModel):
             result['taskName'] = self.task_name
         if self.usage_time is not None:
             result['usageTime'] = self.usage_time
+        if self.user_id is not None:
+            result['userId'] = self.user_id
         if self.user_name is not None:
             result['userName'] = self.user_name
         return result
@@ -1051,6 +1059,8 @@ class PageListAICreditsUsageResponseBodyDataList(TeaModel):
             self.ai_credits_used_num = m.get('aiCreditsUsedNum')
         if m.get('bizId') is not None:
             self.biz_id = m.get('bizId')
+        if m.get('deptName') is not None:
+            self.dept_name = m.get('deptName')
         if m.get('isTimeFree') is not None:
             self.is_time_free = m.get('isTimeFree')
         if m.get('scenarioName') is not None:
@@ -1059,6 +1069,8 @@ class PageListAICreditsUsageResponseBodyDataList(TeaModel):
             self.task_name = m.get('taskName')
         if m.get('usageTime') is not None:
             self.usage_time = m.get('usageTime')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
         if m.get('userName') is not None:
             self.user_name = m.get('userName')
         return self
