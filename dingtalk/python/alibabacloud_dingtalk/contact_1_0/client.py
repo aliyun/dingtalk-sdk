@@ -2002,6 +2002,128 @@ class Client(OpenApiClient):
         headers = dingtalkcontact__1__0_models.CreateSecondaryManagementGroupHeaders()
         return await self.create_secondary_management_group_with_options_async(request, headers, runtime)
 
+    def create_user_group_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.CreateUserGroupRequest,
+        headers: dingtalkcontact__1__0_models.CreateUserGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.CreateUserGroupResponse:
+        """
+        @summary 创建用户组
+        
+        @param request: CreateUserGroupRequest
+        @param headers: CreateUserGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateUserGroupResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.client_show):
+            query['clientShow'] = request.client_show
+        if not UtilClient.is_unset(request.description):
+            query['description'] = request.description
+        if not UtilClient.is_unset(request.name):
+            query['name'] = request.name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='CreateUserGroup',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/userGroups/create',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.CreateUserGroupResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_user_group_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.CreateUserGroupRequest,
+        headers: dingtalkcontact__1__0_models.CreateUserGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.CreateUserGroupResponse:
+        """
+        @summary 创建用户组
+        
+        @param request: CreateUserGroupRequest
+        @param headers: CreateUserGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateUserGroupResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.client_show):
+            query['clientShow'] = request.client_show
+        if not UtilClient.is_unset(request.description):
+            query['description'] = request.description
+        if not UtilClient.is_unset(request.name):
+            query['name'] = request.name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='CreateUserGroup',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/userGroups/create',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.CreateUserGroupResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_user_group(
+        self,
+        request: dingtalkcontact__1__0_models.CreateUserGroupRequest,
+    ) -> dingtalkcontact__1__0_models.CreateUserGroupResponse:
+        """
+        @summary 创建用户组
+        
+        @param request: CreateUserGroupRequest
+        @return: CreateUserGroupResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.CreateUserGroupHeaders()
+        return self.create_user_group_with_options(request, headers, runtime)
+
+    async def create_user_group_async(
+        self,
+        request: dingtalkcontact__1__0_models.CreateUserGroupRequest,
+    ) -> dingtalkcontact__1__0_models.CreateUserGroupResponse:
+        """
+        @summary 创建用户组
+        
+        @param request: CreateUserGroupRequest
+        @return: CreateUserGroupResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.CreateUserGroupHeaders()
+        return await self.create_user_group_with_options_async(request, headers, runtime)
+
     def del_account_mapping_with_options(
         self,
         request: dingtalkcontact__1__0_models.DelAccountMappingRequest,
@@ -2841,6 +2963,120 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcontact__1__0_models.DeleteManagementGroupHeaders()
         return await self.delete_management_group_with_options_async(group_id, headers, runtime)
+
+    def delete_user_group_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.DeleteUserGroupRequest,
+        headers: dingtalkcontact__1__0_models.DeleteUserGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.DeleteUserGroupResponse:
+        """
+        @summary 删除静态用户组
+        
+        @param request: DeleteUserGroupRequest
+        @param headers: DeleteUserGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteUserGroupResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.group_code):
+            query['groupCode'] = request.group_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DeleteUserGroup',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/userGroups/delete',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.DeleteUserGroupResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def delete_user_group_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.DeleteUserGroupRequest,
+        headers: dingtalkcontact__1__0_models.DeleteUserGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.DeleteUserGroupResponse:
+        """
+        @summary 删除静态用户组
+        
+        @param request: DeleteUserGroupRequest
+        @param headers: DeleteUserGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteUserGroupResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.group_code):
+            query['groupCode'] = request.group_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DeleteUserGroup',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/userGroups/delete',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.DeleteUserGroupResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def delete_user_group(
+        self,
+        request: dingtalkcontact__1__0_models.DeleteUserGroupRequest,
+    ) -> dingtalkcontact__1__0_models.DeleteUserGroupResponse:
+        """
+        @summary 删除静态用户组
+        
+        @param request: DeleteUserGroupRequest
+        @return: DeleteUserGroupResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.DeleteUserGroupHeaders()
+        return self.delete_user_group_with_options(request, headers, runtime)
+
+    async def delete_user_group_async(
+        self,
+        request: dingtalkcontact__1__0_models.DeleteUserGroupRequest,
+    ) -> dingtalkcontact__1__0_models.DeleteUserGroupResponse:
+        """
+        @summary 删除静态用户组
+        
+        @param request: DeleteUserGroupRequest
+        @return: DeleteUserGroupResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.DeleteUserGroupHeaders()
+        return await self.delete_user_group_with_options_async(request, headers, runtime)
 
     def get_account_mapping_with_options(
         self,

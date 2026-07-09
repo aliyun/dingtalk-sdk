@@ -1910,6 +1910,140 @@ class Client(OpenApiClient):
         headers = dingtalkcontract__1__0_models.CreateContractReviewTaskHeaders()
         return await self.create_contract_review_task_with_options_async(request, headers, runtime)
 
+    def create_sign_flow_with_options(
+        self,
+        request: dingtalkcontract__1__0_models.CreateSignFlowRequest,
+        headers: dingtalkcontract__1__0_models.CreateSignFlowHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.CreateSignFlowResponse:
+        """
+        @summary 创建签署流程
+        
+        @param request: CreateSignFlowRequest
+        @param headers: CreateSignFlowHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateSignFlowResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_flow_id):
+            body['bizFlowId'] = request.biz_flow_id
+        if not UtilClient.is_unset(request.request_id):
+            body['requestId'] = request.request_id
+        if not UtilClient.is_unset(request.sign_docs):
+            body['signDocs'] = request.sign_docs
+        if not UtilClient.is_unset(request.sign_flow_config):
+            body['signFlowConfig'] = request.sign_flow_config
+        if not UtilClient.is_unset(request.sign_flow_initiator):
+            body['signFlowInitiator'] = request.sign_flow_initiator
+        if not UtilClient.is_unset(request.signers):
+            body['signers'] = request.signers
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateSignFlow',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/dingEsign/signFlow',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.CreateSignFlowResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_sign_flow_with_options_async(
+        self,
+        request: dingtalkcontract__1__0_models.CreateSignFlowRequest,
+        headers: dingtalkcontract__1__0_models.CreateSignFlowHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.CreateSignFlowResponse:
+        """
+        @summary 创建签署流程
+        
+        @param request: CreateSignFlowRequest
+        @param headers: CreateSignFlowHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateSignFlowResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_flow_id):
+            body['bizFlowId'] = request.biz_flow_id
+        if not UtilClient.is_unset(request.request_id):
+            body['requestId'] = request.request_id
+        if not UtilClient.is_unset(request.sign_docs):
+            body['signDocs'] = request.sign_docs
+        if not UtilClient.is_unset(request.sign_flow_config):
+            body['signFlowConfig'] = request.sign_flow_config
+        if not UtilClient.is_unset(request.sign_flow_initiator):
+            body['signFlowInitiator'] = request.sign_flow_initiator
+        if not UtilClient.is_unset(request.signers):
+            body['signers'] = request.signers
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateSignFlow',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/dingEsign/signFlow',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.CreateSignFlowResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_sign_flow(
+        self,
+        request: dingtalkcontract__1__0_models.CreateSignFlowRequest,
+    ) -> dingtalkcontract__1__0_models.CreateSignFlowResponse:
+        """
+        @summary 创建签署流程
+        
+        @param request: CreateSignFlowRequest
+        @return: CreateSignFlowResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.CreateSignFlowHeaders()
+        return self.create_sign_flow_with_options(request, headers, runtime)
+
+    async def create_sign_flow_async(
+        self,
+        request: dingtalkcontract__1__0_models.CreateSignFlowRequest,
+    ) -> dingtalkcontract__1__0_models.CreateSignFlowResponse:
+        """
+        @summary 创建签署流程
+        
+        @param request: CreateSignFlowRequest
+        @return: CreateSignFlowResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.CreateSignFlowHeaders()
+        return await self.create_sign_flow_with_options_async(request, headers, runtime)
+
     def esign_query_approval_info_with_options(
         self,
         request: dingtalkcontract__1__0_models.EsignQueryApprovalInfoRequest,
@@ -3240,6 +3374,132 @@ class Client(OpenApiClient):
         headers = dingtalkcontract__1__0_models.GetContractSubjectRiskResultHeaders()
         return await self.get_contract_subject_risk_result_with_options_async(request, headers, runtime)
 
+    def get_file_download_url_with_options(
+        self,
+        request: dingtalkcontract__1__0_models.GetFileDownloadUrlRequest,
+        headers: dingtalkcontract__1__0_models.GetFileDownloadUrlHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.GetFileDownloadUrlResponse:
+        """
+        @summary 获取流程文件下载地址
+        
+        @param request: GetFileDownloadUrlRequest
+        @param headers: GetFileDownloadUrlHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFileDownloadUrlResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_flow_id):
+            body['bizFlowId'] = request.biz_flow_id
+        if not UtilClient.is_unset(request.file_id):
+            body['fileId'] = request.file_id
+        if not UtilClient.is_unset(request.request_id):
+            body['requestId'] = request.request_id
+        if not UtilClient.is_unset(request.sign_flow_id):
+            body['signFlowId'] = request.sign_flow_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetFileDownloadUrl',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/dingEsign/signFlow/files/downloadUrls',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.GetFileDownloadUrlResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_file_download_url_with_options_async(
+        self,
+        request: dingtalkcontract__1__0_models.GetFileDownloadUrlRequest,
+        headers: dingtalkcontract__1__0_models.GetFileDownloadUrlHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.GetFileDownloadUrlResponse:
+        """
+        @summary 获取流程文件下载地址
+        
+        @param request: GetFileDownloadUrlRequest
+        @param headers: GetFileDownloadUrlHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFileDownloadUrlResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_flow_id):
+            body['bizFlowId'] = request.biz_flow_id
+        if not UtilClient.is_unset(request.file_id):
+            body['fileId'] = request.file_id
+        if not UtilClient.is_unset(request.request_id):
+            body['requestId'] = request.request_id
+        if not UtilClient.is_unset(request.sign_flow_id):
+            body['signFlowId'] = request.sign_flow_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetFileDownloadUrl',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/dingEsign/signFlow/files/downloadUrls',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.GetFileDownloadUrlResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_file_download_url(
+        self,
+        request: dingtalkcontract__1__0_models.GetFileDownloadUrlRequest,
+    ) -> dingtalkcontract__1__0_models.GetFileDownloadUrlResponse:
+        """
+        @summary 获取流程文件下载地址
+        
+        @param request: GetFileDownloadUrlRequest
+        @return: GetFileDownloadUrlResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.GetFileDownloadUrlHeaders()
+        return self.get_file_download_url_with_options(request, headers, runtime)
+
+    async def get_file_download_url_async(
+        self,
+        request: dingtalkcontract__1__0_models.GetFileDownloadUrlRequest,
+    ) -> dingtalkcontract__1__0_models.GetFileDownloadUrlResponse:
+        """
+        @summary 获取流程文件下载地址
+        
+        @param request: GetFileDownloadUrlRequest
+        @return: GetFileDownloadUrlResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.GetFileDownloadUrlHeaders()
+        return await self.get_file_download_url_with_options_async(request, headers, runtime)
+
     def open_esign_free_trail_with_options(
         self,
         request: dingtalkcontract__1__0_models.OpenEsignFreeTrailRequest,
@@ -4439,6 +4699,392 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcontract__1__0_models.QueryContractSignInfoHeaders()
         return await self.query_contract_sign_info_with_options_async(request, headers, runtime)
+
+    def query_sign_flow_detail_with_options(
+        self,
+        request: dingtalkcontract__1__0_models.QuerySignFlowDetailRequest,
+        headers: dingtalkcontract__1__0_models.QuerySignFlowDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.QuerySignFlowDetailResponse:
+        """
+        @summary 查询签署流程详情
+        
+        @param request: QuerySignFlowDetailRequest
+        @param headers: QuerySignFlowDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QuerySignFlowDetailResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_flow_id):
+            body['bizFlowId'] = request.biz_flow_id
+        if not UtilClient.is_unset(request.request_id):
+            body['requestId'] = request.request_id
+        if not UtilClient.is_unset(request.sign_flow_id):
+            body['signFlowId'] = request.sign_flow_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QuerySignFlowDetail',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/dingEsign/signFlow/detail',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.QuerySignFlowDetailResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_sign_flow_detail_with_options_async(
+        self,
+        request: dingtalkcontract__1__0_models.QuerySignFlowDetailRequest,
+        headers: dingtalkcontract__1__0_models.QuerySignFlowDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.QuerySignFlowDetailResponse:
+        """
+        @summary 查询签署流程详情
+        
+        @param request: QuerySignFlowDetailRequest
+        @param headers: QuerySignFlowDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QuerySignFlowDetailResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_flow_id):
+            body['bizFlowId'] = request.biz_flow_id
+        if not UtilClient.is_unset(request.request_id):
+            body['requestId'] = request.request_id
+        if not UtilClient.is_unset(request.sign_flow_id):
+            body['signFlowId'] = request.sign_flow_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QuerySignFlowDetail',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/dingEsign/signFlow/detail',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.QuerySignFlowDetailResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_sign_flow_detail(
+        self,
+        request: dingtalkcontract__1__0_models.QuerySignFlowDetailRequest,
+    ) -> dingtalkcontract__1__0_models.QuerySignFlowDetailResponse:
+        """
+        @summary 查询签署流程详情
+        
+        @param request: QuerySignFlowDetailRequest
+        @return: QuerySignFlowDetailResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.QuerySignFlowDetailHeaders()
+        return self.query_sign_flow_detail_with_options(request, headers, runtime)
+
+    async def query_sign_flow_detail_async(
+        self,
+        request: dingtalkcontract__1__0_models.QuerySignFlowDetailRequest,
+    ) -> dingtalkcontract__1__0_models.QuerySignFlowDetailResponse:
+        """
+        @summary 查询签署流程详情
+        
+        @param request: QuerySignFlowDetailRequest
+        @return: QuerySignFlowDetailResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.QuerySignFlowDetailHeaders()
+        return await self.query_sign_flow_detail_with_options_async(request, headers, runtime)
+
+    def query_sign_task_with_options(
+        self,
+        request: dingtalkcontract__1__0_models.QuerySignTaskRequest,
+        headers: dingtalkcontract__1__0_models.QuerySignTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.QuerySignTaskResponse:
+        """
+        @summary 查询签署任务
+        
+        @param request: QuerySignTaskRequest
+        @param headers: QuerySignTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QuerySignTaskResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_flow_id):
+            body['bizFlowId'] = request.biz_flow_id
+        if not UtilClient.is_unset(request.request_id):
+            body['requestId'] = request.request_id
+        if not UtilClient.is_unset(request.sign_flow_id):
+            body['signFlowId'] = request.sign_flow_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QuerySignTask',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/dingEsign/signTask/detail',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.QuerySignTaskResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_sign_task_with_options_async(
+        self,
+        request: dingtalkcontract__1__0_models.QuerySignTaskRequest,
+        headers: dingtalkcontract__1__0_models.QuerySignTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.QuerySignTaskResponse:
+        """
+        @summary 查询签署任务
+        
+        @param request: QuerySignTaskRequest
+        @param headers: QuerySignTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QuerySignTaskResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_flow_id):
+            body['bizFlowId'] = request.biz_flow_id
+        if not UtilClient.is_unset(request.request_id):
+            body['requestId'] = request.request_id
+        if not UtilClient.is_unset(request.sign_flow_id):
+            body['signFlowId'] = request.sign_flow_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QuerySignTask',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/dingEsign/signTask/detail',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.QuerySignTaskResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_sign_task(
+        self,
+        request: dingtalkcontract__1__0_models.QuerySignTaskRequest,
+    ) -> dingtalkcontract__1__0_models.QuerySignTaskResponse:
+        """
+        @summary 查询签署任务
+        
+        @param request: QuerySignTaskRequest
+        @return: QuerySignTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.QuerySignTaskHeaders()
+        return self.query_sign_task_with_options(request, headers, runtime)
+
+    async def query_sign_task_async(
+        self,
+        request: dingtalkcontract__1__0_models.QuerySignTaskRequest,
+    ) -> dingtalkcontract__1__0_models.QuerySignTaskResponse:
+        """
+        @summary 查询签署任务
+        
+        @param request: QuerySignTaskRequest
+        @return: QuerySignTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.QuerySignTaskHeaders()
+        return await self.query_sign_task_with_options_async(request, headers, runtime)
+
+    def search_file_keyword_positions_with_options(
+        self,
+        request: dingtalkcontract__1__0_models.SearchFileKeywordPositionsRequest,
+        headers: dingtalkcontract__1__0_models.SearchFileKeywordPositionsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.SearchFileKeywordPositionsResponse:
+        """
+        @summary 查询文件关键字位置
+        
+        @param request: SearchFileKeywordPositionsRequest
+        @param headers: SearchFileKeywordPositionsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SearchFileKeywordPositionsResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.file_id):
+            body['fileId'] = request.file_id
+        if not UtilClient.is_unset(request.file_name):
+            body['fileName'] = request.file_name
+        if not UtilClient.is_unset(request.file_size):
+            body['fileSize'] = request.file_size
+        if not UtilClient.is_unset(request.file_type):
+            body['fileType'] = request.file_type
+        if not UtilClient.is_unset(request.keyword):
+            body['keyword'] = request.keyword
+        if not UtilClient.is_unset(request.request_id):
+            body['requestId'] = request.request_id
+        if not UtilClient.is_unset(request.space_id):
+            body['spaceId'] = request.space_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SearchFileKeywordPositions',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/dingEsign/files/keywordPositions',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.SearchFileKeywordPositionsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def search_file_keyword_positions_with_options_async(
+        self,
+        request: dingtalkcontract__1__0_models.SearchFileKeywordPositionsRequest,
+        headers: dingtalkcontract__1__0_models.SearchFileKeywordPositionsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.SearchFileKeywordPositionsResponse:
+        """
+        @summary 查询文件关键字位置
+        
+        @param request: SearchFileKeywordPositionsRequest
+        @param headers: SearchFileKeywordPositionsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SearchFileKeywordPositionsResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.file_id):
+            body['fileId'] = request.file_id
+        if not UtilClient.is_unset(request.file_name):
+            body['fileName'] = request.file_name
+        if not UtilClient.is_unset(request.file_size):
+            body['fileSize'] = request.file_size
+        if not UtilClient.is_unset(request.file_type):
+            body['fileType'] = request.file_type
+        if not UtilClient.is_unset(request.keyword):
+            body['keyword'] = request.keyword
+        if not UtilClient.is_unset(request.request_id):
+            body['requestId'] = request.request_id
+        if not UtilClient.is_unset(request.space_id):
+            body['spaceId'] = request.space_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SearchFileKeywordPositions',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/dingEsign/files/keywordPositions',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.SearchFileKeywordPositionsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def search_file_keyword_positions(
+        self,
+        request: dingtalkcontract__1__0_models.SearchFileKeywordPositionsRequest,
+    ) -> dingtalkcontract__1__0_models.SearchFileKeywordPositionsResponse:
+        """
+        @summary 查询文件关键字位置
+        
+        @param request: SearchFileKeywordPositionsRequest
+        @return: SearchFileKeywordPositionsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.SearchFileKeywordPositionsHeaders()
+        return self.search_file_keyword_positions_with_options(request, headers, runtime)
+
+    async def search_file_keyword_positions_async(
+        self,
+        request: dingtalkcontract__1__0_models.SearchFileKeywordPositionsRequest,
+    ) -> dingtalkcontract__1__0_models.SearchFileKeywordPositionsResponse:
+        """
+        @summary 查询文件关键字位置
+        
+        @param request: SearchFileKeywordPositionsRequest
+        @return: SearchFileKeywordPositionsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.SearchFileKeywordPositionsHeaders()
+        return await self.search_file_keyword_positions_with_options_async(request, headers, runtime)
 
     def send_contract_card_with_options(
         self,

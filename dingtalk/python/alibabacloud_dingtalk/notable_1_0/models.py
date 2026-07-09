@@ -4278,6 +4278,160 @@ class ListWorkflowsResponse(TeaModel):
         return self
 
 
+class MarkExternalAuthControlledSheetHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class MarkExternalAuthControlledSheetRequest(TeaModel):
+    def __init__(
+        self,
+        external_auth_type: str = None,
+        external_config: str = None,
+        client_token: str = None,
+        operator_id: str = None,
+    ):
+        # This parameter is required.
+        self.external_auth_type = external_auth_type
+        self.external_config = external_config
+        self.client_token = client_token
+        # This parameter is required.
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.external_auth_type is not None:
+            result['externalAuthType'] = self.external_auth_type
+        if self.external_config is not None:
+            result['externalConfig'] = self.external_config
+        if self.client_token is not None:
+            result['clientToken'] = self.client_token
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('externalAuthType') is not None:
+            self.external_auth_type = m.get('externalAuthType')
+        if m.get('externalConfig') is not None:
+            self.external_config = m.get('externalConfig')
+        if m.get('clientToken') is not None:
+            self.client_token = m.get('clientToken')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class MarkExternalAuthControlledSheetResponseBody(TeaModel):
+    def __init__(
+        self,
+        sheet_id: str = None,
+        success: bool = None,
+    ):
+        self.sheet_id = sheet_id
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.sheet_id is not None:
+            result['sheetId'] = self.sheet_id
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('sheetId') is not None:
+            self.sheet_id = m.get('sheetId')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class MarkExternalAuthControlledSheetResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: MarkExternalAuthControlledSheetResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = MarkExternalAuthControlledSheetResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class PrepareImportUploadHeaders(TeaModel):
     def __init__(
         self,
@@ -5166,6 +5320,230 @@ class QueryDocAllRolesResponse(TeaModel):
         return self
 
 
+class QueryExternalAuthControlledSheetsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryExternalAuthControlledSheetsRequest(TeaModel):
+    def __init__(
+        self,
+        external_auth_type: str = None,
+        next_token: str = None,
+        operator_id: str = None,
+        page_size: int = None,
+    ):
+        self.external_auth_type = external_auth_type
+        self.next_token = next_token
+        # This parameter is required.
+        self.operator_id = operator_id
+        self.page_size = page_size
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.external_auth_type is not None:
+            result['externalAuthType'] = self.external_auth_type
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('externalAuthType') is not None:
+            self.external_auth_type = m.get('externalAuthType')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        return self
+
+
+class QueryExternalAuthControlledSheetsResponseBodySheets(TeaModel):
+    def __init__(
+        self,
+        external_auth_type: str = None,
+        external_config: str = None,
+        marked_by: str = None,
+        marked_time: int = None,
+        sheet_id: str = None,
+        sheet_name: str = None,
+    ):
+        self.external_auth_type = external_auth_type
+        self.external_config = external_config
+        self.marked_by = marked_by
+        self.marked_time = marked_time
+        self.sheet_id = sheet_id
+        self.sheet_name = sheet_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.external_auth_type is not None:
+            result['externalAuthType'] = self.external_auth_type
+        if self.external_config is not None:
+            result['externalConfig'] = self.external_config
+        if self.marked_by is not None:
+            result['markedBy'] = self.marked_by
+        if self.marked_time is not None:
+            result['markedTime'] = self.marked_time
+        if self.sheet_id is not None:
+            result['sheetId'] = self.sheet_id
+        if self.sheet_name is not None:
+            result['sheetName'] = self.sheet_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('externalAuthType') is not None:
+            self.external_auth_type = m.get('externalAuthType')
+        if m.get('externalConfig') is not None:
+            self.external_config = m.get('externalConfig')
+        if m.get('markedBy') is not None:
+            self.marked_by = m.get('markedBy')
+        if m.get('markedTime') is not None:
+            self.marked_time = m.get('markedTime')
+        if m.get('sheetId') is not None:
+            self.sheet_id = m.get('sheetId')
+        if m.get('sheetName') is not None:
+            self.sheet_name = m.get('sheetName')
+        return self
+
+
+class QueryExternalAuthControlledSheetsResponseBody(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        next_token: str = None,
+        sheets: List[QueryExternalAuthControlledSheetsResponseBodySheets] = None,
+    ):
+        self.has_more = has_more
+        self.next_token = next_token
+        self.sheets = sheets
+
+    def validate(self):
+        if self.sheets:
+            for k in self.sheets:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        result['sheets'] = []
+        if self.sheets is not None:
+            for k in self.sheets:
+                result['sheets'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        self.sheets = []
+        if m.get('sheets') is not None:
+            for k in m.get('sheets'):
+                temp_model = QueryExternalAuthControlledSheetsResponseBodySheets()
+                self.sheets.append(temp_model.from_map(k))
+        return self
+
+
+class QueryExternalAuthControlledSheetsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryExternalAuthControlledSheetsResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryExternalAuthControlledSheetsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryImportStatusHeaders(TeaModel):
     def __init__(
         self,
@@ -5657,6 +6035,147 @@ class TruncateSheetRecordsResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = TruncateSheetRecordsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UnmarkExternalAuthControlledSheetHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UnmarkExternalAuthControlledSheetRequest(TeaModel):
+    def __init__(
+        self,
+        client_token: str = None,
+        operator_id: str = None,
+    ):
+        self.client_token = client_token
+        # This parameter is required.
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.client_token is not None:
+            result['clientToken'] = self.client_token
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('clientToken') is not None:
+            self.client_token = m.get('clientToken')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class UnmarkExternalAuthControlledSheetResponseBody(TeaModel):
+    def __init__(
+        self,
+        sheet_id: str = None,
+        success: bool = None,
+    ):
+        self.sheet_id = sheet_id
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.sheet_id is not None:
+            result['sheetId'] = self.sheet_id
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('sheetId') is not None:
+            self.sheet_id = m.get('sheetId')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class UnmarkExternalAuthControlledSheetResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UnmarkExternalAuthControlledSheetResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UnmarkExternalAuthControlledSheetResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

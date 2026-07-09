@@ -2830,6 +2830,144 @@ class Client(OpenApiClient):
         headers = dingtalknotable__1__0_models.ListWorkflowsHeaders()
         return await self.list_workflows_with_options_async(base_id, request, headers, runtime)
 
+    def mark_external_auth_controlled_sheet_with_options(
+        self,
+        base_id: str,
+        sheet_id_or_name: str,
+        request: dingtalknotable__1__0_models.MarkExternalAuthControlledSheetRequest,
+        headers: dingtalknotable__1__0_models.MarkExternalAuthControlledSheetHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.MarkExternalAuthControlledSheetResponse:
+        """
+        @summary 标记外部权限受控 Sheet
+        
+        @param request: MarkExternalAuthControlledSheetRequest
+        @param headers: MarkExternalAuthControlledSheetHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: MarkExternalAuthControlledSheetResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.client_token):
+            query['clientToken'] = request.client_token
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.external_auth_type):
+            body['externalAuthType'] = request.external_auth_type
+        if not UtilClient.is_unset(request.external_config):
+            body['externalConfig'] = request.external_config
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='MarkExternalAuthControlledSheet',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/bases/{base_id}/sheets/{sheet_id_or_name}/externalAuth/mark',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.MarkExternalAuthControlledSheetResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def mark_external_auth_controlled_sheet_with_options_async(
+        self,
+        base_id: str,
+        sheet_id_or_name: str,
+        request: dingtalknotable__1__0_models.MarkExternalAuthControlledSheetRequest,
+        headers: dingtalknotable__1__0_models.MarkExternalAuthControlledSheetHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.MarkExternalAuthControlledSheetResponse:
+        """
+        @summary 标记外部权限受控 Sheet
+        
+        @param request: MarkExternalAuthControlledSheetRequest
+        @param headers: MarkExternalAuthControlledSheetHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: MarkExternalAuthControlledSheetResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.client_token):
+            query['clientToken'] = request.client_token
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.external_auth_type):
+            body['externalAuthType'] = request.external_auth_type
+        if not UtilClient.is_unset(request.external_config):
+            body['externalConfig'] = request.external_config
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='MarkExternalAuthControlledSheet',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/bases/{base_id}/sheets/{sheet_id_or_name}/externalAuth/mark',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.MarkExternalAuthControlledSheetResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def mark_external_auth_controlled_sheet(
+        self,
+        base_id: str,
+        sheet_id_or_name: str,
+        request: dingtalknotable__1__0_models.MarkExternalAuthControlledSheetRequest,
+    ) -> dingtalknotable__1__0_models.MarkExternalAuthControlledSheetResponse:
+        """
+        @summary 标记外部权限受控 Sheet
+        
+        @param request: MarkExternalAuthControlledSheetRequest
+        @return: MarkExternalAuthControlledSheetResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.MarkExternalAuthControlledSheetHeaders()
+        return self.mark_external_auth_controlled_sheet_with_options(base_id, sheet_id_or_name, request, headers, runtime)
+
+    async def mark_external_auth_controlled_sheet_async(
+        self,
+        base_id: str,
+        sheet_id_or_name: str,
+        request: dingtalknotable__1__0_models.MarkExternalAuthControlledSheetRequest,
+    ) -> dingtalknotable__1__0_models.MarkExternalAuthControlledSheetResponse:
+        """
+        @summary 标记外部权限受控 Sheet
+        
+        @param request: MarkExternalAuthControlledSheetRequest
+        @return: MarkExternalAuthControlledSheetResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.MarkExternalAuthControlledSheetHeaders()
+        return await self.mark_external_auth_controlled_sheet_with_options_async(base_id, sheet_id_or_name, request, headers, runtime)
+
     def prepare_import_upload_with_options(
         self,
         base_id: str,
@@ -3338,6 +3476,136 @@ class Client(OpenApiClient):
         headers = dingtalknotable__1__0_models.QueryDocAllRolesHeaders()
         return await self.query_doc_all_roles_with_options_async(base_id, request, headers, runtime)
 
+    def query_external_auth_controlled_sheets_with_options(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.QueryExternalAuthControlledSheetsRequest,
+        headers: dingtalknotable__1__0_models.QueryExternalAuthControlledSheetsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.QueryExternalAuthControlledSheetsResponse:
+        """
+        @summary 查询外部权限受控 Sheet 列表
+        
+        @param request: QueryExternalAuthControlledSheetsRequest
+        @param headers: QueryExternalAuthControlledSheetsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryExternalAuthControlledSheetsResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.external_auth_type):
+            query['externalAuthType'] = request.external_auth_type
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryExternalAuthControlledSheets',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/bases/{base_id}/externalAuth/sheets',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.QueryExternalAuthControlledSheetsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_external_auth_controlled_sheets_with_options_async(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.QueryExternalAuthControlledSheetsRequest,
+        headers: dingtalknotable__1__0_models.QueryExternalAuthControlledSheetsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.QueryExternalAuthControlledSheetsResponse:
+        """
+        @summary 查询外部权限受控 Sheet 列表
+        
+        @param request: QueryExternalAuthControlledSheetsRequest
+        @param headers: QueryExternalAuthControlledSheetsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryExternalAuthControlledSheetsResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.external_auth_type):
+            query['externalAuthType'] = request.external_auth_type
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryExternalAuthControlledSheets',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/bases/{base_id}/externalAuth/sheets',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.QueryExternalAuthControlledSheetsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_external_auth_controlled_sheets(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.QueryExternalAuthControlledSheetsRequest,
+    ) -> dingtalknotable__1__0_models.QueryExternalAuthControlledSheetsResponse:
+        """
+        @summary 查询外部权限受控 Sheet 列表
+        
+        @param request: QueryExternalAuthControlledSheetsRequest
+        @return: QueryExternalAuthControlledSheetsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.QueryExternalAuthControlledSheetsHeaders()
+        return self.query_external_auth_controlled_sheets_with_options(base_id, request, headers, runtime)
+
+    async def query_external_auth_controlled_sheets_async(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.QueryExternalAuthControlledSheetsRequest,
+    ) -> dingtalknotable__1__0_models.QueryExternalAuthControlledSheetsResponse:
+        """
+        @summary 查询外部权限受控 Sheet 列表
+        
+        @param request: QueryExternalAuthControlledSheetsRequest
+        @return: QueryExternalAuthControlledSheetsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.QueryExternalAuthControlledSheetsHeaders()
+        return await self.query_external_auth_controlled_sheets_with_options_async(base_id, request, headers, runtime)
+
     def query_import_status_with_options(
         self,
         base_id: str,
@@ -3711,6 +3979,132 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.TruncateSheetRecordsHeaders()
         return await self.truncate_sheet_records_with_options_async(base_id, sheet_id_or_name, request, headers, runtime)
+
+    def unmark_external_auth_controlled_sheet_with_options(
+        self,
+        base_id: str,
+        sheet_id_or_name: str,
+        request: dingtalknotable__1__0_models.UnmarkExternalAuthControlledSheetRequest,
+        headers: dingtalknotable__1__0_models.UnmarkExternalAuthControlledSheetHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.UnmarkExternalAuthControlledSheetResponse:
+        """
+        @summary 取消标记外部权限受控 Sheet
+        
+        @param request: UnmarkExternalAuthControlledSheetRequest
+        @param headers: UnmarkExternalAuthControlledSheetHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UnmarkExternalAuthControlledSheetResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.client_token):
+            query['clientToken'] = request.client_token
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='UnmarkExternalAuthControlledSheet',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/bases/{base_id}/sheets/{sheet_id_or_name}/externalAuth/mark',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.UnmarkExternalAuthControlledSheetResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def unmark_external_auth_controlled_sheet_with_options_async(
+        self,
+        base_id: str,
+        sheet_id_or_name: str,
+        request: dingtalknotable__1__0_models.UnmarkExternalAuthControlledSheetRequest,
+        headers: dingtalknotable__1__0_models.UnmarkExternalAuthControlledSheetHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.UnmarkExternalAuthControlledSheetResponse:
+        """
+        @summary 取消标记外部权限受控 Sheet
+        
+        @param request: UnmarkExternalAuthControlledSheetRequest
+        @param headers: UnmarkExternalAuthControlledSheetHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UnmarkExternalAuthControlledSheetResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.client_token):
+            query['clientToken'] = request.client_token
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='UnmarkExternalAuthControlledSheet',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/bases/{base_id}/sheets/{sheet_id_or_name}/externalAuth/mark',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.UnmarkExternalAuthControlledSheetResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def unmark_external_auth_controlled_sheet(
+        self,
+        base_id: str,
+        sheet_id_or_name: str,
+        request: dingtalknotable__1__0_models.UnmarkExternalAuthControlledSheetRequest,
+    ) -> dingtalknotable__1__0_models.UnmarkExternalAuthControlledSheetResponse:
+        """
+        @summary 取消标记外部权限受控 Sheet
+        
+        @param request: UnmarkExternalAuthControlledSheetRequest
+        @return: UnmarkExternalAuthControlledSheetResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.UnmarkExternalAuthControlledSheetHeaders()
+        return self.unmark_external_auth_controlled_sheet_with_options(base_id, sheet_id_or_name, request, headers, runtime)
+
+    async def unmark_external_auth_controlled_sheet_async(
+        self,
+        base_id: str,
+        sheet_id_or_name: str,
+        request: dingtalknotable__1__0_models.UnmarkExternalAuthControlledSheetRequest,
+    ) -> dingtalknotable__1__0_models.UnmarkExternalAuthControlledSheetResponse:
+        """
+        @summary 取消标记外部权限受控 Sheet
+        
+        @param request: UnmarkExternalAuthControlledSheetRequest
+        @return: UnmarkExternalAuthControlledSheetResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.UnmarkExternalAuthControlledSheetHeaders()
+        return await self.unmark_external_auth_controlled_sheet_with_options_async(base_id, sheet_id_or_name, request, headers, runtime)
 
     def update_field_with_options(
         self,

@@ -1936,6 +1936,156 @@ class Client(OpenApiClient):
         headers = dingtalkats__1__0_models.GetJobInfoByJobIdHeaders()
         return await self.get_job_info_by_job_id_with_options_async(job_id, headers, runtime)
 
+    def import_candidate_by_resume_with_options(
+        self,
+        request: dingtalkats__1__0_models.ImportCandidateByResumeRequest,
+        headers: dingtalkats__1__0_models.ImportCandidateByResumeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkats__1__0_models.ImportCandidateByResumeResponse:
+        """
+        @summary 导入简历创建候选人
+        
+        @param request: ImportCandidateByResumeRequest
+        @param headers: ImportCandidateByResumeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ImportCandidateByResumeResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        body = {}
+        if not UtilClient.is_unset(request.channel_code):
+            body['channelCode'] = request.channel_code
+        if not UtilClient.is_unset(request.file_id):
+            body['fileId'] = request.file_id
+        if not UtilClient.is_unset(request.file_name):
+            body['fileName'] = request.file_name
+        if not UtilClient.is_unset(request.file_size):
+            body['fileSize'] = request.file_size
+        if not UtilClient.is_unset(request.file_source_type):
+            body['fileSourceType'] = request.file_source_type
+        if not UtilClient.is_unset(request.file_type):
+            body['fileType'] = request.file_type
+        if not UtilClient.is_unset(request.space_id):
+            body['spaceId'] = request.space_id
+        if not UtilClient.is_unset(request.url):
+            body['url'] = request.url
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ImportCandidateByResume',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/candidates/importCandidateByResume',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkats__1__0_models.ImportCandidateByResumeResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def import_candidate_by_resume_with_options_async(
+        self,
+        request: dingtalkats__1__0_models.ImportCandidateByResumeRequest,
+        headers: dingtalkats__1__0_models.ImportCandidateByResumeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkats__1__0_models.ImportCandidateByResumeResponse:
+        """
+        @summary 导入简历创建候选人
+        
+        @param request: ImportCandidateByResumeRequest
+        @param headers: ImportCandidateByResumeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ImportCandidateByResumeResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            query['opUserId'] = request.op_user_id
+        body = {}
+        if not UtilClient.is_unset(request.channel_code):
+            body['channelCode'] = request.channel_code
+        if not UtilClient.is_unset(request.file_id):
+            body['fileId'] = request.file_id
+        if not UtilClient.is_unset(request.file_name):
+            body['fileName'] = request.file_name
+        if not UtilClient.is_unset(request.file_size):
+            body['fileSize'] = request.file_size
+        if not UtilClient.is_unset(request.file_source_type):
+            body['fileSourceType'] = request.file_source_type
+        if not UtilClient.is_unset(request.file_type):
+            body['fileType'] = request.file_type
+        if not UtilClient.is_unset(request.space_id):
+            body['spaceId'] = request.space_id
+        if not UtilClient.is_unset(request.url):
+            body['url'] = request.url
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ImportCandidateByResume',
+            version='ats_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/ats/candidates/importCandidateByResume',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkats__1__0_models.ImportCandidateByResumeResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def import_candidate_by_resume(
+        self,
+        request: dingtalkats__1__0_models.ImportCandidateByResumeRequest,
+    ) -> dingtalkats__1__0_models.ImportCandidateByResumeResponse:
+        """
+        @summary 导入简历创建候选人
+        
+        @param request: ImportCandidateByResumeRequest
+        @return: ImportCandidateByResumeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkats__1__0_models.ImportCandidateByResumeHeaders()
+        return self.import_candidate_by_resume_with_options(request, headers, runtime)
+
+    async def import_candidate_by_resume_async(
+        self,
+        request: dingtalkats__1__0_models.ImportCandidateByResumeRequest,
+    ) -> dingtalkats__1__0_models.ImportCandidateByResumeResponse:
+        """
+        @summary 导入简历创建候选人
+        
+        @param request: ImportCandidateByResumeRequest
+        @return: ImportCandidateByResumeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkats__1__0_models.ImportCandidateByResumeHeaders()
+        return await self.import_candidate_by_resume_with_options_async(request, headers, runtime)
+
     def import_job_data_with_options(
         self,
         request: dingtalkats__1__0_models.ImportJobDataRequest,

@@ -3816,6 +3816,746 @@ class CreateContractReviewTaskResponse(TeaModel):
         return self
 
 
+class CreateSignFlowHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateSignFlowRequestSignDocs(TeaModel):
+    def __init__(
+        self,
+        file_id: str = None,
+        file_name: str = None,
+        file_size: int = None,
+        file_type: str = None,
+        space_id: int = None,
+    ):
+        self.file_id = file_id
+        self.file_name = file_name
+        self.file_size = file_size
+        self.file_type = file_type
+        self.space_id = space_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_id is not None:
+            result['fileId'] = self.file_id
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.file_size is not None:
+            result['fileSize'] = self.file_size
+        if self.file_type is not None:
+            result['fileType'] = self.file_type
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileId') is not None:
+            self.file_id = m.get('fileId')
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('fileSize') is not None:
+            self.file_size = m.get('fileSize')
+        if m.get('fileType') is not None:
+            self.file_type = m.get('fileType')
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        return self
+
+
+class CreateSignFlowRequestSignFlowConfig(TeaModel):
+    def __init__(
+        self,
+        auto_start: bool = None,
+        is_ordered_sign: bool = None,
+        sign_flow_name: str = None,
+    ):
+        self.auto_start = auto_start
+        self.is_ordered_sign = is_ordered_sign
+        self.sign_flow_name = sign_flow_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.auto_start is not None:
+            result['autoStart'] = self.auto_start
+        if self.is_ordered_sign is not None:
+            result['isOrderedSign'] = self.is_ordered_sign
+        if self.sign_flow_name is not None:
+            result['signFlowName'] = self.sign_flow_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('autoStart') is not None:
+            self.auto_start = m.get('autoStart')
+        if m.get('isOrderedSign') is not None:
+            self.is_ordered_sign = m.get('isOrderedSign')
+        if m.get('signFlowName') is not None:
+            self.sign_flow_name = m.get('signFlowName')
+        return self
+
+
+class CreateSignFlowRequestSignFlowInitiator(TeaModel):
+    def __init__(
+        self,
+        company_id: str = None,
+        org_name: str = None,
+        user_id: str = None,
+    ):
+        self.company_id = company_id
+        self.org_name = org_name
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.company_id is not None:
+            result['companyId'] = self.company_id
+        if self.org_name is not None:
+            result['orgName'] = self.org_name
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('companyId') is not None:
+            self.company_id = m.get('companyId')
+        if m.get('orgName') is not None:
+            self.org_name = m.get('orgName')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class CreateSignFlowRequestSignersOrgInfo(TeaModel):
+    def __init__(
+        self,
+        company_id: str = None,
+        org_name: str = None,
+    ):
+        self.company_id = company_id
+        self.org_name = org_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.company_id is not None:
+            result['companyId'] = self.company_id
+        if self.org_name is not None:
+            result['orgName'] = self.org_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('companyId') is not None:
+            self.company_id = m.get('companyId')
+        if m.get('orgName') is not None:
+            self.org_name = m.get('orgName')
+        return self
+
+
+class CreateSignFlowRequestSignersSignComponentConfigSignFieldComponentConfigSignDateConfig(TeaModel):
+    def __init__(
+        self,
+        date_format: str = None,
+        show_sign_date: bool = None,
+    ):
+        self.date_format = date_format
+        self.show_sign_date = show_sign_date
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.date_format is not None:
+            result['dateFormat'] = self.date_format
+        if self.show_sign_date is not None:
+            result['showSignDate'] = self.show_sign_date
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dateFormat') is not None:
+            self.date_format = m.get('dateFormat')
+        if m.get('showSignDate') is not None:
+            self.show_sign_date = m.get('showSignDate')
+        return self
+
+
+class CreateSignFlowRequestSignersSignComponentConfigSignFieldComponentConfigSignPositionConfig(TeaModel):
+    def __init__(
+        self,
+        position_page: int = None,
+        position_x: float = None,
+        position_y: float = None,
+    ):
+        self.position_page = position_page
+        self.position_x = position_x
+        self.position_y = position_y
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.position_page is not None:
+            result['positionPage'] = self.position_page
+        if self.position_x is not None:
+            result['positionX'] = self.position_x
+        if self.position_y is not None:
+            result['positionY'] = self.position_y
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('positionPage') is not None:
+            self.position_page = m.get('positionPage')
+        if m.get('positionX') is not None:
+            self.position_x = m.get('positionX')
+        if m.get('positionY') is not None:
+            self.position_y = m.get('positionY')
+        return self
+
+
+class CreateSignFlowRequestSignersSignComponentConfigSignFieldComponentConfig(TeaModel):
+    def __init__(
+        self,
+        available_org_seal_types: List[str] = None,
+        available_psn_seal_types: List[str] = None,
+        cross_page_type: str = None,
+        sign_date_config: CreateSignFlowRequestSignersSignComponentConfigSignFieldComponentConfigSignDateConfig = None,
+        sign_position_config: CreateSignFlowRequestSignersSignComponentConfigSignFieldComponentConfigSignPositionConfig = None,
+    ):
+        self.available_org_seal_types = available_org_seal_types
+        self.available_psn_seal_types = available_psn_seal_types
+        self.cross_page_type = cross_page_type
+        self.sign_date_config = sign_date_config
+        self.sign_position_config = sign_position_config
+
+    def validate(self):
+        if self.sign_date_config:
+            self.sign_date_config.validate()
+        if self.sign_position_config:
+            self.sign_position_config.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.available_org_seal_types is not None:
+            result['availableOrgSealTypes'] = self.available_org_seal_types
+        if self.available_psn_seal_types is not None:
+            result['availablePsnSealTypes'] = self.available_psn_seal_types
+        if self.cross_page_type is not None:
+            result['crossPageType'] = self.cross_page_type
+        if self.sign_date_config is not None:
+            result['signDateConfig'] = self.sign_date_config.to_map()
+        if self.sign_position_config is not None:
+            result['signPositionConfig'] = self.sign_position_config.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('availableOrgSealTypes') is not None:
+            self.available_org_seal_types = m.get('availableOrgSealTypes')
+        if m.get('availablePsnSealTypes') is not None:
+            self.available_psn_seal_types = m.get('availablePsnSealTypes')
+        if m.get('crossPageType') is not None:
+            self.cross_page_type = m.get('crossPageType')
+        if m.get('signDateConfig') is not None:
+            temp_model = CreateSignFlowRequestSignersSignComponentConfigSignFieldComponentConfigSignDateConfig()
+            self.sign_date_config = temp_model.from_map(m['signDateConfig'])
+        if m.get('signPositionConfig') is not None:
+            temp_model = CreateSignFlowRequestSignersSignComponentConfigSignFieldComponentConfigSignPositionConfig()
+            self.sign_position_config = temp_model.from_map(m['signPositionConfig'])
+        return self
+
+
+class CreateSignFlowRequestSignersSignComponentConfig(TeaModel):
+    def __init__(
+        self,
+        file_id: str = None,
+        sign_field_component_config: CreateSignFlowRequestSignersSignComponentConfigSignFieldComponentConfig = None,
+    ):
+        self.file_id = file_id
+        self.sign_field_component_config = sign_field_component_config
+
+    def validate(self):
+        if self.sign_field_component_config:
+            self.sign_field_component_config.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_id is not None:
+            result['fileId'] = self.file_id
+        if self.sign_field_component_config is not None:
+            result['signFieldComponentConfig'] = self.sign_field_component_config.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileId') is not None:
+            self.file_id = m.get('fileId')
+        if m.get('signFieldComponentConfig') is not None:
+            temp_model = CreateSignFlowRequestSignersSignComponentConfigSignFieldComponentConfig()
+            self.sign_field_component_config = temp_model.from_map(m['signFieldComponentConfig'])
+        return self
+
+
+class CreateSignFlowRequestSignersSignConfig(TeaModel):
+    def __init__(
+        self,
+        sign_order: int = None,
+    ):
+        self.sign_order = sign_order
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.sign_order is not None:
+            result['signOrder'] = self.sign_order
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('signOrder') is not None:
+            self.sign_order = m.get('signOrder')
+        return self
+
+
+class CreateSignFlowRequestSignersSignerInfo(TeaModel):
+    def __init__(
+        self,
+        psn_mobile: str = None,
+        psn_name: str = None,
+        user_id: str = None,
+    ):
+        self.psn_mobile = psn_mobile
+        self.psn_name = psn_name
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.psn_mobile is not None:
+            result['psnMobile'] = self.psn_mobile
+        if self.psn_name is not None:
+            result['psnName'] = self.psn_name
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('psnMobile') is not None:
+            self.psn_mobile = m.get('psnMobile')
+        if m.get('psnName') is not None:
+            self.psn_name = m.get('psnName')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class CreateSignFlowRequestSigners(TeaModel):
+    def __init__(
+        self,
+        biz_task_id: str = None,
+        org_info: CreateSignFlowRequestSignersOrgInfo = None,
+        sign_component_config: List[CreateSignFlowRequestSignersSignComponentConfig] = None,
+        sign_config: CreateSignFlowRequestSignersSignConfig = None,
+        signer_info: CreateSignFlowRequestSignersSignerInfo = None,
+        signer_type: str = None,
+    ):
+        self.biz_task_id = biz_task_id
+        self.org_info = org_info
+        self.sign_component_config = sign_component_config
+        self.sign_config = sign_config
+        self.signer_info = signer_info
+        self.signer_type = signer_type
+
+    def validate(self):
+        if self.org_info:
+            self.org_info.validate()
+        if self.sign_component_config:
+            for k in self.sign_component_config:
+                if k:
+                    k.validate()
+        if self.sign_config:
+            self.sign_config.validate()
+        if self.signer_info:
+            self.signer_info.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_task_id is not None:
+            result['bizTaskId'] = self.biz_task_id
+        if self.org_info is not None:
+            result['orgInfo'] = self.org_info.to_map()
+        result['signComponentConfig'] = []
+        if self.sign_component_config is not None:
+            for k in self.sign_component_config:
+                result['signComponentConfig'].append(k.to_map() if k else None)
+        if self.sign_config is not None:
+            result['signConfig'] = self.sign_config.to_map()
+        if self.signer_info is not None:
+            result['signerInfo'] = self.signer_info.to_map()
+        if self.signer_type is not None:
+            result['signerType'] = self.signer_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizTaskId') is not None:
+            self.biz_task_id = m.get('bizTaskId')
+        if m.get('orgInfo') is not None:
+            temp_model = CreateSignFlowRequestSignersOrgInfo()
+            self.org_info = temp_model.from_map(m['orgInfo'])
+        self.sign_component_config = []
+        if m.get('signComponentConfig') is not None:
+            for k in m.get('signComponentConfig'):
+                temp_model = CreateSignFlowRequestSignersSignComponentConfig()
+                self.sign_component_config.append(temp_model.from_map(k))
+        if m.get('signConfig') is not None:
+            temp_model = CreateSignFlowRequestSignersSignConfig()
+            self.sign_config = temp_model.from_map(m['signConfig'])
+        if m.get('signerInfo') is not None:
+            temp_model = CreateSignFlowRequestSignersSignerInfo()
+            self.signer_info = temp_model.from_map(m['signerInfo'])
+        if m.get('signerType') is not None:
+            self.signer_type = m.get('signerType')
+        return self
+
+
+class CreateSignFlowRequest(TeaModel):
+    def __init__(
+        self,
+        biz_flow_id: str = None,
+        request_id: str = None,
+        sign_docs: List[CreateSignFlowRequestSignDocs] = None,
+        sign_flow_config: CreateSignFlowRequestSignFlowConfig = None,
+        sign_flow_initiator: CreateSignFlowRequestSignFlowInitiator = None,
+        signers: List[CreateSignFlowRequestSigners] = None,
+    ):
+        self.biz_flow_id = biz_flow_id
+        self.request_id = request_id
+        self.sign_docs = sign_docs
+        self.sign_flow_config = sign_flow_config
+        self.sign_flow_initiator = sign_flow_initiator
+        self.signers = signers
+
+    def validate(self):
+        if self.sign_docs:
+            for k in self.sign_docs:
+                if k:
+                    k.validate()
+        if self.sign_flow_config:
+            self.sign_flow_config.validate()
+        if self.sign_flow_initiator:
+            self.sign_flow_initiator.validate()
+        if self.signers:
+            for k in self.signers:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_flow_id is not None:
+            result['bizFlowId'] = self.biz_flow_id
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        result['signDocs'] = []
+        if self.sign_docs is not None:
+            for k in self.sign_docs:
+                result['signDocs'].append(k.to_map() if k else None)
+        if self.sign_flow_config is not None:
+            result['signFlowConfig'] = self.sign_flow_config.to_map()
+        if self.sign_flow_initiator is not None:
+            result['signFlowInitiator'] = self.sign_flow_initiator.to_map()
+        result['signers'] = []
+        if self.signers is not None:
+            for k in self.signers:
+                result['signers'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizFlowId') is not None:
+            self.biz_flow_id = m.get('bizFlowId')
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        self.sign_docs = []
+        if m.get('signDocs') is not None:
+            for k in m.get('signDocs'):
+                temp_model = CreateSignFlowRequestSignDocs()
+                self.sign_docs.append(temp_model.from_map(k))
+        if m.get('signFlowConfig') is not None:
+            temp_model = CreateSignFlowRequestSignFlowConfig()
+            self.sign_flow_config = temp_model.from_map(m['signFlowConfig'])
+        if m.get('signFlowInitiator') is not None:
+            temp_model = CreateSignFlowRequestSignFlowInitiator()
+            self.sign_flow_initiator = temp_model.from_map(m['signFlowInitiator'])
+        self.signers = []
+        if m.get('signers') is not None:
+            for k in m.get('signers'):
+                temp_model = CreateSignFlowRequestSigners()
+                self.signers.append(temp_model.from_map(k))
+        return self
+
+
+class CreateSignFlowResponseBodyResultData(TeaModel):
+    def __init__(
+        self,
+        auto_start_error_msg: str = None,
+        biz_flow_id: str = None,
+        initiate_url: str = None,
+        sign_flow_id: str = None,
+        sign_flow_status: str = None,
+    ):
+        self.auto_start_error_msg = auto_start_error_msg
+        self.biz_flow_id = biz_flow_id
+        self.initiate_url = initiate_url
+        self.sign_flow_id = sign_flow_id
+        self.sign_flow_status = sign_flow_status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.auto_start_error_msg is not None:
+            result['autoStartErrorMsg'] = self.auto_start_error_msg
+        if self.biz_flow_id is not None:
+            result['bizFlowId'] = self.biz_flow_id
+        if self.initiate_url is not None:
+            result['initiateUrl'] = self.initiate_url
+        if self.sign_flow_id is not None:
+            result['signFlowId'] = self.sign_flow_id
+        if self.sign_flow_status is not None:
+            result['signFlowStatus'] = self.sign_flow_status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('autoStartErrorMsg') is not None:
+            self.auto_start_error_msg = m.get('autoStartErrorMsg')
+        if m.get('bizFlowId') is not None:
+            self.biz_flow_id = m.get('bizFlowId')
+        if m.get('initiateUrl') is not None:
+            self.initiate_url = m.get('initiateUrl')
+        if m.get('signFlowId') is not None:
+            self.sign_flow_id = m.get('signFlowId')
+        if m.get('signFlowStatus') is not None:
+            self.sign_flow_status = m.get('signFlowStatus')
+        return self
+
+
+class CreateSignFlowResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        data: CreateSignFlowResponseBodyResultData = None,
+        request_id: str = None,
+    ):
+        self.data = data
+        self.request_id = request_id
+
+    def validate(self):
+        if self.data:
+            self.data.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data is not None:
+            result['data'] = self.data.to_map()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('data') is not None:
+            temp_model = CreateSignFlowResponseBodyResultData()
+            self.data = temp_model.from_map(m['data'])
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        return self
+
+
+class CreateSignFlowResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: CreateSignFlowResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = CreateSignFlowResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class CreateSignFlowResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CreateSignFlowResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CreateSignFlowResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class EsignQueryApprovalInfoHeaders(TeaModel):
     def __init__(
         self,
@@ -6261,6 +7001,353 @@ class GetContractSubjectRiskResultResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetContractSubjectRiskResultResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetFileDownloadUrlHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetFileDownloadUrlRequest(TeaModel):
+    def __init__(
+        self,
+        biz_flow_id: str = None,
+        file_id: str = None,
+        request_id: str = None,
+        sign_flow_id: str = None,
+    ):
+        self.biz_flow_id = biz_flow_id
+        self.file_id = file_id
+        self.request_id = request_id
+        self.sign_flow_id = sign_flow_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_flow_id is not None:
+            result['bizFlowId'] = self.biz_flow_id
+        if self.file_id is not None:
+            result['fileId'] = self.file_id
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.sign_flow_id is not None:
+            result['signFlowId'] = self.sign_flow_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizFlowId') is not None:
+            self.biz_flow_id = m.get('bizFlowId')
+        if m.get('fileId') is not None:
+            self.file_id = m.get('fileId')
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('signFlowId') is not None:
+            self.sign_flow_id = m.get('signFlowId')
+        return self
+
+
+class GetFileDownloadUrlResponseBodyResultDataAttachment(TeaModel):
+    def __init__(
+        self,
+        download_url: str = None,
+        file_id: str = None,
+        file_name: str = None,
+        file_status: str = None,
+        url_expire_time: int = None,
+    ):
+        self.download_url = download_url
+        self.file_id = file_id
+        self.file_name = file_name
+        self.file_status = file_status
+        self.url_expire_time = url_expire_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.download_url is not None:
+            result['downloadUrl'] = self.download_url
+        if self.file_id is not None:
+            result['fileId'] = self.file_id
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.file_status is not None:
+            result['fileStatus'] = self.file_status
+        if self.url_expire_time is not None:
+            result['urlExpireTime'] = self.url_expire_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('downloadUrl') is not None:
+            self.download_url = m.get('downloadUrl')
+        if m.get('fileId') is not None:
+            self.file_id = m.get('fileId')
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('fileStatus') is not None:
+            self.file_status = m.get('fileStatus')
+        if m.get('urlExpireTime') is not None:
+            self.url_expire_time = m.get('urlExpireTime')
+        return self
+
+
+class GetFileDownloadUrlResponseBodyResultDataSignDocs(TeaModel):
+    def __init__(
+        self,
+        download_url: str = None,
+        file_id: str = None,
+        file_name: str = None,
+        file_status: str = None,
+        url_expire_time: int = None,
+    ):
+        self.download_url = download_url
+        self.file_id = file_id
+        self.file_name = file_name
+        self.file_status = file_status
+        self.url_expire_time = url_expire_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.download_url is not None:
+            result['downloadUrl'] = self.download_url
+        if self.file_id is not None:
+            result['fileId'] = self.file_id
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.file_status is not None:
+            result['fileStatus'] = self.file_status
+        if self.url_expire_time is not None:
+            result['urlExpireTime'] = self.url_expire_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('downloadUrl') is not None:
+            self.download_url = m.get('downloadUrl')
+        if m.get('fileId') is not None:
+            self.file_id = m.get('fileId')
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('fileStatus') is not None:
+            self.file_status = m.get('fileStatus')
+        if m.get('urlExpireTime') is not None:
+            self.url_expire_time = m.get('urlExpireTime')
+        return self
+
+
+class GetFileDownloadUrlResponseBodyResultData(TeaModel):
+    def __init__(
+        self,
+        attachment: List[GetFileDownloadUrlResponseBodyResultDataAttachment] = None,
+        sign_docs: List[GetFileDownloadUrlResponseBodyResultDataSignDocs] = None,
+        sign_flow_id: str = None,
+    ):
+        self.attachment = attachment
+        self.sign_docs = sign_docs
+        self.sign_flow_id = sign_flow_id
+
+    def validate(self):
+        if self.attachment:
+            for k in self.attachment:
+                if k:
+                    k.validate()
+        if self.sign_docs:
+            for k in self.sign_docs:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['attachment'] = []
+        if self.attachment is not None:
+            for k in self.attachment:
+                result['attachment'].append(k.to_map() if k else None)
+        result['signDocs'] = []
+        if self.sign_docs is not None:
+            for k in self.sign_docs:
+                result['signDocs'].append(k.to_map() if k else None)
+        if self.sign_flow_id is not None:
+            result['signFlowId'] = self.sign_flow_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.attachment = []
+        if m.get('attachment') is not None:
+            for k in m.get('attachment'):
+                temp_model = GetFileDownloadUrlResponseBodyResultDataAttachment()
+                self.attachment.append(temp_model.from_map(k))
+        self.sign_docs = []
+        if m.get('signDocs') is not None:
+            for k in m.get('signDocs'):
+                temp_model = GetFileDownloadUrlResponseBodyResultDataSignDocs()
+                self.sign_docs.append(temp_model.from_map(k))
+        if m.get('signFlowId') is not None:
+            self.sign_flow_id = m.get('signFlowId')
+        return self
+
+
+class GetFileDownloadUrlResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        data: GetFileDownloadUrlResponseBodyResultData = None,
+        request_id: str = None,
+    ):
+        self.data = data
+        self.request_id = request_id
+
+    def validate(self):
+        if self.data:
+            self.data.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data is not None:
+            result['data'] = self.data.to_map()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('data') is not None:
+            temp_model = GetFileDownloadUrlResponseBodyResultData()
+            self.data = temp_model.from_map(m['data'])
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        return self
+
+
+class GetFileDownloadUrlResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: GetFileDownloadUrlResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = GetFileDownloadUrlResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class GetFileDownloadUrlResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetFileDownloadUrlResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetFileDownloadUrlResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -9759,6 +10846,1682 @@ class QueryContractSignInfoResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryContractSignInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QuerySignFlowDetailHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QuerySignFlowDetailRequest(TeaModel):
+    def __init__(
+        self,
+        biz_flow_id: str = None,
+        request_id: str = None,
+        sign_flow_id: str = None,
+    ):
+        self.biz_flow_id = biz_flow_id
+        self.request_id = request_id
+        self.sign_flow_id = sign_flow_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_flow_id is not None:
+            result['bizFlowId'] = self.biz_flow_id
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.sign_flow_id is not None:
+            result['signFlowId'] = self.sign_flow_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizFlowId') is not None:
+            self.biz_flow_id = m.get('bizFlowId')
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('signFlowId') is not None:
+            self.sign_flow_id = m.get('signFlowId')
+        return self
+
+
+class QuerySignFlowDetailResponseBodyResultDataSignDocs(TeaModel):
+    def __init__(
+        self,
+        file_id: str = None,
+        file_name: str = None,
+        file_size: int = None,
+        file_type: str = None,
+        space_id: int = None,
+    ):
+        self.file_id = file_id
+        self.file_name = file_name
+        self.file_size = file_size
+        self.file_type = file_type
+        self.space_id = space_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_id is not None:
+            result['fileId'] = self.file_id
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.file_size is not None:
+            result['fileSize'] = self.file_size
+        if self.file_type is not None:
+            result['fileType'] = self.file_type
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileId') is not None:
+            self.file_id = m.get('fileId')
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('fileSize') is not None:
+            self.file_size = m.get('fileSize')
+        if m.get('fileType') is not None:
+            self.file_type = m.get('fileType')
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        return self
+
+
+class QuerySignFlowDetailResponseBodyResultDataSignFlowConfig(TeaModel):
+    def __init__(
+        self,
+        auto_start: bool = None,
+        is_ordered_sign: bool = None,
+        sign_flow_name: str = None,
+    ):
+        self.auto_start = auto_start
+        self.is_ordered_sign = is_ordered_sign
+        self.sign_flow_name = sign_flow_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.auto_start is not None:
+            result['autoStart'] = self.auto_start
+        if self.is_ordered_sign is not None:
+            result['isOrderedSign'] = self.is_ordered_sign
+        if self.sign_flow_name is not None:
+            result['signFlowName'] = self.sign_flow_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('autoStart') is not None:
+            self.auto_start = m.get('autoStart')
+        if m.get('isOrderedSign') is not None:
+            self.is_ordered_sign = m.get('isOrderedSign')
+        if m.get('signFlowName') is not None:
+            self.sign_flow_name = m.get('signFlowName')
+        return self
+
+
+class QuerySignFlowDetailResponseBodyResultDataSignFlowInitiator(TeaModel):
+    def __init__(
+        self,
+        company_id: str = None,
+        org_name: str = None,
+        user_id: str = None,
+    ):
+        self.company_id = company_id
+        self.org_name = org_name
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.company_id is not None:
+            result['companyId'] = self.company_id
+        if self.org_name is not None:
+            result['orgName'] = self.org_name
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('companyId') is not None:
+            self.company_id = m.get('companyId')
+        if m.get('orgName') is not None:
+            self.org_name = m.get('orgName')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class QuerySignFlowDetailResponseBodyResultDataSignTasksOrgInfo(TeaModel):
+    def __init__(
+        self,
+        company_id: str = None,
+        org_name: str = None,
+    ):
+        self.company_id = company_id
+        self.org_name = org_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.company_id is not None:
+            result['companyId'] = self.company_id
+        if self.org_name is not None:
+            result['orgName'] = self.org_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('companyId') is not None:
+            self.company_id = m.get('companyId')
+        if m.get('orgName') is not None:
+            self.org_name = m.get('orgName')
+        return self
+
+
+class QuerySignFlowDetailResponseBodyResultDataSignTasksSignerInfo(TeaModel):
+    def __init__(
+        self,
+        psn_mobile: str = None,
+        psn_name: str = None,
+        user_id: str = None,
+    ):
+        self.psn_mobile = psn_mobile
+        self.psn_name = psn_name
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.psn_mobile is not None:
+            result['psnMobile'] = self.psn_mobile
+        if self.psn_name is not None:
+            result['psnName'] = self.psn_name
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('psnMobile') is not None:
+            self.psn_mobile = m.get('psnMobile')
+        if m.get('psnName') is not None:
+            self.psn_name = m.get('psnName')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class QuerySignFlowDetailResponseBodyResultDataSignTasks(TeaModel):
+    def __init__(
+        self,
+        activate_time: int = None,
+        actual_org_seal_type: str = None,
+        actual_psn_seal_type: str = None,
+        biz_task_id: str = None,
+        create_time: int = None,
+        finish_time: int = None,
+        org_info: QuerySignFlowDetailResponseBodyResultDataSignTasksOrgInfo = None,
+        sign_order: int = None,
+        sign_task_id: str = None,
+        sign_url: str = None,
+        signer_info: QuerySignFlowDetailResponseBodyResultDataSignTasksSignerInfo = None,
+        signer_type: str = None,
+        task_status: str = None,
+    ):
+        self.activate_time = activate_time
+        self.actual_org_seal_type = actual_org_seal_type
+        self.actual_psn_seal_type = actual_psn_seal_type
+        self.biz_task_id = biz_task_id
+        self.create_time = create_time
+        self.finish_time = finish_time
+        self.org_info = org_info
+        self.sign_order = sign_order
+        self.sign_task_id = sign_task_id
+        self.sign_url = sign_url
+        self.signer_info = signer_info
+        self.signer_type = signer_type
+        self.task_status = task_status
+
+    def validate(self):
+        if self.org_info:
+            self.org_info.validate()
+        if self.signer_info:
+            self.signer_info.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.activate_time is not None:
+            result['activateTime'] = self.activate_time
+        if self.actual_org_seal_type is not None:
+            result['actualOrgSealType'] = self.actual_org_seal_type
+        if self.actual_psn_seal_type is not None:
+            result['actualPsnSealType'] = self.actual_psn_seal_type
+        if self.biz_task_id is not None:
+            result['bizTaskId'] = self.biz_task_id
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.finish_time is not None:
+            result['finishTime'] = self.finish_time
+        if self.org_info is not None:
+            result['orgInfo'] = self.org_info.to_map()
+        if self.sign_order is not None:
+            result['signOrder'] = self.sign_order
+        if self.sign_task_id is not None:
+            result['signTaskId'] = self.sign_task_id
+        if self.sign_url is not None:
+            result['signUrl'] = self.sign_url
+        if self.signer_info is not None:
+            result['signerInfo'] = self.signer_info.to_map()
+        if self.signer_type is not None:
+            result['signerType'] = self.signer_type
+        if self.task_status is not None:
+            result['taskStatus'] = self.task_status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('activateTime') is not None:
+            self.activate_time = m.get('activateTime')
+        if m.get('actualOrgSealType') is not None:
+            self.actual_org_seal_type = m.get('actualOrgSealType')
+        if m.get('actualPsnSealType') is not None:
+            self.actual_psn_seal_type = m.get('actualPsnSealType')
+        if m.get('bizTaskId') is not None:
+            self.biz_task_id = m.get('bizTaskId')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('finishTime') is not None:
+            self.finish_time = m.get('finishTime')
+        if m.get('orgInfo') is not None:
+            temp_model = QuerySignFlowDetailResponseBodyResultDataSignTasksOrgInfo()
+            self.org_info = temp_model.from_map(m['orgInfo'])
+        if m.get('signOrder') is not None:
+            self.sign_order = m.get('signOrder')
+        if m.get('signTaskId') is not None:
+            self.sign_task_id = m.get('signTaskId')
+        if m.get('signUrl') is not None:
+            self.sign_url = m.get('signUrl')
+        if m.get('signerInfo') is not None:
+            temp_model = QuerySignFlowDetailResponseBodyResultDataSignTasksSignerInfo()
+            self.signer_info = temp_model.from_map(m['signerInfo'])
+        if m.get('signerType') is not None:
+            self.signer_type = m.get('signerType')
+        if m.get('taskStatus') is not None:
+            self.task_status = m.get('taskStatus')
+        return self
+
+
+class QuerySignFlowDetailResponseBodyResultDataSignersOrgInfo(TeaModel):
+    def __init__(
+        self,
+        company_id: str = None,
+        org_name: str = None,
+    ):
+        self.company_id = company_id
+        self.org_name = org_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.company_id is not None:
+            result['companyId'] = self.company_id
+        if self.org_name is not None:
+            result['orgName'] = self.org_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('companyId') is not None:
+            self.company_id = m.get('companyId')
+        if m.get('orgName') is not None:
+            self.org_name = m.get('orgName')
+        return self
+
+
+class QuerySignFlowDetailResponseBodyResultDataSignersSignComponentConfigSignFieldComponentConfigSignDateConfig(TeaModel):
+    def __init__(
+        self,
+        date_format: str = None,
+        show_sign_date: bool = None,
+    ):
+        self.date_format = date_format
+        self.show_sign_date = show_sign_date
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.date_format is not None:
+            result['dateFormat'] = self.date_format
+        if self.show_sign_date is not None:
+            result['showSignDate'] = self.show_sign_date
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dateFormat') is not None:
+            self.date_format = m.get('dateFormat')
+        if m.get('showSignDate') is not None:
+            self.show_sign_date = m.get('showSignDate')
+        return self
+
+
+class QuerySignFlowDetailResponseBodyResultDataSignersSignComponentConfigSignFieldComponentConfigSignPositionConfig(TeaModel):
+    def __init__(
+        self,
+        position_page: int = None,
+        position_x: float = None,
+        position_y: float = None,
+    ):
+        self.position_page = position_page
+        self.position_x = position_x
+        self.position_y = position_y
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.position_page is not None:
+            result['positionPage'] = self.position_page
+        if self.position_x is not None:
+            result['positionX'] = self.position_x
+        if self.position_y is not None:
+            result['positionY'] = self.position_y
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('positionPage') is not None:
+            self.position_page = m.get('positionPage')
+        if m.get('positionX') is not None:
+            self.position_x = m.get('positionX')
+        if m.get('positionY') is not None:
+            self.position_y = m.get('positionY')
+        return self
+
+
+class QuerySignFlowDetailResponseBodyResultDataSignersSignComponentConfigSignFieldComponentConfig(TeaModel):
+    def __init__(
+        self,
+        available_org_seal_types: List[str] = None,
+        available_psn_seal_types: List[str] = None,
+        cross_page_type: str = None,
+        sign_date_config: QuerySignFlowDetailResponseBodyResultDataSignersSignComponentConfigSignFieldComponentConfigSignDateConfig = None,
+        sign_position_config: QuerySignFlowDetailResponseBodyResultDataSignersSignComponentConfigSignFieldComponentConfigSignPositionConfig = None,
+    ):
+        self.available_org_seal_types = available_org_seal_types
+        self.available_psn_seal_types = available_psn_seal_types
+        self.cross_page_type = cross_page_type
+        self.sign_date_config = sign_date_config
+        self.sign_position_config = sign_position_config
+
+    def validate(self):
+        if self.sign_date_config:
+            self.sign_date_config.validate()
+        if self.sign_position_config:
+            self.sign_position_config.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.available_org_seal_types is not None:
+            result['availableOrgSealTypes'] = self.available_org_seal_types
+        if self.available_psn_seal_types is not None:
+            result['availablePsnSealTypes'] = self.available_psn_seal_types
+        if self.cross_page_type is not None:
+            result['crossPageType'] = self.cross_page_type
+        if self.sign_date_config is not None:
+            result['signDateConfig'] = self.sign_date_config.to_map()
+        if self.sign_position_config is not None:
+            result['signPositionConfig'] = self.sign_position_config.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('availableOrgSealTypes') is not None:
+            self.available_org_seal_types = m.get('availableOrgSealTypes')
+        if m.get('availablePsnSealTypes') is not None:
+            self.available_psn_seal_types = m.get('availablePsnSealTypes')
+        if m.get('crossPageType') is not None:
+            self.cross_page_type = m.get('crossPageType')
+        if m.get('signDateConfig') is not None:
+            temp_model = QuerySignFlowDetailResponseBodyResultDataSignersSignComponentConfigSignFieldComponentConfigSignDateConfig()
+            self.sign_date_config = temp_model.from_map(m['signDateConfig'])
+        if m.get('signPositionConfig') is not None:
+            temp_model = QuerySignFlowDetailResponseBodyResultDataSignersSignComponentConfigSignFieldComponentConfigSignPositionConfig()
+            self.sign_position_config = temp_model.from_map(m['signPositionConfig'])
+        return self
+
+
+class QuerySignFlowDetailResponseBodyResultDataSignersSignComponentConfig(TeaModel):
+    def __init__(
+        self,
+        file_id: str = None,
+        sign_field_component_config: QuerySignFlowDetailResponseBodyResultDataSignersSignComponentConfigSignFieldComponentConfig = None,
+    ):
+        self.file_id = file_id
+        self.sign_field_component_config = sign_field_component_config
+
+    def validate(self):
+        if self.sign_field_component_config:
+            self.sign_field_component_config.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_id is not None:
+            result['fileId'] = self.file_id
+        if self.sign_field_component_config is not None:
+            result['signFieldComponentConfig'] = self.sign_field_component_config.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileId') is not None:
+            self.file_id = m.get('fileId')
+        if m.get('signFieldComponentConfig') is not None:
+            temp_model = QuerySignFlowDetailResponseBodyResultDataSignersSignComponentConfigSignFieldComponentConfig()
+            self.sign_field_component_config = temp_model.from_map(m['signFieldComponentConfig'])
+        return self
+
+
+class QuerySignFlowDetailResponseBodyResultDataSignersSignConfig(TeaModel):
+    def __init__(
+        self,
+        sign_order: int = None,
+    ):
+        self.sign_order = sign_order
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.sign_order is not None:
+            result['signOrder'] = self.sign_order
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('signOrder') is not None:
+            self.sign_order = m.get('signOrder')
+        return self
+
+
+class QuerySignFlowDetailResponseBodyResultDataSignersSignerInfo(TeaModel):
+    def __init__(
+        self,
+        psn_mobile: str = None,
+        psn_name: str = None,
+        user_id: str = None,
+    ):
+        self.psn_mobile = psn_mobile
+        self.psn_name = psn_name
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.psn_mobile is not None:
+            result['psnMobile'] = self.psn_mobile
+        if self.psn_name is not None:
+            result['psnName'] = self.psn_name
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('psnMobile') is not None:
+            self.psn_mobile = m.get('psnMobile')
+        if m.get('psnName') is not None:
+            self.psn_name = m.get('psnName')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class QuerySignFlowDetailResponseBodyResultDataSigners(TeaModel):
+    def __init__(
+        self,
+        biz_task_id: str = None,
+        org_info: QuerySignFlowDetailResponseBodyResultDataSignersOrgInfo = None,
+        sign_component_config: List[QuerySignFlowDetailResponseBodyResultDataSignersSignComponentConfig] = None,
+        sign_config: QuerySignFlowDetailResponseBodyResultDataSignersSignConfig = None,
+        signer_info: QuerySignFlowDetailResponseBodyResultDataSignersSignerInfo = None,
+        signer_type: str = None,
+    ):
+        self.biz_task_id = biz_task_id
+        self.org_info = org_info
+        self.sign_component_config = sign_component_config
+        self.sign_config = sign_config
+        self.signer_info = signer_info
+        self.signer_type = signer_type
+
+    def validate(self):
+        if self.org_info:
+            self.org_info.validate()
+        if self.sign_component_config:
+            for k in self.sign_component_config:
+                if k:
+                    k.validate()
+        if self.sign_config:
+            self.sign_config.validate()
+        if self.signer_info:
+            self.signer_info.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_task_id is not None:
+            result['bizTaskId'] = self.biz_task_id
+        if self.org_info is not None:
+            result['orgInfo'] = self.org_info.to_map()
+        result['signComponentConfig'] = []
+        if self.sign_component_config is not None:
+            for k in self.sign_component_config:
+                result['signComponentConfig'].append(k.to_map() if k else None)
+        if self.sign_config is not None:
+            result['signConfig'] = self.sign_config.to_map()
+        if self.signer_info is not None:
+            result['signerInfo'] = self.signer_info.to_map()
+        if self.signer_type is not None:
+            result['signerType'] = self.signer_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizTaskId') is not None:
+            self.biz_task_id = m.get('bizTaskId')
+        if m.get('orgInfo') is not None:
+            temp_model = QuerySignFlowDetailResponseBodyResultDataSignersOrgInfo()
+            self.org_info = temp_model.from_map(m['orgInfo'])
+        self.sign_component_config = []
+        if m.get('signComponentConfig') is not None:
+            for k in m.get('signComponentConfig'):
+                temp_model = QuerySignFlowDetailResponseBodyResultDataSignersSignComponentConfig()
+                self.sign_component_config.append(temp_model.from_map(k))
+        if m.get('signConfig') is not None:
+            temp_model = QuerySignFlowDetailResponseBodyResultDataSignersSignConfig()
+            self.sign_config = temp_model.from_map(m['signConfig'])
+        if m.get('signerInfo') is not None:
+            temp_model = QuerySignFlowDetailResponseBodyResultDataSignersSignerInfo()
+            self.signer_info = temp_model.from_map(m['signerInfo'])
+        if m.get('signerType') is not None:
+            self.signer_type = m.get('signerType')
+        return self
+
+
+class QuerySignFlowDetailResponseBodyResultData(TeaModel):
+    def __init__(
+        self,
+        biz_flow_id: str = None,
+        create_time: int = None,
+        finish_time: int = None,
+        initiate_url: str = None,
+        sign_docs: List[QuerySignFlowDetailResponseBodyResultDataSignDocs] = None,
+        sign_flow_config: QuerySignFlowDetailResponseBodyResultDataSignFlowConfig = None,
+        sign_flow_id: str = None,
+        sign_flow_initiator: QuerySignFlowDetailResponseBodyResultDataSignFlowInitiator = None,
+        sign_flow_status: str = None,
+        sign_tasks: List[QuerySignFlowDetailResponseBodyResultDataSignTasks] = None,
+        signers: List[QuerySignFlowDetailResponseBodyResultDataSigners] = None,
+        start_time: int = None,
+    ):
+        self.biz_flow_id = biz_flow_id
+        self.create_time = create_time
+        self.finish_time = finish_time
+        self.initiate_url = initiate_url
+        self.sign_docs = sign_docs
+        self.sign_flow_config = sign_flow_config
+        self.sign_flow_id = sign_flow_id
+        self.sign_flow_initiator = sign_flow_initiator
+        self.sign_flow_status = sign_flow_status
+        self.sign_tasks = sign_tasks
+        self.signers = signers
+        self.start_time = start_time
+
+    def validate(self):
+        if self.sign_docs:
+            for k in self.sign_docs:
+                if k:
+                    k.validate()
+        if self.sign_flow_config:
+            self.sign_flow_config.validate()
+        if self.sign_flow_initiator:
+            self.sign_flow_initiator.validate()
+        if self.sign_tasks:
+            for k in self.sign_tasks:
+                if k:
+                    k.validate()
+        if self.signers:
+            for k in self.signers:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_flow_id is not None:
+            result['bizFlowId'] = self.biz_flow_id
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.finish_time is not None:
+            result['finishTime'] = self.finish_time
+        if self.initiate_url is not None:
+            result['initiateUrl'] = self.initiate_url
+        result['signDocs'] = []
+        if self.sign_docs is not None:
+            for k in self.sign_docs:
+                result['signDocs'].append(k.to_map() if k else None)
+        if self.sign_flow_config is not None:
+            result['signFlowConfig'] = self.sign_flow_config.to_map()
+        if self.sign_flow_id is not None:
+            result['signFlowId'] = self.sign_flow_id
+        if self.sign_flow_initiator is not None:
+            result['signFlowInitiator'] = self.sign_flow_initiator.to_map()
+        if self.sign_flow_status is not None:
+            result['signFlowStatus'] = self.sign_flow_status
+        result['signTasks'] = []
+        if self.sign_tasks is not None:
+            for k in self.sign_tasks:
+                result['signTasks'].append(k.to_map() if k else None)
+        result['signers'] = []
+        if self.signers is not None:
+            for k in self.signers:
+                result['signers'].append(k.to_map() if k else None)
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizFlowId') is not None:
+            self.biz_flow_id = m.get('bizFlowId')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('finishTime') is not None:
+            self.finish_time = m.get('finishTime')
+        if m.get('initiateUrl') is not None:
+            self.initiate_url = m.get('initiateUrl')
+        self.sign_docs = []
+        if m.get('signDocs') is not None:
+            for k in m.get('signDocs'):
+                temp_model = QuerySignFlowDetailResponseBodyResultDataSignDocs()
+                self.sign_docs.append(temp_model.from_map(k))
+        if m.get('signFlowConfig') is not None:
+            temp_model = QuerySignFlowDetailResponseBodyResultDataSignFlowConfig()
+            self.sign_flow_config = temp_model.from_map(m['signFlowConfig'])
+        if m.get('signFlowId') is not None:
+            self.sign_flow_id = m.get('signFlowId')
+        if m.get('signFlowInitiator') is not None:
+            temp_model = QuerySignFlowDetailResponseBodyResultDataSignFlowInitiator()
+            self.sign_flow_initiator = temp_model.from_map(m['signFlowInitiator'])
+        if m.get('signFlowStatus') is not None:
+            self.sign_flow_status = m.get('signFlowStatus')
+        self.sign_tasks = []
+        if m.get('signTasks') is not None:
+            for k in m.get('signTasks'):
+                temp_model = QuerySignFlowDetailResponseBodyResultDataSignTasks()
+                self.sign_tasks.append(temp_model.from_map(k))
+        self.signers = []
+        if m.get('signers') is not None:
+            for k in m.get('signers'):
+                temp_model = QuerySignFlowDetailResponseBodyResultDataSigners()
+                self.signers.append(temp_model.from_map(k))
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        return self
+
+
+class QuerySignFlowDetailResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        data: QuerySignFlowDetailResponseBodyResultData = None,
+        request_id: str = None,
+    ):
+        self.data = data
+        self.request_id = request_id
+
+    def validate(self):
+        if self.data:
+            self.data.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data is not None:
+            result['data'] = self.data.to_map()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('data') is not None:
+            temp_model = QuerySignFlowDetailResponseBodyResultData()
+            self.data = temp_model.from_map(m['data'])
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        return self
+
+
+class QuerySignFlowDetailResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: QuerySignFlowDetailResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = QuerySignFlowDetailResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class QuerySignFlowDetailResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QuerySignFlowDetailResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QuerySignFlowDetailResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QuerySignTaskHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QuerySignTaskRequest(TeaModel):
+    def __init__(
+        self,
+        biz_flow_id: str = None,
+        request_id: str = None,
+        sign_flow_id: str = None,
+    ):
+        self.biz_flow_id = biz_flow_id
+        self.request_id = request_id
+        self.sign_flow_id = sign_flow_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_flow_id is not None:
+            result['bizFlowId'] = self.biz_flow_id
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.sign_flow_id is not None:
+            result['signFlowId'] = self.sign_flow_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizFlowId') is not None:
+            self.biz_flow_id = m.get('bizFlowId')
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('signFlowId') is not None:
+            self.sign_flow_id = m.get('signFlowId')
+        return self
+
+
+class QuerySignTaskResponseBodyResultDataSignTasksOrgInfo(TeaModel):
+    def __init__(
+        self,
+        company_id: str = None,
+        org_name: str = None,
+    ):
+        self.company_id = company_id
+        self.org_name = org_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.company_id is not None:
+            result['companyId'] = self.company_id
+        if self.org_name is not None:
+            result['orgName'] = self.org_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('companyId') is not None:
+            self.company_id = m.get('companyId')
+        if m.get('orgName') is not None:
+            self.org_name = m.get('orgName')
+        return self
+
+
+class QuerySignTaskResponseBodyResultDataSignTasksSignerInfo(TeaModel):
+    def __init__(
+        self,
+        psn_mobile: str = None,
+        psn_name: str = None,
+        user_id: str = None,
+    ):
+        self.psn_mobile = psn_mobile
+        self.psn_name = psn_name
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.psn_mobile is not None:
+            result['psnMobile'] = self.psn_mobile
+        if self.psn_name is not None:
+            result['psnName'] = self.psn_name
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('psnMobile') is not None:
+            self.psn_mobile = m.get('psnMobile')
+        if m.get('psnName') is not None:
+            self.psn_name = m.get('psnName')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class QuerySignTaskResponseBodyResultDataSignTasks(TeaModel):
+    def __init__(
+        self,
+        activate_time: int = None,
+        actual_org_seal_type: str = None,
+        actual_psn_seal_type: str = None,
+        biz_task_id: str = None,
+        create_time: int = None,
+        finish_time: int = None,
+        org_info: QuerySignTaskResponseBodyResultDataSignTasksOrgInfo = None,
+        sign_order: int = None,
+        sign_task_id: str = None,
+        sign_url: str = None,
+        signer_info: QuerySignTaskResponseBodyResultDataSignTasksSignerInfo = None,
+        signer_type: str = None,
+        task_status: str = None,
+    ):
+        self.activate_time = activate_time
+        self.actual_org_seal_type = actual_org_seal_type
+        self.actual_psn_seal_type = actual_psn_seal_type
+        self.biz_task_id = biz_task_id
+        self.create_time = create_time
+        self.finish_time = finish_time
+        self.org_info = org_info
+        self.sign_order = sign_order
+        self.sign_task_id = sign_task_id
+        self.sign_url = sign_url
+        self.signer_info = signer_info
+        self.signer_type = signer_type
+        self.task_status = task_status
+
+    def validate(self):
+        if self.org_info:
+            self.org_info.validate()
+        if self.signer_info:
+            self.signer_info.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.activate_time is not None:
+            result['activateTime'] = self.activate_time
+        if self.actual_org_seal_type is not None:
+            result['actualOrgSealType'] = self.actual_org_seal_type
+        if self.actual_psn_seal_type is not None:
+            result['actualPsnSealType'] = self.actual_psn_seal_type
+        if self.biz_task_id is not None:
+            result['bizTaskId'] = self.biz_task_id
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.finish_time is not None:
+            result['finishTime'] = self.finish_time
+        if self.org_info is not None:
+            result['orgInfo'] = self.org_info.to_map()
+        if self.sign_order is not None:
+            result['signOrder'] = self.sign_order
+        if self.sign_task_id is not None:
+            result['signTaskId'] = self.sign_task_id
+        if self.sign_url is not None:
+            result['signUrl'] = self.sign_url
+        if self.signer_info is not None:
+            result['signerInfo'] = self.signer_info.to_map()
+        if self.signer_type is not None:
+            result['signerType'] = self.signer_type
+        if self.task_status is not None:
+            result['taskStatus'] = self.task_status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('activateTime') is not None:
+            self.activate_time = m.get('activateTime')
+        if m.get('actualOrgSealType') is not None:
+            self.actual_org_seal_type = m.get('actualOrgSealType')
+        if m.get('actualPsnSealType') is not None:
+            self.actual_psn_seal_type = m.get('actualPsnSealType')
+        if m.get('bizTaskId') is not None:
+            self.biz_task_id = m.get('bizTaskId')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('finishTime') is not None:
+            self.finish_time = m.get('finishTime')
+        if m.get('orgInfo') is not None:
+            temp_model = QuerySignTaskResponseBodyResultDataSignTasksOrgInfo()
+            self.org_info = temp_model.from_map(m['orgInfo'])
+        if m.get('signOrder') is not None:
+            self.sign_order = m.get('signOrder')
+        if m.get('signTaskId') is not None:
+            self.sign_task_id = m.get('signTaskId')
+        if m.get('signUrl') is not None:
+            self.sign_url = m.get('signUrl')
+        if m.get('signerInfo') is not None:
+            temp_model = QuerySignTaskResponseBodyResultDataSignTasksSignerInfo()
+            self.signer_info = temp_model.from_map(m['signerInfo'])
+        if m.get('signerType') is not None:
+            self.signer_type = m.get('signerType')
+        if m.get('taskStatus') is not None:
+            self.task_status = m.get('taskStatus')
+        return self
+
+
+class QuerySignTaskResponseBodyResultData(TeaModel):
+    def __init__(
+        self,
+        biz_flow_id: str = None,
+        sign_flow_id: str = None,
+        sign_flow_status: str = None,
+        sign_tasks: List[QuerySignTaskResponseBodyResultDataSignTasks] = None,
+    ):
+        self.biz_flow_id = biz_flow_id
+        self.sign_flow_id = sign_flow_id
+        self.sign_flow_status = sign_flow_status
+        self.sign_tasks = sign_tasks
+
+    def validate(self):
+        if self.sign_tasks:
+            for k in self.sign_tasks:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_flow_id is not None:
+            result['bizFlowId'] = self.biz_flow_id
+        if self.sign_flow_id is not None:
+            result['signFlowId'] = self.sign_flow_id
+        if self.sign_flow_status is not None:
+            result['signFlowStatus'] = self.sign_flow_status
+        result['signTasks'] = []
+        if self.sign_tasks is not None:
+            for k in self.sign_tasks:
+                result['signTasks'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizFlowId') is not None:
+            self.biz_flow_id = m.get('bizFlowId')
+        if m.get('signFlowId') is not None:
+            self.sign_flow_id = m.get('signFlowId')
+        if m.get('signFlowStatus') is not None:
+            self.sign_flow_status = m.get('signFlowStatus')
+        self.sign_tasks = []
+        if m.get('signTasks') is not None:
+            for k in m.get('signTasks'):
+                temp_model = QuerySignTaskResponseBodyResultDataSignTasks()
+                self.sign_tasks.append(temp_model.from_map(k))
+        return self
+
+
+class QuerySignTaskResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        data: QuerySignTaskResponseBodyResultData = None,
+        request_id: str = None,
+    ):
+        self.data = data
+        self.request_id = request_id
+
+    def validate(self):
+        if self.data:
+            self.data.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data is not None:
+            result['data'] = self.data.to_map()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('data') is not None:
+            temp_model = QuerySignTaskResponseBodyResultData()
+            self.data = temp_model.from_map(m['data'])
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        return self
+
+
+class QuerySignTaskResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: QuerySignTaskResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = QuerySignTaskResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class QuerySignTaskResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QuerySignTaskResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QuerySignTaskResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SearchFileKeywordPositionsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SearchFileKeywordPositionsRequest(TeaModel):
+    def __init__(
+        self,
+        file_id: str = None,
+        file_name: str = None,
+        file_size: int = None,
+        file_type: str = None,
+        keyword: str = None,
+        request_id: str = None,
+        space_id: int = None,
+        user_id: str = None,
+    ):
+        # This parameter is required.
+        self.file_id = file_id
+        self.file_name = file_name
+        self.file_size = file_size
+        self.file_type = file_type
+        # This parameter is required.
+        self.keyword = keyword
+        self.request_id = request_id
+        # This parameter is required.
+        self.space_id = space_id
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_id is not None:
+            result['fileId'] = self.file_id
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.file_size is not None:
+            result['fileSize'] = self.file_size
+        if self.file_type is not None:
+            result['fileType'] = self.file_type
+        if self.keyword is not None:
+            result['keyword'] = self.keyword
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileId') is not None:
+            self.file_id = m.get('fileId')
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('fileSize') is not None:
+            self.file_size = m.get('fileSize')
+        if m.get('fileType') is not None:
+            self.file_type = m.get('fileType')
+        if m.get('keyword') is not None:
+            self.keyword = m.get('keyword')
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class SearchFileKeywordPositionsResponseBodyResultDataPositions(TeaModel):
+    def __init__(
+        self,
+        index: int = None,
+        position_page: int = None,
+        position_x: float = None,
+        position_y: float = None,
+    ):
+        self.index = index
+        self.position_page = position_page
+        self.position_x = position_x
+        self.position_y = position_y
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.index is not None:
+            result['index'] = self.index
+        if self.position_page is not None:
+            result['positionPage'] = self.position_page
+        if self.position_x is not None:
+            result['positionX'] = self.position_x
+        if self.position_y is not None:
+            result['positionY'] = self.position_y
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('index') is not None:
+            self.index = m.get('index')
+        if m.get('positionPage') is not None:
+            self.position_page = m.get('positionPage')
+        if m.get('positionX') is not None:
+            self.position_x = m.get('positionX')
+        if m.get('positionY') is not None:
+            self.position_y = m.get('positionY')
+        return self
+
+
+class SearchFileKeywordPositionsResponseBodyResultData(TeaModel):
+    def __init__(
+        self,
+        file_id: str = None,
+        keyword: str = None,
+        positions: List[SearchFileKeywordPositionsResponseBodyResultDataPositions] = None,
+        total_count: int = None,
+    ):
+        self.file_id = file_id
+        self.keyword = keyword
+        self.positions = positions
+        self.total_count = total_count
+
+    def validate(self):
+        if self.positions:
+            for k in self.positions:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_id is not None:
+            result['fileId'] = self.file_id
+        if self.keyword is not None:
+            result['keyword'] = self.keyword
+        result['positions'] = []
+        if self.positions is not None:
+            for k in self.positions:
+                result['positions'].append(k.to_map() if k else None)
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileId') is not None:
+            self.file_id = m.get('fileId')
+        if m.get('keyword') is not None:
+            self.keyword = m.get('keyword')
+        self.positions = []
+        if m.get('positions') is not None:
+            for k in m.get('positions'):
+                temp_model = SearchFileKeywordPositionsResponseBodyResultDataPositions()
+                self.positions.append(temp_model.from_map(k))
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class SearchFileKeywordPositionsResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        data: SearchFileKeywordPositionsResponseBodyResultData = None,
+        request_id: str = None,
+    ):
+        self.data = data
+        self.request_id = request_id
+
+    def validate(self):
+        if self.data:
+            self.data.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data is not None:
+            result['data'] = self.data.to_map()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('data') is not None:
+            temp_model = SearchFileKeywordPositionsResponseBodyResultData()
+            self.data = temp_model.from_map(m['data'])
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        return self
+
+
+class SearchFileKeywordPositionsResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: SearchFileKeywordPositionsResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = SearchFileKeywordPositionsResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class SearchFileKeywordPositionsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: SearchFileKeywordPositionsResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = SearchFileKeywordPositionsResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
