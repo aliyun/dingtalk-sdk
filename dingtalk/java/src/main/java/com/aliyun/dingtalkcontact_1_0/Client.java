@@ -1121,6 +1121,70 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>创建用户组</p>
+     * 
+     * @param request CreateUserGroupRequest
+     * @param headers CreateUserGroupHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateUserGroupResponse
+     */
+    public CreateUserGroupResponse createUserGroupWithOptions(CreateUserGroupRequest request, CreateUserGroupHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.clientShow)) {
+            query.put("clientShow", request.clientShow);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.description)) {
+            query.put("description", request.description);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
+            query.put("name", request.name);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateUserGroup"),
+            new TeaPair("version", "contact_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contact/userGroups/create"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateUserGroupResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>创建用户组</p>
+     * 
+     * @param request CreateUserGroupRequest
+     * @return CreateUserGroupResponse
+     */
+    public CreateUserGroupResponse createUserGroup(CreateUserGroupRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CreateUserGroupHeaders headers = new CreateUserGroupHeaders();
+        return this.createUserGroupWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>删除账号映射</p>
      * 
      * @param request DelAccountMappingRequest
@@ -1517,6 +1581,62 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DeleteManagementGroupHeaders headers = new DeleteManagementGroupHeaders();
         return this.deleteManagementGroupWithOptions(groupId, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除静态用户组</p>
+     * 
+     * @param request DeleteUserGroupRequest
+     * @param headers DeleteUserGroupHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteUserGroupResponse
+     */
+    public DeleteUserGroupResponse deleteUserGroupWithOptions(DeleteUserGroupRequest request, DeleteUserGroupHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.groupCode)) {
+            query.put("groupCode", request.groupCode);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DeleteUserGroup"),
+            new TeaPair("version", "contact_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contact/userGroups/delete"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DeleteUserGroupResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除静态用户组</p>
+     * 
+     * @param request DeleteUserGroupRequest
+     * @return DeleteUserGroupResponse
+     */
+    public DeleteUserGroupResponse deleteUserGroup(DeleteUserGroupRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DeleteUserGroupHeaders headers = new DeleteUserGroupHeaders();
+        return this.deleteUserGroupWithOptions(request, headers, runtime);
     }
 
     /**

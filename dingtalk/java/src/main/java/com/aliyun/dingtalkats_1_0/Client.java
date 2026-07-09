@@ -1040,6 +1040,96 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>导入简历创建候选人</p>
+     * 
+     * @param request ImportCandidateByResumeRequest
+     * @param headers ImportCandidateByResumeHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ImportCandidateByResumeResponse
+     */
+    public ImportCandidateByResumeResponse importCandidateByResumeWithOptions(ImportCandidateByResumeRequest request, ImportCandidateByResumeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.opUserId)) {
+            query.put("opUserId", request.opUserId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.channelCode)) {
+            body.put("channelCode", request.channelCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.fileId)) {
+            body.put("fileId", request.fileId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.fileName)) {
+            body.put("fileName", request.fileName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.fileSize)) {
+            body.put("fileSize", request.fileSize);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.fileSourceType)) {
+            body.put("fileSourceType", request.fileSourceType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.fileType)) {
+            body.put("fileType", request.fileType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.spaceId)) {
+            body.put("spaceId", request.spaceId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.url)) {
+            body.put("url", request.url);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ImportCandidateByResume"),
+            new TeaPair("version", "ats_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/ats/candidates/importCandidateByResume"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ImportCandidateByResumeResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>导入简历创建候选人</p>
+     * 
+     * @param request ImportCandidateByResumeRequest
+     * @return ImportCandidateByResumeResponse
+     */
+    public ImportCandidateByResumeResponse importCandidateByResume(ImportCandidateByResumeRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ImportCandidateByResumeHeaders headers = new ImportCandidateByResumeHeaders();
+        return this.importCandidateByResumeWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>导入外部渠道发布的职位数据</p>
      * 
      * @param request ImportJobDataRequest

@@ -1092,6 +1092,82 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>创建签署流程</p>
+     * 
+     * @param request CreateSignFlowRequest
+     * @param headers CreateSignFlowHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateSignFlowResponse
+     */
+    public CreateSignFlowResponse createSignFlowWithOptions(CreateSignFlowRequest request, CreateSignFlowHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizFlowId)) {
+            body.put("bizFlowId", request.bizFlowId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.requestId)) {
+            body.put("requestId", request.requestId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.signDocs)) {
+            body.put("signDocs", request.signDocs);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.signFlowConfig)) {
+            body.put("signFlowConfig", request.signFlowConfig);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.signFlowInitiator)) {
+            body.put("signFlowInitiator", request.signFlowInitiator);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.signers)) {
+            body.put("signers", request.signers);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateSignFlow"),
+            new TeaPair("version", "contract_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contract/dingEsign/signFlow"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateSignFlowResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>创建签署流程</p>
+     * 
+     * @param request CreateSignFlowRequest
+     * @return CreateSignFlowResponse
+     */
+    public CreateSignFlowResponse createSignFlow(CreateSignFlowRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CreateSignFlowHeaders headers = new CreateSignFlowHeaders();
+        return this.createSignFlowWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>天谷侧查询审批单</p>
      * 
      * @param request EsignQueryApprovalInfoRequest
@@ -1782,6 +1858,74 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>获取流程文件下载地址</p>
+     * 
+     * @param request GetFileDownloadUrlRequest
+     * @param headers GetFileDownloadUrlHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetFileDownloadUrlResponse
+     */
+    public GetFileDownloadUrlResponse getFileDownloadUrlWithOptions(GetFileDownloadUrlRequest request, GetFileDownloadUrlHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizFlowId)) {
+            body.put("bizFlowId", request.bizFlowId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.fileId)) {
+            body.put("fileId", request.fileId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.requestId)) {
+            body.put("requestId", request.requestId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.signFlowId)) {
+            body.put("signFlowId", request.signFlowId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetFileDownloadUrl"),
+            new TeaPair("version", "contract_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contract/dingEsign/signFlow/files/downloadUrls"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetFileDownloadUrlResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取流程文件下载地址</p>
+     * 
+     * @param request GetFileDownloadUrlRequest
+     * @return GetFileDownloadUrlResponse
+     */
+    public GetFileDownloadUrlResponse getFileDownloadUrl(GetFileDownloadUrlRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetFileDownloadUrlHeaders headers = new GetFileDownloadUrlHeaders();
+        return this.getFileDownloadUrlWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>开通电子签免费试用</p>
      * 
      * @param request OpenEsignFreeTrailRequest
@@ -2398,6 +2542,218 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryContractSignInfoHeaders headers = new QueryContractSignInfoHeaders();
         return this.queryContractSignInfoWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询签署流程详情</p>
+     * 
+     * @param request QuerySignFlowDetailRequest
+     * @param headers QuerySignFlowDetailHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QuerySignFlowDetailResponse
+     */
+    public QuerySignFlowDetailResponse querySignFlowDetailWithOptions(QuerySignFlowDetailRequest request, QuerySignFlowDetailHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizFlowId)) {
+            body.put("bizFlowId", request.bizFlowId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.requestId)) {
+            body.put("requestId", request.requestId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.signFlowId)) {
+            body.put("signFlowId", request.signFlowId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QuerySignFlowDetail"),
+            new TeaPair("version", "contract_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contract/dingEsign/signFlow/detail"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QuerySignFlowDetailResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询签署流程详情</p>
+     * 
+     * @param request QuerySignFlowDetailRequest
+     * @return QuerySignFlowDetailResponse
+     */
+    public QuerySignFlowDetailResponse querySignFlowDetail(QuerySignFlowDetailRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QuerySignFlowDetailHeaders headers = new QuerySignFlowDetailHeaders();
+        return this.querySignFlowDetailWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询签署任务</p>
+     * 
+     * @param request QuerySignTaskRequest
+     * @param headers QuerySignTaskHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QuerySignTaskResponse
+     */
+    public QuerySignTaskResponse querySignTaskWithOptions(QuerySignTaskRequest request, QuerySignTaskHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizFlowId)) {
+            body.put("bizFlowId", request.bizFlowId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.requestId)) {
+            body.put("requestId", request.requestId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.signFlowId)) {
+            body.put("signFlowId", request.signFlowId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QuerySignTask"),
+            new TeaPair("version", "contract_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contract/dingEsign/signTask/detail"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QuerySignTaskResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询签署任务</p>
+     * 
+     * @param request QuerySignTaskRequest
+     * @return QuerySignTaskResponse
+     */
+    public QuerySignTaskResponse querySignTask(QuerySignTaskRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QuerySignTaskHeaders headers = new QuerySignTaskHeaders();
+        return this.querySignTaskWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询文件关键字位置</p>
+     * 
+     * @param request SearchFileKeywordPositionsRequest
+     * @param headers SearchFileKeywordPositionsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SearchFileKeywordPositionsResponse
+     */
+    public SearchFileKeywordPositionsResponse searchFileKeywordPositionsWithOptions(SearchFileKeywordPositionsRequest request, SearchFileKeywordPositionsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.fileId)) {
+            body.put("fileId", request.fileId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.fileName)) {
+            body.put("fileName", request.fileName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.fileSize)) {
+            body.put("fileSize", request.fileSize);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.fileType)) {
+            body.put("fileType", request.fileType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.keyword)) {
+            body.put("keyword", request.keyword);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.requestId)) {
+            body.put("requestId", request.requestId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.spaceId)) {
+            body.put("spaceId", request.spaceId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SearchFileKeywordPositions"),
+            new TeaPair("version", "contract_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contract/dingEsign/files/keywordPositions"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SearchFileKeywordPositionsResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询文件关键字位置</p>
+     * 
+     * @param request SearchFileKeywordPositionsRequest
+     * @return SearchFileKeywordPositionsResponse
+     */
+    public SearchFileKeywordPositionsResponse searchFileKeywordPositions(SearchFileKeywordPositionsRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SearchFileKeywordPositionsHeaders headers = new SearchFileKeywordPositionsHeaders();
+        return this.searchFileKeywordPositionsWithOptions(request, headers, runtime);
     }
 
     /**
