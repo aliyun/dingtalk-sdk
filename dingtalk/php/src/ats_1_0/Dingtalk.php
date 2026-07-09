@@ -48,6 +48,9 @@ use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\GetJobAuthRequest;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\GetJobAuthResponse;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\GetJobInfoByJobIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\GetJobInfoByJobIdResponse;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\ImportCandidateByResumeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\ImportCandidateByResumeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\ImportCandidateByResumeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\ImportJobDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\ImportJobDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vats_1_0\Models\ImportJobDataResponse;
@@ -1103,6 +1106,89 @@ class Dingtalk extends OpenApiClient
         $headers = new GetJobInfoByJobIdHeaders([]);
 
         return $this->getJobInfoByJobIdWithOptions($jobId, $headers, $runtime);
+    }
+
+    /**
+     * @summary 导入简历创建候选人
+     *  *
+     * @param ImportCandidateByResumeRequest $request ImportCandidateByResumeRequest
+     * @param ImportCandidateByResumeHeaders $headers ImportCandidateByResumeHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ImportCandidateByResumeResponse ImportCandidateByResumeResponse
+     */
+    public function importCandidateByResumeWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->opUserId)) {
+            $query['opUserId'] = $request->opUserId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->channelCode)) {
+            $body['channelCode'] = $request->channelCode;
+        }
+        if (!Utils::isUnset($request->fileId)) {
+            $body['fileId'] = $request->fileId;
+        }
+        if (!Utils::isUnset($request->fileName)) {
+            $body['fileName'] = $request->fileName;
+        }
+        if (!Utils::isUnset($request->fileSize)) {
+            $body['fileSize'] = $request->fileSize;
+        }
+        if (!Utils::isUnset($request->fileSourceType)) {
+            $body['fileSourceType'] = $request->fileSourceType;
+        }
+        if (!Utils::isUnset($request->fileType)) {
+            $body['fileType'] = $request->fileType;
+        }
+        if (!Utils::isUnset($request->spaceId)) {
+            $body['spaceId'] = $request->spaceId;
+        }
+        if (!Utils::isUnset($request->url)) {
+            $body['url'] = $request->url;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'ImportCandidateByResume',
+            'version' => 'ats_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/ats/candidates/importCandidateByResume',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return ImportCandidateByResumeResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 导入简历创建候选人
+     *  *
+     * @param ImportCandidateByResumeRequest $request ImportCandidateByResumeRequest
+     *
+     * @return ImportCandidateByResumeResponse ImportCandidateByResumeResponse
+     */
+    public function importCandidateByResume($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ImportCandidateByResumeHeaders([]);
+
+        return $this->importCandidateByResumeWithOptions($request, $headers, $runtime);
     }
 
     /**

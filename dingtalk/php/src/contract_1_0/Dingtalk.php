@@ -47,6 +47,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateContractReviewResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateContractReviewTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateContractReviewTaskRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateContractReviewTaskResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateSignFlowHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateSignFlowRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateSignFlowResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\EsignQueryApprovalInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\EsignQueryApprovalInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\EsignQueryApprovalInfoResponse;
@@ -81,6 +84,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\GetContractReviewResultShrink
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\GetContractSubjectRiskResultHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\GetContractSubjectRiskResultRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\GetContractSubjectRiskResultResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\GetFileDownloadUrlHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\GetFileDownloadUrlRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\GetFileDownloadUrlResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\OpenEsignFreeTrailHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\OpenEsignFreeTrailRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\OpenEsignFreeTrailResponse;
@@ -111,6 +117,15 @@ use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryContractReviewResultResp
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryContractSignInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryContractSignInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryContractSignInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QuerySignFlowDetailHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QuerySignFlowDetailRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QuerySignFlowDetailResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QuerySignTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QuerySignTaskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QuerySignTaskResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\SearchFileKeywordPositionsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\SearchFileKeywordPositionsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\SearchFileKeywordPositionsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\SendContractCardHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\SendContractCardRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\SendContractCardResponse;
@@ -1153,6 +1168,78 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建签署流程
+     *  *
+     * @param CreateSignFlowRequest $request CreateSignFlowRequest
+     * @param CreateSignFlowHeaders $headers CreateSignFlowHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateSignFlowResponse CreateSignFlowResponse
+     */
+    public function createSignFlowWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizFlowId)) {
+            $body['bizFlowId'] = $request->bizFlowId;
+        }
+        if (!Utils::isUnset($request->requestId)) {
+            $body['requestId'] = $request->requestId;
+        }
+        if (!Utils::isUnset($request->signDocs)) {
+            $body['signDocs'] = $request->signDocs;
+        }
+        if (!Utils::isUnset($request->signFlowConfig)) {
+            $body['signFlowConfig'] = $request->signFlowConfig;
+        }
+        if (!Utils::isUnset($request->signFlowInitiator)) {
+            $body['signFlowInitiator'] = $request->signFlowInitiator;
+        }
+        if (!Utils::isUnset($request->signers)) {
+            $body['signers'] = $request->signers;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'CreateSignFlow',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/dingEsign/signFlow',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CreateSignFlowResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建签署流程
+     *  *
+     * @param CreateSignFlowRequest $request CreateSignFlowRequest
+     *
+     * @return CreateSignFlowResponse CreateSignFlowResponse
+     */
+    public function createSignFlow($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateSignFlowHeaders([]);
+
+        return $this->createSignFlowWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 天谷侧查询审批单
      *  *
      * @param EsignQueryApprovalInfoRequest $request EsignQueryApprovalInfoRequest
@@ -1836,6 +1923,72 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取流程文件下载地址
+     *  *
+     * @param GetFileDownloadUrlRequest $request GetFileDownloadUrlRequest
+     * @param GetFileDownloadUrlHeaders $headers GetFileDownloadUrlHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetFileDownloadUrlResponse GetFileDownloadUrlResponse
+     */
+    public function getFileDownloadUrlWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizFlowId)) {
+            $body['bizFlowId'] = $request->bizFlowId;
+        }
+        if (!Utils::isUnset($request->fileId)) {
+            $body['fileId'] = $request->fileId;
+        }
+        if (!Utils::isUnset($request->requestId)) {
+            $body['requestId'] = $request->requestId;
+        }
+        if (!Utils::isUnset($request->signFlowId)) {
+            $body['signFlowId'] = $request->signFlowId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'GetFileDownloadUrl',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/dingEsign/signFlow/files/downloadUrls',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetFileDownloadUrlResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取流程文件下载地址
+     *  *
+     * @param GetFileDownloadUrlRequest $request GetFileDownloadUrlRequest
+     *
+     * @return GetFileDownloadUrlResponse GetFileDownloadUrlResponse
+     */
+    public function getFileDownloadUrl($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetFileDownloadUrlHeaders([]);
+
+        return $this->getFileDownloadUrlWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 开通电子签免费试用
      *  *
      * @param OpenEsignFreeTrailRequest $request OpenEsignFreeTrailRequest
@@ -2448,6 +2601,210 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryContractSignInfoHeaders([]);
 
         return $this->queryContractSignInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询签署流程详情
+     *  *
+     * @param QuerySignFlowDetailRequest $request QuerySignFlowDetailRequest
+     * @param QuerySignFlowDetailHeaders $headers QuerySignFlowDetailHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QuerySignFlowDetailResponse QuerySignFlowDetailResponse
+     */
+    public function querySignFlowDetailWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizFlowId)) {
+            $body['bizFlowId'] = $request->bizFlowId;
+        }
+        if (!Utils::isUnset($request->requestId)) {
+            $body['requestId'] = $request->requestId;
+        }
+        if (!Utils::isUnset($request->signFlowId)) {
+            $body['signFlowId'] = $request->signFlowId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'QuerySignFlowDetail',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/dingEsign/signFlow/detail',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QuerySignFlowDetailResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询签署流程详情
+     *  *
+     * @param QuerySignFlowDetailRequest $request QuerySignFlowDetailRequest
+     *
+     * @return QuerySignFlowDetailResponse QuerySignFlowDetailResponse
+     */
+    public function querySignFlowDetail($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QuerySignFlowDetailHeaders([]);
+
+        return $this->querySignFlowDetailWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询签署任务
+     *  *
+     * @param QuerySignTaskRequest $request QuerySignTaskRequest
+     * @param QuerySignTaskHeaders $headers QuerySignTaskHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QuerySignTaskResponse QuerySignTaskResponse
+     */
+    public function querySignTaskWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizFlowId)) {
+            $body['bizFlowId'] = $request->bizFlowId;
+        }
+        if (!Utils::isUnset($request->requestId)) {
+            $body['requestId'] = $request->requestId;
+        }
+        if (!Utils::isUnset($request->signFlowId)) {
+            $body['signFlowId'] = $request->signFlowId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'QuerySignTask',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/dingEsign/signTask/detail',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QuerySignTaskResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询签署任务
+     *  *
+     * @param QuerySignTaskRequest $request QuerySignTaskRequest
+     *
+     * @return QuerySignTaskResponse QuerySignTaskResponse
+     */
+    public function querySignTask($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QuerySignTaskHeaders([]);
+
+        return $this->querySignTaskWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询文件关键字位置
+     *  *
+     * @param SearchFileKeywordPositionsRequest $request SearchFileKeywordPositionsRequest
+     * @param SearchFileKeywordPositionsHeaders $headers SearchFileKeywordPositionsHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SearchFileKeywordPositionsResponse SearchFileKeywordPositionsResponse
+     */
+    public function searchFileKeywordPositionsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->fileId)) {
+            $body['fileId'] = $request->fileId;
+        }
+        if (!Utils::isUnset($request->fileName)) {
+            $body['fileName'] = $request->fileName;
+        }
+        if (!Utils::isUnset($request->fileSize)) {
+            $body['fileSize'] = $request->fileSize;
+        }
+        if (!Utils::isUnset($request->fileType)) {
+            $body['fileType'] = $request->fileType;
+        }
+        if (!Utils::isUnset($request->keyword)) {
+            $body['keyword'] = $request->keyword;
+        }
+        if (!Utils::isUnset($request->requestId)) {
+            $body['requestId'] = $request->requestId;
+        }
+        if (!Utils::isUnset($request->spaceId)) {
+            $body['spaceId'] = $request->spaceId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'SearchFileKeywordPositions',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/dingEsign/files/keywordPositions',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return SearchFileKeywordPositionsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询文件关键字位置
+     *  *
+     * @param SearchFileKeywordPositionsRequest $request SearchFileKeywordPositionsRequest
+     *
+     * @return SearchFileKeywordPositionsResponse SearchFileKeywordPositionsResponse
+     */
+    public function searchFileKeywordPositions($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SearchFileKeywordPositionsHeaders([]);
+
+        return $this->searchFileKeywordPositionsWithOptions($request, $headers, $runtime);
     }
 
     /**

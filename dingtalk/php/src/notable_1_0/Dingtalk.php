@@ -71,6 +71,9 @@ use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\ListRecordsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\ListWorkflowsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\ListWorkflowsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\ListWorkflowsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\MarkExternalAuthControlledSheetHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\MarkExternalAuthControlledSheetRequest;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\MarkExternalAuthControlledSheetResponse;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\PrepareImportUploadHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\PrepareImportUploadRequest;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\PrepareImportUploadResponse;
@@ -83,6 +86,9 @@ use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\QueryChangedRecordIdsByClientT
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\QueryDocAllRolesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\QueryDocAllRolesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\QueryDocAllRolesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\QueryExternalAuthControlledSheetsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\QueryExternalAuthControlledSheetsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\QueryExternalAuthControlledSheetsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\QueryImportStatusHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\QueryImportStatusRequest;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\QueryImportStatusResponse;
@@ -92,6 +98,9 @@ use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\RebuildRoleMembersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\TruncateSheetRecordsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\TruncateSheetRecordsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\TruncateSheetRecordsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\UnmarkExternalAuthControlledSheetHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\UnmarkExternalAuthControlledSheetRequest;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\UnmarkExternalAuthControlledSheetResponse;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\UpdateFieldHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\UpdateFieldRequest;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\UpdateFieldResponse;
@@ -1556,6 +1565,78 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 标记外部权限受控 Sheet
+     *  *
+     * @param string                                 $baseId
+     * @param string                                 $sheetIdOrName
+     * @param MarkExternalAuthControlledSheetRequest $request       MarkExternalAuthControlledSheetRequest
+     * @param MarkExternalAuthControlledSheetHeaders $headers       MarkExternalAuthControlledSheetHeaders
+     * @param RuntimeOptions                         $runtime       runtime options for this request RuntimeOptions
+     *
+     * @return MarkExternalAuthControlledSheetResponse MarkExternalAuthControlledSheetResponse
+     */
+    public function markExternalAuthControlledSheetWithOptions($baseId, $sheetIdOrName, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->clientToken)) {
+            $query['clientToken'] = $request->clientToken;
+        }
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->externalAuthType)) {
+            $body['externalAuthType'] = $request->externalAuthType;
+        }
+        if (!Utils::isUnset($request->externalConfig)) {
+            $body['externalConfig'] = $request->externalConfig;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'MarkExternalAuthControlledSheet',
+            'version' => 'notable_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/notable/bases/' . $baseId . '/sheets/' . $sheetIdOrName . '/externalAuth/mark',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return MarkExternalAuthControlledSheetResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 标记外部权限受控 Sheet
+     *  *
+     * @param string                                 $baseId
+     * @param string                                 $sheetIdOrName
+     * @param MarkExternalAuthControlledSheetRequest $request       MarkExternalAuthControlledSheetRequest
+     *
+     * @return MarkExternalAuthControlledSheetResponse MarkExternalAuthControlledSheetResponse
+     */
+    public function markExternalAuthControlledSheet($baseId, $sheetIdOrName, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new MarkExternalAuthControlledSheetHeaders([]);
+
+        return $this->markExternalAuthControlledSheetWithOptions($baseId, $sheetIdOrName, $request, $headers, $runtime);
+    }
+
+    /**
      * @summary 申请加密导入上传链接
      *  *
      * @param string                     $baseId
@@ -1816,6 +1897,74 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询外部权限受控 Sheet 列表
+     *  *
+     * @param string                                   $baseId
+     * @param QueryExternalAuthControlledSheetsRequest $request QueryExternalAuthControlledSheetsRequest
+     * @param QueryExternalAuthControlledSheetsHeaders $headers QueryExternalAuthControlledSheetsHeaders
+     * @param RuntimeOptions                           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryExternalAuthControlledSheetsResponse QueryExternalAuthControlledSheetsResponse
+     */
+    public function queryExternalAuthControlledSheetsWithOptions($baseId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->externalAuthType)) {
+            $query['externalAuthType'] = $request->externalAuthType;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'QueryExternalAuthControlledSheets',
+            'version' => 'notable_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/notable/bases/' . $baseId . '/externalAuth/sheets',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryExternalAuthControlledSheetsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询外部权限受控 Sheet 列表
+     *  *
+     * @param string                                   $baseId
+     * @param QueryExternalAuthControlledSheetsRequest $request QueryExternalAuthControlledSheetsRequest
+     *
+     * @return QueryExternalAuthControlledSheetsResponse QueryExternalAuthControlledSheetsResponse
+     */
+    public function queryExternalAuthControlledSheets($baseId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryExternalAuthControlledSheetsHeaders([]);
+
+        return $this->queryExternalAuthControlledSheetsWithOptions($baseId, $request, $headers, $runtime);
+    }
+
+    /**
      * @summary 查询导入会话状态
      *  *
      * @param string                   $baseId
@@ -2003,6 +2152,70 @@ class Dingtalk extends OpenApiClient
         $headers = new TruncateSheetRecordsHeaders([]);
 
         return $this->truncateSheetRecordsWithOptions($baseId, $sheetIdOrName, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 取消标记外部权限受控 Sheet
+     *  *
+     * @param string                                   $baseId
+     * @param string                                   $sheetIdOrName
+     * @param UnmarkExternalAuthControlledSheetRequest $request       UnmarkExternalAuthControlledSheetRequest
+     * @param UnmarkExternalAuthControlledSheetHeaders $headers       UnmarkExternalAuthControlledSheetHeaders
+     * @param RuntimeOptions                           $runtime       runtime options for this request RuntimeOptions
+     *
+     * @return UnmarkExternalAuthControlledSheetResponse UnmarkExternalAuthControlledSheetResponse
+     */
+    public function unmarkExternalAuthControlledSheetWithOptions($baseId, $sheetIdOrName, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->clientToken)) {
+            $query['clientToken'] = $request->clientToken;
+        }
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'UnmarkExternalAuthControlledSheet',
+            'version' => 'notable_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/notable/bases/' . $baseId . '/sheets/' . $sheetIdOrName . '/externalAuth/mark',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UnmarkExternalAuthControlledSheetResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 取消标记外部权限受控 Sheet
+     *  *
+     * @param string                                   $baseId
+     * @param string                                   $sheetIdOrName
+     * @param UnmarkExternalAuthControlledSheetRequest $request       UnmarkExternalAuthControlledSheetRequest
+     *
+     * @return UnmarkExternalAuthControlledSheetResponse UnmarkExternalAuthControlledSheetResponse
+     */
+    public function unmarkExternalAuthControlledSheet($baseId, $sheetIdOrName, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UnmarkExternalAuthControlledSheetHeaders([]);
+
+        return $this->unmarkExternalAuthControlledSheetWithOptions($baseId, $sheetIdOrName, $request, $headers, $runtime);
     }
 
     /**

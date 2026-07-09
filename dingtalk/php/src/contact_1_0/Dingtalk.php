@@ -51,6 +51,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CreateManagementGroupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CreateSecondaryManagementGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CreateSecondaryManagementGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CreateSecondaryManagementGroupResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CreateUserGroupHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CreateUserGroupRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\CreateUserGroupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DelAccountMappingHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DelAccountMappingRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DelAccountMappingResponse;
@@ -66,6 +69,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DeleteEmpAttributeVisibilityHe
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DeleteEmpAttributeVisibilityResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DeleteManagementGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DeleteManagementGroupResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DeleteUserGroupHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DeleteUserGroupRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DeleteUserGroupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DelOrgAccUserOwnnessHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DelOrgAccUserOwnnessRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DelOrgAccUserOwnnessResponse;
@@ -1385,6 +1391,69 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建用户组
+     *  *
+     * @param CreateUserGroupRequest $request CreateUserGroupRequest
+     * @param CreateUserGroupHeaders $headers CreateUserGroupHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateUserGroupResponse CreateUserGroupResponse
+     */
+    public function createUserGroupWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->clientShow)) {
+            $query['clientShow'] = $request->clientShow;
+        }
+        if (!Utils::isUnset($request->description)) {
+            $query['description'] = $request->description;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $query['name'] = $request->name;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'CreateUserGroup',
+            'version' => 'contact_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contact/userGroups/create',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CreateUserGroupResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建用户组
+     *  *
+     * @param CreateUserGroupRequest $request CreateUserGroupRequest
+     *
+     * @return CreateUserGroupResponse CreateUserGroupResponse
+     */
+    public function createUserGroup($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateUserGroupHeaders([]);
+
+        return $this->createUserGroupWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 删除账号映射
      *  *
      * @param DelAccountMappingRequest $request DelAccountMappingRequest
@@ -1811,6 +1880,63 @@ class Dingtalk extends OpenApiClient
         $headers = new DeleteManagementGroupHeaders([]);
 
         return $this->deleteManagementGroupWithOptions($groupId, $headers, $runtime);
+    }
+
+    /**
+     * @summary 删除静态用户组
+     *  *
+     * @param DeleteUserGroupRequest $request DeleteUserGroupRequest
+     * @param DeleteUserGroupHeaders $headers DeleteUserGroupHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return DeleteUserGroupResponse DeleteUserGroupResponse
+     */
+    public function deleteUserGroupWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->groupCode)) {
+            $query['groupCode'] = $request->groupCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'DeleteUserGroup',
+            'version' => 'contact_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contact/userGroups/delete',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return DeleteUserGroupResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 删除静态用户组
+     *  *
+     * @param DeleteUserGroupRequest $request DeleteUserGroupRequest
+     *
+     * @return DeleteUserGroupResponse DeleteUserGroupResponse
+     */
+    public function deleteUserGroup($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteUserGroupHeaders([]);
+
+        return $this->deleteUserGroupWithOptions($request, $headers, $runtime);
     }
 
     /**
