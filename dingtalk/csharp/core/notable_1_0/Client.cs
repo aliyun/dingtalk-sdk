@@ -3562,6 +3562,182 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>标记外部权限受控 Sheet</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// MarkExternalAuthControlledSheetRequest
+        /// </param>
+        /// <param name="headers">
+        /// MarkExternalAuthControlledSheetHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// MarkExternalAuthControlledSheetResponse
+        /// </returns>
+        public MarkExternalAuthControlledSheetResponse MarkExternalAuthControlledSheetWithOptions(string baseId, string sheetIdOrName, MarkExternalAuthControlledSheetRequest request, MarkExternalAuthControlledSheetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ClientToken))
+            {
+                query["clientToken"] = request.ClientToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExternalAuthType))
+            {
+                body["externalAuthType"] = request.ExternalAuthType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExternalConfig))
+            {
+                body["externalConfig"] = request.ExternalConfig;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "MarkExternalAuthControlledSheet",
+                Version = "notable_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/notable/bases/" + baseId + "/sheets/" + sheetIdOrName + "/externalAuth/mark",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<MarkExternalAuthControlledSheetResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>标记外部权限受控 Sheet</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// MarkExternalAuthControlledSheetRequest
+        /// </param>
+        /// <param name="headers">
+        /// MarkExternalAuthControlledSheetHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// MarkExternalAuthControlledSheetResponse
+        /// </returns>
+        public async Task<MarkExternalAuthControlledSheetResponse> MarkExternalAuthControlledSheetWithOptionsAsync(string baseId, string sheetIdOrName, MarkExternalAuthControlledSheetRequest request, MarkExternalAuthControlledSheetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ClientToken))
+            {
+                query["clientToken"] = request.ClientToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExternalAuthType))
+            {
+                body["externalAuthType"] = request.ExternalAuthType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExternalConfig))
+            {
+                body["externalConfig"] = request.ExternalConfig;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "MarkExternalAuthControlledSheet",
+                Version = "notable_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/notable/bases/" + baseId + "/sheets/" + sheetIdOrName + "/externalAuth/mark",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<MarkExternalAuthControlledSheetResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>标记外部权限受控 Sheet</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// MarkExternalAuthControlledSheetRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// MarkExternalAuthControlledSheetResponse
+        /// </returns>
+        public MarkExternalAuthControlledSheetResponse MarkExternalAuthControlledSheet(string baseId, string sheetIdOrName, MarkExternalAuthControlledSheetRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            MarkExternalAuthControlledSheetHeaders headers = new MarkExternalAuthControlledSheetHeaders();
+            return MarkExternalAuthControlledSheetWithOptions(baseId, sheetIdOrName, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>标记外部权限受控 Sheet</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// MarkExternalAuthControlledSheetRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// MarkExternalAuthControlledSheetResponse
+        /// </returns>
+        public async Task<MarkExternalAuthControlledSheetResponse> MarkExternalAuthControlledSheetAsync(string baseId, string sheetIdOrName, MarkExternalAuthControlledSheetRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            MarkExternalAuthControlledSheetHeaders headers = new MarkExternalAuthControlledSheetHeaders();
+            return await MarkExternalAuthControlledSheetWithOptionsAsync(baseId, sheetIdOrName, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>申请加密导入上传链接</para>
         /// </summary>
         /// 
@@ -4214,6 +4390,178 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>查询外部权限受控 Sheet 列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryExternalAuthControlledSheetsRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryExternalAuthControlledSheetsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryExternalAuthControlledSheetsResponse
+        /// </returns>
+        public QueryExternalAuthControlledSheetsResponse QueryExternalAuthControlledSheetsWithOptions(string baseId, QueryExternalAuthControlledSheetsRequest request, QueryExternalAuthControlledSheetsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExternalAuthType))
+            {
+                query["externalAuthType"] = request.ExternalAuthType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                query["pageSize"] = request.PageSize;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryExternalAuthControlledSheets",
+                Version = "notable_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/notable/bases/" + baseId + "/externalAuth/sheets",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryExternalAuthControlledSheetsResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询外部权限受控 Sheet 列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryExternalAuthControlledSheetsRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryExternalAuthControlledSheetsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryExternalAuthControlledSheetsResponse
+        /// </returns>
+        public async Task<QueryExternalAuthControlledSheetsResponse> QueryExternalAuthControlledSheetsWithOptionsAsync(string baseId, QueryExternalAuthControlledSheetsRequest request, QueryExternalAuthControlledSheetsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExternalAuthType))
+            {
+                query["externalAuthType"] = request.ExternalAuthType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                query["pageSize"] = request.PageSize;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryExternalAuthControlledSheets",
+                Version = "notable_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/notable/bases/" + baseId + "/externalAuth/sheets",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryExternalAuthControlledSheetsResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询外部权限受控 Sheet 列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryExternalAuthControlledSheetsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryExternalAuthControlledSheetsResponse
+        /// </returns>
+        public QueryExternalAuthControlledSheetsResponse QueryExternalAuthControlledSheets(string baseId, QueryExternalAuthControlledSheetsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryExternalAuthControlledSheetsHeaders headers = new QueryExternalAuthControlledSheetsHeaders();
+            return QueryExternalAuthControlledSheetsWithOptions(baseId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询外部权限受控 Sheet 列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryExternalAuthControlledSheetsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryExternalAuthControlledSheetsResponse
+        /// </returns>
+        public async Task<QueryExternalAuthControlledSheetsResponse> QueryExternalAuthControlledSheetsAsync(string baseId, QueryExternalAuthControlledSheetsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryExternalAuthControlledSheetsHeaders headers = new QueryExternalAuthControlledSheetsHeaders();
+            return await QueryExternalAuthControlledSheetsWithOptionsAsync(baseId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>查询导入会话状态</para>
         /// </summary>
         /// 
@@ -4682,6 +5030,162 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             TruncateSheetRecordsHeaders headers = new TruncateSheetRecordsHeaders();
             return await TruncateSheetRecordsWithOptionsAsync(baseId, sheetIdOrName, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>取消标记外部权限受控 Sheet</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UnmarkExternalAuthControlledSheetRequest
+        /// </param>
+        /// <param name="headers">
+        /// UnmarkExternalAuthControlledSheetHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UnmarkExternalAuthControlledSheetResponse
+        /// </returns>
+        public UnmarkExternalAuthControlledSheetResponse UnmarkExternalAuthControlledSheetWithOptions(string baseId, string sheetIdOrName, UnmarkExternalAuthControlledSheetRequest request, UnmarkExternalAuthControlledSheetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ClientToken))
+            {
+                query["clientToken"] = request.ClientToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UnmarkExternalAuthControlledSheet",
+                Version = "notable_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/notable/bases/" + baseId + "/sheets/" + sheetIdOrName + "/externalAuth/mark",
+                Method = "DELETE",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UnmarkExternalAuthControlledSheetResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>取消标记外部权限受控 Sheet</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UnmarkExternalAuthControlledSheetRequest
+        /// </param>
+        /// <param name="headers">
+        /// UnmarkExternalAuthControlledSheetHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UnmarkExternalAuthControlledSheetResponse
+        /// </returns>
+        public async Task<UnmarkExternalAuthControlledSheetResponse> UnmarkExternalAuthControlledSheetWithOptionsAsync(string baseId, string sheetIdOrName, UnmarkExternalAuthControlledSheetRequest request, UnmarkExternalAuthControlledSheetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ClientToken))
+            {
+                query["clientToken"] = request.ClientToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UnmarkExternalAuthControlledSheet",
+                Version = "notable_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/notable/bases/" + baseId + "/sheets/" + sheetIdOrName + "/externalAuth/mark",
+                Method = "DELETE",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UnmarkExternalAuthControlledSheetResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>取消标记外部权限受控 Sheet</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UnmarkExternalAuthControlledSheetRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UnmarkExternalAuthControlledSheetResponse
+        /// </returns>
+        public UnmarkExternalAuthControlledSheetResponse UnmarkExternalAuthControlledSheet(string baseId, string sheetIdOrName, UnmarkExternalAuthControlledSheetRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UnmarkExternalAuthControlledSheetHeaders headers = new UnmarkExternalAuthControlledSheetHeaders();
+            return UnmarkExternalAuthControlledSheetWithOptions(baseId, sheetIdOrName, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>取消标记外部权限受控 Sheet</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UnmarkExternalAuthControlledSheetRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UnmarkExternalAuthControlledSheetResponse
+        /// </returns>
+        public async Task<UnmarkExternalAuthControlledSheetResponse> UnmarkExternalAuthControlledSheetAsync(string baseId, string sheetIdOrName, UnmarkExternalAuthControlledSheetRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UnmarkExternalAuthControlledSheetHeaders headers = new UnmarkExternalAuthControlledSheetHeaders();
+            return await UnmarkExternalAuthControlledSheetWithOptionsAsync(baseId, sheetIdOrName, request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>
