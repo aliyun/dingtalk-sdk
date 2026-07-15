@@ -27,11 +27,17 @@ class CreateAgentResponseBody extends Model
      * @var string
      */
     public $robotCode;
+
+    /**
+     * @var string
+     */
+    public $unifiedAppId;
     protected $_name = [
         'agentId' => 'agentId',
         'clientId' => 'clientId',
         'clientSecret' => 'clientSecret',
         'robotCode' => 'robotCode',
+        'unifiedAppId' => 'unifiedAppId',
     ];
 
     public function validate() {}
@@ -50,6 +56,9 @@ class CreateAgentResponseBody extends Model
         }
         if (null !== $this->robotCode) {
             $res['robotCode'] = $this->robotCode;
+        }
+        if (null !== $this->unifiedAppId) {
+            $res['unifiedAppId'] = $this->unifiedAppId;
         }
 
         return $res;
@@ -74,6 +83,9 @@ class CreateAgentResponseBody extends Model
         }
         if (isset($map['robotCode'])) {
             $model->robotCode = $map['robotCode'];
+        }
+        if (isset($map['unifiedAppId'])) {
+            $model->unifiedAppId = $map['unifiedAppId'];
         }
 
         return $model;

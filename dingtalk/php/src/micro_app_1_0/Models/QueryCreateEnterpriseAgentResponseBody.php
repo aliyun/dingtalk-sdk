@@ -72,6 +72,11 @@ class QueryCreateEnterpriseAgentResponseBody extends Model
      * @var string
      */
     public $taskId;
+
+    /**
+     * @var string
+     */
+    public $unifiedAppId;
     protected $_name = [
         'agentId' => 'agentId',
         'clientId' => 'clientId',
@@ -86,6 +91,7 @@ class QueryCreateEnterpriseAgentResponseBody extends Model
         'robotCode' => 'robotCode',
         'status' => 'status',
         'taskId' => 'taskId',
+        'unifiedAppId' => 'unifiedAppId',
     ];
 
     public function validate() {}
@@ -131,6 +137,9 @@ class QueryCreateEnterpriseAgentResponseBody extends Model
         }
         if (null !== $this->taskId) {
             $res['taskId'] = $this->taskId;
+        }
+        if (null !== $this->unifiedAppId) {
+            $res['unifiedAppId'] = $this->unifiedAppId;
         }
 
         return $res;
@@ -182,6 +191,9 @@ class QueryCreateEnterpriseAgentResponseBody extends Model
         }
         if (isset($map['taskId'])) {
             $model->taskId = $map['taskId'];
+        }
+        if (isset($map['unifiedAppId'])) {
+            $model->unifiedAppId = $map['unifiedAppId'];
         }
 
         return $model;

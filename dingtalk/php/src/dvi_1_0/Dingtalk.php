@@ -1975,7 +1975,7 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 获取设备列表
+     * @summary 批量获取设备详情
      *  *
      * @param QueryDeviceDetailRequest $request QueryDeviceDetailRequest
      * @param QueryDeviceDetailHeaders $headers QueryDeviceDetailHeaders
@@ -2020,7 +2020,7 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 获取设备列表
+     * @summary 批量获取设备详情
      *  *
      * @param QueryDeviceDetailRequest $request QueryDeviceDetailRequest
      *

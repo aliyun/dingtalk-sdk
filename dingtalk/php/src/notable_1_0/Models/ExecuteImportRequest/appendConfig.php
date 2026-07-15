@@ -11,6 +11,11 @@ class appendConfig extends Model
     /**
      * @var string[]
      */
+    public $fieldIdMapping;
+
+    /**
+     * @var string[]
+     */
     public $fieldMapping;
 
     /**
@@ -30,6 +35,7 @@ class appendConfig extends Model
      */
     public $tableId;
     protected $_name = [
+        'fieldIdMapping' => 'fieldIdMapping',
         'fieldMapping' => 'fieldMapping',
         'headerRow' => 'headerRow',
         'srcSheetName' => 'srcSheetName',
@@ -41,6 +47,9 @@ class appendConfig extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->fieldIdMapping) {
+            $res['fieldIdMapping'] = $this->fieldIdMapping;
+        }
         if (null !== $this->fieldMapping) {
             $res['fieldMapping'] = $this->fieldMapping;
         }
@@ -65,6 +74,9 @@ class appendConfig extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['fieldIdMapping'])) {
+            $model->fieldIdMapping = $map['fieldIdMapping'];
+        }
         if (isset($map['fieldMapping'])) {
             $model->fieldMapping = $map['fieldMapping'];
         }

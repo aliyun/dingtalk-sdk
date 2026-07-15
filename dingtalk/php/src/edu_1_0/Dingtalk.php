@@ -95,6 +95,12 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CardGetCardResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CardQueryCardFeedsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CardQueryCardFeedsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CardQueryCardFeedsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CardSubmitCardHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CardSubmitCardRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CardSubmitCardResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CardUpdateCardHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CardUpdateCardRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CardUpdateCardResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CheckRestrictionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CheckRestrictionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CheckRestrictionResponse;
@@ -3049,6 +3055,183 @@ class Dingtalk extends OpenApiClient
         $headers = new CardQueryCardFeedsHeaders([]);
 
         return $this->cardQueryCardFeedsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 教育业务打卡任务提交
+     *  *
+     * @param CardSubmitCardRequest $request CardSubmitCardRequest
+     * @param CardSubmitCardHeaders $headers CardSubmitCardHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CardSubmitCardResponse CardSubmitCardResponse
+     */
+    public function cardSubmitCardWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->cardBizCode)) {
+            $body['cardBizCode'] = $request->cardBizCode;
+        }
+        if (!Utils::isUnset($request->cardBizId)) {
+            $body['cardBizId'] = $request->cardBizId;
+        }
+        if (!Utils::isUnset($request->cardId)) {
+            $body['cardId'] = $request->cardId;
+        }
+        if (!Utils::isUnset($request->cardTaskCode)) {
+            $body['cardTaskCode'] = $request->cardTaskCode;
+        }
+        if (!Utils::isUnset($request->cardTaskId)) {
+            $body['cardTaskId'] = $request->cardTaskId;
+        }
+        if (!Utils::isUnset($request->content)) {
+            $body['content'] = $request->content;
+        }
+        if (!Utils::isUnset($request->detailUrl)) {
+            $body['detailUrl'] = $request->detailUrl;
+        }
+        if (!Utils::isUnset($request->editUrl)) {
+            $body['editUrl'] = $request->editUrl;
+        }
+        if (!Utils::isUnset($request->medias)) {
+            $body['medias'] = $request->medias;
+        }
+        if (!Utils::isUnset($request->meteringNumber)) {
+            $body['meteringNumber'] = $request->meteringNumber;
+        }
+        if (!Utils::isUnset($request->reissueCard)) {
+            $body['reissueCard'] = $request->reissueCard;
+        }
+        if (!Utils::isUnset($request->resultEvaluation)) {
+            $body['resultEvaluation'] = $request->resultEvaluation;
+        }
+        if (!Utils::isUnset($request->sourceType)) {
+            $body['sourceType'] = $request->sourceType;
+        }
+        if (!Utils::isUnset($request->specifiedStudentId)) {
+            $body['specifiedStudentId'] = $request->specifiedStudentId;
+        }
+        if (!Utils::isUnset($request->unitOfMeasurement)) {
+            $body['unitOfMeasurement'] = $request->unitOfMeasurement;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'CardSubmitCard',
+            'version' => 'edu_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/edu/cards/user/task/submit',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CardSubmitCardResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 教育业务打卡任务提交
+     *  *
+     * @param CardSubmitCardRequest $request CardSubmitCardRequest
+     *
+     * @return CardSubmitCardResponse CardSubmitCardResponse
+     */
+    public function cardSubmitCard($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CardSubmitCardHeaders([]);
+
+        return $this->cardSubmitCardWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 教育业务打卡任务更新
+     *  *
+     * @param CardUpdateCardRequest $request CardUpdateCardRequest
+     * @param CardUpdateCardHeaders $headers CardUpdateCardHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CardUpdateCardResponse CardUpdateCardResponse
+     */
+    public function cardUpdateCardWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->cardBizCode)) {
+            $body['cardBizCode'] = $request->cardBizCode;
+        }
+        if (!Utils::isUnset($request->cardId)) {
+            $body['cardId'] = $request->cardId;
+        }
+        if (!Utils::isUnset($request->data)) {
+            $body['data'] = $request->data;
+        }
+        if (!Utils::isUnset($request->identifier)) {
+            $body['identifier'] = $request->identifier;
+        }
+        if (!Utils::isUnset($request->shouldSendUpdateMsg)) {
+            $body['shouldSendUpdateMsg'] = $request->shouldSendUpdateMsg;
+        }
+        if (!Utils::isUnset($request->sourceType)) {
+            $body['sourceType'] = $request->sourceType;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'CardUpdateCard',
+            'version' => 'edu_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/edu/cards/update',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CardUpdateCardResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 教育业务打卡任务更新
+     *  *
+     * @param CardUpdateCardRequest $request CardUpdateCardRequest
+     *
+     * @return CardUpdateCardResponse CardUpdateCardResponse
+     */
+    public function cardUpdateCard($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CardUpdateCardHeaders([]);
+
+        return $this->cardUpdateCardWithOptions($request, $headers, $runtime);
     }
 
     /**

@@ -11,6 +11,9 @@ use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\AddRoleMemberResponse;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\ChangeSwitchHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\ChangeSwitchRequest;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\ChangeSwitchResponse;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\CopyWorkflowHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\CopyWorkflowRequest;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\CopyWorkflowResponse;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\CreateFieldHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\CreateFieldRequest;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\CreateFieldResponse;
@@ -32,6 +35,12 @@ use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\DeleteRoleResponse;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\DeleteSheetHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\DeleteSheetRequest;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\DeleteSheetResponse;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\DeleteWorkflowHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\DeleteWorkflowRequest;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\DeleteWorkflowResponse;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\DisableWorkflowHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\DisableWorkflowRequest;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\DisableWorkflowResponse;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\EnableWorkflowHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\EnableWorkflowRequest;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\EnableWorkflowResponse;
@@ -259,6 +268,79 @@ class Dingtalk extends OpenApiClient
         $headers = new ChangeSwitchHeaders([]);
 
         return $this->changeSwitchWithOptions($baseId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 复制工作流
+     *  *
+     * @param string              $baseId
+     * @param CopyWorkflowRequest $request CopyWorkflowRequest
+     * @param CopyWorkflowHeaders $headers CopyWorkflowHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CopyWorkflowResponse CopyWorkflowResponse
+     */
+    public function copyWorkflowWithOptions($baseId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->flowId)) {
+            $body['flowId'] = $request->flowId;
+        }
+        if (!Utils::isUnset($request->flowVersionId)) {
+            $body['flowVersionId'] = $request->flowVersionId;
+        }
+        if (!Utils::isUnset($request->isSystem)) {
+            $body['isSystem'] = $request->isSystem;
+        }
+        if (!Utils::isUnset($request->sourceBaseId)) {
+            $body['sourceBaseId'] = $request->sourceBaseId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'CopyWorkflow',
+            'version' => 'notable_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/notable/bases/' . $baseId . '/workflows/copy',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CopyWorkflowResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 复制工作流
+     *  *
+     * @param string              $baseId
+     * @param CopyWorkflowRequest $request CopyWorkflowRequest
+     *
+     * @return CopyWorkflowResponse CopyWorkflowResponse
+     */
+    public function copyWorkflow($baseId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CopyWorkflowHeaders([]);
+
+        return $this->copyWorkflowWithOptions($baseId, $request, $headers, $runtime);
     }
 
     /**
@@ -728,6 +810,128 @@ class Dingtalk extends OpenApiClient
         $headers = new DeleteSheetHeaders([]);
 
         return $this->deleteSheetWithOptions($baseId, $sheetIdOrName, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 删除工作流
+     *  *
+     * @param string                $baseId
+     * @param string                $flowId
+     * @param DeleteWorkflowRequest $request DeleteWorkflowRequest
+     * @param DeleteWorkflowHeaders $headers DeleteWorkflowHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return DeleteWorkflowResponse DeleteWorkflowResponse
+     */
+    public function deleteWorkflowWithOptions($baseId, $flowId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'DeleteWorkflow',
+            'version' => 'notable_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/notable/bases/' . $baseId . '/workflows/' . $flowId . '/delete',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return DeleteWorkflowResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 删除工作流
+     *  *
+     * @param string                $baseId
+     * @param string                $flowId
+     * @param DeleteWorkflowRequest $request DeleteWorkflowRequest
+     *
+     * @return DeleteWorkflowResponse DeleteWorkflowResponse
+     */
+    public function deleteWorkflow($baseId, $flowId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteWorkflowHeaders([]);
+
+        return $this->deleteWorkflowWithOptions($baseId, $flowId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 关闭工作流
+     *  *
+     * @param string                 $baseId
+     * @param string                 $flowId
+     * @param DisableWorkflowRequest $request DisableWorkflowRequest
+     * @param DisableWorkflowHeaders $headers DisableWorkflowHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return DisableWorkflowResponse DisableWorkflowResponse
+     */
+    public function disableWorkflowWithOptions($baseId, $flowId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'DisableWorkflow',
+            'version' => 'notable_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/notable/bases/' . $baseId . '/workflows/' . $flowId . '/disable',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return DisableWorkflowResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 关闭工作流
+     *  *
+     * @param string                 $baseId
+     * @param string                 $flowId
+     * @param DisableWorkflowRequest $request DisableWorkflowRequest
+     *
+     * @return DisableWorkflowResponse DisableWorkflowResponse
+     */
+    public function disableWorkflow($baseId, $flowId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DisableWorkflowHeaders([]);
+
+        return $this->disableWorkflowWithOptions($baseId, $flowId, $request, $headers, $runtime);
     }
 
     /**
@@ -1441,6 +1645,9 @@ class Dingtalk extends OpenApiClient
             $query['operatorId'] = $request->operatorId;
         }
         $body = [];
+        if (!Utils::isUnset($request->calcFields)) {
+            $body['calcFields'] = $request->calcFields;
+        }
         if (!Utils::isUnset($request->fieldIdOrNames)) {
             $body['fieldIdOrNames'] = $request->fieldIdOrNames;
         }

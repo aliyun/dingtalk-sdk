@@ -14,6 +14,8 @@ class body extends Model
     public $currentVersion;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $moduleName;

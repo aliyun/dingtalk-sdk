@@ -9,7 +9,19 @@ use AlibabaCloud\Tea\Model;
 class QueryCreateMinutesListRequest extends Model
 {
     /**
+     * @var int
+     */
+    public $gmtCreateEnd;
+
+    /**
+     * @var int
+     */
+    public $gmtCreateStart;
+
+    /**
      * @description This parameter is required.
+     *
+     * @example 20
      *
      * @var int
      */
@@ -27,6 +39,8 @@ class QueryCreateMinutesListRequest extends Model
      */
     public $unionId;
     protected $_name = [
+        'gmtCreateEnd' => 'gmtCreateEnd',
+        'gmtCreateStart' => 'gmtCreateStart',
         'maxResults' => 'maxResults',
         'nextToken' => 'nextToken',
         'unionId' => 'unionId',
@@ -37,6 +51,12 @@ class QueryCreateMinutesListRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->gmtCreateEnd) {
+            $res['gmtCreateEnd'] = $this->gmtCreateEnd;
+        }
+        if (null !== $this->gmtCreateStart) {
+            $res['gmtCreateStart'] = $this->gmtCreateStart;
+        }
         if (null !== $this->maxResults) {
             $res['maxResults'] = $this->maxResults;
         }
@@ -58,6 +78,12 @@ class QueryCreateMinutesListRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['gmtCreateEnd'])) {
+            $model->gmtCreateEnd = $map['gmtCreateEnd'];
+        }
+        if (isset($map['gmtCreateStart'])) {
+            $model->gmtCreateStart = $map['gmtCreateStart'];
+        }
         if (isset($map['maxResults'])) {
             $model->maxResults = $map['maxResults'];
         }

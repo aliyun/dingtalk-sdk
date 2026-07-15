@@ -24,6 +24,13 @@ class nodes extends Model
     public $createTime;
 
     /**
+     * @example node_create_timestamp
+     *
+     * @var int
+     */
+    public $createTimestamp;
+
+    /**
      * @example node_creator_id
      *
      * @var string
@@ -50,6 +57,13 @@ class nodes extends Model
      * @var string
      */
     public $modifiedTime;
+
+    /**
+     * @example node_modified_timestamp
+     *
+     * @var int
+     */
+    public $modifiedTimestamp;
 
     /**
      * @example node_modifier_id
@@ -114,10 +128,12 @@ class nodes extends Model
     protected $_name = [
         'category' => 'category',
         'createTime' => 'createTime',
+        'createTimestamp' => 'createTimestamp',
         'creatorId' => 'creatorId',
         'extension' => 'extension',
         'hasChildren' => 'hasChildren',
         'modifiedTime' => 'modifiedTime',
+        'modifiedTimestamp' => 'modifiedTimestamp',
         'modifierId' => 'modifierId',
         'name' => 'name',
         'nodeId' => 'nodeId',
@@ -140,6 +156,9 @@ class nodes extends Model
         if (null !== $this->createTime) {
             $res['createTime'] = $this->createTime;
         }
+        if (null !== $this->createTimestamp) {
+            $res['createTimestamp'] = $this->createTimestamp;
+        }
         if (null !== $this->creatorId) {
             $res['creatorId'] = $this->creatorId;
         }
@@ -151,6 +170,9 @@ class nodes extends Model
         }
         if (null !== $this->modifiedTime) {
             $res['modifiedTime'] = $this->modifiedTime;
+        }
+        if (null !== $this->modifiedTimestamp) {
+            $res['modifiedTimestamp'] = $this->modifiedTimestamp;
         }
         if (null !== $this->modifierId) {
             $res['modifierId'] = $this->modifierId;
@@ -197,6 +219,9 @@ class nodes extends Model
         if (isset($map['createTime'])) {
             $model->createTime = $map['createTime'];
         }
+        if (isset($map['createTimestamp'])) {
+            $model->createTimestamp = $map['createTimestamp'];
+        }
         if (isset($map['creatorId'])) {
             $model->creatorId = $map['creatorId'];
         }
@@ -208,6 +233,9 @@ class nodes extends Model
         }
         if (isset($map['modifiedTime'])) {
             $model->modifiedTime = $map['modifiedTime'];
+        }
+        if (isset($map['modifiedTimestamp'])) {
+            $model->modifiedTimestamp = $map['modifiedTimestamp'];
         }
         if (isset($map['modifierId'])) {
             $model->modifierId = $map['modifierId'];

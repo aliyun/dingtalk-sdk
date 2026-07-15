@@ -97,6 +97,11 @@ class appList extends Model
      * @var robotInfo
      */
     public $robotInfo;
+
+    /**
+     * @var string
+     */
+    public $unifiedAppId;
     protected $_name = [
         'agentId' => 'agentId',
         'appId' => 'appId',
@@ -110,6 +115,7 @@ class appList extends Model
         'ompLink' => 'ompLink',
         'pcHomepageLink' => 'pcHomepageLink',
         'robotInfo' => 'robotInfo',
+        'unifiedAppId' => 'unifiedAppId',
     ];
 
     public function validate() {}
@@ -158,6 +164,9 @@ class appList extends Model
         }
         if (null !== $this->robotInfo) {
             $res['robotInfo'] = null !== $this->robotInfo ? $this->robotInfo->toMap() : null;
+        }
+        if (null !== $this->unifiedAppId) {
+            $res['unifiedAppId'] = $this->unifiedAppId;
         }
 
         return $res;
@@ -212,6 +221,9 @@ class appList extends Model
         }
         if (isset($map['robotInfo'])) {
             $model->robotInfo = robotInfo::fromMap($map['robotInfo']);
+        }
+        if (isset($map['unifiedAppId'])) {
+            $model->unifiedAppId = $map['unifiedAppId'];
         }
 
         return $model;

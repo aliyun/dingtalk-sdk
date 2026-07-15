@@ -273,7 +273,7 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 查询设备服务调用记录
+     * @summary 查询设备服务调用结果
      *  *
      * @param string                      $invocationId
      * @param GetServiceInvocationHeaders $headers      GetServiceInvocationHeaders
@@ -309,7 +309,7 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 查询设备服务调用记录
+     * @summary 查询设备服务调用结果
      *  *
      * @param string $invocationId
      *

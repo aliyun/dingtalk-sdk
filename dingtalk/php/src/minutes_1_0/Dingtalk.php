@@ -873,6 +873,12 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $query = [];
+        if (!Utils::isUnset($request->gmtCreateEnd)) {
+            $query['gmtCreateEnd'] = $request->gmtCreateEnd;
+        }
+        if (!Utils::isUnset($request->gmtCreateStart)) {
+            $query['gmtCreateStart'] = $request->gmtCreateStart;
+        }
         if (!Utils::isUnset($request->maxResults)) {
             $query['maxResults'] = $request->maxResults;
         }
