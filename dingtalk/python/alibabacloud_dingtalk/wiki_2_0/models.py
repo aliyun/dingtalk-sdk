@@ -1448,10 +1448,12 @@ class GetNodeResponseBodyNode(TeaModel):
         self,
         category: str = None,
         create_time: str = None,
+        create_timestamp: int = None,
         creator_id: str = None,
         extension: str = None,
         has_children: bool = None,
         modified_time: str = None,
+        modified_timestamp: int = None,
         modifier_id: str = None,
         name: str = None,
         node_id: str = None,
@@ -1464,10 +1466,12 @@ class GetNodeResponseBodyNode(TeaModel):
     ):
         self.category = category
         self.create_time = create_time
+        self.create_timestamp = create_timestamp
         self.creator_id = creator_id
         self.extension = extension
         self.has_children = has_children
         self.modified_time = modified_time
+        self.modified_timestamp = modified_timestamp
         self.modifier_id = modifier_id
         self.name = name
         self.node_id = node_id
@@ -1492,6 +1496,8 @@ class GetNodeResponseBodyNode(TeaModel):
             result['category'] = self.category
         if self.create_time is not None:
             result['createTime'] = self.create_time
+        if self.create_timestamp is not None:
+            result['createTimestamp'] = self.create_timestamp
         if self.creator_id is not None:
             result['creatorId'] = self.creator_id
         if self.extension is not None:
@@ -1500,6 +1506,8 @@ class GetNodeResponseBodyNode(TeaModel):
             result['hasChildren'] = self.has_children
         if self.modified_time is not None:
             result['modifiedTime'] = self.modified_time
+        if self.modified_timestamp is not None:
+            result['modifiedTimestamp'] = self.modified_timestamp
         if self.modifier_id is not None:
             result['modifierId'] = self.modifier_id
         if self.name is not None:
@@ -1526,6 +1534,8 @@ class GetNodeResponseBodyNode(TeaModel):
             self.category = m.get('category')
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
+        if m.get('createTimestamp') is not None:
+            self.create_timestamp = m.get('createTimestamp')
         if m.get('creatorId') is not None:
             self.creator_id = m.get('creatorId')
         if m.get('extension') is not None:
@@ -1534,6 +1544,8 @@ class GetNodeResponseBodyNode(TeaModel):
             self.has_children = m.get('hasChildren')
         if m.get('modifiedTime') is not None:
             self.modified_time = m.get('modifiedTime')
+        if m.get('modifiedTimestamp') is not None:
+            self.modified_timestamp = m.get('modifiedTimestamp')
         if m.get('modifierId') is not None:
             self.modifier_id = m.get('modifierId')
         if m.get('name') is not None:
@@ -1767,10 +1779,12 @@ class GetNodeByUrlResponseBodyNode(TeaModel):
         self,
         category: str = None,
         create_time: str = None,
+        create_timestamp: int = None,
         creator_id: str = None,
         extension: str = None,
         has_children: bool = None,
         modified_time: str = None,
+        modified_timestamp: int = None,
         modifier_id: str = None,
         name: str = None,
         node_id: str = None,
@@ -1783,10 +1797,12 @@ class GetNodeByUrlResponseBodyNode(TeaModel):
     ):
         self.category = category
         self.create_time = create_time
+        self.create_timestamp = create_timestamp
         self.creator_id = creator_id
         self.extension = extension
         self.has_children = has_children
         self.modified_time = modified_time
+        self.modified_timestamp = modified_timestamp
         self.modifier_id = modifier_id
         self.name = name
         self.node_id = node_id
@@ -1811,6 +1827,8 @@ class GetNodeByUrlResponseBodyNode(TeaModel):
             result['category'] = self.category
         if self.create_time is not None:
             result['createTime'] = self.create_time
+        if self.create_timestamp is not None:
+            result['createTimestamp'] = self.create_timestamp
         if self.creator_id is not None:
             result['creatorId'] = self.creator_id
         if self.extension is not None:
@@ -1819,6 +1837,8 @@ class GetNodeByUrlResponseBodyNode(TeaModel):
             result['hasChildren'] = self.has_children
         if self.modified_time is not None:
             result['modifiedTime'] = self.modified_time
+        if self.modified_timestamp is not None:
+            result['modifiedTimestamp'] = self.modified_timestamp
         if self.modifier_id is not None:
             result['modifierId'] = self.modifier_id
         if self.name is not None:
@@ -1845,6 +1865,8 @@ class GetNodeByUrlResponseBodyNode(TeaModel):
             self.category = m.get('category')
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
+        if m.get('createTimestamp') is not None:
+            self.create_timestamp = m.get('createTimestamp')
         if m.get('creatorId') is not None:
             self.creator_id = m.get('creatorId')
         if m.get('extension') is not None:
@@ -1853,6 +1875,8 @@ class GetNodeByUrlResponseBodyNode(TeaModel):
             self.has_children = m.get('hasChildren')
         if m.get('modifiedTime') is not None:
             self.modified_time = m.get('modifiedTime')
+        if m.get('modifiedTimestamp') is not None:
+            self.modified_timestamp = m.get('modifiedTimestamp')
         if m.get('modifierId') is not None:
             self.modifier_id = m.get('modifierId')
         if m.get('name') is not None:
@@ -2086,10 +2110,12 @@ class GetNodesResponseBodyNodes(TeaModel):
         self,
         category: str = None,
         create_time: str = None,
+        create_timestamp: int = None,
         creator_id: str = None,
         extension: str = None,
         has_children: bool = None,
         modified_time: str = None,
+        modified_timestamp: int = None,
         modifier_id: str = None,
         name: str = None,
         node_id: str = None,
@@ -2102,10 +2128,12 @@ class GetNodesResponseBodyNodes(TeaModel):
     ):
         self.category = category
         self.create_time = create_time
+        self.create_timestamp = create_timestamp
         self.creator_id = creator_id
         self.extension = extension
         self.has_children = has_children
         self.modified_time = modified_time
+        self.modified_timestamp = modified_timestamp
         self.modifier_id = modifier_id
         self.name = name
         self.node_id = node_id
@@ -2130,6 +2158,8 @@ class GetNodesResponseBodyNodes(TeaModel):
             result['category'] = self.category
         if self.create_time is not None:
             result['createTime'] = self.create_time
+        if self.create_timestamp is not None:
+            result['createTimestamp'] = self.create_timestamp
         if self.creator_id is not None:
             result['creatorId'] = self.creator_id
         if self.extension is not None:
@@ -2138,6 +2168,8 @@ class GetNodesResponseBodyNodes(TeaModel):
             result['hasChildren'] = self.has_children
         if self.modified_time is not None:
             result['modifiedTime'] = self.modified_time
+        if self.modified_timestamp is not None:
+            result['modifiedTimestamp'] = self.modified_timestamp
         if self.modifier_id is not None:
             result['modifierId'] = self.modifier_id
         if self.name is not None:
@@ -2164,6 +2196,8 @@ class GetNodesResponseBodyNodes(TeaModel):
             self.category = m.get('category')
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
+        if m.get('createTimestamp') is not None:
+            self.create_timestamp = m.get('createTimestamp')
         if m.get('creatorId') is not None:
             self.creator_id = m.get('creatorId')
         if m.get('extension') is not None:
@@ -2172,6 +2206,8 @@ class GetNodesResponseBodyNodes(TeaModel):
             self.has_children = m.get('hasChildren')
         if m.get('modifiedTime') is not None:
             self.modified_time = m.get('modifiedTime')
+        if m.get('modifiedTimestamp') is not None:
+            self.modified_timestamp = m.get('modifiedTimestamp')
         if m.get('modifierId') is not None:
             self.modifier_id = m.get('modifierId')
         if m.get('name') is not None:
@@ -3393,10 +3429,12 @@ class ListNodesResponseBodyNodes(TeaModel):
         self,
         category: str = None,
         create_time: str = None,
+        create_timestamp: int = None,
         creator_id: str = None,
         extension: str = None,
         has_children: bool = None,
         modified_time: str = None,
+        modified_timestamp: int = None,
         modifier_id: str = None,
         name: str = None,
         node_id: str = None,
@@ -3409,10 +3447,12 @@ class ListNodesResponseBodyNodes(TeaModel):
     ):
         self.category = category
         self.create_time = create_time
+        self.create_timestamp = create_timestamp
         self.creator_id = creator_id
         self.extension = extension
         self.has_children = has_children
         self.modified_time = modified_time
+        self.modified_timestamp = modified_timestamp
         self.modifier_id = modifier_id
         self.name = name
         self.node_id = node_id
@@ -3437,6 +3477,8 @@ class ListNodesResponseBodyNodes(TeaModel):
             result['category'] = self.category
         if self.create_time is not None:
             result['createTime'] = self.create_time
+        if self.create_timestamp is not None:
+            result['createTimestamp'] = self.create_timestamp
         if self.creator_id is not None:
             result['creatorId'] = self.creator_id
         if self.extension is not None:
@@ -3445,6 +3487,8 @@ class ListNodesResponseBodyNodes(TeaModel):
             result['hasChildren'] = self.has_children
         if self.modified_time is not None:
             result['modifiedTime'] = self.modified_time
+        if self.modified_timestamp is not None:
+            result['modifiedTimestamp'] = self.modified_timestamp
         if self.modifier_id is not None:
             result['modifierId'] = self.modifier_id
         if self.name is not None:
@@ -3471,6 +3515,8 @@ class ListNodesResponseBodyNodes(TeaModel):
             self.category = m.get('category')
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
+        if m.get('createTimestamp') is not None:
+            self.create_timestamp = m.get('createTimestamp')
         if m.get('creatorId') is not None:
             self.creator_id = m.get('creatorId')
         if m.get('extension') is not None:
@@ -3479,6 +3525,8 @@ class ListNodesResponseBodyNodes(TeaModel):
             self.has_children = m.get('hasChildren')
         if m.get('modifiedTime') is not None:
             self.modified_time = m.get('modifiedTime')
+        if m.get('modifiedTimestamp') is not None:
+            self.modified_timestamp = m.get('modifiedTimestamp')
         if m.get('modifierId') is not None:
             self.modifier_id = m.get('modifierId')
         if m.get('name') is not None:

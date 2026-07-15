@@ -1145,11 +1145,13 @@ class CreateAgentResponseBody(TeaModel):
         client_id: str = None,
         client_secret: str = None,
         robot_code: str = None,
+        unified_app_id: str = None,
     ):
         self.agent_id = agent_id
         self.client_id = client_id
         self.client_secret = client_secret
         self.robot_code = robot_code
+        self.unified_app_id = unified_app_id
 
     def validate(self):
         pass
@@ -1168,6 +1170,8 @@ class CreateAgentResponseBody(TeaModel):
             result['clientSecret'] = self.client_secret
         if self.robot_code is not None:
             result['robotCode'] = self.robot_code
+        if self.unified_app_id is not None:
+            result['unifiedAppId'] = self.unified_app_id
         return result
 
     def from_map(self, m: dict = None):
@@ -1180,6 +1184,8 @@ class CreateAgentResponseBody(TeaModel):
             self.client_secret = m.get('clientSecret')
         if m.get('robotCode') is not None:
             self.robot_code = m.get('robotCode')
+        if m.get('unifiedAppId') is not None:
+            self.unified_app_id = m.get('unifiedAppId')
         return self
 
 
@@ -4321,6 +4327,7 @@ class ListAllInnerAppsResponseBodyAppList(TeaModel):
         omp_link: str = None,
         pc_homepage_link: str = None,
         robot_info: ListAllInnerAppsResponseBodyAppListRobotInfo = None,
+        unified_app_id: str = None,
     ):
         # This parameter is required.
         self.agent_id = agent_id
@@ -4338,6 +4345,7 @@ class ListAllInnerAppsResponseBodyAppList(TeaModel):
         self.omp_link = omp_link
         self.pc_homepage_link = pc_homepage_link
         self.robot_info = robot_info
+        self.unified_app_id = unified_app_id
 
     def validate(self):
         if self.cool_app_info:
@@ -4379,6 +4387,8 @@ class ListAllInnerAppsResponseBodyAppList(TeaModel):
             result['pcHomepageLink'] = self.pc_homepage_link
         if self.robot_info is not None:
             result['robotInfo'] = self.robot_info.to_map()
+        if self.unified_app_id is not None:
+            result['unifiedAppId'] = self.unified_app_id
         return result
 
     def from_map(self, m: dict = None):
@@ -4411,6 +4421,8 @@ class ListAllInnerAppsResponseBodyAppList(TeaModel):
         if m.get('robotInfo') is not None:
             temp_model = ListAllInnerAppsResponseBodyAppListRobotInfo()
             self.robot_info = temp_model.from_map(m['robotInfo'])
+        if m.get('unifiedAppId') is not None:
+            self.unified_app_id = m.get('unifiedAppId')
         return self
 
 
@@ -6459,6 +6471,7 @@ class QueryCreateEnterpriseAgentResponseBody(TeaModel):
         robot_code: str = None,
         status: str = None,
         task_id: str = None,
+        unified_app_id: str = None,
     ):
         self.agent_id = agent_id
         self.client_id = client_id
@@ -6473,6 +6486,7 @@ class QueryCreateEnterpriseAgentResponseBody(TeaModel):
         self.robot_code = robot_code
         self.status = status
         self.task_id = task_id
+        self.unified_app_id = unified_app_id
 
     def validate(self):
         pass
@@ -6509,6 +6523,8 @@ class QueryCreateEnterpriseAgentResponseBody(TeaModel):
             result['status'] = self.status
         if self.task_id is not None:
             result['taskId'] = self.task_id
+        if self.unified_app_id is not None:
+            result['unifiedAppId'] = self.unified_app_id
         return result
 
     def from_map(self, m: dict = None):
@@ -6539,6 +6555,8 @@ class QueryCreateEnterpriseAgentResponseBody(TeaModel):
             self.status = m.get('status')
         if m.get('taskId') is not None:
             self.task_id = m.get('taskId')
+        if m.get('unifiedAppId') is not None:
+            self.unified_app_id = m.get('unifiedAppId')
         return self
 
 

@@ -491,7 +491,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkaiot__1__0_models.GetServiceInvocationResponse:
         """
-        @summary 查询设备服务调用记录
+        @summary 查询设备服务调用结果
         
         @param headers: GetServiceInvocationHeaders
         @param runtime: runtime options for this request RuntimeOptions
@@ -528,7 +528,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkaiot__1__0_models.GetServiceInvocationResponse:
         """
-        @summary 查询设备服务调用记录
+        @summary 查询设备服务调用结果
         
         @param headers: GetServiceInvocationHeaders
         @param runtime: runtime options for this request RuntimeOptions
@@ -563,7 +563,7 @@ class Client(OpenApiClient):
         invocation_id: str,
     ) -> dingtalkaiot__1__0_models.GetServiceInvocationResponse:
         """
-        @summary 查询设备服务调用记录
+        @summary 查询设备服务调用结果
         
         @return: GetServiceInvocationResponse
         """
@@ -576,7 +576,7 @@ class Client(OpenApiClient):
         invocation_id: str,
     ) -> dingtalkaiot__1__0_models.GetServiceInvocationResponse:
         """
-        @summary 查询设备服务调用记录
+        @summary 查询设备服务调用结果
         
         @return: GetServiceInvocationResponse
         """

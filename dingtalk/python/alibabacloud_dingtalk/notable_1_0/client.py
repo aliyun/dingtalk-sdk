@@ -278,6 +278,144 @@ class Client(OpenApiClient):
         headers = dingtalknotable__1__0_models.ChangeSwitchHeaders()
         return await self.change_switch_with_options_async(base_id, request, headers, runtime)
 
+    def copy_workflow_with_options(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.CopyWorkflowRequest,
+        headers: dingtalknotable__1__0_models.CopyWorkflowHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.CopyWorkflowResponse:
+        """
+        @summary 复制工作流
+        
+        @param request: CopyWorkflowRequest
+        @param headers: CopyWorkflowHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CopyWorkflowResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.flow_id):
+            body['flowId'] = request.flow_id
+        if not UtilClient.is_unset(request.flow_version_id):
+            body['flowVersionId'] = request.flow_version_id
+        if not UtilClient.is_unset(request.is_system):
+            body['isSystem'] = request.is_system
+        if not UtilClient.is_unset(request.source_base_id):
+            body['sourceBaseId'] = request.source_base_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CopyWorkflow',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/bases/{base_id}/workflows/copy',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.CopyWorkflowResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def copy_workflow_with_options_async(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.CopyWorkflowRequest,
+        headers: dingtalknotable__1__0_models.CopyWorkflowHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.CopyWorkflowResponse:
+        """
+        @summary 复制工作流
+        
+        @param request: CopyWorkflowRequest
+        @param headers: CopyWorkflowHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CopyWorkflowResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.flow_id):
+            body['flowId'] = request.flow_id
+        if not UtilClient.is_unset(request.flow_version_id):
+            body['flowVersionId'] = request.flow_version_id
+        if not UtilClient.is_unset(request.is_system):
+            body['isSystem'] = request.is_system
+        if not UtilClient.is_unset(request.source_base_id):
+            body['sourceBaseId'] = request.source_base_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CopyWorkflow',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/bases/{base_id}/workflows/copy',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.CopyWorkflowResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def copy_workflow(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.CopyWorkflowRequest,
+    ) -> dingtalknotable__1__0_models.CopyWorkflowResponse:
+        """
+        @summary 复制工作流
+        
+        @param request: CopyWorkflowRequest
+        @return: CopyWorkflowResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.CopyWorkflowHeaders()
+        return self.copy_workflow_with_options(base_id, request, headers, runtime)
+
+    async def copy_workflow_async(
+        self,
+        base_id: str,
+        request: dingtalknotable__1__0_models.CopyWorkflowRequest,
+    ) -> dingtalknotable__1__0_models.CopyWorkflowResponse:
+        """
+        @summary 复制工作流
+        
+        @param request: CopyWorkflowRequest
+        @return: CopyWorkflowResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.CopyWorkflowHeaders()
+        return await self.copy_workflow_with_options_async(base_id, request, headers, runtime)
+
     def create_field_with_options(
         self,
         base_id: str,
@@ -1191,6 +1329,250 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalknotable__1__0_models.DeleteSheetHeaders()
         return await self.delete_sheet_with_options_async(base_id, sheet_id_or_name, request, headers, runtime)
+
+    def delete_workflow_with_options(
+        self,
+        base_id: str,
+        flow_id: str,
+        request: dingtalknotable__1__0_models.DeleteWorkflowRequest,
+        headers: dingtalknotable__1__0_models.DeleteWorkflowHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.DeleteWorkflowResponse:
+        """
+        @summary 删除工作流
+        
+        @param request: DeleteWorkflowRequest
+        @param headers: DeleteWorkflowHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteWorkflowResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DeleteWorkflow',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/bases/{base_id}/workflows/{flow_id}/delete',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.DeleteWorkflowResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def delete_workflow_with_options_async(
+        self,
+        base_id: str,
+        flow_id: str,
+        request: dingtalknotable__1__0_models.DeleteWorkflowRequest,
+        headers: dingtalknotable__1__0_models.DeleteWorkflowHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.DeleteWorkflowResponse:
+        """
+        @summary 删除工作流
+        
+        @param request: DeleteWorkflowRequest
+        @param headers: DeleteWorkflowHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteWorkflowResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DeleteWorkflow',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/bases/{base_id}/workflows/{flow_id}/delete',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.DeleteWorkflowResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def delete_workflow(
+        self,
+        base_id: str,
+        flow_id: str,
+        request: dingtalknotable__1__0_models.DeleteWorkflowRequest,
+    ) -> dingtalknotable__1__0_models.DeleteWorkflowResponse:
+        """
+        @summary 删除工作流
+        
+        @param request: DeleteWorkflowRequest
+        @return: DeleteWorkflowResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.DeleteWorkflowHeaders()
+        return self.delete_workflow_with_options(base_id, flow_id, request, headers, runtime)
+
+    async def delete_workflow_async(
+        self,
+        base_id: str,
+        flow_id: str,
+        request: dingtalknotable__1__0_models.DeleteWorkflowRequest,
+    ) -> dingtalknotable__1__0_models.DeleteWorkflowResponse:
+        """
+        @summary 删除工作流
+        
+        @param request: DeleteWorkflowRequest
+        @return: DeleteWorkflowResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.DeleteWorkflowHeaders()
+        return await self.delete_workflow_with_options_async(base_id, flow_id, request, headers, runtime)
+
+    def disable_workflow_with_options(
+        self,
+        base_id: str,
+        flow_id: str,
+        request: dingtalknotable__1__0_models.DisableWorkflowRequest,
+        headers: dingtalknotable__1__0_models.DisableWorkflowHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.DisableWorkflowResponse:
+        """
+        @summary 关闭工作流
+        
+        @param request: DisableWorkflowRequest
+        @param headers: DisableWorkflowHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DisableWorkflowResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DisableWorkflow',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/bases/{base_id}/workflows/{flow_id}/disable',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.DisableWorkflowResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def disable_workflow_with_options_async(
+        self,
+        base_id: str,
+        flow_id: str,
+        request: dingtalknotable__1__0_models.DisableWorkflowRequest,
+        headers: dingtalknotable__1__0_models.DisableWorkflowHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalknotable__1__0_models.DisableWorkflowResponse:
+        """
+        @summary 关闭工作流
+        
+        @param request: DisableWorkflowRequest
+        @param headers: DisableWorkflowHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DisableWorkflowResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DisableWorkflow',
+            version='notable_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/notable/bases/{base_id}/workflows/{flow_id}/disable',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalknotable__1__0_models.DisableWorkflowResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def disable_workflow(
+        self,
+        base_id: str,
+        flow_id: str,
+        request: dingtalknotable__1__0_models.DisableWorkflowRequest,
+    ) -> dingtalknotable__1__0_models.DisableWorkflowResponse:
+        """
+        @summary 关闭工作流
+        
+        @param request: DisableWorkflowRequest
+        @return: DisableWorkflowResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.DisableWorkflowHeaders()
+        return self.disable_workflow_with_options(base_id, flow_id, request, headers, runtime)
+
+    async def disable_workflow_async(
+        self,
+        base_id: str,
+        flow_id: str,
+        request: dingtalknotable__1__0_models.DisableWorkflowRequest,
+    ) -> dingtalknotable__1__0_models.DisableWorkflowResponse:
+        """
+        @summary 关闭工作流
+        
+        @param request: DisableWorkflowRequest
+        @return: DisableWorkflowResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalknotable__1__0_models.DisableWorkflowHeaders()
+        return await self.disable_workflow_with_options_async(base_id, flow_id, request, headers, runtime)
 
     def enable_workflow_with_options(
         self,
@@ -2579,6 +2961,8 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(request.operator_id):
             query['operatorId'] = request.operator_id
         body = {}
+        if not UtilClient.is_unset(request.calc_fields):
+            body['calcFields'] = request.calc_fields
         if not UtilClient.is_unset(request.field_id_or_names):
             body['fieldIdOrNames'] = request.field_id_or_names
         if not UtilClient.is_unset(request.filter):
@@ -2634,6 +3018,8 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(request.operator_id):
             query['operatorId'] = request.operator_id
         body = {}
+        if not UtilClient.is_unset(request.calc_fields):
+            body['calcFields'] = request.calc_fields
         if not UtilClient.is_unset(request.field_id_or_names):
             body['fieldIdOrNames'] = request.field_id_or_names
         if not UtilClient.is_unset(request.filter):

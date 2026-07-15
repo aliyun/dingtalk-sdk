@@ -77,6 +77,7 @@ class CheckDeviceUpdateRequestBody(TeaModel):
         module_name: str = None,
     ):
         self.current_version = current_version
+        # This parameter is required.
         self.module_name = module_name
 
     def validate(self):
@@ -108,6 +109,7 @@ class CheckDeviceUpdateRequest(TeaModel):
         self,
         body: List[CheckDeviceUpdateRequestBody] = None,
     ):
+        # This parameter is required.
         self.body = body
 
     def validate(self):
@@ -586,6 +588,7 @@ class GetDevicePropertiesRequest(TeaModel):
         self,
         body: List[str] = None,
     ):
+        # This parameter is required.
         self.body = body
 
     def validate(self):
@@ -1059,6 +1062,7 @@ class SetDevicePropertiesRequest(TeaModel):
         self,
         body: Dict[str, Any] = None,
     ):
+        # This parameter is required.
         self.body = body
 
     def validate(self):

@@ -4306,6 +4306,318 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.CardQueryCardFeedsHeaders()
         return await self.card_query_card_feeds_with_options_async(request, headers, runtime)
 
+    def card_submit_card_with_options(
+        self,
+        request: dingtalkedu__1__0_models.CardSubmitCardRequest,
+        headers: dingtalkedu__1__0_models.CardSubmitCardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CardSubmitCardResponse:
+        """
+        @summary 教育业务打卡任务提交
+        
+        @param request: CardSubmitCardRequest
+        @param headers: CardSubmitCardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CardSubmitCardResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.card_biz_code):
+            body['cardBizCode'] = request.card_biz_code
+        if not UtilClient.is_unset(request.card_biz_id):
+            body['cardBizId'] = request.card_biz_id
+        if not UtilClient.is_unset(request.card_id):
+            body['cardId'] = request.card_id
+        if not UtilClient.is_unset(request.card_task_code):
+            body['cardTaskCode'] = request.card_task_code
+        if not UtilClient.is_unset(request.card_task_id):
+            body['cardTaskId'] = request.card_task_id
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        if not UtilClient.is_unset(request.detail_url):
+            body['detailUrl'] = request.detail_url
+        if not UtilClient.is_unset(request.edit_url):
+            body['editUrl'] = request.edit_url
+        if not UtilClient.is_unset(request.medias):
+            body['medias'] = request.medias
+        if not UtilClient.is_unset(request.metering_number):
+            body['meteringNumber'] = request.metering_number
+        if not UtilClient.is_unset(request.reissue_card):
+            body['reissueCard'] = request.reissue_card
+        if not UtilClient.is_unset(request.result_evaluation):
+            body['resultEvaluation'] = request.result_evaluation
+        if not UtilClient.is_unset(request.source_type):
+            body['sourceType'] = request.source_type
+        if not UtilClient.is_unset(request.specified_student_id):
+            body['specifiedStudentId'] = request.specified_student_id
+        if not UtilClient.is_unset(request.unit_of_measurement):
+            body['unitOfMeasurement'] = request.unit_of_measurement
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CardSubmitCard',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/cards/user/task/submit',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CardSubmitCardResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def card_submit_card_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.CardSubmitCardRequest,
+        headers: dingtalkedu__1__0_models.CardSubmitCardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CardSubmitCardResponse:
+        """
+        @summary 教育业务打卡任务提交
+        
+        @param request: CardSubmitCardRequest
+        @param headers: CardSubmitCardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CardSubmitCardResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.card_biz_code):
+            body['cardBizCode'] = request.card_biz_code
+        if not UtilClient.is_unset(request.card_biz_id):
+            body['cardBizId'] = request.card_biz_id
+        if not UtilClient.is_unset(request.card_id):
+            body['cardId'] = request.card_id
+        if not UtilClient.is_unset(request.card_task_code):
+            body['cardTaskCode'] = request.card_task_code
+        if not UtilClient.is_unset(request.card_task_id):
+            body['cardTaskId'] = request.card_task_id
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        if not UtilClient.is_unset(request.detail_url):
+            body['detailUrl'] = request.detail_url
+        if not UtilClient.is_unset(request.edit_url):
+            body['editUrl'] = request.edit_url
+        if not UtilClient.is_unset(request.medias):
+            body['medias'] = request.medias
+        if not UtilClient.is_unset(request.metering_number):
+            body['meteringNumber'] = request.metering_number
+        if not UtilClient.is_unset(request.reissue_card):
+            body['reissueCard'] = request.reissue_card
+        if not UtilClient.is_unset(request.result_evaluation):
+            body['resultEvaluation'] = request.result_evaluation
+        if not UtilClient.is_unset(request.source_type):
+            body['sourceType'] = request.source_type
+        if not UtilClient.is_unset(request.specified_student_id):
+            body['specifiedStudentId'] = request.specified_student_id
+        if not UtilClient.is_unset(request.unit_of_measurement):
+            body['unitOfMeasurement'] = request.unit_of_measurement
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CardSubmitCard',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/cards/user/task/submit',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CardSubmitCardResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def card_submit_card(
+        self,
+        request: dingtalkedu__1__0_models.CardSubmitCardRequest,
+    ) -> dingtalkedu__1__0_models.CardSubmitCardResponse:
+        """
+        @summary 教育业务打卡任务提交
+        
+        @param request: CardSubmitCardRequest
+        @return: CardSubmitCardResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CardSubmitCardHeaders()
+        return self.card_submit_card_with_options(request, headers, runtime)
+
+    async def card_submit_card_async(
+        self,
+        request: dingtalkedu__1__0_models.CardSubmitCardRequest,
+    ) -> dingtalkedu__1__0_models.CardSubmitCardResponse:
+        """
+        @summary 教育业务打卡任务提交
+        
+        @param request: CardSubmitCardRequest
+        @return: CardSubmitCardResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CardSubmitCardHeaders()
+        return await self.card_submit_card_with_options_async(request, headers, runtime)
+
+    def card_update_card_with_options(
+        self,
+        request: dingtalkedu__1__0_models.CardUpdateCardRequest,
+        headers: dingtalkedu__1__0_models.CardUpdateCardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CardUpdateCardResponse:
+        """
+        @summary 教育业务打卡任务更新
+        
+        @param request: CardUpdateCardRequest
+        @param headers: CardUpdateCardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CardUpdateCardResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.card_biz_code):
+            body['cardBizCode'] = request.card_biz_code
+        if not UtilClient.is_unset(request.card_id):
+            body['cardId'] = request.card_id
+        if not UtilClient.is_unset(request.data):
+            body['data'] = request.data
+        if not UtilClient.is_unset(request.identifier):
+            body['identifier'] = request.identifier
+        if not UtilClient.is_unset(request.should_send_update_msg):
+            body['shouldSendUpdateMsg'] = request.should_send_update_msg
+        if not UtilClient.is_unset(request.source_type):
+            body['sourceType'] = request.source_type
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CardUpdateCard',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/cards/update',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CardUpdateCardResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def card_update_card_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.CardUpdateCardRequest,
+        headers: dingtalkedu__1__0_models.CardUpdateCardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CardUpdateCardResponse:
+        """
+        @summary 教育业务打卡任务更新
+        
+        @param request: CardUpdateCardRequest
+        @param headers: CardUpdateCardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CardUpdateCardResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.card_biz_code):
+            body['cardBizCode'] = request.card_biz_code
+        if not UtilClient.is_unset(request.card_id):
+            body['cardId'] = request.card_id
+        if not UtilClient.is_unset(request.data):
+            body['data'] = request.data
+        if not UtilClient.is_unset(request.identifier):
+            body['identifier'] = request.identifier
+        if not UtilClient.is_unset(request.should_send_update_msg):
+            body['shouldSendUpdateMsg'] = request.should_send_update_msg
+        if not UtilClient.is_unset(request.source_type):
+            body['sourceType'] = request.source_type
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CardUpdateCard',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/cards/update',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CardUpdateCardResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def card_update_card(
+        self,
+        request: dingtalkedu__1__0_models.CardUpdateCardRequest,
+    ) -> dingtalkedu__1__0_models.CardUpdateCardResponse:
+        """
+        @summary 教育业务打卡任务更新
+        
+        @param request: CardUpdateCardRequest
+        @return: CardUpdateCardResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CardUpdateCardHeaders()
+        return self.card_update_card_with_options(request, headers, runtime)
+
+    async def card_update_card_async(
+        self,
+        request: dingtalkedu__1__0_models.CardUpdateCardRequest,
+    ) -> dingtalkedu__1__0_models.CardUpdateCardResponse:
+        """
+        @summary 教育业务打卡任务更新
+        
+        @param request: CardUpdateCardRequest
+        @return: CardUpdateCardResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CardUpdateCardHeaders()
+        return await self.card_update_card_with_options_async(request, headers, runtime)
+
     def check_restriction_with_options(
         self,
         request: dingtalkedu__1__0_models.CheckRestrictionRequest,

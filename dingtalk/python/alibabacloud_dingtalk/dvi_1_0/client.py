@@ -3575,7 +3575,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdvi__1__0_models.QueryDeviceDetailResponse:
         """
-        @summary 获取设备列表
+        @summary 批量获取设备详情
         
         @param request: QueryDeviceDetailRequest
         @param headers: QueryDeviceDetailHeaders
@@ -3620,7 +3620,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkdvi__1__0_models.QueryDeviceDetailResponse:
         """
-        @summary 获取设备列表
+        @summary 批量获取设备详情
         
         @param request: QueryDeviceDetailRequest
         @param headers: QueryDeviceDetailHeaders
@@ -3663,7 +3663,7 @@ class Client(OpenApiClient):
         request: dingtalkdvi__1__0_models.QueryDeviceDetailRequest,
     ) -> dingtalkdvi__1__0_models.QueryDeviceDetailResponse:
         """
-        @summary 获取设备列表
+        @summary 批量获取设备详情
         
         @param request: QueryDeviceDetailRequest
         @return: QueryDeviceDetailResponse
@@ -3677,7 +3677,7 @@ class Client(OpenApiClient):
         request: dingtalkdvi__1__0_models.QueryDeviceDetailRequest,
     ) -> dingtalkdvi__1__0_models.QueryDeviceDetailResponse:
         """
-        @summary 获取设备列表
+        @summary 批量获取设备详情
         
         @param request: QueryDeviceDetailRequest
         @return: QueryDeviceDetailResponse

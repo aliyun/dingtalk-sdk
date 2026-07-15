@@ -2182,10 +2182,14 @@ class QueryCreateMinutesListHeaders(TeaModel):
 class QueryCreateMinutesListRequest(TeaModel):
     def __init__(
         self,
+        gmt_create_end: int = None,
+        gmt_create_start: int = None,
         max_results: int = None,
         next_token: str = None,
         union_id: str = None,
     ):
+        self.gmt_create_end = gmt_create_end
+        self.gmt_create_start = gmt_create_start
         # This parameter is required.
         self.max_results = max_results
         self.next_token = next_token
@@ -2201,6 +2205,10 @@ class QueryCreateMinutesListRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.gmt_create_end is not None:
+            result['gmtCreateEnd'] = self.gmt_create_end
+        if self.gmt_create_start is not None:
+            result['gmtCreateStart'] = self.gmt_create_start
         if self.max_results is not None:
             result['maxResults'] = self.max_results
         if self.next_token is not None:
@@ -2211,6 +2219,10 @@ class QueryCreateMinutesListRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('gmtCreateEnd') is not None:
+            self.gmt_create_end = m.get('gmtCreateEnd')
+        if m.get('gmtCreateStart') is not None:
+            self.gmt_create_start = m.get('gmtCreateStart')
         if m.get('maxResults') is not None:
             self.max_results = m.get('maxResults')
         if m.get('nextToken') is not None:

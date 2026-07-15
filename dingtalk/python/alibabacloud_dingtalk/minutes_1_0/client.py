@@ -1444,6 +1444,10 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         query = {}
+        if not UtilClient.is_unset(request.gmt_create_end):
+            query['gmtCreateEnd'] = request.gmt_create_end
+        if not UtilClient.is_unset(request.gmt_create_start):
+            query['gmtCreateStart'] = request.gmt_create_start
         if not UtilClient.is_unset(request.max_results):
             query['maxResults'] = request.max_results
         if not UtilClient.is_unset(request.next_token):
@@ -1491,6 +1495,10 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         query = {}
+        if not UtilClient.is_unset(request.gmt_create_end):
+            query['gmtCreateEnd'] = request.gmt_create_end
+        if not UtilClient.is_unset(request.gmt_create_start):
+            query['gmtCreateStart'] = request.gmt_create_start
         if not UtilClient.is_unset(request.max_results):
             query['maxResults'] = request.max_results
         if not UtilClient.is_unset(request.next_token):
