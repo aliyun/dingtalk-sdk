@@ -4,6 +4,9 @@ package com.aliyun.dingtalkaiot_1_0.models;
 import com.aliyun.tea.*;
 
 public class SetDevicePropertiesRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("body")
     public java.util.Map<String, ?> body;
 

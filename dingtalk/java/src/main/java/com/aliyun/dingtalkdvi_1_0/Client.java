@@ -1850,7 +1850,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
-     * <p>获取设备列表</p>
+     * <p>批量获取设备详情</p>
      * 
      * @param request QueryDeviceDetailRequest
      * @param headers QueryDeviceDetailHeaders
@@ -1897,7 +1897,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
-     * <p>获取设备列表</p>
+     * <p>批量获取设备详情</p>
      * 
      * @param request QueryDeviceDetailRequest
      * @return QueryDeviceDetailResponse

@@ -776,6 +776,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public QueryCreateMinutesListResponse queryCreateMinutesListWithOptions(QueryCreateMinutesListRequest request, QueryCreateMinutesListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.gmtCreateEnd)) {
+            query.put("gmtCreateEnd", request.gmtCreateEnd);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.gmtCreateStart)) {
+            query.put("gmtCreateStart", request.gmtCreateStart);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
             query.put("maxResults", request.maxResults);
         }

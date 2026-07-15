@@ -4,6 +4,9 @@ package com.aliyun.dingtalkaiot_1_0.models;
 import com.aliyun.tea.*;
 
 public class CheckDeviceUpdateRequest extends TeaModel {
+    /**
+     * <p>This parameter is required.</p>
+     */
     @NameInMap("body")
     public java.util.List<CheckDeviceUpdateRequestBody> body;
 
@@ -24,6 +27,9 @@ public class CheckDeviceUpdateRequest extends TeaModel {
         @NameInMap("currentVersion")
         public String currentVersion;
 
+        /**
+         * <p>This parameter is required.</p>
+         */
         @NameInMap("moduleName")
         public String moduleName;
 

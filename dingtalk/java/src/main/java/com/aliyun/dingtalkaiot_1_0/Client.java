@@ -224,7 +224,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
-     * <p>查询设备服务调用记录</p>
+     * <p>查询设备服务调用结果</p>
      * 
      * @param headers GetServiceInvocationHeaders
      * @param runtime runtime options for this request RuntimeOptions
@@ -259,7 +259,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
-     * <p>查询设备服务调用记录</p>
+     * <p>查询设备服务调用结果</p>
      * @return GetServiceInvocationResponse
      */
     public GetServiceInvocationResponse getServiceInvocation(String invocationId) throws Exception {

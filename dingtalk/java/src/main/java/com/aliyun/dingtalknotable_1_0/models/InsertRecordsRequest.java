@@ -10,10 +10,6 @@ public class InsertRecordsRequest extends TeaModel {
     @NameInMap("records")
     public java.util.List<InsertRecordsRequestRecords> records;
 
-    /**
-     * <strong>example:</strong>
-     * <p>550e8400-e29b-41d4-a716-446655440000</p>
-     */
     @NameInMap("clientToken")
     public String clientToken;
 

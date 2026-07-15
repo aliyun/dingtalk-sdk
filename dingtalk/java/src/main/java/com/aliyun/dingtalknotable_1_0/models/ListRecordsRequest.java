@@ -4,6 +4,9 @@ package com.aliyun.dingtalknotable_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListRecordsRequest extends TeaModel {
+    @NameInMap("calcFields")
+    public Boolean calcFields;
+
     @NameInMap("fieldIdOrNames")
     public java.util.List<String> fieldIdOrNames;
 
@@ -28,6 +31,14 @@ public class ListRecordsRequest extends TeaModel {
     public static ListRecordsRequest build(java.util.Map<String, ?> map) throws Exception {
         ListRecordsRequest self = new ListRecordsRequest();
         return TeaModel.build(map, self);
+    }
+
+    public ListRecordsRequest setCalcFields(Boolean calcFields) {
+        this.calcFields = calcFields;
+        return this;
+    }
+    public Boolean getCalcFields() {
+        return this.calcFields;
     }
 
     public ListRecordsRequest setFieldIdOrNames(java.util.List<String> fieldIdOrNames) {

@@ -43,6 +43,9 @@ public class QueryCreateEnterpriseAgentResponseBody extends TeaModel {
     @NameInMap("taskId")
     public String taskId;
 
+    @NameInMap("unifiedAppId")
+    public String unifiedAppId;
+
     public static QueryCreateEnterpriseAgentResponseBody build(java.util.Map<String, ?> map) throws Exception {
         QueryCreateEnterpriseAgentResponseBody self = new QueryCreateEnterpriseAgentResponseBody();
         return TeaModel.build(map, self);
@@ -150,6 +153,14 @@ public class QueryCreateEnterpriseAgentResponseBody extends TeaModel {
     }
     public String getTaskId() {
         return this.taskId;
+    }
+
+    public QueryCreateEnterpriseAgentResponseBody setUnifiedAppId(String unifiedAppId) {
+        this.unifiedAppId = unifiedAppId;
+        return this;
+    }
+    public String getUnifiedAppId() {
+        return this.unifiedAppId;
     }
 
 }

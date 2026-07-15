@@ -165,6 +165,9 @@ public class ListAllInnerAppsResponseBody extends TeaModel {
         @NameInMap("robotInfo")
         public ListAllInnerAppsResponseBodyAppListRobotInfo robotInfo;
 
+        @NameInMap("unifiedAppId")
+        public String unifiedAppId;
+
         public static ListAllInnerAppsResponseBodyAppList build(java.util.Map<String, ?> map) throws Exception {
             ListAllInnerAppsResponseBodyAppList self = new ListAllInnerAppsResponseBodyAppList();
             return TeaModel.build(map, self);
@@ -264,6 +267,14 @@ public class ListAllInnerAppsResponseBody extends TeaModel {
         }
         public ListAllInnerAppsResponseBodyAppListRobotInfo getRobotInfo() {
             return this.robotInfo;
+        }
+
+        public ListAllInnerAppsResponseBodyAppList setUnifiedAppId(String unifiedAppId) {
+            this.unifiedAppId = unifiedAppId;
+            return this;
+        }
+        public String getUnifiedAppId() {
+            return this.unifiedAppId;
         }
 
     }

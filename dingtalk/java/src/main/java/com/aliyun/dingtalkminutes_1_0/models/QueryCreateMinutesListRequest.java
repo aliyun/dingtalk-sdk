@@ -4,8 +4,17 @@ package com.aliyun.dingtalkminutes_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryCreateMinutesListRequest extends TeaModel {
+    @NameInMap("gmtCreateEnd")
+    public Long gmtCreateEnd;
+
+    @NameInMap("gmtCreateStart")
+    public Long gmtCreateStart;
+
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>20</p>
      */
     @NameInMap("maxResults")
     public Integer maxResults;
@@ -22,6 +31,22 @@ public class QueryCreateMinutesListRequest extends TeaModel {
     public static QueryCreateMinutesListRequest build(java.util.Map<String, ?> map) throws Exception {
         QueryCreateMinutesListRequest self = new QueryCreateMinutesListRequest();
         return TeaModel.build(map, self);
+    }
+
+    public QueryCreateMinutesListRequest setGmtCreateEnd(Long gmtCreateEnd) {
+        this.gmtCreateEnd = gmtCreateEnd;
+        return this;
+    }
+    public Long getGmtCreateEnd() {
+        return this.gmtCreateEnd;
+    }
+
+    public QueryCreateMinutesListRequest setGmtCreateStart(Long gmtCreateStart) {
+        this.gmtCreateStart = gmtCreateStart;
+        return this;
+    }
+    public Long getGmtCreateStart() {
+        return this.gmtCreateStart;
     }
 
     public QueryCreateMinutesListRequest setMaxResults(Integer maxResults) {

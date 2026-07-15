@@ -144,6 +144,80 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>复制工作流</p>
+     * 
+     * @param request CopyWorkflowRequest
+     * @param headers CopyWorkflowHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CopyWorkflowResponse
+     */
+    public CopyWorkflowResponse copyWorkflowWithOptions(String baseId, CopyWorkflowRequest request, CopyWorkflowHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.flowId)) {
+            body.put("flowId", request.flowId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.flowVersionId)) {
+            body.put("flowVersionId", request.flowVersionId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.isSystem)) {
+            body.put("isSystem", request.isSystem);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.sourceBaseId)) {
+            body.put("sourceBaseId", request.sourceBaseId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CopyWorkflow"),
+            new TeaPair("version", "notable_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/notable/bases/" + baseId + "/workflows/copy"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CopyWorkflowResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>复制工作流</p>
+     * 
+     * @param request CopyWorkflowRequest
+     * @return CopyWorkflowResponse
+     */
+    public CopyWorkflowResponse copyWorkflow(String baseId, CopyWorkflowRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CopyWorkflowHeaders headers = new CopyWorkflowHeaders();
+        return this.copyWorkflowWithOptions(baseId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>新增数据表字段</p>
      * 
      * @param request CreateFieldRequest
@@ -590,6 +664,118 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DeleteSheetHeaders headers = new DeleteSheetHeaders();
         return this.deleteSheetWithOptions(baseId, sheetIdOrName, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除工作流</p>
+     * 
+     * @param request DeleteWorkflowRequest
+     * @param headers DeleteWorkflowHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteWorkflowResponse
+     */
+    public DeleteWorkflowResponse deleteWorkflowWithOptions(String baseId, String flowId, DeleteWorkflowRequest request, DeleteWorkflowHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DeleteWorkflow"),
+            new TeaPair("version", "notable_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/notable/bases/" + baseId + "/workflows/" + flowId + "/delete"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DeleteWorkflowResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除工作流</p>
+     * 
+     * @param request DeleteWorkflowRequest
+     * @return DeleteWorkflowResponse
+     */
+    public DeleteWorkflowResponse deleteWorkflow(String baseId, String flowId, DeleteWorkflowRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DeleteWorkflowHeaders headers = new DeleteWorkflowHeaders();
+        return this.deleteWorkflowWithOptions(baseId, flowId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>关闭工作流</p>
+     * 
+     * @param request DisableWorkflowRequest
+     * @param headers DisableWorkflowHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DisableWorkflowResponse
+     */
+    public DisableWorkflowResponse disableWorkflowWithOptions(String baseId, String flowId, DisableWorkflowRequest request, DisableWorkflowHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DisableWorkflow"),
+            new TeaPair("version", "notable_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/notable/bases/" + baseId + "/workflows/" + flowId + "/disable"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DisableWorkflowResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>关闭工作流</p>
+     * 
+     * @param request DisableWorkflowRequest
+     * @return DisableWorkflowResponse
+     */
+    public DisableWorkflowResponse disableWorkflow(String baseId, String flowId, DisableWorkflowRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DisableWorkflowHeaders headers = new DisableWorkflowHeaders();
+        return this.disableWorkflowWithOptions(baseId, flowId, request, headers, runtime);
     }
 
     /**
@@ -1265,6 +1451,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.calcFields)) {
+            body.put("calcFields", request.calcFields);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.fieldIdOrNames)) {
             body.put("fieldIdOrNames", request.fieldIdOrNames);
         }

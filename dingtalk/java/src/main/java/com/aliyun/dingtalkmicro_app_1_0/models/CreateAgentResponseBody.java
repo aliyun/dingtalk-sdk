@@ -16,6 +16,9 @@ public class CreateAgentResponseBody extends TeaModel {
     @NameInMap("robotCode")
     public String robotCode;
 
+    @NameInMap("unifiedAppId")
+    public String unifiedAppId;
+
     public static CreateAgentResponseBody build(java.util.Map<String, ?> map) throws Exception {
         CreateAgentResponseBody self = new CreateAgentResponseBody();
         return TeaModel.build(map, self);
@@ -51,6 +54,14 @@ public class CreateAgentResponseBody extends TeaModel {
     }
     public String getRobotCode() {
         return this.robotCode;
+    }
+
+    public CreateAgentResponseBody setUnifiedAppId(String unifiedAppId) {
+        this.unifiedAppId = unifiedAppId;
+        return this;
+    }
+    public String getUnifiedAppId() {
+        return this.unifiedAppId;
     }
 
 }

@@ -63,6 +63,9 @@ public class ExecuteImportRequest extends TeaModel {
     }
 
     public static class ExecuteImportRequestAppendConfig extends TeaModel {
+        @NameInMap("fieldIdMapping")
+        public java.util.Map<String, String> fieldIdMapping;
+
         @NameInMap("fieldMapping")
         public java.util.Map<String, String> fieldMapping;
 
@@ -81,6 +84,14 @@ public class ExecuteImportRequest extends TeaModel {
         public static ExecuteImportRequestAppendConfig build(java.util.Map<String, ?> map) throws Exception {
             ExecuteImportRequestAppendConfig self = new ExecuteImportRequestAppendConfig();
             return TeaModel.build(map, self);
+        }
+
+        public ExecuteImportRequestAppendConfig setFieldIdMapping(java.util.Map<String, String> fieldIdMapping) {
+            this.fieldIdMapping = fieldIdMapping;
+            return this;
+        }
+        public java.util.Map<String, String> getFieldIdMapping() {
+            return this.fieldIdMapping;
         }
 
         public ExecuteImportRequestAppendConfig setFieldMapping(java.util.Map<String, String> fieldMapping) {

@@ -60,6 +60,13 @@ public class GetNodeResponseBody extends TeaModel {
 
         /**
          * <strong>example:</strong>
+         * <p>node_create_timestamp</p>
+         */
+        @NameInMap("createTimestamp")
+        public Long createTimestamp;
+
+        /**
+         * <strong>example:</strong>
          * <p>node_creator_id</p>
          */
         @NameInMap("creatorId")
@@ -85,6 +92,13 @@ public class GetNodeResponseBody extends TeaModel {
          */
         @NameInMap("modifiedTime")
         public String modifiedTime;
+
+        /**
+         * <strong>example:</strong>
+         * <p>node_modified_timestamp</p>
+         */
+        @NameInMap("modifiedTimestamp")
+        public Long modifiedTimestamp;
 
         /**
          * <strong>example:</strong>
@@ -166,6 +180,14 @@ public class GetNodeResponseBody extends TeaModel {
             return this.createTime;
         }
 
+        public GetNodeResponseBodyNode setCreateTimestamp(Long createTimestamp) {
+            this.createTimestamp = createTimestamp;
+            return this;
+        }
+        public Long getCreateTimestamp() {
+            return this.createTimestamp;
+        }
+
         public GetNodeResponseBodyNode setCreatorId(String creatorId) {
             this.creatorId = creatorId;
             return this;
@@ -196,6 +218,14 @@ public class GetNodeResponseBody extends TeaModel {
         }
         public String getModifiedTime() {
             return this.modifiedTime;
+        }
+
+        public GetNodeResponseBodyNode setModifiedTimestamp(Long modifiedTimestamp) {
+            this.modifiedTimestamp = modifiedTimestamp;
+            return this;
+        }
+        public Long getModifiedTimestamp() {
+            return this.modifiedTimestamp;
         }
 
         public GetNodeResponseBodyNode setModifierId(String modifierId) {
