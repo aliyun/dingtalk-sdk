@@ -350,6 +350,190 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>复制工作流</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CopyWorkflowRequest
+        /// </param>
+        /// <param name="headers">
+        /// CopyWorkflowHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CopyWorkflowResponse
+        /// </returns>
+        public CopyWorkflowResponse CopyWorkflowWithOptions(string baseId, CopyWorkflowRequest request, CopyWorkflowHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FlowId))
+            {
+                body["flowId"] = request.FlowId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FlowVersionId))
+            {
+                body["flowVersionId"] = request.FlowVersionId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsSystem))
+            {
+                body["isSystem"] = request.IsSystem;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceBaseId))
+            {
+                body["sourceBaseId"] = request.SourceBaseId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CopyWorkflow",
+                Version = "notable_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/notable/bases/" + baseId + "/workflows/copy",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CopyWorkflowResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>复制工作流</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CopyWorkflowRequest
+        /// </param>
+        /// <param name="headers">
+        /// CopyWorkflowHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CopyWorkflowResponse
+        /// </returns>
+        public async Task<CopyWorkflowResponse> CopyWorkflowWithOptionsAsync(string baseId, CopyWorkflowRequest request, CopyWorkflowHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FlowId))
+            {
+                body["flowId"] = request.FlowId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FlowVersionId))
+            {
+                body["flowVersionId"] = request.FlowVersionId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsSystem))
+            {
+                body["isSystem"] = request.IsSystem;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceBaseId))
+            {
+                body["sourceBaseId"] = request.SourceBaseId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CopyWorkflow",
+                Version = "notable_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/notable/bases/" + baseId + "/workflows/copy",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CopyWorkflowResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>复制工作流</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CopyWorkflowRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CopyWorkflowResponse
+        /// </returns>
+        public CopyWorkflowResponse CopyWorkflow(string baseId, CopyWorkflowRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CopyWorkflowHeaders headers = new CopyWorkflowHeaders();
+            return CopyWorkflowWithOptions(baseId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>复制工作流</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CopyWorkflowRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CopyWorkflowResponse
+        /// </returns>
+        public async Task<CopyWorkflowResponse> CopyWorkflowAsync(string baseId, CopyWorkflowRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CopyWorkflowHeaders headers = new CopyWorkflowHeaders();
+            return await CopyWorkflowWithOptionsAsync(baseId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>新增数据表字段</para>
         /// </summary>
         /// 
@@ -1498,6 +1682,302 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             DeleteSheetHeaders headers = new DeleteSheetHeaders();
             return await DeleteSheetWithOptionsAsync(baseId, sheetIdOrName, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除工作流</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteWorkflowRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteWorkflowHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteWorkflowResponse
+        /// </returns>
+        public DeleteWorkflowResponse DeleteWorkflowWithOptions(string baseId, string flowId, DeleteWorkflowRequest request, DeleteWorkflowHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteWorkflow",
+                Version = "notable_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/notable/bases/" + baseId + "/workflows/" + flowId + "/delete",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteWorkflowResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除工作流</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteWorkflowRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteWorkflowHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteWorkflowResponse
+        /// </returns>
+        public async Task<DeleteWorkflowResponse> DeleteWorkflowWithOptionsAsync(string baseId, string flowId, DeleteWorkflowRequest request, DeleteWorkflowHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteWorkflow",
+                Version = "notable_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/notable/bases/" + baseId + "/workflows/" + flowId + "/delete",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteWorkflowResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除工作流</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteWorkflowRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteWorkflowResponse
+        /// </returns>
+        public DeleteWorkflowResponse DeleteWorkflow(string baseId, string flowId, DeleteWorkflowRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteWorkflowHeaders headers = new DeleteWorkflowHeaders();
+            return DeleteWorkflowWithOptions(baseId, flowId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除工作流</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteWorkflowRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteWorkflowResponse
+        /// </returns>
+        public async Task<DeleteWorkflowResponse> DeleteWorkflowAsync(string baseId, string flowId, DeleteWorkflowRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteWorkflowHeaders headers = new DeleteWorkflowHeaders();
+            return await DeleteWorkflowWithOptionsAsync(baseId, flowId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>关闭工作流</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DisableWorkflowRequest
+        /// </param>
+        /// <param name="headers">
+        /// DisableWorkflowHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DisableWorkflowResponse
+        /// </returns>
+        public DisableWorkflowResponse DisableWorkflowWithOptions(string baseId, string flowId, DisableWorkflowRequest request, DisableWorkflowHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DisableWorkflow",
+                Version = "notable_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/notable/bases/" + baseId + "/workflows/" + flowId + "/disable",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DisableWorkflowResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>关闭工作流</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DisableWorkflowRequest
+        /// </param>
+        /// <param name="headers">
+        /// DisableWorkflowHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DisableWorkflowResponse
+        /// </returns>
+        public async Task<DisableWorkflowResponse> DisableWorkflowWithOptionsAsync(string baseId, string flowId, DisableWorkflowRequest request, DisableWorkflowHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DisableWorkflow",
+                Version = "notable_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/notable/bases/" + baseId + "/workflows/" + flowId + "/disable",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DisableWorkflowResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>关闭工作流</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DisableWorkflowRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DisableWorkflowResponse
+        /// </returns>
+        public DisableWorkflowResponse DisableWorkflow(string baseId, string flowId, DisableWorkflowRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DisableWorkflowHeaders headers = new DisableWorkflowHeaders();
+            return DisableWorkflowWithOptions(baseId, flowId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>关闭工作流</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DisableWorkflowRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DisableWorkflowResponse
+        /// </returns>
+        public async Task<DisableWorkflowResponse> DisableWorkflowAsync(string baseId, string flowId, DisableWorkflowRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DisableWorkflowHeaders headers = new DisableWorkflowHeaders();
+            return await DisableWorkflowWithOptionsAsync(baseId, flowId, request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>
@@ -3235,6 +3715,10 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
                 query["operatorId"] = request.OperatorId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CalcFields))
+            {
+                body["calcFields"] = request.CalcFields;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FieldIdOrNames))
             {
                 body["fieldIdOrNames"] = request.FieldIdOrNames;
@@ -3308,6 +3792,10 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
                 query["operatorId"] = request.OperatorId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CalcFields))
+            {
+                body["calcFields"] = request.CalcFields;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FieldIdOrNames))
             {
                 body["fieldIdOrNames"] = request.FieldIdOrNames;

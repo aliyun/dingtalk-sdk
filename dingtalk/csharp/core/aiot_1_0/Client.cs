@@ -574,7 +574,7 @@ namespace AlibabaCloud.SDK.Dingtalkaiot_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>查询设备服务调用记录</para>
+        /// <para>查询设备服务调用结果</para>
         /// </summary>
         /// 
         /// <param name="headers">
@@ -619,7 +619,7 @@ namespace AlibabaCloud.SDK.Dingtalkaiot_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>查询设备服务调用记录</para>
+        /// <para>查询设备服务调用结果</para>
         /// </summary>
         /// 
         /// <param name="headers">
@@ -664,7 +664,7 @@ namespace AlibabaCloud.SDK.Dingtalkaiot_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>查询设备服务调用记录</para>
+        /// <para>查询设备服务调用结果</para>
         /// </summary>
         /// 
         /// <returns>
@@ -679,7 +679,7 @@ namespace AlibabaCloud.SDK.Dingtalkaiot_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>查询设备服务调用记录</para>
+        /// <para>查询设备服务调用结果</para>
         /// </summary>
         /// 
         /// <returns>

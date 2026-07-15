@@ -6190,6 +6190,470 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>教育业务打卡任务提交</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CardSubmitCardRequest
+        /// </param>
+        /// <param name="headers">
+        /// CardSubmitCardHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CardSubmitCardResponse
+        /// </returns>
+        public CardSubmitCardResponse CardSubmitCardWithOptions(CardSubmitCardRequest request, CardSubmitCardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardBizCode))
+            {
+                body["cardBizCode"] = request.CardBizCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardBizId))
+            {
+                body["cardBizId"] = request.CardBizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardId))
+            {
+                body["cardId"] = request.CardId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardTaskCode))
+            {
+                body["cardTaskCode"] = request.CardTaskCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardTaskId))
+            {
+                body["cardTaskId"] = request.CardTaskId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Content))
+            {
+                body["content"] = request.Content;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DetailUrl))
+            {
+                body["detailUrl"] = request.DetailUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EditUrl))
+            {
+                body["editUrl"] = request.EditUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Medias))
+            {
+                body["medias"] = request.Medias;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MeteringNumber))
+            {
+                body["meteringNumber"] = request.MeteringNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReissueCard))
+            {
+                body["reissueCard"] = request.ReissueCard;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResultEvaluation))
+            {
+                body["resultEvaluation"] = request.ResultEvaluation;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceType))
+            {
+                body["sourceType"] = request.SourceType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SpecifiedStudentId))
+            {
+                body["specifiedStudentId"] = request.SpecifiedStudentId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnitOfMeasurement))
+            {
+                body["unitOfMeasurement"] = request.UnitOfMeasurement;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CardSubmitCard",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/cards/user/task/submit",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CardSubmitCardResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>教育业务打卡任务提交</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CardSubmitCardRequest
+        /// </param>
+        /// <param name="headers">
+        /// CardSubmitCardHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CardSubmitCardResponse
+        /// </returns>
+        public async Task<CardSubmitCardResponse> CardSubmitCardWithOptionsAsync(CardSubmitCardRequest request, CardSubmitCardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardBizCode))
+            {
+                body["cardBizCode"] = request.CardBizCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardBizId))
+            {
+                body["cardBizId"] = request.CardBizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardId))
+            {
+                body["cardId"] = request.CardId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardTaskCode))
+            {
+                body["cardTaskCode"] = request.CardTaskCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardTaskId))
+            {
+                body["cardTaskId"] = request.CardTaskId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Content))
+            {
+                body["content"] = request.Content;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DetailUrl))
+            {
+                body["detailUrl"] = request.DetailUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EditUrl))
+            {
+                body["editUrl"] = request.EditUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Medias))
+            {
+                body["medias"] = request.Medias;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MeteringNumber))
+            {
+                body["meteringNumber"] = request.MeteringNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReissueCard))
+            {
+                body["reissueCard"] = request.ReissueCard;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ResultEvaluation))
+            {
+                body["resultEvaluation"] = request.ResultEvaluation;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceType))
+            {
+                body["sourceType"] = request.SourceType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SpecifiedStudentId))
+            {
+                body["specifiedStudentId"] = request.SpecifiedStudentId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnitOfMeasurement))
+            {
+                body["unitOfMeasurement"] = request.UnitOfMeasurement;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CardSubmitCard",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/cards/user/task/submit",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CardSubmitCardResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>教育业务打卡任务提交</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CardSubmitCardRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CardSubmitCardResponse
+        /// </returns>
+        public CardSubmitCardResponse CardSubmitCard(CardSubmitCardRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CardSubmitCardHeaders headers = new CardSubmitCardHeaders();
+            return CardSubmitCardWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>教育业务打卡任务提交</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CardSubmitCardRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CardSubmitCardResponse
+        /// </returns>
+        public async Task<CardSubmitCardResponse> CardSubmitCardAsync(CardSubmitCardRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CardSubmitCardHeaders headers = new CardSubmitCardHeaders();
+            return await CardSubmitCardWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>教育业务打卡任务更新</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CardUpdateCardRequest
+        /// </param>
+        /// <param name="headers">
+        /// CardUpdateCardHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CardUpdateCardResponse
+        /// </returns>
+        public CardUpdateCardResponse CardUpdateCardWithOptions(CardUpdateCardRequest request, CardUpdateCardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardBizCode))
+            {
+                body["cardBizCode"] = request.CardBizCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardId))
+            {
+                body["cardId"] = request.CardId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data))
+            {
+                body["data"] = request.Data;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Identifier))
+            {
+                body["identifier"] = request.Identifier;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShouldSendUpdateMsg))
+            {
+                body["shouldSendUpdateMsg"] = request.ShouldSendUpdateMsg;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceType))
+            {
+                body["sourceType"] = request.SourceType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CardUpdateCard",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/cards/update",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CardUpdateCardResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>教育业务打卡任务更新</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CardUpdateCardRequest
+        /// </param>
+        /// <param name="headers">
+        /// CardUpdateCardHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CardUpdateCardResponse
+        /// </returns>
+        public async Task<CardUpdateCardResponse> CardUpdateCardWithOptionsAsync(CardUpdateCardRequest request, CardUpdateCardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardBizCode))
+            {
+                body["cardBizCode"] = request.CardBizCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CardId))
+            {
+                body["cardId"] = request.CardId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Data))
+            {
+                body["data"] = request.Data;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Identifier))
+            {
+                body["identifier"] = request.Identifier;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShouldSendUpdateMsg))
+            {
+                body["shouldSendUpdateMsg"] = request.ShouldSendUpdateMsg;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceType))
+            {
+                body["sourceType"] = request.SourceType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CardUpdateCard",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/cards/update",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CardUpdateCardResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>教育业务打卡任务更新</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CardUpdateCardRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CardUpdateCardResponse
+        /// </returns>
+        public CardUpdateCardResponse CardUpdateCard(CardUpdateCardRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CardUpdateCardHeaders headers = new CardUpdateCardHeaders();
+            return CardUpdateCardWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>教育业务打卡任务更新</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CardUpdateCardRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CardUpdateCardResponse
+        /// </returns>
+        public async Task<CardUpdateCardResponse> CardUpdateCardAsync(CardUpdateCardRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CardUpdateCardHeaders headers = new CardUpdateCardHeaders();
+            return await CardUpdateCardWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>支付校验</para>
         /// </summary>
         /// 

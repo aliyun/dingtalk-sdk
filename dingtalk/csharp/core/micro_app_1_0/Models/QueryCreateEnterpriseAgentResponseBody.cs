@@ -61,6 +61,10 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
         [Validation(Required=false)]
         public string TaskId { get; set; }
 
+        [NameInMap("unifiedAppId")]
+        [Validation(Required=false)]
+        public string UnifiedAppId { get; set; }
+
     }
 
 }

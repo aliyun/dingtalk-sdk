@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0.Models
         [Validation(Required=false)]
         public ExecuteImportRequestAppendConfig AppendConfig { get; set; }
         public class ExecuteImportRequestAppendConfig : TeaModel {
+            [NameInMap("fieldIdMapping")]
+            [Validation(Required=false)]
+            public Dictionary<string, string> FieldIdMapping { get; set; }
+
             [NameInMap("fieldMapping")]
             [Validation(Required=false)]
             public Dictionary<string, string> FieldMapping { get; set; }

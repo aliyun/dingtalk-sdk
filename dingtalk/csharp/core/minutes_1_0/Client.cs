@@ -1938,6 +1938,14 @@ namespace AlibabaCloud.SDK.Dingtalkminutes_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GmtCreateEnd))
+            {
+                query["gmtCreateEnd"] = request.GmtCreateEnd;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GmtCreateStart))
+            {
+                query["gmtCreateStart"] = request.GmtCreateStart;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
             {
                 query["maxResults"] = request.MaxResults;
@@ -2001,6 +2009,14 @@ namespace AlibabaCloud.SDK.Dingtalkminutes_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GmtCreateEnd))
+            {
+                query["gmtCreateEnd"] = request.GmtCreateEnd;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GmtCreateStart))
+            {
+                query["gmtCreateStart"] = request.GmtCreateStart;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
             {
                 query["maxResults"] = request.MaxResults;

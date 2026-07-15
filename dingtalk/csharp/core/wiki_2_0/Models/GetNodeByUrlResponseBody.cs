@@ -31,6 +31,14 @@ namespace AlibabaCloud.SDK.Dingtalkwiki_2_0.Models
 
             /// <summary>
             /// <b>Example:</b>
+            /// <para>node_create_timestamp</para>
+            /// </summary>
+            [NameInMap("createTimestamp")]
+            [Validation(Required=false)]
+            public long? CreateTimestamp { get; set; }
+
+            /// <summary>
+            /// <b>Example:</b>
             /// <para>node_creator_id</para>
             /// </summary>
             [NameInMap("creatorId")]
@@ -60,6 +68,14 @@ namespace AlibabaCloud.SDK.Dingtalkwiki_2_0.Models
             [NameInMap("modifiedTime")]
             [Validation(Required=false)]
             public string ModifiedTime { get; set; }
+
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>node_modified_timestamp</para>
+            /// </summary>
+            [NameInMap("modifiedTimestamp")]
+            [Validation(Required=false)]
+            public long? ModifiedTimestamp { get; set; }
 
             /// <summary>
             /// <b>Example:</b>

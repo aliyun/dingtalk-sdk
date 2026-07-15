@@ -6,15 +6,18 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkaiot_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalknotable_1_0.Models
 {
-    public class SetDevicePropertiesRequest : TeaModel {
+    public class DeleteWorkflowRequest : TeaModel {
         /// <summary>
         /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>union_id</para>
         /// </summary>
-        [NameInMap("body")]
+        [NameInMap("operatorId")]
         [Validation(Required=false)]
-        public Dictionary<string, object> Body { get; set; }
+        public string OperatorId { get; set; }
 
     }
 

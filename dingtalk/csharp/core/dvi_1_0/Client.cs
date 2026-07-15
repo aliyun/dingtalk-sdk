@@ -4730,7 +4730,7 @@ namespace AlibabaCloud.SDK.Dingtalkdvi_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>获取设备列表</para>
+        /// <para>批量获取设备详情</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -4789,7 +4789,7 @@ namespace AlibabaCloud.SDK.Dingtalkdvi_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>获取设备列表</para>
+        /// <para>批量获取设备详情</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -4848,7 +4848,7 @@ namespace AlibabaCloud.SDK.Dingtalkdvi_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>获取设备列表</para>
+        /// <para>批量获取设备详情</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -4867,7 +4867,7 @@ namespace AlibabaCloud.SDK.Dingtalkdvi_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>获取设备列表</para>
+        /// <para>批量获取设备详情</para>
         /// </summary>
         /// 
         /// <param name="request">
