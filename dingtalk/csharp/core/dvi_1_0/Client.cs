@@ -6414,6 +6414,174 @@ namespace AlibabaCloud.SDK.Dingtalkdvi_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>批量更新服务记录约束规则</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// UpdateServiceRecordRestrictRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateServiceRecordRestrictHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateServiceRecordRestrictResponse
+        /// </returns>
+        public UpdateServiceRecordRestrictResponse UpdateServiceRecordRestrictWithOptions(UpdateServiceRecordRestrictRequest tmpReq, UpdateServiceRecordRestrictHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            UpdateServiceRecordRestrictShrinkRequest request = new UpdateServiceRecordRestrictShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.RecordIds))
+            {
+                request.RecordIdsShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.RecordIds, "recordIds", "json");
+            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Action))
+            {
+                query["action"] = request.Action;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RecordIdsShrink))
+            {
+                query["recordIds"] = request.RecordIdsShrink;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateServiceRecordRestrict",
+                Version = "dvi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dvi/service/batch-update-restrict",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateServiceRecordRestrictResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量更新服务记录约束规则</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// UpdateServiceRecordRestrictRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateServiceRecordRestrictHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateServiceRecordRestrictResponse
+        /// </returns>
+        public async Task<UpdateServiceRecordRestrictResponse> UpdateServiceRecordRestrictWithOptionsAsync(UpdateServiceRecordRestrictRequest tmpReq, UpdateServiceRecordRestrictHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            UpdateServiceRecordRestrictShrinkRequest request = new UpdateServiceRecordRestrictShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.RecordIds))
+            {
+                request.RecordIdsShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.RecordIds, "recordIds", "json");
+            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Action))
+            {
+                query["action"] = request.Action;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RecordIdsShrink))
+            {
+                query["recordIds"] = request.RecordIdsShrink;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateServiceRecordRestrict",
+                Version = "dvi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dvi/service/batch-update-restrict",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateServiceRecordRestrictResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量更新服务记录约束规则</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateServiceRecordRestrictRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateServiceRecordRestrictResponse
+        /// </returns>
+        public UpdateServiceRecordRestrictResponse UpdateServiceRecordRestrict(UpdateServiceRecordRestrictRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateServiceRecordRestrictHeaders headers = new UpdateServiceRecordRestrictHeaders();
+            return UpdateServiceRecordRestrictWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量更新服务记录约束规则</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateServiceRecordRestrictRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateServiceRecordRestrictResponse
+        /// </returns>
+        public async Task<UpdateServiceRecordRestrictResponse> UpdateServiceRecordRestrictAsync(UpdateServiceRecordRestrictRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateServiceRecordRestrictHeaders headers = new UpdateServiceRecordRestrictHeaders();
+            return await UpdateServiceRecordRestrictWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>修改团队</para>
         /// </summary>
         /// 

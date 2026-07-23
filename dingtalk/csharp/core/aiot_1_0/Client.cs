@@ -319,6 +319,9 @@ namespace AlibabaCloud.SDK.Dingtalkaiot_1_0
         /// <para>查询指定设备的详情</para>
         /// </summary>
         /// 
+        /// <param name="request">
+        /// GetDeviceDetailRequest
+        /// </param>
         /// <param name="headers">
         /// GetDeviceDetailHeaders
         /// </param>
@@ -329,8 +332,18 @@ namespace AlibabaCloud.SDK.Dingtalkaiot_1_0
         /// <returns>
         /// GetDeviceDetailResponse
         /// </returns>
-        public GetDeviceDetailResponse GetDeviceDetailWithOptions(string productKey, string deviceName, GetDeviceDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public GetDeviceDetailResponse GetDeviceDetailWithOptions(GetDeviceDetailRequest request, GetDeviceDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceName))
+            {
+                query["deviceName"] = request.DeviceName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductKey))
+            {
+                query["productKey"] = request.ProductKey;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -343,13 +356,14 @@ namespace AlibabaCloud.SDK.Dingtalkaiot_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
             AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
             {
                 Action = "GetDeviceDetail",
                 Version = "aiot_1.0",
                 Protocol = "HTTP",
-                Pathname = "/v1.0/aiot/products/" + productKey + "/devices/" + deviceName,
+                Pathname = "/v1.0/aiot/products/deviceDetail",
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
@@ -364,6 +378,9 @@ namespace AlibabaCloud.SDK.Dingtalkaiot_1_0
         /// <para>查询指定设备的详情</para>
         /// </summary>
         /// 
+        /// <param name="request">
+        /// GetDeviceDetailRequest
+        /// </param>
         /// <param name="headers">
         /// GetDeviceDetailHeaders
         /// </param>
@@ -374,8 +391,18 @@ namespace AlibabaCloud.SDK.Dingtalkaiot_1_0
         /// <returns>
         /// GetDeviceDetailResponse
         /// </returns>
-        public async Task<GetDeviceDetailResponse> GetDeviceDetailWithOptionsAsync(string productKey, string deviceName, GetDeviceDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<GetDeviceDetailResponse> GetDeviceDetailWithOptionsAsync(GetDeviceDetailRequest request, GetDeviceDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceName))
+            {
+                query["deviceName"] = request.DeviceName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductKey))
+            {
+                query["productKey"] = request.ProductKey;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -388,13 +415,14 @@ namespace AlibabaCloud.SDK.Dingtalkaiot_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
             AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
             {
                 Action = "GetDeviceDetail",
                 Version = "aiot_1.0",
                 Protocol = "HTTP",
-                Pathname = "/v1.0/aiot/products/" + productKey + "/devices/" + deviceName,
+                Pathname = "/v1.0/aiot/products/deviceDetail",
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
@@ -409,14 +437,18 @@ namespace AlibabaCloud.SDK.Dingtalkaiot_1_0
         /// <para>查询指定设备的详情</para>
         /// </summary>
         /// 
+        /// <param name="request">
+        /// GetDeviceDetailRequest
+        /// </param>
+        /// 
         /// <returns>
         /// GetDeviceDetailResponse
         /// </returns>
-        public GetDeviceDetailResponse GetDeviceDetail(string productKey, string deviceName)
+        public GetDeviceDetailResponse GetDeviceDetail(GetDeviceDetailRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetDeviceDetailHeaders headers = new GetDeviceDetailHeaders();
-            return GetDeviceDetailWithOptions(productKey, deviceName, headers, runtime);
+            return GetDeviceDetailWithOptions(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>
@@ -424,14 +456,18 @@ namespace AlibabaCloud.SDK.Dingtalkaiot_1_0
         /// <para>查询指定设备的详情</para>
         /// </summary>
         /// 
+        /// <param name="request">
+        /// GetDeviceDetailRequest
+        /// </param>
+        /// 
         /// <returns>
         /// GetDeviceDetailResponse
         /// </returns>
-        public async Task<GetDeviceDetailResponse> GetDeviceDetailAsync(string productKey, string deviceName)
+        public async Task<GetDeviceDetailResponse> GetDeviceDetailAsync(GetDeviceDetailRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetDeviceDetailHeaders headers = new GetDeviceDetailHeaders();
-            return await GetDeviceDetailWithOptionsAsync(productKey, deviceName, headers, runtime);
+            return await GetDeviceDetailWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>
@@ -577,6 +613,9 @@ namespace AlibabaCloud.SDK.Dingtalkaiot_1_0
         /// <para>查询设备服务调用结果</para>
         /// </summary>
         /// 
+        /// <param name="request">
+        /// GetServiceInvocationRequest
+        /// </param>
         /// <param name="headers">
         /// GetServiceInvocationHeaders
         /// </param>
@@ -587,8 +626,14 @@ namespace AlibabaCloud.SDK.Dingtalkaiot_1_0
         /// <returns>
         /// GetServiceInvocationResponse
         /// </returns>
-        public GetServiceInvocationResponse GetServiceInvocationWithOptions(string invocationId, GetServiceInvocationHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public GetServiceInvocationResponse GetServiceInvocationWithOptions(GetServiceInvocationRequest request, GetServiceInvocationHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvocationId))
+            {
+                query["invocationId"] = request.InvocationId;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -601,13 +646,14 @@ namespace AlibabaCloud.SDK.Dingtalkaiot_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
             AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
             {
                 Action = "GetServiceInvocation",
                 Version = "aiot_1.0",
                 Protocol = "HTTP",
-                Pathname = "/v1.0/aiot/serviceInvocations/" + invocationId,
+                Pathname = "/v1.0/aiot/serviceInvocations",
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
@@ -622,6 +668,9 @@ namespace AlibabaCloud.SDK.Dingtalkaiot_1_0
         /// <para>查询设备服务调用结果</para>
         /// </summary>
         /// 
+        /// <param name="request">
+        /// GetServiceInvocationRequest
+        /// </param>
         /// <param name="headers">
         /// GetServiceInvocationHeaders
         /// </param>
@@ -632,8 +681,14 @@ namespace AlibabaCloud.SDK.Dingtalkaiot_1_0
         /// <returns>
         /// GetServiceInvocationResponse
         /// </returns>
-        public async Task<GetServiceInvocationResponse> GetServiceInvocationWithOptionsAsync(string invocationId, GetServiceInvocationHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<GetServiceInvocationResponse> GetServiceInvocationWithOptionsAsync(GetServiceInvocationRequest request, GetServiceInvocationHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvocationId))
+            {
+                query["invocationId"] = request.InvocationId;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -646,13 +701,14 @@ namespace AlibabaCloud.SDK.Dingtalkaiot_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
             AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
             {
                 Action = "GetServiceInvocation",
                 Version = "aiot_1.0",
                 Protocol = "HTTP",
-                Pathname = "/v1.0/aiot/serviceInvocations/" + invocationId,
+                Pathname = "/v1.0/aiot/serviceInvocations",
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
@@ -667,14 +723,18 @@ namespace AlibabaCloud.SDK.Dingtalkaiot_1_0
         /// <para>查询设备服务调用结果</para>
         /// </summary>
         /// 
+        /// <param name="request">
+        /// GetServiceInvocationRequest
+        /// </param>
+        /// 
         /// <returns>
         /// GetServiceInvocationResponse
         /// </returns>
-        public GetServiceInvocationResponse GetServiceInvocation(string invocationId)
+        public GetServiceInvocationResponse GetServiceInvocation(GetServiceInvocationRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetServiceInvocationHeaders headers = new GetServiceInvocationHeaders();
-            return GetServiceInvocationWithOptions(invocationId, headers, runtime);
+            return GetServiceInvocationWithOptions(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>
@@ -682,14 +742,18 @@ namespace AlibabaCloud.SDK.Dingtalkaiot_1_0
         /// <para>查询设备服务调用结果</para>
         /// </summary>
         /// 
+        /// <param name="request">
+        /// GetServiceInvocationRequest
+        /// </param>
+        /// 
         /// <returns>
         /// GetServiceInvocationResponse
         /// </returns>
-        public async Task<GetServiceInvocationResponse> GetServiceInvocationAsync(string invocationId)
+        public async Task<GetServiceInvocationResponse> GetServiceInvocationAsync(GetServiceInvocationRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetServiceInvocationHeaders headers = new GetServiceInvocationHeaders();
-            return await GetServiceInvocationWithOptionsAsync(invocationId, headers, runtime);
+            return await GetServiceInvocationWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

@@ -798,6 +798,274 @@ namespace AlibabaCloud.SDK.Dingtalktrade_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>QwenWoker询价接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PurchaseMixViewRequest
+        /// </param>
+        /// <param name="headers">
+        /// PurchaseMixViewHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// PurchaseMixViewResponse
+        /// </returns>
+        public PurchaseMixViewResponse PurchaseMixViewWithOptions(PurchaseMixViewRequest request, PurchaseMixViewHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ChannelCode))
+            {
+                body["channelCode"] = request.ChannelCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CombineActivityId))
+            {
+                body["combineActivityId"] = request.CombineActivityId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreateOrder))
+            {
+                body["createOrder"] = request.CreateOrder;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.List))
+            {
+                body["list"] = request.List;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Memo))
+            {
+                body["memo"] = request.Memo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MergeOrderName))
+            {
+                body["mergeOrderName"] = request.MergeOrderName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NeedModelTypeList))
+            {
+                body["needModelTypeList"] = request.NeedModelTypeList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjId))
+            {
+                body["objId"] = request.ObjId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjType))
+            {
+                body["objType"] = request.ObjType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderParamMap))
+            {
+                body["orderParamMap"] = request.OrderParamMap;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OuterTradeCode))
+            {
+                body["outerTradeCode"] = request.OuterTradeCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OuterTradeType))
+            {
+                body["outerTradeType"] = request.OuterTradeType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PlanId))
+            {
+                body["planId"] = request.PlanId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RequestId))
+            {
+                body["requestId"] = request.RequestId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Uid))
+            {
+                body["uid"] = request.Uid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnPay))
+            {
+                body["unPay"] = request.UnPay;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PurchaseMixView",
+                Version = "trade_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/trade/purchase/mixView",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PurchaseMixViewResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>QwenWoker询价接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PurchaseMixViewRequest
+        /// </param>
+        /// <param name="headers">
+        /// PurchaseMixViewHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// PurchaseMixViewResponse
+        /// </returns>
+        public async Task<PurchaseMixViewResponse> PurchaseMixViewWithOptionsAsync(PurchaseMixViewRequest request, PurchaseMixViewHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ChannelCode))
+            {
+                body["channelCode"] = request.ChannelCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CombineActivityId))
+            {
+                body["combineActivityId"] = request.CombineActivityId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreateOrder))
+            {
+                body["createOrder"] = request.CreateOrder;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.List))
+            {
+                body["list"] = request.List;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Memo))
+            {
+                body["memo"] = request.Memo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MergeOrderName))
+            {
+                body["mergeOrderName"] = request.MergeOrderName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NeedModelTypeList))
+            {
+                body["needModelTypeList"] = request.NeedModelTypeList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjId))
+            {
+                body["objId"] = request.ObjId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjType))
+            {
+                body["objType"] = request.ObjType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderParamMap))
+            {
+                body["orderParamMap"] = request.OrderParamMap;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OuterTradeCode))
+            {
+                body["outerTradeCode"] = request.OuterTradeCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OuterTradeType))
+            {
+                body["outerTradeType"] = request.OuterTradeType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PlanId))
+            {
+                body["planId"] = request.PlanId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RequestId))
+            {
+                body["requestId"] = request.RequestId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Uid))
+            {
+                body["uid"] = request.Uid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnPay))
+            {
+                body["unPay"] = request.UnPay;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PurchaseMixView",
+                Version = "trade_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/trade/purchase/mixView",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PurchaseMixViewResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>QwenWoker询价接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PurchaseMixViewRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// PurchaseMixViewResponse
+        /// </returns>
+        public PurchaseMixViewResponse PurchaseMixView(PurchaseMixViewRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            PurchaseMixViewHeaders headers = new PurchaseMixViewHeaders();
+            return PurchaseMixViewWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>QwenWoker询价接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PurchaseMixViewRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// PurchaseMixViewResponse
+        /// </returns>
+        public async Task<PurchaseMixViewResponse> PurchaseMixViewAsync(PurchaseMixViewRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            PurchaseMixViewHeaders headers = new PurchaseMixViewHeaders();
+            return await PurchaseMixViewWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>查询订单信息</para>
         /// </summary>
         /// 

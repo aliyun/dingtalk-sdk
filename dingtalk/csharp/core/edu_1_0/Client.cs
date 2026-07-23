@@ -2973,7 +2973,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
                 Method = "POST",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<BatchCreateResponse>(Execute(params_, req, runtime));
@@ -3048,7 +3048,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
                 Method = "POST",
                 AuthType = "AK",
                 Style = "ROA",
-                ReqBodyType = "json",
+                ReqBodyType = "none",
                 BodyType = "json",
             };
             return TeaModel.ToObject<BatchCreateResponse>(await ExecuteAsync(params_, req, runtime));
@@ -29470,6 +29470,186 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             QueryOrgCorrectTaskDetailHeaders headers = new QueryOrgCorrectTaskDetailHeaders();
             return await QueryOrgCorrectTaskDetailWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>作业批改-查询批改错题明细</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryOrgCorrectTaskWithWrongQuestionRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryOrgCorrectTaskWithWrongQuestionHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryOrgCorrectTaskWithWrongQuestionResponse
+        /// </returns>
+        public QueryOrgCorrectTaskWithWrongQuestionResponse QueryOrgCorrectTaskWithWrongQuestionWithOptions(QueryOrgCorrectTaskWithWrongQuestionRequest request, QueryOrgCorrectTaskWithWrongQuestionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
+            {
+                body["endTime"] = request.EndTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNo))
+            {
+                body["pageNo"] = request.PageNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                body["pageSize"] = request.PageSize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.QueryCorpId))
+            {
+                body["queryCorpId"] = request.QueryCorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
+            {
+                body["startTime"] = request.StartTime;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryOrgCorrectTaskWithWrongQuestion",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/assignment/queryTaskWrongQuestionDetail",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryOrgCorrectTaskWithWrongQuestionResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>作业批改-查询批改错题明细</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryOrgCorrectTaskWithWrongQuestionRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryOrgCorrectTaskWithWrongQuestionHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryOrgCorrectTaskWithWrongQuestionResponse
+        /// </returns>
+        public async Task<QueryOrgCorrectTaskWithWrongQuestionResponse> QueryOrgCorrectTaskWithWrongQuestionWithOptionsAsync(QueryOrgCorrectTaskWithWrongQuestionRequest request, QueryOrgCorrectTaskWithWrongQuestionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
+            {
+                body["endTime"] = request.EndTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNo))
+            {
+                body["pageNo"] = request.PageNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                body["pageSize"] = request.PageSize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.QueryCorpId))
+            {
+                body["queryCorpId"] = request.QueryCorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
+            {
+                body["startTime"] = request.StartTime;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryOrgCorrectTaskWithWrongQuestion",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/assignment/queryTaskWrongQuestionDetail",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryOrgCorrectTaskWithWrongQuestionResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>作业批改-查询批改错题明细</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryOrgCorrectTaskWithWrongQuestionRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryOrgCorrectTaskWithWrongQuestionResponse
+        /// </returns>
+        public QueryOrgCorrectTaskWithWrongQuestionResponse QueryOrgCorrectTaskWithWrongQuestion(QueryOrgCorrectTaskWithWrongQuestionRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryOrgCorrectTaskWithWrongQuestionHeaders headers = new QueryOrgCorrectTaskWithWrongQuestionHeaders();
+            return QueryOrgCorrectTaskWithWrongQuestionWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>作业批改-查询批改错题明细</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryOrgCorrectTaskWithWrongQuestionRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryOrgCorrectTaskWithWrongQuestionResponse
+        /// </returns>
+        public async Task<QueryOrgCorrectTaskWithWrongQuestionResponse> QueryOrgCorrectTaskWithWrongQuestionAsync(QueryOrgCorrectTaskWithWrongQuestionRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryOrgCorrectTaskWithWrongQuestionHeaders headers = new QueryOrgCorrectTaskWithWrongQuestionHeaders();
+            return await QueryOrgCorrectTaskWithWrongQuestionWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

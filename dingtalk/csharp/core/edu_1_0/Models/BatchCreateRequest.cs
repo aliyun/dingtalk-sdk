@@ -167,6 +167,14 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             [Validation(Required=false)]
             public int? RemindMinute { get; set; }
 
+            [NameInMap("remindNotPunchCardHour")]
+            [Validation(Required=false)]
+            public int? RemindNotPunchCardHour { get; set; }
+
+            [NameInMap("remindNotPunchCardMinute")]
+            [Validation(Required=false)]
+            public int? RemindNotPunchCardMinute { get; set; }
+
             [NameInMap("targetRole")]
             [Validation(Required=false)]
             public string TargetRole { get; set; }

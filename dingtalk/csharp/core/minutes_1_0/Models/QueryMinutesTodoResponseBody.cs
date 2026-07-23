@@ -59,6 +59,10 @@ namespace AlibabaCloud.SDK.Dingtalkminutes_1_0.Models
             [Validation(Required=false)]
             public string MinutesTodoId { get; set; }
 
+            [NameInMap("openDingtalkTodoId")]
+            [Validation(Required=false)]
+            public string OpenDingtalkTodoId { get; set; }
+
             [NameInMap("title")]
             [Validation(Required=false)]
             public string Title { get; set; }

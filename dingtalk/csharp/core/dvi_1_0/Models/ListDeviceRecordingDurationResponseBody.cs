@@ -19,7 +19,7 @@ namespace AlibabaCloud.SDK.Dingtalkdvi_1_0.Models
         public class ListDeviceRecordingDurationResponseBodyResult : TeaModel {
             [NameInMap("duration")]
             [Validation(Required=false)]
-            public string Duration { get; set; }
+            public long? Duration { get; set; }
 
             [NameInMap("endTimestamp")]
             [Validation(Required=false)]
@@ -28,6 +28,10 @@ namespace AlibabaCloud.SDK.Dingtalkdvi_1_0.Models
             [NameInMap("recordId")]
             [Validation(Required=false)]
             public string RecordId { get; set; }
+
+            [NameInMap("sn")]
+            [Validation(Required=false)]
+            public string Sn { get; set; }
 
             [NameInMap("startTimestamp")]
             [Validation(Required=false)]

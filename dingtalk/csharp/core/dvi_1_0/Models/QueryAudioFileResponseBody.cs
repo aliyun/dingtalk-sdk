@@ -45,6 +45,10 @@ namespace AlibabaCloud.SDK.Dingtalkdvi_1_0.Models
             [Validation(Required=false)]
             public long? FileSize { get; set; }
 
+            [NameInMap("sn")]
+            [Validation(Required=false)]
+            public string Sn { get; set; }
+
         }
 
         [NameInMap("totalCount")]

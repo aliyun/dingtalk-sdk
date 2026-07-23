@@ -3515,6 +3515,202 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>专属运营Banner头图消息推送</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ExclusiveBannerRequest
+        /// </param>
+        /// <param name="headers">
+        /// ExclusiveBannerHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ExclusiveBannerResponse
+        /// </returns>
+        public ExclusiveBannerResponse ExclusiveBannerWithOptions(ExclusiveBannerRequest request, ExclusiveBannerHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AllOrg))
+            {
+                body["allOrg"] = request.AllOrg;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Duration))
+            {
+                body["duration"] = request.Duration;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
+            {
+                body["endTime"] = request.EndTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImageMediaId))
+            {
+                body["imageMediaId"] = request.ImageMediaId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenLink))
+            {
+                body["openLink"] = request.OpenLink;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
+            {
+                body["startTime"] = request.StartTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserList))
+            {
+                body["userList"] = request.UserList;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ExclusiveBanner",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/customize/marketing/banner",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ExclusiveBannerResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>专属运营Banner头图消息推送</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ExclusiveBannerRequest
+        /// </param>
+        /// <param name="headers">
+        /// ExclusiveBannerHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ExclusiveBannerResponse
+        /// </returns>
+        public async Task<ExclusiveBannerResponse> ExclusiveBannerWithOptionsAsync(ExclusiveBannerRequest request, ExclusiveBannerHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AllOrg))
+            {
+                body["allOrg"] = request.AllOrg;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Duration))
+            {
+                body["duration"] = request.Duration;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
+            {
+                body["endTime"] = request.EndTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ImageMediaId))
+            {
+                body["imageMediaId"] = request.ImageMediaId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenLink))
+            {
+                body["openLink"] = request.OpenLink;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
+            {
+                body["startTime"] = request.StartTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserList))
+            {
+                body["userList"] = request.UserList;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ExclusiveBanner",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/customize/marketing/banner",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ExclusiveBannerResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>专属运营Banner头图消息推送</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ExclusiveBannerRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ExclusiveBannerResponse
+        /// </returns>
+        public ExclusiveBannerResponse ExclusiveBanner(ExclusiveBannerRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ExclusiveBannerHeaders headers = new ExclusiveBannerHeaders();
+            return ExclusiveBannerWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>专属运营Banner头图消息推送</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ExclusiveBannerRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ExclusiveBannerResponse
+        /// </returns>
+        public async Task<ExclusiveBannerResponse> ExclusiveBannerAsync(ExclusiveBannerRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ExclusiveBannerHeaders headers = new ExclusiveBannerHeaders();
+            return await ExclusiveBannerWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>分发工作台模版</para>
         /// </summary>
         /// 

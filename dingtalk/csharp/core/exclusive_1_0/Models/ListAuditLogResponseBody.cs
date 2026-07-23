@@ -217,6 +217,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             [Validation(Required=false)]
             public string RealName { get; set; }
 
+            [NameInMap("receiverId")]
+            [Validation(Required=false)]
+            public string ReceiverId { get; set; }
+
             /// <summary>
             /// <b>Example:</b>
             /// <para>总经理办公室</para>
