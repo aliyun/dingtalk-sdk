@@ -570,6 +570,180 @@ class Client(OpenApiClient):
         headers = dingtalktrade__1__0_models.CreateOpportunityHeaders()
         return await self.create_opportunity_with_options_async(request, headers, runtime)
 
+    def purchase_mix_view_with_options(
+        self,
+        request: dingtalktrade__1__0_models.PurchaseMixViewRequest,
+        headers: dingtalktrade__1__0_models.PurchaseMixViewHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrade__1__0_models.PurchaseMixViewResponse:
+        """
+        @summary QwenWoker询价接口
+        
+        @param request: PurchaseMixViewRequest
+        @param headers: PurchaseMixViewHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PurchaseMixViewResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.channel_code):
+            body['channelCode'] = request.channel_code
+        if not UtilClient.is_unset(request.combine_activity_id):
+            body['combineActivityId'] = request.combine_activity_id
+        if not UtilClient.is_unset(request.create_order):
+            body['createOrder'] = request.create_order
+        if not UtilClient.is_unset(request.list):
+            body['list'] = request.list
+        if not UtilClient.is_unset(request.memo):
+            body['memo'] = request.memo
+        if not UtilClient.is_unset(request.merge_order_name):
+            body['mergeOrderName'] = request.merge_order_name
+        if not UtilClient.is_unset(request.need_model_type_list):
+            body['needModelTypeList'] = request.need_model_type_list
+        if not UtilClient.is_unset(request.obj_id):
+            body['objId'] = request.obj_id
+        if not UtilClient.is_unset(request.obj_type):
+            body['objType'] = request.obj_type
+        if not UtilClient.is_unset(request.order_param_map):
+            body['orderParamMap'] = request.order_param_map
+        if not UtilClient.is_unset(request.outer_trade_code):
+            body['outerTradeCode'] = request.outer_trade_code
+        if not UtilClient.is_unset(request.outer_trade_type):
+            body['outerTradeType'] = request.outer_trade_type
+        if not UtilClient.is_unset(request.plan_id):
+            body['planId'] = request.plan_id
+        if not UtilClient.is_unset(request.request_id):
+            body['requestId'] = request.request_id
+        if not UtilClient.is_unset(request.uid):
+            body['uid'] = request.uid
+        if not UtilClient.is_unset(request.un_pay):
+            body['unPay'] = request.un_pay
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PurchaseMixView',
+            version='trade_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/trade/purchase/mixView',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktrade__1__0_models.PurchaseMixViewResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def purchase_mix_view_with_options_async(
+        self,
+        request: dingtalktrade__1__0_models.PurchaseMixViewRequest,
+        headers: dingtalktrade__1__0_models.PurchaseMixViewHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrade__1__0_models.PurchaseMixViewResponse:
+        """
+        @summary QwenWoker询价接口
+        
+        @param request: PurchaseMixViewRequest
+        @param headers: PurchaseMixViewHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PurchaseMixViewResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.channel_code):
+            body['channelCode'] = request.channel_code
+        if not UtilClient.is_unset(request.combine_activity_id):
+            body['combineActivityId'] = request.combine_activity_id
+        if not UtilClient.is_unset(request.create_order):
+            body['createOrder'] = request.create_order
+        if not UtilClient.is_unset(request.list):
+            body['list'] = request.list
+        if not UtilClient.is_unset(request.memo):
+            body['memo'] = request.memo
+        if not UtilClient.is_unset(request.merge_order_name):
+            body['mergeOrderName'] = request.merge_order_name
+        if not UtilClient.is_unset(request.need_model_type_list):
+            body['needModelTypeList'] = request.need_model_type_list
+        if not UtilClient.is_unset(request.obj_id):
+            body['objId'] = request.obj_id
+        if not UtilClient.is_unset(request.obj_type):
+            body['objType'] = request.obj_type
+        if not UtilClient.is_unset(request.order_param_map):
+            body['orderParamMap'] = request.order_param_map
+        if not UtilClient.is_unset(request.outer_trade_code):
+            body['outerTradeCode'] = request.outer_trade_code
+        if not UtilClient.is_unset(request.outer_trade_type):
+            body['outerTradeType'] = request.outer_trade_type
+        if not UtilClient.is_unset(request.plan_id):
+            body['planId'] = request.plan_id
+        if not UtilClient.is_unset(request.request_id):
+            body['requestId'] = request.request_id
+        if not UtilClient.is_unset(request.uid):
+            body['uid'] = request.uid
+        if not UtilClient.is_unset(request.un_pay):
+            body['unPay'] = request.un_pay
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PurchaseMixView',
+            version='trade_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/trade/purchase/mixView',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktrade__1__0_models.PurchaseMixViewResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def purchase_mix_view(
+        self,
+        request: dingtalktrade__1__0_models.PurchaseMixViewRequest,
+    ) -> dingtalktrade__1__0_models.PurchaseMixViewResponse:
+        """
+        @summary QwenWoker询价接口
+        
+        @param request: PurchaseMixViewRequest
+        @return: PurchaseMixViewResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrade__1__0_models.PurchaseMixViewHeaders()
+        return self.purchase_mix_view_with_options(request, headers, runtime)
+
+    async def purchase_mix_view_async(
+        self,
+        request: dingtalktrade__1__0_models.PurchaseMixViewRequest,
+    ) -> dingtalktrade__1__0_models.PurchaseMixViewResponse:
+        """
+        @summary QwenWoker询价接口
+        
+        @param request: PurchaseMixViewRequest
+        @return: PurchaseMixViewResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrade__1__0_models.PurchaseMixViewHeaders()
+        return await self.purchase_mix_view_with_options_async(request, headers, runtime)
+
     def query_trade_order_with_options(
         self,
         request: dingtalktrade__1__0_models.QueryTradeOrderRequest,

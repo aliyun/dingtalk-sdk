@@ -3329,6 +3329,8 @@ class BatchCreateRequestData(TeaModel):
         org_class_student_group_list: List[BatchCreateRequestDataOrgClassStudentGroupList] = None,
         remind_hour: int = None,
         remind_minute: int = None,
+        remind_not_punch_card_hour: int = None,
+        remind_not_punch_card_minute: int = None,
         target_role: str = None,
         template_id: int = None,
         title: str = None,
@@ -3353,6 +3355,8 @@ class BatchCreateRequestData(TeaModel):
         self.remind_hour = remind_hour
         # This parameter is required.
         self.remind_minute = remind_minute
+        self.remind_not_punch_card_hour = remind_not_punch_card_hour
+        self.remind_not_punch_card_minute = remind_not_punch_card_minute
         self.target_role = target_role
         self.template_id = template_id
         # This parameter is required.
@@ -3405,6 +3409,10 @@ class BatchCreateRequestData(TeaModel):
             result['remindHour'] = self.remind_hour
         if self.remind_minute is not None:
             result['remindMinute'] = self.remind_minute
+        if self.remind_not_punch_card_hour is not None:
+            result['remindNotPunchCardHour'] = self.remind_not_punch_card_hour
+        if self.remind_not_punch_card_minute is not None:
+            result['remindNotPunchCardMinute'] = self.remind_not_punch_card_minute
         if self.target_role is not None:
             result['targetRole'] = self.target_role
         if self.template_id is not None:
@@ -3449,6 +3457,10 @@ class BatchCreateRequestData(TeaModel):
             self.remind_hour = m.get('remindHour')
         if m.get('remindMinute') is not None:
             self.remind_minute = m.get('remindMinute')
+        if m.get('remindNotPunchCardHour') is not None:
+            self.remind_not_punch_card_hour = m.get('remindNotPunchCardHour')
+        if m.get('remindNotPunchCardMinute') is not None:
+            self.remind_not_punch_card_minute = m.get('remindNotPunchCardMinute')
         if m.get('targetRole') is not None:
             self.target_role = m.get('targetRole')
         if m.get('templateId') is not None:
@@ -36659,6 +36671,388 @@ class QueryOrgCorrectTaskDetailResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryOrgCorrectTaskDetailResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryOrgCorrectTaskWithWrongQuestionHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryOrgCorrectTaskWithWrongQuestionRequest(TeaModel):
+    def __init__(
+        self,
+        end_time: int = None,
+        page_no: int = None,
+        page_size: int = None,
+        query_corp_id: str = None,
+        start_time: int = None,
+    ):
+        # This parameter is required.
+        self.end_time = end_time
+        # This parameter is required.
+        self.page_no = page_no
+        # This parameter is required.
+        self.page_size = page_size
+        # This parameter is required.
+        self.query_corp_id = query_corp_id
+        # This parameter is required.
+        self.start_time = start_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.page_no is not None:
+            result['pageNo'] = self.page_no
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.query_corp_id is not None:
+            result['queryCorpId'] = self.query_corp_id
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('pageNo') is not None:
+            self.page_no = m.get('pageNo')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('queryCorpId') is not None:
+            self.query_corp_id = m.get('queryCorpId')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        return self
+
+
+class QueryOrgCorrectTaskWithWrongQuestionResponseBodyResultStudentWrongQuestionsWrongQuestionRecords(TeaModel):
+    def __init__(
+        self,
+        question_cut_url: str = None,
+        question_id: str = None,
+    ):
+        self.question_cut_url = question_cut_url
+        self.question_id = question_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.question_cut_url is not None:
+            result['questionCutUrl'] = self.question_cut_url
+        if self.question_id is not None:
+            result['questionId'] = self.question_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('questionCutUrl') is not None:
+            self.question_cut_url = m.get('questionCutUrl')
+        if m.get('questionId') is not None:
+            self.question_id = m.get('questionId')
+        return self
+
+
+class QueryOrgCorrectTaskWithWrongQuestionResponseBodyResultStudentWrongQuestions(TeaModel):
+    def __init__(
+        self,
+        assignment_pic_url_list: List[str] = None,
+        student_id: str = None,
+        student_name: str = None,
+        wrong_question_records: List[QueryOrgCorrectTaskWithWrongQuestionResponseBodyResultStudentWrongQuestionsWrongQuestionRecords] = None,
+    ):
+        self.assignment_pic_url_list = assignment_pic_url_list
+        self.student_id = student_id
+        self.student_name = student_name
+        self.wrong_question_records = wrong_question_records
+
+    def validate(self):
+        if self.wrong_question_records:
+            for k in self.wrong_question_records:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.assignment_pic_url_list is not None:
+            result['assignmentPicUrlList'] = self.assignment_pic_url_list
+        if self.student_id is not None:
+            result['studentId'] = self.student_id
+        if self.student_name is not None:
+            result['studentName'] = self.student_name
+        result['wrongQuestionRecords'] = []
+        if self.wrong_question_records is not None:
+            for k in self.wrong_question_records:
+                result['wrongQuestionRecords'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('assignmentPicUrlList') is not None:
+            self.assignment_pic_url_list = m.get('assignmentPicUrlList')
+        if m.get('studentId') is not None:
+            self.student_id = m.get('studentId')
+        if m.get('studentName') is not None:
+            self.student_name = m.get('studentName')
+        self.wrong_question_records = []
+        if m.get('wrongQuestionRecords') is not None:
+            for k in m.get('wrongQuestionRecords'):
+                temp_model = QueryOrgCorrectTaskWithWrongQuestionResponseBodyResultStudentWrongQuestionsWrongQuestionRecords()
+                self.wrong_question_records.append(temp_model.from_map(k))
+        return self
+
+
+class QueryOrgCorrectTaskWithWrongQuestionResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        class_id: int = None,
+        class_name: str = None,
+        corp_id: str = None,
+        corrected_pdf_url: str = None,
+        create_time: int = None,
+        ext_info: Dict[str, Any] = None,
+        grade_name: str = None,
+        paper_name: str = None,
+        scanned_pdf_url: str = None,
+        student_wrong_questions: List[QueryOrgCorrectTaskWithWrongQuestionResponseBodyResultStudentWrongQuestions] = None,
+        submit_time: int = None,
+        task_code: str = None,
+        teacher_id: str = None,
+        teacher_pdf_url: str = None,
+    ):
+        self.class_id = class_id
+        self.class_name = class_name
+        self.corp_id = corp_id
+        self.corrected_pdf_url = corrected_pdf_url
+        self.create_time = create_time
+        self.ext_info = ext_info
+        self.grade_name = grade_name
+        self.paper_name = paper_name
+        self.scanned_pdf_url = scanned_pdf_url
+        self.student_wrong_questions = student_wrong_questions
+        self.submit_time = submit_time
+        self.task_code = task_code
+        self.teacher_id = teacher_id
+        self.teacher_pdf_url = teacher_pdf_url
+
+    def validate(self):
+        if self.student_wrong_questions:
+            for k in self.student_wrong_questions:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.class_id is not None:
+            result['classId'] = self.class_id
+        if self.class_name is not None:
+            result['className'] = self.class_name
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.corrected_pdf_url is not None:
+            result['correctedPdfUrl'] = self.corrected_pdf_url
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.ext_info is not None:
+            result['extInfo'] = self.ext_info
+        if self.grade_name is not None:
+            result['gradeName'] = self.grade_name
+        if self.paper_name is not None:
+            result['paperName'] = self.paper_name
+        if self.scanned_pdf_url is not None:
+            result['scannedPdfUrl'] = self.scanned_pdf_url
+        result['studentWrongQuestions'] = []
+        if self.student_wrong_questions is not None:
+            for k in self.student_wrong_questions:
+                result['studentWrongQuestions'].append(k.to_map() if k else None)
+        if self.submit_time is not None:
+            result['submitTime'] = self.submit_time
+        if self.task_code is not None:
+            result['taskCode'] = self.task_code
+        if self.teacher_id is not None:
+            result['teacherId'] = self.teacher_id
+        if self.teacher_pdf_url is not None:
+            result['teacherPdfUrl'] = self.teacher_pdf_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('classId') is not None:
+            self.class_id = m.get('classId')
+        if m.get('className') is not None:
+            self.class_name = m.get('className')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('correctedPdfUrl') is not None:
+            self.corrected_pdf_url = m.get('correctedPdfUrl')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('extInfo') is not None:
+            self.ext_info = m.get('extInfo')
+        if m.get('gradeName') is not None:
+            self.grade_name = m.get('gradeName')
+        if m.get('paperName') is not None:
+            self.paper_name = m.get('paperName')
+        if m.get('scannedPdfUrl') is not None:
+            self.scanned_pdf_url = m.get('scannedPdfUrl')
+        self.student_wrong_questions = []
+        if m.get('studentWrongQuestions') is not None:
+            for k in m.get('studentWrongQuestions'):
+                temp_model = QueryOrgCorrectTaskWithWrongQuestionResponseBodyResultStudentWrongQuestions()
+                self.student_wrong_questions.append(temp_model.from_map(k))
+        if m.get('submitTime') is not None:
+            self.submit_time = m.get('submitTime')
+        if m.get('taskCode') is not None:
+            self.task_code = m.get('taskCode')
+        if m.get('teacherId') is not None:
+            self.teacher_id = m.get('teacherId')
+        if m.get('teacherPdfUrl') is not None:
+            self.teacher_pdf_url = m.get('teacherPdfUrl')
+        return self
+
+
+class QueryOrgCorrectTaskWithWrongQuestionResponseBody(TeaModel):
+    def __init__(
+        self,
+        error_code: str = None,
+        error_msg: str = None,
+        result: List[QueryOrgCorrectTaskWithWrongQuestionResponseBodyResult] = None,
+        success: bool = None,
+    ):
+        self.error_code = error_code
+        self.error_msg = error_msg
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.error_code is not None:
+            result['errorCode'] = self.error_code
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('errorCode') is not None:
+            self.error_code = m.get('errorCode')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = QueryOrgCorrectTaskWithWrongQuestionResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class QueryOrgCorrectTaskWithWrongQuestionResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryOrgCorrectTaskWithWrongQuestionResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryOrgCorrectTaskWithWrongQuestionResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

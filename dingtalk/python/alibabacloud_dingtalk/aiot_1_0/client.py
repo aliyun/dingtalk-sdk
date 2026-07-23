@@ -266,31 +266,38 @@ class Client(OpenApiClient):
 
     def get_device_detail_with_options(
         self,
-        product_key: str,
-        device_name: str,
+        request: dingtalkaiot__1__0_models.GetDeviceDetailRequest,
         headers: dingtalkaiot__1__0_models.GetDeviceDetailHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkaiot__1__0_models.GetDeviceDetailResponse:
         """
         @summary 查询指定设备的详情
         
+        @param request: GetDeviceDetailRequest
         @param headers: GetDeviceDetailHeaders
         @param runtime: runtime options for this request RuntimeOptions
         @return: GetDeviceDetailResponse
         """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.device_name):
+            query['deviceName'] = request.device_name
+        if not UtilClient.is_unset(request.product_key):
+            query['productKey'] = request.product_key
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
-            headers=real_headers
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
         )
         params = open_api_models.Params(
             action='GetDeviceDetail',
             version='aiot_1.0',
             protocol='HTTP',
-            pathname=f'/v1.0/aiot/products/{product_key}/devices/{device_name}',
+            pathname=f'/v1.0/aiot/products/deviceDetail',
             method='GET',
             auth_type='AK',
             style='ROA',
@@ -304,31 +311,38 @@ class Client(OpenApiClient):
 
     async def get_device_detail_with_options_async(
         self,
-        product_key: str,
-        device_name: str,
+        request: dingtalkaiot__1__0_models.GetDeviceDetailRequest,
         headers: dingtalkaiot__1__0_models.GetDeviceDetailHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkaiot__1__0_models.GetDeviceDetailResponse:
         """
         @summary 查询指定设备的详情
         
+        @param request: GetDeviceDetailRequest
         @param headers: GetDeviceDetailHeaders
         @param runtime: runtime options for this request RuntimeOptions
         @return: GetDeviceDetailResponse
         """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.device_name):
+            query['deviceName'] = request.device_name
+        if not UtilClient.is_unset(request.product_key):
+            query['productKey'] = request.product_key
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
-            headers=real_headers
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
         )
         params = open_api_models.Params(
             action='GetDeviceDetail',
             version='aiot_1.0',
             protocol='HTTP',
-            pathname=f'/v1.0/aiot/products/{product_key}/devices/{device_name}',
+            pathname=f'/v1.0/aiot/products/deviceDetail',
             method='GET',
             auth_type='AK',
             style='ROA',
@@ -342,31 +356,31 @@ class Client(OpenApiClient):
 
     def get_device_detail(
         self,
-        product_key: str,
-        device_name: str,
+        request: dingtalkaiot__1__0_models.GetDeviceDetailRequest,
     ) -> dingtalkaiot__1__0_models.GetDeviceDetailResponse:
         """
         @summary 查询指定设备的详情
         
+        @param request: GetDeviceDetailRequest
         @return: GetDeviceDetailResponse
         """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkaiot__1__0_models.GetDeviceDetailHeaders()
-        return self.get_device_detail_with_options(product_key, device_name, headers, runtime)
+        return self.get_device_detail_with_options(request, headers, runtime)
 
     async def get_device_detail_async(
         self,
-        product_key: str,
-        device_name: str,
+        request: dingtalkaiot__1__0_models.GetDeviceDetailRequest,
     ) -> dingtalkaiot__1__0_models.GetDeviceDetailResponse:
         """
         @summary 查询指定设备的详情
         
+        @param request: GetDeviceDetailRequest
         @return: GetDeviceDetailResponse
         """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkaiot__1__0_models.GetDeviceDetailHeaders()
-        return await self.get_device_detail_with_options_async(product_key, device_name, headers, runtime)
+        return await self.get_device_detail_with_options_async(request, headers, runtime)
 
     def get_device_properties_with_options(
         self,
@@ -486,30 +500,36 @@ class Client(OpenApiClient):
 
     def get_service_invocation_with_options(
         self,
-        invocation_id: str,
+        request: dingtalkaiot__1__0_models.GetServiceInvocationRequest,
         headers: dingtalkaiot__1__0_models.GetServiceInvocationHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkaiot__1__0_models.GetServiceInvocationResponse:
         """
         @summary 查询设备服务调用结果
         
+        @param request: GetServiceInvocationRequest
         @param headers: GetServiceInvocationHeaders
         @param runtime: runtime options for this request RuntimeOptions
         @return: GetServiceInvocationResponse
         """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.invocation_id):
+            query['invocationId'] = request.invocation_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
-            headers=real_headers
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
         )
         params = open_api_models.Params(
             action='GetServiceInvocation',
             version='aiot_1.0',
             protocol='HTTP',
-            pathname=f'/v1.0/aiot/serviceInvocations/{invocation_id}',
+            pathname=f'/v1.0/aiot/serviceInvocations',
             method='GET',
             auth_type='AK',
             style='ROA',
@@ -523,30 +543,36 @@ class Client(OpenApiClient):
 
     async def get_service_invocation_with_options_async(
         self,
-        invocation_id: str,
+        request: dingtalkaiot__1__0_models.GetServiceInvocationRequest,
         headers: dingtalkaiot__1__0_models.GetServiceInvocationHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkaiot__1__0_models.GetServiceInvocationResponse:
         """
         @summary 查询设备服务调用结果
         
+        @param request: GetServiceInvocationRequest
         @param headers: GetServiceInvocationHeaders
         @param runtime: runtime options for this request RuntimeOptions
         @return: GetServiceInvocationResponse
         """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.invocation_id):
+            query['invocationId'] = request.invocation_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
-            headers=real_headers
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
         )
         params = open_api_models.Params(
             action='GetServiceInvocation',
             version='aiot_1.0',
             protocol='HTTP',
-            pathname=f'/v1.0/aiot/serviceInvocations/{invocation_id}',
+            pathname=f'/v1.0/aiot/serviceInvocations',
             method='GET',
             auth_type='AK',
             style='ROA',
@@ -560,29 +586,31 @@ class Client(OpenApiClient):
 
     def get_service_invocation(
         self,
-        invocation_id: str,
+        request: dingtalkaiot__1__0_models.GetServiceInvocationRequest,
     ) -> dingtalkaiot__1__0_models.GetServiceInvocationResponse:
         """
         @summary 查询设备服务调用结果
         
+        @param request: GetServiceInvocationRequest
         @return: GetServiceInvocationResponse
         """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkaiot__1__0_models.GetServiceInvocationHeaders()
-        return self.get_service_invocation_with_options(invocation_id, headers, runtime)
+        return self.get_service_invocation_with_options(request, headers, runtime)
 
     async def get_service_invocation_async(
         self,
-        invocation_id: str,
+        request: dingtalkaiot__1__0_models.GetServiceInvocationRequest,
     ) -> dingtalkaiot__1__0_models.GetServiceInvocationResponse:
         """
         @summary 查询设备服务调用结果
         
+        @param request: GetServiceInvocationRequest
         @return: GetServiceInvocationResponse
         """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkaiot__1__0_models.GetServiceInvocationHeaders()
-        return await self.get_service_invocation_with_options_async(invocation_id, headers, runtime)
+        return await self.get_service_invocation_with_options_async(request, headers, runtime)
 
     def invoke_device_service_with_options(
         self,

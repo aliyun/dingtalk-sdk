@@ -3974,6 +3974,7 @@ class QueryMinutesTodoResponseBodyDingtalkTodoList(TeaModel):
         executor_list: List[QueryMinutesTodoResponseBodyDingtalkTodoListExecutorList] = None,
         is_done: bool = None,
         minutes_todo_id: str = None,
+        open_dingtalk_todo_id: str = None,
         title: str = None,
     ):
         self.created_time = created_time
@@ -3983,6 +3984,7 @@ class QueryMinutesTodoResponseBodyDingtalkTodoList(TeaModel):
         self.executor_list = executor_list
         self.is_done = is_done
         self.minutes_todo_id = minutes_todo_id
+        self.open_dingtalk_todo_id = open_dingtalk_todo_id
         self.title = title
 
     def validate(self):
@@ -4013,6 +4015,8 @@ class QueryMinutesTodoResponseBodyDingtalkTodoList(TeaModel):
             result['isDone'] = self.is_done
         if self.minutes_todo_id is not None:
             result['minutesTodoId'] = self.minutes_todo_id
+        if self.open_dingtalk_todo_id is not None:
+            result['openDingtalkTodoId'] = self.open_dingtalk_todo_id
         if self.title is not None:
             result['title'] = self.title
         return result
@@ -4036,6 +4040,8 @@ class QueryMinutesTodoResponseBodyDingtalkTodoList(TeaModel):
             self.is_done = m.get('isDone')
         if m.get('minutesTodoId') is not None:
             self.minutes_todo_id = m.get('minutesTodoId')
+        if m.get('openDingtalkTodoId') is not None:
+            self.open_dingtalk_todo_id = m.get('openDingtalkTodoId')
         if m.get('title') is not None:
             self.title = m.get('title')
         return self

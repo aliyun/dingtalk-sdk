@@ -1625,6 +1625,7 @@ class GetAudioFileInfoResponseBodyResult(TeaModel):
         file_id: str = None,
         file_name: str = None,
         file_size: int = None,
+        sn: str = None,
     ):
         self.attributes = attributes
         self.create_time = create_time
@@ -1633,6 +1634,7 @@ class GetAudioFileInfoResponseBodyResult(TeaModel):
         self.file_id = file_id
         self.file_name = file_name
         self.file_size = file_size
+        self.sn = sn
 
     def validate(self):
         pass
@@ -1657,6 +1659,8 @@ class GetAudioFileInfoResponseBodyResult(TeaModel):
             result['fileName'] = self.file_name
         if self.file_size is not None:
             result['fileSize'] = self.file_size
+        if self.sn is not None:
+            result['sn'] = self.sn
         return result
 
     def from_map(self, m: dict = None):
@@ -1675,6 +1679,8 @@ class GetAudioFileInfoResponseBodyResult(TeaModel):
             self.file_name = m.get('fileName')
         if m.get('fileSize') is not None:
             self.file_size = m.get('fileSize')
+        if m.get('sn') is not None:
+            self.sn = m.get('sn')
         return self
 
 
@@ -5439,14 +5445,16 @@ class ListDeviceRecordingDurationRequest(TeaModel):
 class ListDeviceRecordingDurationResponseBodyResult(TeaModel):
     def __init__(
         self,
-        duration: str = None,
+        duration: int = None,
         end_timestamp: int = None,
         record_id: str = None,
+        sn: str = None,
         start_timestamp: int = None,
     ):
         self.duration = duration
         self.end_timestamp = end_timestamp
         self.record_id = record_id
+        self.sn = sn
         self.start_timestamp = start_timestamp
 
     def validate(self):
@@ -5464,6 +5472,8 @@ class ListDeviceRecordingDurationResponseBodyResult(TeaModel):
             result['endTimestamp'] = self.end_timestamp
         if self.record_id is not None:
             result['recordId'] = self.record_id
+        if self.sn is not None:
+            result['sn'] = self.sn
         if self.start_timestamp is not None:
             result['startTimestamp'] = self.start_timestamp
         return result
@@ -5476,6 +5486,8 @@ class ListDeviceRecordingDurationResponseBodyResult(TeaModel):
             self.end_timestamp = m.get('endTimestamp')
         if m.get('recordId') is not None:
             self.record_id = m.get('recordId')
+        if m.get('sn') is not None:
+            self.sn = m.get('sn')
         if m.get('startTimestamp') is not None:
             self.start_timestamp = m.get('startTimestamp')
         return self
@@ -7207,6 +7219,7 @@ class QueryAudioFileResponseBodyResult(TeaModel):
         file_id: str = None,
         file_name: str = None,
         file_size: int = None,
+        sn: str = None,
     ):
         self.attributes = attributes
         self.create_time = create_time
@@ -7215,6 +7228,7 @@ class QueryAudioFileResponseBodyResult(TeaModel):
         self.file_id = file_id
         self.file_name = file_name
         self.file_size = file_size
+        self.sn = sn
 
     def validate(self):
         pass
@@ -7239,6 +7253,8 @@ class QueryAudioFileResponseBodyResult(TeaModel):
             result['fileName'] = self.file_name
         if self.file_size is not None:
             result['fileSize'] = self.file_size
+        if self.sn is not None:
+            result['sn'] = self.sn
         return result
 
     def from_map(self, m: dict = None):
@@ -7257,6 +7273,8 @@ class QueryAudioFileResponseBodyResult(TeaModel):
             self.file_name = m.get('fileName')
         if m.get('fileSize') is not None:
             self.file_size = m.get('fileSize')
+        if m.get('sn') is not None:
+            self.sn = m.get('sn')
         return self
 
 
@@ -7946,6 +7964,7 @@ class QueryFileInfoByMinutesIdResponseBodyResult(TeaModel):
         file_id: str = None,
         file_name: str = None,
         file_size: int = None,
+        sn: str = None,
     ):
         self.attributes = attributes
         self.create_time = create_time
@@ -7954,6 +7973,7 @@ class QueryFileInfoByMinutesIdResponseBodyResult(TeaModel):
         self.file_id = file_id
         self.file_name = file_name
         self.file_size = file_size
+        self.sn = sn
 
     def validate(self):
         pass
@@ -7978,6 +7998,8 @@ class QueryFileInfoByMinutesIdResponseBodyResult(TeaModel):
             result['fileName'] = self.file_name
         if self.file_size is not None:
             result['fileSize'] = self.file_size
+        if self.sn is not None:
+            result['sn'] = self.sn
         return result
 
     def from_map(self, m: dict = None):
@@ -7996,6 +8018,8 @@ class QueryFileInfoByMinutesIdResponseBodyResult(TeaModel):
             self.file_name = m.get('fileName')
         if m.get('fileSize') is not None:
             self.file_size = m.get('fileSize')
+        if m.get('sn') is not None:
+            self.sn = m.get('sn')
         return self
 
 
@@ -9605,6 +9629,224 @@ class UpdateRecordingScheduleResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UpdateRecordingScheduleResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateServiceRecordRestrictHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateServiceRecordRestrictRequest(TeaModel):
+    def __init__(
+        self,
+        action: str = None,
+        record_ids: List[str] = None,
+    ):
+        # This parameter is required.
+        self.action = action
+        # This parameter is required.
+        self.record_ids = record_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action is not None:
+            result['action'] = self.action
+        if self.record_ids is not None:
+            result['recordIds'] = self.record_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('action') is not None:
+            self.action = m.get('action')
+        if m.get('recordIds') is not None:
+            self.record_ids = m.get('recordIds')
+        return self
+
+
+class UpdateServiceRecordRestrictShrinkRequest(TeaModel):
+    def __init__(
+        self,
+        action: str = None,
+        record_ids_shrink: str = None,
+    ):
+        # This parameter is required.
+        self.action = action
+        # This parameter is required.
+        self.record_ids_shrink = record_ids_shrink
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action is not None:
+            result['action'] = self.action
+        if self.record_ids_shrink is not None:
+            result['recordIds'] = self.record_ids_shrink
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('action') is not None:
+            self.action = m.get('action')
+        if m.get('recordIds') is not None:
+            self.record_ids_shrink = m.get('recordIds')
+        return self
+
+
+class UpdateServiceRecordRestrictResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        fail_count: int = None,
+        failed_record_ids: List[str] = None,
+        success_count: int = None,
+        total: int = None,
+    ):
+        self.fail_count = fail_count
+        self.failed_record_ids = failed_record_ids
+        self.success_count = success_count
+        self.total = total
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.fail_count is not None:
+            result['failCount'] = self.fail_count
+        if self.failed_record_ids is not None:
+            result['failedRecordIds'] = self.failed_record_ids
+        if self.success_count is not None:
+            result['successCount'] = self.success_count
+        if self.total is not None:
+            result['total'] = self.total
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('failCount') is not None:
+            self.fail_count = m.get('failCount')
+        if m.get('failedRecordIds') is not None:
+            self.failed_record_ids = m.get('failedRecordIds')
+        if m.get('successCount') is not None:
+            self.success_count = m.get('successCount')
+        if m.get('total') is not None:
+            self.total = m.get('total')
+        return self
+
+
+class UpdateServiceRecordRestrictResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: UpdateServiceRecordRestrictResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = UpdateServiceRecordRestrictResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class UpdateServiceRecordRestrictResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdateServiceRecordRestrictResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdateServiceRecordRestrictResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

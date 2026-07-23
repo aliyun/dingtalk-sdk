@@ -458,6 +458,41 @@ class GetDeviceDetailHeaders(TeaModel):
         return self
 
 
+class GetDeviceDetailRequest(TeaModel):
+    def __init__(
+        self,
+        device_name: str = None,
+        product_key: str = None,
+    ):
+        # This parameter is required.
+        self.device_name = device_name
+        # This parameter is required.
+        self.product_key = product_key
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.device_name is not None:
+            result['deviceName'] = self.device_name
+        if self.product_key is not None:
+            result['productKey'] = self.product_key
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deviceName') is not None:
+            self.device_name = m.get('deviceName')
+        if m.get('productKey') is not None:
+            self.product_key = m.get('productKey')
+        return self
+
+
 class GetDeviceDetailResponseBody(TeaModel):
     def __init__(
         self,
@@ -735,6 +770,34 @@ class GetServiceInvocationHeaders(TeaModel):
             self.common_headers = m.get('commonHeaders')
         if m.get('x-acs-dingtalk-access-token') is not None:
             self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetServiceInvocationRequest(TeaModel):
+    def __init__(
+        self,
+        invocation_id: str = None,
+    ):
+        # This parameter is required.
+        self.invocation_id = invocation_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.invocation_id is not None:
+            result['invocationId'] = self.invocation_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('invocationId') is not None:
+            self.invocation_id = m.get('invocationId')
         return self
 
 

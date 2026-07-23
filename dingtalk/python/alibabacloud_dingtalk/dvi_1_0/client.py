@@ -4812,6 +4812,132 @@ class Client(OpenApiClient):
         headers = dingtalkdvi__1__0_models.UpdateRecordingScheduleHeaders()
         return await self.update_recording_schedule_with_options_async(request, headers, runtime)
 
+    def update_service_record_restrict_with_options(
+        self,
+        tmp_req: dingtalkdvi__1__0_models.UpdateServiceRecordRestrictRequest,
+        headers: dingtalkdvi__1__0_models.UpdateServiceRecordRestrictHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.UpdateServiceRecordRestrictResponse:
+        """
+        @summary 批量更新服务记录约束规则
+        
+        @param tmp_req: UpdateServiceRecordRestrictRequest
+        @param headers: UpdateServiceRecordRestrictHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateServiceRecordRestrictResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkdvi__1__0_models.UpdateServiceRecordRestrictShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.record_ids):
+            request.record_ids_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.record_ids, 'recordIds', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.action):
+            query['action'] = request.action
+        if not UtilClient.is_unset(request.record_ids_shrink):
+            query['recordIds'] = request.record_ids_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='UpdateServiceRecordRestrict',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/service/batch-update-restrict',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.UpdateServiceRecordRestrictResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_service_record_restrict_with_options_async(
+        self,
+        tmp_req: dingtalkdvi__1__0_models.UpdateServiceRecordRestrictRequest,
+        headers: dingtalkdvi__1__0_models.UpdateServiceRecordRestrictHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.UpdateServiceRecordRestrictResponse:
+        """
+        @summary 批量更新服务记录约束规则
+        
+        @param tmp_req: UpdateServiceRecordRestrictRequest
+        @param headers: UpdateServiceRecordRestrictHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateServiceRecordRestrictResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkdvi__1__0_models.UpdateServiceRecordRestrictShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.record_ids):
+            request.record_ids_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.record_ids, 'recordIds', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.action):
+            query['action'] = request.action
+        if not UtilClient.is_unset(request.record_ids_shrink):
+            query['recordIds'] = request.record_ids_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='UpdateServiceRecordRestrict',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/service/batch-update-restrict',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.UpdateServiceRecordRestrictResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_service_record_restrict(
+        self,
+        request: dingtalkdvi__1__0_models.UpdateServiceRecordRestrictRequest,
+    ) -> dingtalkdvi__1__0_models.UpdateServiceRecordRestrictResponse:
+        """
+        @summary 批量更新服务记录约束规则
+        
+        @param request: UpdateServiceRecordRestrictRequest
+        @return: UpdateServiceRecordRestrictResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.UpdateServiceRecordRestrictHeaders()
+        return self.update_service_record_restrict_with_options(request, headers, runtime)
+
+    async def update_service_record_restrict_async(
+        self,
+        request: dingtalkdvi__1__0_models.UpdateServiceRecordRestrictRequest,
+    ) -> dingtalkdvi__1__0_models.UpdateServiceRecordRestrictResponse:
+        """
+        @summary 批量更新服务记录约束规则
+        
+        @param request: UpdateServiceRecordRestrictRequest
+        @return: UpdateServiceRecordRestrictResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.UpdateServiceRecordRestrictHeaders()
+        return await self.update_service_record_restrict_with_options_async(request, headers, runtime)
+
     def update_team_with_options(
         self,
         request: dingtalkdvi__1__0_models.UpdateTeamRequest,

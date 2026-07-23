@@ -2614,6 +2614,144 @@ class Client(OpenApiClient):
         headers = dingtalkexclusive__1__0_models.ExchangeMainAdminHeaders()
         return await self.exchange_main_admin_with_options_async(request, headers, runtime)
 
+    def exclusive_banner_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.ExclusiveBannerRequest,
+        headers: dingtalkexclusive__1__0_models.ExclusiveBannerHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.ExclusiveBannerResponse:
+        """
+        @summary 专属运营Banner头图消息推送
+        
+        @param request: ExclusiveBannerRequest
+        @param headers: ExclusiveBannerHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ExclusiveBannerResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.all_org):
+            body['allOrg'] = request.all_org
+        if not UtilClient.is_unset(request.duration):
+            body['duration'] = request.duration
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.image_media_id):
+            body['imageMediaId'] = request.image_media_id
+        if not UtilClient.is_unset(request.open_link):
+            body['openLink'] = request.open_link
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.user_list):
+            body['userList'] = request.user_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ExclusiveBanner',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/customize/marketing/banner',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.ExclusiveBannerResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def exclusive_banner_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.ExclusiveBannerRequest,
+        headers: dingtalkexclusive__1__0_models.ExclusiveBannerHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.ExclusiveBannerResponse:
+        """
+        @summary 专属运营Banner头图消息推送
+        
+        @param request: ExclusiveBannerRequest
+        @param headers: ExclusiveBannerHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ExclusiveBannerResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.all_org):
+            body['allOrg'] = request.all_org
+        if not UtilClient.is_unset(request.duration):
+            body['duration'] = request.duration
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.image_media_id):
+            body['imageMediaId'] = request.image_media_id
+        if not UtilClient.is_unset(request.open_link):
+            body['openLink'] = request.open_link
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.user_list):
+            body['userList'] = request.user_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ExclusiveBanner',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/customize/marketing/banner',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.ExclusiveBannerResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def exclusive_banner(
+        self,
+        request: dingtalkexclusive__1__0_models.ExclusiveBannerRequest,
+    ) -> dingtalkexclusive__1__0_models.ExclusiveBannerResponse:
+        """
+        @summary 专属运营Banner头图消息推送
+        
+        @param request: ExclusiveBannerRequest
+        @return: ExclusiveBannerResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.ExclusiveBannerHeaders()
+        return self.exclusive_banner_with_options(request, headers, runtime)
+
+    async def exclusive_banner_async(
+        self,
+        request: dingtalkexclusive__1__0_models.ExclusiveBannerRequest,
+    ) -> dingtalkexclusive__1__0_models.ExclusiveBannerResponse:
+        """
+        @summary 专属运营Banner头图消息推送
+        
+        @param request: ExclusiveBannerRequest
+        @return: ExclusiveBannerResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.ExclusiveBannerHeaders()
+        return await self.exclusive_banner_with_options_async(request, headers, runtime)
+
     def exclusive_create_ding_portal_with_options(
         self,
         request: dingtalkexclusive__1__0_models.ExclusiveCreateDingPortalRequest,

@@ -2029,7 +2029,7 @@ class Client(OpenApiClient):
             method='POST',
             auth_type='AK',
             style='ROA',
-            req_body_type='json',
+            req_body_type='none',
             body_type='json'
         )
         return TeaCore.from_map(
@@ -2082,7 +2082,7 @@ class Client(OpenApiClient):
             method='POST',
             auth_type='AK',
             style='ROA',
-            req_body_type='json',
+            req_body_type='none',
             body_type='json'
         )
         return TeaCore.from_map(
@@ -21257,6 +21257,136 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkedu__1__0_models.QueryOrgCorrectTaskDetailHeaders()
         return await self.query_org_correct_task_detail_with_options_async(request, headers, runtime)
+
+    def query_org_correct_task_with_wrong_question_with_options(
+        self,
+        request: dingtalkedu__1__0_models.QueryOrgCorrectTaskWithWrongQuestionRequest,
+        headers: dingtalkedu__1__0_models.QueryOrgCorrectTaskWithWrongQuestionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QueryOrgCorrectTaskWithWrongQuestionResponse:
+        """
+        @summary 作业批改-查询批改错题明细
+        
+        @param request: QueryOrgCorrectTaskWithWrongQuestionRequest
+        @param headers: QueryOrgCorrectTaskWithWrongQuestionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryOrgCorrectTaskWithWrongQuestionResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.page_no):
+            body['pageNo'] = request.page_no
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.query_corp_id):
+            body['queryCorpId'] = request.query_corp_id
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryOrgCorrectTaskWithWrongQuestion',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/assignment/queryTaskWrongQuestionDetail',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QueryOrgCorrectTaskWithWrongQuestionResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_org_correct_task_with_wrong_question_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.QueryOrgCorrectTaskWithWrongQuestionRequest,
+        headers: dingtalkedu__1__0_models.QueryOrgCorrectTaskWithWrongQuestionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QueryOrgCorrectTaskWithWrongQuestionResponse:
+        """
+        @summary 作业批改-查询批改错题明细
+        
+        @param request: QueryOrgCorrectTaskWithWrongQuestionRequest
+        @param headers: QueryOrgCorrectTaskWithWrongQuestionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryOrgCorrectTaskWithWrongQuestionResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.page_no):
+            body['pageNo'] = request.page_no
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.query_corp_id):
+            body['queryCorpId'] = request.query_corp_id
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryOrgCorrectTaskWithWrongQuestion',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/assignment/queryTaskWrongQuestionDetail',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QueryOrgCorrectTaskWithWrongQuestionResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_org_correct_task_with_wrong_question(
+        self,
+        request: dingtalkedu__1__0_models.QueryOrgCorrectTaskWithWrongQuestionRequest,
+    ) -> dingtalkedu__1__0_models.QueryOrgCorrectTaskWithWrongQuestionResponse:
+        """
+        @summary 作业批改-查询批改错题明细
+        
+        @param request: QueryOrgCorrectTaskWithWrongQuestionRequest
+        @return: QueryOrgCorrectTaskWithWrongQuestionResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QueryOrgCorrectTaskWithWrongQuestionHeaders()
+        return self.query_org_correct_task_with_wrong_question_with_options(request, headers, runtime)
+
+    async def query_org_correct_task_with_wrong_question_async(
+        self,
+        request: dingtalkedu__1__0_models.QueryOrgCorrectTaskWithWrongQuestionRequest,
+    ) -> dingtalkedu__1__0_models.QueryOrgCorrectTaskWithWrongQuestionResponse:
+        """
+        @summary 作业批改-查询批改错题明细
+        
+        @param request: QueryOrgCorrectTaskWithWrongQuestionRequest
+        @return: QueryOrgCorrectTaskWithWrongQuestionResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QueryOrgCorrectTaskWithWrongQuestionHeaders()
+        return await self.query_org_correct_task_with_wrong_question_with_options_async(request, headers, runtime)
 
     def query_org_relation_list_with_options(
         self,
