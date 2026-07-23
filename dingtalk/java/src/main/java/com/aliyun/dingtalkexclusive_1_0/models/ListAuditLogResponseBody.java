@@ -272,6 +272,9 @@ public class ListAuditLogResponseBody extends TeaModel {
         @NameInMap("realName")
         public String realName;
 
+        @NameInMap("receiverId")
+        public String receiverId;
+
         /**
          * <strong>example:</strong>
          * <p>总经理办公室</p>
@@ -518,6 +521,14 @@ public class ListAuditLogResponseBody extends TeaModel {
         }
         public String getRealName() {
             return this.realName;
+        }
+
+        public ListAuditLogResponseBodyList setReceiverId(String receiverId) {
+            this.receiverId = receiverId;
+            return this;
+        }
+        public String getReceiverId() {
+            return this.receiverId;
         }
 
         public ListAuditLogResponseBodyList setReceiverName(String receiverName) {

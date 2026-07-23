@@ -2512,6 +2512,72 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>批量更新服务记录约束规则</p>
+     * 
+     * @param tmpReq UpdateServiceRecordRestrictRequest
+     * @param headers UpdateServiceRecordRestrictHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateServiceRecordRestrictResponse
+     */
+    public UpdateServiceRecordRestrictResponse updateServiceRecordRestrictWithOptions(UpdateServiceRecordRestrictRequest tmpReq, UpdateServiceRecordRestrictHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(tmpReq);
+        UpdateServiceRecordRestrictShrinkRequest request = new UpdateServiceRecordRestrictShrinkRequest();
+        com.aliyun.openapiutil.Client.convert(tmpReq, request);
+        if (!com.aliyun.teautil.Common.isUnset(tmpReq.recordIds)) {
+            request.recordIdsShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(tmpReq.recordIds, "recordIds", "json");
+        }
+
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.action)) {
+            query.put("action", request.action);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.recordIdsShrink)) {
+            query.put("recordIds", request.recordIdsShrink);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateServiceRecordRestrict"),
+            new TeaPair("version", "dvi_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/dvi/service/batch-update-restrict"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateServiceRecordRestrictResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>批量更新服务记录约束规则</p>
+     * 
+     * @param request UpdateServiceRecordRestrictRequest
+     * @return UpdateServiceRecordRestrictResponse
+     */
+    public UpdateServiceRecordRestrictResponse updateServiceRecordRestrict(UpdateServiceRecordRestrictRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateServiceRecordRestrictHeaders headers = new UpdateServiceRecordRestrictHeaders();
+        return this.updateServiceRecordRestrictWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>修改团队</p>
      * 
      * @param request UpdateTeamRequest

@@ -42,6 +42,9 @@ public class QueryFileInfoByMinutesIdResponseBody extends TeaModel {
         @NameInMap("fileSize")
         public Long fileSize;
 
+        @NameInMap("sn")
+        public String sn;
+
         public static QueryFileInfoByMinutesIdResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             QueryFileInfoByMinutesIdResponseBodyResult self = new QueryFileInfoByMinutesIdResponseBodyResult();
             return TeaModel.build(map, self);
@@ -101,6 +104,14 @@ public class QueryFileInfoByMinutesIdResponseBody extends TeaModel {
         }
         public Long getFileSize() {
             return this.fileSize;
+        }
+
+        public QueryFileInfoByMinutesIdResponseBodyResult setSn(String sn) {
+            this.sn = sn;
+            return this;
+        }
+        public String getSn() {
+            return this.sn;
         }
 
     }

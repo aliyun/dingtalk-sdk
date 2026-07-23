@@ -94,6 +94,9 @@ public class QueryMinutesTodoResponseBody extends TeaModel {
         @NameInMap("minutesTodoId")
         public String minutesTodoId;
 
+        @NameInMap("openDingtalkTodoId")
+        public String openDingtalkTodoId;
+
         @NameInMap("title")
         public String title;
 
@@ -156,6 +159,14 @@ public class QueryMinutesTodoResponseBody extends TeaModel {
         }
         public String getMinutesTodoId() {
             return this.minutesTodoId;
+        }
+
+        public QueryMinutesTodoResponseBodyDingtalkTodoList setOpenDingtalkTodoId(String openDingtalkTodoId) {
+            this.openDingtalkTodoId = openDingtalkTodoId;
+            return this;
+        }
+        public String getOpenDingtalkTodoId() {
+            return this.openDingtalkTodoId;
         }
 
         public QueryMinutesTodoResponseBodyDingtalkTodoList setTitle(String title) {

@@ -64,6 +64,9 @@ public class QueryAudioFileResponseBody extends TeaModel {
         @NameInMap("fileSize")
         public Long fileSize;
 
+        @NameInMap("sn")
+        public String sn;
+
         public static QueryAudioFileResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             QueryAudioFileResponseBodyResult self = new QueryAudioFileResponseBodyResult();
             return TeaModel.build(map, self);
@@ -123,6 +126,14 @@ public class QueryAudioFileResponseBody extends TeaModel {
         }
         public Long getFileSize() {
             return this.fileSize;
+        }
+
+        public QueryAudioFileResponseBodyResult setSn(String sn) {
+            this.sn = sn;
+            return this;
+        }
+        public String getSn() {
+            return this.sn;
         }
 
     }

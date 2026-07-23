@@ -129,11 +129,22 @@ public class Client extends com.aliyun.teaopenapi.Client {
      * <b>summary</b> : 
      * <p>查询指定设备的详情</p>
      * 
+     * @param request GetDeviceDetailRequest
      * @param headers GetDeviceDetailHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetDeviceDetailResponse
      */
-    public GetDeviceDetailResponse getDeviceDetailWithOptions(String productKey, String deviceName, GetDeviceDetailHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+    public GetDeviceDetailResponse getDeviceDetailWithOptions(GetDeviceDetailRequest request, GetDeviceDetailHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.deviceName)) {
+            query.put("deviceName", request.deviceName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.productKey)) {
+            query.put("productKey", request.productKey);
+        }
+
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -144,13 +155,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
-            new TeaPair("headers", realHeaders)
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
         com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
             new TeaPair("action", "GetDeviceDetail"),
             new TeaPair("version", "aiot_1.0"),
             new TeaPair("protocol", "HTTP"),
-            new TeaPair("pathname", "/v1.0/aiot/products/" + productKey + "/devices/" + deviceName + ""),
+            new TeaPair("pathname", "/v1.0/aiot/products/deviceDetail"),
             new TeaPair("method", "GET"),
             new TeaPair("authType", "AK"),
             new TeaPair("style", "ROA"),
@@ -163,12 +175,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     /**
      * <b>summary</b> : 
      * <p>查询指定设备的详情</p>
+     * 
+     * @param request GetDeviceDetailRequest
      * @return GetDeviceDetailResponse
      */
-    public GetDeviceDetailResponse getDeviceDetail(String productKey, String deviceName) throws Exception {
+    public GetDeviceDetailResponse getDeviceDetail(GetDeviceDetailRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetDeviceDetailHeaders headers = new GetDeviceDetailHeaders();
-        return this.getDeviceDetailWithOptions(productKey, deviceName, headers, runtime);
+        return this.getDeviceDetailWithOptions(request, headers, runtime);
     }
 
     /**
@@ -226,11 +240,18 @@ public class Client extends com.aliyun.teaopenapi.Client {
      * <b>summary</b> : 
      * <p>查询设备服务调用结果</p>
      * 
+     * @param request GetServiceInvocationRequest
      * @param headers GetServiceInvocationHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetServiceInvocationResponse
      */
-    public GetServiceInvocationResponse getServiceInvocationWithOptions(String invocationId, GetServiceInvocationHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+    public GetServiceInvocationResponse getServiceInvocationWithOptions(GetServiceInvocationRequest request, GetServiceInvocationHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.invocationId)) {
+            query.put("invocationId", request.invocationId);
+        }
+
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -241,13 +262,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
-            new TeaPair("headers", realHeaders)
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
         com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
             new TeaPair("action", "GetServiceInvocation"),
             new TeaPair("version", "aiot_1.0"),
             new TeaPair("protocol", "HTTP"),
-            new TeaPair("pathname", "/v1.0/aiot/serviceInvocations/" + invocationId + ""),
+            new TeaPair("pathname", "/v1.0/aiot/serviceInvocations"),
             new TeaPair("method", "GET"),
             new TeaPair("authType", "AK"),
             new TeaPair("style", "ROA"),
@@ -260,12 +282,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
     /**
      * <b>summary</b> : 
      * <p>查询设备服务调用结果</p>
+     * 
+     * @param request GetServiceInvocationRequest
      * @return GetServiceInvocationResponse
      */
-    public GetServiceInvocationResponse getServiceInvocation(String invocationId) throws Exception {
+    public GetServiceInvocationResponse getServiceInvocation(GetServiceInvocationRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetServiceInvocationHeaders headers = new GetServiceInvocationHeaders();
-        return this.getServiceInvocationWithOptions(invocationId, headers, runtime);
+        return this.getServiceInvocationWithOptions(request, headers, runtime);
     }
 
     /**

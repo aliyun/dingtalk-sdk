@@ -346,6 +346,12 @@ public class BatchCreateRequest extends TeaModel {
         @NameInMap("remindMinute")
         public Integer remindMinute;
 
+        @NameInMap("remindNotPunchCardHour")
+        public Integer remindNotPunchCardHour;
+
+        @NameInMap("remindNotPunchCardMinute")
+        public Integer remindNotPunchCardMinute;
+
         @NameInMap("targetRole")
         public String targetRole;
 
@@ -468,6 +474,22 @@ public class BatchCreateRequest extends TeaModel {
         }
         public Integer getRemindMinute() {
             return this.remindMinute;
+        }
+
+        public BatchCreateRequestData setRemindNotPunchCardHour(Integer remindNotPunchCardHour) {
+            this.remindNotPunchCardHour = remindNotPunchCardHour;
+            return this;
+        }
+        public Integer getRemindNotPunchCardHour() {
+            return this.remindNotPunchCardHour;
+        }
+
+        public BatchCreateRequestData setRemindNotPunchCardMinute(Integer remindNotPunchCardMinute) {
+            this.remindNotPunchCardMinute = remindNotPunchCardMinute;
+            return this;
+        }
+        public Integer getRemindNotPunchCardMinute() {
+            return this.remindNotPunchCardMinute;
         }
 
         public BatchCreateRequestData setTargetRole(String targetRole) {

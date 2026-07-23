@@ -44,13 +44,16 @@ public class ListDeviceRecordingDurationResponseBody extends TeaModel {
 
     public static class ListDeviceRecordingDurationResponseBodyResult extends TeaModel {
         @NameInMap("duration")
-        public String duration;
+        public Long duration;
 
         @NameInMap("endTimestamp")
         public Long endTimestamp;
 
         @NameInMap("recordId")
         public String recordId;
+
+        @NameInMap("sn")
+        public String sn;
 
         @NameInMap("startTimestamp")
         public Long startTimestamp;
@@ -60,11 +63,11 @@ public class ListDeviceRecordingDurationResponseBody extends TeaModel {
             return TeaModel.build(map, self);
         }
 
-        public ListDeviceRecordingDurationResponseBodyResult setDuration(String duration) {
+        public ListDeviceRecordingDurationResponseBodyResult setDuration(Long duration) {
             this.duration = duration;
             return this;
         }
-        public String getDuration() {
+        public Long getDuration() {
             return this.duration;
         }
 
@@ -82,6 +85,14 @@ public class ListDeviceRecordingDurationResponseBody extends TeaModel {
         }
         public String getRecordId() {
             return this.recordId;
+        }
+
+        public ListDeviceRecordingDurationResponseBodyResult setSn(String sn) {
+            this.sn = sn;
+            return this;
+        }
+        public String getSn() {
+            return this.sn;
         }
 
         public ListDeviceRecordingDurationResponseBodyResult setStartTimestamp(Long startTimestamp) {
