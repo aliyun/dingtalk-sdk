@@ -12,11 +12,13 @@ use AlibabaCloud\SDK\Dingtalk\Vaiot_1_0\Models\ConfirmFirmwareUpgradeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vaiot_1_0\Models\ConfirmFirmwareUpgradeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vaiot_1_0\Models\ConfirmFirmwareUpgradeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vaiot_1_0\Models\GetDeviceDetailHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vaiot_1_0\Models\GetDeviceDetailRequest;
 use AlibabaCloud\SDK\Dingtalk\Vaiot_1_0\Models\GetDeviceDetailResponse;
 use AlibabaCloud\SDK\Dingtalk\Vaiot_1_0\Models\GetDevicePropertiesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vaiot_1_0\Models\GetDevicePropertiesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vaiot_1_0\Models\GetDevicePropertiesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vaiot_1_0\Models\GetServiceInvocationHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vaiot_1_0\Models\GetServiceInvocationRequest;
 use AlibabaCloud\SDK\Dingtalk\Vaiot_1_0\Models\GetServiceInvocationResponse;
 use AlibabaCloud\SDK\Dingtalk\Vaiot_1_0\Models\InvokeDeviceServiceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vaiot_1_0\Models\InvokeDeviceServiceRequest;
@@ -165,15 +167,22 @@ class Dingtalk extends OpenApiClient
     /**
      * @summary 查询指定设备的详情
      *  *
-     * @param string                 $productKey
-     * @param string                 $deviceName
-     * @param GetDeviceDetailHeaders $headers    GetDeviceDetailHeaders
-     * @param RuntimeOptions         $runtime    runtime options for this request RuntimeOptions
+     * @param GetDeviceDetailRequest $request GetDeviceDetailRequest
+     * @param GetDeviceDetailHeaders $headers GetDeviceDetailHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
      * @return GetDeviceDetailResponse GetDeviceDetailResponse
      */
-    public function getDeviceDetailWithOptions($productKey, $deviceName, $headers, $runtime)
+    public function getDeviceDetailWithOptions($request, $headers, $runtime)
     {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->deviceName)) {
+            $query['deviceName'] = $request->deviceName;
+        }
+        if (!Utils::isUnset($request->productKey)) {
+            $query['productKey'] = $request->productKey;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -183,12 +192,13 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
             'action' => 'GetDeviceDetail',
             'version' => 'aiot_1.0',
             'protocol' => 'HTTP',
-            'pathname' => '/v1.0/aiot/products/' . $productKey . '/devices/' . $deviceName . '',
+            'pathname' => '/v1.0/aiot/products/deviceDetail',
             'method' => 'GET',
             'authType' => 'AK',
             'style' => 'ROA',
@@ -202,17 +212,16 @@ class Dingtalk extends OpenApiClient
     /**
      * @summary 查询指定设备的详情
      *  *
-     * @param string $productKey
-     * @param string $deviceName
+     * @param GetDeviceDetailRequest $request GetDeviceDetailRequest
      *
      * @return GetDeviceDetailResponse GetDeviceDetailResponse
      */
-    public function getDeviceDetail($productKey, $deviceName)
+    public function getDeviceDetail($request)
     {
         $runtime = new RuntimeOptions([]);
         $headers = new GetDeviceDetailHeaders([]);
 
-        return $this->getDeviceDetailWithOptions($productKey, $deviceName, $headers, $runtime);
+        return $this->getDeviceDetailWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -275,14 +284,19 @@ class Dingtalk extends OpenApiClient
     /**
      * @summary 查询设备服务调用结果
      *  *
-     * @param string                      $invocationId
-     * @param GetServiceInvocationHeaders $headers      GetServiceInvocationHeaders
-     * @param RuntimeOptions              $runtime      runtime options for this request RuntimeOptions
+     * @param GetServiceInvocationRequest $request GetServiceInvocationRequest
+     * @param GetServiceInvocationHeaders $headers GetServiceInvocationHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
      *
      * @return GetServiceInvocationResponse GetServiceInvocationResponse
      */
-    public function getServiceInvocationWithOptions($invocationId, $headers, $runtime)
+    public function getServiceInvocationWithOptions($request, $headers, $runtime)
     {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->invocationId)) {
+            $query['invocationId'] = $request->invocationId;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -292,12 +306,13 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
             'action' => 'GetServiceInvocation',
             'version' => 'aiot_1.0',
             'protocol' => 'HTTP',
-            'pathname' => '/v1.0/aiot/serviceInvocations/' . $invocationId . '',
+            'pathname' => '/v1.0/aiot/serviceInvocations',
             'method' => 'GET',
             'authType' => 'AK',
             'style' => 'ROA',
@@ -311,16 +326,16 @@ class Dingtalk extends OpenApiClient
     /**
      * @summary 查询设备服务调用结果
      *  *
-     * @param string $invocationId
+     * @param GetServiceInvocationRequest $request GetServiceInvocationRequest
      *
      * @return GetServiceInvocationResponse GetServiceInvocationResponse
      */
-    public function getServiceInvocation($invocationId)
+    public function getServiceInvocation($request)
     {
         $runtime = new RuntimeOptions([]);
         $headers = new GetServiceInvocationHeaders([]);
 
-        return $this->getServiceInvocationWithOptions($invocationId, $headers, $runtime);
+        return $this->getServiceInvocationWithOptions($request, $headers, $runtime);
     }
 
     /**

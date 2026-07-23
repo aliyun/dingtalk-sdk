@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @var string
+     * @var int
      */
     public $duration;
 
@@ -24,6 +24,11 @@ class result extends Model
     public $recordId;
 
     /**
+     * @var string
+     */
+    public $sn;
+
+    /**
      * @var int
      */
     public $startTimestamp;
@@ -31,6 +36,7 @@ class result extends Model
         'duration' => 'duration',
         'endTimestamp' => 'endTimestamp',
         'recordId' => 'recordId',
+        'sn' => 'sn',
         'startTimestamp' => 'startTimestamp',
     ];
 
@@ -47,6 +53,9 @@ class result extends Model
         }
         if (null !== $this->recordId) {
             $res['recordId'] = $this->recordId;
+        }
+        if (null !== $this->sn) {
+            $res['sn'] = $this->sn;
         }
         if (null !== $this->startTimestamp) {
             $res['startTimestamp'] = $this->startTimestamp;
@@ -71,6 +80,9 @@ class result extends Model
         }
         if (isset($map['recordId'])) {
             $model->recordId = $map['recordId'];
+        }
+        if (isset($map['sn'])) {
+            $model->sn = $map['sn'];
         }
         if (isset($map['startTimestamp'])) {
             $model->startTimestamp = $map['startTimestamp'];

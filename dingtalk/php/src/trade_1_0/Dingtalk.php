@@ -17,6 +17,9 @@ use AlibabaCloud\SDK\Dingtalk\Vtrade_1_0\Models\CreateNoteForIsvResponse;
 use AlibabaCloud\SDK\Dingtalk\Vtrade_1_0\Models\CreateOpportunityHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtrade_1_0\Models\CreateOpportunityRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtrade_1_0\Models\CreateOpportunityResponse;
+use AlibabaCloud\SDK\Dingtalk\Vtrade_1_0\Models\PurchaseMixViewHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vtrade_1_0\Models\PurchaseMixViewRequest;
+use AlibabaCloud\SDK\Dingtalk\Vtrade_1_0\Models\PurchaseMixViewResponse;
 use AlibabaCloud\SDK\Dingtalk\Vtrade_1_0\Models\QueryTradeOrderHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtrade_1_0\Models\QueryTradeOrderRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtrade_1_0\Models\QueryTradeOrderResponse;
@@ -332,6 +335,108 @@ class Dingtalk extends OpenApiClient
         $headers = new CreateOpportunityHeaders([]);
 
         return $this->createOpportunityWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary QwenWoker询价接口
+     *  *
+     * @param PurchaseMixViewRequest $request PurchaseMixViewRequest
+     * @param PurchaseMixViewHeaders $headers PurchaseMixViewHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return PurchaseMixViewResponse PurchaseMixViewResponse
+     */
+    public function purchaseMixViewWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->channelCode)) {
+            $body['channelCode'] = $request->channelCode;
+        }
+        if (!Utils::isUnset($request->combineActivityId)) {
+            $body['combineActivityId'] = $request->combineActivityId;
+        }
+        if (!Utils::isUnset($request->createOrder)) {
+            $body['createOrder'] = $request->createOrder;
+        }
+        if (!Utils::isUnset($request->list_)) {
+            $body['list'] = $request->list_;
+        }
+        if (!Utils::isUnset($request->memo)) {
+            $body['memo'] = $request->memo;
+        }
+        if (!Utils::isUnset($request->mergeOrderName)) {
+            $body['mergeOrderName'] = $request->mergeOrderName;
+        }
+        if (!Utils::isUnset($request->needModelTypeList)) {
+            $body['needModelTypeList'] = $request->needModelTypeList;
+        }
+        if (!Utils::isUnset($request->objId)) {
+            $body['objId'] = $request->objId;
+        }
+        if (!Utils::isUnset($request->objType)) {
+            $body['objType'] = $request->objType;
+        }
+        if (!Utils::isUnset($request->orderParamMap)) {
+            $body['orderParamMap'] = $request->orderParamMap;
+        }
+        if (!Utils::isUnset($request->outerTradeCode)) {
+            $body['outerTradeCode'] = $request->outerTradeCode;
+        }
+        if (!Utils::isUnset($request->outerTradeType)) {
+            $body['outerTradeType'] = $request->outerTradeType;
+        }
+        if (!Utils::isUnset($request->planId)) {
+            $body['planId'] = $request->planId;
+        }
+        if (!Utils::isUnset($request->requestId)) {
+            $body['requestId'] = $request->requestId;
+        }
+        if (!Utils::isUnset($request->uid)) {
+            $body['uid'] = $request->uid;
+        }
+        if (!Utils::isUnset($request->unPay)) {
+            $body['unPay'] = $request->unPay;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'PurchaseMixView',
+            'version' => 'trade_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/trade/purchase/mixView',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return PurchaseMixViewResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary QwenWoker询价接口
+     *  *
+     * @param PurchaseMixViewRequest $request PurchaseMixViewRequest
+     *
+     * @return PurchaseMixViewResponse PurchaseMixViewResponse
+     */
+    public function purchaseMixView($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PurchaseMixViewHeaders([]);
+
+        return $this->purchaseMixViewWithOptions($request, $headers, $runtime);
     }
 
     /**

@@ -121,6 +121,10 @@ use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\UpdateDeviceBindingResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\UpdateRecordingScheduleHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\UpdateRecordingScheduleRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\UpdateRecordingScheduleResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\UpdateServiceRecordRestrictHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\UpdateServiceRecordRestrictRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\UpdateServiceRecordRestrictResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\UpdateServiceRecordRestrictShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\UpdateTeamHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\UpdateTeamRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\UpdateTeamResponse;
@@ -2619,6 +2623,71 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateRecordingScheduleHeaders([]);
 
         return $this->updateRecordingScheduleWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 批量更新服务记录约束规则
+     *  *
+     * @param UpdateServiceRecordRestrictRequest $tmpReq  UpdateServiceRecordRestrictRequest
+     * @param UpdateServiceRecordRestrictHeaders $headers UpdateServiceRecordRestrictHeaders
+     * @param RuntimeOptions                     $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateServiceRecordRestrictResponse UpdateServiceRecordRestrictResponse
+     */
+    public function updateServiceRecordRestrictWithOptions($tmpReq, $headers, $runtime)
+    {
+        Utils::validateModel($tmpReq);
+        $request = new UpdateServiceRecordRestrictShrinkRequest([]);
+        OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->recordIds)) {
+            $request->recordIdsShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->recordIds, 'recordIds', 'json');
+        }
+        $query = [];
+        if (!Utils::isUnset($request->action)) {
+            $query['action'] = $request->action;
+        }
+        if (!Utils::isUnset($request->recordIdsShrink)) {
+            $query['recordIds'] = $request->recordIdsShrink;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'UpdateServiceRecordRestrict',
+            'version' => 'dvi_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/dvi/service/batch-update-restrict',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UpdateServiceRecordRestrictResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 批量更新服务记录约束规则
+     *  *
+     * @param UpdateServiceRecordRestrictRequest $request UpdateServiceRecordRestrictRequest
+     *
+     * @return UpdateServiceRecordRestrictResponse UpdateServiceRecordRestrictResponse
+     */
+    public function updateServiceRecordRestrict($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateServiceRecordRestrictHeaders([]);
+
+        return $this->updateServiceRecordRestrictWithOptions($request, $headers, $runtime);
     }
 
     /**

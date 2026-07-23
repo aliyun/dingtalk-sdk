@@ -490,6 +490,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrderResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrgCorrectTaskDetailHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrgCorrectTaskDetailRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrgCorrectTaskDetailResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrgCorrectTaskWithWrongQuestionHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrgCorrectTaskWithWrongQuestionRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrgCorrectTaskWithWrongQuestionResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrgRelationListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrgRelationListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrgRelationListResponse;
@@ -1850,7 +1853,7 @@ class Dingtalk extends OpenApiClient
             'method' => 'POST',
             'authType' => 'AK',
             'style' => 'ROA',
-            'reqBodyType' => 'json',
+            'reqBodyType' => 'none',
             'bodyType' => 'json',
         ]);
 
@@ -12025,6 +12028,75 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryOrgCorrectTaskDetailHeaders([]);
 
         return $this->queryOrgCorrectTaskDetailWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 作业批改-查询批改错题明细
+     *  *
+     * @param QueryOrgCorrectTaskWithWrongQuestionRequest $request QueryOrgCorrectTaskWithWrongQuestionRequest
+     * @param QueryOrgCorrectTaskWithWrongQuestionHeaders $headers QueryOrgCorrectTaskWithWrongQuestionHeaders
+     * @param RuntimeOptions                              $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryOrgCorrectTaskWithWrongQuestionResponse QueryOrgCorrectTaskWithWrongQuestionResponse
+     */
+    public function queryOrgCorrectTaskWithWrongQuestionWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->endTime)) {
+            $body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->pageNo)) {
+            $body['pageNo'] = $request->pageNo;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->queryCorpId)) {
+            $body['queryCorpId'] = $request->queryCorpId;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            $body['startTime'] = $request->startTime;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'QueryOrgCorrectTaskWithWrongQuestion',
+            'version' => 'edu_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/edu/assignment/queryTaskWrongQuestionDetail',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryOrgCorrectTaskWithWrongQuestionResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 作业批改-查询批改错题明细
+     *  *
+     * @param QueryOrgCorrectTaskWithWrongQuestionRequest $request QueryOrgCorrectTaskWithWrongQuestionRequest
+     *
+     * @return QueryOrgCorrectTaskWithWrongQuestionResponse QueryOrgCorrectTaskWithWrongQuestionResponse
+     */
+    public function queryOrgCorrectTaskWithWrongQuestion($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryOrgCorrectTaskWithWrongQuestionHeaders([]);
+
+        return $this->queryOrgCorrectTaskWithWrongQuestionWithOptions($request, $headers, $runtime);
     }
 
     /**

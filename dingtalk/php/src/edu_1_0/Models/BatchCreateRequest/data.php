@@ -94,6 +94,16 @@ class data extends Model
     public $remindMinute;
 
     /**
+     * @var int
+     */
+    public $remindNotPunchCardHour;
+
+    /**
+     * @var int
+     */
+    public $remindNotPunchCardMinute;
+
+    /**
      * @var string
      */
     public $targetRole;
@@ -128,6 +138,8 @@ class data extends Model
         'orgClassStudentGroupList' => 'orgClassStudentGroupList',
         'remindHour' => 'remindHour',
         'remindMinute' => 'remindMinute',
+        'remindNotPunchCardHour' => 'remindNotPunchCardHour',
+        'remindNotPunchCardMinute' => 'remindNotPunchCardMinute',
         'targetRole' => 'targetRole',
         'templateId' => 'templateId',
         'title' => 'title',
@@ -189,6 +201,12 @@ class data extends Model
         }
         if (null !== $this->remindMinute) {
             $res['remindMinute'] = $this->remindMinute;
+        }
+        if (null !== $this->remindNotPunchCardHour) {
+            $res['remindNotPunchCardHour'] = $this->remindNotPunchCardHour;
+        }
+        if (null !== $this->remindNotPunchCardMinute) {
+            $res['remindNotPunchCardMinute'] = $this->remindNotPunchCardMinute;
         }
         if (null !== $this->targetRole) {
             $res['targetRole'] = $this->targetRole;
@@ -270,6 +288,12 @@ class data extends Model
         }
         if (isset($map['remindMinute'])) {
             $model->remindMinute = $map['remindMinute'];
+        }
+        if (isset($map['remindNotPunchCardHour'])) {
+            $model->remindNotPunchCardHour = $map['remindNotPunchCardHour'];
+        }
+        if (isset($map['remindNotPunchCardMinute'])) {
+            $model->remindNotPunchCardMinute = $map['remindNotPunchCardMinute'];
         }
         if (isset($map['targetRole'])) {
             $model->targetRole = $map['targetRole'];

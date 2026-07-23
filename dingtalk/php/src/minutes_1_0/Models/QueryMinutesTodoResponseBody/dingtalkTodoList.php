@@ -47,6 +47,11 @@ class dingtalkTodoList extends Model
     /**
      * @var string
      */
+    public $openDingtalkTodoId;
+
+    /**
+     * @var string
+     */
     public $title;
     protected $_name = [
         'createdTime' => 'createdTime',
@@ -56,6 +61,7 @@ class dingtalkTodoList extends Model
         'executorList' => 'executorList',
         'isDone' => 'isDone',
         'minutesTodoId' => 'minutesTodoId',
+        'openDingtalkTodoId' => 'openDingtalkTodoId',
         'title' => 'title',
     ];
 
@@ -90,6 +96,9 @@ class dingtalkTodoList extends Model
         }
         if (null !== $this->minutesTodoId) {
             $res['minutesTodoId'] = $this->minutesTodoId;
+        }
+        if (null !== $this->openDingtalkTodoId) {
+            $res['openDingtalkTodoId'] = $this->openDingtalkTodoId;
         }
         if (null !== $this->title) {
             $res['title'] = $this->title;
@@ -132,6 +141,9 @@ class dingtalkTodoList extends Model
         }
         if (isset($map['minutesTodoId'])) {
             $model->minutesTodoId = $map['minutesTodoId'];
+        }
+        if (isset($map['openDingtalkTodoId'])) {
+            $model->openDingtalkTodoId = $map['openDingtalkTodoId'];
         }
         if (isset($map['title'])) {
             $model->title = $map['title'];

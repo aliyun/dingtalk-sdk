@@ -142,6 +142,11 @@ class list_ extends Model
     public $realName;
 
     /**
+     * @var string
+     */
+    public $receiverId;
+
+    /**
      * @example 总经理办公室
      *
      * @var string
@@ -245,6 +250,7 @@ class list_ extends Model
         'prevWorkSpaceName' => 'prevWorkSpaceName',
         'prevWorkSpacePcUrl' => 'prevWorkSpacePcUrl',
         'realName' => 'realName',
+        'receiverId' => 'receiverId',
         'receiverName' => 'receiverName',
         'receiverType' => 'receiverType',
         'receiverTypeView' => 'receiverTypeView',
@@ -339,6 +345,9 @@ class list_ extends Model
         }
         if (null !== $this->realName) {
             $res['realName'] = $this->realName;
+        }
+        if (null !== $this->receiverId) {
+            $res['receiverId'] = $this->receiverId;
         }
         if (null !== $this->receiverName) {
             $res['receiverName'] = $this->receiverName;
@@ -465,6 +474,9 @@ class list_ extends Model
         }
         if (isset($map['realName'])) {
             $model->realName = $map['realName'];
+        }
+        if (isset($map['receiverId'])) {
+            $model->receiverId = $map['receiverId'];
         }
         if (isset($map['receiverName'])) {
             $model->receiverName = $map['receiverName'];

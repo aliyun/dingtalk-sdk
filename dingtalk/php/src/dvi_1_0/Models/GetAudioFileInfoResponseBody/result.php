@@ -42,6 +42,11 @@ class result extends Model
      * @var int
      */
     public $fileSize;
+
+    /**
+     * @var string
+     */
+    public $sn;
     protected $_name = [
         'attributes' => 'attributes',
         'createTime' => 'createTime',
@@ -50,6 +55,7 @@ class result extends Model
         'fileId' => 'fileId',
         'fileName' => 'fileName',
         'fileSize' => 'fileSize',
+        'sn' => 'sn',
     ];
 
     public function validate() {}
@@ -77,6 +83,9 @@ class result extends Model
         }
         if (null !== $this->fileSize) {
             $res['fileSize'] = $this->fileSize;
+        }
+        if (null !== $this->sn) {
+            $res['sn'] = $this->sn;
         }
 
         return $res;
@@ -110,6 +119,9 @@ class result extends Model
         }
         if (isset($map['fileSize'])) {
             $model->fileSize = $map['fileSize'];
+        }
+        if (isset($map['sn'])) {
+            $model->sn = $map['sn'];
         }
 
         return $model;

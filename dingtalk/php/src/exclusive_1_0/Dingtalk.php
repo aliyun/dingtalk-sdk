@@ -66,6 +66,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\EditSecurityConfigMemberResp
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ExchangeMainAdminHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ExchangeMainAdminRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ExchangeMainAdminResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ExclusiveBannerHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ExclusiveBannerRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ExclusiveBannerResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ExclusiveCreateDingPortalHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ExclusiveCreateDingPortalRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ExclusiveCreateDingPortalResponse;
@@ -1795,6 +1798,81 @@ class Dingtalk extends OpenApiClient
         $headers = new ExchangeMainAdminHeaders([]);
 
         return $this->exchangeMainAdminWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 专属运营Banner头图消息推送
+     *  *
+     * @param ExclusiveBannerRequest $request ExclusiveBannerRequest
+     * @param ExclusiveBannerHeaders $headers ExclusiveBannerHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ExclusiveBannerResponse ExclusiveBannerResponse
+     */
+    public function exclusiveBannerWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->allOrg)) {
+            $body['allOrg'] = $request->allOrg;
+        }
+        if (!Utils::isUnset($request->duration)) {
+            $body['duration'] = $request->duration;
+        }
+        if (!Utils::isUnset($request->endTime)) {
+            $body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->imageMediaId)) {
+            $body['imageMediaId'] = $request->imageMediaId;
+        }
+        if (!Utils::isUnset($request->openLink)) {
+            $body['openLink'] = $request->openLink;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            $body['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->userList)) {
+            $body['userList'] = $request->userList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'ExclusiveBanner',
+            'version' => 'exclusive_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/exclusive/customize/marketing/banner',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return ExclusiveBannerResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 专属运营Banner头图消息推送
+     *  *
+     * @param ExclusiveBannerRequest $request ExclusiveBannerRequest
+     *
+     * @return ExclusiveBannerResponse ExclusiveBannerResponse
+     */
+    public function exclusiveBanner($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ExclusiveBannerHeaders([]);
+
+        return $this->exclusiveBannerWithOptions($request, $headers, $runtime);
     }
 
     /**
