@@ -840,7 +840,6 @@ class CreateTeamRequest(TeaModel):
     def __init__(
         self,
         admin_user_ids: List[str] = None,
-        dept_ids: List[int] = None,
         dialect_code: str = None,
         name: str = None,
         scene_codes: List[str] = None,
@@ -848,7 +847,6 @@ class CreateTeamRequest(TeaModel):
         user_ids: List[str] = None,
     ):
         self.admin_user_ids = admin_user_ids
-        self.dept_ids = dept_ids
         self.dialect_code = dialect_code
         # This parameter is required.
         self.name = name
@@ -869,8 +867,6 @@ class CreateTeamRequest(TeaModel):
         result = dict()
         if self.admin_user_ids is not None:
             result['adminUserIds'] = self.admin_user_ids
-        if self.dept_ids is not None:
-            result['deptIds'] = self.dept_ids
         if self.dialect_code is not None:
             result['dialectCode'] = self.dialect_code
         if self.name is not None:
@@ -887,8 +883,6 @@ class CreateTeamRequest(TeaModel):
         m = m or dict()
         if m.get('adminUserIds') is not None:
             self.admin_user_ids = m.get('adminUserIds')
-        if m.get('deptIds') is not None:
-            self.dept_ids = m.get('deptIds')
         if m.get('dialectCode') is not None:
             self.dialect_code = m.get('dialectCode')
         if m.get('name') is not None:
@@ -4525,39 +4519,6 @@ class GetTeamMemberResponseBodyResultAdmins(TeaModel):
         return self
 
 
-class GetTeamMemberResponseBodyResultDepts(TeaModel):
-    def __init__(
-        self,
-        dept_id: int = None,
-        name: str = None,
-    ):
-        self.dept_id = dept_id
-        self.name = name
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.dept_id is not None:
-            result['deptId'] = self.dept_id
-        if self.name is not None:
-            result['name'] = self.name
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('deptId') is not None:
-            self.dept_id = m.get('deptId')
-        if m.get('name') is not None:
-            self.name = m.get('name')
-        return self
-
-
 class GetTeamMemberResponseBodyResultMembers(TeaModel):
     def __init__(
         self,
@@ -4595,20 +4556,14 @@ class GetTeamMemberResponseBodyResult(TeaModel):
     def __init__(
         self,
         admins: List[GetTeamMemberResponseBodyResultAdmins] = None,
-        depts: List[GetTeamMemberResponseBodyResultDepts] = None,
         members: List[GetTeamMemberResponseBodyResultMembers] = None,
     ):
         self.admins = admins
-        self.depts = depts
         self.members = members
 
     def validate(self):
         if self.admins:
             for k in self.admins:
-                if k:
-                    k.validate()
-        if self.depts:
-            for k in self.depts:
                 if k:
                     k.validate()
         if self.members:
@@ -4626,10 +4581,6 @@ class GetTeamMemberResponseBodyResult(TeaModel):
         if self.admins is not None:
             for k in self.admins:
                 result['admins'].append(k.to_map() if k else None)
-        result['depts'] = []
-        if self.depts is not None:
-            for k in self.depts:
-                result['depts'].append(k.to_map() if k else None)
         result['members'] = []
         if self.members is not None:
             for k in self.members:
@@ -4643,11 +4594,6 @@ class GetTeamMemberResponseBodyResult(TeaModel):
             for k in m.get('admins'):
                 temp_model = GetTeamMemberResponseBodyResultAdmins()
                 self.admins.append(temp_model.from_map(k))
-        self.depts = []
-        if m.get('depts') is not None:
-            for k in m.get('depts'):
-                temp_model = GetTeamMemberResponseBodyResultDepts()
-                self.depts.append(temp_model.from_map(k))
         self.members = []
         if m.get('members') is not None:
             for k in m.get('members'):
@@ -6524,11 +6470,9 @@ class ManageTeamMemberRequestAddMembers(TeaModel):
     def __init__(
         self,
         admin_user_ids: List[str] = None,
-        dept_ids: List[int] = None,
         user_ids: List[str] = None,
     ):
         self.admin_user_ids = admin_user_ids
-        self.dept_ids = dept_ids
         self.user_ids = user_ids
 
     def validate(self):
@@ -6542,8 +6486,6 @@ class ManageTeamMemberRequestAddMembers(TeaModel):
         result = dict()
         if self.admin_user_ids is not None:
             result['adminUserIds'] = self.admin_user_ids
-        if self.dept_ids is not None:
-            result['deptIds'] = self.dept_ids
         if self.user_ids is not None:
             result['userIds'] = self.user_ids
         return result
@@ -6552,8 +6494,6 @@ class ManageTeamMemberRequestAddMembers(TeaModel):
         m = m or dict()
         if m.get('adminUserIds') is not None:
             self.admin_user_ids = m.get('adminUserIds')
-        if m.get('deptIds') is not None:
-            self.dept_ids = m.get('deptIds')
         if m.get('userIds') is not None:
             self.user_ids = m.get('userIds')
         return self
@@ -6563,11 +6503,9 @@ class ManageTeamMemberRequestRemoveMembers(TeaModel):
     def __init__(
         self,
         admin_user_ids: List[str] = None,
-        dept_ids: List[int] = None,
         user_ids: List[str] = None,
     ):
         self.admin_user_ids = admin_user_ids
-        self.dept_ids = dept_ids
         self.user_ids = user_ids
 
     def validate(self):
@@ -6581,8 +6519,6 @@ class ManageTeamMemberRequestRemoveMembers(TeaModel):
         result = dict()
         if self.admin_user_ids is not None:
             result['adminUserIds'] = self.admin_user_ids
-        if self.dept_ids is not None:
-            result['deptIds'] = self.dept_ids
         if self.user_ids is not None:
             result['userIds'] = self.user_ids
         return result
@@ -6591,8 +6527,6 @@ class ManageTeamMemberRequestRemoveMembers(TeaModel):
         m = m or dict()
         if m.get('adminUserIds') is not None:
             self.admin_user_ids = m.get('adminUserIds')
-        if m.get('deptIds') is not None:
-            self.dept_ids = m.get('deptIds')
         if m.get('userIds') is not None:
             self.user_ids = m.get('userIds')
         return self

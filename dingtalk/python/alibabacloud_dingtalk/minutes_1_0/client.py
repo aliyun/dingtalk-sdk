@@ -1070,6 +1070,8 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
         body = {}
+        if not UtilClient.is_unset(request.async_generate):
+            body['asyncGenerate'] = request.async_generate
         if not UtilClient.is_unset(request.diy_template_version):
             body['diyTemplateVersion'] = request.diy_template_version
         if not UtilClient.is_unset(request.summary_template_id):
@@ -1124,6 +1126,8 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(request.union_id):
             query['unionId'] = request.union_id
         body = {}
+        if not UtilClient.is_unset(request.async_generate):
+            body['asyncGenerate'] = request.async_generate
         if not UtilClient.is_unset(request.diy_template_version):
             body['diyTemplateVersion'] = request.diy_template_version
         if not UtilClient.is_unset(request.summary_template_id):
@@ -1187,6 +1191,124 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkminutes__1__0_models.GenerateSummaryHeaders()
         return await self.generate_summary_with_options_async(task_uuid, request, headers, runtime)
+
+    def move_out_temp_storage_with_options(
+        self,
+        request: dingtalkminutes__1__0_models.MoveOutTempStorageRequest,
+        headers: dingtalkminutes__1__0_models.MoveOutTempStorageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkminutes__1__0_models.MoveOutTempStorageResponse:
+        """
+        @summary 移动临时存储听记到正式存储
+        
+        @param request: MoveOutTempStorageRequest
+        @param headers: MoveOutTempStorageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: MoveOutTempStorageResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.task_uuid):
+            query['taskUuid'] = request.task_uuid
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='MoveOutTempStorage',
+            version='minutes_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/minutes/flashMinutes/moveOutTempStorage',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkminutes__1__0_models.MoveOutTempStorageResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def move_out_temp_storage_with_options_async(
+        self,
+        request: dingtalkminutes__1__0_models.MoveOutTempStorageRequest,
+        headers: dingtalkminutes__1__0_models.MoveOutTempStorageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkminutes__1__0_models.MoveOutTempStorageResponse:
+        """
+        @summary 移动临时存储听记到正式存储
+        
+        @param request: MoveOutTempStorageRequest
+        @param headers: MoveOutTempStorageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: MoveOutTempStorageResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.task_uuid):
+            query['taskUuid'] = request.task_uuid
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='MoveOutTempStorage',
+            version='minutes_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/minutes/flashMinutes/moveOutTempStorage',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkminutes__1__0_models.MoveOutTempStorageResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def move_out_temp_storage(
+        self,
+        request: dingtalkminutes__1__0_models.MoveOutTempStorageRequest,
+    ) -> dingtalkminutes__1__0_models.MoveOutTempStorageResponse:
+        """
+        @summary 移动临时存储听记到正式存储
+        
+        @param request: MoveOutTempStorageRequest
+        @return: MoveOutTempStorageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkminutes__1__0_models.MoveOutTempStorageHeaders()
+        return self.move_out_temp_storage_with_options(request, headers, runtime)
+
+    async def move_out_temp_storage_async(
+        self,
+        request: dingtalkminutes__1__0_models.MoveOutTempStorageRequest,
+    ) -> dingtalkminutes__1__0_models.MoveOutTempStorageResponse:
+        """
+        @summary 移动临时存储听记到正式存储
+        
+        @param request: MoveOutTempStorageRequest
+        @return: MoveOutTempStorageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkminutes__1__0_models.MoveOutTempStorageHeaders()
+        return await self.move_out_temp_storage_with_options_async(request, headers, runtime)
 
     def open_query_minutes_summary_with_options(
         self,

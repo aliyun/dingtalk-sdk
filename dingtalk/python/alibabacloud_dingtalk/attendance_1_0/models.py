@@ -7025,6 +7025,10 @@ class GetShiftResponseBodyResultShiftSetting(TeaModel):
         corp_id: str = None,
         gmt_create: str = None,
         gmt_modified: str = None,
+        overtime_behind_duration: int = None,
+        overtime_front_duration: int = None,
+        overtime_open: bool = None,
+        overtime_type: int = None,
         shift_id: int = None,
         shift_setting_id: int = None,
         shift_type: str = None,
@@ -7036,6 +7040,10 @@ class GetShiftResponseBodyResultShiftSetting(TeaModel):
         self.gmt_create = gmt_create
         # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.gmt_modified = gmt_modified
+        self.overtime_behind_duration = overtime_behind_duration
+        self.overtime_front_duration = overtime_front_duration
+        self.overtime_open = overtime_open
+        self.overtime_type = overtime_type
         self.shift_id = shift_id
         self.shift_setting_id = shift_setting_id
         self.shift_type = shift_type
@@ -7058,6 +7066,14 @@ class GetShiftResponseBodyResultShiftSetting(TeaModel):
             result['gmtCreate'] = self.gmt_create
         if self.gmt_modified is not None:
             result['gmtModified'] = self.gmt_modified
+        if self.overtime_behind_duration is not None:
+            result['overtimeBehindDuration'] = self.overtime_behind_duration
+        if self.overtime_front_duration is not None:
+            result['overtimeFrontDuration'] = self.overtime_front_duration
+        if self.overtime_open is not None:
+            result['overtimeOpen'] = self.overtime_open
+        if self.overtime_type is not None:
+            result['overtimeType'] = self.overtime_type
         if self.shift_id is not None:
             result['shiftId'] = self.shift_id
         if self.shift_setting_id is not None:
@@ -7078,6 +7094,14 @@ class GetShiftResponseBodyResultShiftSetting(TeaModel):
             self.gmt_create = m.get('gmtCreate')
         if m.get('gmtModified') is not None:
             self.gmt_modified = m.get('gmtModified')
+        if m.get('overtimeBehindDuration') is not None:
+            self.overtime_behind_duration = m.get('overtimeBehindDuration')
+        if m.get('overtimeFrontDuration') is not None:
+            self.overtime_front_duration = m.get('overtimeFrontDuration')
+        if m.get('overtimeOpen') is not None:
+            self.overtime_open = m.get('overtimeOpen')
+        if m.get('overtimeType') is not None:
+            self.overtime_type = m.get('overtimeType')
         if m.get('shiftId') is not None:
             self.shift_id = m.get('shiftId')
         if m.get('shiftSettingId') is not None:
@@ -12393,6 +12417,10 @@ class ShiftAddRequestSetting(TeaModel):
         extras: Dict[str, Any] = None,
         is_flexible: bool = None,
         late_back_setting: ShiftAddRequestSettingLateBackSetting = None,
+        overtime_behind_duration: int = None,
+        overtime_front_duration: int = None,
+        overtime_open: bool = None,
+        overtime_type: int = None,
         reference_class_id: int = None,
         serious_late_minutes: int = None,
         shift_type: str = None,
@@ -12406,6 +12434,10 @@ class ShiftAddRequestSetting(TeaModel):
         self.extras = extras
         self.is_flexible = is_flexible
         self.late_back_setting = late_back_setting
+        self.overtime_behind_duration = overtime_behind_duration
+        self.overtime_front_duration = overtime_front_duration
+        self.overtime_open = overtime_open
+        self.overtime_type = overtime_type
         self.reference_class_id = reference_class_id
         self.serious_late_minutes = serious_late_minutes
         self.shift_type = shift_type
@@ -12440,6 +12472,14 @@ class ShiftAddRequestSetting(TeaModel):
             result['isFlexible'] = self.is_flexible
         if self.late_back_setting is not None:
             result['lateBackSetting'] = self.late_back_setting.to_map()
+        if self.overtime_behind_duration is not None:
+            result['overtimeBehindDuration'] = self.overtime_behind_duration
+        if self.overtime_front_duration is not None:
+            result['overtimeFrontDuration'] = self.overtime_front_duration
+        if self.overtime_open is not None:
+            result['overtimeOpen'] = self.overtime_open
+        if self.overtime_type is not None:
+            result['overtimeType'] = self.overtime_type
         if self.reference_class_id is not None:
             result['referenceClassId'] = self.reference_class_id
         if self.serious_late_minutes is not None:
@@ -12471,6 +12511,14 @@ class ShiftAddRequestSetting(TeaModel):
         if m.get('lateBackSetting') is not None:
             temp_model = ShiftAddRequestSettingLateBackSetting()
             self.late_back_setting = temp_model.from_map(m['lateBackSetting'])
+        if m.get('overtimeBehindDuration') is not None:
+            self.overtime_behind_duration = m.get('overtimeBehindDuration')
+        if m.get('overtimeFrontDuration') is not None:
+            self.overtime_front_duration = m.get('overtimeFrontDuration')
+        if m.get('overtimeOpen') is not None:
+            self.overtime_open = m.get('overtimeOpen')
+        if m.get('overtimeType') is not None:
+            self.overtime_type = m.get('overtimeType')
         if m.get('referenceClassId') is not None:
             self.reference_class_id = m.get('referenceClassId')
         if m.get('seriousLateMinutes') is not None:

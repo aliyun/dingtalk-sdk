@@ -528,8 +528,6 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.admin_user_ids):
             body['adminUserIds'] = request.admin_user_ids
-        if not UtilClient.is_unset(request.dept_ids):
-            body['deptIds'] = request.dept_ids
         if not UtilClient.is_unset(request.dialect_code):
             body['dialectCode'] = request.dialect_code
         if not UtilClient.is_unset(request.name):
@@ -583,8 +581,6 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.admin_user_ids):
             body['adminUserIds'] = request.admin_user_ids
-        if not UtilClient.is_unset(request.dept_ids):
-            body['deptIds'] = request.dept_ids
         if not UtilClient.is_unset(request.dialect_code):
             body['dialectCode'] = request.dialect_code
         if not UtilClient.is_unset(request.name):

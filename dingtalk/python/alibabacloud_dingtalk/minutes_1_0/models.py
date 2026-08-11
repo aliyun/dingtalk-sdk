@@ -1647,12 +1647,14 @@ class GenerateSummaryHeaders(TeaModel):
 class GenerateSummaryRequest(TeaModel):
     def __init__(
         self,
+        async_generate: bool = None,
         diy_template_version: str = None,
         summary_template_id: str = None,
         summary_template_type: str = None,
         user_context: str = None,
         union_id: str = None,
     ):
+        self.async_generate = async_generate
         self.diy_template_version = diy_template_version
         # This parameter is required.
         self.summary_template_id = summary_template_id
@@ -1671,6 +1673,8 @@ class GenerateSummaryRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.async_generate is not None:
+            result['asyncGenerate'] = self.async_generate
         if self.diy_template_version is not None:
             result['diyTemplateVersion'] = self.diy_template_version
         if self.summary_template_id is not None:
@@ -1685,6 +1689,8 @@ class GenerateSummaryRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('asyncGenerate') is not None:
+            self.async_generate = m.get('asyncGenerate')
         if m.get('diyTemplateVersion') is not None:
             self.diy_template_version = m.get('diyTemplateVersion')
         if m.get('summaryTemplateId') is not None:
@@ -1701,9 +1707,11 @@ class GenerateSummaryRequest(TeaModel):
 class GenerateSummaryResponseBody(TeaModel):
     def __init__(
         self,
+        generating_status: str = None,
         summary_text: str = None,
         task_uuid: str = None,
     ):
+        self.generating_status = generating_status
         self.summary_text = summary_text
         self.task_uuid = task_uuid
 
@@ -1716,6 +1724,8 @@ class GenerateSummaryResponseBody(TeaModel):
             return _map
 
         result = dict()
+        if self.generating_status is not None:
+            result['generatingStatus'] = self.generating_status
         if self.summary_text is not None:
             result['summaryText'] = self.summary_text
         if self.task_uuid is not None:
@@ -1724,6 +1734,8 @@ class GenerateSummaryResponseBody(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('generatingStatus') is not None:
+            self.generating_status = m.get('generatingStatus')
         if m.get('summaryText') is not None:
             self.summary_text = m.get('summaryText')
         if m.get('taskUuid') is not None:
@@ -1768,6 +1780,142 @@ class GenerateSummaryResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GenerateSummaryResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class MoveOutTempStorageHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class MoveOutTempStorageRequest(TeaModel):
+    def __init__(
+        self,
+        task_uuid: str = None,
+        union_id: str = None,
+    ):
+        # This parameter is required.
+        self.task_uuid = task_uuid
+        # This parameter is required.
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.task_uuid is not None:
+            result['taskUuid'] = self.task_uuid
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('taskUuid') is not None:
+            self.task_uuid = m.get('taskUuid')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class MoveOutTempStorageResponseBody(TeaModel):
+    def __init__(
+        self,
+        task_uuid: str = None,
+    ):
+        self.task_uuid = task_uuid
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.task_uuid is not None:
+            result['taskUuid'] = self.task_uuid
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('taskUuid') is not None:
+            self.task_uuid = m.get('taskUuid')
+        return self
+
+
+class MoveOutTempStorageResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: MoveOutTempStorageResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = MoveOutTempStorageResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -6469,9 +6617,11 @@ class QueryUserMinutesPermissionResponseBody(TeaModel):
     def __init__(
         self,
         has_permission: bool = None,
+        role_sub_resource_ids: List[str] = None,
         role_type: str = None,
     ):
         self.has_permission = has_permission
+        self.role_sub_resource_ids = role_sub_resource_ids
         # 角色类型：manager-管理员, owner-所有者, editor-可编辑, read_download-可查看/下载, read-仅查看, none-无权限
         self.role_type = role_type
 
@@ -6486,6 +6636,8 @@ class QueryUserMinutesPermissionResponseBody(TeaModel):
         result = dict()
         if self.has_permission is not None:
             result['hasPermission'] = self.has_permission
+        if self.role_sub_resource_ids is not None:
+            result['roleSubResourceIds'] = self.role_sub_resource_ids
         if self.role_type is not None:
             result['roleType'] = self.role_type
         return result
@@ -6494,6 +6646,8 @@ class QueryUserMinutesPermissionResponseBody(TeaModel):
         m = m or dict()
         if m.get('hasPermission') is not None:
             self.has_permission = m.get('hasPermission')
+        if m.get('roleSubResourceIds') is not None:
+            self.role_sub_resource_ids = m.get('roleSubResourceIds')
         if m.get('roleType') is not None:
             self.role_type = m.get('roleType')
         return self

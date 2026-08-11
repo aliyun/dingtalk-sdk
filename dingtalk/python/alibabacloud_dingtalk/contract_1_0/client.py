@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.core import TeaCore
+from typing import Dict
 
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
@@ -22,9 +23,144 @@ class Client(OpenApiClient):
         super().__init__(config)
         gateway_client = GatewayClientClient()
         self._spi = gateway_client
+        self._signature_algorithm = 'v2'
         self._endpoint_rule = ''
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
+
+    def analyze_subject_transaction_risk_with_options(
+        self,
+        request: dingtalkcontract__1__0_models.AnalyzeSubjectTransactionRiskRequest,
+        headers: dingtalkcontract__1__0_models.AnalyzeSubjectTransactionRiskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.AnalyzeSubjectTransactionRiskResponse:
+        """
+        @summary 相对方交易风险分析
+        
+        @param request: AnalyzeSubjectTransactionRiskRequest
+        @param headers: AnalyzeSubjectTransactionRiskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AnalyzeSubjectTransactionRiskResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.contract_id):
+            query['contractId'] = request.contract_id
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.history_end_time):
+            query['historyEndTime'] = request.history_end_time
+        if not UtilClient.is_unset(request.history_start_time):
+            query['historyStartTime'] = request.history_start_time
+        if not UtilClient.is_unset(request.staff_id):
+            query['staffId'] = request.staff_id
+        if not UtilClient.is_unset(request.subject_unique_code):
+            query['subjectUniqueCode'] = request.subject_unique_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='AnalyzeSubjectTransactionRisk',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/subjects/transaction-risks/analyze',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.AnalyzeSubjectTransactionRiskResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def analyze_subject_transaction_risk_with_options_async(
+        self,
+        request: dingtalkcontract__1__0_models.AnalyzeSubjectTransactionRiskRequest,
+        headers: dingtalkcontract__1__0_models.AnalyzeSubjectTransactionRiskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.AnalyzeSubjectTransactionRiskResponse:
+        """
+        @summary 相对方交易风险分析
+        
+        @param request: AnalyzeSubjectTransactionRiskRequest
+        @param headers: AnalyzeSubjectTransactionRiskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AnalyzeSubjectTransactionRiskResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.contract_id):
+            query['contractId'] = request.contract_id
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.history_end_time):
+            query['historyEndTime'] = request.history_end_time
+        if not UtilClient.is_unset(request.history_start_time):
+            query['historyStartTime'] = request.history_start_time
+        if not UtilClient.is_unset(request.staff_id):
+            query['staffId'] = request.staff_id
+        if not UtilClient.is_unset(request.subject_unique_code):
+            query['subjectUniqueCode'] = request.subject_unique_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='AnalyzeSubjectTransactionRisk',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/subjects/transaction-risks/analyze',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.AnalyzeSubjectTransactionRiskResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def analyze_subject_transaction_risk(
+        self,
+        request: dingtalkcontract__1__0_models.AnalyzeSubjectTransactionRiskRequest,
+    ) -> dingtalkcontract__1__0_models.AnalyzeSubjectTransactionRiskResponse:
+        """
+        @summary 相对方交易风险分析
+        
+        @param request: AnalyzeSubjectTransactionRiskRequest
+        @return: AnalyzeSubjectTransactionRiskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.AnalyzeSubjectTransactionRiskHeaders()
+        return self.analyze_subject_transaction_risk_with_options(request, headers, runtime)
+
+    async def analyze_subject_transaction_risk_async(
+        self,
+        request: dingtalkcontract__1__0_models.AnalyzeSubjectTransactionRiskRequest,
+    ) -> dingtalkcontract__1__0_models.AnalyzeSubjectTransactionRiskResponse:
+        """
+        @summary 相对方交易风险分析
+        
+        @param request: AnalyzeSubjectTransactionRiskRequest
+        @return: AnalyzeSubjectTransactionRiskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.AnalyzeSubjectTransactionRiskHeaders()
+        return await self.analyze_subject_transaction_risk_with_options_async(request, headers, runtime)
 
     def async_create_contract_analysis_with_options(
         self,
@@ -4943,6 +5079,146 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcontract__1__0_models.QuerySignTaskHeaders()
         return await self.query_sign_task_with_options_async(request, headers, runtime)
+
+    def query_subject_public_risk_with_options(
+        self,
+        request: dingtalkcontract__1__0_models.QuerySubjectPublicRiskRequest,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.QuerySubjectPublicRiskResponse:
+        """
+        @summary 相对方企业风险查询
+        
+        @param request: QuerySubjectPublicRiskRequest
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QuerySubjectPublicRiskResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.biz_id):
+            query['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.company_id):
+            query['companyId'] = request.company_id
+        if not UtilClient.is_unset(request.contract_amount):
+            query['contractAmount'] = request.contract_amount
+        if not UtilClient.is_unset(request.contract_type):
+            query['contractType'] = request.contract_type
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.credit_code):
+            query['creditCode'] = request.credit_code
+        if not UtilClient.is_unset(request.from_):
+            query['from'] = request.from_
+        if not UtilClient.is_unset(request.registration_number):
+            query['registrationNumber'] = request.registration_number
+        if not UtilClient.is_unset(request.staff_id):
+            query['staffId'] = request.staff_id
+        if not UtilClient.is_unset(request.subject_name):
+            query['subjectName'] = request.subject_name
+        req = open_api_models.OpenApiRequest(
+            headers=headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QuerySubjectPublicRisk',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/subjects/risks/query',
+            method='POST',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.QuerySubjectPublicRiskResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_subject_public_risk_with_options_async(
+        self,
+        request: dingtalkcontract__1__0_models.QuerySubjectPublicRiskRequest,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.QuerySubjectPublicRiskResponse:
+        """
+        @summary 相对方企业风险查询
+        
+        @param request: QuerySubjectPublicRiskRequest
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QuerySubjectPublicRiskResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.biz_id):
+            query['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.company_id):
+            query['companyId'] = request.company_id
+        if not UtilClient.is_unset(request.contract_amount):
+            query['contractAmount'] = request.contract_amount
+        if not UtilClient.is_unset(request.contract_type):
+            query['contractType'] = request.contract_type
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.credit_code):
+            query['creditCode'] = request.credit_code
+        if not UtilClient.is_unset(request.from_):
+            query['from'] = request.from_
+        if not UtilClient.is_unset(request.registration_number):
+            query['registrationNumber'] = request.registration_number
+        if not UtilClient.is_unset(request.staff_id):
+            query['staffId'] = request.staff_id
+        if not UtilClient.is_unset(request.subject_name):
+            query['subjectName'] = request.subject_name
+        req = open_api_models.OpenApiRequest(
+            headers=headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QuerySubjectPublicRisk',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/subjects/risks/query',
+            method='POST',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.QuerySubjectPublicRiskResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_subject_public_risk(
+        self,
+        request: dingtalkcontract__1__0_models.QuerySubjectPublicRiskRequest,
+    ) -> dingtalkcontract__1__0_models.QuerySubjectPublicRiskResponse:
+        """
+        @summary 相对方企业风险查询
+        
+        @param request: QuerySubjectPublicRiskRequest
+        @return: QuerySubjectPublicRiskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return self.query_subject_public_risk_with_options(request, headers, runtime)
+
+    async def query_subject_public_risk_async(
+        self,
+        request: dingtalkcontract__1__0_models.QuerySubjectPublicRiskRequest,
+    ) -> dingtalkcontract__1__0_models.QuerySubjectPublicRiskResponse:
+        """
+        @summary 相对方企业风险查询
+        
+        @param request: QuerySubjectPublicRiskRequest
+        @return: QuerySubjectPublicRiskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return await self.query_subject_public_risk_with_options_async(request, headers, runtime)
 
     def search_file_keyword_positions_with_options(
         self,

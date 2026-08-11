@@ -2017,13 +2017,13 @@ class Client(OpenApiClient):
         @return: CreateUserGroupResponse
         """
         UtilClient.validate_model(request)
-        query = {}
+        body = {}
         if not UtilClient.is_unset(request.client_show):
-            query['clientShow'] = request.client_show
+            body['clientShow'] = request.client_show
         if not UtilClient.is_unset(request.description):
-            query['description'] = request.description
+            body['description'] = request.description
         if not UtilClient.is_unset(request.name):
-            query['name'] = request.name
+            body['name'] = request.name
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2031,7 +2031,7 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            body=OpenApiUtilClient.parse_to_map(body)
         )
         params = open_api_models.Params(
             action='CreateUserGroup',
@@ -2064,13 +2064,13 @@ class Client(OpenApiClient):
         @return: CreateUserGroupResponse
         """
         UtilClient.validate_model(request)
-        query = {}
+        body = {}
         if not UtilClient.is_unset(request.client_show):
-            query['clientShow'] = request.client_show
+            body['clientShow'] = request.client_show
         if not UtilClient.is_unset(request.description):
-            query['description'] = request.description
+            body['description'] = request.description
         if not UtilClient.is_unset(request.name):
-            query['name'] = request.name
+            body['name'] = request.name
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2078,7 +2078,7 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            body=OpenApiUtilClient.parse_to_map(body)
         )
         params = open_api_models.Params(
             action='CreateUserGroup',
@@ -2979,9 +2979,9 @@ class Client(OpenApiClient):
         @return: DeleteUserGroupResponse
         """
         UtilClient.validate_model(request)
-        query = {}
+        body = {}
         if not UtilClient.is_unset(request.group_code):
-            query['groupCode'] = request.group_code
+            body['groupCode'] = request.group_code
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -2989,7 +2989,7 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            body=OpenApiUtilClient.parse_to_map(body)
         )
         params = open_api_models.Params(
             action='DeleteUserGroup',
@@ -3022,9 +3022,9 @@ class Client(OpenApiClient):
         @return: DeleteUserGroupResponse
         """
         UtilClient.validate_model(request)
-        query = {}
+        body = {}
         if not UtilClient.is_unset(request.group_code):
-            query['groupCode'] = request.group_code
+            body['groupCode'] = request.group_code
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -3032,7 +3032,7 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            body=OpenApiUtilClient.parse_to_map(body)
         )
         params = open_api_models.Params(
             action='DeleteUserGroup',
@@ -4907,6 +4907,120 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcontact__1__0_models.GetUserHeaders()
         return await self.get_user_with_options_async(union_id, headers, runtime)
+
+    def get_user_by_ding_talk_id_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.GetUserByDingTalkIdRequest,
+        headers: dingtalkcontact__1__0_models.GetUserByDingTalkIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.GetUserByDingTalkIdResponse:
+        """
+        @summary 根据钉钉号获取员工信息
+        
+        @param request: GetUserByDingTalkIdRequest
+        @param headers: GetUserByDingTalkIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetUserByDingTalkIdResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dingtalk_id):
+            query['dingtalkId'] = request.dingtalk_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetUserByDingTalkId',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/user/getByDingTalkId',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.GetUserByDingTalkIdResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_user_by_ding_talk_id_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.GetUserByDingTalkIdRequest,
+        headers: dingtalkcontact__1__0_models.GetUserByDingTalkIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.GetUserByDingTalkIdResponse:
+        """
+        @summary 根据钉钉号获取员工信息
+        
+        @param request: GetUserByDingTalkIdRequest
+        @param headers: GetUserByDingTalkIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetUserByDingTalkIdResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dingtalk_id):
+            query['dingtalkId'] = request.dingtalk_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetUserByDingTalkId',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/user/getByDingTalkId',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.GetUserByDingTalkIdResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_user_by_ding_talk_id(
+        self,
+        request: dingtalkcontact__1__0_models.GetUserByDingTalkIdRequest,
+    ) -> dingtalkcontact__1__0_models.GetUserByDingTalkIdResponse:
+        """
+        @summary 根据钉钉号获取员工信息
+        
+        @param request: GetUserByDingTalkIdRequest
+        @return: GetUserByDingTalkIdResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.GetUserByDingTalkIdHeaders()
+        return self.get_user_by_ding_talk_id_with_options(request, headers, runtime)
+
+    async def get_user_by_ding_talk_id_async(
+        self,
+        request: dingtalkcontact__1__0_models.GetUserByDingTalkIdRequest,
+    ) -> dingtalkcontact__1__0_models.GetUserByDingTalkIdResponse:
+        """
+        @summary 根据钉钉号获取员工信息
+        
+        @param request: GetUserByDingTalkIdRequest
+        @return: GetUserByDingTalkIdResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.GetUserByDingTalkIdHeaders()
+        return await self.get_user_by_ding_talk_id_with_options_async(request, headers, runtime)
 
     def get_user_card_holder_list_with_options(
         self,

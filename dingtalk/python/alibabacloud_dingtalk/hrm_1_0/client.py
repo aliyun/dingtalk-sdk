@@ -28,6 +28,628 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def a_isale_entity_create_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.AISaleEntityCreateRequest,
+        headers: dingtalkhrm__1__0_models.AISaleEntityCreateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.AISaleEntityCreateResponse:
+        """
+        @summary AI营销创建实体
+        
+        @param request: AISaleEntityCreateRequest
+        @param headers: AISaleEntityCreateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AISaleEntityCreateResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.entity_id):
+            body['entityId'] = request.entity_id
+        if not UtilClient.is_unset(request.entity_type):
+            body['entityType'] = request.entity_type
+        if not UtilClient.is_unset(request.field_instances):
+            body['fieldInstances'] = request.field_instances
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AISaleEntityCreate',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/ai-sale/api/v1/entity/create',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.AISaleEntityCreateResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def a_isale_entity_create_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.AISaleEntityCreateRequest,
+        headers: dingtalkhrm__1__0_models.AISaleEntityCreateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.AISaleEntityCreateResponse:
+        """
+        @summary AI营销创建实体
+        
+        @param request: AISaleEntityCreateRequest
+        @param headers: AISaleEntityCreateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AISaleEntityCreateResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.entity_id):
+            body['entityId'] = request.entity_id
+        if not UtilClient.is_unset(request.entity_type):
+            body['entityType'] = request.entity_type
+        if not UtilClient.is_unset(request.field_instances):
+            body['fieldInstances'] = request.field_instances
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AISaleEntityCreate',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/ai-sale/api/v1/entity/create',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.AISaleEntityCreateResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def a_isale_entity_create(
+        self,
+        request: dingtalkhrm__1__0_models.AISaleEntityCreateRequest,
+    ) -> dingtalkhrm__1__0_models.AISaleEntityCreateResponse:
+        """
+        @summary AI营销创建实体
+        
+        @param request: AISaleEntityCreateRequest
+        @return: AISaleEntityCreateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.AISaleEntityCreateHeaders()
+        return self.a_isale_entity_create_with_options(request, headers, runtime)
+
+    async def a_isale_entity_create_async(
+        self,
+        request: dingtalkhrm__1__0_models.AISaleEntityCreateRequest,
+    ) -> dingtalkhrm__1__0_models.AISaleEntityCreateResponse:
+        """
+        @summary AI营销创建实体
+        
+        @param request: AISaleEntityCreateRequest
+        @return: AISaleEntityCreateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.AISaleEntityCreateHeaders()
+        return await self.a_isale_entity_create_with_options_async(request, headers, runtime)
+
+    def a_isale_entity_detail_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.AISaleEntityDetailRequest,
+        headers: dingtalkhrm__1__0_models.AISaleEntityDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.AISaleEntityDetailResponse:
+        """
+        @summary AI营销实体详情查询
+        
+        @param request: AISaleEntityDetailRequest
+        @param headers: AISaleEntityDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AISaleEntityDetailResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.entity_id):
+            body['entityId'] = request.entity_id
+        if not UtilClient.is_unset(request.entity_type):
+            body['entityType'] = request.entity_type
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AISaleEntityDetail',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/ai-sale/api/v1/entity/detail',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.AISaleEntityDetailResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def a_isale_entity_detail_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.AISaleEntityDetailRequest,
+        headers: dingtalkhrm__1__0_models.AISaleEntityDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.AISaleEntityDetailResponse:
+        """
+        @summary AI营销实体详情查询
+        
+        @param request: AISaleEntityDetailRequest
+        @param headers: AISaleEntityDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AISaleEntityDetailResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.entity_id):
+            body['entityId'] = request.entity_id
+        if not UtilClient.is_unset(request.entity_type):
+            body['entityType'] = request.entity_type
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AISaleEntityDetail',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/ai-sale/api/v1/entity/detail',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.AISaleEntityDetailResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def a_isale_entity_detail(
+        self,
+        request: dingtalkhrm__1__0_models.AISaleEntityDetailRequest,
+    ) -> dingtalkhrm__1__0_models.AISaleEntityDetailResponse:
+        """
+        @summary AI营销实体详情查询
+        
+        @param request: AISaleEntityDetailRequest
+        @return: AISaleEntityDetailResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.AISaleEntityDetailHeaders()
+        return self.a_isale_entity_detail_with_options(request, headers, runtime)
+
+    async def a_isale_entity_detail_async(
+        self,
+        request: dingtalkhrm__1__0_models.AISaleEntityDetailRequest,
+    ) -> dingtalkhrm__1__0_models.AISaleEntityDetailResponse:
+        """
+        @summary AI营销实体详情查询
+        
+        @param request: AISaleEntityDetailRequest
+        @return: AISaleEntityDetailResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.AISaleEntityDetailHeaders()
+        return await self.a_isale_entity_detail_with_options_async(request, headers, runtime)
+
+    def a_isale_entity_list_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.AISaleEntityListRequest,
+        headers: dingtalkhrm__1__0_models.AISaleEntityListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.AISaleEntityListResponse:
+        """
+        @summary AI营销实体列表查询
+        
+        @param request: AISaleEntityListRequest
+        @param headers: AISaleEntityListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AISaleEntityListResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.conditions):
+            body['conditions'] = request.conditions
+        if not UtilClient.is_unset(request.cursor):
+            body['cursor'] = request.cursor
+        if not UtilClient.is_unset(request.entity_type):
+            body['entityType'] = request.entity_type
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AISaleEntityList',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/ai-sale/api/v1/entity/list',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.AISaleEntityListResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def a_isale_entity_list_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.AISaleEntityListRequest,
+        headers: dingtalkhrm__1__0_models.AISaleEntityListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.AISaleEntityListResponse:
+        """
+        @summary AI营销实体列表查询
+        
+        @param request: AISaleEntityListRequest
+        @param headers: AISaleEntityListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AISaleEntityListResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.conditions):
+            body['conditions'] = request.conditions
+        if not UtilClient.is_unset(request.cursor):
+            body['cursor'] = request.cursor
+        if not UtilClient.is_unset(request.entity_type):
+            body['entityType'] = request.entity_type
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AISaleEntityList',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/ai-sale/api/v1/entity/list',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.AISaleEntityListResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def a_isale_entity_list(
+        self,
+        request: dingtalkhrm__1__0_models.AISaleEntityListRequest,
+    ) -> dingtalkhrm__1__0_models.AISaleEntityListResponse:
+        """
+        @summary AI营销实体列表查询
+        
+        @param request: AISaleEntityListRequest
+        @return: AISaleEntityListResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.AISaleEntityListHeaders()
+        return self.a_isale_entity_list_with_options(request, headers, runtime)
+
+    async def a_isale_entity_list_async(
+        self,
+        request: dingtalkhrm__1__0_models.AISaleEntityListRequest,
+    ) -> dingtalkhrm__1__0_models.AISaleEntityListResponse:
+        """
+        @summary AI营销实体列表查询
+        
+        @param request: AISaleEntityListRequest
+        @return: AISaleEntityListResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.AISaleEntityListHeaders()
+        return await self.a_isale_entity_list_with_options_async(request, headers, runtime)
+
+    def a_isale_entity_update_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.AISaleEntityUpdateRequest,
+        headers: dingtalkhrm__1__0_models.AISaleEntityUpdateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.AISaleEntityUpdateResponse:
+        """
+        @summary AI营销实体更新
+        
+        @param request: AISaleEntityUpdateRequest
+        @param headers: AISaleEntityUpdateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AISaleEntityUpdateResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.entity_id):
+            body['entityId'] = request.entity_id
+        if not UtilClient.is_unset(request.entity_type):
+            body['entityType'] = request.entity_type
+        if not UtilClient.is_unset(request.field_instances):
+            body['fieldInstances'] = request.field_instances
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AISaleEntityUpdate',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/ai-sale/api/v1/entity/update',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.AISaleEntityUpdateResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def a_isale_entity_update_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.AISaleEntityUpdateRequest,
+        headers: dingtalkhrm__1__0_models.AISaleEntityUpdateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.AISaleEntityUpdateResponse:
+        """
+        @summary AI营销实体更新
+        
+        @param request: AISaleEntityUpdateRequest
+        @param headers: AISaleEntityUpdateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AISaleEntityUpdateResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.entity_id):
+            body['entityId'] = request.entity_id
+        if not UtilClient.is_unset(request.entity_type):
+            body['entityType'] = request.entity_type
+        if not UtilClient.is_unset(request.field_instances):
+            body['fieldInstances'] = request.field_instances
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AISaleEntityUpdate',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/ai-sale/api/v1/entity/update',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.AISaleEntityUpdateResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def a_isale_entity_update(
+        self,
+        request: dingtalkhrm__1__0_models.AISaleEntityUpdateRequest,
+    ) -> dingtalkhrm__1__0_models.AISaleEntityUpdateResponse:
+        """
+        @summary AI营销实体更新
+        
+        @param request: AISaleEntityUpdateRequest
+        @return: AISaleEntityUpdateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.AISaleEntityUpdateHeaders()
+        return self.a_isale_entity_update_with_options(request, headers, runtime)
+
+    async def a_isale_entity_update_async(
+        self,
+        request: dingtalkhrm__1__0_models.AISaleEntityUpdateRequest,
+    ) -> dingtalkhrm__1__0_models.AISaleEntityUpdateResponse:
+        """
+        @summary AI营销实体更新
+        
+        @param request: AISaleEntityUpdateRequest
+        @return: AISaleEntityUpdateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.AISaleEntityUpdateHeaders()
+        return await self.a_isale_entity_update_with_options_async(request, headers, runtime)
+
+    def a_isale_schema_get_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.AISaleSchemaGetRequest,
+        headers: dingtalkhrm__1__0_models.AISaleSchemaGetHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.AISaleSchemaGetResponse:
+        """
+        @summary 获取AI营销实体定义信息
+        
+        @param request: AISaleSchemaGetRequest
+        @param headers: AISaleSchemaGetHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AISaleSchemaGetResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.entity_type):
+            body['entityType'] = request.entity_type
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AISaleSchemaGet',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/ai-sale/api/v1/schema/get',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.AISaleSchemaGetResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def a_isale_schema_get_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.AISaleSchemaGetRequest,
+        headers: dingtalkhrm__1__0_models.AISaleSchemaGetHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.AISaleSchemaGetResponse:
+        """
+        @summary 获取AI营销实体定义信息
+        
+        @param request: AISaleSchemaGetRequest
+        @param headers: AISaleSchemaGetHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AISaleSchemaGetResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.entity_type):
+            body['entityType'] = request.entity_type
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AISaleSchemaGet',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/ai-sale/api/v1/schema/get',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.AISaleSchemaGetResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def a_isale_schema_get(
+        self,
+        request: dingtalkhrm__1__0_models.AISaleSchemaGetRequest,
+    ) -> dingtalkhrm__1__0_models.AISaleSchemaGetResponse:
+        """
+        @summary 获取AI营销实体定义信息
+        
+        @param request: AISaleSchemaGetRequest
+        @return: AISaleSchemaGetResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.AISaleSchemaGetHeaders()
+        return self.a_isale_schema_get_with_options(request, headers, runtime)
+
+    async def a_isale_schema_get_async(
+        self,
+        request: dingtalkhrm__1__0_models.AISaleSchemaGetRequest,
+    ) -> dingtalkhrm__1__0_models.AISaleSchemaGetResponse:
+        """
+        @summary 获取AI营销实体定义信息
+        
+        @param request: AISaleSchemaGetRequest
+        @return: AISaleSchemaGetResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.AISaleSchemaGetHeaders()
+        return await self.a_isale_schema_get_with_options_async(request, headers, runtime)
+
     def add_custom_roster_field_with_options(
         self,
         request: dingtalkhrm__1__0_models.AddCustomRosterFieldRequest,

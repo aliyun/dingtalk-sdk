@@ -4,6 +4,746 @@ from Tea.model import TeaModel
 from typing import Dict, List, Any
 
 
+class AnalyzeSubjectTransactionRiskHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AnalyzeSubjectTransactionRiskRequest(TeaModel):
+    def __init__(
+        self,
+        contract_id: int = None,
+        corp_id: str = None,
+        history_end_time: int = None,
+        history_start_time: int = None,
+        staff_id: str = None,
+        subject_unique_code: str = None,
+    ):
+        # This parameter is required.
+        self.contract_id = contract_id
+        # This parameter is required.
+        self.corp_id = corp_id
+        self.history_end_time = history_end_time
+        self.history_start_time = history_start_time
+        # This parameter is required.
+        self.staff_id = staff_id
+        # This parameter is required.
+        self.subject_unique_code = subject_unique_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.contract_id is not None:
+            result['contractId'] = self.contract_id
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.history_end_time is not None:
+            result['historyEndTime'] = self.history_end_time
+        if self.history_start_time is not None:
+            result['historyStartTime'] = self.history_start_time
+        if self.staff_id is not None:
+            result['staffId'] = self.staff_id
+        if self.subject_unique_code is not None:
+            result['subjectUniqueCode'] = self.subject_unique_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('contractId') is not None:
+            self.contract_id = m.get('contractId')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('historyEndTime') is not None:
+            self.history_end_time = m.get('historyEndTime')
+        if m.get('historyStartTime') is not None:
+            self.history_start_time = m.get('historyStartTime')
+        if m.get('staffId') is not None:
+            self.staff_id = m.get('staffId')
+        if m.get('subjectUniqueCode') is not None:
+            self.subject_unique_code = m.get('subjectUniqueCode')
+        return self
+
+
+class AnalyzeSubjectTransactionRiskResponseBodyResultAiAnalysisKeyRisks(TeaModel):
+    def __init__(
+        self,
+        evidence: str = None,
+        impact: str = None,
+        risk_name: str = None,
+        suggestion: str = None,
+    ):
+        self.evidence = evidence
+        self.impact = impact
+        self.risk_name = risk_name
+        self.suggestion = suggestion
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.evidence is not None:
+            result['evidence'] = self.evidence
+        if self.impact is not None:
+            result['impact'] = self.impact
+        if self.risk_name is not None:
+            result['riskName'] = self.risk_name
+        if self.suggestion is not None:
+            result['suggestion'] = self.suggestion
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('evidence') is not None:
+            self.evidence = m.get('evidence')
+        if m.get('impact') is not None:
+            self.impact = m.get('impact')
+        if m.get('riskName') is not None:
+            self.risk_name = m.get('riskName')
+        if m.get('suggestion') is not None:
+            self.suggestion = m.get('suggestion')
+        return self
+
+
+class AnalyzeSubjectTransactionRiskResponseBodyResultAiAnalysis(TeaModel):
+    def __init__(
+        self,
+        key_risks: List[AnalyzeSubjectTransactionRiskResponseBodyResultAiAnalysisKeyRisks] = None,
+        limitations: List[str] = None,
+        status: str = None,
+        summary: str = None,
+    ):
+        self.key_risks = key_risks
+        self.limitations = limitations
+        self.status = status
+        self.summary = summary
+
+    def validate(self):
+        if self.key_risks:
+            for k in self.key_risks:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['keyRisks'] = []
+        if self.key_risks is not None:
+            for k in self.key_risks:
+                result['keyRisks'].append(k.to_map() if k else None)
+        if self.limitations is not None:
+            result['limitations'] = self.limitations
+        if self.status is not None:
+            result['status'] = self.status
+        if self.summary is not None:
+            result['summary'] = self.summary
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.key_risks = []
+        if m.get('keyRisks') is not None:
+            for k in m.get('keyRisks'):
+                temp_model = AnalyzeSubjectTransactionRiskResponseBodyResultAiAnalysisKeyRisks()
+                self.key_risks.append(temp_model.from_map(k))
+        if m.get('limitations') is not None:
+            self.limitations = m.get('limitations')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('summary') is not None:
+            self.summary = m.get('summary')
+        return self
+
+
+class AnalyzeSubjectTransactionRiskResponseBodyResultCurrentContract(TeaModel):
+    def __init__(
+        self,
+        acceptance_terms: str = None,
+        breach_liability: str = None,
+        contract_amount: str = None,
+        contract_id: int = None,
+        contract_name: str = None,
+        contract_subject: str = None,
+        contract_type: str = None,
+        contract_version: int = None,
+        currency: str = None,
+        data_status: str = None,
+        delivery_terms: str = None,
+        dispute_resolution: str = None,
+        guarantee_terms: str = None,
+        missing_fields: List[str] = None,
+        payment_terms: str = None,
+        performance_period: str = None,
+        termination_terms: str = None,
+        transaction_direction: str = None,
+    ):
+        self.acceptance_terms = acceptance_terms
+        self.breach_liability = breach_liability
+        self.contract_amount = contract_amount
+        self.contract_id = contract_id
+        self.contract_name = contract_name
+        self.contract_subject = contract_subject
+        self.contract_type = contract_type
+        self.contract_version = contract_version
+        self.currency = currency
+        self.data_status = data_status
+        self.delivery_terms = delivery_terms
+        self.dispute_resolution = dispute_resolution
+        self.guarantee_terms = guarantee_terms
+        self.missing_fields = missing_fields
+        self.payment_terms = payment_terms
+        self.performance_period = performance_period
+        self.termination_terms = termination_terms
+        self.transaction_direction = transaction_direction
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.acceptance_terms is not None:
+            result['acceptanceTerms'] = self.acceptance_terms
+        if self.breach_liability is not None:
+            result['breachLiability'] = self.breach_liability
+        if self.contract_amount is not None:
+            result['contractAmount'] = self.contract_amount
+        if self.contract_id is not None:
+            result['contractId'] = self.contract_id
+        if self.contract_name is not None:
+            result['contractName'] = self.contract_name
+        if self.contract_subject is not None:
+            result['contractSubject'] = self.contract_subject
+        if self.contract_type is not None:
+            result['contractType'] = self.contract_type
+        if self.contract_version is not None:
+            result['contractVersion'] = self.contract_version
+        if self.currency is not None:
+            result['currency'] = self.currency
+        if self.data_status is not None:
+            result['dataStatus'] = self.data_status
+        if self.delivery_terms is not None:
+            result['deliveryTerms'] = self.delivery_terms
+        if self.dispute_resolution is not None:
+            result['disputeResolution'] = self.dispute_resolution
+        if self.guarantee_terms is not None:
+            result['guaranteeTerms'] = self.guarantee_terms
+        if self.missing_fields is not None:
+            result['missingFields'] = self.missing_fields
+        if self.payment_terms is not None:
+            result['paymentTerms'] = self.payment_terms
+        if self.performance_period is not None:
+            result['performancePeriod'] = self.performance_period
+        if self.termination_terms is not None:
+            result['terminationTerms'] = self.termination_terms
+        if self.transaction_direction is not None:
+            result['transactionDirection'] = self.transaction_direction
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('acceptanceTerms') is not None:
+            self.acceptance_terms = m.get('acceptanceTerms')
+        if m.get('breachLiability') is not None:
+            self.breach_liability = m.get('breachLiability')
+        if m.get('contractAmount') is not None:
+            self.contract_amount = m.get('contractAmount')
+        if m.get('contractId') is not None:
+            self.contract_id = m.get('contractId')
+        if m.get('contractName') is not None:
+            self.contract_name = m.get('contractName')
+        if m.get('contractSubject') is not None:
+            self.contract_subject = m.get('contractSubject')
+        if m.get('contractType') is not None:
+            self.contract_type = m.get('contractType')
+        if m.get('contractVersion') is not None:
+            self.contract_version = m.get('contractVersion')
+        if m.get('currency') is not None:
+            self.currency = m.get('currency')
+        if m.get('dataStatus') is not None:
+            self.data_status = m.get('dataStatus')
+        if m.get('deliveryTerms') is not None:
+            self.delivery_terms = m.get('deliveryTerms')
+        if m.get('disputeResolution') is not None:
+            self.dispute_resolution = m.get('disputeResolution')
+        if m.get('guaranteeTerms') is not None:
+            self.guarantee_terms = m.get('guaranteeTerms')
+        if m.get('missingFields') is not None:
+            self.missing_fields = m.get('missingFields')
+        if m.get('paymentTerms') is not None:
+            self.payment_terms = m.get('paymentTerms')
+        if m.get('performancePeriod') is not None:
+            self.performance_period = m.get('performancePeriod')
+        if m.get('terminationTerms') is not None:
+            self.termination_terms = m.get('terminationTerms')
+        if m.get('transactionDirection') is not None:
+            self.transaction_direction = m.get('transactionDirection')
+        return self
+
+
+class AnalyzeSubjectTransactionRiskResponseBodyResultHistoryCooperationExpenseAmounts(TeaModel):
+    def __init__(
+        self,
+        c_ny: str = None,
+        u_sd: str = None,
+    ):
+        self.c_ny = c_ny
+        self.u_sd = u_sd
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.c_ny is not None:
+            result['cNY'] = self.c_ny
+        if self.u_sd is not None:
+            result['uSD'] = self.u_sd
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cNY') is not None:
+            self.c_ny = m.get('cNY')
+        if m.get('uSD') is not None:
+            self.u_sd = m.get('uSD')
+        return self
+
+
+class AnalyzeSubjectTransactionRiskResponseBodyResultHistoryCooperationIncomeAmounts(TeaModel):
+    def __init__(
+        self,
+        c_ny: str = None,
+        u_sd: str = None,
+    ):
+        self.c_ny = c_ny
+        self.u_sd = u_sd
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.c_ny is not None:
+            result['cNY'] = self.c_ny
+        if self.u_sd is not None:
+            result['uSD'] = self.u_sd
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cNY') is not None:
+            self.c_ny = m.get('cNY')
+        if m.get('uSD') is not None:
+            self.u_sd = m.get('uSD')
+        return self
+
+
+class AnalyzeSubjectTransactionRiskResponseBodyResultHistoryCooperationRelatedContracts(TeaModel):
+    def __init__(
+        self,
+        contract_amount: str = None,
+        contract_id: int = None,
+        contract_name: str = None,
+        contract_type: str = None,
+        currency: str = None,
+        end_date: int = None,
+        start_date: int = None,
+        transaction_direction: str = None,
+    ):
+        self.contract_amount = contract_amount
+        self.contract_id = contract_id
+        self.contract_name = contract_name
+        self.contract_type = contract_type
+        self.currency = currency
+        self.end_date = end_date
+        self.start_date = start_date
+        self.transaction_direction = transaction_direction
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.contract_amount is not None:
+            result['contractAmount'] = self.contract_amount
+        if self.contract_id is not None:
+            result['contractId'] = self.contract_id
+        if self.contract_name is not None:
+            result['contractName'] = self.contract_name
+        if self.contract_type is not None:
+            result['contractType'] = self.contract_type
+        if self.currency is not None:
+            result['currency'] = self.currency
+        if self.end_date is not None:
+            result['endDate'] = self.end_date
+        if self.start_date is not None:
+            result['startDate'] = self.start_date
+        if self.transaction_direction is not None:
+            result['transactionDirection'] = self.transaction_direction
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('contractAmount') is not None:
+            self.contract_amount = m.get('contractAmount')
+        if m.get('contractId') is not None:
+            self.contract_id = m.get('contractId')
+        if m.get('contractName') is not None:
+            self.contract_name = m.get('contractName')
+        if m.get('contractType') is not None:
+            self.contract_type = m.get('contractType')
+        if m.get('currency') is not None:
+            self.currency = m.get('currency')
+        if m.get('endDate') is not None:
+            self.end_date = m.get('endDate')
+        if m.get('startDate') is not None:
+            self.start_date = m.get('startDate')
+        if m.get('transactionDirection') is not None:
+            self.transaction_direction = m.get('transactionDirection')
+        return self
+
+
+class AnalyzeSubjectTransactionRiskResponseBodyResultHistoryCooperation(TeaModel):
+    def __init__(
+        self,
+        expense_amounts: AnalyzeSubjectTransactionRiskResponseBodyResultHistoryCooperationExpenseAmounts = None,
+        history_data_status: str = None,
+        history_end_time: int = None,
+        history_start_time: int = None,
+        income_amounts: AnalyzeSubjectTransactionRiskResponseBodyResultHistoryCooperationIncomeAmounts = None,
+        performance_anomalies: List[str] = None,
+        performance_data_status: str = None,
+        period_contract_count: int = None,
+        related_contracts: List[AnalyzeSubjectTransactionRiskResponseBodyResultHistoryCooperationRelatedContracts] = None,
+        total_related_contract_count: int = None,
+    ):
+        self.expense_amounts = expense_amounts
+        self.history_data_status = history_data_status
+        self.history_end_time = history_end_time
+        self.history_start_time = history_start_time
+        self.income_amounts = income_amounts
+        self.performance_anomalies = performance_anomalies
+        self.performance_data_status = performance_data_status
+        self.period_contract_count = period_contract_count
+        self.related_contracts = related_contracts
+        self.total_related_contract_count = total_related_contract_count
+
+    def validate(self):
+        if self.expense_amounts:
+            self.expense_amounts.validate()
+        if self.income_amounts:
+            self.income_amounts.validate()
+        if self.related_contracts:
+            for k in self.related_contracts:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.expense_amounts is not None:
+            result['expenseAmounts'] = self.expense_amounts.to_map()
+        if self.history_data_status is not None:
+            result['historyDataStatus'] = self.history_data_status
+        if self.history_end_time is not None:
+            result['historyEndTime'] = self.history_end_time
+        if self.history_start_time is not None:
+            result['historyStartTime'] = self.history_start_time
+        if self.income_amounts is not None:
+            result['incomeAmounts'] = self.income_amounts.to_map()
+        if self.performance_anomalies is not None:
+            result['performanceAnomalies'] = self.performance_anomalies
+        if self.performance_data_status is not None:
+            result['performanceDataStatus'] = self.performance_data_status
+        if self.period_contract_count is not None:
+            result['periodContractCount'] = self.period_contract_count
+        result['relatedContracts'] = []
+        if self.related_contracts is not None:
+            for k in self.related_contracts:
+                result['relatedContracts'].append(k.to_map() if k else None)
+        if self.total_related_contract_count is not None:
+            result['totalRelatedContractCount'] = self.total_related_contract_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('expenseAmounts') is not None:
+            temp_model = AnalyzeSubjectTransactionRiskResponseBodyResultHistoryCooperationExpenseAmounts()
+            self.expense_amounts = temp_model.from_map(m['expenseAmounts'])
+        if m.get('historyDataStatus') is not None:
+            self.history_data_status = m.get('historyDataStatus')
+        if m.get('historyEndTime') is not None:
+            self.history_end_time = m.get('historyEndTime')
+        if m.get('historyStartTime') is not None:
+            self.history_start_time = m.get('historyStartTime')
+        if m.get('incomeAmounts') is not None:
+            temp_model = AnalyzeSubjectTransactionRiskResponseBodyResultHistoryCooperationIncomeAmounts()
+            self.income_amounts = temp_model.from_map(m['incomeAmounts'])
+        if m.get('performanceAnomalies') is not None:
+            self.performance_anomalies = m.get('performanceAnomalies')
+        if m.get('performanceDataStatus') is not None:
+            self.performance_data_status = m.get('performanceDataStatus')
+        if m.get('periodContractCount') is not None:
+            self.period_contract_count = m.get('periodContractCount')
+        self.related_contracts = []
+        if m.get('relatedContracts') is not None:
+            for k in m.get('relatedContracts'):
+                temp_model = AnalyzeSubjectTransactionRiskResponseBodyResultHistoryCooperationRelatedContracts()
+                self.related_contracts.append(temp_model.from_map(k))
+        if m.get('totalRelatedContractCount') is not None:
+            self.total_related_contract_count = m.get('totalRelatedContractCount')
+        return self
+
+
+class AnalyzeSubjectTransactionRiskResponseBodyResultSubjectInfo(TeaModel):
+    def __init__(
+        self,
+        credit_code: str = None,
+        related_own_subjects: List[str] = None,
+        subject_name: str = None,
+        subject_tags: List[str] = None,
+        unique_code: str = None,
+    ):
+        self.credit_code = credit_code
+        self.related_own_subjects = related_own_subjects
+        self.subject_name = subject_name
+        self.subject_tags = subject_tags
+        self.unique_code = unique_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.credit_code is not None:
+            result['creditCode'] = self.credit_code
+        if self.related_own_subjects is not None:
+            result['relatedOwnSubjects'] = self.related_own_subjects
+        if self.subject_name is not None:
+            result['subjectName'] = self.subject_name
+        if self.subject_tags is not None:
+            result['subjectTags'] = self.subject_tags
+        if self.unique_code is not None:
+            result['uniqueCode'] = self.unique_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('creditCode') is not None:
+            self.credit_code = m.get('creditCode')
+        if m.get('relatedOwnSubjects') is not None:
+            self.related_own_subjects = m.get('relatedOwnSubjects')
+        if m.get('subjectName') is not None:
+            self.subject_name = m.get('subjectName')
+        if m.get('subjectTags') is not None:
+            self.subject_tags = m.get('subjectTags')
+        if m.get('uniqueCode') is not None:
+            self.unique_code = m.get('uniqueCode')
+        return self
+
+
+class AnalyzeSubjectTransactionRiskResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        ai_analysis: AnalyzeSubjectTransactionRiskResponseBodyResultAiAnalysis = None,
+        current_contract: AnalyzeSubjectTransactionRiskResponseBodyResultCurrentContract = None,
+        data_status: str = None,
+        history_cooperation: AnalyzeSubjectTransactionRiskResponseBodyResultHistoryCooperation = None,
+        subject_info: AnalyzeSubjectTransactionRiskResponseBodyResultSubjectInfo = None,
+    ):
+        self.ai_analysis = ai_analysis
+        self.current_contract = current_contract
+        self.data_status = data_status
+        self.history_cooperation = history_cooperation
+        self.subject_info = subject_info
+
+    def validate(self):
+        if self.ai_analysis:
+            self.ai_analysis.validate()
+        if self.current_contract:
+            self.current_contract.validate()
+        if self.history_cooperation:
+            self.history_cooperation.validate()
+        if self.subject_info:
+            self.subject_info.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ai_analysis is not None:
+            result['aiAnalysis'] = self.ai_analysis.to_map()
+        if self.current_contract is not None:
+            result['currentContract'] = self.current_contract.to_map()
+        if self.data_status is not None:
+            result['dataStatus'] = self.data_status
+        if self.history_cooperation is not None:
+            result['historyCooperation'] = self.history_cooperation.to_map()
+        if self.subject_info is not None:
+            result['subjectInfo'] = self.subject_info.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('aiAnalysis') is not None:
+            temp_model = AnalyzeSubjectTransactionRiskResponseBodyResultAiAnalysis()
+            self.ai_analysis = temp_model.from_map(m['aiAnalysis'])
+        if m.get('currentContract') is not None:
+            temp_model = AnalyzeSubjectTransactionRiskResponseBodyResultCurrentContract()
+            self.current_contract = temp_model.from_map(m['currentContract'])
+        if m.get('dataStatus') is not None:
+            self.data_status = m.get('dataStatus')
+        if m.get('historyCooperation') is not None:
+            temp_model = AnalyzeSubjectTransactionRiskResponseBodyResultHistoryCooperation()
+            self.history_cooperation = temp_model.from_map(m['historyCooperation'])
+        if m.get('subjectInfo') is not None:
+            temp_model = AnalyzeSubjectTransactionRiskResponseBodyResultSubjectInfo()
+            self.subject_info = temp_model.from_map(m['subjectInfo'])
+        return self
+
+
+class AnalyzeSubjectTransactionRiskResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: AnalyzeSubjectTransactionRiskResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = AnalyzeSubjectTransactionRiskResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class AnalyzeSubjectTransactionRiskResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: AnalyzeSubjectTransactionRiskResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = AnalyzeSubjectTransactionRiskResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class AsyncCreateContractAnalysisHeaders(TeaModel):
     def __init__(
         self,
@@ -12207,6 +12947,868 @@ class QuerySignTaskResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QuerySignTaskResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QuerySubjectPublicRiskRequest(TeaModel):
+    def __init__(
+        self,
+        biz_id: str = None,
+        company_id: str = None,
+        contract_amount: int = None,
+        contract_type: str = None,
+        corp_id: str = None,
+        credit_code: str = None,
+        from_: str = None,
+        registration_number: str = None,
+        staff_id: str = None,
+        subject_name: str = None,
+    ):
+        self.biz_id = biz_id
+        self.company_id = company_id
+        self.contract_amount = contract_amount
+        self.contract_type = contract_type
+        # This parameter is required.
+        self.corp_id = corp_id
+        self.credit_code = credit_code
+        self.from_ = from_
+        self.registration_number = registration_number
+        # This parameter is required.
+        self.staff_id = staff_id
+        self.subject_name = subject_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_id is not None:
+            result['bizId'] = self.biz_id
+        if self.company_id is not None:
+            result['companyId'] = self.company_id
+        if self.contract_amount is not None:
+            result['contractAmount'] = self.contract_amount
+        if self.contract_type is not None:
+            result['contractType'] = self.contract_type
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.credit_code is not None:
+            result['creditCode'] = self.credit_code
+        if self.from_ is not None:
+            result['from'] = self.from_
+        if self.registration_number is not None:
+            result['registrationNumber'] = self.registration_number
+        if self.staff_id is not None:
+            result['staffId'] = self.staff_id
+        if self.subject_name is not None:
+            result['subjectName'] = self.subject_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizId') is not None:
+            self.biz_id = m.get('bizId')
+        if m.get('companyId') is not None:
+            self.company_id = m.get('companyId')
+        if m.get('contractAmount') is not None:
+            self.contract_amount = m.get('contractAmount')
+        if m.get('contractType') is not None:
+            self.contract_type = m.get('contractType')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('creditCode') is not None:
+            self.credit_code = m.get('creditCode')
+        if m.get('from') is not None:
+            self.from_ = m.get('from')
+        if m.get('registrationNumber') is not None:
+            self.registration_number = m.get('registrationNumber')
+        if m.get('staffId') is not None:
+            self.staff_id = m.get('staffId')
+        if m.get('subjectName') is not None:
+            self.subject_name = m.get('subjectName')
+        return self
+
+
+class QuerySubjectPublicRiskResponseBodyResultCompanyInfo(TeaModel):
+    def __init__(
+        self,
+        bank_account_name: str = None,
+        bank_account_number: str = None,
+        bank_name: str = None,
+        company_name: str = None,
+        credit_code: str = None,
+        legal_person_name: str = None,
+        phone_number: str = None,
+        reg_location: str = None,
+        remark: str = None,
+        tax_number: str = None,
+    ):
+        self.bank_account_name = bank_account_name
+        self.bank_account_number = bank_account_number
+        self.bank_name = bank_name
+        self.company_name = company_name
+        self.credit_code = credit_code
+        self.legal_person_name = legal_person_name
+        self.phone_number = phone_number
+        self.reg_location = reg_location
+        self.remark = remark
+        self.tax_number = tax_number
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.bank_account_name is not None:
+            result['bankAccountName'] = self.bank_account_name
+        if self.bank_account_number is not None:
+            result['bankAccountNumber'] = self.bank_account_number
+        if self.bank_name is not None:
+            result['bankName'] = self.bank_name
+        if self.company_name is not None:
+            result['companyName'] = self.company_name
+        if self.credit_code is not None:
+            result['creditCode'] = self.credit_code
+        if self.legal_person_name is not None:
+            result['legalPersonName'] = self.legal_person_name
+        if self.phone_number is not None:
+            result['phoneNumber'] = self.phone_number
+        if self.reg_location is not None:
+            result['regLocation'] = self.reg_location
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.tax_number is not None:
+            result['taxNumber'] = self.tax_number
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bankAccountName') is not None:
+            self.bank_account_name = m.get('bankAccountName')
+        if m.get('bankAccountNumber') is not None:
+            self.bank_account_number = m.get('bankAccountNumber')
+        if m.get('bankName') is not None:
+            self.bank_name = m.get('bankName')
+        if m.get('companyName') is not None:
+            self.company_name = m.get('companyName')
+        if m.get('creditCode') is not None:
+            self.credit_code = m.get('creditCode')
+        if m.get('legalPersonName') is not None:
+            self.legal_person_name = m.get('legalPersonName')
+        if m.get('phoneNumber') is not None:
+            self.phone_number = m.get('phoneNumber')
+        if m.get('regLocation') is not None:
+            self.reg_location = m.get('regLocation')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        if m.get('taxNumber') is not None:
+            self.tax_number = m.get('taxNumber')
+        return self
+
+
+class QuerySubjectPublicRiskResponseBodyResultRisksBusinessRiskSubRisksAdministrativePunishmentColumns(TeaModel):
+    def __init__(
+        self,
+        column_name: str = None,
+        column_type: str = None,
+        is_date: bool = None,
+    ):
+        self.column_name = column_name
+        self.column_type = column_type
+        self.is_date = is_date
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.column_name is not None:
+            result['columnName'] = self.column_name
+        if self.column_type is not None:
+            result['columnType'] = self.column_type
+        if self.is_date is not None:
+            result['isDate'] = self.is_date
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('columnName') is not None:
+            self.column_name = m.get('columnName')
+        if m.get('columnType') is not None:
+            self.column_type = m.get('columnType')
+        if m.get('isDate') is not None:
+            self.is_date = m.get('isDate')
+        return self
+
+
+class QuerySubjectPublicRiskResponseBodyResultRisksBusinessRiskSubRisksAdministrativePunishmentItems(TeaModel):
+    def __init__(
+        self,
+        content: str = None,
+        decision_date: str = None,
+        department_name: str = None,
+        punish_number: str = None,
+        reason: str = None,
+    ):
+        self.content = content
+        self.decision_date = decision_date
+        self.department_name = department_name
+        self.punish_number = punish_number
+        self.reason = reason
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        if self.decision_date is not None:
+            result['decisionDate'] = self.decision_date
+        if self.department_name is not None:
+            result['departmentName'] = self.department_name
+        if self.punish_number is not None:
+            result['punishNumber'] = self.punish_number
+        if self.reason is not None:
+            result['reason'] = self.reason
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('decisionDate') is not None:
+            self.decision_date = m.get('decisionDate')
+        if m.get('departmentName') is not None:
+            self.department_name = m.get('departmentName')
+        if m.get('punishNumber') is not None:
+            self.punish_number = m.get('punishNumber')
+        if m.get('reason') is not None:
+            self.reason = m.get('reason')
+        return self
+
+
+class QuerySubjectPublicRiskResponseBodyResultRisksBusinessRiskSubRisksAdministrativePunishment(TeaModel):
+    def __init__(
+        self,
+        columns: List[QuerySubjectPublicRiskResponseBodyResultRisksBusinessRiskSubRisksAdministrativePunishmentColumns] = None,
+        items: List[QuerySubjectPublicRiskResponseBodyResultRisksBusinessRiskSubRisksAdministrativePunishmentItems] = None,
+        notice_text: str = None,
+        sub_risk_name: str = None,
+        sub_risk_number: int = None,
+        sub_risk_type: str = None,
+    ):
+        self.columns = columns
+        self.items = items
+        self.notice_text = notice_text
+        self.sub_risk_name = sub_risk_name
+        self.sub_risk_number = sub_risk_number
+        self.sub_risk_type = sub_risk_type
+
+    def validate(self):
+        if self.columns:
+            for k in self.columns:
+                if k:
+                    k.validate()
+        if self.items:
+            for k in self.items:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['columns'] = []
+        if self.columns is not None:
+            for k in self.columns:
+                result['columns'].append(k.to_map() if k else None)
+        result['items'] = []
+        if self.items is not None:
+            for k in self.items:
+                result['items'].append(k.to_map() if k else None)
+        if self.notice_text is not None:
+            result['noticeText'] = self.notice_text
+        if self.sub_risk_name is not None:
+            result['subRiskName'] = self.sub_risk_name
+        if self.sub_risk_number is not None:
+            result['subRiskNumber'] = self.sub_risk_number
+        if self.sub_risk_type is not None:
+            result['subRiskType'] = self.sub_risk_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.columns = []
+        if m.get('columns') is not None:
+            for k in m.get('columns'):
+                temp_model = QuerySubjectPublicRiskResponseBodyResultRisksBusinessRiskSubRisksAdministrativePunishmentColumns()
+                self.columns.append(temp_model.from_map(k))
+        self.items = []
+        if m.get('items') is not None:
+            for k in m.get('items'):
+                temp_model = QuerySubjectPublicRiskResponseBodyResultRisksBusinessRiskSubRisksAdministrativePunishmentItems()
+                self.items.append(temp_model.from_map(k))
+        if m.get('noticeText') is not None:
+            self.notice_text = m.get('noticeText')
+        if m.get('subRiskName') is not None:
+            self.sub_risk_name = m.get('subRiskName')
+        if m.get('subRiskNumber') is not None:
+            self.sub_risk_number = m.get('subRiskNumber')
+        if m.get('subRiskType') is not None:
+            self.sub_risk_type = m.get('subRiskType')
+        return self
+
+
+class QuerySubjectPublicRiskResponseBodyResultRisksBusinessRiskSubRisks(TeaModel):
+    def __init__(
+        self,
+        administrative_punishment: QuerySubjectPublicRiskResponseBodyResultRisksBusinessRiskSubRisksAdministrativePunishment = None,
+    ):
+        self.administrative_punishment = administrative_punishment
+
+    def validate(self):
+        if self.administrative_punishment:
+            self.administrative_punishment.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.administrative_punishment is not None:
+            result['administrative_punishment'] = self.administrative_punishment.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('administrative_punishment') is not None:
+            temp_model = QuerySubjectPublicRiskResponseBodyResultRisksBusinessRiskSubRisksAdministrativePunishment()
+            self.administrative_punishment = temp_model.from_map(m['administrative_punishment'])
+        return self
+
+
+class QuerySubjectPublicRiskResponseBodyResultRisksBusinessRisk(TeaModel):
+    def __init__(
+        self,
+        risk_name: str = None,
+        risk_number: int = None,
+        risk_type: str = None,
+        sub_risk_types: List[str] = None,
+        sub_risks: QuerySubjectPublicRiskResponseBodyResultRisksBusinessRiskSubRisks = None,
+    ):
+        self.risk_name = risk_name
+        self.risk_number = risk_number
+        self.risk_type = risk_type
+        self.sub_risk_types = sub_risk_types
+        self.sub_risks = sub_risks
+
+    def validate(self):
+        if self.sub_risks:
+            self.sub_risks.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.risk_name is not None:
+            result['riskName'] = self.risk_name
+        if self.risk_number is not None:
+            result['riskNumber'] = self.risk_number
+        if self.risk_type is not None:
+            result['riskType'] = self.risk_type
+        if self.sub_risk_types is not None:
+            result['subRiskTypes'] = self.sub_risk_types
+        if self.sub_risks is not None:
+            result['subRisks'] = self.sub_risks.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('riskName') is not None:
+            self.risk_name = m.get('riskName')
+        if m.get('riskNumber') is not None:
+            self.risk_number = m.get('riskNumber')
+        if m.get('riskType') is not None:
+            self.risk_type = m.get('riskType')
+        if m.get('subRiskTypes') is not None:
+            self.sub_risk_types = m.get('subRiskTypes')
+        if m.get('subRisks') is not None:
+            temp_model = QuerySubjectPublicRiskResponseBodyResultRisksBusinessRiskSubRisks()
+            self.sub_risks = temp_model.from_map(m['subRisks'])
+        return self
+
+
+class QuerySubjectPublicRiskResponseBodyResultRisksJusticeRiskSubRisksCourtOpeningAnnouncementColumns(TeaModel):
+    def __init__(
+        self,
+        column_name: str = None,
+        column_type: str = None,
+        is_date: bool = None,
+    ):
+        self.column_name = column_name
+        self.column_type = column_type
+        self.is_date = is_date
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.column_name is not None:
+            result['columnName'] = self.column_name
+        if self.column_type is not None:
+            result['columnType'] = self.column_type
+        if self.is_date is not None:
+            result['isDate'] = self.is_date
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('columnName') is not None:
+            self.column_name = m.get('columnName')
+        if m.get('columnType') is not None:
+            self.column_type = m.get('columnType')
+        if m.get('isDate') is not None:
+            self.is_date = m.get('isDate')
+        return self
+
+
+class QuerySubjectPublicRiskResponseBodyResultRisksJusticeRiskSubRisksCourtOpeningAnnouncementItems(TeaModel):
+    def __init__(
+        self,
+        case_no: str = None,
+        case_reason: str = None,
+        court: str = None,
+        start_date: str = None,
+    ):
+        self.case_no = case_no
+        self.case_reason = case_reason
+        self.court = court
+        self.start_date = start_date
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.case_no is not None:
+            result['caseNo'] = self.case_no
+        if self.case_reason is not None:
+            result['caseReason'] = self.case_reason
+        if self.court is not None:
+            result['court'] = self.court
+        if self.start_date is not None:
+            result['startDate'] = self.start_date
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('caseNo') is not None:
+            self.case_no = m.get('caseNo')
+        if m.get('caseReason') is not None:
+            self.case_reason = m.get('caseReason')
+        if m.get('court') is not None:
+            self.court = m.get('court')
+        if m.get('startDate') is not None:
+            self.start_date = m.get('startDate')
+        return self
+
+
+class QuerySubjectPublicRiskResponseBodyResultRisksJusticeRiskSubRisksCourtOpeningAnnouncement(TeaModel):
+    def __init__(
+        self,
+        columns: List[QuerySubjectPublicRiskResponseBodyResultRisksJusticeRiskSubRisksCourtOpeningAnnouncementColumns] = None,
+        items: List[QuerySubjectPublicRiskResponseBodyResultRisksJusticeRiskSubRisksCourtOpeningAnnouncementItems] = None,
+        notice_text: str = None,
+        sub_risk_name: str = None,
+        sub_risk_number: int = None,
+        sub_risk_type: str = None,
+    ):
+        self.columns = columns
+        self.items = items
+        self.notice_text = notice_text
+        self.sub_risk_name = sub_risk_name
+        self.sub_risk_number = sub_risk_number
+        self.sub_risk_type = sub_risk_type
+
+    def validate(self):
+        if self.columns:
+            for k in self.columns:
+                if k:
+                    k.validate()
+        if self.items:
+            for k in self.items:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['columns'] = []
+        if self.columns is not None:
+            for k in self.columns:
+                result['columns'].append(k.to_map() if k else None)
+        result['items'] = []
+        if self.items is not None:
+            for k in self.items:
+                result['items'].append(k.to_map() if k else None)
+        if self.notice_text is not None:
+            result['noticeText'] = self.notice_text
+        if self.sub_risk_name is not None:
+            result['subRiskName'] = self.sub_risk_name
+        if self.sub_risk_number is not None:
+            result['subRiskNumber'] = self.sub_risk_number
+        if self.sub_risk_type is not None:
+            result['subRiskType'] = self.sub_risk_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.columns = []
+        if m.get('columns') is not None:
+            for k in m.get('columns'):
+                temp_model = QuerySubjectPublicRiskResponseBodyResultRisksJusticeRiskSubRisksCourtOpeningAnnouncementColumns()
+                self.columns.append(temp_model.from_map(k))
+        self.items = []
+        if m.get('items') is not None:
+            for k in m.get('items'):
+                temp_model = QuerySubjectPublicRiskResponseBodyResultRisksJusticeRiskSubRisksCourtOpeningAnnouncementItems()
+                self.items.append(temp_model.from_map(k))
+        if m.get('noticeText') is not None:
+            self.notice_text = m.get('noticeText')
+        if m.get('subRiskName') is not None:
+            self.sub_risk_name = m.get('subRiskName')
+        if m.get('subRiskNumber') is not None:
+            self.sub_risk_number = m.get('subRiskNumber')
+        if m.get('subRiskType') is not None:
+            self.sub_risk_type = m.get('subRiskType')
+        return self
+
+
+class QuerySubjectPublicRiskResponseBodyResultRisksJusticeRiskSubRisks(TeaModel):
+    def __init__(
+        self,
+        court_opening_announcement: QuerySubjectPublicRiskResponseBodyResultRisksJusticeRiskSubRisksCourtOpeningAnnouncement = None,
+    ):
+        self.court_opening_announcement = court_opening_announcement
+
+    def validate(self):
+        if self.court_opening_announcement:
+            self.court_opening_announcement.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.court_opening_announcement is not None:
+            result['court_opening_announcement'] = self.court_opening_announcement.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('court_opening_announcement') is not None:
+            temp_model = QuerySubjectPublicRiskResponseBodyResultRisksJusticeRiskSubRisksCourtOpeningAnnouncement()
+            self.court_opening_announcement = temp_model.from_map(m['court_opening_announcement'])
+        return self
+
+
+class QuerySubjectPublicRiskResponseBodyResultRisksJusticeRisk(TeaModel):
+    def __init__(
+        self,
+        risk_name: str = None,
+        risk_number: int = None,
+        risk_type: str = None,
+        sub_risk_types: List[str] = None,
+        sub_risks: QuerySubjectPublicRiskResponseBodyResultRisksJusticeRiskSubRisks = None,
+    ):
+        self.risk_name = risk_name
+        self.risk_number = risk_number
+        self.risk_type = risk_type
+        self.sub_risk_types = sub_risk_types
+        self.sub_risks = sub_risks
+
+    def validate(self):
+        if self.sub_risks:
+            self.sub_risks.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.risk_name is not None:
+            result['riskName'] = self.risk_name
+        if self.risk_number is not None:
+            result['riskNumber'] = self.risk_number
+        if self.risk_type is not None:
+            result['riskType'] = self.risk_type
+        if self.sub_risk_types is not None:
+            result['subRiskTypes'] = self.sub_risk_types
+        if self.sub_risks is not None:
+            result['subRisks'] = self.sub_risks.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('riskName') is not None:
+            self.risk_name = m.get('riskName')
+        if m.get('riskNumber') is not None:
+            self.risk_number = m.get('riskNumber')
+        if m.get('riskType') is not None:
+            self.risk_type = m.get('riskType')
+        if m.get('subRiskTypes') is not None:
+            self.sub_risk_types = m.get('subRiskTypes')
+        if m.get('subRisks') is not None:
+            temp_model = QuerySubjectPublicRiskResponseBodyResultRisksJusticeRiskSubRisks()
+            self.sub_risks = temp_model.from_map(m['subRisks'])
+        return self
+
+
+class QuerySubjectPublicRiskResponseBodyResultRisks(TeaModel):
+    def __init__(
+        self,
+        business_risk: QuerySubjectPublicRiskResponseBodyResultRisksBusinessRisk = None,
+        justice_risk: QuerySubjectPublicRiskResponseBodyResultRisksJusticeRisk = None,
+    ):
+        self.business_risk = business_risk
+        self.justice_risk = justice_risk
+
+    def validate(self):
+        if self.business_risk:
+            self.business_risk.validate()
+        if self.justice_risk:
+            self.justice_risk.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.business_risk is not None:
+            result['business_risk'] = self.business_risk.to_map()
+        if self.justice_risk is not None:
+            result['justice_risk'] = self.justice_risk.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('business_risk') is not None:
+            temp_model = QuerySubjectPublicRiskResponseBodyResultRisksBusinessRisk()
+            self.business_risk = temp_model.from_map(m['business_risk'])
+        if m.get('justice_risk') is not None:
+            temp_model = QuerySubjectPublicRiskResponseBodyResultRisksJusticeRisk()
+            self.justice_risk = temp_model.from_map(m['justice_risk'])
+        return self
+
+
+class QuerySubjectPublicRiskResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        ai_risk_summary: str = None,
+        ai_sample_risk_count: int = None,
+        ai_summary_status: str = None,
+        biz_id: str = None,
+        company_info: QuerySubjectPublicRiskResponseBodyResultCompanyInfo = None,
+        data_status: str = None,
+        data_updated_at: int = None,
+        free_benefit_rest_enough: bool = None,
+        risk_types: List[str] = None,
+        risks: QuerySubjectPublicRiskResponseBodyResultRisks = None,
+        subject_exist: bool = None,
+        total_risk_number: int = None,
+    ):
+        self.ai_risk_summary = ai_risk_summary
+        self.ai_sample_risk_count = ai_sample_risk_count
+        self.ai_summary_status = ai_summary_status
+        self.biz_id = biz_id
+        self.company_info = company_info
+        self.data_status = data_status
+        self.data_updated_at = data_updated_at
+        self.free_benefit_rest_enough = free_benefit_rest_enough
+        self.risk_types = risk_types
+        self.risks = risks
+        self.subject_exist = subject_exist
+        self.total_risk_number = total_risk_number
+
+    def validate(self):
+        if self.company_info:
+            self.company_info.validate()
+        if self.risks:
+            self.risks.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ai_risk_summary is not None:
+            result['aiRiskSummary'] = self.ai_risk_summary
+        if self.ai_sample_risk_count is not None:
+            result['aiSampleRiskCount'] = self.ai_sample_risk_count
+        if self.ai_summary_status is not None:
+            result['aiSummaryStatus'] = self.ai_summary_status
+        if self.biz_id is not None:
+            result['bizId'] = self.biz_id
+        if self.company_info is not None:
+            result['companyInfo'] = self.company_info.to_map()
+        if self.data_status is not None:
+            result['dataStatus'] = self.data_status
+        if self.data_updated_at is not None:
+            result['dataUpdatedAt'] = self.data_updated_at
+        if self.free_benefit_rest_enough is not None:
+            result['freeBenefitRestEnough'] = self.free_benefit_rest_enough
+        if self.risk_types is not None:
+            result['riskTypes'] = self.risk_types
+        if self.risks is not None:
+            result['risks'] = self.risks.to_map()
+        if self.subject_exist is not None:
+            result['subjectExist'] = self.subject_exist
+        if self.total_risk_number is not None:
+            result['totalRiskNumber'] = self.total_risk_number
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('aiRiskSummary') is not None:
+            self.ai_risk_summary = m.get('aiRiskSummary')
+        if m.get('aiSampleRiskCount') is not None:
+            self.ai_sample_risk_count = m.get('aiSampleRiskCount')
+        if m.get('aiSummaryStatus') is not None:
+            self.ai_summary_status = m.get('aiSummaryStatus')
+        if m.get('bizId') is not None:
+            self.biz_id = m.get('bizId')
+        if m.get('companyInfo') is not None:
+            temp_model = QuerySubjectPublicRiskResponseBodyResultCompanyInfo()
+            self.company_info = temp_model.from_map(m['companyInfo'])
+        if m.get('dataStatus') is not None:
+            self.data_status = m.get('dataStatus')
+        if m.get('dataUpdatedAt') is not None:
+            self.data_updated_at = m.get('dataUpdatedAt')
+        if m.get('freeBenefitRestEnough') is not None:
+            self.free_benefit_rest_enough = m.get('freeBenefitRestEnough')
+        if m.get('riskTypes') is not None:
+            self.risk_types = m.get('riskTypes')
+        if m.get('risks') is not None:
+            temp_model = QuerySubjectPublicRiskResponseBodyResultRisks()
+            self.risks = temp_model.from_map(m['risks'])
+        if m.get('subjectExist') is not None:
+            self.subject_exist = m.get('subjectExist')
+        if m.get('totalRiskNumber') is not None:
+            self.total_risk_number = m.get('totalRiskNumber')
+        return self
+
+
+class QuerySubjectPublicRiskResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: QuerySubjectPublicRiskResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = QuerySubjectPublicRiskResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class QuerySubjectPublicRiskResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QuerySubjectPublicRiskResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QuerySubjectPublicRiskResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

@@ -1906,12 +1906,14 @@ class OpenUserSubAdminDTO(TeaModel):
 class PerfTask(TeaModel):
     def __init__(
         self,
+        cycle_name: str = None,
         id: str = None,
         is_deleted: str = None,
         status: str = None,
         title: str = None,
         user_id: str = None,
     ):
+        self.cycle_name = cycle_name
         self.id = id
         self.is_deleted = is_deleted
         self.status = status
@@ -1927,6 +1929,8 @@ class PerfTask(TeaModel):
             return _map
 
         result = dict()
+        if self.cycle_name is not None:
+            result['cycleName'] = self.cycle_name
         if self.id is not None:
             result['id'] = self.id
         if self.is_deleted is not None:
@@ -1941,6 +1945,8 @@ class PerfTask(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('cycleName') is not None:
+            self.cycle_name = m.get('cycleName')
         if m.get('id') is not None:
             self.id = m.get('id')
         if m.get('isDeleted') is not None:
