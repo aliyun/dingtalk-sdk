@@ -416,9 +416,6 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->adminUserIds)) {
             $body['adminUserIds'] = $request->adminUserIds;
         }
-        if (!Utils::isUnset($request->deptIds)) {
-            $body['deptIds'] = $request->deptIds;
-        }
         if (!Utils::isUnset($request->dialectCode)) {
             $body['dialectCode'] = $request->dialectCode;
         }

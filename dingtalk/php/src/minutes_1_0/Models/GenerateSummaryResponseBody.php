@@ -11,6 +11,11 @@ class GenerateSummaryResponseBody extends Model
     /**
      * @var string
      */
+    public $generatingStatus;
+
+    /**
+     * @var string
+     */
     public $summaryText;
 
     /**
@@ -18,6 +23,7 @@ class GenerateSummaryResponseBody extends Model
      */
     public $taskUuid;
     protected $_name = [
+        'generatingStatus' => 'generatingStatus',
         'summaryText' => 'summaryText',
         'taskUuid' => 'taskUuid',
     ];
@@ -27,6 +33,9 @@ class GenerateSummaryResponseBody extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->generatingStatus) {
+            $res['generatingStatus'] = $this->generatingStatus;
+        }
         if (null !== $this->summaryText) {
             $res['summaryText'] = $this->summaryText;
         }
@@ -45,6 +54,9 @@ class GenerateSummaryResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['generatingStatus'])) {
+            $model->generatingStatus = $map['generatingStatus'];
+        }
         if (isset($map['summaryText'])) {
             $model->summaryText = $map['summaryText'];
         }

@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vcontract_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\AnalyzeSubjectTransactionRiskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\AnalyzeSubjectTransactionRiskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\AnalyzeSubjectTransactionRiskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\AsyncCreateContractAnalysisHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\AsyncCreateContractAnalysisRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\AsyncCreateContractAnalysisResponse;
@@ -123,6 +126,8 @@ use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QuerySignFlowDetailResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QuerySignTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QuerySignTaskRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QuerySignTaskResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QuerySubjectPublicRiskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QuerySubjectPublicRiskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\SearchFileKeywordPositionsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\SearchFileKeywordPositionsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\SearchFileKeywordPositionsResponse;
@@ -147,10 +152,83 @@ class Dingtalk extends OpenApiClient
         parent::__construct($config);
         $gatewayClient = new Client();
         $this->_spi = $gatewayClient;
+        $this->_signatureAlgorithm = 'v2';
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @summary 相对方交易风险分析
+     *  *
+     * @param AnalyzeSubjectTransactionRiskRequest $request AnalyzeSubjectTransactionRiskRequest
+     * @param AnalyzeSubjectTransactionRiskHeaders $headers AnalyzeSubjectTransactionRiskHeaders
+     * @param RuntimeOptions                       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AnalyzeSubjectTransactionRiskResponse AnalyzeSubjectTransactionRiskResponse
+     */
+    public function analyzeSubjectTransactionRiskWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->contractId)) {
+            $query['contractId'] = $request->contractId;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $query['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->historyEndTime)) {
+            $query['historyEndTime'] = $request->historyEndTime;
+        }
+        if (!Utils::isUnset($request->historyStartTime)) {
+            $query['historyStartTime'] = $request->historyStartTime;
+        }
+        if (!Utils::isUnset($request->staffId)) {
+            $query['staffId'] = $request->staffId;
+        }
+        if (!Utils::isUnset($request->subjectUniqueCode)) {
+            $query['subjectUniqueCode'] = $request->subjectUniqueCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'AnalyzeSubjectTransactionRisk',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/subjects/transaction-risks/analyze',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return AnalyzeSubjectTransactionRiskResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 相对方交易风险分析
+     *  *
+     * @param AnalyzeSubjectTransactionRiskRequest $request AnalyzeSubjectTransactionRiskRequest
+     *
+     * @return AnalyzeSubjectTransactionRiskResponse AnalyzeSubjectTransactionRiskResponse
+     */
+    public function analyzeSubjectTransactionRisk($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AnalyzeSubjectTransactionRiskHeaders([]);
+
+        return $this->analyzeSubjectTransactionRiskWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -2727,6 +2805,83 @@ class Dingtalk extends OpenApiClient
         $headers = new QuerySignTaskHeaders([]);
 
         return $this->querySignTaskWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 相对方企业风险查询
+     *  *
+     * @param QuerySubjectPublicRiskRequest $request QuerySubjectPublicRiskRequest
+     * @param string[]                      $headers map
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QuerySubjectPublicRiskResponse QuerySubjectPublicRiskResponse
+     */
+    public function querySubjectPublicRiskWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->bizId)) {
+            $query['bizId'] = $request->bizId;
+        }
+        if (!Utils::isUnset($request->companyId)) {
+            $query['companyId'] = $request->companyId;
+        }
+        if (!Utils::isUnset($request->contractAmount)) {
+            $query['contractAmount'] = $request->contractAmount;
+        }
+        if (!Utils::isUnset($request->contractType)) {
+            $query['contractType'] = $request->contractType;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $query['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->creditCode)) {
+            $query['creditCode'] = $request->creditCode;
+        }
+        if (!Utils::isUnset($request->from)) {
+            $query['from'] = $request->from;
+        }
+        if (!Utils::isUnset($request->registrationNumber)) {
+            $query['registrationNumber'] = $request->registrationNumber;
+        }
+        if (!Utils::isUnset($request->staffId)) {
+            $query['staffId'] = $request->staffId;
+        }
+        if (!Utils::isUnset($request->subjectName)) {
+            $query['subjectName'] = $request->subjectName;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $headers,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'QuerySubjectPublicRisk',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/subjects/risks/query',
+            'method' => 'POST',
+            'authType' => 'Anonymous',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QuerySubjectPublicRiskResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 相对方企业风险查询
+     *  *
+     * @param QuerySubjectPublicRiskRequest $request QuerySubjectPublicRiskRequest
+     *
+     * @return QuerySubjectPublicRiskResponse QuerySubjectPublicRiskResponse
+     */
+    public function querySubjectPublicRisk($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = [];
+
+        return $this->querySubjectPublicRiskWithOptions($request, $headers, $runtime);
     }
 
     /**

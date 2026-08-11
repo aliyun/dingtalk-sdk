@@ -17,6 +17,21 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AddHrmPreentryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AddRosterFieldFormHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AddRosterFieldFormRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AddRosterFieldFormResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AISaleEntityCreateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AISaleEntityCreateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AISaleEntityCreateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AISaleEntityDetailHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AISaleEntityDetailRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AISaleEntityDetailResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AISaleEntityListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AISaleEntityListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AISaleEntityListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AISaleEntityUpdateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AISaleEntityUpdateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AISaleEntityUpdateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AISaleSchemaGetHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AISaleSchemaGetRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AISaleSchemaGetResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\ConvertUnionIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\ConvertUnionIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\ConvertUnionIdResponse;
@@ -220,6 +235,330 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @summary AI营销创建实体
+     *  *
+     * @param AISaleEntityCreateRequest $request AISaleEntityCreateRequest
+     * @param AISaleEntityCreateHeaders $headers AISaleEntityCreateHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AISaleEntityCreateResponse AISaleEntityCreateResponse
+     */
+    public function aISaleEntityCreateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->entityId)) {
+            $body['entityId'] = $request->entityId;
+        }
+        if (!Utils::isUnset($request->entityType)) {
+            $body['entityType'] = $request->entityType;
+        }
+        if (!Utils::isUnset($request->fieldInstances)) {
+            $body['fieldInstances'] = $request->fieldInstances;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'AISaleEntityCreate',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/ai-sale/api/v1/entity/create',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return AISaleEntityCreateResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary AI营销创建实体
+     *  *
+     * @param AISaleEntityCreateRequest $request AISaleEntityCreateRequest
+     *
+     * @return AISaleEntityCreateResponse AISaleEntityCreateResponse
+     */
+    public function aISaleEntityCreate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AISaleEntityCreateHeaders([]);
+
+        return $this->aISaleEntityCreateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary AI营销实体详情查询
+     *  *
+     * @param AISaleEntityDetailRequest $request AISaleEntityDetailRequest
+     * @param AISaleEntityDetailHeaders $headers AISaleEntityDetailHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AISaleEntityDetailResponse AISaleEntityDetailResponse
+     */
+    public function aISaleEntityDetailWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->entityId)) {
+            $body['entityId'] = $request->entityId;
+        }
+        if (!Utils::isUnset($request->entityType)) {
+            $body['entityType'] = $request->entityType;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'AISaleEntityDetail',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/ai-sale/api/v1/entity/detail',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return AISaleEntityDetailResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary AI营销实体详情查询
+     *  *
+     * @param AISaleEntityDetailRequest $request AISaleEntityDetailRequest
+     *
+     * @return AISaleEntityDetailResponse AISaleEntityDetailResponse
+     */
+    public function aISaleEntityDetail($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AISaleEntityDetailHeaders([]);
+
+        return $this->aISaleEntityDetailWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary AI营销实体列表查询
+     *  *
+     * @param AISaleEntityListRequest $request AISaleEntityListRequest
+     * @param AISaleEntityListHeaders $headers AISaleEntityListHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AISaleEntityListResponse AISaleEntityListResponse
+     */
+    public function aISaleEntityListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->conditions)) {
+            $body['conditions'] = $request->conditions;
+        }
+        if (!Utils::isUnset($request->cursor)) {
+            $body['cursor'] = $request->cursor;
+        }
+        if (!Utils::isUnset($request->entityType)) {
+            $body['entityType'] = $request->entityType;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'AISaleEntityList',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/ai-sale/api/v1/entity/list',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return AISaleEntityListResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary AI营销实体列表查询
+     *  *
+     * @param AISaleEntityListRequest $request AISaleEntityListRequest
+     *
+     * @return AISaleEntityListResponse AISaleEntityListResponse
+     */
+    public function aISaleEntityList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AISaleEntityListHeaders([]);
+
+        return $this->aISaleEntityListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary AI营销实体更新
+     *  *
+     * @param AISaleEntityUpdateRequest $request AISaleEntityUpdateRequest
+     * @param AISaleEntityUpdateHeaders $headers AISaleEntityUpdateHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AISaleEntityUpdateResponse AISaleEntityUpdateResponse
+     */
+    public function aISaleEntityUpdateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->entityId)) {
+            $body['entityId'] = $request->entityId;
+        }
+        if (!Utils::isUnset($request->entityType)) {
+            $body['entityType'] = $request->entityType;
+        }
+        if (!Utils::isUnset($request->fieldInstances)) {
+            $body['fieldInstances'] = $request->fieldInstances;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'AISaleEntityUpdate',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/ai-sale/api/v1/entity/update',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return AISaleEntityUpdateResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary AI营销实体更新
+     *  *
+     * @param AISaleEntityUpdateRequest $request AISaleEntityUpdateRequest
+     *
+     * @return AISaleEntityUpdateResponse AISaleEntityUpdateResponse
+     */
+    public function aISaleEntityUpdate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AISaleEntityUpdateHeaders([]);
+
+        return $this->aISaleEntityUpdateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取AI营销实体定义信息
+     *  *
+     * @param AISaleSchemaGetRequest $request AISaleSchemaGetRequest
+     * @param AISaleSchemaGetHeaders $headers AISaleSchemaGetHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AISaleSchemaGetResponse AISaleSchemaGetResponse
+     */
+    public function aISaleSchemaGetWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->entityType)) {
+            $body['entityType'] = $request->entityType;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'AISaleSchemaGet',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/ai-sale/api/v1/schema/get',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return AISaleSchemaGetResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取AI营销实体定义信息
+     *  *
+     * @param AISaleSchemaGetRequest $request AISaleSchemaGetRequest
+     *
+     * @return AISaleSchemaGetResponse AISaleSchemaGetResponse
+     */
+    public function aISaleSchemaGet($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AISaleSchemaGetHeaders([]);
+
+        return $this->aISaleSchemaGetWithOptions($request, $headers, $runtime);
     }
 
     /**

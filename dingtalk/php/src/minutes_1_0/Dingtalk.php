@@ -32,6 +32,9 @@ use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\ExportMinutesTaskResultRespons
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\GenerateSummaryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\GenerateSummaryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\GenerateSummaryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\MoveOutTempStorageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\MoveOutTempStorageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\MoveOutTempStorageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\OpenQueryMinutesSummaryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\OpenQueryMinutesSummaryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\OpenQueryMinutesSummaryResponse;
@@ -682,6 +685,9 @@ class Dingtalk extends OpenApiClient
             $query['unionId'] = $request->unionId;
         }
         $body = [];
+        if (!Utils::isUnset($request->asyncGenerate)) {
+            $body['asyncGenerate'] = $request->asyncGenerate;
+        }
         if (!Utils::isUnset($request->diyTemplateVersion)) {
             $body['diyTemplateVersion'] = $request->diyTemplateVersion;
         }
@@ -735,6 +741,66 @@ class Dingtalk extends OpenApiClient
         $headers = new GenerateSummaryHeaders([]);
 
         return $this->generateSummaryWithOptions($taskUuid, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 移动临时存储听记到正式存储
+     *  *
+     * @param MoveOutTempStorageRequest $request MoveOutTempStorageRequest
+     * @param MoveOutTempStorageHeaders $headers MoveOutTempStorageHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return MoveOutTempStorageResponse MoveOutTempStorageResponse
+     */
+    public function moveOutTempStorageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->taskUuid)) {
+            $query['taskUuid'] = $request->taskUuid;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'MoveOutTempStorage',
+            'version' => 'minutes_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/minutes/flashMinutes/moveOutTempStorage',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return MoveOutTempStorageResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 移动临时存储听记到正式存储
+     *  *
+     * @param MoveOutTempStorageRequest $request MoveOutTempStorageRequest
+     *
+     * @return MoveOutTempStorageResponse MoveOutTempStorageResponse
+     */
+    public function moveOutTempStorage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new MoveOutTempStorageHeaders([]);
+
+        return $this->moveOutTempStorageWithOptions($request, $headers, $runtime);
     }
 
     /**

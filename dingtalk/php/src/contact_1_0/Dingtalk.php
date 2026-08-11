@@ -116,6 +116,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetTranslateFileJobResultRespo
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUnionIdByMigrationUnionIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUnionIdByMigrationUnionIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUnionIdByMigrationUnionIdResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUserByDingTalkIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUserByDingTalkIdRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUserByDingTalkIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUserCardHolderListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUserCardHolderListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUserCardHolderListResponse;
@@ -1402,15 +1405,15 @@ class Dingtalk extends OpenApiClient
     public function createUserGroupWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $body = [];
         if (!Utils::isUnset($request->clientShow)) {
-            $query['clientShow'] = $request->clientShow;
+            $body['clientShow'] = $request->clientShow;
         }
         if (!Utils::isUnset($request->description)) {
-            $query['description'] = $request->description;
+            $body['description'] = $request->description;
         }
         if (!Utils::isUnset($request->name)) {
-            $query['name'] = $request->name;
+            $body['name'] = $request->name;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -1421,7 +1424,7 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
             'action' => 'CreateUserGroup',
@@ -1894,9 +1897,9 @@ class Dingtalk extends OpenApiClient
     public function deleteUserGroupWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $body = [];
         if (!Utils::isUnset($request->groupCode)) {
-            $query['groupCode'] = $request->groupCode;
+            $body['groupCode'] = $request->groupCode;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -1907,7 +1910,7 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
             'action' => 'DeleteUserGroup',
@@ -2866,6 +2869,63 @@ class Dingtalk extends OpenApiClient
         $headers = new GetUserHeaders([]);
 
         return $this->getUserWithOptions($unionId, $headers, $runtime);
+    }
+
+    /**
+     * @summary 根据钉钉号获取员工信息
+     *  *
+     * @param GetUserByDingTalkIdRequest $request GetUserByDingTalkIdRequest
+     * @param GetUserByDingTalkIdHeaders $headers GetUserByDingTalkIdHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetUserByDingTalkIdResponse GetUserByDingTalkIdResponse
+     */
+    public function getUserByDingTalkIdWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->dingtalkId)) {
+            $query['dingtalkId'] = $request->dingtalkId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'GetUserByDingTalkId',
+            'version' => 'contact_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contact/user/getByDingTalkId',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetUserByDingTalkIdResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 根据钉钉号获取员工信息
+     *  *
+     * @param GetUserByDingTalkIdRequest $request GetUserByDingTalkIdRequest
+     *
+     * @return GetUserByDingTalkIdResponse GetUserByDingTalkIdResponse
+     */
+    public function getUserByDingTalkId($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetUserByDingTalkIdHeaders([]);
+
+        return $this->getUserByDingTalkIdWithOptions($request, $headers, $runtime);
     }
 
     /**

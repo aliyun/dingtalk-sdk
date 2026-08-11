@@ -14,11 +14,6 @@ class CreateTeamRequest extends Model
     public $adminUserIds;
 
     /**
-     * @var int[]
-     */
-    public $deptIds;
-
-    /**
      * @var string
      */
     public $dialectCode;
@@ -50,7 +45,6 @@ class CreateTeamRequest extends Model
     public $userIds;
     protected $_name = [
         'adminUserIds' => 'adminUserIds',
-        'deptIds' => 'deptIds',
         'dialectCode' => 'dialectCode',
         'name' => 'name',
         'sceneCodes' => 'sceneCodes',
@@ -65,9 +59,6 @@ class CreateTeamRequest extends Model
         $res = [];
         if (null !== $this->adminUserIds) {
             $res['adminUserIds'] = $this->adminUserIds;
-        }
-        if (null !== $this->deptIds) {
-            $res['deptIds'] = $this->deptIds;
         }
         if (null !== $this->dialectCode) {
             $res['dialectCode'] = $this->dialectCode;
@@ -99,11 +90,6 @@ class CreateTeamRequest extends Model
         if (isset($map['adminUserIds'])) {
             if (!empty($map['adminUserIds'])) {
                 $model->adminUserIds = $map['adminUserIds'];
-            }
-        }
-        if (isset($map['deptIds'])) {
-            if (!empty($map['deptIds'])) {
-                $model->deptIds = $map['deptIds'];
             }
         }
         if (isset($map['dialectCode'])) {

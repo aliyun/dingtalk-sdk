@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class PerfTask extends Model
 {
     /**
+     * @example 2026年/2026年第一季度
+     *
+     * @var string
+     */
+    public $cycleName;
+
+    /**
      * @example 328497234
      *
      * @var string
@@ -43,6 +50,7 @@ class PerfTask extends Model
      */
     public $userId;
     protected $_name = [
+        'cycleName' => 'cycleName',
         'id' => 'id',
         'isDeleted' => 'isDeleted',
         'status' => 'status',
@@ -55,6 +63,9 @@ class PerfTask extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->cycleName) {
+            $res['cycleName'] = $this->cycleName;
+        }
         if (null !== $this->id) {
             $res['id'] = $this->id;
         }
@@ -82,6 +93,9 @@ class PerfTask extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['cycleName'])) {
+            $model->cycleName = $map['cycleName'];
+        }
         if (isset($map['id'])) {
             $model->id = $map['id'];
         }

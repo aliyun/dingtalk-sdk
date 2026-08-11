@@ -14,6 +14,11 @@ class QueryUserMinutesPermissionResponseBody extends Model
     public $hasPermission;
 
     /**
+     * @var string[]
+     */
+    public $roleSubResourceIds;
+
+    /**
      * @description 角色类型：manager-管理员, owner-所有者, editor-可编辑, read_download-可查看/下载, read-仅查看, none-无权限
      *
      * @var string
@@ -21,6 +26,7 @@ class QueryUserMinutesPermissionResponseBody extends Model
     public $roleType;
     protected $_name = [
         'hasPermission' => 'hasPermission',
+        'roleSubResourceIds' => 'roleSubResourceIds',
         'roleType' => 'roleType',
     ];
 
@@ -31,6 +37,9 @@ class QueryUserMinutesPermissionResponseBody extends Model
         $res = [];
         if (null !== $this->hasPermission) {
             $res['hasPermission'] = $this->hasPermission;
+        }
+        if (null !== $this->roleSubResourceIds) {
+            $res['roleSubResourceIds'] = $this->roleSubResourceIds;
         }
         if (null !== $this->roleType) {
             $res['roleType'] = $this->roleType;
@@ -49,6 +58,11 @@ class QueryUserMinutesPermissionResponseBody extends Model
         $model = new self();
         if (isset($map['hasPermission'])) {
             $model->hasPermission = $map['hasPermission'];
+        }
+        if (isset($map['roleSubResourceIds'])) {
+            if (!empty($map['roleSubResourceIds'])) {
+                $model->roleSubResourceIds = $map['roleSubResourceIds'];
+            }
         }
         if (isset($map['roleType'])) {
             $model->roleType = $map['roleType'];

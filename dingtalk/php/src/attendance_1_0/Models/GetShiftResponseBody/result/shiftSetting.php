@@ -41,6 +41,26 @@ class shiftSetting extends Model
     public $gmtModified;
 
     /**
+     * @var int
+     */
+    public $overtimeBehindDuration;
+
+    /**
+     * @var int
+     */
+    public $overtimeFrontDuration;
+
+    /**
+     * @var bool
+     */
+    public $overtimeOpen;
+
+    /**
+     * @var int
+     */
+    public $overtimeType;
+
+    /**
      * @example 678215070
      *
      * @var int
@@ -72,6 +92,10 @@ class shiftSetting extends Model
         'corpId' => 'corpId',
         'gmtCreate' => 'gmtCreate',
         'gmtModified' => 'gmtModified',
+        'overtimeBehindDuration' => 'overtimeBehindDuration',
+        'overtimeFrontDuration' => 'overtimeFrontDuration',
+        'overtimeOpen' => 'overtimeOpen',
+        'overtimeType' => 'overtimeType',
         'shiftId' => 'shiftId',
         'shiftSettingId' => 'shiftSettingId',
         'shiftType' => 'shiftType',
@@ -94,6 +118,18 @@ class shiftSetting extends Model
         }
         if (null !== $this->gmtModified) {
             $res['gmtModified'] = $this->gmtModified;
+        }
+        if (null !== $this->overtimeBehindDuration) {
+            $res['overtimeBehindDuration'] = $this->overtimeBehindDuration;
+        }
+        if (null !== $this->overtimeFrontDuration) {
+            $res['overtimeFrontDuration'] = $this->overtimeFrontDuration;
+        }
+        if (null !== $this->overtimeOpen) {
+            $res['overtimeOpen'] = $this->overtimeOpen;
+        }
+        if (null !== $this->overtimeType) {
+            $res['overtimeType'] = $this->overtimeType;
         }
         if (null !== $this->shiftId) {
             $res['shiftId'] = $this->shiftId;
@@ -130,6 +166,18 @@ class shiftSetting extends Model
         }
         if (isset($map['gmtModified'])) {
             $model->gmtModified = $map['gmtModified'];
+        }
+        if (isset($map['overtimeBehindDuration'])) {
+            $model->overtimeBehindDuration = $map['overtimeBehindDuration'];
+        }
+        if (isset($map['overtimeFrontDuration'])) {
+            $model->overtimeFrontDuration = $map['overtimeFrontDuration'];
+        }
+        if (isset($map['overtimeOpen'])) {
+            $model->overtimeOpen = $map['overtimeOpen'];
+        }
+        if (isset($map['overtimeType'])) {
+            $model->overtimeType = $map['overtimeType'];
         }
         if (isset($map['shiftId'])) {
             $model->shiftId = $map['shiftId'];

@@ -1,0 +1,202 @@
+<?php
+
+// This file is auto-generated, don't edit it. Thanks.
+
+namespace AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AISaleSchemaGetResponseBody\result;
+
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AISaleSchemaGetResponseBody\result\fields\options;
+use AlibabaCloud\Tea\Model;
+
+class fields extends Model
+{
+    /**
+     * @var string
+     */
+    public $defaultValue;
+
+    /**
+     * @var string
+     */
+    public $description;
+
+    /**
+     * @var string
+     */
+    public $entityType;
+
+    /**
+     * @var string
+     */
+    public $fieldKey;
+
+    /**
+     * @var string
+     */
+    public $fieldLabel;
+
+    /**
+     * @var string
+     */
+    public $fieldType;
+
+    /**
+     * @var string
+     */
+    public $groupName;
+
+    /**
+     * @var string
+     */
+    public $itemType;
+
+    /**
+     * @var options[]
+     */
+    public $options;
+
+    /**
+     * @var string
+     */
+    public $placeholder;
+
+    /**
+     * @var bool
+     */
+    public $required;
+
+    /**
+     * @var int
+     */
+    public $sortOrder;
+
+    /**
+     * @var string
+     */
+    public $source;
+    protected $_name = [
+        'defaultValue' => 'defaultValue',
+        'description' => 'description',
+        'entityType' => 'entityType',
+        'fieldKey' => 'fieldKey',
+        'fieldLabel' => 'fieldLabel',
+        'fieldType' => 'fieldType',
+        'groupName' => 'groupName',
+        'itemType' => 'itemType',
+        'options' => 'options',
+        'placeholder' => 'placeholder',
+        'required' => 'required',
+        'sortOrder' => 'sortOrder',
+        'source' => 'source',
+    ];
+
+    public function validate() {}
+
+    public function toMap()
+    {
+        $res = [];
+        if (null !== $this->defaultValue) {
+            $res['defaultValue'] = $this->defaultValue;
+        }
+        if (null !== $this->description) {
+            $res['description'] = $this->description;
+        }
+        if (null !== $this->entityType) {
+            $res['entityType'] = $this->entityType;
+        }
+        if (null !== $this->fieldKey) {
+            $res['fieldKey'] = $this->fieldKey;
+        }
+        if (null !== $this->fieldLabel) {
+            $res['fieldLabel'] = $this->fieldLabel;
+        }
+        if (null !== $this->fieldType) {
+            $res['fieldType'] = $this->fieldType;
+        }
+        if (null !== $this->groupName) {
+            $res['groupName'] = $this->groupName;
+        }
+        if (null !== $this->itemType) {
+            $res['itemType'] = $this->itemType;
+        }
+        if (null !== $this->options) {
+            $res['options'] = [];
+            if (null !== $this->options && \is_array($this->options)) {
+                $n = 0;
+                foreach ($this->options as $item) {
+                    $res['options'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
+        if (null !== $this->placeholder) {
+            $res['placeholder'] = $this->placeholder;
+        }
+        if (null !== $this->required) {
+            $res['required'] = $this->required;
+        }
+        if (null !== $this->sortOrder) {
+            $res['sortOrder'] = $this->sortOrder;
+        }
+        if (null !== $this->source) {
+            $res['source'] = $this->source;
+        }
+
+        return $res;
+    }
+
+    /**
+     * @param array $map
+     *
+     * @return fields
+     */
+    public static function fromMap($map = [])
+    {
+        $model = new self();
+        if (isset($map['defaultValue'])) {
+            $model->defaultValue = $map['defaultValue'];
+        }
+        if (isset($map['description'])) {
+            $model->description = $map['description'];
+        }
+        if (isset($map['entityType'])) {
+            $model->entityType = $map['entityType'];
+        }
+        if (isset($map['fieldKey'])) {
+            $model->fieldKey = $map['fieldKey'];
+        }
+        if (isset($map['fieldLabel'])) {
+            $model->fieldLabel = $map['fieldLabel'];
+        }
+        if (isset($map['fieldType'])) {
+            $model->fieldType = $map['fieldType'];
+        }
+        if (isset($map['groupName'])) {
+            $model->groupName = $map['groupName'];
+        }
+        if (isset($map['itemType'])) {
+            $model->itemType = $map['itemType'];
+        }
+        if (isset($map['options'])) {
+            if (!empty($map['options'])) {
+                $model->options = [];
+                $n = 0;
+                foreach ($map['options'] as $item) {
+                    $model->options[$n++] = null !== $item ? options::fromMap($item) : $item;
+                }
+            }
+        }
+        if (isset($map['placeholder'])) {
+            $model->placeholder = $map['placeholder'];
+        }
+        if (isset($map['required'])) {
+            $model->required = $map['required'];
+        }
+        if (isset($map['sortOrder'])) {
+            $model->sortOrder = $map['sortOrder'];
+        }
+        if (isset($map['source'])) {
+            $model->source = $map['source'];
+        }
+
+        return $model;
+    }
+}

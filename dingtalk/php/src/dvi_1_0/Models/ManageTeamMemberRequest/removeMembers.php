@@ -14,17 +14,11 @@ class removeMembers extends Model
     public $adminUserIds;
 
     /**
-     * @var int[]
-     */
-    public $deptIds;
-
-    /**
      * @var string[]
      */
     public $userIds;
     protected $_name = [
         'adminUserIds' => 'adminUserIds',
-        'deptIds' => 'deptIds',
         'userIds' => 'userIds',
     ];
 
@@ -35,9 +29,6 @@ class removeMembers extends Model
         $res = [];
         if (null !== $this->adminUserIds) {
             $res['adminUserIds'] = $this->adminUserIds;
-        }
-        if (null !== $this->deptIds) {
-            $res['deptIds'] = $this->deptIds;
         }
         if (null !== $this->userIds) {
             $res['userIds'] = $this->userIds;
@@ -57,11 +48,6 @@ class removeMembers extends Model
         if (isset($map['adminUserIds'])) {
             if (!empty($map['adminUserIds'])) {
                 $model->adminUserIds = $map['adminUserIds'];
-            }
-        }
-        if (isset($map['deptIds'])) {
-            if (!empty($map['deptIds'])) {
-                $model->deptIds = $map['deptIds'];
             }
         }
         if (isset($map['userIds'])) {

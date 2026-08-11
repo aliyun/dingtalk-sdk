@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class CreateUserGroupRequest extends Model
 {
     /**
-     * @description This parameter is required.
-     *
      * @var bool
      */
     public $clientShow;
 
     /**
-     * @example 静态用户组
+     * @description This parameter is required.
+     *
+     * @example 静态用户组描述
      *
      * @var string
      */

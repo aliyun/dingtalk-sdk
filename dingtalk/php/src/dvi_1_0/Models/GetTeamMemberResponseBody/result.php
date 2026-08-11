@@ -5,7 +5,6 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetTeamMemberResponseBody;
 
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetTeamMemberResponseBody\result\admins;
-use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetTeamMemberResponseBody\result\depts;
 use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\GetTeamMemberResponseBody\result\members;
 use AlibabaCloud\Tea\Model;
 
@@ -17,17 +16,11 @@ class result extends Model
     public $admins;
 
     /**
-     * @var depts[]
-     */
-    public $depts;
-
-    /**
      * @var members[]
      */
     public $members;
     protected $_name = [
         'admins' => 'admins',
-        'depts' => 'depts',
         'members' => 'members',
     ];
 
@@ -42,15 +35,6 @@ class result extends Model
                 $n = 0;
                 foreach ($this->admins as $item) {
                     $res['admins'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
-        }
-        if (null !== $this->depts) {
-            $res['depts'] = [];
-            if (null !== $this->depts && \is_array($this->depts)) {
-                $n = 0;
-                foreach ($this->depts as $item) {
-                    $res['depts'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
         }
@@ -81,15 +65,6 @@ class result extends Model
                 $n = 0;
                 foreach ($map['admins'] as $item) {
                     $model->admins[$n++] = null !== $item ? admins::fromMap($item) : $item;
-                }
-            }
-        }
-        if (isset($map['depts'])) {
-            if (!empty($map['depts'])) {
-                $model->depts = [];
-                $n = 0;
-                foreach ($map['depts'] as $item) {
-                    $model->depts[$n++] = null !== $item ? depts::fromMap($item) : $item;
                 }
             }
         }

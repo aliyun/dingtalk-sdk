@@ -52,6 +52,26 @@ class setting extends Model
     public $lateBackSetting;
 
     /**
+     * @var int
+     */
+    public $overtimeBehindDuration;
+
+    /**
+     * @var int
+     */
+    public $overtimeFrontDuration;
+
+    /**
+     * @var bool
+     */
+    public $overtimeOpen;
+
+    /**
+     * @var int
+     */
+    public $overtimeType;
+
+    /**
      * @example 1234
      *
      * @var int
@@ -91,6 +111,10 @@ class setting extends Model
         'extras' => 'extras',
         'isFlexible' => 'isFlexible',
         'lateBackSetting' => 'lateBackSetting',
+        'overtimeBehindDuration' => 'overtimeBehindDuration',
+        'overtimeFrontDuration' => 'overtimeFrontDuration',
+        'overtimeOpen' => 'overtimeOpen',
+        'overtimeType' => 'overtimeType',
         'referenceClassId' => 'referenceClassId',
         'seriousLateMinutes' => 'seriousLateMinutes',
         'shiftType' => 'shiftType',
@@ -123,6 +147,18 @@ class setting extends Model
         }
         if (null !== $this->lateBackSetting) {
             $res['lateBackSetting'] = null !== $this->lateBackSetting ? $this->lateBackSetting->toMap() : null;
+        }
+        if (null !== $this->overtimeBehindDuration) {
+            $res['overtimeBehindDuration'] = $this->overtimeBehindDuration;
+        }
+        if (null !== $this->overtimeFrontDuration) {
+            $res['overtimeFrontDuration'] = $this->overtimeFrontDuration;
+        }
+        if (null !== $this->overtimeOpen) {
+            $res['overtimeOpen'] = $this->overtimeOpen;
+        }
+        if (null !== $this->overtimeType) {
+            $res['overtimeType'] = $this->overtimeType;
         }
         if (null !== $this->referenceClassId) {
             $res['referenceClassId'] = $this->referenceClassId;
@@ -177,6 +213,18 @@ class setting extends Model
         }
         if (isset($map['lateBackSetting'])) {
             $model->lateBackSetting = lateBackSetting::fromMap($map['lateBackSetting']);
+        }
+        if (isset($map['overtimeBehindDuration'])) {
+            $model->overtimeBehindDuration = $map['overtimeBehindDuration'];
+        }
+        if (isset($map['overtimeFrontDuration'])) {
+            $model->overtimeFrontDuration = $map['overtimeFrontDuration'];
+        }
+        if (isset($map['overtimeOpen'])) {
+            $model->overtimeOpen = $map['overtimeOpen'];
+        }
+        if (isset($map['overtimeType'])) {
+            $model->overtimeType = $map['overtimeType'];
         }
         if (isset($map['referenceClassId'])) {
             $model->referenceClassId = $map['referenceClassId'];

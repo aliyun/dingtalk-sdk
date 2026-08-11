@@ -4,6 +4,8 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetInvoiceByPageResponseBody\result;
 
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetInvoiceByPageResponseBody\result\list_\eFlightItineraryDetailVOList;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetInvoiceByPageResponseBody\result\list_\eTrainTicketDetailVOList;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetInvoiceByPageResponseBody\result\list_\generalInvoiceDetailVOList;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetInvoiceByPageResponseBody\result\list_\transportFeeDetailVOList;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\GetInvoiceByPageResponseBody\result\list_\usedVehicleSaleDetailVOList;
@@ -30,6 +32,16 @@ class list_ extends Model
     /**
      * @var string
      */
+    public $certificationDate;
+
+    /**
+     * @var string
+     */
+    public $certificationPeriod;
+
+    /**
+     * @var string
+     */
     public $checkCode;
 
     /**
@@ -41,6 +53,16 @@ class list_ extends Model
      * @var string
      */
     public $drewDate;
+
+    /**
+     * @var eFlightItineraryDetailVOList[]
+     */
+    public $eFlightItineraryDetailVOList;
+
+    /**
+     * @var eTrainTicketDetailVOList[]
+     */
+    public $eTrainTicketDetailVOList;
 
     /**
      * @var string
@@ -97,12 +119,22 @@ class list_ extends Model
     /**
      * @var string
      */
+    public $ofdUrl;
+
+    /**
+     * @var string
+     */
     public $oilFlag;
 
     /**
      * @var string
      */
     public $payee;
+
+    /**
+     * @var string
+     */
+    public $pdfUrl;
 
     /**
      * @var string
@@ -213,13 +245,22 @@ class list_ extends Model
      * @var string
      */
     public $voucherStatus;
+
+    /**
+     * @var string
+     */
+    public $xmlUrl;
     protected $_name = [
         'accountPeriod' => 'accountPeriod',
         'amount' => 'amount',
         'amountWithTax' => 'amountWithTax',
+        'certificationDate' => 'certificationDate',
+        'certificationPeriod' => 'certificationPeriod',
         'checkCode' => 'checkCode',
         'checkTime' => 'checkTime',
         'drewDate' => 'drewDate',
+        'eFlightItineraryDetailVOList' => 'eFlightItineraryDetailVOList',
+        'eTrainTicketDetailVOList' => 'eTrainTicketDetailVOList',
         'electronicUrl' => 'electronicUrl',
         'financeType' => 'financeType',
         'fundType' => 'fundType',
@@ -230,8 +271,10 @@ class list_ extends Model
         'invoiceStatus' => 'invoiceStatus',
         'invoiceType' => 'invoiceType',
         'machineCode' => 'machineCode',
+        'ofdUrl' => 'ofdUrl',
         'oilFlag' => 'oilFlag',
         'payee' => 'payee',
+        'pdfUrl' => 'pdfUrl',
         'processInstCode' => 'processInstCode',
         'processInstType' => 'processInstType',
         'purchaserAddress' => 'purchaserAddress',
@@ -254,6 +297,7 @@ class list_ extends Model
         'verifyStatus' => 'verifyStatus',
         'voucherCode' => 'voucherCode',
         'voucherStatus' => 'voucherStatus',
+        'xmlUrl' => 'xmlUrl',
     ];
 
     public function validate() {}
@@ -270,6 +314,12 @@ class list_ extends Model
         if (null !== $this->amountWithTax) {
             $res['amountWithTax'] = $this->amountWithTax;
         }
+        if (null !== $this->certificationDate) {
+            $res['certificationDate'] = $this->certificationDate;
+        }
+        if (null !== $this->certificationPeriod) {
+            $res['certificationPeriod'] = $this->certificationPeriod;
+        }
         if (null !== $this->checkCode) {
             $res['checkCode'] = $this->checkCode;
         }
@@ -278,6 +328,24 @@ class list_ extends Model
         }
         if (null !== $this->drewDate) {
             $res['drewDate'] = $this->drewDate;
+        }
+        if (null !== $this->eFlightItineraryDetailVOList) {
+            $res['eFlightItineraryDetailVOList'] = [];
+            if (null !== $this->eFlightItineraryDetailVOList && \is_array($this->eFlightItineraryDetailVOList)) {
+                $n = 0;
+                foreach ($this->eFlightItineraryDetailVOList as $item) {
+                    $res['eFlightItineraryDetailVOList'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
+        if (null !== $this->eTrainTicketDetailVOList) {
+            $res['eTrainTicketDetailVOList'] = [];
+            if (null !== $this->eTrainTicketDetailVOList && \is_array($this->eTrainTicketDetailVOList)) {
+                $n = 0;
+                foreach ($this->eTrainTicketDetailVOList as $item) {
+                    $res['eTrainTicketDetailVOList'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
         if (null !== $this->electronicUrl) {
             $res['electronicUrl'] = $this->electronicUrl;
@@ -315,11 +383,17 @@ class list_ extends Model
         if (null !== $this->machineCode) {
             $res['machineCode'] = $this->machineCode;
         }
+        if (null !== $this->ofdUrl) {
+            $res['ofdUrl'] = $this->ofdUrl;
+        }
         if (null !== $this->oilFlag) {
             $res['oilFlag'] = $this->oilFlag;
         }
         if (null !== $this->payee) {
             $res['payee'] = $this->payee;
+        }
+        if (null !== $this->pdfUrl) {
+            $res['pdfUrl'] = $this->pdfUrl;
         }
         if (null !== $this->processInstCode) {
             $res['processInstCode'] = $this->processInstCode;
@@ -405,6 +479,9 @@ class list_ extends Model
         if (null !== $this->voucherStatus) {
             $res['voucherStatus'] = $this->voucherStatus;
         }
+        if (null !== $this->xmlUrl) {
+            $res['xmlUrl'] = $this->xmlUrl;
+        }
 
         return $res;
     }
@@ -426,6 +503,12 @@ class list_ extends Model
         if (isset($map['amountWithTax'])) {
             $model->amountWithTax = $map['amountWithTax'];
         }
+        if (isset($map['certificationDate'])) {
+            $model->certificationDate = $map['certificationDate'];
+        }
+        if (isset($map['certificationPeriod'])) {
+            $model->certificationPeriod = $map['certificationPeriod'];
+        }
         if (isset($map['checkCode'])) {
             $model->checkCode = $map['checkCode'];
         }
@@ -434,6 +517,24 @@ class list_ extends Model
         }
         if (isset($map['drewDate'])) {
             $model->drewDate = $map['drewDate'];
+        }
+        if (isset($map['eFlightItineraryDetailVOList'])) {
+            if (!empty($map['eFlightItineraryDetailVOList'])) {
+                $model->eFlightItineraryDetailVOList = [];
+                $n = 0;
+                foreach ($map['eFlightItineraryDetailVOList'] as $item) {
+                    $model->eFlightItineraryDetailVOList[$n++] = null !== $item ? eFlightItineraryDetailVOList::fromMap($item) : $item;
+                }
+            }
+        }
+        if (isset($map['eTrainTicketDetailVOList'])) {
+            if (!empty($map['eTrainTicketDetailVOList'])) {
+                $model->eTrainTicketDetailVOList = [];
+                $n = 0;
+                foreach ($map['eTrainTicketDetailVOList'] as $item) {
+                    $model->eTrainTicketDetailVOList[$n++] = null !== $item ? eTrainTicketDetailVOList::fromMap($item) : $item;
+                }
+            }
         }
         if (isset($map['electronicUrl'])) {
             $model->electronicUrl = $map['electronicUrl'];
@@ -471,11 +572,17 @@ class list_ extends Model
         if (isset($map['machineCode'])) {
             $model->machineCode = $map['machineCode'];
         }
+        if (isset($map['ofdUrl'])) {
+            $model->ofdUrl = $map['ofdUrl'];
+        }
         if (isset($map['oilFlag'])) {
             $model->oilFlag = $map['oilFlag'];
         }
         if (isset($map['payee'])) {
             $model->payee = $map['payee'];
+        }
+        if (isset($map['pdfUrl'])) {
+            $model->pdfUrl = $map['pdfUrl'];
         }
         if (isset($map['processInstCode'])) {
             $model->processInstCode = $map['processInstCode'];
@@ -560,6 +667,9 @@ class list_ extends Model
         }
         if (isset($map['voucherStatus'])) {
             $model->voucherStatus = $map['voucherStatus'];
+        }
+        if (isset($map['xmlUrl'])) {
+            $model->xmlUrl = $map['xmlUrl'];
         }
 
         return $model;

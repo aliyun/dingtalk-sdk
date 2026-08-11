@@ -9,6 +9,11 @@ use AlibabaCloud\Tea\Model;
 class GenerateSummaryRequest extends Model
 {
     /**
+     * @var bool
+     */
+    public $asyncGenerate;
+
+    /**
      * @example 1
      *
      * @var string
@@ -47,6 +52,7 @@ class GenerateSummaryRequest extends Model
      */
     public $unionId;
     protected $_name = [
+        'asyncGenerate' => 'asyncGenerate',
         'diyTemplateVersion' => 'diyTemplateVersion',
         'summaryTemplateId' => 'summaryTemplateId',
         'summaryTemplateType' => 'summaryTemplateType',
@@ -59,6 +65,9 @@ class GenerateSummaryRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->asyncGenerate) {
+            $res['asyncGenerate'] = $this->asyncGenerate;
+        }
         if (null !== $this->diyTemplateVersion) {
             $res['diyTemplateVersion'] = $this->diyTemplateVersion;
         }
@@ -86,6 +95,9 @@ class GenerateSummaryRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['asyncGenerate'])) {
+            $model->asyncGenerate = $map['asyncGenerate'];
+        }
         if (isset($map['diyTemplateVersion'])) {
             $model->diyTemplateVersion = $map['diyTemplateVersion'];
         }
