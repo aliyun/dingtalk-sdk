@@ -41,6 +41,14 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
                 [Validation(Required=false)]
                 public string AmountWithTax { get; set; }
 
+                [NameInMap("certificationDate")]
+                [Validation(Required=false)]
+                public string CertificationDate { get; set; }
+
+                [NameInMap("certificationPeriod")]
+                [Validation(Required=false)]
+                public string CertificationPeriod { get; set; }
+
                 [NameInMap("checkCode")]
                 [Validation(Required=false)]
                 public string CheckCode { get; set; }
@@ -52,6 +60,122 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
                 [NameInMap("drewDate")]
                 [Validation(Required=false)]
                 public string DrewDate { get; set; }
+
+                [NameInMap("eFlightItineraryDetailVOList")]
+                [Validation(Required=false)]
+                public List<GetInvoiceByPageResponseBodyResultListEFlightItineraryDetailVOList> EFlightItineraryDetailVOList { get; set; }
+                public class GetInvoiceByPageResponseBodyResultListEFlightItineraryDetailVOList : TeaModel {
+                    [NameInMap("carrier")]
+                    [Validation(Required=false)]
+                    public string Carrier { get; set; }
+
+                    [NameInMap("className")]
+                    [Validation(Required=false)]
+                    public string ClassName { get; set; }
+
+                    [NameInMap("flightNumber")]
+                    [Validation(Required=false)]
+                    public string FlightNumber { get; set; }
+
+                    [NameInMap("flyDate")]
+                    [Validation(Required=false)]
+                    public string FlyDate { get; set; }
+
+                    [NameInMap("flyFrom")]
+                    [Validation(Required=false)]
+                    public string FlyFrom { get; set; }
+
+                    [NameInMap("flyTime")]
+                    [Validation(Required=false)]
+                    public string FlyTime { get; set; }
+
+                    [NameInMap("flyTo")]
+                    [Validation(Required=false)]
+                    public string FlyTo { get; set; }
+
+                    [NameInMap("invoiceDetailNumber")]
+                    [Validation(Required=false)]
+                    public string InvoiceDetailNumber { get; set; }
+
+                    [NameInMap("invoiceId")]
+                    [Validation(Required=false)]
+                    public string InvoiceId { get; set; }
+
+                    [NameInMap("seat")]
+                    [Validation(Required=false)]
+                    public string Seat { get; set; }
+
+                }
+
+                [NameInMap("eTrainTicketDetailVOList")]
+                [Validation(Required=false)]
+                public List<GetInvoiceByPageResponseBodyResultListETrainTicketDetailVOList> ETrainTicketDetailVOList { get; set; }
+                public class GetInvoiceByPageResponseBodyResultListETrainTicketDetailVOList : TeaModel {
+                    [NameInMap("airConditionType")]
+                    [Validation(Required=false)]
+                    public string AirConditionType { get; set; }
+
+                    [NameInMap("carriageNo")]
+                    [Validation(Required=false)]
+                    public string CarriageNo { get; set; }
+
+                    [NameInMap("destination")]
+                    [Validation(Required=false)]
+                    public string Destination { get; set; }
+
+                    [NameInMap("eticketNo")]
+                    [Validation(Required=false)]
+                    public string EticketNo { get; set; }
+
+                    [NameInMap("getOnTime")]
+                    [Validation(Required=false)]
+                    public string GetOnTime { get; set; }
+
+                    [NameInMap("invoiceId")]
+                    [Validation(Required=false)]
+                    public string InvoiceId { get; set; }
+
+                    [NameInMap("origin")]
+                    [Validation(Required=false)]
+                    public string Origin { get; set; }
+
+                    [NameInMap("passenger")]
+                    [Validation(Required=false)]
+                    public string Passenger { get; set; }
+
+                    [NameInMap("passengerUserId")]
+                    [Validation(Required=false)]
+                    public string PassengerUserId { get; set; }
+
+                    [NameInMap("remark")]
+                    [Validation(Required=false)]
+                    public string Remark { get; set; }
+
+                    [NameInMap("seatClass")]
+                    [Validation(Required=false)]
+                    public string SeatClass { get; set; }
+
+                    [NameInMap("seatNo")]
+                    [Validation(Required=false)]
+                    public string SeatNo { get; set; }
+
+                    [NameInMap("startTime")]
+                    [Validation(Required=false)]
+                    public string StartTime { get; set; }
+
+                    [NameInMap("taxRate")]
+                    [Validation(Required=false)]
+                    public string TaxRate { get; set; }
+
+                    [NameInMap("ticketType")]
+                    [Validation(Required=false)]
+                    public string TicketType { get; set; }
+
+                    [NameInMap("trainNo")]
+                    [Validation(Required=false)]
+                    public string TrainNo { get; set; }
+
+                }
 
                 [NameInMap("electronicUrl")]
                 [Validation(Required=false)]
@@ -143,6 +267,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
                 [Validation(Required=false)]
                 public string MachineCode { get; set; }
 
+                [NameInMap("ofdUrl")]
+                [Validation(Required=false)]
+                public string OfdUrl { get; set; }
+
                 [NameInMap("oilFlag")]
                 [Validation(Required=false)]
                 public string OilFlag { get; set; }
@@ -150,6 +278,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
                 [NameInMap("payee")]
                 [Validation(Required=false)]
                 public string Payee { get; set; }
+
+                [NameInMap("pdfUrl")]
+                [Validation(Required=false)]
+                public string PdfUrl { get; set; }
 
                 [NameInMap("processInstCode")]
                 [Validation(Required=false)]
@@ -404,6 +536,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
                 [NameInMap("voucherStatus")]
                 [Validation(Required=false)]
                 public string VoucherStatus { get; set; }
+
+                [NameInMap("xmlUrl")]
+                [Validation(Required=false)]
+                public string XmlUrl { get; set; }
 
             }
 

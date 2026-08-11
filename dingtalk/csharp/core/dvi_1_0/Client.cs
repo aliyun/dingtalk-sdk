@@ -702,10 +702,6 @@ namespace AlibabaCloud.SDK.Dingtalkdvi_1_0
             {
                 body["adminUserIds"] = request.AdminUserIds;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptIds))
-            {
-                body["deptIds"] = request.DeptIds;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DialectCode))
             {
                 body["dialectCode"] = request.DialectCode;
@@ -780,10 +776,6 @@ namespace AlibabaCloud.SDK.Dingtalkdvi_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AdminUserIds))
             {
                 body["adminUserIds"] = request.AdminUserIds;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptIds))
-            {
-                body["deptIds"] = request.DeptIds;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DialectCode))
             {

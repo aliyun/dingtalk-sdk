@@ -1439,6 +1439,10 @@ namespace AlibabaCloud.SDK.Dingtalkminutes_1_0
                 query["unionId"] = request.UnionId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AsyncGenerate))
+            {
+                body["asyncGenerate"] = request.AsyncGenerate;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DiyTemplateVersion))
             {
                 body["diyTemplateVersion"] = request.DiyTemplateVersion;
@@ -1512,6 +1516,10 @@ namespace AlibabaCloud.SDK.Dingtalkminutes_1_0
                 query["unionId"] = request.UnionId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AsyncGenerate))
+            {
+                body["asyncGenerate"] = request.AsyncGenerate;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DiyTemplateVersion))
             {
                 body["diyTemplateVersion"] = request.DiyTemplateVersion;
@@ -1594,6 +1602,162 @@ namespace AlibabaCloud.SDK.Dingtalkminutes_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GenerateSummaryHeaders headers = new GenerateSummaryHeaders();
             return await GenerateSummaryWithOptionsAsync(taskUuid, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>移动临时存储听记到正式存储</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// MoveOutTempStorageRequest
+        /// </param>
+        /// <param name="headers">
+        /// MoveOutTempStorageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// MoveOutTempStorageResponse
+        /// </returns>
+        public MoveOutTempStorageResponse MoveOutTempStorageWithOptions(MoveOutTempStorageRequest request, MoveOutTempStorageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskUuid))
+            {
+                query["taskUuid"] = request.TaskUuid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "MoveOutTempStorage",
+                Version = "minutes_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/minutes/flashMinutes/moveOutTempStorage",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<MoveOutTempStorageResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>移动临时存储听记到正式存储</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// MoveOutTempStorageRequest
+        /// </param>
+        /// <param name="headers">
+        /// MoveOutTempStorageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// MoveOutTempStorageResponse
+        /// </returns>
+        public async Task<MoveOutTempStorageResponse> MoveOutTempStorageWithOptionsAsync(MoveOutTempStorageRequest request, MoveOutTempStorageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskUuid))
+            {
+                query["taskUuid"] = request.TaskUuid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "MoveOutTempStorage",
+                Version = "minutes_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/minutes/flashMinutes/moveOutTempStorage",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<MoveOutTempStorageResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>移动临时存储听记到正式存储</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// MoveOutTempStorageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// MoveOutTempStorageResponse
+        /// </returns>
+        public MoveOutTempStorageResponse MoveOutTempStorage(MoveOutTempStorageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            MoveOutTempStorageHeaders headers = new MoveOutTempStorageHeaders();
+            return MoveOutTempStorageWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>移动临时存储听记到正式存储</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// MoveOutTempStorageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// MoveOutTempStorageResponse
+        /// </returns>
+        public async Task<MoveOutTempStorageResponse> MoveOutTempStorageAsync(MoveOutTempStorageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            MoveOutTempStorageHeaders headers = new MoveOutTempStorageHeaders();
+            return await MoveOutTempStorageWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

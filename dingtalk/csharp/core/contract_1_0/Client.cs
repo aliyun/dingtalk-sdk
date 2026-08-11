@@ -20,6 +20,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
         {
             AlibabaCloud.GatewayDingTalk.Client gatewayClient = new AlibabaCloud.GatewayDingTalk.Client();
             this._spi = gatewayClient;
+            this._signatureAlgorithm = "v2";
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {
@@ -27,6 +28,194 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
             }
         }
 
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>相对方交易风险分析</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AnalyzeSubjectTransactionRiskRequest
+        /// </param>
+        /// <param name="headers">
+        /// AnalyzeSubjectTransactionRiskHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AnalyzeSubjectTransactionRiskResponse
+        /// </returns>
+        public AnalyzeSubjectTransactionRiskResponse AnalyzeSubjectTransactionRiskWithOptions(AnalyzeSubjectTransactionRiskRequest request, AnalyzeSubjectTransactionRiskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContractId))
+            {
+                query["contractId"] = request.ContractId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                query["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HistoryEndTime))
+            {
+                query["historyEndTime"] = request.HistoryEndTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HistoryStartTime))
+            {
+                query["historyStartTime"] = request.HistoryStartTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StaffId))
+            {
+                query["staffId"] = request.StaffId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubjectUniqueCode))
+            {
+                query["subjectUniqueCode"] = request.SubjectUniqueCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AnalyzeSubjectTransactionRisk",
+                Version = "contract_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contract/subjects/transaction-risks/analyze",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AnalyzeSubjectTransactionRiskResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>相对方交易风险分析</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AnalyzeSubjectTransactionRiskRequest
+        /// </param>
+        /// <param name="headers">
+        /// AnalyzeSubjectTransactionRiskHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AnalyzeSubjectTransactionRiskResponse
+        /// </returns>
+        public async Task<AnalyzeSubjectTransactionRiskResponse> AnalyzeSubjectTransactionRiskWithOptionsAsync(AnalyzeSubjectTransactionRiskRequest request, AnalyzeSubjectTransactionRiskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContractId))
+            {
+                query["contractId"] = request.ContractId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                query["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HistoryEndTime))
+            {
+                query["historyEndTime"] = request.HistoryEndTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HistoryStartTime))
+            {
+                query["historyStartTime"] = request.HistoryStartTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StaffId))
+            {
+                query["staffId"] = request.StaffId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubjectUniqueCode))
+            {
+                query["subjectUniqueCode"] = request.SubjectUniqueCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AnalyzeSubjectTransactionRisk",
+                Version = "contract_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contract/subjects/transaction-risks/analyze",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AnalyzeSubjectTransactionRiskResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>相对方交易风险分析</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AnalyzeSubjectTransactionRiskRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AnalyzeSubjectTransactionRiskResponse
+        /// </returns>
+        public AnalyzeSubjectTransactionRiskResponse AnalyzeSubjectTransactionRisk(AnalyzeSubjectTransactionRiskRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AnalyzeSubjectTransactionRiskHeaders headers = new AnalyzeSubjectTransactionRiskHeaders();
+            return AnalyzeSubjectTransactionRiskWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>相对方交易风险分析</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AnalyzeSubjectTransactionRiskRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AnalyzeSubjectTransactionRiskResponse
+        /// </returns>
+        public async Task<AnalyzeSubjectTransactionRiskResponse> AnalyzeSubjectTransactionRiskAsync(AnalyzeSubjectTransactionRiskRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AnalyzeSubjectTransactionRiskHeaders headers = new AnalyzeSubjectTransactionRiskHeaders();
+            return await AnalyzeSubjectTransactionRiskWithOptionsAsync(request, headers, runtime);
+        }
 
         /// <term><b>Summary:</b></term>
         /// <summary>
@@ -6738,6 +6927,208 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             QuerySignTaskHeaders headers = new QuerySignTaskHeaders();
             return await QuerySignTaskWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>相对方企业风险查询</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QuerySubjectPublicRiskRequest
+        /// </param>
+        /// <param name="headers">
+        /// map
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QuerySubjectPublicRiskResponse
+        /// </returns>
+        public QuerySubjectPublicRiskResponse QuerySubjectPublicRiskWithOptions(QuerySubjectPublicRiskRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizId))
+            {
+                query["bizId"] = request.BizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CompanyId))
+            {
+                query["companyId"] = request.CompanyId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContractAmount))
+            {
+                query["contractAmount"] = request.ContractAmount;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContractType))
+            {
+                query["contractType"] = request.ContractType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                query["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreditCode))
+            {
+                query["creditCode"] = request.CreditCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.From))
+            {
+                query["from"] = request.From;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RegistrationNumber))
+            {
+                query["registrationNumber"] = request.RegistrationNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StaffId))
+            {
+                query["staffId"] = request.StaffId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubjectName))
+            {
+                query["subjectName"] = request.SubjectName;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = headers,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QuerySubjectPublicRisk",
+                Version = "contract_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contract/subjects/risks/query",
+                Method = "POST",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QuerySubjectPublicRiskResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>相对方企业风险查询</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QuerySubjectPublicRiskRequest
+        /// </param>
+        /// <param name="headers">
+        /// map
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QuerySubjectPublicRiskResponse
+        /// </returns>
+        public async Task<QuerySubjectPublicRiskResponse> QuerySubjectPublicRiskWithOptionsAsync(QuerySubjectPublicRiskRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizId))
+            {
+                query["bizId"] = request.BizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CompanyId))
+            {
+                query["companyId"] = request.CompanyId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContractAmount))
+            {
+                query["contractAmount"] = request.ContractAmount;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContractType))
+            {
+                query["contractType"] = request.ContractType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                query["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreditCode))
+            {
+                query["creditCode"] = request.CreditCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.From))
+            {
+                query["from"] = request.From;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RegistrationNumber))
+            {
+                query["registrationNumber"] = request.RegistrationNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StaffId))
+            {
+                query["staffId"] = request.StaffId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubjectName))
+            {
+                query["subjectName"] = request.SubjectName;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = headers,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QuerySubjectPublicRisk",
+                Version = "contract_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contract/subjects/risks/query",
+                Method = "POST",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QuerySubjectPublicRiskResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>相对方企业风险查询</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QuerySubjectPublicRiskRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QuerySubjectPublicRiskResponse
+        /// </returns>
+        public QuerySubjectPublicRiskResponse QuerySubjectPublicRisk(QuerySubjectPublicRiskRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            return QuerySubjectPublicRiskWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>相对方企业风险查询</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QuerySubjectPublicRiskRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QuerySubjectPublicRiskResponse
+        /// </returns>
+        public async Task<QuerySubjectPublicRiskResponse> QuerySubjectPublicRiskAsync(QuerySubjectPublicRiskRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            return await QuerySubjectPublicRiskWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

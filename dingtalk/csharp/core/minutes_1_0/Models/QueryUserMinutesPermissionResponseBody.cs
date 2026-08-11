@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkminutes_1_0.Models
         [Validation(Required=false)]
         public bool? HasPermission { get; set; }
 
+        [NameInMap("roleSubResourceIds")]
+        [Validation(Required=false)]
+        public List<string> RoleSubResourceIds { get; set; }
+
         /// <summary>
         /// <para>角色类型：manager-管理员, owner-所有者, editor-可编辑, read_download-可查看/下载, read-仅查看, none-无权限</para>
         /// </summary>

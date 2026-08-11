@@ -13,10 +13,6 @@ namespace AlibabaCloud.SDK.Dingtalkdvi_1_0.Models
         [Validation(Required=false)]
         public List<string> AdminUserIds { get; set; }
 
-        [NameInMap("deptIds")]
-        [Validation(Required=false)]
-        public List<long?> DeptIds { get; set; }
-
         [NameInMap("dialectCode")]
         [Validation(Required=false)]
         public string DialectCode { get; set; }

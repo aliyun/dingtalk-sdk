@@ -17,10 +17,6 @@ namespace AlibabaCloud.SDK.Dingtalkdvi_1_0.Models
             [Validation(Required=false)]
             public List<string> AdminUserIds { get; set; }
 
-            [NameInMap("deptIds")]
-            [Validation(Required=false)]
-            public List<long?> DeptIds { get; set; }
-
             [NameInMap("userIds")]
             [Validation(Required=false)]
             public List<string> UserIds { get; set; }
@@ -34,10 +30,6 @@ namespace AlibabaCloud.SDK.Dingtalkdvi_1_0.Models
             [NameInMap("adminUserIds")]
             [Validation(Required=false)]
             public List<string> AdminUserIds { get; set; }
-
-            [NameInMap("deptIds")]
-            [Validation(Required=false)]
-            public List<long?> DeptIds { get; set; }
 
             [NameInMap("userIds")]
             [Validation(Required=false)]

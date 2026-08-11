@@ -179,6 +179,22 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
 
             }
 
+            [NameInMap("overtimeBehindDuration")]
+            [Validation(Required=false)]
+            public long? OvertimeBehindDuration { get; set; }
+
+            [NameInMap("overtimeFrontDuration")]
+            [Validation(Required=false)]
+            public long? OvertimeFrontDuration { get; set; }
+
+            [NameInMap("overtimeOpen")]
+            [Validation(Required=false)]
+            public bool? OvertimeOpen { get; set; }
+
+            [NameInMap("overtimeType")]
+            [Validation(Required=false)]
+            public long? OvertimeType { get; set; }
+
             /// <summary>
             /// <b>Example:</b>
             /// <para>1234</para>

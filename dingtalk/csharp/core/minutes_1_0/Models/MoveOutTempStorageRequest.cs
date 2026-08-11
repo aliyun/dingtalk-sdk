@@ -6,32 +6,28 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkminutes_1_0.Models
 {
-    public class CreateUserGroupRequest : TeaModel {
-        [NameInMap("clientShow")]
+    public class MoveOutTempStorageRequest : TeaModel {
+        /// <summary>
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>a1b2c3d4e5f67890a1b2c3d4e5f67890</para>
+        /// </summary>
+        [NameInMap("taskUuid")]
         [Validation(Required=false)]
-        public bool? ClientShow { get; set; }
+        public string TaskUuid { get; set; }
 
         /// <summary>
         /// <para>This parameter is required.</para>
         /// 
         /// <b>Example:</b>
-        /// <para>静态用户组描述</para>
+        /// <para>lJcRnm39OsU4jlFVmRGXXXXX</para>
         /// </summary>
-        [NameInMap("description")]
+        [NameInMap("unionId")]
         [Validation(Required=false)]
-        public string Description { get; set; }
-
-        /// <summary>
-        /// <para>This parameter is required.</para>
-        /// 
-        /// <b>Example:</b>
-        /// <para>静态用户组</para>
-        /// </summary>
-        [NameInMap("name")]
-        [Validation(Required=false)]
-        public string Name { get; set; }
+        public string UnionId { get; set; }
 
     }
 

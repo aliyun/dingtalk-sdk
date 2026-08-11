@@ -8,15 +8,7 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkminutes_1_0.Models
 {
-    public class GenerateSummaryResponseBody : TeaModel {
-        [NameInMap("generatingStatus")]
-        [Validation(Required=false)]
-        public string GeneratingStatus { get; set; }
-
-        [NameInMap("summaryText")]
-        [Validation(Required=false)]
-        public string SummaryText { get; set; }
-
+    public class MoveOutTempStorageResponseBody : TeaModel {
         [NameInMap("taskUuid")]
         [Validation(Required=false)]
         public string TaskUuid { get; set; }

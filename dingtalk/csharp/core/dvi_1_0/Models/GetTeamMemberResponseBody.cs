@@ -27,20 +27,6 @@ namespace AlibabaCloud.SDK.Dingtalkdvi_1_0.Models
 
             }
 
-            [NameInMap("depts")]
-            [Validation(Required=false)]
-            public List<GetTeamMemberResponseBodyResultDepts> Depts { get; set; }
-            public class GetTeamMemberResponseBodyResultDepts : TeaModel {
-                [NameInMap("deptId")]
-                [Validation(Required=false)]
-                public long? DeptId { get; set; }
-
-                [NameInMap("name")]
-                [Validation(Required=false)]
-                public string Name { get; set; }
-
-            }
-
             [NameInMap("members")]
             [Validation(Required=false)]
             public List<GetTeamMemberResponseBodyResultMembers> Members { get; set; }

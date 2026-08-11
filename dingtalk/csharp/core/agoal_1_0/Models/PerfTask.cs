@@ -11,6 +11,14 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0.Models
     public class PerfTask : TeaModel {
         /// <summary>
         /// <b>Example:</b>
+        /// <para>2026年/2026年第一季度</para>
+        /// </summary>
+        [NameInMap("cycleName")]
+        [Validation(Required=false)]
+        public string CycleName { get; set; }
+
+        /// <summary>
+        /// <b>Example:</b>
         /// <para>328497234</para>
         /// </summary>
         [NameInMap("id")]

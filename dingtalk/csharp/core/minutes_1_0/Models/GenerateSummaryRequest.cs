@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkminutes_1_0.Models
 {
     public class GenerateSummaryRequest : TeaModel {
+        [NameInMap("asyncGenerate")]
+        [Validation(Required=false)]
+        public bool? AsyncGenerate { get; set; }
+
         /// <summary>
         /// <b>Example:</b>
         /// <para>1</para>
