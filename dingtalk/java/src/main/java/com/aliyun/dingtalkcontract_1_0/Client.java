@@ -10,6 +10,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
         super(config);
         com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
         this._spi = gatewayClient;
+        this._signatureAlgorithm = "v2";
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -17,6 +18,82 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     }
 
+
+    /**
+     * <b>summary</b> : 
+     * <p>相对方交易风险分析</p>
+     * 
+     * @param request AnalyzeSubjectTransactionRiskRequest
+     * @param headers AnalyzeSubjectTransactionRiskHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AnalyzeSubjectTransactionRiskResponse
+     */
+    public AnalyzeSubjectTransactionRiskResponse analyzeSubjectTransactionRiskWithOptions(AnalyzeSubjectTransactionRiskRequest request, AnalyzeSubjectTransactionRiskHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.contractId)) {
+            query.put("contractId", request.contractId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.corpId)) {
+            query.put("corpId", request.corpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.historyEndTime)) {
+            query.put("historyEndTime", request.historyEndTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.historyStartTime)) {
+            query.put("historyStartTime", request.historyStartTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.staffId)) {
+            query.put("staffId", request.staffId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.subjectUniqueCode)) {
+            query.put("subjectUniqueCode", request.subjectUniqueCode);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AnalyzeSubjectTransactionRisk"),
+            new TeaPair("version", "contract_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contract/subjects/transaction-risks/analyze"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AnalyzeSubjectTransactionRiskResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>相对方交易风险分析</p>
+     * 
+     * @param request AnalyzeSubjectTransactionRiskRequest
+     * @return AnalyzeSubjectTransactionRiskResponse
+     */
+    public AnalyzeSubjectTransactionRiskResponse analyzeSubjectTransactionRisk(AnalyzeSubjectTransactionRiskRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AnalyzeSubjectTransactionRiskHeaders headers = new AnalyzeSubjectTransactionRiskHeaders();
+        return this.analyzeSubjectTransactionRiskWithOptions(request, headers, runtime);
+    }
 
     /**
      * <b>summary</b> : 
@@ -2670,6 +2747,89 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QuerySignTaskHeaders headers = new QuerySignTaskHeaders();
         return this.querySignTaskWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>相对方企业风险查询</p>
+     * 
+     * @param request QuerySubjectPublicRiskRequest
+     * @param headers map
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QuerySubjectPublicRiskResponse
+     */
+    public QuerySubjectPublicRiskResponse querySubjectPublicRiskWithOptions(QuerySubjectPublicRiskRequest request, java.util.Map<String, String> headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizId)) {
+            query.put("bizId", request.bizId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.companyId)) {
+            query.put("companyId", request.companyId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.contractAmount)) {
+            query.put("contractAmount", request.contractAmount);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.contractType)) {
+            query.put("contractType", request.contractType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.corpId)) {
+            query.put("corpId", request.corpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.creditCode)) {
+            query.put("creditCode", request.creditCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.from)) {
+            query.put("from", request.from);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.registrationNumber)) {
+            query.put("registrationNumber", request.registrationNumber);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.staffId)) {
+            query.put("staffId", request.staffId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.subjectName)) {
+            query.put("subjectName", request.subjectName);
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", headers),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QuerySubjectPublicRisk"),
+            new TeaPair("version", "contract_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contract/subjects/risks/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "Anonymous"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QuerySubjectPublicRiskResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>相对方企业风险查询</p>
+     * 
+     * @param request QuerySubjectPublicRiskRequest
+     * @return QuerySubjectPublicRiskResponse
+     */
+    public QuerySubjectPublicRiskResponse querySubjectPublicRisk(QuerySubjectPublicRiskRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        java.util.Map<String, String> headers = new java.util.HashMap<>();
+        return this.querySubjectPublicRiskWithOptions(request, headers, runtime);
     }
 
     /**

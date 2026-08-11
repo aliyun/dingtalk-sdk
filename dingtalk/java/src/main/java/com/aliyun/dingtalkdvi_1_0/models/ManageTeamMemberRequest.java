@@ -49,9 +49,6 @@ public class ManageTeamMemberRequest extends TeaModel {
         @NameInMap("adminUserIds")
         public java.util.List<String> adminUserIds;
 
-        @NameInMap("deptIds")
-        public java.util.List<Long> deptIds;
-
         @NameInMap("userIds")
         public java.util.List<String> userIds;
 
@@ -68,14 +65,6 @@ public class ManageTeamMemberRequest extends TeaModel {
             return this.adminUserIds;
         }
 
-        public ManageTeamMemberRequestAddMembers setDeptIds(java.util.List<Long> deptIds) {
-            this.deptIds = deptIds;
-            return this;
-        }
-        public java.util.List<Long> getDeptIds() {
-            return this.deptIds;
-        }
-
         public ManageTeamMemberRequestAddMembers setUserIds(java.util.List<String> userIds) {
             this.userIds = userIds;
             return this;
@@ -89,9 +78,6 @@ public class ManageTeamMemberRequest extends TeaModel {
     public static class ManageTeamMemberRequestRemoveMembers extends TeaModel {
         @NameInMap("adminUserIds")
         public java.util.List<String> adminUserIds;
-
-        @NameInMap("deptIds")
-        public java.util.List<Long> deptIds;
 
         @NameInMap("userIds")
         public java.util.List<String> userIds;
@@ -107,14 +93,6 @@ public class ManageTeamMemberRequest extends TeaModel {
         }
         public java.util.List<String> getAdminUserIds() {
             return this.adminUserIds;
-        }
-
-        public ManageTeamMemberRequestRemoveMembers setDeptIds(java.util.List<Long> deptIds) {
-            this.deptIds = deptIds;
-            return this;
-        }
-        public java.util.List<Long> getDeptIds() {
-            return this.deptIds;
         }
 
         public ManageTeamMemberRequestRemoveMembers setUserIds(java.util.List<String> userIds) {

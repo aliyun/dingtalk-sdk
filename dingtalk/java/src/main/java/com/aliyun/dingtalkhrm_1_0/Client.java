@@ -21,6 +21,338 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>AI营销创建实体</p>
+     * 
+     * @param request AISaleEntityCreateRequest
+     * @param headers AISaleEntityCreateHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AISaleEntityCreateResponse
+     */
+    public AISaleEntityCreateResponse aISaleEntityCreateWithOptions(AISaleEntityCreateRequest request, AISaleEntityCreateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.entityId)) {
+            body.put("entityId", request.entityId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.entityType)) {
+            body.put("entityType", request.entityType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.fieldInstances)) {
+            body.put("fieldInstances", request.fieldInstances);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AISaleEntityCreate"),
+            new TeaPair("version", "hrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrm/ai-sale/api/v1/entity/create"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AISaleEntityCreateResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>AI营销创建实体</p>
+     * 
+     * @param request AISaleEntityCreateRequest
+     * @return AISaleEntityCreateResponse
+     */
+    public AISaleEntityCreateResponse aISaleEntityCreate(AISaleEntityCreateRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AISaleEntityCreateHeaders headers = new AISaleEntityCreateHeaders();
+        return this.aISaleEntityCreateWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>AI营销实体详情查询</p>
+     * 
+     * @param request AISaleEntityDetailRequest
+     * @param headers AISaleEntityDetailHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AISaleEntityDetailResponse
+     */
+    public AISaleEntityDetailResponse aISaleEntityDetailWithOptions(AISaleEntityDetailRequest request, AISaleEntityDetailHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.entityId)) {
+            body.put("entityId", request.entityId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.entityType)) {
+            body.put("entityType", request.entityType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AISaleEntityDetail"),
+            new TeaPair("version", "hrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrm/ai-sale/api/v1/entity/detail"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AISaleEntityDetailResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>AI营销实体详情查询</p>
+     * 
+     * @param request AISaleEntityDetailRequest
+     * @return AISaleEntityDetailResponse
+     */
+    public AISaleEntityDetailResponse aISaleEntityDetail(AISaleEntityDetailRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AISaleEntityDetailHeaders headers = new AISaleEntityDetailHeaders();
+        return this.aISaleEntityDetailWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>AI营销实体列表查询</p>
+     * 
+     * @param request AISaleEntityListRequest
+     * @param headers AISaleEntityListHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AISaleEntityListResponse
+     */
+    public AISaleEntityListResponse aISaleEntityListWithOptions(AISaleEntityListRequest request, AISaleEntityListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.conditions)) {
+            body.put("conditions", request.conditions);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.cursor)) {
+            body.put("cursor", request.cursor);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.entityType)) {
+            body.put("entityType", request.entityType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
+            body.put("pageSize", request.pageSize);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AISaleEntityList"),
+            new TeaPair("version", "hrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrm/ai-sale/api/v1/entity/list"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AISaleEntityListResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>AI营销实体列表查询</p>
+     * 
+     * @param request AISaleEntityListRequest
+     * @return AISaleEntityListResponse
+     */
+    public AISaleEntityListResponse aISaleEntityList(AISaleEntityListRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AISaleEntityListHeaders headers = new AISaleEntityListHeaders();
+        return this.aISaleEntityListWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>AI营销实体更新</p>
+     * 
+     * @param request AISaleEntityUpdateRequest
+     * @param headers AISaleEntityUpdateHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AISaleEntityUpdateResponse
+     */
+    public AISaleEntityUpdateResponse aISaleEntityUpdateWithOptions(AISaleEntityUpdateRequest request, AISaleEntityUpdateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.entityId)) {
+            body.put("entityId", request.entityId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.entityType)) {
+            body.put("entityType", request.entityType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.fieldInstances)) {
+            body.put("fieldInstances", request.fieldInstances);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AISaleEntityUpdate"),
+            new TeaPair("version", "hrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrm/ai-sale/api/v1/entity/update"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AISaleEntityUpdateResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>AI营销实体更新</p>
+     * 
+     * @param request AISaleEntityUpdateRequest
+     * @return AISaleEntityUpdateResponse
+     */
+    public AISaleEntityUpdateResponse aISaleEntityUpdate(AISaleEntityUpdateRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AISaleEntityUpdateHeaders headers = new AISaleEntityUpdateHeaders();
+        return this.aISaleEntityUpdateWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取AI营销实体定义信息</p>
+     * 
+     * @param request AISaleSchemaGetRequest
+     * @param headers AISaleSchemaGetHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AISaleSchemaGetResponse
+     */
+    public AISaleSchemaGetResponse aISaleSchemaGetWithOptions(AISaleSchemaGetRequest request, AISaleSchemaGetHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.entityType)) {
+            body.put("entityType", request.entityType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AISaleSchemaGet"),
+            new TeaPair("version", "hrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrm/ai-sale/api/v1/schema/get"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AISaleSchemaGetResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取AI营销实体定义信息</p>
+     * 
+     * @param request AISaleSchemaGetRequest
+     * @return AISaleSchemaGetResponse
+     */
+    public AISaleSchemaGetResponse aISaleSchemaGet(AISaleSchemaGetRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AISaleSchemaGetHeaders headers = new AISaleSchemaGetHeaders();
+        return this.aISaleSchemaGetWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>添加自定义花名册字段</p>
      * 
      * @param request AddCustomRosterFieldRequest

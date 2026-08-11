@@ -4,6 +4,9 @@ package com.aliyun.dingtalkminutes_1_0.models;
 import com.aliyun.tea.*;
 
 public class GenerateSummaryResponseBody extends TeaModel {
+    @NameInMap("generatingStatus")
+    public String generatingStatus;
+
     @NameInMap("summaryText")
     public String summaryText;
 
@@ -13,6 +16,14 @@ public class GenerateSummaryResponseBody extends TeaModel {
     public static GenerateSummaryResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GenerateSummaryResponseBody self = new GenerateSummaryResponseBody();
         return TeaModel.build(map, self);
+    }
+
+    public GenerateSummaryResponseBody setGeneratingStatus(String generatingStatus) {
+        this.generatingStatus = generatingStatus;
+        return this;
+    }
+    public String getGeneratingStatus() {
+        return this.generatingStatus;
     }
 
     public GenerateSummaryResponseBody setSummaryText(String summaryText) {

@@ -6,6 +6,13 @@ import com.aliyun.tea.*;
 public class PerfTask extends TeaModel {
     /**
      * <strong>example:</strong>
+     * <p>2026年/2026年第一季度</p>
+     */
+    @NameInMap("cycleName")
+    public String cycleName;
+
+    /**
+     * <strong>example:</strong>
      * <p>328497234</p>
      */
     @NameInMap("id")
@@ -42,6 +49,14 @@ public class PerfTask extends TeaModel {
     public static PerfTask build(java.util.Map<String, ?> map) throws Exception {
         PerfTask self = new PerfTask();
         return TeaModel.build(map, self);
+    }
+
+    public PerfTask setCycleName(String cycleName) {
+        this.cycleName = cycleName;
+        return this;
+    }
+    public String getCycleName() {
+        return this.cycleName;
     }
 
     public PerfTask setId(String id) {

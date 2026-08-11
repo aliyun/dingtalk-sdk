@@ -4,6 +4,9 @@ package com.aliyun.dingtalkminutes_1_0.models;
 import com.aliyun.tea.*;
 
 public class GenerateSummaryRequest extends TeaModel {
+    @NameInMap("asyncGenerate")
+    public Boolean asyncGenerate;
+
     /**
      * <strong>example:</strong>
      * <p>1</p>
@@ -44,6 +47,14 @@ public class GenerateSummaryRequest extends TeaModel {
     public static GenerateSummaryRequest build(java.util.Map<String, ?> map) throws Exception {
         GenerateSummaryRequest self = new GenerateSummaryRequest();
         return TeaModel.build(map, self);
+    }
+
+    public GenerateSummaryRequest setAsyncGenerate(Boolean asyncGenerate) {
+        this.asyncGenerate = asyncGenerate;
+        return this;
+    }
+    public Boolean getAsyncGenerate() {
+        return this.asyncGenerate;
     }
 
     public GenerateSummaryRequest setDiyTemplateVersion(String diyTemplateVersion) {

@@ -401,6 +401,18 @@ public class ShiftAddRequest extends TeaModel {
         @NameInMap("lateBackSetting")
         public ShiftAddRequestSettingLateBackSetting lateBackSetting;
 
+        @NameInMap("overtimeBehindDuration")
+        public Long overtimeBehindDuration;
+
+        @NameInMap("overtimeFrontDuration")
+        public Long overtimeFrontDuration;
+
+        @NameInMap("overtimeOpen")
+        public Boolean overtimeOpen;
+
+        @NameInMap("overtimeType")
+        public Long overtimeType;
+
         /**
          * <strong>example:</strong>
          * <p>1234</p>
@@ -494,6 +506,38 @@ public class ShiftAddRequest extends TeaModel {
         }
         public ShiftAddRequestSettingLateBackSetting getLateBackSetting() {
             return this.lateBackSetting;
+        }
+
+        public ShiftAddRequestSetting setOvertimeBehindDuration(Long overtimeBehindDuration) {
+            this.overtimeBehindDuration = overtimeBehindDuration;
+            return this;
+        }
+        public Long getOvertimeBehindDuration() {
+            return this.overtimeBehindDuration;
+        }
+
+        public ShiftAddRequestSetting setOvertimeFrontDuration(Long overtimeFrontDuration) {
+            this.overtimeFrontDuration = overtimeFrontDuration;
+            return this;
+        }
+        public Long getOvertimeFrontDuration() {
+            return this.overtimeFrontDuration;
+        }
+
+        public ShiftAddRequestSetting setOvertimeOpen(Boolean overtimeOpen) {
+            this.overtimeOpen = overtimeOpen;
+            return this;
+        }
+        public Boolean getOvertimeOpen() {
+            return this.overtimeOpen;
+        }
+
+        public ShiftAddRequestSetting setOvertimeType(Long overtimeType) {
+            this.overtimeType = overtimeType;
+            return this;
+        }
+        public Long getOvertimeType() {
+            return this.overtimeType;
         }
 
         public ShiftAddRequestSetting setReferenceClassId(Long referenceClassId) {

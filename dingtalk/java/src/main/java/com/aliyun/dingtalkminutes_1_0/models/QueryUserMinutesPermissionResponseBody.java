@@ -7,6 +7,9 @@ public class QueryUserMinutesPermissionResponseBody extends TeaModel {
     @NameInMap("hasPermission")
     public Boolean hasPermission;
 
+    @NameInMap("roleSubResourceIds")
+    public java.util.List<String> roleSubResourceIds;
+
     /**
      * <p>角色类型：manager-管理员, owner-所有者, editor-可编辑, read_download-可查看/下载, read-仅查看, none-无权限</p>
      */
@@ -24,6 +27,14 @@ public class QueryUserMinutesPermissionResponseBody extends TeaModel {
     }
     public Boolean getHasPermission() {
         return this.hasPermission;
+    }
+
+    public QueryUserMinutesPermissionResponseBody setRoleSubResourceIds(java.util.List<String> roleSubResourceIds) {
+        this.roleSubResourceIds = roleSubResourceIds;
+        return this;
+    }
+    public java.util.List<String> getRoleSubResourceIds() {
+        return this.roleSubResourceIds;
     }
 
     public QueryUserMinutesPermissionResponseBody setRoleType(String roleType) {

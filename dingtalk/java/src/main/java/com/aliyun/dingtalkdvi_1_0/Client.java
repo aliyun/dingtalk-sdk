@@ -286,10 +286,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("adminUserIds", request.adminUserIds);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.deptIds)) {
-            body.put("deptIds", request.deptIds);
-        }
-
         if (!com.aliyun.teautil.Common.isUnset(request.dialectCode)) {
             body.put("dialectCode", request.dialectCode);
         }

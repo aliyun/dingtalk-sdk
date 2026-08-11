@@ -4,15 +4,14 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateUserGroupRequest extends TeaModel {
-    /**
-     * <p>This parameter is required.</p>
-     */
     @NameInMap("clientShow")
     public Boolean clientShow;
 
     /**
+     * <p>This parameter is required.</p>
+     * 
      * <strong>example:</strong>
-     * <p>静态用户组</p>
+     * <p>静态用户组描述</p>
      */
     @NameInMap("description")
     public String description;

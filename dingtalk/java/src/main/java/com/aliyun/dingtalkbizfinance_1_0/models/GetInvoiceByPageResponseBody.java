@@ -53,6 +53,308 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
         return this.success;
     }
 
+    public static class GetInvoiceByPageResponseBodyResultListEFlightItineraryDetailVOList extends TeaModel {
+        @NameInMap("carrier")
+        public String carrier;
+
+        @NameInMap("className")
+        public String className;
+
+        @NameInMap("flightNumber")
+        public String flightNumber;
+
+        @NameInMap("flyDate")
+        public String flyDate;
+
+        @NameInMap("flyFrom")
+        public String flyFrom;
+
+        @NameInMap("flyTime")
+        public String flyTime;
+
+        @NameInMap("flyTo")
+        public String flyTo;
+
+        @NameInMap("invoiceDetailNumber")
+        public String invoiceDetailNumber;
+
+        @NameInMap("invoiceId")
+        public String invoiceId;
+
+        @NameInMap("seat")
+        public String seat;
+
+        public static GetInvoiceByPageResponseBodyResultListEFlightItineraryDetailVOList build(java.util.Map<String, ?> map) throws Exception {
+            GetInvoiceByPageResponseBodyResultListEFlightItineraryDetailVOList self = new GetInvoiceByPageResponseBodyResultListEFlightItineraryDetailVOList();
+            return TeaModel.build(map, self);
+        }
+
+        public GetInvoiceByPageResponseBodyResultListEFlightItineraryDetailVOList setCarrier(String carrier) {
+            this.carrier = carrier;
+            return this;
+        }
+        public String getCarrier() {
+            return this.carrier;
+        }
+
+        public GetInvoiceByPageResponseBodyResultListEFlightItineraryDetailVOList setClassName(String className) {
+            this.className = className;
+            return this;
+        }
+        public String getClassName() {
+            return this.className;
+        }
+
+        public GetInvoiceByPageResponseBodyResultListEFlightItineraryDetailVOList setFlightNumber(String flightNumber) {
+            this.flightNumber = flightNumber;
+            return this;
+        }
+        public String getFlightNumber() {
+            return this.flightNumber;
+        }
+
+        public GetInvoiceByPageResponseBodyResultListEFlightItineraryDetailVOList setFlyDate(String flyDate) {
+            this.flyDate = flyDate;
+            return this;
+        }
+        public String getFlyDate() {
+            return this.flyDate;
+        }
+
+        public GetInvoiceByPageResponseBodyResultListEFlightItineraryDetailVOList setFlyFrom(String flyFrom) {
+            this.flyFrom = flyFrom;
+            return this;
+        }
+        public String getFlyFrom() {
+            return this.flyFrom;
+        }
+
+        public GetInvoiceByPageResponseBodyResultListEFlightItineraryDetailVOList setFlyTime(String flyTime) {
+            this.flyTime = flyTime;
+            return this;
+        }
+        public String getFlyTime() {
+            return this.flyTime;
+        }
+
+        public GetInvoiceByPageResponseBodyResultListEFlightItineraryDetailVOList setFlyTo(String flyTo) {
+            this.flyTo = flyTo;
+            return this;
+        }
+        public String getFlyTo() {
+            return this.flyTo;
+        }
+
+        public GetInvoiceByPageResponseBodyResultListEFlightItineraryDetailVOList setInvoiceDetailNumber(String invoiceDetailNumber) {
+            this.invoiceDetailNumber = invoiceDetailNumber;
+            return this;
+        }
+        public String getInvoiceDetailNumber() {
+            return this.invoiceDetailNumber;
+        }
+
+        public GetInvoiceByPageResponseBodyResultListEFlightItineraryDetailVOList setInvoiceId(String invoiceId) {
+            this.invoiceId = invoiceId;
+            return this;
+        }
+        public String getInvoiceId() {
+            return this.invoiceId;
+        }
+
+        public GetInvoiceByPageResponseBodyResultListEFlightItineraryDetailVOList setSeat(String seat) {
+            this.seat = seat;
+            return this;
+        }
+        public String getSeat() {
+            return this.seat;
+        }
+
+    }
+
+    public static class GetInvoiceByPageResponseBodyResultListETrainTicketDetailVOList extends TeaModel {
+        @NameInMap("airConditionType")
+        public String airConditionType;
+
+        @NameInMap("carriageNo")
+        public String carriageNo;
+
+        @NameInMap("destination")
+        public String destination;
+
+        @NameInMap("eticketNo")
+        public String eticketNo;
+
+        @NameInMap("getOnTime")
+        public String getOnTime;
+
+        @NameInMap("invoiceId")
+        public String invoiceId;
+
+        @NameInMap("origin")
+        public String origin;
+
+        @NameInMap("passenger")
+        public String passenger;
+
+        @NameInMap("passengerUserId")
+        public String passengerUserId;
+
+        @NameInMap("remark")
+        public String remark;
+
+        @NameInMap("seatClass")
+        public String seatClass;
+
+        @NameInMap("seatNo")
+        public String seatNo;
+
+        @NameInMap("startTime")
+        public String startTime;
+
+        @NameInMap("taxRate")
+        public String taxRate;
+
+        @NameInMap("ticketType")
+        public String ticketType;
+
+        @NameInMap("trainNo")
+        public String trainNo;
+
+        public static GetInvoiceByPageResponseBodyResultListETrainTicketDetailVOList build(java.util.Map<String, ?> map) throws Exception {
+            GetInvoiceByPageResponseBodyResultListETrainTicketDetailVOList self = new GetInvoiceByPageResponseBodyResultListETrainTicketDetailVOList();
+            return TeaModel.build(map, self);
+        }
+
+        public GetInvoiceByPageResponseBodyResultListETrainTicketDetailVOList setAirConditionType(String airConditionType) {
+            this.airConditionType = airConditionType;
+            return this;
+        }
+        public String getAirConditionType() {
+            return this.airConditionType;
+        }
+
+        public GetInvoiceByPageResponseBodyResultListETrainTicketDetailVOList setCarriageNo(String carriageNo) {
+            this.carriageNo = carriageNo;
+            return this;
+        }
+        public String getCarriageNo() {
+            return this.carriageNo;
+        }
+
+        public GetInvoiceByPageResponseBodyResultListETrainTicketDetailVOList setDestination(String destination) {
+            this.destination = destination;
+            return this;
+        }
+        public String getDestination() {
+            return this.destination;
+        }
+
+        public GetInvoiceByPageResponseBodyResultListETrainTicketDetailVOList setEticketNo(String eticketNo) {
+            this.eticketNo = eticketNo;
+            return this;
+        }
+        public String getEticketNo() {
+            return this.eticketNo;
+        }
+
+        public GetInvoiceByPageResponseBodyResultListETrainTicketDetailVOList setGetOnTime(String getOnTime) {
+            this.getOnTime = getOnTime;
+            return this;
+        }
+        public String getGetOnTime() {
+            return this.getOnTime;
+        }
+
+        public GetInvoiceByPageResponseBodyResultListETrainTicketDetailVOList setInvoiceId(String invoiceId) {
+            this.invoiceId = invoiceId;
+            return this;
+        }
+        public String getInvoiceId() {
+            return this.invoiceId;
+        }
+
+        public GetInvoiceByPageResponseBodyResultListETrainTicketDetailVOList setOrigin(String origin) {
+            this.origin = origin;
+            return this;
+        }
+        public String getOrigin() {
+            return this.origin;
+        }
+
+        public GetInvoiceByPageResponseBodyResultListETrainTicketDetailVOList setPassenger(String passenger) {
+            this.passenger = passenger;
+            return this;
+        }
+        public String getPassenger() {
+            return this.passenger;
+        }
+
+        public GetInvoiceByPageResponseBodyResultListETrainTicketDetailVOList setPassengerUserId(String passengerUserId) {
+            this.passengerUserId = passengerUserId;
+            return this;
+        }
+        public String getPassengerUserId() {
+            return this.passengerUserId;
+        }
+
+        public GetInvoiceByPageResponseBodyResultListETrainTicketDetailVOList setRemark(String remark) {
+            this.remark = remark;
+            return this;
+        }
+        public String getRemark() {
+            return this.remark;
+        }
+
+        public GetInvoiceByPageResponseBodyResultListETrainTicketDetailVOList setSeatClass(String seatClass) {
+            this.seatClass = seatClass;
+            return this;
+        }
+        public String getSeatClass() {
+            return this.seatClass;
+        }
+
+        public GetInvoiceByPageResponseBodyResultListETrainTicketDetailVOList setSeatNo(String seatNo) {
+            this.seatNo = seatNo;
+            return this;
+        }
+        public String getSeatNo() {
+            return this.seatNo;
+        }
+
+        public GetInvoiceByPageResponseBodyResultListETrainTicketDetailVOList setStartTime(String startTime) {
+            this.startTime = startTime;
+            return this;
+        }
+        public String getStartTime() {
+            return this.startTime;
+        }
+
+        public GetInvoiceByPageResponseBodyResultListETrainTicketDetailVOList setTaxRate(String taxRate) {
+            this.taxRate = taxRate;
+            return this;
+        }
+        public String getTaxRate() {
+            return this.taxRate;
+        }
+
+        public GetInvoiceByPageResponseBodyResultListETrainTicketDetailVOList setTicketType(String ticketType) {
+            this.ticketType = ticketType;
+            return this;
+        }
+        public String getTicketType() {
+            return this.ticketType;
+        }
+
+        public GetInvoiceByPageResponseBodyResultListETrainTicketDetailVOList setTrainNo(String trainNo) {
+            this.trainNo = trainNo;
+            return this;
+        }
+        public String getTrainNo() {
+            return this.trainNo;
+        }
+
+    }
+
     public static class GetInvoiceByPageResponseBodyResultListGeneralInvoiceDetailVOList extends TeaModel {
         @NameInMap("amount")
         public String amount;
@@ -656,6 +958,12 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
         @NameInMap("amountWithTax")
         public String amountWithTax;
 
+        @NameInMap("certificationDate")
+        public String certificationDate;
+
+        @NameInMap("certificationPeriod")
+        public String certificationPeriod;
+
         @NameInMap("checkCode")
         public String checkCode;
 
@@ -664,6 +972,12 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
 
         @NameInMap("drewDate")
         public String drewDate;
+
+        @NameInMap("eFlightItineraryDetailVOList")
+        public java.util.List<GetInvoiceByPageResponseBodyResultListEFlightItineraryDetailVOList> eFlightItineraryDetailVOList;
+
+        @NameInMap("eTrainTicketDetailVOList")
+        public java.util.List<GetInvoiceByPageResponseBodyResultListETrainTicketDetailVOList> eTrainTicketDetailVOList;
 
         @NameInMap("electronicUrl")
         public String electronicUrl;
@@ -699,11 +1013,17 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
         @NameInMap("machineCode")
         public String machineCode;
 
+        @NameInMap("ofdUrl")
+        public String ofdUrl;
+
         @NameInMap("oilFlag")
         public String oilFlag;
 
         @NameInMap("payee")
         public String payee;
+
+        @NameInMap("pdfUrl")
+        public String pdfUrl;
 
         @NameInMap("processInstCode")
         public String processInstCode;
@@ -771,6 +1091,9 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
         @NameInMap("voucherStatus")
         public String voucherStatus;
 
+        @NameInMap("xmlUrl")
+        public String xmlUrl;
+
         public static GetInvoiceByPageResponseBodyResultList build(java.util.Map<String, ?> map) throws Exception {
             GetInvoiceByPageResponseBodyResultList self = new GetInvoiceByPageResponseBodyResultList();
             return TeaModel.build(map, self);
@@ -800,6 +1123,22 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.amountWithTax;
         }
 
+        public GetInvoiceByPageResponseBodyResultList setCertificationDate(String certificationDate) {
+            this.certificationDate = certificationDate;
+            return this;
+        }
+        public String getCertificationDate() {
+            return this.certificationDate;
+        }
+
+        public GetInvoiceByPageResponseBodyResultList setCertificationPeriod(String certificationPeriod) {
+            this.certificationPeriod = certificationPeriod;
+            return this;
+        }
+        public String getCertificationPeriod() {
+            return this.certificationPeriod;
+        }
+
         public GetInvoiceByPageResponseBodyResultList setCheckCode(String checkCode) {
             this.checkCode = checkCode;
             return this;
@@ -822,6 +1161,22 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
         }
         public String getDrewDate() {
             return this.drewDate;
+        }
+
+        public GetInvoiceByPageResponseBodyResultList setEFlightItineraryDetailVOList(java.util.List<GetInvoiceByPageResponseBodyResultListEFlightItineraryDetailVOList> eFlightItineraryDetailVOList) {
+            this.eFlightItineraryDetailVOList = eFlightItineraryDetailVOList;
+            return this;
+        }
+        public java.util.List<GetInvoiceByPageResponseBodyResultListEFlightItineraryDetailVOList> getEFlightItineraryDetailVOList() {
+            return this.eFlightItineraryDetailVOList;
+        }
+
+        public GetInvoiceByPageResponseBodyResultList setETrainTicketDetailVOList(java.util.List<GetInvoiceByPageResponseBodyResultListETrainTicketDetailVOList> eTrainTicketDetailVOList) {
+            this.eTrainTicketDetailVOList = eTrainTicketDetailVOList;
+            return this;
+        }
+        public java.util.List<GetInvoiceByPageResponseBodyResultListETrainTicketDetailVOList> getETrainTicketDetailVOList() {
+            return this.eTrainTicketDetailVOList;
         }
 
         public GetInvoiceByPageResponseBodyResultList setElectronicUrl(String electronicUrl) {
@@ -904,6 +1259,14 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
             return this.machineCode;
         }
 
+        public GetInvoiceByPageResponseBodyResultList setOfdUrl(String ofdUrl) {
+            this.ofdUrl = ofdUrl;
+            return this;
+        }
+        public String getOfdUrl() {
+            return this.ofdUrl;
+        }
+
         public GetInvoiceByPageResponseBodyResultList setOilFlag(String oilFlag) {
             this.oilFlag = oilFlag;
             return this;
@@ -918,6 +1281,14 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
         }
         public String getPayee() {
             return this.payee;
+        }
+
+        public GetInvoiceByPageResponseBodyResultList setPdfUrl(String pdfUrl) {
+            this.pdfUrl = pdfUrl;
+            return this;
+        }
+        public String getPdfUrl() {
+            return this.pdfUrl;
         }
 
         public GetInvoiceByPageResponseBodyResultList setProcessInstCode(String processInstCode) {
@@ -1094,6 +1465,14 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
         }
         public String getVoucherStatus() {
             return this.voucherStatus;
+        }
+
+        public GetInvoiceByPageResponseBodyResultList setXmlUrl(String xmlUrl) {
+            this.xmlUrl = xmlUrl;
+            return this;
+        }
+        public String getXmlUrl() {
+            return this.xmlUrl;
         }
 
     }

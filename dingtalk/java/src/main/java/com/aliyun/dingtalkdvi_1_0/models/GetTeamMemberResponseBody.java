@@ -50,36 +50,6 @@ public class GetTeamMemberResponseBody extends TeaModel {
 
     }
 
-    public static class GetTeamMemberResponseBodyResultDepts extends TeaModel {
-        @NameInMap("deptId")
-        public Long deptId;
-
-        @NameInMap("name")
-        public String name;
-
-        public static GetTeamMemberResponseBodyResultDepts build(java.util.Map<String, ?> map) throws Exception {
-            GetTeamMemberResponseBodyResultDepts self = new GetTeamMemberResponseBodyResultDepts();
-            return TeaModel.build(map, self);
-        }
-
-        public GetTeamMemberResponseBodyResultDepts setDeptId(Long deptId) {
-            this.deptId = deptId;
-            return this;
-        }
-        public Long getDeptId() {
-            return this.deptId;
-        }
-
-        public GetTeamMemberResponseBodyResultDepts setName(String name) {
-            this.name = name;
-            return this;
-        }
-        public String getName() {
-            return this.name;
-        }
-
-    }
-
     public static class GetTeamMemberResponseBodyResultMembers extends TeaModel {
         @NameInMap("name")
         public String name;
@@ -114,9 +84,6 @@ public class GetTeamMemberResponseBody extends TeaModel {
         @NameInMap("admins")
         public java.util.List<GetTeamMemberResponseBodyResultAdmins> admins;
 
-        @NameInMap("depts")
-        public java.util.List<GetTeamMemberResponseBodyResultDepts> depts;
-
         @NameInMap("members")
         public java.util.List<GetTeamMemberResponseBodyResultMembers> members;
 
@@ -131,14 +98,6 @@ public class GetTeamMemberResponseBody extends TeaModel {
         }
         public java.util.List<GetTeamMemberResponseBodyResultAdmins> getAdmins() {
             return this.admins;
-        }
-
-        public GetTeamMemberResponseBodyResult setDepts(java.util.List<GetTeamMemberResponseBodyResultDepts> depts) {
-            this.depts = depts;
-            return this;
-        }
-        public java.util.List<GetTeamMemberResponseBodyResultDepts> getDepts() {
-            return this.depts;
         }
 
         public GetTeamMemberResponseBodyResult setMembers(java.util.List<GetTeamMemberResponseBodyResultMembers> members) {

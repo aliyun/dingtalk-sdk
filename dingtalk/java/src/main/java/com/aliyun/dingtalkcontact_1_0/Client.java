@@ -1130,17 +1130,17 @@ public class Client extends com.aliyun.teaopenapi.Client {
      */
     public CreateUserGroupResponse createUserGroupWithOptions(CreateUserGroupRequest request, CreateUserGroupHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.clientShow)) {
-            query.put("clientShow", request.clientShow);
+            body.put("clientShow", request.clientShow);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.description)) {
-            query.put("description", request.description);
+            body.put("description", request.description);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.name)) {
-            query.put("name", request.name);
+            body.put("name", request.name);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -1154,7 +1154,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
-            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
             new TeaPair("action", "CreateUserGroup"),
@@ -1594,9 +1594,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
      */
     public DeleteUserGroupResponse deleteUserGroupWithOptions(DeleteUserGroupRequest request, DeleteUserGroupHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.groupCode)) {
-            query.put("groupCode", request.groupCode);
+            body.put("groupCode", request.groupCode);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -1610,7 +1610,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
-            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
             new TeaPair("action", "DeleteUserGroup"),
@@ -2527,6 +2527,62 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetUserHeaders headers = new GetUserHeaders();
         return this.getUserWithOptions(unionId, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>根据钉钉号获取员工信息</p>
+     * 
+     * @param request GetUserByDingTalkIdRequest
+     * @param headers GetUserByDingTalkIdHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetUserByDingTalkIdResponse
+     */
+    public GetUserByDingTalkIdResponse getUserByDingTalkIdWithOptions(GetUserByDingTalkIdRequest request, GetUserByDingTalkIdHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.dingtalkId)) {
+            query.put("dingtalkId", request.dingtalkId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetUserByDingTalkId"),
+            new TeaPair("version", "contact_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contact/user/getByDingTalkId"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetUserByDingTalkIdResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>根据钉钉号获取员工信息</p>
+     * 
+     * @param request GetUserByDingTalkIdRequest
+     * @return GetUserByDingTalkIdResponse
+     */
+    public GetUserByDingTalkIdResponse getUserByDingTalkId(GetUserByDingTalkIdRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetUserByDingTalkIdHeaders headers = new GetUserByDingTalkIdHeaders();
+        return this.getUserByDingTalkIdWithOptions(request, headers, runtime);
     }
 
     /**

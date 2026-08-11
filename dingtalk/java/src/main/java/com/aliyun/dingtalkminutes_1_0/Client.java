@@ -583,6 +583,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.asyncGenerate)) {
+            body.put("asyncGenerate", request.asyncGenerate);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.diyTemplateVersion)) {
             body.put("diyTemplateVersion", request.diyTemplateVersion);
         }
@@ -638,6 +642,66 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GenerateSummaryHeaders headers = new GenerateSummaryHeaders();
         return this.generateSummaryWithOptions(taskUuid, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>移动临时存储听记到正式存储</p>
+     * 
+     * @param request MoveOutTempStorageRequest
+     * @param headers MoveOutTempStorageHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return MoveOutTempStorageResponse
+     */
+    public MoveOutTempStorageResponse moveOutTempStorageWithOptions(MoveOutTempStorageRequest request, MoveOutTempStorageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.taskUuid)) {
+            query.put("taskUuid", request.taskUuid);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            query.put("unionId", request.unionId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "MoveOutTempStorage"),
+            new TeaPair("version", "minutes_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/minutes/flashMinutes/moveOutTempStorage"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new MoveOutTempStorageResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>移动临时存储听记到正式存储</p>
+     * 
+     * @param request MoveOutTempStorageRequest
+     * @return MoveOutTempStorageResponse
+     */
+    public MoveOutTempStorageResponse moveOutTempStorage(MoveOutTempStorageRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        MoveOutTempStorageHeaders headers = new MoveOutTempStorageHeaders();
+        return this.moveOutTempStorageWithOptions(request, headers, runtime);
     }
 
     /**

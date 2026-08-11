@@ -364,6 +364,18 @@ public class GetShiftResponseBody extends TeaModel {
         @NameInMap("gmtModified")
         public String gmtModified;
 
+        @NameInMap("overtimeBehindDuration")
+        public Long overtimeBehindDuration;
+
+        @NameInMap("overtimeFrontDuration")
+        public Long overtimeFrontDuration;
+
+        @NameInMap("overtimeOpen")
+        public Boolean overtimeOpen;
+
+        @NameInMap("overtimeType")
+        public Long overtimeType;
+
         /**
          * <strong>example:</strong>
          * <p>678215070</p>
@@ -427,6 +439,38 @@ public class GetShiftResponseBody extends TeaModel {
         }
         public String getGmtModified() {
             return this.gmtModified;
+        }
+
+        public GetShiftResponseBodyResultShiftSetting setOvertimeBehindDuration(Long overtimeBehindDuration) {
+            this.overtimeBehindDuration = overtimeBehindDuration;
+            return this;
+        }
+        public Long getOvertimeBehindDuration() {
+            return this.overtimeBehindDuration;
+        }
+
+        public GetShiftResponseBodyResultShiftSetting setOvertimeFrontDuration(Long overtimeFrontDuration) {
+            this.overtimeFrontDuration = overtimeFrontDuration;
+            return this;
+        }
+        public Long getOvertimeFrontDuration() {
+            return this.overtimeFrontDuration;
+        }
+
+        public GetShiftResponseBodyResultShiftSetting setOvertimeOpen(Boolean overtimeOpen) {
+            this.overtimeOpen = overtimeOpen;
+            return this;
+        }
+        public Boolean getOvertimeOpen() {
+            return this.overtimeOpen;
+        }
+
+        public GetShiftResponseBodyResultShiftSetting setOvertimeType(Long overtimeType) {
+            this.overtimeType = overtimeType;
+            return this;
+        }
+        public Long getOvertimeType() {
+            return this.overtimeType;
         }
 
         public GetShiftResponseBodyResultShiftSetting setShiftId(Long shiftId) {

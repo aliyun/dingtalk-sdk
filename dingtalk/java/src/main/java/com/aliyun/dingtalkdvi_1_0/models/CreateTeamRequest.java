@@ -7,9 +7,6 @@ public class CreateTeamRequest extends TeaModel {
     @NameInMap("adminUserIds")
     public java.util.List<String> adminUserIds;
 
-    @NameInMap("deptIds")
-    public java.util.List<Long> deptIds;
-
     @NameInMap("dialectCode")
     public String dialectCode;
 
@@ -45,14 +42,6 @@ public class CreateTeamRequest extends TeaModel {
     }
     public java.util.List<String> getAdminUserIds() {
         return this.adminUserIds;
-    }
-
-    public CreateTeamRequest setDeptIds(java.util.List<Long> deptIds) {
-        this.deptIds = deptIds;
-        return this;
-    }
-    public java.util.List<Long> getDeptIds() {
-        return this.deptIds;
     }
 
     public CreateTeamRequest setDialectCode(String dialectCode) {
