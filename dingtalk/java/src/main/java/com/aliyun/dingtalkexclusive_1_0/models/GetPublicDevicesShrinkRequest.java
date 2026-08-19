@@ -7,6 +7,9 @@ public class GetPublicDevicesShrinkRequest extends TeaModel {
     @NameInMap("deviceUuid")
     public String deviceUuid;
 
+    @NameInMap("didList")
+    public String didListShrink;
+
     @NameInMap("encryptDeviceIdList")
     public String encryptDeviceIdListShrink;
 
@@ -80,6 +83,14 @@ public class GetPublicDevicesShrinkRequest extends TeaModel {
     }
     public String getDeviceUuid() {
         return this.deviceUuid;
+    }
+
+    public GetPublicDevicesShrinkRequest setDidListShrink(String didListShrink) {
+        this.didListShrink = didListShrink;
+        return this;
+    }
+    public String getDidListShrink() {
+        return this.didListShrink;
     }
 
     public GetPublicDevicesShrinkRequest setEncryptDeviceIdListShrink(String encryptDeviceIdListShrink) {

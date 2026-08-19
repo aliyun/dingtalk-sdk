@@ -494,7 +494,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
-     * <p>查询群成员</p>
+     * <p>查询场景群成员</p>
      * 
      * @param request BatchQueryGroupMemberRequest
      * @param headers BatchQueryGroupMemberHeaders
@@ -549,7 +549,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
-     * <p>查询群成员</p>
+     * <p>查询场景群成员</p>
      * 
      * @param request BatchQueryGroupMemberRequest
      * @return BatchQueryGroupMemberResponse
@@ -2068,7 +2068,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
-     * <p>解散群</p>
+     * <p>解散场景群</p>
      * 
      * @param request DsbandOpenSceneGroupRequest
      * @param headers DsbandOpenSceneGroupHeaders
@@ -2111,7 +2111,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
-     * <p>解散群</p>
+     * <p>解散场景群</p>
      * 
      * @param request DsbandOpenSceneGroupRequest
      * @return DsbandOpenSceneGroupResponse
@@ -2672,7 +2672,67 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
-     * <p>查询群简要信息</p>
+     * <p>查询场景群信息</p>
+     * 
+     * @param request GetSceneGroupDetailInfoRequest
+     * @param headers GetSceneGroupDetailInfoHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetSceneGroupDetailInfoResponse
+     */
+    public GetSceneGroupDetailInfoResponse getSceneGroupDetailInfoWithOptions(GetSceneGroupDetailInfoRequest request, GetSceneGroupDetailInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.coolAppCode)) {
+            body.put("cool_app_code", request.coolAppCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
+            body.put("open_conversation_id", request.openConversationId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetSceneGroupDetailInfo"),
+            new TeaPair("version", "im_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/im/sceneGroups/queryDetail"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetSceneGroupDetailInfoResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询场景群信息</p>
+     * 
+     * @param request GetSceneGroupDetailInfoRequest
+     * @return GetSceneGroupDetailInfoResponse
+     */
+    public GetSceneGroupDetailInfoResponse getSceneGroupDetailInfo(GetSceneGroupDetailInfoRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetSceneGroupDetailInfoHeaders headers = new GetSceneGroupDetailInfoHeaders();
+        return this.getSceneGroupDetailInfoWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询场景群简要信息</p>
      * 
      * @param request GetSceneGroupInfoRequest
      * @param headers GetSceneGroupInfoHeaders
@@ -2719,7 +2779,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
-     * <p>查询群简要信息</p>
+     * <p>查询场景群简要信息</p>
      * 
      * @param request GetSceneGroupInfoRequest
      * @return GetSceneGroupInfoResponse
@@ -5916,7 +5976,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
-     * <p>查询群内群模板机器人</p>
+     * <p>查询场景群内群模板机器人</p>
      * 
      * @param request QuerySceneGroupTemplateRobotRequest
      * @param headers QuerySceneGroupTemplateRobotHeaders
@@ -5963,7 +6023,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
-     * <p>查询群内群模板机器人</p>
+     * <p>查询场景群内群模板机器人</p>
      * 
      * @param request QuerySceneGroupTemplateRobotRequest
      * @return QuerySceneGroupTemplateRobotResponse
@@ -8424,7 +8484,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
-     * <p>更新群管理员</p>
+     * <p>更新场景群管理员</p>
      * 
      * @param request UpdateGroupSubAdminRequest
      * @param headers UpdateGroupSubAdminHeaders
@@ -8479,7 +8539,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
-     * <p>更新群管理员</p>
+     * <p>更新场景群管理员</p>
      * 
      * @param request UpdateGroupSubAdminRequest
      * @return UpdateGroupSubAdminResponse
@@ -8564,7 +8624,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
-     * <p>设置群成员禁言状态</p>
+     * <p>设置场景群成员禁言状态</p>
      * 
      * @param request UpdateMemberBanWordsRequest
      * @param headers UpdateMemberBanWordsHeaders
@@ -8623,7 +8683,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
-     * <p>设置群成员禁言状态</p>
+     * <p>设置场景群成员禁言状态</p>
      * 
      * @param request UpdateMemberBanWordsRequest
      * @return UpdateMemberBanWordsResponse
@@ -8636,7 +8696,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
-     * <p>更新群成员的群昵称</p>
+     * <p>更新场景群成员的群昵称</p>
      * 
      * @param request UpdateMemberGroupNickRequest
      * @param headers UpdateMemberGroupNickHeaders
@@ -8687,7 +8747,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
-     * <p>更新群成员的群昵称</p>
+     * <p>更新场景群成员的群昵称</p>
      * 
      * @param request UpdateMemberGroupNickRequest
      * @return UpdateMemberGroupNickResponse

@@ -200,9 +200,6 @@ public class AISaleEntityCreateResponseBody extends TeaModel {
         @NameInMap("fieldInstances")
         public java.util.List<AISaleEntityCreateResponseBodyResultFieldInstances> fieldInstances;
 
-        @NameInMap("userId")
-        public String userId;
-
         public static AISaleEntityCreateResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             AISaleEntityCreateResponseBodyResult self = new AISaleEntityCreateResponseBodyResult();
             return TeaModel.build(map, self);
@@ -230,14 +227,6 @@ public class AISaleEntityCreateResponseBody extends TeaModel {
         }
         public java.util.List<AISaleEntityCreateResponseBodyResultFieldInstances> getFieldInstances() {
             return this.fieldInstances;
-        }
-
-        public AISaleEntityCreateResponseBodyResult setUserId(String userId) {
-            this.userId = userId;
-            return this;
-        }
-        public String getUserId() {
-            return this.userId;
         }
 
     }

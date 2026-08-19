@@ -413,6 +413,9 @@ public class GetProcessInstanceResponseBody extends TeaModel {
         @NameInMap("status")
         public String status;
 
+        @NameInMap("taskGroupName")
+        public String taskGroupName;
+
         /**
          * <strong>example:</strong>
          * <p>111</p>
@@ -494,6 +497,14 @@ public class GetProcessInstanceResponseBody extends TeaModel {
         }
         public String getStatus() {
             return this.status;
+        }
+
+        public GetProcessInstanceResponseBodyResultTasks setTaskGroupName(String taskGroupName) {
+            this.taskGroupName = taskGroupName;
+            return this;
+        }
+        public String getTaskGroupName() {
+            return this.taskGroupName;
         }
 
         public GetProcessInstanceResponseBodyResultTasks setTaskId(Long taskId) {

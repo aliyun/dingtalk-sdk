@@ -21,6 +21,70 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>附件授权</p>
+     * 
+     * @param request AISaleAttachmentPermissonRequest
+     * @param headers AISaleAttachmentPermissonHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AISaleAttachmentPermissonResponse
+     */
+    public AISaleAttachmentPermissonResponse aISaleAttachmentPermissonWithOptions(AISaleAttachmentPermissonRequest request, AISaleAttachmentPermissonHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.fileId)) {
+            body.put("fileId", request.fileId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.spaceId)) {
+            body.put("spaceId", request.spaceId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AISaleAttachmentPermisson"),
+            new TeaPair("version", "hrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrm/ai-sale/api/v1/attachment/permission"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AISaleAttachmentPermissonResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>附件授权</p>
+     * 
+     * @param request AISaleAttachmentPermissonRequest
+     * @return AISaleAttachmentPermissonResponse
+     */
+    public AISaleAttachmentPermissonResponse aISaleAttachmentPermisson(AISaleAttachmentPermissonRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AISaleAttachmentPermissonHeaders headers = new AISaleAttachmentPermissonHeaders();
+        return this.aISaleAttachmentPermissonWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>AI营销创建实体</p>
      * 
      * @param request AISaleEntityCreateRequest
@@ -41,6 +105,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.fieldInstances)) {
             body.put("fieldInstances", request.fieldInstances);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.source)) {
+            body.put("source", request.source);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
@@ -247,6 +315,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("fieldInstances", request.fieldInstances);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.source)) {
+            body.put("source", request.source);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
             body.put("userId", request.userId);
         }
@@ -289,6 +361,162 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         AISaleEntityUpdateHeaders headers = new AISaleEntityUpdateHeaders();
         return this.aISaleEntityUpdateWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>AI营销活动听记总结分析</p>
+     * 
+     * @param request AISaleFlashMinutesAnalysisRequest
+     * @param headers AISaleFlashMinutesAnalysisHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AISaleFlashMinutesAnalysisResponse
+     */
+    public AISaleFlashMinutesAnalysisResponse aISaleFlashMinutesAnalysisWithOptions(AISaleFlashMinutesAnalysisRequest request, AISaleFlashMinutesAnalysisHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.entityId)) {
+            body.put("entityId", request.entityId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AISaleFlashMinutesAnalysis"),
+            new TeaPair("version", "hrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrm/ai-sale/api/v1/common/flashMinutesAnalysis"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AISaleFlashMinutesAnalysisResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>AI营销活动听记总结分析</p>
+     * 
+     * @param request AISaleFlashMinutesAnalysisRequest
+     * @return AISaleFlashMinutesAnalysisResponse
+     */
+    public AISaleFlashMinutesAnalysisResponse aISaleFlashMinutesAnalysis(AISaleFlashMinutesAnalysisRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AISaleFlashMinutesAnalysisHeaders headers = new AISaleFlashMinutesAnalysisHeaders();
+        return this.aISaleFlashMinutesAnalysisWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>活动助理记忆列表查询</p>
+     * 
+     * @param request AISaleGetMemoryRequest
+     * @param headers AISaleGetMemoryHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AISaleGetMemoryResponse
+     */
+    public AISaleGetMemoryResponse aISaleGetMemoryWithOptions(AISaleGetMemoryRequest request, AISaleGetMemoryHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.creatorId)) {
+            body.put("creatorId", request.creatorId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.cursor)) {
+            body.put("cursor", request.cursor);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.customerScopeId)) {
+            body.put("customerScopeId", request.customerScopeId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.entityId)) {
+            body.put("entityId", request.entityId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.entityIds)) {
+            body.put("entityIds", request.entityIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.entityType)) {
+            body.put("entityType", request.entityType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.keyword)) {
+            body.put("keyword", request.keyword);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.memoryCategory)) {
+            body.put("memoryCategory", request.memoryCategory);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.minImportance)) {
+            body.put("minImportance", request.minImportance);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
+            body.put("pageSize", request.pageSize);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AISaleGetMemory"),
+            new TeaPair("version", "hrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrm/ai-sale/api/v1/memory/list"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AISaleGetMemoryResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>活动助理记忆列表查询</p>
+     * 
+     * @param request AISaleGetMemoryRequest
+     * @return AISaleGetMemoryResponse
+     */
+    public AISaleGetMemoryResponse aISaleGetMemory(AISaleGetMemoryRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AISaleGetMemoryHeaders headers = new AISaleGetMemoryHeaders();
+        return this.aISaleGetMemoryWithOptions(request, headers, runtime);
     }
 
     /**
@@ -349,6 +577,134 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         AISaleSchemaGetHeaders headers = new AISaleSchemaGetHeaders();
         return this.aISaleSchemaGetWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>AI营销的同步AI任务</p>
+     * 
+     * @param request AISaleSyncAiTaskRequest
+     * @param headers AISaleSyncAiTaskHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AISaleSyncAiTaskResponse
+     */
+    public AISaleSyncAiTaskResponse aISaleSyncAiTaskWithOptions(AISaleSyncAiTaskRequest request, AISaleSyncAiTaskHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.scenarioCode)) {
+            body.put("scenarioCode", request.scenarioCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userPrompt)) {
+            body.put("userPrompt", request.userPrompt);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.variables)) {
+            body.put("variables", request.variables);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AISaleSyncAiTask"),
+            new TeaPair("version", "hrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrm/ai-sale/api/v1/common/executeSyncAiTask"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AISaleSyncAiTaskResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>AI营销的同步AI任务</p>
+     * 
+     * @param request AISaleSyncAiTaskRequest
+     * @return AISaleSyncAiTaskResponse
+     */
+    public AISaleSyncAiTaskResponse aISaleSyncAiTask(AISaleSyncAiTaskRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AISaleSyncAiTaskHeaders headers = new AISaleSyncAiTaskHeaders();
+        return this.aISaleSyncAiTaskWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>AI营销任务结果查询</p>
+     * 
+     * @param request AISaleTaskResultRequest
+     * @param headers AISaleTaskResultHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AISaleTaskResultResponse
+     */
+    public AISaleTaskResultResponse aISaleTaskResultWithOptions(AISaleTaskResultRequest request, AISaleTaskResultHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.taskId)) {
+            body.put("taskId", request.taskId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AISaleTaskResult"),
+            new TeaPair("version", "hrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrm/ai-sale/api/v1/common/taskResult"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AISaleTaskResultResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>AI营销任务结果查询</p>
+     * 
+     * @param request AISaleTaskResultRequest
+     * @return AISaleTaskResultResponse
+     */
+    public AISaleTaskResultResponse aISaleTaskResult(AISaleTaskResultRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AISaleTaskResultHeaders headers = new AISaleTaskResultHeaders();
+        return this.aISaleTaskResultWithOptions(request, headers, runtime);
     }
 
     /**

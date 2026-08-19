@@ -1245,6 +1245,70 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>模版合成文件任务创建接口</p>
+     * 
+     * @param request CreateTemplateProcessTaskRequest
+     * @param headers CreateTemplateProcessTaskHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateTemplateProcessTaskResponse
+     */
+    public CreateTemplateProcessTaskResponse createTemplateProcessTaskWithOptions(CreateTemplateProcessTaskRequest request, CreateTemplateProcessTaskHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.fillData)) {
+            body.put("fillData", request.fillData);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.formId)) {
+            body.put("formId", request.formId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.mode)) {
+            body.put("mode", request.mode);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateTemplateProcessTask"),
+            new TeaPair("version", "contract_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contract/template/file/createTask"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateTemplateProcessTaskResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>模版合成文件任务创建接口</p>
+     * 
+     * @param request CreateTemplateProcessTaskRequest
+     * @return CreateTemplateProcessTaskResponse
+     */
+    public CreateTemplateProcessTaskResponse createTemplateProcessTask(CreateTemplateProcessTaskRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CreateTemplateProcessTaskHeaders headers = new CreateTemplateProcessTaskHeaders();
+        return this.createTemplateProcessTaskWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>天谷侧查询审批单</p>
      * 
      * @param request EsignQueryApprovalInfoRequest
@@ -2379,6 +2443,86 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>查询合同比对任务列表</p>
+     * 
+     * @param request QueryContractCompareListRequest
+     * @param headers QueryContractCompareListHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryContractCompareListResponse
+     */
+    public QueryContractCompareListResponse queryContractCompareListWithOptions(QueryContractCompareListRequest request, QueryContractCompareListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.endTime)) {
+            body.put("endTime", request.endTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageNum)) {
+            body.put("pageNum", request.pageNum);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
+            body.put("pageSize", request.pageSize);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.requestId)) {
+            body.put("requestId", request.requestId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.startTime)) {
+            body.put("startTime", request.startTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.status)) {
+            body.put("status", request.status);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            body.put("unionId", request.unionId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryContractCompareList"),
+            new TeaPair("version", "contract_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contract/comparisonResults/queryList"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryContractCompareListResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询合同比对任务列表</p>
+     * 
+     * @param request QueryContractCompareListRequest
+     * @return QueryContractCompareListResponse
+     */
+    public QueryContractCompareListResponse queryContractCompareList(QueryContractCompareListRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryContractCompareListHeaders headers = new QueryContractCompareListHeaders();
+        return this.queryContractCompareListWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>查询合同比对结果</p>
      * 
      * @param request QueryContractCompareResultRequest
@@ -2619,6 +2763,62 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryContractSignInfoHeaders headers = new QueryContractSignInfoHeaders();
         return this.queryContractSignInfoWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询文件合成结果 </p>
+     * 
+     * @param request QueryFileProcessResultRequest
+     * @param headers QueryFileProcessResultHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryFileProcessResultResponse
+     */
+    public QueryFileProcessResultResponse queryFileProcessResultWithOptions(QueryFileProcessResultRequest request, QueryFileProcessResultHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.renderTaskId)) {
+            body.put("renderTaskId", request.renderTaskId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryFileProcessResult"),
+            new TeaPair("version", "contract_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contract/template/file/queryResult"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryFileProcessResultResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询文件合成结果 </p>
+     * 
+     * @param request QueryFileProcessResultRequest
+     * @return QueryFileProcessResultResponse
+     */
+    public QueryFileProcessResultResponse queryFileProcessResult(QueryFileProcessResultRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryFileProcessResultHeaders headers = new QueryFileProcessResultHeaders();
+        return this.queryFileProcessResultWithOptions(request, headers, runtime);
     }
 
     /**

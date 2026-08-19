@@ -7,6 +7,9 @@ public class GetPublicDevicesRequest extends TeaModel {
     @NameInMap("deviceUuid")
     public String deviceUuid;
 
+    @NameInMap("didList")
+    public java.util.List<String> didList;
+
     @NameInMap("encryptDeviceIdList")
     public java.util.List<String> encryptDeviceIdList;
 
@@ -80,6 +83,14 @@ public class GetPublicDevicesRequest extends TeaModel {
     }
     public String getDeviceUuid() {
         return this.deviceUuid;
+    }
+
+    public GetPublicDevicesRequest setDidList(java.util.List<String> didList) {
+        this.didList = didList;
+        return this;
+    }
+    public java.util.List<String> getDidList() {
+        return this.didList;
     }
 
     public GetPublicDevicesRequest setEncryptDeviceIdList(java.util.List<String> encryptDeviceIdList) {

@@ -83,6 +83,99 @@ public class AISaleSchemaGetResponseBody extends TeaModel {
 
     }
 
+    public static class AISaleSchemaGetResponseBodyResultFieldsSubFieldsOptions extends TeaModel {
+        @NameInMap("label")
+        public String label;
+
+        @NameInMap("value")
+        public String value;
+
+        public static AISaleSchemaGetResponseBodyResultFieldsSubFieldsOptions build(java.util.Map<String, ?> map) throws Exception {
+            AISaleSchemaGetResponseBodyResultFieldsSubFieldsOptions self = new AISaleSchemaGetResponseBodyResultFieldsSubFieldsOptions();
+            return TeaModel.build(map, self);
+        }
+
+        public AISaleSchemaGetResponseBodyResultFieldsSubFieldsOptions setLabel(String label) {
+            this.label = label;
+            return this;
+        }
+        public String getLabel() {
+            return this.label;
+        }
+
+        public AISaleSchemaGetResponseBodyResultFieldsSubFieldsOptions setValue(String value) {
+            this.value = value;
+            return this;
+        }
+        public String getValue() {
+            return this.value;
+        }
+
+    }
+
+    public static class AISaleSchemaGetResponseBodyResultFieldsSubFields extends TeaModel {
+        @NameInMap("fieldKey")
+        public String fieldKey;
+
+        @NameInMap("fieldLabel")
+        public String fieldLabel;
+
+        @NameInMap("options")
+        public java.util.List<AISaleSchemaGetResponseBodyResultFieldsSubFieldsOptions> options;
+
+        @NameInMap("placeholder")
+        public String placeholder;
+
+        @NameInMap("required")
+        public Boolean required;
+
+        public static AISaleSchemaGetResponseBodyResultFieldsSubFields build(java.util.Map<String, ?> map) throws Exception {
+            AISaleSchemaGetResponseBodyResultFieldsSubFields self = new AISaleSchemaGetResponseBodyResultFieldsSubFields();
+            return TeaModel.build(map, self);
+        }
+
+        public AISaleSchemaGetResponseBodyResultFieldsSubFields setFieldKey(String fieldKey) {
+            this.fieldKey = fieldKey;
+            return this;
+        }
+        public String getFieldKey() {
+            return this.fieldKey;
+        }
+
+        public AISaleSchemaGetResponseBodyResultFieldsSubFields setFieldLabel(String fieldLabel) {
+            this.fieldLabel = fieldLabel;
+            return this;
+        }
+        public String getFieldLabel() {
+            return this.fieldLabel;
+        }
+
+        public AISaleSchemaGetResponseBodyResultFieldsSubFields setOptions(java.util.List<AISaleSchemaGetResponseBodyResultFieldsSubFieldsOptions> options) {
+            this.options = options;
+            return this;
+        }
+        public java.util.List<AISaleSchemaGetResponseBodyResultFieldsSubFieldsOptions> getOptions() {
+            return this.options;
+        }
+
+        public AISaleSchemaGetResponseBodyResultFieldsSubFields setPlaceholder(String placeholder) {
+            this.placeholder = placeholder;
+            return this;
+        }
+        public String getPlaceholder() {
+            return this.placeholder;
+        }
+
+        public AISaleSchemaGetResponseBodyResultFieldsSubFields setRequired(Boolean required) {
+            this.required = required;
+            return this;
+        }
+        public Boolean getRequired() {
+            return this.required;
+        }
+
+    }
+
     public static class AISaleSchemaGetResponseBodyResultFields extends TeaModel {
         @NameInMap("defaultValue")
         public String defaultValue;
@@ -122,6 +215,9 @@ public class AISaleSchemaGetResponseBody extends TeaModel {
 
         @NameInMap("source")
         public String source;
+
+        @NameInMap("subFields")
+        public java.util.List<AISaleSchemaGetResponseBodyResultFieldsSubFields> subFields;
 
         public static AISaleSchemaGetResponseBodyResultFields build(java.util.Map<String, ?> map) throws Exception {
             AISaleSchemaGetResponseBodyResultFields self = new AISaleSchemaGetResponseBodyResultFields();
@@ -230,6 +326,14 @@ public class AISaleSchemaGetResponseBody extends TeaModel {
         }
         public String getSource() {
             return this.source;
+        }
+
+        public AISaleSchemaGetResponseBodyResultFields setSubFields(java.util.List<AISaleSchemaGetResponseBodyResultFieldsSubFields> subFields) {
+            this.subFields = subFields;
+            return this;
+        }
+        public java.util.List<AISaleSchemaGetResponseBodyResultFieldsSubFields> getSubFields() {
+            return this.subFields;
         }
 
     }

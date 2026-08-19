@@ -13,6 +13,9 @@ public class AISaleEntityUpdateRequest extends TeaModel {
     @NameInMap("fieldInstances")
     public java.util.List<AISaleEntityUpdateRequestFieldInstances> fieldInstances;
 
+    @NameInMap("source")
+    public String source;
+
     @NameInMap("userId")
     public String userId;
 
@@ -43,6 +46,14 @@ public class AISaleEntityUpdateRequest extends TeaModel {
     }
     public java.util.List<AISaleEntityUpdateRequestFieldInstances> getFieldInstances() {
         return this.fieldInstances;
+    }
+
+    public AISaleEntityUpdateRequest setSource(String source) {
+        this.source = source;
+        return this;
+    }
+    public String getSource() {
+        return this.source;
     }
 
     public AISaleEntityUpdateRequest setUserId(String userId) {
