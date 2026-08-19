@@ -4797,6 +4797,9 @@ class Dingtalk extends OpenApiClient
         Utils::validateModel($tmpReq);
         $request = new GetPublicDevicesShrinkRequest([]);
         OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->didList)) {
+            $request->didListShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->didList, 'didList', 'json');
+        }
         if (!Utils::isUnset($tmpReq->encryptDeviceIdList)) {
             $request->encryptDeviceIdListShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->encryptDeviceIdList, 'encryptDeviceIdList', 'json');
         }
@@ -4806,6 +4809,9 @@ class Dingtalk extends OpenApiClient
         $query = [];
         if (!Utils::isUnset($request->deviceUuid)) {
             $query['deviceUuid'] = $request->deviceUuid;
+        }
+        if (!Utils::isUnset($request->didListShrink)) {
+            $query['didList'] = $request->didListShrink;
         }
         if (!Utils::isUnset($request->encryptDeviceIdListShrink)) {
             $query['encryptDeviceIdList'] = $request->encryptDeviceIdListShrink;

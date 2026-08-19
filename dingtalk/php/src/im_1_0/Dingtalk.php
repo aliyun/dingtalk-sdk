@@ -124,6 +124,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetInterconnectionUrlResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetNewestInnerGroupsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetNewestInnerGroupsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetNewestInnerGroupsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetSceneGroupDetailInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetSceneGroupDetailInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetSceneGroupDetailInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetSceneGroupInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetSceneGroupInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetSceneGroupInfoResponse;
@@ -911,7 +914,7 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 查询群成员
+     * @summary 查询场景群成员
      *  *
      * @param BatchQueryGroupMemberRequest $request BatchQueryGroupMemberRequest
      * @param BatchQueryGroupMemberHeaders $headers BatchQueryGroupMemberHeaders
@@ -962,7 +965,7 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 查询群成员
+     * @summary 查询场景群成员
      *  *
      * @param BatchQueryGroupMemberRequest $request BatchQueryGroupMemberRequest
      *
@@ -2453,7 +2456,7 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 解散群
+     * @summary 解散场景群
      *  *
      * @param DsbandOpenSceneGroupRequest $request DsbandOpenSceneGroupRequest
      * @param DsbandOpenSceneGroupHeaders $headers DsbandOpenSceneGroupHeaders
@@ -2495,7 +2498,7 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 解散群
+     * @summary 解散场景群
      *  *
      * @param DsbandOpenSceneGroupRequest $request DsbandOpenSceneGroupRequest
      *
@@ -3041,7 +3044,67 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 查询群简要信息
+     * @summary 查询场景群信息
+     *  *
+     * @param GetSceneGroupDetailInfoRequest $request GetSceneGroupDetailInfoRequest
+     * @param GetSceneGroupDetailInfoHeaders $headers GetSceneGroupDetailInfoHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetSceneGroupDetailInfoResponse GetSceneGroupDetailInfoResponse
+     */
+    public function getSceneGroupDetailInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->coolAppCode)) {
+            $body['cool_app_code'] = $request->coolAppCode;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['open_conversation_id'] = $request->openConversationId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'GetSceneGroupDetailInfo',
+            'version' => 'im_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/im/sceneGroups/queryDetail',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetSceneGroupDetailInfoResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询场景群信息
+     *  *
+     * @param GetSceneGroupDetailInfoRequest $request GetSceneGroupDetailInfoRequest
+     *
+     * @return GetSceneGroupDetailInfoResponse GetSceneGroupDetailInfoResponse
+     */
+    public function getSceneGroupDetailInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetSceneGroupDetailInfoHeaders([]);
+
+        return $this->getSceneGroupDetailInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询场景群简要信息
      *  *
      * @param GetSceneGroupInfoRequest $request GetSceneGroupInfoRequest
      * @param GetSceneGroupInfoHeaders $headers GetSceneGroupInfoHeaders
@@ -3086,7 +3149,7 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 查询群简要信息
+     * @summary 查询场景群简要信息
      *  *
      * @param GetSceneGroupInfoRequest $request GetSceneGroupInfoRequest
      *
@@ -6226,7 +6289,7 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 查询群内群模板机器人
+     * @summary 查询场景群内群模板机器人
      *  *
      * @param QuerySceneGroupTemplateRobotRequest $request QuerySceneGroupTemplateRobotRequest
      * @param QuerySceneGroupTemplateRobotHeaders $headers QuerySceneGroupTemplateRobotHeaders
@@ -6271,7 +6334,7 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 查询群内群模板机器人
+     * @summary 查询场景群内群模板机器人
      *  *
      * @param QuerySceneGroupTemplateRobotRequest $request QuerySceneGroupTemplateRobotRequest
      *
@@ -8647,7 +8710,7 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 更新群管理员
+     * @summary 更新场景群管理员
      *  *
      * @param UpdateGroupSubAdminRequest $request UpdateGroupSubAdminRequest
      * @param UpdateGroupSubAdminHeaders $headers UpdateGroupSubAdminHeaders
@@ -8698,7 +8761,7 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 更新群管理员
+     * @summary 更新场景群管理员
      *  *
      * @param UpdateGroupSubAdminRequest $request UpdateGroupSubAdminRequest
      *
@@ -8782,7 +8845,7 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 设置群成员禁言状态
+     * @summary 设置场景群成员禁言状态
      *  *
      * @param UpdateMemberBanWordsRequest $request UpdateMemberBanWordsRequest
      * @param UpdateMemberBanWordsHeaders $headers UpdateMemberBanWordsHeaders
@@ -8836,7 +8899,7 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 设置群成员禁言状态
+     * @summary 设置场景群成员禁言状态
      *  *
      * @param UpdateMemberBanWordsRequest $request UpdateMemberBanWordsRequest
      *
@@ -8851,7 +8914,7 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 更新群成员的群昵称
+     * @summary 更新场景群成员的群昵称
      *  *
      * @param UpdateMemberGroupNickRequest $request UpdateMemberGroupNickRequest
      * @param UpdateMemberGroupNickHeaders $headers UpdateMemberGroupNickHeaders
@@ -8899,7 +8962,7 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 更新群成员的群昵称
+     * @summary 更新场景群成员的群昵称
      *  *
      * @param UpdateMemberGroupNickRequest $request UpdateMemberGroupNickRequest
      *

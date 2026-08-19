@@ -5,6 +5,7 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AISaleSchemaGetResponseBody\result;
 
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AISaleSchemaGetResponseBody\result\fields\options;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AISaleSchemaGetResponseBody\result\fields\subFields;
 use AlibabaCloud\Tea\Model;
 
 class fields extends Model
@@ -73,6 +74,11 @@ class fields extends Model
      * @var string
      */
     public $source;
+
+    /**
+     * @var subFields[]
+     */
+    public $subFields;
     protected $_name = [
         'defaultValue' => 'defaultValue',
         'description' => 'description',
@@ -87,6 +93,7 @@ class fields extends Model
         'required' => 'required',
         'sortOrder' => 'sortOrder',
         'source' => 'source',
+        'subFields' => 'subFields',
     ];
 
     public function validate() {}
@@ -138,6 +145,15 @@ class fields extends Model
         }
         if (null !== $this->source) {
             $res['source'] = $this->source;
+        }
+        if (null !== $this->subFields) {
+            $res['subFields'] = [];
+            if (null !== $this->subFields && \is_array($this->subFields)) {
+                $n = 0;
+                foreach ($this->subFields as $item) {
+                    $res['subFields'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
 
         return $res;
@@ -195,6 +211,15 @@ class fields extends Model
         }
         if (isset($map['source'])) {
             $model->source = $map['source'];
+        }
+        if (isset($map['subFields'])) {
+            if (!empty($map['subFields'])) {
+                $model->subFields = [];
+                $n = 0;
+                foreach ($map['subFields'] as $item) {
+                    $model->subFields[$n++] = null !== $item ? subFields::fromMap($item) : $item;
+                }
+            }
         }
 
         return $model;

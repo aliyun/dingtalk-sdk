@@ -16,6 +16,11 @@ class GetPublicDevicesShrinkRequest extends Model
     /**
      * @var string
      */
+    public $didListShrink;
+
+    /**
+     * @var string
+     */
     public $encryptDeviceIdListShrink;
 
     /**
@@ -80,6 +85,7 @@ class GetPublicDevicesShrinkRequest extends Model
     public $title;
     protected $_name = [
         'deviceUuid' => 'deviceUuid',
+        'didListShrink' => 'didList',
         'encryptDeviceIdListShrink' => 'encryptDeviceIdList',
         'endTime' => 'endTime',
         'macAddress' => 'macAddress',
@@ -99,6 +105,9 @@ class GetPublicDevicesShrinkRequest extends Model
         $res = [];
         if (null !== $this->deviceUuid) {
             $res['deviceUuid'] = $this->deviceUuid;
+        }
+        if (null !== $this->didListShrink) {
+            $res['didList'] = $this->didListShrink;
         }
         if (null !== $this->encryptDeviceIdListShrink) {
             $res['encryptDeviceIdList'] = $this->encryptDeviceIdListShrink;
@@ -144,6 +153,9 @@ class GetPublicDevicesShrinkRequest extends Model
         $model = new self();
         if (isset($map['deviceUuid'])) {
             $model->deviceUuid = $map['deviceUuid'];
+        }
+        if (isset($map['didList'])) {
+            $model->didListShrink = $map['didList'];
         }
         if (isset($map['encryptDeviceIdList'])) {
             $model->encryptDeviceIdListShrink = $map['encryptDeviceIdList'];

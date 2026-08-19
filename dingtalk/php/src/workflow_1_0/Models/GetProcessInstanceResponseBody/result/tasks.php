@@ -69,6 +69,11 @@ class tasks extends Model
     public $status;
 
     /**
+     * @var string
+     */
+    public $taskGroupName;
+
+    /**
      * @example 111
      *
      * @var int
@@ -90,6 +95,7 @@ class tasks extends Model
         'processInstanceId' => 'processInstanceId',
         'result' => 'result',
         'status' => 'status',
+        'taskGroupName' => 'taskGroupName',
         'taskId' => 'taskId',
         'userId' => 'userId',
     ];
@@ -122,6 +128,9 @@ class tasks extends Model
         }
         if (null !== $this->status) {
             $res['status'] = $this->status;
+        }
+        if (null !== $this->taskGroupName) {
+            $res['taskGroupName'] = $this->taskGroupName;
         }
         if (null !== $this->taskId) {
             $res['taskId'] = $this->taskId;
@@ -164,6 +173,9 @@ class tasks extends Model
         }
         if (isset($map['status'])) {
             $model->status = $map['status'];
+        }
+        if (isset($map['taskGroupName'])) {
+            $model->taskGroupName = $map['taskGroupName'];
         }
         if (isset($map['taskId'])) {
             $model->taskId = $map['taskId'];

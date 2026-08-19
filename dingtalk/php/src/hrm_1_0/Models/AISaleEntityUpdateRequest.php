@@ -27,11 +27,17 @@ class AISaleEntityUpdateRequest extends Model
     /**
      * @var string
      */
+    public $source;
+
+    /**
+     * @var string
+     */
     public $userId;
     protected $_name = [
         'entityId' => 'entityId',
         'entityType' => 'entityType',
         'fieldInstances' => 'fieldInstances',
+        'source' => 'source',
         'userId' => 'userId',
     ];
 
@@ -54,6 +60,9 @@ class AISaleEntityUpdateRequest extends Model
                     $res['fieldInstances'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->source) {
+            $res['source'] = $this->source;
         }
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
@@ -84,6 +93,9 @@ class AISaleEntityUpdateRequest extends Model
                     $model->fieldInstances[$n++] = null !== $item ? fieldInstances::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['source'])) {
+            $model->source = $map['source'];
         }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];

@@ -23,16 +23,10 @@ class result extends Model
      * @var fieldInstances[]
      */
     public $fieldInstances;
-
-    /**
-     * @var string
-     */
-    public $userId;
     protected $_name = [
         'entityId' => 'entityId',
         'entityType' => 'entityType',
         'fieldInstances' => 'fieldInstances',
-        'userId' => 'userId',
     ];
 
     public function validate() {}
@@ -54,9 +48,6 @@ class result extends Model
                     $res['fieldInstances'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
-        }
-        if (null !== $this->userId) {
-            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -84,9 +75,6 @@ class result extends Model
                     $model->fieldInstances[$n++] = null !== $item ? fieldInstances::fromMap($item) : $item;
                 }
             }
-        }
-        if (isset($map['userId'])) {
-            $model->userId = $map['userId'];
         }
 
         return $model;

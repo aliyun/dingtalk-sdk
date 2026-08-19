@@ -53,6 +53,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateContractReviewTaskRespo
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateSignFlowHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateSignFlowRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateSignFlowResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateTemplateProcessTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateTemplateProcessTaskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateTemplateProcessTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\EsignQueryApprovalInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\EsignQueryApprovalInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\EsignQueryApprovalInfoResponse;
@@ -108,6 +111,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryContractAppsReviewResult
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryContractAppsTermsExtractResultHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryContractAppsTermsExtractResultRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryContractAppsTermsExtractResultResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryContractCompareListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryContractCompareListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryContractCompareListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryContractCompareResultHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryContractCompareResultRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryContractCompareResultResponse;
@@ -120,6 +126,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryContractReviewResultResp
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryContractSignInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryContractSignInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryContractSignInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryFileProcessResultHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryFileProcessResultRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryFileProcessResultResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QuerySignFlowDetailHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QuerySignFlowDetailRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QuerySignFlowDetailResponse;
@@ -1318,6 +1327,69 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 模版合成文件任务创建接口
+     *  *
+     * @param CreateTemplateProcessTaskRequest $request CreateTemplateProcessTaskRequest
+     * @param CreateTemplateProcessTaskHeaders $headers CreateTemplateProcessTaskHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateTemplateProcessTaskResponse CreateTemplateProcessTaskResponse
+     */
+    public function createTemplateProcessTaskWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->fillData)) {
+            $body['fillData'] = $request->fillData;
+        }
+        if (!Utils::isUnset($request->formId)) {
+            $body['formId'] = $request->formId;
+        }
+        if (!Utils::isUnset($request->mode)) {
+            $body['mode'] = $request->mode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'CreateTemplateProcessTask',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/template/file/createTask',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CreateTemplateProcessTaskResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 模版合成文件任务创建接口
+     *  *
+     * @param CreateTemplateProcessTaskRequest $request CreateTemplateProcessTaskRequest
+     *
+     * @return CreateTemplateProcessTaskResponse CreateTemplateProcessTaskResponse
+     */
+    public function createTemplateProcessTask($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateTemplateProcessTaskHeaders([]);
+
+        return $this->createTemplateProcessTaskWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 天谷侧查询审批单
      *  *
      * @param EsignQueryApprovalInfoRequest $request EsignQueryApprovalInfoRequest
@@ -2439,6 +2511,81 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询合同比对任务列表
+     *  *
+     * @param QueryContractCompareListRequest $request QueryContractCompareListRequest
+     * @param QueryContractCompareListHeaders $headers QueryContractCompareListHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryContractCompareListResponse QueryContractCompareListResponse
+     */
+    public function queryContractCompareListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->endTime)) {
+            $body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->pageNum)) {
+            $body['pageNum'] = $request->pageNum;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->requestId)) {
+            $body['requestId'] = $request->requestId;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            $body['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->status)) {
+            $body['status'] = $request->status;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $body['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'QueryContractCompareList',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/comparisonResults/queryList',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryContractCompareListResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询合同比对任务列表
+     *  *
+     * @param QueryContractCompareListRequest $request QueryContractCompareListRequest
+     *
+     * @return QueryContractCompareListResponse QueryContractCompareListResponse
+     */
+    public function queryContractCompareList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryContractCompareListHeaders([]);
+
+        return $this->queryContractCompareListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 查询合同比对结果
      *  *
      * @param QueryContractCompareResultRequest $request QueryContractCompareResultRequest
@@ -2679,6 +2826,63 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryContractSignInfoHeaders([]);
 
         return $this->queryContractSignInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询文件合成结果
+     *  *
+     * @param QueryFileProcessResultRequest $request QueryFileProcessResultRequest
+     * @param QueryFileProcessResultHeaders $headers QueryFileProcessResultHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryFileProcessResultResponse QueryFileProcessResultResponse
+     */
+    public function queryFileProcessResultWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->renderTaskId)) {
+            $body['renderTaskId'] = $request->renderTaskId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'QueryFileProcessResult',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/template/file/queryResult',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryFileProcessResultResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询文件合成结果
+     *  *
+     * @param QueryFileProcessResultRequest $request QueryFileProcessResultRequest
+     *
+     * @return QueryFileProcessResultResponse QueryFileProcessResultResponse
+     */
+    public function queryFileProcessResult($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryFileProcessResultHeaders([]);
+
+        return $this->queryFileProcessResultWithOptions($request, $headers, $runtime);
     }
 
     /**

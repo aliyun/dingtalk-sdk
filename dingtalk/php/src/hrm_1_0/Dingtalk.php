@@ -17,6 +17,9 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AddHrmPreentryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AddRosterFieldFormHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AddRosterFieldFormRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AddRosterFieldFormResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AISaleAttachmentPermissonHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AISaleAttachmentPermissonRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AISaleAttachmentPermissonResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AISaleEntityCreateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AISaleEntityCreateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AISaleEntityCreateResponse;
@@ -29,9 +32,21 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AISaleEntityListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AISaleEntityUpdateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AISaleEntityUpdateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AISaleEntityUpdateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AISaleFlashMinutesAnalysisHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AISaleFlashMinutesAnalysisRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AISaleFlashMinutesAnalysisResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AISaleGetMemoryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AISaleGetMemoryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AISaleGetMemoryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AISaleSchemaGetHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AISaleSchemaGetRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AISaleSchemaGetResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AISaleSyncAiTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AISaleSyncAiTaskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AISaleSyncAiTaskResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AISaleTaskResultHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AISaleTaskResultRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AISaleTaskResultResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\ConvertUnionIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\ConvertUnionIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\ConvertUnionIdResponse;
@@ -238,6 +253,69 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 附件授权
+     *  *
+     * @param AISaleAttachmentPermissonRequest $request AISaleAttachmentPermissonRequest
+     * @param AISaleAttachmentPermissonHeaders $headers AISaleAttachmentPermissonHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AISaleAttachmentPermissonResponse AISaleAttachmentPermissonResponse
+     */
+    public function aISaleAttachmentPermissonWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->fileId)) {
+            $body['fileId'] = $request->fileId;
+        }
+        if (!Utils::isUnset($request->spaceId)) {
+            $body['spaceId'] = $request->spaceId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'AISaleAttachmentPermisson',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/ai-sale/api/v1/attachment/permission',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return AISaleAttachmentPermissonResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 附件授权
+     *  *
+     * @param AISaleAttachmentPermissonRequest $request AISaleAttachmentPermissonRequest
+     *
+     * @return AISaleAttachmentPermissonResponse AISaleAttachmentPermissonResponse
+     */
+    public function aISaleAttachmentPermisson($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AISaleAttachmentPermissonHeaders([]);
+
+        return $this->aISaleAttachmentPermissonWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary AI营销创建实体
      *  *
      * @param AISaleEntityCreateRequest $request AISaleEntityCreateRequest
@@ -258,6 +336,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->fieldInstances)) {
             $body['fieldInstances'] = $request->fieldInstances;
+        }
+        if (!Utils::isUnset($request->source)) {
+            $body['source'] = $request->source;
         }
         if (!Utils::isUnset($request->userId)) {
             $body['userId'] = $request->userId;
@@ -457,6 +538,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->fieldInstances)) {
             $body['fieldInstances'] = $request->fieldInstances;
         }
+        if (!Utils::isUnset($request->source)) {
+            $body['source'] = $request->source;
+        }
         if (!Utils::isUnset($request->userId)) {
             $body['userId'] = $request->userId;
         }
@@ -499,6 +583,153 @@ class Dingtalk extends OpenApiClient
         $headers = new AISaleEntityUpdateHeaders([]);
 
         return $this->aISaleEntityUpdateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary AI营销活动听记总结分析
+     *  *
+     * @param AISaleFlashMinutesAnalysisRequest $request AISaleFlashMinutesAnalysisRequest
+     * @param AISaleFlashMinutesAnalysisHeaders $headers AISaleFlashMinutesAnalysisHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AISaleFlashMinutesAnalysisResponse AISaleFlashMinutesAnalysisResponse
+     */
+    public function aISaleFlashMinutesAnalysisWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->entityId)) {
+            $body['entityId'] = $request->entityId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'AISaleFlashMinutesAnalysis',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/ai-sale/api/v1/common/flashMinutesAnalysis',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return AISaleFlashMinutesAnalysisResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary AI营销活动听记总结分析
+     *  *
+     * @param AISaleFlashMinutesAnalysisRequest $request AISaleFlashMinutesAnalysisRequest
+     *
+     * @return AISaleFlashMinutesAnalysisResponse AISaleFlashMinutesAnalysisResponse
+     */
+    public function aISaleFlashMinutesAnalysis($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AISaleFlashMinutesAnalysisHeaders([]);
+
+        return $this->aISaleFlashMinutesAnalysisWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 活动助理记忆列表查询
+     *  *
+     * @param AISaleGetMemoryRequest $request AISaleGetMemoryRequest
+     * @param AISaleGetMemoryHeaders $headers AISaleGetMemoryHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AISaleGetMemoryResponse AISaleGetMemoryResponse
+     */
+    public function aISaleGetMemoryWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->creatorId)) {
+            $body['creatorId'] = $request->creatorId;
+        }
+        if (!Utils::isUnset($request->cursor)) {
+            $body['cursor'] = $request->cursor;
+        }
+        if (!Utils::isUnset($request->customerScopeId)) {
+            $body['customerScopeId'] = $request->customerScopeId;
+        }
+        if (!Utils::isUnset($request->entityId)) {
+            $body['entityId'] = $request->entityId;
+        }
+        if (!Utils::isUnset($request->entityIds)) {
+            $body['entityIds'] = $request->entityIds;
+        }
+        if (!Utils::isUnset($request->entityType)) {
+            $body['entityType'] = $request->entityType;
+        }
+        if (!Utils::isUnset($request->keyword)) {
+            $body['keyword'] = $request->keyword;
+        }
+        if (!Utils::isUnset($request->memoryCategory)) {
+            $body['memoryCategory'] = $request->memoryCategory;
+        }
+        if (!Utils::isUnset($request->minImportance)) {
+            $body['minImportance'] = $request->minImportance;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'AISaleGetMemory',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/ai-sale/api/v1/memory/list',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return AISaleGetMemoryResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 活动助理记忆列表查询
+     *  *
+     * @param AISaleGetMemoryRequest $request AISaleGetMemoryRequest
+     *
+     * @return AISaleGetMemoryResponse AISaleGetMemoryResponse
+     */
+    public function aISaleGetMemory($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AISaleGetMemoryHeaders([]);
+
+        return $this->aISaleGetMemoryWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -559,6 +790,132 @@ class Dingtalk extends OpenApiClient
         $headers = new AISaleSchemaGetHeaders([]);
 
         return $this->aISaleSchemaGetWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary AI营销的同步AI任务
+     *  *
+     * @param AISaleSyncAiTaskRequest $request AISaleSyncAiTaskRequest
+     * @param AISaleSyncAiTaskHeaders $headers AISaleSyncAiTaskHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AISaleSyncAiTaskResponse AISaleSyncAiTaskResponse
+     */
+    public function aISaleSyncAiTaskWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->scenarioCode)) {
+            $body['scenarioCode'] = $request->scenarioCode;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->userPrompt)) {
+            $body['userPrompt'] = $request->userPrompt;
+        }
+        if (!Utils::isUnset($request->variables)) {
+            $body['variables'] = $request->variables;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'AISaleSyncAiTask',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/ai-sale/api/v1/common/executeSyncAiTask',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return AISaleSyncAiTaskResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary AI营销的同步AI任务
+     *  *
+     * @param AISaleSyncAiTaskRequest $request AISaleSyncAiTaskRequest
+     *
+     * @return AISaleSyncAiTaskResponse AISaleSyncAiTaskResponse
+     */
+    public function aISaleSyncAiTask($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AISaleSyncAiTaskHeaders([]);
+
+        return $this->aISaleSyncAiTaskWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary AI营销任务结果查询
+     *  *
+     * @param AISaleTaskResultRequest $request AISaleTaskResultRequest
+     * @param AISaleTaskResultHeaders $headers AISaleTaskResultHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AISaleTaskResultResponse AISaleTaskResultResponse
+     */
+    public function aISaleTaskResultWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->taskId)) {
+            $body['taskId'] = $request->taskId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'AISaleTaskResult',
+            'version' => 'hrm_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/hrm/ai-sale/api/v1/common/taskResult',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return AISaleTaskResultResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary AI营销任务结果查询
+     *  *
+     * @param AISaleTaskResultRequest $request AISaleTaskResultRequest
+     *
+     * @return AISaleTaskResultResponse AISaleTaskResultResponse
+     */
+    public function aISaleTaskResult($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AISaleTaskResultHeaders([]);
+
+        return $this->aISaleTaskResultWithOptions($request, $headers, $runtime);
     }
 
     /**
