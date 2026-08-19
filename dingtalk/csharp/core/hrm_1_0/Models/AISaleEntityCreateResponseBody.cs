@@ -81,10 +81,6 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
 
             }
 
-            [NameInMap("userId")]
-            [Validation(Required=false)]
-            public string UserId { get; set; }
-
         }
 
         [NameInMap("success")]

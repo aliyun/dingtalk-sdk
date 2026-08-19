@@ -91,6 +91,42 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
                 [Validation(Required=false)]
                 public string Source { get; set; }
 
+                [NameInMap("subFields")]
+                [Validation(Required=false)]
+                public List<AISaleSchemaGetResponseBodyResultFieldsSubFields> SubFields { get; set; }
+                public class AISaleSchemaGetResponseBodyResultFieldsSubFields : TeaModel {
+                    [NameInMap("fieldKey")]
+                    [Validation(Required=false)]
+                    public string FieldKey { get; set; }
+
+                    [NameInMap("fieldLabel")]
+                    [Validation(Required=false)]
+                    public string FieldLabel { get; set; }
+
+                    [NameInMap("options")]
+                    [Validation(Required=false)]
+                    public List<AISaleSchemaGetResponseBodyResultFieldsSubFieldsOptions> Options { get; set; }
+                    public class AISaleSchemaGetResponseBodyResultFieldsSubFieldsOptions : TeaModel {
+                        [NameInMap("label")]
+                        [Validation(Required=false)]
+                        public string Label { get; set; }
+
+                        [NameInMap("value")]
+                        [Validation(Required=false)]
+                        public string Value { get; set; }
+
+                    }
+
+                    [NameInMap("placeholder")]
+                    [Validation(Required=false)]
+                    public string Placeholder { get; set; }
+
+                    [NameInMap("required")]
+                    [Validation(Required=false)]
+                    public bool? Required { get; set; }
+
+                }
+
             }
 
         }

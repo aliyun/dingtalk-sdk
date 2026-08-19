@@ -1222,7 +1222,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>查询群成员</para>
+        /// <para>查询场景群成员</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -1289,7 +1289,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>查询群成员</para>
+        /// <para>查询场景群成员</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -1356,7 +1356,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>查询群成员</para>
+        /// <para>查询场景群成员</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -1375,7 +1375,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>查询群成员</para>
+        /// <para>查询场景群成员</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -5210,7 +5210,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>解散群</para>
+        /// <para>解散场景群</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -5265,7 +5265,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>解散群</para>
+        /// <para>解散场景群</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -5320,7 +5320,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>解散群</para>
+        /// <para>解散场景群</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -5339,7 +5339,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>解散群</para>
+        /// <para>解散场景群</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -6742,7 +6742,163 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>查询群简要信息</para>
+        /// <para>查询场景群信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetSceneGroupDetailInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetSceneGroupDetailInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetSceneGroupDetailInfoResponse
+        /// </returns>
+        public GetSceneGroupDetailInfoResponse GetSceneGroupDetailInfoWithOptions(GetSceneGroupDetailInfoRequest request, GetSceneGroupDetailInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CoolAppCode))
+            {
+                body["cool_app_code"] = request.CoolAppCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["open_conversation_id"] = request.OpenConversationId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetSceneGroupDetailInfo",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/sceneGroups/queryDetail",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetSceneGroupDetailInfoResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询场景群信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetSceneGroupDetailInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetSceneGroupDetailInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetSceneGroupDetailInfoResponse
+        /// </returns>
+        public async Task<GetSceneGroupDetailInfoResponse> GetSceneGroupDetailInfoWithOptionsAsync(GetSceneGroupDetailInfoRequest request, GetSceneGroupDetailInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CoolAppCode))
+            {
+                body["cool_app_code"] = request.CoolAppCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["open_conversation_id"] = request.OpenConversationId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetSceneGroupDetailInfo",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/sceneGroups/queryDetail",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetSceneGroupDetailInfoResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询场景群信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetSceneGroupDetailInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetSceneGroupDetailInfoResponse
+        /// </returns>
+        public GetSceneGroupDetailInfoResponse GetSceneGroupDetailInfo(GetSceneGroupDetailInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetSceneGroupDetailInfoHeaders headers = new GetSceneGroupDetailInfoHeaders();
+            return GetSceneGroupDetailInfoWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询场景群信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetSceneGroupDetailInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetSceneGroupDetailInfoResponse
+        /// </returns>
+        public async Task<GetSceneGroupDetailInfoResponse> GetSceneGroupDetailInfoAsync(GetSceneGroupDetailInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetSceneGroupDetailInfoHeaders headers = new GetSceneGroupDetailInfoHeaders();
+            return await GetSceneGroupDetailInfoWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询场景群简要信息</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -6801,7 +6957,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>查询群简要信息</para>
+        /// <para>查询场景群简要信息</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -6860,7 +7016,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>查询群简要信息</para>
+        /// <para>查询场景群简要信息</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -6879,7 +7035,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>查询群简要信息</para>
+        /// <para>查询场景群简要信息</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -15014,7 +15170,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>查询群内群模板机器人</para>
+        /// <para>查询场景群内群模板机器人</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -15073,7 +15229,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>查询群内群模板机器人</para>
+        /// <para>查询场景群内群模板机器人</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -15132,7 +15288,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>查询群内群模板机器人</para>
+        /// <para>查询场景群内群模板机器人</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -15151,7 +15307,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>查询群内群模板机器人</para>
+        /// <para>查询场景群内群模板机器人</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -21326,7 +21482,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>更新群管理员</para>
+        /// <para>更新场景群管理员</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -21393,7 +21549,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>更新群管理员</para>
+        /// <para>更新场景群管理员</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -21460,7 +21616,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>更新群管理员</para>
+        /// <para>更新场景群管理员</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -21479,7 +21635,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>更新群管理员</para>
+        /// <para>更新场景群管理员</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -21678,7 +21834,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>设置群成员禁言状态</para>
+        /// <para>设置场景群成员禁言状态</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -21749,7 +21905,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>设置群成员禁言状态</para>
+        /// <para>设置场景群成员禁言状态</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -21820,7 +21976,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>设置群成员禁言状态</para>
+        /// <para>设置场景群成员禁言状态</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -21839,7 +21995,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>设置群成员禁言状态</para>
+        /// <para>设置场景群成员禁言状态</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -21858,7 +22014,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>更新群成员的群昵称</para>
+        /// <para>更新场景群成员的群昵称</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -21921,7 +22077,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>更新群成员的群昵称</para>
+        /// <para>更新场景群成员的群昵称</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -21984,7 +22140,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>更新群成员的群昵称</para>
+        /// <para>更新场景群成员的群昵称</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -22003,7 +22159,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>更新群成员的群昵称</para>
+        /// <para>更新场景群成员的群昵称</para>
         /// </summary>
         /// 
         /// <param name="request">

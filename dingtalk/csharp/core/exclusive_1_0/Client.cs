@@ -11182,6 +11182,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
             GetPublicDevicesShrinkRequest request = new GetPublicDevicesShrinkRequest();
             AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.DidList))
+            {
+                request.DidListShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.DidList, "didList", "json");
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.EncryptDeviceIdList))
             {
                 request.EncryptDeviceIdListShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.EncryptDeviceIdList, "encryptDeviceIdList", "json");
@@ -11194,6 +11198,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceUuid))
             {
                 query["deviceUuid"] = request.DeviceUuid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DidListShrink))
+            {
+                query["didList"] = request.DidListShrink;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EncryptDeviceIdListShrink))
             {
@@ -11287,6 +11295,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
             GetPublicDevicesShrinkRequest request = new GetPublicDevicesShrinkRequest();
             AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.DidList))
+            {
+                request.DidListShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.DidList, "didList", "json");
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.EncryptDeviceIdList))
             {
                 request.EncryptDeviceIdListShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.EncryptDeviceIdList, "encryptDeviceIdList", "json");
@@ -11299,6 +11311,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceUuid))
             {
                 query["deviceUuid"] = request.DeviceUuid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DidListShrink))
+            {
+                query["didList"] = request.DidListShrink;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EncryptDeviceIdListShrink))
             {

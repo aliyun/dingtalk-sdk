@@ -351,6 +351,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
                 [Validation(Required=false)]
                 public string Status { get; set; }
 
+                [NameInMap("taskGroupName")]
+                [Validation(Required=false)]
+                public string TaskGroupName { get; set; }
+
                 /// <summary>
                 /// <b>Example:</b>
                 /// <para>111</para>
