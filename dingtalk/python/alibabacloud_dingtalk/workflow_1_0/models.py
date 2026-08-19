@@ -5516,6 +5516,7 @@ class GetProcessInstanceResponseBodyResultTasks(TeaModel):
         process_instance_id: str = None,
         result: str = None,
         status: str = None,
+        task_group_name: str = None,
         task_id: int = None,
         user_id: str = None,
     ):
@@ -5529,6 +5530,7 @@ class GetProcessInstanceResponseBodyResultTasks(TeaModel):
         self.process_instance_id = process_instance_id
         self.result = result
         self.status = status
+        self.task_group_name = task_group_name
         self.task_id = task_id
         self.user_id = user_id
 
@@ -5557,6 +5559,8 @@ class GetProcessInstanceResponseBodyResultTasks(TeaModel):
             result['result'] = self.result
         if self.status is not None:
             result['status'] = self.status
+        if self.task_group_name is not None:
+            result['taskGroupName'] = self.task_group_name
         if self.task_id is not None:
             result['taskId'] = self.task_id
         if self.user_id is not None:
@@ -5581,6 +5585,8 @@ class GetProcessInstanceResponseBodyResultTasks(TeaModel):
             self.result = m.get('result')
         if m.get('status') is not None:
             self.status = m.get('status')
+        if m.get('taskGroupName') is not None:
+            self.task_group_name = m.get('taskGroupName')
         if m.get('taskId') is not None:
             self.task_id = m.get('taskId')
         if m.get('userId') is not None:

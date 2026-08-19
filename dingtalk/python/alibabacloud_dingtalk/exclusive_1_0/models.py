@@ -13414,6 +13414,7 @@ class GetPublicDevicesRequest(TeaModel):
     def __init__(
         self,
         device_uuid: str = None,
+        did_list: List[str] = None,
         encrypt_device_id_list: List[str] = None,
         end_time: int = None,
         mac_address: str = None,
@@ -13426,6 +13427,7 @@ class GetPublicDevicesRequest(TeaModel):
         title: str = None,
     ):
         self.device_uuid = device_uuid
+        self.did_list = did_list
         self.encrypt_device_id_list = encrypt_device_id_list
         self.end_time = end_time
         self.mac_address = mac_address
@@ -13448,6 +13450,8 @@ class GetPublicDevicesRequest(TeaModel):
         result = dict()
         if self.device_uuid is not None:
             result['deviceUuid'] = self.device_uuid
+        if self.did_list is not None:
+            result['didList'] = self.did_list
         if self.encrypt_device_id_list is not None:
             result['encryptDeviceIdList'] = self.encrypt_device_id_list
         if self.end_time is not None:
@@ -13474,6 +13478,8 @@ class GetPublicDevicesRequest(TeaModel):
         m = m or dict()
         if m.get('deviceUuid') is not None:
             self.device_uuid = m.get('deviceUuid')
+        if m.get('didList') is not None:
+            self.did_list = m.get('didList')
         if m.get('encryptDeviceIdList') is not None:
             self.encrypt_device_id_list = m.get('encryptDeviceIdList')
         if m.get('endTime') is not None:
@@ -13501,6 +13507,7 @@ class GetPublicDevicesShrinkRequest(TeaModel):
     def __init__(
         self,
         device_uuid: str = None,
+        did_list_shrink: str = None,
         encrypt_device_id_list_shrink: str = None,
         end_time: int = None,
         mac_address: str = None,
@@ -13513,6 +13520,7 @@ class GetPublicDevicesShrinkRequest(TeaModel):
         title: str = None,
     ):
         self.device_uuid = device_uuid
+        self.did_list_shrink = did_list_shrink
         self.encrypt_device_id_list_shrink = encrypt_device_id_list_shrink
         self.end_time = end_time
         self.mac_address = mac_address
@@ -13535,6 +13543,8 @@ class GetPublicDevicesShrinkRequest(TeaModel):
         result = dict()
         if self.device_uuid is not None:
             result['deviceUuid'] = self.device_uuid
+        if self.did_list_shrink is not None:
+            result['didList'] = self.did_list_shrink
         if self.encrypt_device_id_list_shrink is not None:
             result['encryptDeviceIdList'] = self.encrypt_device_id_list_shrink
         if self.end_time is not None:
@@ -13561,6 +13571,8 @@ class GetPublicDevicesShrinkRequest(TeaModel):
         m = m or dict()
         if m.get('deviceUuid') is not None:
             self.device_uuid = m.get('deviceUuid')
+        if m.get('didList') is not None:
+            self.did_list_shrink = m.get('didList')
         if m.get('encryptDeviceIdList') is not None:
             self.encrypt_device_id_list_shrink = m.get('encryptDeviceIdList')
         if m.get('endTime') is not None:

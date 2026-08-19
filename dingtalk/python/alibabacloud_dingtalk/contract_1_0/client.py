@@ -2180,6 +2180,128 @@ class Client(OpenApiClient):
         headers = dingtalkcontract__1__0_models.CreateSignFlowHeaders()
         return await self.create_sign_flow_with_options_async(request, headers, runtime)
 
+    def create_template_process_task_with_options(
+        self,
+        request: dingtalkcontract__1__0_models.CreateTemplateProcessTaskRequest,
+        headers: dingtalkcontract__1__0_models.CreateTemplateProcessTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.CreateTemplateProcessTaskResponse:
+        """
+        @summary 模版合成文件任务创建接口
+        
+        @param request: CreateTemplateProcessTaskRequest
+        @param headers: CreateTemplateProcessTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateTemplateProcessTaskResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.fill_data):
+            body['fillData'] = request.fill_data
+        if not UtilClient.is_unset(request.form_id):
+            body['formId'] = request.form_id
+        if not UtilClient.is_unset(request.mode):
+            body['mode'] = request.mode
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateTemplateProcessTask',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/template/file/createTask',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.CreateTemplateProcessTaskResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_template_process_task_with_options_async(
+        self,
+        request: dingtalkcontract__1__0_models.CreateTemplateProcessTaskRequest,
+        headers: dingtalkcontract__1__0_models.CreateTemplateProcessTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.CreateTemplateProcessTaskResponse:
+        """
+        @summary 模版合成文件任务创建接口
+        
+        @param request: CreateTemplateProcessTaskRequest
+        @param headers: CreateTemplateProcessTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateTemplateProcessTaskResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.fill_data):
+            body['fillData'] = request.fill_data
+        if not UtilClient.is_unset(request.form_id):
+            body['formId'] = request.form_id
+        if not UtilClient.is_unset(request.mode):
+            body['mode'] = request.mode
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateTemplateProcessTask',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/template/file/createTask',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.CreateTemplateProcessTaskResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_template_process_task(
+        self,
+        request: dingtalkcontract__1__0_models.CreateTemplateProcessTaskRequest,
+    ) -> dingtalkcontract__1__0_models.CreateTemplateProcessTaskResponse:
+        """
+        @summary 模版合成文件任务创建接口
+        
+        @param request: CreateTemplateProcessTaskRequest
+        @return: CreateTemplateProcessTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.CreateTemplateProcessTaskHeaders()
+        return self.create_template_process_task_with_options(request, headers, runtime)
+
+    async def create_template_process_task_async(
+        self,
+        request: dingtalkcontract__1__0_models.CreateTemplateProcessTaskRequest,
+    ) -> dingtalkcontract__1__0_models.CreateTemplateProcessTaskResponse:
+        """
+        @summary 模版合成文件任务创建接口
+        
+        @param request: CreateTemplateProcessTaskRequest
+        @return: CreateTemplateProcessTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.CreateTemplateProcessTaskHeaders()
+        return await self.create_template_process_task_with_options_async(request, headers, runtime)
+
     def esign_query_approval_info_with_options(
         self,
         request: dingtalkcontract__1__0_models.EsignQueryApprovalInfoRequest,
@@ -4360,6 +4482,144 @@ class Client(OpenApiClient):
         headers = dingtalkcontract__1__0_models.QueryContractAppsTermsExtractResultHeaders()
         return await self.query_contract_apps_terms_extract_result_with_options_async(request, headers, runtime)
 
+    def query_contract_compare_list_with_options(
+        self,
+        request: dingtalkcontract__1__0_models.QueryContractCompareListRequest,
+        headers: dingtalkcontract__1__0_models.QueryContractCompareListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.QueryContractCompareListResponse:
+        """
+        @summary 查询合同比对任务列表
+        
+        @param request: QueryContractCompareListRequest
+        @param headers: QueryContractCompareListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryContractCompareListResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.page_num):
+            body['pageNum'] = request.page_num
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.request_id):
+            body['requestId'] = request.request_id
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryContractCompareList',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/comparisonResults/queryList',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.QueryContractCompareListResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_contract_compare_list_with_options_async(
+        self,
+        request: dingtalkcontract__1__0_models.QueryContractCompareListRequest,
+        headers: dingtalkcontract__1__0_models.QueryContractCompareListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.QueryContractCompareListResponse:
+        """
+        @summary 查询合同比对任务列表
+        
+        @param request: QueryContractCompareListRequest
+        @param headers: QueryContractCompareListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryContractCompareListResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.page_num):
+            body['pageNum'] = request.page_num
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.request_id):
+            body['requestId'] = request.request_id
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryContractCompareList',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/comparisonResults/queryList',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.QueryContractCompareListResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_contract_compare_list(
+        self,
+        request: dingtalkcontract__1__0_models.QueryContractCompareListRequest,
+    ) -> dingtalkcontract__1__0_models.QueryContractCompareListResponse:
+        """
+        @summary 查询合同比对任务列表
+        
+        @param request: QueryContractCompareListRequest
+        @return: QueryContractCompareListResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.QueryContractCompareListHeaders()
+        return self.query_contract_compare_list_with_options(request, headers, runtime)
+
+    async def query_contract_compare_list_async(
+        self,
+        request: dingtalkcontract__1__0_models.QueryContractCompareListRequest,
+    ) -> dingtalkcontract__1__0_models.QueryContractCompareListResponse:
+        """
+        @summary 查询合同比对任务列表
+        
+        @param request: QueryContractCompareListRequest
+        @return: QueryContractCompareListResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.QueryContractCompareListHeaders()
+        return await self.query_contract_compare_list_with_options_async(request, headers, runtime)
+
     def query_contract_compare_result_with_options(
         self,
         request: dingtalkcontract__1__0_models.QueryContractCompareResultRequest,
@@ -4835,6 +5095,120 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcontract__1__0_models.QueryContractSignInfoHeaders()
         return await self.query_contract_sign_info_with_options_async(request, headers, runtime)
+
+    def query_file_process_result_with_options(
+        self,
+        request: dingtalkcontract__1__0_models.QueryFileProcessResultRequest,
+        headers: dingtalkcontract__1__0_models.QueryFileProcessResultHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.QueryFileProcessResultResponse:
+        """
+        @summary 查询文件合成结果
+        
+        @param request: QueryFileProcessResultRequest
+        @param headers: QueryFileProcessResultHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryFileProcessResultResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.render_task_id):
+            body['renderTaskId'] = request.render_task_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryFileProcessResult',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/template/file/queryResult',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.QueryFileProcessResultResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_file_process_result_with_options_async(
+        self,
+        request: dingtalkcontract__1__0_models.QueryFileProcessResultRequest,
+        headers: dingtalkcontract__1__0_models.QueryFileProcessResultHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.QueryFileProcessResultResponse:
+        """
+        @summary 查询文件合成结果
+        
+        @param request: QueryFileProcessResultRequest
+        @param headers: QueryFileProcessResultHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryFileProcessResultResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.render_task_id):
+            body['renderTaskId'] = request.render_task_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryFileProcessResult',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/template/file/queryResult',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.QueryFileProcessResultResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_file_process_result(
+        self,
+        request: dingtalkcontract__1__0_models.QueryFileProcessResultRequest,
+    ) -> dingtalkcontract__1__0_models.QueryFileProcessResultResponse:
+        """
+        @summary 查询文件合成结果
+        
+        @param request: QueryFileProcessResultRequest
+        @return: QueryFileProcessResultResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.QueryFileProcessResultHeaders()
+        return self.query_file_process_result_with_options(request, headers, runtime)
+
+    async def query_file_process_result_async(
+        self,
+        request: dingtalkcontract__1__0_models.QueryFileProcessResultRequest,
+    ) -> dingtalkcontract__1__0_models.QueryFileProcessResultResponse:
+        """
+        @summary 查询文件合成结果
+        
+        @param request: QueryFileProcessResultRequest
+        @return: QueryFileProcessResultResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.QueryFileProcessResultHeaders()
+        return await self.query_file_process_result_with_options_async(request, headers, runtime)
 
     def query_sign_flow_detail_with_options(
         self,

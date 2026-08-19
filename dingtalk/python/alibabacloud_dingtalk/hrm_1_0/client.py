@@ -28,6 +28,128 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def a_isale_attachment_permisson_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.AISaleAttachmentPermissonRequest,
+        headers: dingtalkhrm__1__0_models.AISaleAttachmentPermissonHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.AISaleAttachmentPermissonResponse:
+        """
+        @summary 附件授权
+        
+        @param request: AISaleAttachmentPermissonRequest
+        @param headers: AISaleAttachmentPermissonHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AISaleAttachmentPermissonResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.file_id):
+            body['fileId'] = request.file_id
+        if not UtilClient.is_unset(request.space_id):
+            body['spaceId'] = request.space_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AISaleAttachmentPermisson',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/ai-sale/api/v1/attachment/permission',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.AISaleAttachmentPermissonResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def a_isale_attachment_permisson_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.AISaleAttachmentPermissonRequest,
+        headers: dingtalkhrm__1__0_models.AISaleAttachmentPermissonHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.AISaleAttachmentPermissonResponse:
+        """
+        @summary 附件授权
+        
+        @param request: AISaleAttachmentPermissonRequest
+        @param headers: AISaleAttachmentPermissonHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AISaleAttachmentPermissonResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.file_id):
+            body['fileId'] = request.file_id
+        if not UtilClient.is_unset(request.space_id):
+            body['spaceId'] = request.space_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AISaleAttachmentPermisson',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/ai-sale/api/v1/attachment/permission',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.AISaleAttachmentPermissonResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def a_isale_attachment_permisson(
+        self,
+        request: dingtalkhrm__1__0_models.AISaleAttachmentPermissonRequest,
+    ) -> dingtalkhrm__1__0_models.AISaleAttachmentPermissonResponse:
+        """
+        @summary 附件授权
+        
+        @param request: AISaleAttachmentPermissonRequest
+        @return: AISaleAttachmentPermissonResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.AISaleAttachmentPermissonHeaders()
+        return self.a_isale_attachment_permisson_with_options(request, headers, runtime)
+
+    async def a_isale_attachment_permisson_async(
+        self,
+        request: dingtalkhrm__1__0_models.AISaleAttachmentPermissonRequest,
+    ) -> dingtalkhrm__1__0_models.AISaleAttachmentPermissonResponse:
+        """
+        @summary 附件授权
+        
+        @param request: AISaleAttachmentPermissonRequest
+        @return: AISaleAttachmentPermissonResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.AISaleAttachmentPermissonHeaders()
+        return await self.a_isale_attachment_permisson_with_options_async(request, headers, runtime)
+
     def a_isale_entity_create_with_options(
         self,
         request: dingtalkhrm__1__0_models.AISaleEntityCreateRequest,
@@ -50,6 +172,8 @@ class Client(OpenApiClient):
             body['entityType'] = request.entity_type
         if not UtilClient.is_unset(request.field_instances):
             body['fieldInstances'] = request.field_instances
+        if not UtilClient.is_unset(request.source):
+            body['source'] = request.source
         if not UtilClient.is_unset(request.user_id):
             body['userId'] = request.user_id
         real_headers = {}
@@ -99,6 +223,8 @@ class Client(OpenApiClient):
             body['entityType'] = request.entity_type
         if not UtilClient.is_unset(request.field_instances):
             body['fieldInstances'] = request.field_instances
+        if not UtilClient.is_unset(request.source):
+            body['source'] = request.source
         if not UtilClient.is_unset(request.user_id):
             body['userId'] = request.user_id
         real_headers = {}
@@ -428,6 +554,8 @@ class Client(OpenApiClient):
             body['entityType'] = request.entity_type
         if not UtilClient.is_unset(request.field_instances):
             body['fieldInstances'] = request.field_instances
+        if not UtilClient.is_unset(request.source):
+            body['source'] = request.source
         if not UtilClient.is_unset(request.user_id):
             body['userId'] = request.user_id
         real_headers = {}
@@ -477,6 +605,8 @@ class Client(OpenApiClient):
             body['entityType'] = request.entity_type
         if not UtilClient.is_unset(request.field_instances):
             body['fieldInstances'] = request.field_instances
+        if not UtilClient.is_unset(request.source):
+            body['source'] = request.source
         if not UtilClient.is_unset(request.user_id):
             body['userId'] = request.user_id
         real_headers = {}
@@ -531,6 +661,278 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrm__1__0_models.AISaleEntityUpdateHeaders()
         return await self.a_isale_entity_update_with_options_async(request, headers, runtime)
+
+    def a_isale_flash_minutes_analysis_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.AISaleFlashMinutesAnalysisRequest,
+        headers: dingtalkhrm__1__0_models.AISaleFlashMinutesAnalysisHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.AISaleFlashMinutesAnalysisResponse:
+        """
+        @summary AI营销活动听记总结分析
+        
+        @param request: AISaleFlashMinutesAnalysisRequest
+        @param headers: AISaleFlashMinutesAnalysisHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AISaleFlashMinutesAnalysisResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.entity_id):
+            body['entityId'] = request.entity_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AISaleFlashMinutesAnalysis',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/ai-sale/api/v1/common/flashMinutesAnalysis',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.AISaleFlashMinutesAnalysisResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def a_isale_flash_minutes_analysis_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.AISaleFlashMinutesAnalysisRequest,
+        headers: dingtalkhrm__1__0_models.AISaleFlashMinutesAnalysisHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.AISaleFlashMinutesAnalysisResponse:
+        """
+        @summary AI营销活动听记总结分析
+        
+        @param request: AISaleFlashMinutesAnalysisRequest
+        @param headers: AISaleFlashMinutesAnalysisHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AISaleFlashMinutesAnalysisResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.entity_id):
+            body['entityId'] = request.entity_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AISaleFlashMinutesAnalysis',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/ai-sale/api/v1/common/flashMinutesAnalysis',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.AISaleFlashMinutesAnalysisResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def a_isale_flash_minutes_analysis(
+        self,
+        request: dingtalkhrm__1__0_models.AISaleFlashMinutesAnalysisRequest,
+    ) -> dingtalkhrm__1__0_models.AISaleFlashMinutesAnalysisResponse:
+        """
+        @summary AI营销活动听记总结分析
+        
+        @param request: AISaleFlashMinutesAnalysisRequest
+        @return: AISaleFlashMinutesAnalysisResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.AISaleFlashMinutesAnalysisHeaders()
+        return self.a_isale_flash_minutes_analysis_with_options(request, headers, runtime)
+
+    async def a_isale_flash_minutes_analysis_async(
+        self,
+        request: dingtalkhrm__1__0_models.AISaleFlashMinutesAnalysisRequest,
+    ) -> dingtalkhrm__1__0_models.AISaleFlashMinutesAnalysisResponse:
+        """
+        @summary AI营销活动听记总结分析
+        
+        @param request: AISaleFlashMinutesAnalysisRequest
+        @return: AISaleFlashMinutesAnalysisResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.AISaleFlashMinutesAnalysisHeaders()
+        return await self.a_isale_flash_minutes_analysis_with_options_async(request, headers, runtime)
+
+    def a_isale_get_memory_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.AISaleGetMemoryRequest,
+        headers: dingtalkhrm__1__0_models.AISaleGetMemoryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.AISaleGetMemoryResponse:
+        """
+        @summary 活动助理记忆列表查询
+        
+        @param request: AISaleGetMemoryRequest
+        @param headers: AISaleGetMemoryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AISaleGetMemoryResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.creator_id):
+            body['creatorId'] = request.creator_id
+        if not UtilClient.is_unset(request.cursor):
+            body['cursor'] = request.cursor
+        if not UtilClient.is_unset(request.customer_scope_id):
+            body['customerScopeId'] = request.customer_scope_id
+        if not UtilClient.is_unset(request.entity_id):
+            body['entityId'] = request.entity_id
+        if not UtilClient.is_unset(request.entity_ids):
+            body['entityIds'] = request.entity_ids
+        if not UtilClient.is_unset(request.entity_type):
+            body['entityType'] = request.entity_type
+        if not UtilClient.is_unset(request.keyword):
+            body['keyword'] = request.keyword
+        if not UtilClient.is_unset(request.memory_category):
+            body['memoryCategory'] = request.memory_category
+        if not UtilClient.is_unset(request.min_importance):
+            body['minImportance'] = request.min_importance
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AISaleGetMemory',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/ai-sale/api/v1/memory/list',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.AISaleGetMemoryResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def a_isale_get_memory_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.AISaleGetMemoryRequest,
+        headers: dingtalkhrm__1__0_models.AISaleGetMemoryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.AISaleGetMemoryResponse:
+        """
+        @summary 活动助理记忆列表查询
+        
+        @param request: AISaleGetMemoryRequest
+        @param headers: AISaleGetMemoryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AISaleGetMemoryResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.creator_id):
+            body['creatorId'] = request.creator_id
+        if not UtilClient.is_unset(request.cursor):
+            body['cursor'] = request.cursor
+        if not UtilClient.is_unset(request.customer_scope_id):
+            body['customerScopeId'] = request.customer_scope_id
+        if not UtilClient.is_unset(request.entity_id):
+            body['entityId'] = request.entity_id
+        if not UtilClient.is_unset(request.entity_ids):
+            body['entityIds'] = request.entity_ids
+        if not UtilClient.is_unset(request.entity_type):
+            body['entityType'] = request.entity_type
+        if not UtilClient.is_unset(request.keyword):
+            body['keyword'] = request.keyword
+        if not UtilClient.is_unset(request.memory_category):
+            body['memoryCategory'] = request.memory_category
+        if not UtilClient.is_unset(request.min_importance):
+            body['minImportance'] = request.min_importance
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AISaleGetMemory',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/ai-sale/api/v1/memory/list',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.AISaleGetMemoryResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def a_isale_get_memory(
+        self,
+        request: dingtalkhrm__1__0_models.AISaleGetMemoryRequest,
+    ) -> dingtalkhrm__1__0_models.AISaleGetMemoryResponse:
+        """
+        @summary 活动助理记忆列表查询
+        
+        @param request: AISaleGetMemoryRequest
+        @return: AISaleGetMemoryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.AISaleGetMemoryHeaders()
+        return self.a_isale_get_memory_with_options(request, headers, runtime)
+
+    async def a_isale_get_memory_async(
+        self,
+        request: dingtalkhrm__1__0_models.AISaleGetMemoryRequest,
+    ) -> dingtalkhrm__1__0_models.AISaleGetMemoryResponse:
+        """
+        @summary 活动助理记忆列表查询
+        
+        @param request: AISaleGetMemoryRequest
+        @return: AISaleGetMemoryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.AISaleGetMemoryHeaders()
+        return await self.a_isale_get_memory_with_options_async(request, headers, runtime)
 
     def a_isale_schema_get_with_options(
         self,
@@ -649,6 +1051,250 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrm__1__0_models.AISaleSchemaGetHeaders()
         return await self.a_isale_schema_get_with_options_async(request, headers, runtime)
+
+    def a_isale_sync_ai_task_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.AISaleSyncAiTaskRequest,
+        headers: dingtalkhrm__1__0_models.AISaleSyncAiTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.AISaleSyncAiTaskResponse:
+        """
+        @summary AI营销的同步AI任务
+        
+        @param request: AISaleSyncAiTaskRequest
+        @param headers: AISaleSyncAiTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AISaleSyncAiTaskResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.scenario_code):
+            body['scenarioCode'] = request.scenario_code
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.user_prompt):
+            body['userPrompt'] = request.user_prompt
+        if not UtilClient.is_unset(request.variables):
+            body['variables'] = request.variables
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AISaleSyncAiTask',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/ai-sale/api/v1/common/executeSyncAiTask',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.AISaleSyncAiTaskResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def a_isale_sync_ai_task_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.AISaleSyncAiTaskRequest,
+        headers: dingtalkhrm__1__0_models.AISaleSyncAiTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.AISaleSyncAiTaskResponse:
+        """
+        @summary AI营销的同步AI任务
+        
+        @param request: AISaleSyncAiTaskRequest
+        @param headers: AISaleSyncAiTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AISaleSyncAiTaskResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.scenario_code):
+            body['scenarioCode'] = request.scenario_code
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.user_prompt):
+            body['userPrompt'] = request.user_prompt
+        if not UtilClient.is_unset(request.variables):
+            body['variables'] = request.variables
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AISaleSyncAiTask',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/ai-sale/api/v1/common/executeSyncAiTask',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.AISaleSyncAiTaskResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def a_isale_sync_ai_task(
+        self,
+        request: dingtalkhrm__1__0_models.AISaleSyncAiTaskRequest,
+    ) -> dingtalkhrm__1__0_models.AISaleSyncAiTaskResponse:
+        """
+        @summary AI营销的同步AI任务
+        
+        @param request: AISaleSyncAiTaskRequest
+        @return: AISaleSyncAiTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.AISaleSyncAiTaskHeaders()
+        return self.a_isale_sync_ai_task_with_options(request, headers, runtime)
+
+    async def a_isale_sync_ai_task_async(
+        self,
+        request: dingtalkhrm__1__0_models.AISaleSyncAiTaskRequest,
+    ) -> dingtalkhrm__1__0_models.AISaleSyncAiTaskResponse:
+        """
+        @summary AI营销的同步AI任务
+        
+        @param request: AISaleSyncAiTaskRequest
+        @return: AISaleSyncAiTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.AISaleSyncAiTaskHeaders()
+        return await self.a_isale_sync_ai_task_with_options_async(request, headers, runtime)
+
+    def a_isale_task_result_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.AISaleTaskResultRequest,
+        headers: dingtalkhrm__1__0_models.AISaleTaskResultHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.AISaleTaskResultResponse:
+        """
+        @summary AI营销任务结果查询
+        
+        @param request: AISaleTaskResultRequest
+        @param headers: AISaleTaskResultHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AISaleTaskResultResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.task_id):
+            body['taskId'] = request.task_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AISaleTaskResult',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/ai-sale/api/v1/common/taskResult',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.AISaleTaskResultResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def a_isale_task_result_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.AISaleTaskResultRequest,
+        headers: dingtalkhrm__1__0_models.AISaleTaskResultHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.AISaleTaskResultResponse:
+        """
+        @summary AI营销任务结果查询
+        
+        @param request: AISaleTaskResultRequest
+        @param headers: AISaleTaskResultHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AISaleTaskResultResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.task_id):
+            body['taskId'] = request.task_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AISaleTaskResult',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/ai-sale/api/v1/common/taskResult',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.AISaleTaskResultResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def a_isale_task_result(
+        self,
+        request: dingtalkhrm__1__0_models.AISaleTaskResultRequest,
+    ) -> dingtalkhrm__1__0_models.AISaleTaskResultResponse:
+        """
+        @summary AI营销任务结果查询
+        
+        @param request: AISaleTaskResultRequest
+        @return: AISaleTaskResultResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.AISaleTaskResultHeaders()
+        return self.a_isale_task_result_with_options(request, headers, runtime)
+
+    async def a_isale_task_result_async(
+        self,
+        request: dingtalkhrm__1__0_models.AISaleTaskResultRequest,
+    ) -> dingtalkhrm__1__0_models.AISaleTaskResultResponse:
+        """
+        @summary AI营销任务结果查询
+        
+        @param request: AISaleTaskResultRequest
+        @return: AISaleTaskResultResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.AISaleTaskResultHeaders()
+        return await self.a_isale_task_result_with_options_async(request, headers, runtime)
 
     def add_custom_roster_field_with_options(
         self,

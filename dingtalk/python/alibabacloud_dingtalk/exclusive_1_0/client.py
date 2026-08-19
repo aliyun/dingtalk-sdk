@@ -8413,6 +8413,8 @@ class Client(OpenApiClient):
         UtilClient.validate_model(tmp_req)
         request = dingtalkexclusive__1__0_models.GetPublicDevicesShrinkRequest()
         OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.did_list):
+            request.did_list_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.did_list, 'didList', 'json')
         if not UtilClient.is_unset(tmp_req.encrypt_device_id_list):
             request.encrypt_device_id_list_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.encrypt_device_id_list, 'encryptDeviceIdList', 'json')
         if not UtilClient.is_unset(tmp_req.serial_number_list):
@@ -8420,6 +8422,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.device_uuid):
             query['deviceUuid'] = request.device_uuid
+        if not UtilClient.is_unset(request.did_list_shrink):
+            query['didList'] = request.did_list_shrink
         if not UtilClient.is_unset(request.encrypt_device_id_list_shrink):
             query['encryptDeviceIdList'] = request.encrypt_device_id_list_shrink
         if not UtilClient.is_unset(request.end_time):
@@ -8482,6 +8486,8 @@ class Client(OpenApiClient):
         UtilClient.validate_model(tmp_req)
         request = dingtalkexclusive__1__0_models.GetPublicDevicesShrinkRequest()
         OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.did_list):
+            request.did_list_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.did_list, 'didList', 'json')
         if not UtilClient.is_unset(tmp_req.encrypt_device_id_list):
             request.encrypt_device_id_list_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.encrypt_device_id_list, 'encryptDeviceIdList', 'json')
         if not UtilClient.is_unset(tmp_req.serial_number_list):
@@ -8489,6 +8495,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.device_uuid):
             query['deviceUuid'] = request.device_uuid
+        if not UtilClient.is_unset(request.did_list_shrink):
+            query['didList'] = request.did_list_shrink
         if not UtilClient.is_unset(request.encrypt_device_id_list_shrink):
             query['encryptDeviceIdList'] = request.encrypt_device_id_list_shrink
         if not UtilClient.is_unset(request.end_time):

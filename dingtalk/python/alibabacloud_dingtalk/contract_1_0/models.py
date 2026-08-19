@@ -5296,6 +5296,252 @@ class CreateSignFlowResponse(TeaModel):
         return self
 
 
+class CreateTemplateProcessTaskHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateTemplateProcessTaskRequestFillData(TeaModel):
+    def __init__(
+        self,
+        struct_key: str = None,
+        struct_value: str = None,
+    ):
+        self.struct_key = struct_key
+        self.struct_value = struct_value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.struct_key is not None:
+            result['structKey'] = self.struct_key
+        if self.struct_value is not None:
+            result['structValue'] = self.struct_value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('structKey') is not None:
+            self.struct_key = m.get('structKey')
+        if m.get('structValue') is not None:
+            self.struct_value = m.get('structValue')
+        return self
+
+
+class CreateTemplateProcessTaskRequest(TeaModel):
+    def __init__(
+        self,
+        fill_data: List[CreateTemplateProcessTaskRequestFillData] = None,
+        form_id: str = None,
+        mode: str = None,
+    ):
+        self.fill_data = fill_data
+        self.form_id = form_id
+        self.mode = mode
+
+    def validate(self):
+        if self.fill_data:
+            for k in self.fill_data:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['fillData'] = []
+        if self.fill_data is not None:
+            for k in self.fill_data:
+                result['fillData'].append(k.to_map() if k else None)
+        if self.form_id is not None:
+            result['formId'] = self.form_id
+        if self.mode is not None:
+            result['mode'] = self.mode
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.fill_data = []
+        if m.get('fillData') is not None:
+            for k in m.get('fillData'):
+                temp_model = CreateTemplateProcessTaskRequestFillData()
+                self.fill_data.append(temp_model.from_map(k))
+        if m.get('formId') is not None:
+            self.form_id = m.get('formId')
+        if m.get('mode') is not None:
+            self.mode = m.get('mode')
+        return self
+
+
+class CreateTemplateProcessTaskResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        download_url: str = None,
+        fill_task_id: str = None,
+        mode: str = None,
+        render_task_id: str = None,
+    ):
+        self.download_url = download_url
+        self.fill_task_id = fill_task_id
+        self.mode = mode
+        self.render_task_id = render_task_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.download_url is not None:
+            result['downloadUrl'] = self.download_url
+        if self.fill_task_id is not None:
+            result['fillTaskId'] = self.fill_task_id
+        if self.mode is not None:
+            result['mode'] = self.mode
+        if self.render_task_id is not None:
+            result['renderTaskId'] = self.render_task_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('downloadUrl') is not None:
+            self.download_url = m.get('downloadUrl')
+        if m.get('fillTaskId') is not None:
+            self.fill_task_id = m.get('fillTaskId')
+        if m.get('mode') is not None:
+            self.mode = m.get('mode')
+        if m.get('renderTaskId') is not None:
+            self.render_task_id = m.get('renderTaskId')
+        return self
+
+
+class CreateTemplateProcessTaskResponseBody(TeaModel):
+    def __init__(
+        self,
+        error_code: str = None,
+        error_msg: str = None,
+        result: CreateTemplateProcessTaskResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.error_code = error_code
+        self.error_msg = error_msg
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.error_code is not None:
+            result['errorCode'] = self.error_code
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('errorCode') is not None:
+            self.error_code = m.get('errorCode')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('result') is not None:
+            temp_model = CreateTemplateProcessTaskResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class CreateTemplateProcessTaskResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CreateTemplateProcessTaskResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CreateTemplateProcessTaskResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class EsignQueryApprovalInfoHeaders(TeaModel):
     def __init__(
         self,
@@ -9849,6 +10095,312 @@ class QueryContractAppsTermsExtractResultResponse(TeaModel):
         return self
 
 
+class QueryContractCompareListHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryContractCompareListRequest(TeaModel):
+    def __init__(
+        self,
+        end_time: str = None,
+        page_num: int = None,
+        page_size: int = None,
+        request_id: str = None,
+        start_time: str = None,
+        status: str = None,
+        union_id: str = None,
+    ):
+        self.end_time = end_time
+        self.page_num = page_num
+        self.page_size = page_size
+        self.request_id = request_id
+        self.start_time = start_time
+        self.status = status
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.page_num is not None:
+            result['pageNum'] = self.page_num
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.status is not None:
+            result['status'] = self.status
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('pageNum') is not None:
+            self.page_num = m.get('pageNum')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class QueryContractCompareListResponseBodyResultData(TeaModel):
+    def __init__(
+        self,
+        comparative_file_name: str = None,
+        compare_status: str = None,
+        compare_task_id: str = None,
+        gmt_create: str = None,
+        gmt_modified: str = None,
+        initiator_uid: str = None,
+        request_id: str = None,
+        result: str = None,
+        standard_file_name: str = None,
+    ):
+        self.comparative_file_name = comparative_file_name
+        self.compare_status = compare_status
+        self.compare_task_id = compare_task_id
+        self.gmt_create = gmt_create
+        self.gmt_modified = gmt_modified
+        self.initiator_uid = initiator_uid
+        self.request_id = request_id
+        self.result = result
+        self.standard_file_name = standard_file_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.comparative_file_name is not None:
+            result['comparativeFileName'] = self.comparative_file_name
+        if self.compare_status is not None:
+            result['compareStatus'] = self.compare_status
+        if self.compare_task_id is not None:
+            result['compareTaskId'] = self.compare_task_id
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.gmt_modified is not None:
+            result['gmtModified'] = self.gmt_modified
+        if self.initiator_uid is not None:
+            result['initiatorUid'] = self.initiator_uid
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.result is not None:
+            result['result'] = self.result
+        if self.standard_file_name is not None:
+            result['standardFileName'] = self.standard_file_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('comparativeFileName') is not None:
+            self.comparative_file_name = m.get('comparativeFileName')
+        if m.get('compareStatus') is not None:
+            self.compare_status = m.get('compareStatus')
+        if m.get('compareTaskId') is not None:
+            self.compare_task_id = m.get('compareTaskId')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('gmtModified') is not None:
+            self.gmt_modified = m.get('gmtModified')
+        if m.get('initiatorUid') is not None:
+            self.initiator_uid = m.get('initiatorUid')
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('standardFileName') is not None:
+            self.standard_file_name = m.get('standardFileName')
+        return self
+
+
+class QueryContractCompareListResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        current_page: int = None,
+        data: List[QueryContractCompareListResponseBodyResultData] = None,
+        total_count: int = None,
+    ):
+        self.current_page = current_page
+        self.data = data
+        self.total_count = total_count
+
+    def validate(self):
+        if self.data:
+            for k in self.data:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.current_page is not None:
+            result['currentPage'] = self.current_page
+        result['data'] = []
+        if self.data is not None:
+            for k in self.data:
+                result['data'].append(k.to_map() if k else None)
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('currentPage') is not None:
+            self.current_page = m.get('currentPage')
+        self.data = []
+        if m.get('data') is not None:
+            for k in m.get('data'):
+                temp_model = QueryContractCompareListResponseBodyResultData()
+                self.data.append(temp_model.from_map(k))
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class QueryContractCompareListResponseBody(TeaModel):
+    def __init__(
+        self,
+        error_code: str = None,
+        error_msg: str = None,
+        result: QueryContractCompareListResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.error_code = error_code
+        self.error_msg = error_msg
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.error_code is not None:
+            result['errorCode'] = self.error_code
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('errorCode') is not None:
+            self.error_code = m.get('errorCode')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('result') is not None:
+            temp_model = QueryContractCompareListResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class QueryContractCompareListResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryContractCompareListResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryContractCompareListResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryContractCompareResultHeaders(TeaModel):
     def __init__(
         self,
@@ -11586,6 +12138,193 @@ class QueryContractSignInfoResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryContractSignInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryFileProcessResultHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryFileProcessResultRequest(TeaModel):
+    def __init__(
+        self,
+        render_task_id: str = None,
+    ):
+        self.render_task_id = render_task_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.render_task_id is not None:
+            result['renderTaskId'] = self.render_task_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('renderTaskId') is not None:
+            self.render_task_id = m.get('renderTaskId')
+        return self
+
+
+class QueryFileProcessResultResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        download_url: str = None,
+        pdf_status: str = None,
+        render_task_id: str = None,
+    ):
+        self.download_url = download_url
+        self.pdf_status = pdf_status
+        self.render_task_id = render_task_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.download_url is not None:
+            result['downloadUrl'] = self.download_url
+        if self.pdf_status is not None:
+            result['pdfStatus'] = self.pdf_status
+        if self.render_task_id is not None:
+            result['renderTaskId'] = self.render_task_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('downloadUrl') is not None:
+            self.download_url = m.get('downloadUrl')
+        if m.get('pdfStatus') is not None:
+            self.pdf_status = m.get('pdfStatus')
+        if m.get('renderTaskId') is not None:
+            self.render_task_id = m.get('renderTaskId')
+        return self
+
+
+class QueryFileProcessResultResponseBody(TeaModel):
+    def __init__(
+        self,
+        error_code: str = None,
+        error_msg: str = None,
+        result: QueryFileProcessResultResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.error_code = error_code
+        self.error_msg = error_msg
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.error_code is not None:
+            result['errorCode'] = self.error_code
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('errorCode') is not None:
+            self.error_code = m.get('errorCode')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('result') is not None:
+            temp_model = QueryFileProcessResultResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class QueryFileProcessResultResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryFileProcessResultResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryFileProcessResultResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

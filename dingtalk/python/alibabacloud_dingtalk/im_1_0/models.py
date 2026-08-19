@@ -6958,6 +6958,290 @@ class GetNewestInnerGroupsResponse(TeaModel):
         return self
 
 
+class GetSceneGroupDetailInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetSceneGroupDetailInfoRequest(TeaModel):
+    def __init__(
+        self,
+        cool_app_code: str = None,
+        open_conversation_id: str = None,
+    ):
+        self.cool_app_code = cool_app_code
+        # This parameter is required.
+        self.open_conversation_id = open_conversation_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.cool_app_code is not None:
+            result['cool_app_code'] = self.cool_app_code
+        if self.open_conversation_id is not None:
+            result['open_conversation_id'] = self.open_conversation_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cool_app_code') is not None:
+            self.cool_app_code = m.get('cool_app_code')
+        if m.get('open_conversation_id') is not None:
+            self.open_conversation_id = m.get('open_conversation_id')
+        return self
+
+
+class GetSceneGroupDetailInfoResponseBodyManagementOptions(TeaModel):
+    def __init__(
+        self,
+        chat_banned_type: str = None,
+        management_type: str = None,
+        mention_all_authority: str = None,
+        not_quit_when_emp_leave: str = None,
+        only_admin_can_add_mem: str = None,
+        searchable: str = None,
+        show_history_type: str = None,
+        validation_type: str = None,
+    ):
+        self.chat_banned_type = chat_banned_type
+        self.management_type = management_type
+        self.mention_all_authority = mention_all_authority
+        self.not_quit_when_emp_leave = not_quit_when_emp_leave
+        self.only_admin_can_add_mem = only_admin_can_add_mem
+        self.searchable = searchable
+        self.show_history_type = show_history_type
+        self.validation_type = validation_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.chat_banned_type is not None:
+            result['chat_banned_type'] = self.chat_banned_type
+        if self.management_type is not None:
+            result['management_type'] = self.management_type
+        if self.mention_all_authority is not None:
+            result['mention_all_authority'] = self.mention_all_authority
+        if self.not_quit_when_emp_leave is not None:
+            result['not_quit_when_emp_leave'] = self.not_quit_when_emp_leave
+        if self.only_admin_can_add_mem is not None:
+            result['only_admin_can_add_mem'] = self.only_admin_can_add_mem
+        if self.searchable is not None:
+            result['searchable'] = self.searchable
+        if self.show_history_type is not None:
+            result['show_history_type'] = self.show_history_type
+        if self.validation_type is not None:
+            result['validation_type'] = self.validation_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('chat_banned_type') is not None:
+            self.chat_banned_type = m.get('chat_banned_type')
+        if m.get('management_type') is not None:
+            self.management_type = m.get('management_type')
+        if m.get('mention_all_authority') is not None:
+            self.mention_all_authority = m.get('mention_all_authority')
+        if m.get('not_quit_when_emp_leave') is not None:
+            self.not_quit_when_emp_leave = m.get('not_quit_when_emp_leave')
+        if m.get('only_admin_can_add_mem') is not None:
+            self.only_admin_can_add_mem = m.get('only_admin_can_add_mem')
+        if m.get('searchable') is not None:
+            self.searchable = m.get('searchable')
+        if m.get('show_history_type') is not None:
+            self.show_history_type = m.get('show_history_type')
+        if m.get('validation_type') is not None:
+            self.validation_type = m.get('validation_type')
+        return self
+
+
+class GetSceneGroupDetailInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        group_url: str = None,
+        icon: str = None,
+        management_options: GetSceneGroupDetailInfoResponseBodyManagementOptions = None,
+        member_amount: int = None,
+        open_conversation_id: str = None,
+        owner_union_id: str = None,
+        owner_user_id: str = None,
+        scene_data: str = None,
+        status: int = None,
+        sub_admin_staff_ids: List[str] = None,
+        sub_admin_union_ids: List[str] = None,
+        success: bool = None,
+        template_id: str = None,
+        title: str = None,
+    ):
+        self.group_url = group_url
+        self.icon = icon
+        self.management_options = management_options
+        self.member_amount = member_amount
+        self.open_conversation_id = open_conversation_id
+        self.owner_union_id = owner_union_id
+        self.owner_user_id = owner_user_id
+        self.scene_data = scene_data
+        self.status = status
+        self.sub_admin_staff_ids = sub_admin_staff_ids
+        self.sub_admin_union_ids = sub_admin_union_ids
+        self.success = success
+        self.template_id = template_id
+        self.title = title
+
+    def validate(self):
+        if self.management_options:
+            self.management_options.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.group_url is not None:
+            result['group_url'] = self.group_url
+        if self.icon is not None:
+            result['icon'] = self.icon
+        if self.management_options is not None:
+            result['management_options'] = self.management_options.to_map()
+        if self.member_amount is not None:
+            result['member_amount'] = self.member_amount
+        if self.open_conversation_id is not None:
+            result['open_conversation_id'] = self.open_conversation_id
+        if self.owner_union_id is not None:
+            result['owner_union_id'] = self.owner_union_id
+        if self.owner_user_id is not None:
+            result['owner_user_id'] = self.owner_user_id
+        if self.scene_data is not None:
+            result['scene_data'] = self.scene_data
+        if self.status is not None:
+            result['status'] = self.status
+        if self.sub_admin_staff_ids is not None:
+            result['sub_admin_staff_ids'] = self.sub_admin_staff_ids
+        if self.sub_admin_union_ids is not None:
+            result['sub_admin_union_ids'] = self.sub_admin_union_ids
+        if self.success is not None:
+            result['success'] = self.success
+        if self.template_id is not None:
+            result['template_id'] = self.template_id
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('group_url') is not None:
+            self.group_url = m.get('group_url')
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
+        if m.get('management_options') is not None:
+            temp_model = GetSceneGroupDetailInfoResponseBodyManagementOptions()
+            self.management_options = temp_model.from_map(m['management_options'])
+        if m.get('member_amount') is not None:
+            self.member_amount = m.get('member_amount')
+        if m.get('open_conversation_id') is not None:
+            self.open_conversation_id = m.get('open_conversation_id')
+        if m.get('owner_union_id') is not None:
+            self.owner_union_id = m.get('owner_union_id')
+        if m.get('owner_user_id') is not None:
+            self.owner_user_id = m.get('owner_user_id')
+        if m.get('scene_data') is not None:
+            self.scene_data = m.get('scene_data')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('sub_admin_staff_ids') is not None:
+            self.sub_admin_staff_ids = m.get('sub_admin_staff_ids')
+        if m.get('sub_admin_union_ids') is not None:
+            self.sub_admin_union_ids = m.get('sub_admin_union_ids')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        if m.get('template_id') is not None:
+            self.template_id = m.get('template_id')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class GetSceneGroupDetailInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetSceneGroupDetailInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetSceneGroupDetailInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetSceneGroupInfoHeaders(TeaModel):
     def __init__(
         self,

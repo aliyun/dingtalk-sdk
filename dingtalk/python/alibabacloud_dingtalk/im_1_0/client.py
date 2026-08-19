@@ -901,7 +901,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.BatchQueryGroupMemberResponse:
         """
-        @summary 查询群成员
+        @summary 查询场景群成员
         
         @param request: BatchQueryGroupMemberRequest
         @param headers: BatchQueryGroupMemberHeaders
@@ -950,7 +950,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.BatchQueryGroupMemberResponse:
         """
-        @summary 查询群成员
+        @summary 查询场景群成员
         
         @param request: BatchQueryGroupMemberRequest
         @param headers: BatchQueryGroupMemberHeaders
@@ -997,7 +997,7 @@ class Client(OpenApiClient):
         request: dingtalkim__1__0_models.BatchQueryGroupMemberRequest,
     ) -> dingtalkim__1__0_models.BatchQueryGroupMemberResponse:
         """
-        @summary 查询群成员
+        @summary 查询场景群成员
         
         @param request: BatchQueryGroupMemberRequest
         @return: BatchQueryGroupMemberResponse
@@ -1011,7 +1011,7 @@ class Client(OpenApiClient):
         request: dingtalkim__1__0_models.BatchQueryGroupMemberRequest,
     ) -> dingtalkim__1__0_models.BatchQueryGroupMemberResponse:
         """
-        @summary 查询群成员
+        @summary 查询场景群成员
         
         @param request: BatchQueryGroupMemberRequest
         @return: BatchQueryGroupMemberResponse
@@ -3847,7 +3847,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.DsbandOpenSceneGroupResponse:
         """
-        @summary 解散群
+        @summary 解散场景群
         
         @param request: DsbandOpenSceneGroupRequest
         @param headers: DsbandOpenSceneGroupHeaders
@@ -3890,7 +3890,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.DsbandOpenSceneGroupResponse:
         """
-        @summary 解散群
+        @summary 解散场景群
         
         @param request: DsbandOpenSceneGroupRequest
         @param headers: DsbandOpenSceneGroupHeaders
@@ -3931,7 +3931,7 @@ class Client(OpenApiClient):
         request: dingtalkim__1__0_models.DsbandOpenSceneGroupRequest,
     ) -> dingtalkim__1__0_models.DsbandOpenSceneGroupResponse:
         """
-        @summary 解散群
+        @summary 解散场景群
         
         @param request: DsbandOpenSceneGroupRequest
         @return: DsbandOpenSceneGroupResponse
@@ -3945,7 +3945,7 @@ class Client(OpenApiClient):
         request: dingtalkim__1__0_models.DsbandOpenSceneGroupRequest,
     ) -> dingtalkim__1__0_models.DsbandOpenSceneGroupResponse:
         """
-        @summary 解散群
+        @summary 解散场景群
         
         @param request: DsbandOpenSceneGroupRequest
         @return: DsbandOpenSceneGroupResponse
@@ -4966,6 +4966,124 @@ class Client(OpenApiClient):
         headers = dingtalkim__1__0_models.GetNewestInnerGroupsHeaders()
         return await self.get_newest_inner_groups_with_options_async(request, headers, runtime)
 
+    def get_scene_group_detail_info_with_options(
+        self,
+        request: dingtalkim__1__0_models.GetSceneGroupDetailInfoRequest,
+        headers: dingtalkim__1__0_models.GetSceneGroupDetailInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.GetSceneGroupDetailInfoResponse:
+        """
+        @summary 查询场景群信息
+        
+        @param request: GetSceneGroupDetailInfoRequest
+        @param headers: GetSceneGroupDetailInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSceneGroupDetailInfoResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.cool_app_code):
+            body['cool_app_code'] = request.cool_app_code
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['open_conversation_id'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetSceneGroupDetailInfo',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/sceneGroups/queryDetail',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.GetSceneGroupDetailInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_scene_group_detail_info_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.GetSceneGroupDetailInfoRequest,
+        headers: dingtalkim__1__0_models.GetSceneGroupDetailInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.GetSceneGroupDetailInfoResponse:
+        """
+        @summary 查询场景群信息
+        
+        @param request: GetSceneGroupDetailInfoRequest
+        @param headers: GetSceneGroupDetailInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSceneGroupDetailInfoResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.cool_app_code):
+            body['cool_app_code'] = request.cool_app_code
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['open_conversation_id'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetSceneGroupDetailInfo',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/sceneGroups/queryDetail',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.GetSceneGroupDetailInfoResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_scene_group_detail_info(
+        self,
+        request: dingtalkim__1__0_models.GetSceneGroupDetailInfoRequest,
+    ) -> dingtalkim__1__0_models.GetSceneGroupDetailInfoResponse:
+        """
+        @summary 查询场景群信息
+        
+        @param request: GetSceneGroupDetailInfoRequest
+        @return: GetSceneGroupDetailInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.GetSceneGroupDetailInfoHeaders()
+        return self.get_scene_group_detail_info_with_options(request, headers, runtime)
+
+    async def get_scene_group_detail_info_async(
+        self,
+        request: dingtalkim__1__0_models.GetSceneGroupDetailInfoRequest,
+    ) -> dingtalkim__1__0_models.GetSceneGroupDetailInfoResponse:
+        """
+        @summary 查询场景群信息
+        
+        @param request: GetSceneGroupDetailInfoRequest
+        @return: GetSceneGroupDetailInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.GetSceneGroupDetailInfoHeaders()
+        return await self.get_scene_group_detail_info_with_options_async(request, headers, runtime)
+
     def get_scene_group_info_with_options(
         self,
         request: dingtalkim__1__0_models.GetSceneGroupInfoRequest,
@@ -4973,7 +5091,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.GetSceneGroupInfoResponse:
         """
-        @summary 查询群简要信息
+        @summary 查询场景群简要信息
         
         @param request: GetSceneGroupInfoRequest
         @param headers: GetSceneGroupInfoHeaders
@@ -5018,7 +5136,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.GetSceneGroupInfoResponse:
         """
-        @summary 查询群简要信息
+        @summary 查询场景群简要信息
         
         @param request: GetSceneGroupInfoRequest
         @param headers: GetSceneGroupInfoHeaders
@@ -5061,7 +5179,7 @@ class Client(OpenApiClient):
         request: dingtalkim__1__0_models.GetSceneGroupInfoRequest,
     ) -> dingtalkim__1__0_models.GetSceneGroupInfoResponse:
         """
-        @summary 查询群简要信息
+        @summary 查询场景群简要信息
         
         @param request: GetSceneGroupInfoRequest
         @return: GetSceneGroupInfoResponse
@@ -5075,7 +5193,7 @@ class Client(OpenApiClient):
         request: dingtalkim__1__0_models.GetSceneGroupInfoRequest,
     ) -> dingtalkim__1__0_models.GetSceneGroupInfoResponse:
         """
-        @summary 查询群简要信息
+        @summary 查询场景群简要信息
         
         @param request: GetSceneGroupInfoRequest
         @return: GetSceneGroupInfoResponse
@@ -11105,7 +11223,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.QuerySceneGroupTemplateRobotResponse:
         """
-        @summary 查询群内群模板机器人
+        @summary 查询场景群内群模板机器人
         
         @param request: QuerySceneGroupTemplateRobotRequest
         @param headers: QuerySceneGroupTemplateRobotHeaders
@@ -11150,7 +11268,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.QuerySceneGroupTemplateRobotResponse:
         """
-        @summary 查询群内群模板机器人
+        @summary 查询场景群内群模板机器人
         
         @param request: QuerySceneGroupTemplateRobotRequest
         @param headers: QuerySceneGroupTemplateRobotHeaders
@@ -11193,7 +11311,7 @@ class Client(OpenApiClient):
         request: dingtalkim__1__0_models.QuerySceneGroupTemplateRobotRequest,
     ) -> dingtalkim__1__0_models.QuerySceneGroupTemplateRobotResponse:
         """
-        @summary 查询群内群模板机器人
+        @summary 查询场景群内群模板机器人
         
         @param request: QuerySceneGroupTemplateRobotRequest
         @return: QuerySceneGroupTemplateRobotResponse
@@ -11207,7 +11325,7 @@ class Client(OpenApiClient):
         request: dingtalkim__1__0_models.QuerySceneGroupTemplateRobotRequest,
     ) -> dingtalkim__1__0_models.QuerySceneGroupTemplateRobotResponse:
         """
-        @summary 查询群内群模板机器人
+        @summary 查询场景群内群模板机器人
         
         @param request: QuerySceneGroupTemplateRobotRequest
         @return: QuerySceneGroupTemplateRobotResponse
@@ -15701,7 +15819,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.UpdateGroupSubAdminResponse:
         """
-        @summary 更新群管理员
+        @summary 更新场景群管理员
         
         @param request: UpdateGroupSubAdminRequest
         @param headers: UpdateGroupSubAdminHeaders
@@ -15750,7 +15868,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.UpdateGroupSubAdminResponse:
         """
-        @summary 更新群管理员
+        @summary 更新场景群管理员
         
         @param request: UpdateGroupSubAdminRequest
         @param headers: UpdateGroupSubAdminHeaders
@@ -15797,7 +15915,7 @@ class Client(OpenApiClient):
         request: dingtalkim__1__0_models.UpdateGroupSubAdminRequest,
     ) -> dingtalkim__1__0_models.UpdateGroupSubAdminResponse:
         """
-        @summary 更新群管理员
+        @summary 更新场景群管理员
         
         @param request: UpdateGroupSubAdminRequest
         @return: UpdateGroupSubAdminResponse
@@ -15811,7 +15929,7 @@ class Client(OpenApiClient):
         request: dingtalkim__1__0_models.UpdateGroupSubAdminRequest,
     ) -> dingtalkim__1__0_models.UpdateGroupSubAdminResponse:
         """
-        @summary 更新群管理员
+        @summary 更新场景群管理员
         
         @param request: UpdateGroupSubAdminRequest
         @return: UpdateGroupSubAdminResponse
@@ -15957,7 +16075,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.UpdateMemberBanWordsResponse:
         """
-        @summary 设置群成员禁言状态
+        @summary 设置场景群成员禁言状态
         
         @param request: UpdateMemberBanWordsRequest
         @param headers: UpdateMemberBanWordsHeaders
@@ -16008,7 +16126,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.UpdateMemberBanWordsResponse:
         """
-        @summary 设置群成员禁言状态
+        @summary 设置场景群成员禁言状态
         
         @param request: UpdateMemberBanWordsRequest
         @param headers: UpdateMemberBanWordsHeaders
@@ -16057,7 +16175,7 @@ class Client(OpenApiClient):
         request: dingtalkim__1__0_models.UpdateMemberBanWordsRequest,
     ) -> dingtalkim__1__0_models.UpdateMemberBanWordsResponse:
         """
-        @summary 设置群成员禁言状态
+        @summary 设置场景群成员禁言状态
         
         @param request: UpdateMemberBanWordsRequest
         @return: UpdateMemberBanWordsResponse
@@ -16071,7 +16189,7 @@ class Client(OpenApiClient):
         request: dingtalkim__1__0_models.UpdateMemberBanWordsRequest,
     ) -> dingtalkim__1__0_models.UpdateMemberBanWordsResponse:
         """
-        @summary 设置群成员禁言状态
+        @summary 设置场景群成员禁言状态
         
         @param request: UpdateMemberBanWordsRequest
         @return: UpdateMemberBanWordsResponse
@@ -16087,7 +16205,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.UpdateMemberGroupNickResponse:
         """
-        @summary 更新群成员的群昵称
+        @summary 更新场景群成员的群昵称
         
         @param request: UpdateMemberGroupNickRequest
         @param headers: UpdateMemberGroupNickHeaders
@@ -16134,7 +16252,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.UpdateMemberGroupNickResponse:
         """
-        @summary 更新群成员的群昵称
+        @summary 更新场景群成员的群昵称
         
         @param request: UpdateMemberGroupNickRequest
         @param headers: UpdateMemberGroupNickHeaders
@@ -16179,7 +16297,7 @@ class Client(OpenApiClient):
         request: dingtalkim__1__0_models.UpdateMemberGroupNickRequest,
     ) -> dingtalkim__1__0_models.UpdateMemberGroupNickResponse:
         """
-        @summary 更新群成员的群昵称
+        @summary 更新场景群成员的群昵称
         
         @param request: UpdateMemberGroupNickRequest
         @return: UpdateMemberGroupNickResponse
@@ -16193,7 +16311,7 @@ class Client(OpenApiClient):
         request: dingtalkim__1__0_models.UpdateMemberGroupNickRequest,
     ) -> dingtalkim__1__0_models.UpdateMemberGroupNickResponse:
         """
-        @summary 更新群成员的群昵称
+        @summary 更新场景群成员的群昵称
         
         @param request: UpdateMemberGroupNickRequest
         @return: UpdateMemberGroupNickResponse
