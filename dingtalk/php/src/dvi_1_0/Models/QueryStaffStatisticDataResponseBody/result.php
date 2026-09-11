@@ -4,6 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\QueryStaffStatisticDataResponseBody;
 
+use AlibabaCloud\SDK\Dingtalk\Vdvi_1_0\Models\QueryStaffStatisticDataResponseBody\result\qualityInspectL1Data;
 use AlibabaCloud\Tea\Model;
 
 class result extends Model
@@ -22,6 +23,11 @@ class result extends Model
      * @var float
      */
     public $highestQualityInspectionScore;
+
+    /**
+     * @var qualityInspectL1Data[]
+     */
+    public $qualityInspectL1Data;
 
     /**
      * @var mixed[]
@@ -61,6 +67,7 @@ class result extends Model
         'averageQualityInspectionScorePerService' => 'averageQualityInspectionScorePerService',
         'day' => 'day',
         'highestQualityInspectionScore' => 'highestQualityInspectionScore',
+        'qualityInspectL1Data' => 'qualityInspectL1Data',
         'saleSopPercentage' => 'saleSopPercentage',
         'serviceRecordCount' => 'serviceRecordCount',
         'staffName' => 'staffName',
@@ -83,6 +90,15 @@ class result extends Model
         }
         if (null !== $this->highestQualityInspectionScore) {
             $res['highestQualityInspectionScore'] = $this->highestQualityInspectionScore;
+        }
+        if (null !== $this->qualityInspectL1Data) {
+            $res['qualityInspectL1Data'] = [];
+            if (null !== $this->qualityInspectL1Data && \is_array($this->qualityInspectL1Data)) {
+                $n = 0;
+                foreach ($this->qualityInspectL1Data as $item) {
+                    $res['qualityInspectL1Data'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
         if (null !== $this->saleSopPercentage) {
             $res['saleSopPercentage'] = $this->saleSopPercentage;
@@ -125,6 +141,15 @@ class result extends Model
         }
         if (isset($map['highestQualityInspectionScore'])) {
             $model->highestQualityInspectionScore = $map['highestQualityInspectionScore'];
+        }
+        if (isset($map['qualityInspectL1Data'])) {
+            if (!empty($map['qualityInspectL1Data'])) {
+                $model->qualityInspectL1Data = [];
+                $n = 0;
+                foreach ($map['qualityInspectL1Data'] as $item) {
+                    $model->qualityInspectL1Data[$n++] = null !== $item ? qualityInspectL1Data::fromMap($item) : $item;
+                }
+            }
         }
         if (isset($map['saleSopPercentage'])) {
             $model->saleSopPercentage = $map['saleSopPercentage'];

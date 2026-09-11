@@ -236,6 +236,9 @@ use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\SaveIntegratedInstanceRespons
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\SaveProcessHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\SaveProcessRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\SaveProcessResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\SetWorkflowTaskAgentHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\SetWorkflowTaskAgentRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\SetWorkflowTaskAgentResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\StartProcessInstanceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\StartProcessInstanceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\StartProcessInstanceResponse;
@@ -5230,6 +5233,84 @@ class Dingtalk extends OpenApiClient
         $headers = new SaveProcessHeaders([]);
 
         return $this->saveProcessWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 设置审批任务代理
+     *  *
+     * @param SetWorkflowTaskAgentRequest $request SetWorkflowTaskAgentRequest
+     * @param SetWorkflowTaskAgentHeaders $headers SetWorkflowTaskAgentHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SetWorkflowTaskAgentResponse SetWorkflowTaskAgentResponse
+     */
+    public function setWorkflowTaskAgentWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->agentStaffId)) {
+            $body['agentStaffId'] = $request->agentStaffId;
+        }
+        if (!Utils::isUnset($request->all)) {
+            $body['all'] = $request->all;
+        }
+        if (!Utils::isUnset($request->endDate)) {
+            $body['endDate'] = $request->endDate;
+        }
+        if (!Utils::isUnset($request->fromStaffId)) {
+            $body['fromStaffId'] = $request->fromStaffId;
+        }
+        if (!Utils::isUnset($request->managerStaffId)) {
+            $body['managerStaffId'] = $request->managerStaffId;
+        }
+        if (!Utils::isUnset($request->processCodes)) {
+            $body['processCodes'] = $request->processCodes;
+        }
+        if (!Utils::isUnset($request->requestId)) {
+            $body['requestId'] = $request->requestId;
+        }
+        if (!Utils::isUnset($request->startDate)) {
+            $body['startDate'] = $request->startDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'SetWorkflowTaskAgent',
+            'version' => 'workflow_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/workflow/tasks/agent',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return SetWorkflowTaskAgentResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 设置审批任务代理
+     *  *
+     * @param SetWorkflowTaskAgentRequest $request SetWorkflowTaskAgentRequest
+     *
+     * @return SetWorkflowTaskAgentResponse SetWorkflowTaskAgentResponse
+     */
+    public function setWorkflowTaskAgent($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SetWorkflowTaskAgentHeaders([]);
+
+        return $this->setWorkflowTaskAgentWithOptions($request, $headers, $runtime);
     }
 
     /**

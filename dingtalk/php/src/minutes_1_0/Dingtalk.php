@@ -24,6 +24,9 @@ use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\CreateSmartDeviceAiSummaryHead
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\CreateSmartDeviceAiSummaryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\CreateSmartDeviceAiSummaryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\DeleteMinutesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\DeleteMinutesMediaHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\DeleteMinutesMediaRequest;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\DeleteMinutesMediaResponse;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\DeleteMinutesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\DeleteMinutesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\ExportMinutesTaskResultHeaders;
@@ -32,6 +35,9 @@ use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\ExportMinutesTaskResultRespons
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\GenerateSummaryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\GenerateSummaryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\GenerateSummaryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\ListMinutesAttachmentsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\ListMinutesAttachmentsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\ListMinutesAttachmentsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\MoveOutTempStorageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\MoveOutTempStorageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\MoveOutTempStorageResponse;
@@ -97,6 +103,9 @@ use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\QueryUserMinutesPermissionResp
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\RegenerateChaptersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\RegenerateChaptersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\RegenerateChaptersResponse;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\SetA1DetailPageCustomTabHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\SetA1DetailPageCustomTabRequest;
+use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\SetA1DetailPageCustomTabResponse;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\SetDetailPageCustomTabHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\SetDetailPageCustomTabRequest;
 use AlibabaCloud\SDK\Dingtalk\Vminutes_1_0\Models\SetDetailPageCustomTabResponse;
@@ -597,6 +606,66 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除听记音视频文件释放存储空间
+     *  *
+     * @param DeleteMinutesMediaRequest $request DeleteMinutesMediaRequest
+     * @param DeleteMinutesMediaHeaders $headers DeleteMinutesMediaHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return DeleteMinutesMediaResponse DeleteMinutesMediaResponse
+     */
+    public function deleteMinutesMediaWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->taskUuid)) {
+            $query['taskUuid'] = $request->taskUuid;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'DeleteMinutesMedia',
+            'version' => 'minutes_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/minutes/flashMinutes/deleteMedia',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return DeleteMinutesMediaResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 删除听记音视频文件释放存储空间
+     *  *
+     * @param DeleteMinutesMediaRequest $request DeleteMinutesMediaRequest
+     *
+     * @return DeleteMinutesMediaResponse DeleteMinutesMediaResponse
+     */
+    public function deleteMinutesMedia($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteMinutesMediaHeaders([]);
+
+        return $this->deleteMinutesMediaWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 导出闪记任务结果
      *  *
      * @param ExportMinutesTaskResultRequest $request ExportMinutesTaskResultRequest
@@ -741,6 +810,80 @@ class Dingtalk extends OpenApiClient
         $headers = new GenerateSummaryHeaders([]);
 
         return $this->generateSummaryWithOptions($taskUuid, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询听记笔记内容
+     *  *
+     * @param string                        $taskUuid
+     * @param ListMinutesAttachmentsRequest $request  ListMinutesAttachmentsRequest
+     * @param ListMinutesAttachmentsHeaders $headers  ListMinutesAttachmentsHeaders
+     * @param RuntimeOptions                $runtime  runtime options for this request RuntimeOptions
+     *
+     * @return ListMinutesAttachmentsResponse ListMinutesAttachmentsResponse
+     */
+    public function listMinutesAttachmentsWithOptions($taskUuid, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->contentType)) {
+            $query['contentType'] = $request->contentType;
+        }
+        if (!Utils::isUnset($request->direction)) {
+            $query['direction'] = $request->direction;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->type)) {
+            $query['type'] = $request->type;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'ListMinutesAttachments',
+            'version' => 'minutes_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/minutes/' . $taskUuid . '/attachments',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return ListMinutesAttachmentsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询听记笔记内容
+     *  *
+     * @param string                        $taskUuid
+     * @param ListMinutesAttachmentsRequest $request  ListMinutesAttachmentsRequest
+     *
+     * @return ListMinutesAttachmentsResponse ListMinutesAttachmentsResponse
+     */
+    public function listMinutesAttachments($taskUuid, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListMinutesAttachmentsHeaders([]);
+
+        return $this->listMinutesAttachmentsWithOptions($taskUuid, $request, $headers, $runtime);
     }
 
     /**
@@ -2095,6 +2238,70 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 自定义A1相关听记详情页tab
+     *  *
+     * @param string                          $taskUuid
+     * @param SetA1DetailPageCustomTabRequest $request  SetA1DetailPageCustomTabRequest
+     * @param SetA1DetailPageCustomTabHeaders $headers  SetA1DetailPageCustomTabHeaders
+     * @param RuntimeOptions                  $runtime  runtime options for this request RuntimeOptions
+     *
+     * @return SetA1DetailPageCustomTabResponse SetA1DetailPageCustomTabResponse
+     */
+    public function setA1DetailPageCustomTabWithOptions($taskUuid, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->preserveA1AnalyzeTab)) {
+            $query['preserveA1AnalyzeTab'] = $request->preserveA1AnalyzeTab;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->customTabList)) {
+            $body['customTabList'] = $request->customTabList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'SetA1DetailPageCustomTab',
+            'version' => 'minutes_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/minutes/flashMinutes/tasks/' . $taskUuid . '/a1CustomTabs',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return SetA1DetailPageCustomTabResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 自定义A1相关听记详情页tab
+     *  *
+     * @param string                          $taskUuid
+     * @param SetA1DetailPageCustomTabRequest $request  SetA1DetailPageCustomTabRequest
+     *
+     * @return SetA1DetailPageCustomTabResponse SetA1DetailPageCustomTabResponse
+     */
+    public function setA1DetailPageCustomTab($taskUuid, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SetA1DetailPageCustomTabHeaders([]);
+
+        return $this->setA1DetailPageCustomTabWithOptions($taskUuid, $request, $headers, $runtime);
+    }
+
+    /**
      * @summary 自定义听记详情页tab
      *  *
      * @param string                        $taskUuid
@@ -2347,7 +2554,7 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 更新闪记权限
+     * @summary 更新听记权限
      *  *
      * @param string                  $taskUuid
      * @param UpdatePermissionRequest $request  UpdatePermissionRequest
@@ -2367,6 +2574,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->memberInfoList)) {
             $body['memberInfoList'] = $request->memberInfoList;
         }
+        if (!Utils::isUnset($request->memberPermissionOperations)) {
+            $body['memberPermissionOperations'] = $request->memberPermissionOperations;
+        }
         if (!Utils::isUnset($request->opType)) {
             $body['opType'] = $request->opType;
         }
@@ -2378,6 +2588,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->shareScope)) {
             $body['shareScope'] = $request->shareScope;
+        }
+        if (!Utils::isUnset($request->shareScopeConfig)) {
+            $body['shareScopeConfig'] = $request->shareScopeConfig;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -2407,7 +2620,7 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 更新闪记权限
+     * @summary 更新听记权限
      *  *
      * @param string                  $taskUuid
      * @param UpdatePermissionRequest $request  UpdatePermissionRequest

@@ -8,6 +8,8 @@ use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventResponseBody\atten
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventResponseBody\cardInstances;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventResponseBody\categories;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventResponseBody\end;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventResponseBody\eventConfig;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventResponseBody\extendedProperties;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventResponseBody\location;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventResponseBody\onlineMeetingInfo;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventResponseBody\organizer;
@@ -51,6 +53,16 @@ class CreateEventResponseBody extends Model
      * @var end
      */
     public $end;
+
+    /**
+     * @var eventConfig
+     */
+    public $eventConfig;
+
+    /**
+     * @var extendedProperties
+     */
+    public $extendedProperties;
 
     /**
      * @var string
@@ -122,6 +134,8 @@ class CreateEventResponseBody extends Model
         'createTime' => 'createTime',
         'description' => 'description',
         'end' => 'end',
+        'eventConfig' => 'eventConfig',
+        'extendedProperties' => 'extendedProperties',
         'id' => 'id',
         'isAllDay' => 'isAllDay',
         'location' => 'location',
@@ -176,6 +190,12 @@ class CreateEventResponseBody extends Model
         }
         if (null !== $this->end) {
             $res['end'] = null !== $this->end ? $this->end->toMap() : null;
+        }
+        if (null !== $this->eventConfig) {
+            $res['eventConfig'] = null !== $this->eventConfig ? $this->eventConfig->toMap() : null;
+        }
+        if (null !== $this->extendedProperties) {
+            $res['extendedProperties'] = null !== $this->extendedProperties ? $this->extendedProperties->toMap() : null;
         }
         if (null !== $this->id) {
             $res['id'] = $this->id;
@@ -272,6 +292,12 @@ class CreateEventResponseBody extends Model
         }
         if (isset($map['end'])) {
             $model->end = end::fromMap($map['end']);
+        }
+        if (isset($map['eventConfig'])) {
+            $model->eventConfig = eventConfig::fromMap($map['eventConfig']);
+        }
+        if (isset($map['extendedProperties'])) {
+            $model->extendedProperties = extendedProperties::fromMap($map['extendedProperties']);
         }
         if (isset($map['id'])) {
             $model->id = $map['id'];

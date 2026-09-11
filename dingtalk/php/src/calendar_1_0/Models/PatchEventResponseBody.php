@@ -8,6 +8,7 @@ use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventResponseBody\attend
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventResponseBody\cardInstances;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventResponseBody\categories;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventResponseBody\end;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventResponseBody\extendedProperties;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventResponseBody\location;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventResponseBody\onlineMeetingInfo;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\PatchEventResponseBody\organizer;
@@ -51,6 +52,11 @@ class PatchEventResponseBody extends Model
      * @var end
      */
     public $end;
+
+    /**
+     * @var extendedProperties
+     */
+    public $extendedProperties;
 
     /**
      * @var string
@@ -122,6 +128,7 @@ class PatchEventResponseBody extends Model
         'createTime' => 'createTime',
         'description' => 'description',
         'end' => 'end',
+        'extendedProperties' => 'extendedProperties',
         'id' => 'id',
         'isAllDay' => 'isAllDay',
         'location' => 'location',
@@ -176,6 +183,9 @@ class PatchEventResponseBody extends Model
         }
         if (null !== $this->end) {
             $res['end'] = null !== $this->end ? $this->end->toMap() : null;
+        }
+        if (null !== $this->extendedProperties) {
+            $res['extendedProperties'] = null !== $this->extendedProperties ? $this->extendedProperties->toMap() : null;
         }
         if (null !== $this->id) {
             $res['id'] = $this->id;
@@ -272,6 +282,9 @@ class PatchEventResponseBody extends Model
         }
         if (isset($map['end'])) {
             $model->end = end::fromMap($map['end']);
+        }
+        if (isset($map['extendedProperties'])) {
+            $model->extendedProperties = extendedProperties::fromMap($map['extendedProperties']);
         }
         if (isset($map['id'])) {
             $model->id = $map['id'];

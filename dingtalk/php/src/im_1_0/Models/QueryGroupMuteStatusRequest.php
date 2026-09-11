@@ -18,6 +18,11 @@ class QueryGroupMuteStatusRequest extends Model
     public $openConversationId;
 
     /**
+     * @var string
+     */
+    public $permissionCode;
+
+    /**
      * @description This parameter is required.
      *
      * @example 004741900
@@ -27,6 +32,7 @@ class QueryGroupMuteStatusRequest extends Model
     public $userId;
     protected $_name = [
         'openConversationId' => 'openConversationId',
+        'permissionCode' => 'permissionCode',
         'userId' => 'userId',
     ];
 
@@ -37,6 +43,9 @@ class QueryGroupMuteStatusRequest extends Model
         $res = [];
         if (null !== $this->openConversationId) {
             $res['openConversationId'] = $this->openConversationId;
+        }
+        if (null !== $this->permissionCode) {
+            $res['permissionCode'] = $this->permissionCode;
         }
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
@@ -55,6 +64,9 @@ class QueryGroupMuteStatusRequest extends Model
         $model = new self();
         if (isset($map['openConversationId'])) {
             $model->openConversationId = $map['openConversationId'];
+        }
+        if (isset($map['permissionCode'])) {
+            $model->permissionCode = $map['permissionCode'];
         }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];

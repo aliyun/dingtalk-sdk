@@ -8,6 +8,9 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\CreateAppGoodsServiceConversationHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\CreateAppGoodsServiceConversationRequest;
 use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\CreateAppGoodsServiceConversationResponse;
+use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\EnsureUserLicenseAccessHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\EnsureUserLicenseAccessRequest;
+use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\EnsureUserLicenseAccessResponse;
 use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\GetCoolAppAccessStatusHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\GetCoolAppAccessStatusRequest;
 use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\GetCoolAppAccessStatusResponse;
@@ -22,6 +25,9 @@ use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\NotifyOnCrmDataChangeReques
 use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\NotifyOnCrmDataChangeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\QueryMarketOrderHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\QueryMarketOrderResponse;
+use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\UpdateAppVisibleScopeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\UpdateAppVisibleScopeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\UpdateAppVisibleScopeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\UserTaskReportHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\UserTaskReportRequest;
 use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\UserTaskReportResponse;
@@ -103,6 +109,63 @@ class Dingtalk extends OpenApiClient
         $headers = new CreateAppGoodsServiceConversationHeaders([]);
 
         return $this->createAppGoodsServiceConversationWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 校验访问用户是否拥有应用 License
+     *  *
+     * @param EnsureUserLicenseAccessRequest $request EnsureUserLicenseAccessRequest
+     * @param EnsureUserLicenseAccessHeaders $headers EnsureUserLicenseAccessHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return EnsureUserLicenseAccessResponse EnsureUserLicenseAccessResponse
+     */
+    public function ensureUserLicenseAccessWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->unionId)) {
+            $body['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'EnsureUserLicenseAccess',
+            'version' => 'appMarket_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/appMarket/userLicenses/ensure',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return EnsureUserLicenseAccessResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 校验访问用户是否拥有应用 License
+     *  *
+     * @param EnsureUserLicenseAccessRequest $request EnsureUserLicenseAccessRequest
+     *
+     * @return EnsureUserLicenseAccessResponse EnsureUserLicenseAccessResponse
+     */
+    public function ensureUserLicenseAccess($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new EnsureUserLicenseAccessHeaders([]);
+
+        return $this->ensureUserLicenseAccessWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -406,6 +469,72 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryMarketOrderHeaders([]);
 
         return $this->queryMarketOrderWithOptions($orderId, $headers, $runtime);
+    }
+
+    /**
+     * @summary 全量更新第三方应用可见范围
+     *  *
+     * @param UpdateAppVisibleScopeRequest $request UpdateAppVisibleScopeRequest
+     * @param UpdateAppVisibleScopeHeaders $headers UpdateAppVisibleScopeHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateAppVisibleScopeResponse UpdateAppVisibleScopeResponse
+     */
+    public function updateAppVisibleScopeWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->operatorUserId)) {
+            $body['operatorUserId'] = $request->operatorUserId;
+        }
+        if (!Utils::isUnset($request->visibleDeptIds)) {
+            $body['visibleDeptIds'] = $request->visibleDeptIds;
+        }
+        if (!Utils::isUnset($request->visibleScopeType)) {
+            $body['visibleScopeType'] = $request->visibleScopeType;
+        }
+        if (!Utils::isUnset($request->visibleUserIds)) {
+            $body['visibleUserIds'] = $request->visibleUserIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'UpdateAppVisibleScope',
+            'version' => 'appMarket_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/appMarket/appVisibleScopes',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UpdateAppVisibleScopeResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 全量更新第三方应用可见范围
+     *  *
+     * @param UpdateAppVisibleScopeRequest $request UpdateAppVisibleScopeRequest
+     *
+     * @return UpdateAppVisibleScopeResponse UpdateAppVisibleScopeResponse
+     */
+    public function updateAppVisibleScope($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateAppVisibleScopeHeaders([]);
+
+        return $this->updateAppVisibleScopeWithOptions($request, $headers, $runtime);
     }
 
     /**

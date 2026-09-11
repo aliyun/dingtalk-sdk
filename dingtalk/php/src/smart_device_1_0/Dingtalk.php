@@ -31,6 +31,9 @@ use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\MachineUsersUpdateRequest
 use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\MachineUsersUpdateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\QueryDeviceVideoConferenceBookHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\QueryDeviceVideoConferenceBookResponse;
+use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\RemoveUserFaceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\RemoveUserFaceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\RemoveUserFaceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\TextToImageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\TextToImageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vsmart_device_1_0\Models\TextToImageResponse;
@@ -625,6 +628,63 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryDeviceVideoConferenceBookHeaders([]);
 
         return $this->queryDeviceVideoConferenceBookWithOptions($deviceId, $bookId, $headers, $runtime);
+    }
+
+    /**
+     * @summary 删除用户的人脸底图
+     *  *
+     * @param RemoveUserFaceRequest $request RemoveUserFaceRequest
+     * @param RemoveUserFaceHeaders $headers RemoveUserFaceHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return RemoveUserFaceResponse RemoveUserFaceResponse
+     */
+    public function removeUserFaceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'RemoveUserFace',
+            'version' => 'smartDevice_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/smartDevice/faceRecognitions/feature',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return RemoveUserFaceResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 删除用户的人脸底图
+     *  *
+     * @param RemoveUserFaceRequest $request RemoveUserFaceRequest
+     *
+     * @return RemoveUserFaceResponse RemoveUserFaceResponse
+     */
+    public function removeUserFace($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RemoveUserFaceHeaders([]);
+
+        return $this->removeUserFaceWithOptions($request, $headers, $runtime);
     }
 
     /**

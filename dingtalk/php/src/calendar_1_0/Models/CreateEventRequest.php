@@ -8,6 +8,7 @@ use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventRequest\attendees;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventRequest\cardInstances;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventRequest\categories;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventRequest\end;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventRequest\eventConfig;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventRequest\location;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventRequest\onlineMeetingInfo;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventRequest\recurrence;
@@ -45,6 +46,11 @@ class CreateEventRequest extends Model
      * @var end
      */
     public $end;
+
+    /**
+     * @var eventConfig
+     */
+    public $eventConfig;
 
     /**
      * @var string[]
@@ -110,6 +116,7 @@ class CreateEventRequest extends Model
         'categories' => 'categories',
         'description' => 'description',
         'end' => 'end',
+        'eventConfig' => 'eventConfig',
         'extra' => 'extra',
         'freeBusyStatus' => 'freeBusyStatus',
         'isAllDay' => 'isAllDay',
@@ -160,6 +167,9 @@ class CreateEventRequest extends Model
         }
         if (null !== $this->end) {
             $res['end'] = null !== $this->end ? $this->end->toMap() : null;
+        }
+        if (null !== $this->eventConfig) {
+            $res['eventConfig'] = null !== $this->eventConfig ? $this->eventConfig->toMap() : null;
         }
         if (null !== $this->extra) {
             $res['extra'] = $this->extra;
@@ -250,6 +260,9 @@ class CreateEventRequest extends Model
         }
         if (isset($map['end'])) {
             $model->end = end::fromMap($map['end']);
+        }
+        if (isset($map['eventConfig'])) {
+            $model->eventConfig = eventConfig::fromMap($map['eventConfig']);
         }
         if (isset($map['extra'])) {
             $model->extra = $map['extra'];

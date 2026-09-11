@@ -5,6 +5,7 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vcustomer_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vcustomer_1_0\Models\CustomeRpcCallHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcustomer_1_0\Models\CustomeRpcCallRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcustomer_1_0\Models\CustomeRpcCallResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcustomer_1_0\Models\CustomeRpcCallShrinkRequest;
@@ -34,7 +35,7 @@ class Dingtalk extends OpenApiClient
      * @summary 大客户ltcPRC接口调用
      *  *
      * @param CustomeRpcCallRequest $tmpReq  CustomeRpcCallRequest
-     * @param string[]              $headers map
+     * @param CustomeRpcCallHeaders $headers CustomeRpcCallHeaders
      * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
      *
      * @return CustomeRpcCallResponse CustomeRpcCallResponse
@@ -54,8 +55,15 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->paramsShrink)) {
             $query['params'] = $request->paramsShrink;
         }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
         $req = new OpenApiRequest([
-            'headers' => $headers,
+            'headers' => $realHeaders,
             'query' => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
@@ -64,7 +72,7 @@ class Dingtalk extends OpenApiClient
             'protocol' => 'HTTP',
             'pathname' => '/v1.0/customer/rpcCall',
             'method' => 'POST',
-            'authType' => 'Anonymous',
+            'authType' => 'AK',
             'style' => 'ROA',
             'reqBodyType' => 'none',
             'bodyType' => 'json',
@@ -83,7 +91,7 @@ class Dingtalk extends OpenApiClient
     public function customeRpcCall($request)
     {
         $runtime = new RuntimeOptions([]);
-        $headers = [];
+        $headers = new CustomeRpcCallHeaders([]);
 
         return $this->customeRpcCallWithOptions($request, $headers, $runtime);
     }

@@ -106,6 +106,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetUserInfoByOpenTokenResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetUuidByDentryIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetUuidByDentryIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetUuidByDentryIdResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetUuidByIdOrUrlHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetUuidByIdOrUrlRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetUuidByIdOrUrlResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetWorkspacePermissionScopesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetWorkspacePermissionScopesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetWorkspacePermissionScopesResponse;
@@ -2375,6 +2378,66 @@ class Dingtalk extends OpenApiClient
         $headers = new GetUuidByDentryIdHeaders([]);
 
         return $this->getUuidByDentryIdWithOptions($dentryId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 根据文档id或URL获取文件DentryUuid
+     *  *
+     * @param GetUuidByIdOrUrlRequest $request GetUuidByIdOrUrlRequest
+     * @param GetUuidByIdOrUrlHeaders $headers GetUuidByIdOrUrlHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetUuidByIdOrUrlResponse GetUuidByIdOrUrlResponse
+     */
+    public function getUuidByIdOrUrlWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->idOrUrl)) {
+            $query['idOrUrl'] = $request->idOrUrl;
+        }
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'GetUuidByIdOrUrl',
+            'version' => 'doc_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/doc/documents/queryDentryUuid',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetUuidByIdOrUrlResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 根据文档id或URL获取文件DentryUuid
+     *  *
+     * @param GetUuidByIdOrUrlRequest $request GetUuidByIdOrUrlRequest
+     *
+     * @return GetUuidByIdOrUrlResponse GetUuidByIdOrUrlResponse
+     */
+    public function getUuidByIdOrUrl($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetUuidByIdOrUrlHeaders([]);
+
+        return $this->getUuidByIdOrUrlWithOptions($request, $headers, $runtime);
     }
 
     /**

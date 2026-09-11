@@ -656,7 +656,7 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 场景群加人
+     * @summary 添加场景群成员
      *  *
      * @param AddSceneGroupMemberRequest $request AddSceneGroupMemberRequest
      * @param AddSceneGroupMemberHeaders $headers AddSceneGroupMemberHeaders
@@ -704,7 +704,7 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 场景群加人
+     * @summary 添加场景群成员
      *  *
      * @param AddSceneGroupMemberRequest $request AddSceneGroupMemberRequest
      *
@@ -3061,6 +3061,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->openConversationId)) {
             $body['open_conversation_id'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->permissionCode)) {
+            $body['permissionCode'] = $request->permissionCode;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -5680,7 +5683,7 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 查询群禁言状态
+     * @summary 查询场景群禁言状态
      *  *
      * @param QueryGroupMuteStatusRequest $request QueryGroupMuteStatusRequest
      * @param QueryGroupMuteStatusHeaders $headers QueryGroupMuteStatusHeaders
@@ -5694,6 +5697,9 @@ class Dingtalk extends OpenApiClient
         $query = [];
         if (!Utils::isUnset($request->openConversationId)) {
             $query['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->permissionCode)) {
+            $query['permissionCode'] = $request->permissionCode;
         }
         if (!Utils::isUnset($request->userId)) {
             $query['userId'] = $request->userId;
@@ -5725,7 +5731,7 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 查询群禁言状态
+     * @summary 查询场景群禁言状态
      *  *
      * @param QueryGroupMuteStatusRequest $request QueryGroupMuteStatusRequest
      *
@@ -7201,7 +7207,7 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 场景群删人
+     * @summary 删除场景群成员
      *  *
      * @param RemoveSceneGroupMemberRequest $request RemoveSceneGroupMemberRequest
      * @param RemoveSceneGroupMemberHeaders $headers RemoveSceneGroupMemberHeaders
@@ -7249,7 +7255,7 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 场景群删人
+     * @summary 删除场景群成员
      *  *
      * @param RemoveSceneGroupMemberRequest $request RemoveSceneGroupMemberRequest
      *

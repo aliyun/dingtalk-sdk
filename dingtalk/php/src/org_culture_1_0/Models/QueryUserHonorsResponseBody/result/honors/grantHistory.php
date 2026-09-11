@@ -9,6 +9,11 @@ use AlibabaCloud\Tea\Model;
 class grantHistory extends Model
 {
     /**
+     * @var string
+     */
+    public $grantReason;
+
+    /**
      * @var int
      */
     public $grantTime;
@@ -18,6 +23,7 @@ class grantHistory extends Model
      */
     public $senderUserid;
     protected $_name = [
+        'grantReason' => 'grantReason',
         'grantTime' => 'grantTime',
         'senderUserid' => 'senderUserid',
     ];
@@ -27,6 +33,9 @@ class grantHistory extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->grantReason) {
+            $res['grantReason'] = $this->grantReason;
+        }
         if (null !== $this->grantTime) {
             $res['grantTime'] = $this->grantTime;
         }
@@ -45,6 +54,9 @@ class grantHistory extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['grantReason'])) {
+            $model->grantReason = $map['grantReason'];
+        }
         if (isset($map['grantTime'])) {
             $model->grantTime = $map['grantTime'];
         }

@@ -75,6 +75,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DeleteUserGroupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DelOrgAccUserOwnnessHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DelOrgAccUserOwnnessRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DelOrgAccUserOwnnessResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DeptGroupSettingUpdateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DeptGroupSettingUpdateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\DeptGroupSettingUpdateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetAccountMappingHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetAccountMappingRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetAccountMappingResponse;
@@ -1940,6 +1943,81 @@ class Dingtalk extends OpenApiClient
         $headers = new DeleteUserGroupHeaders([]);
 
         return $this->deleteUserGroupWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更新部门群设置
+     *  *
+     * @param DeptGroupSettingUpdateRequest $request DeptGroupSettingUpdateRequest
+     * @param DeptGroupSettingUpdateHeaders $headers DeptGroupSettingUpdateHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return DeptGroupSettingUpdateResponse DeptGroupSettingUpdateResponse
+     */
+    public function deptGroupSettingUpdateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->deptId)) {
+            $body['deptId'] = $request->deptId;
+        }
+        if (!Utils::isUnset($request->groupContainHiddenDept)) {
+            $body['groupContainHiddenDept'] = $request->groupContainHiddenDept;
+        }
+        if (!Utils::isUnset($request->groupContainHrmEmployeeTypeLabels)) {
+            $body['groupContainHrmEmployeeTypeLabels'] = $request->groupContainHrmEmployeeTypeLabels;
+        }
+        if (!Utils::isUnset($request->groupContainOuterDept)) {
+            $body['groupContainOuterDept'] = $request->groupContainOuterDept;
+        }
+        if (!Utils::isUnset($request->groupContainSubDept)) {
+            $body['groupContainSubDept'] = $request->groupContainSubDept;
+        }
+        if (!Utils::isUnset($request->permissionCode)) {
+            $body['permissionCode'] = $request->permissionCode;
+        }
+        if (!Utils::isUnset($request->syncMembers)) {
+            $body['syncMembers'] = $request->syncMembers;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'DeptGroupSettingUpdate',
+            'version' => 'contact_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contact/departmentGroup/update',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return DeptGroupSettingUpdateResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新部门群设置
+     *  *
+     * @param DeptGroupSettingUpdateRequest $request DeptGroupSettingUpdateRequest
+     *
+     * @return DeptGroupSettingUpdateResponse DeptGroupSettingUpdateResponse
+     */
+    public function deptGroupSettingUpdate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeptGroupSettingUpdateHeaders([]);
+
+        return $this->deptGroupSettingUpdateWithOptions($request, $headers, $runtime);
     }
 
     /**

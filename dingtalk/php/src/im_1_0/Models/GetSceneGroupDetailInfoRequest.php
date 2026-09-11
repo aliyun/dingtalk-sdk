@@ -21,9 +21,15 @@ class GetSceneGroupDetailInfoRequest extends Model
      * @var string
      */
     public $openConversationId;
+
+    /**
+     * @var string
+     */
+    public $permissionCode;
     protected $_name = [
         'coolAppCode' => 'cool_app_code',
         'openConversationId' => 'open_conversation_id',
+        'permissionCode' => 'permissionCode',
     ];
 
     public function validate() {}
@@ -36,6 +42,9 @@ class GetSceneGroupDetailInfoRequest extends Model
         }
         if (null !== $this->openConversationId) {
             $res['open_conversation_id'] = $this->openConversationId;
+        }
+        if (null !== $this->permissionCode) {
+            $res['permissionCode'] = $this->permissionCode;
         }
 
         return $res;
@@ -54,6 +63,9 @@ class GetSceneGroupDetailInfoRequest extends Model
         }
         if (isset($map['open_conversation_id'])) {
             $model->openConversationId = $map['open_conversation_id'];
+        }
+        if (isset($map['permissionCode'])) {
+            $model->permissionCode = $map['permissionCode'];
         }
 
         return $model;

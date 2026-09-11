@@ -41,6 +41,9 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\ConfirmPaymentOrderResponse
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\CreateCollectionOrderHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\CreateCollectionOrderRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\CreateCollectionOrderResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\CreatePayableReceiptHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\CreatePayableReceiptRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\CreatePayableReceiptResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\CreatePaymentOrderHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\CreatePaymentOrderRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\CreatePaymentOrderResponse;
@@ -1004,6 +1007,63 @@ class Dingtalk extends OpenApiClient
         $headers = new CreateCollectionOrderHeaders([]);
 
         return $this->createCollectionOrderWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 创建应付单
+     *  *
+     * @param CreatePayableReceiptRequest $request CreatePayableReceiptRequest
+     * @param CreatePayableReceiptHeaders $headers CreatePayableReceiptHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreatePayableReceiptResponse CreatePayableReceiptResponse
+     */
+    public function createPayableReceiptWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->receipt)) {
+            $body['receipt'] = $request->receipt;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'CreatePayableReceipt',
+            'version' => 'bizfinance_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/bizfinance/createArapReceipt',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CreatePayableReceiptResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建应付单
+     *  *
+     * @param CreatePayableReceiptRequest $request CreatePayableReceiptRequest
+     *
+     * @return CreatePayableReceiptResponse CreatePayableReceiptResponse
+     */
+    public function createPayableReceipt($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreatePayableReceiptHeaders([]);
+
+        return $this->createPayableReceiptWithOptions($request, $headers, $runtime);
     }
 
     /**
