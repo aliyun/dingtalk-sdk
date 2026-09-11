@@ -9558,6 +9558,148 @@ class Client(OpenApiClient):
         headers = dingtalkworkflow__1__0_models.SaveProcessHeaders()
         return await self.save_process_with_options_async(request, headers, runtime)
 
+    def set_workflow_task_agent_with_options(
+        self,
+        request: dingtalkworkflow__1__0_models.SetWorkflowTaskAgentRequest,
+        headers: dingtalkworkflow__1__0_models.SetWorkflowTaskAgentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.SetWorkflowTaskAgentResponse:
+        """
+        @summary 设置审批任务代理
+        
+        @param request: SetWorkflowTaskAgentRequest
+        @param headers: SetWorkflowTaskAgentHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SetWorkflowTaskAgentResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.agent_staff_id):
+            body['agentStaffId'] = request.agent_staff_id
+        if not UtilClient.is_unset(request.all):
+            body['all'] = request.all
+        if not UtilClient.is_unset(request.end_date):
+            body['endDate'] = request.end_date
+        if not UtilClient.is_unset(request.from_staff_id):
+            body['fromStaffId'] = request.from_staff_id
+        if not UtilClient.is_unset(request.manager_staff_id):
+            body['managerStaffId'] = request.manager_staff_id
+        if not UtilClient.is_unset(request.process_codes):
+            body['processCodes'] = request.process_codes
+        if not UtilClient.is_unset(request.request_id):
+            body['requestId'] = request.request_id
+        if not UtilClient.is_unset(request.start_date):
+            body['startDate'] = request.start_date
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SetWorkflowTaskAgent',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/tasks/agent',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.SetWorkflowTaskAgentResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def set_workflow_task_agent_with_options_async(
+        self,
+        request: dingtalkworkflow__1__0_models.SetWorkflowTaskAgentRequest,
+        headers: dingtalkworkflow__1__0_models.SetWorkflowTaskAgentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.SetWorkflowTaskAgentResponse:
+        """
+        @summary 设置审批任务代理
+        
+        @param request: SetWorkflowTaskAgentRequest
+        @param headers: SetWorkflowTaskAgentHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SetWorkflowTaskAgentResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.agent_staff_id):
+            body['agentStaffId'] = request.agent_staff_id
+        if not UtilClient.is_unset(request.all):
+            body['all'] = request.all
+        if not UtilClient.is_unset(request.end_date):
+            body['endDate'] = request.end_date
+        if not UtilClient.is_unset(request.from_staff_id):
+            body['fromStaffId'] = request.from_staff_id
+        if not UtilClient.is_unset(request.manager_staff_id):
+            body['managerStaffId'] = request.manager_staff_id
+        if not UtilClient.is_unset(request.process_codes):
+            body['processCodes'] = request.process_codes
+        if not UtilClient.is_unset(request.request_id):
+            body['requestId'] = request.request_id
+        if not UtilClient.is_unset(request.start_date):
+            body['startDate'] = request.start_date
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SetWorkflowTaskAgent',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/tasks/agent',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.SetWorkflowTaskAgentResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def set_workflow_task_agent(
+        self,
+        request: dingtalkworkflow__1__0_models.SetWorkflowTaskAgentRequest,
+    ) -> dingtalkworkflow__1__0_models.SetWorkflowTaskAgentResponse:
+        """
+        @summary 设置审批任务代理
+        
+        @param request: SetWorkflowTaskAgentRequest
+        @return: SetWorkflowTaskAgentResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.SetWorkflowTaskAgentHeaders()
+        return self.set_workflow_task_agent_with_options(request, headers, runtime)
+
+    async def set_workflow_task_agent_async(
+        self,
+        request: dingtalkworkflow__1__0_models.SetWorkflowTaskAgentRequest,
+    ) -> dingtalkworkflow__1__0_models.SetWorkflowTaskAgentResponse:
+        """
+        @summary 设置审批任务代理
+        
+        @param request: SetWorkflowTaskAgentRequest
+        @return: SetWorkflowTaskAgentResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.SetWorkflowTaskAgentHeaders()
+        return await self.set_workflow_task_agent_with_options_async(request, headers, runtime)
+
     def start_process_instance_with_options(
         self,
         request: dingtalkworkflow__1__0_models.StartProcessInstanceRequest,

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
-from typing import Dict
 from Tea.core import TeaCore
+from typing import Dict
 
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
@@ -31,14 +31,14 @@ class Client(OpenApiClient):
     def custome_rpc_call_with_options(
         self,
         tmp_req: dingtalkcustomer__1__0_models.CustomeRpcCallRequest,
-        headers: Dict[str, str],
+        headers: dingtalkcustomer__1__0_models.CustomeRpcCallHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcustomer__1__0_models.CustomeRpcCallResponse:
         """
         @summary 大客户ltcPRC接口调用
         
         @param tmp_req: CustomeRpcCallRequest
-        @param headers: map
+        @param headers: CustomeRpcCallHeaders
         @param runtime: runtime options for this request RuntimeOptions
         @return: CustomeRpcCallResponse
         """
@@ -52,8 +52,13 @@ class Client(OpenApiClient):
             query['methodName'] = request.method_name
         if not UtilClient.is_unset(request.params_shrink):
             query['params'] = request.params_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
-            headers=headers,
+            headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
         params = open_api_models.Params(
@@ -62,7 +67,7 @@ class Client(OpenApiClient):
             protocol='HTTP',
             pathname=f'/v1.0/customer/rpcCall',
             method='POST',
-            auth_type='Anonymous',
+            auth_type='AK',
             style='ROA',
             req_body_type='none',
             body_type='json'
@@ -75,14 +80,14 @@ class Client(OpenApiClient):
     async def custome_rpc_call_with_options_async(
         self,
         tmp_req: dingtalkcustomer__1__0_models.CustomeRpcCallRequest,
-        headers: Dict[str, str],
+        headers: dingtalkcustomer__1__0_models.CustomeRpcCallHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkcustomer__1__0_models.CustomeRpcCallResponse:
         """
         @summary 大客户ltcPRC接口调用
         
         @param tmp_req: CustomeRpcCallRequest
-        @param headers: map
+        @param headers: CustomeRpcCallHeaders
         @param runtime: runtime options for this request RuntimeOptions
         @return: CustomeRpcCallResponse
         """
@@ -96,8 +101,13 @@ class Client(OpenApiClient):
             query['methodName'] = request.method_name
         if not UtilClient.is_unset(request.params_shrink):
             query['params'] = request.params_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
-            headers=headers,
+            headers=real_headers,
             query=OpenApiUtilClient.query(query)
         )
         params = open_api_models.Params(
@@ -106,7 +116,7 @@ class Client(OpenApiClient):
             protocol='HTTP',
             pathname=f'/v1.0/customer/rpcCall',
             method='POST',
-            auth_type='Anonymous',
+            auth_type='AK',
             style='ROA',
             req_body_type='none',
             body_type='json'
@@ -127,7 +137,7 @@ class Client(OpenApiClient):
         @return: CustomeRpcCallResponse
         """
         runtime = util_models.RuntimeOptions()
-        headers = {}
+        headers = dingtalkcustomer__1__0_models.CustomeRpcCallHeaders()
         return self.custome_rpc_call_with_options(request, headers, runtime)
 
     async def custome_rpc_call_async(
@@ -141,7 +151,7 @@ class Client(OpenApiClient):
         @return: CustomeRpcCallResponse
         """
         runtime = util_models.RuntimeOptions()
-        headers = {}
+        headers = dingtalkcustomer__1__0_models.CustomeRpcCallHeaders()
         return await self.custome_rpc_call_with_options_async(request, headers, runtime)
 
     def project_setup_with_options(

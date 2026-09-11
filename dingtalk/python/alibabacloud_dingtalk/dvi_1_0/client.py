@@ -26,6 +26,120 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def batch_query_a1industry_device_binding_with_options(
+        self,
+        request: dingtalkdvi__1__0_models.BatchQueryA1IndustryDeviceBindingRequest,
+        headers: dingtalkdvi__1__0_models.BatchQueryA1IndustryDeviceBindingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.BatchQueryA1IndustryDeviceBindingResponse:
+        """
+        @summary 批量查询行业应用范围内 A1 设备绑定关系
+        
+        @param request: BatchQueryA1IndustryDeviceBindingRequest
+        @param headers: BatchQueryA1IndustryDeviceBindingHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchQueryA1IndustryDeviceBindingResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.sn_list):
+            body['snList'] = request.sn_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='BatchQueryA1IndustryDeviceBinding',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/a1/industry/devices/binding/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.BatchQueryA1IndustryDeviceBindingResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def batch_query_a1industry_device_binding_with_options_async(
+        self,
+        request: dingtalkdvi__1__0_models.BatchQueryA1IndustryDeviceBindingRequest,
+        headers: dingtalkdvi__1__0_models.BatchQueryA1IndustryDeviceBindingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.BatchQueryA1IndustryDeviceBindingResponse:
+        """
+        @summary 批量查询行业应用范围内 A1 设备绑定关系
+        
+        @param request: BatchQueryA1IndustryDeviceBindingRequest
+        @param headers: BatchQueryA1IndustryDeviceBindingHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchQueryA1IndustryDeviceBindingResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.sn_list):
+            body['snList'] = request.sn_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='BatchQueryA1IndustryDeviceBinding',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/a1/industry/devices/binding/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.BatchQueryA1IndustryDeviceBindingResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def batch_query_a1industry_device_binding(
+        self,
+        request: dingtalkdvi__1__0_models.BatchQueryA1IndustryDeviceBindingRequest,
+    ) -> dingtalkdvi__1__0_models.BatchQueryA1IndustryDeviceBindingResponse:
+        """
+        @summary 批量查询行业应用范围内 A1 设备绑定关系
+        
+        @param request: BatchQueryA1IndustryDeviceBindingRequest
+        @return: BatchQueryA1IndustryDeviceBindingResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.BatchQueryA1IndustryDeviceBindingHeaders()
+        return self.batch_query_a1industry_device_binding_with_options(request, headers, runtime)
+
+    async def batch_query_a1industry_device_binding_async(
+        self,
+        request: dingtalkdvi__1__0_models.BatchQueryA1IndustryDeviceBindingRequest,
+    ) -> dingtalkdvi__1__0_models.BatchQueryA1IndustryDeviceBindingResponse:
+        """
+        @summary 批量查询行业应用范围内 A1 设备绑定关系
+        
+        @param request: BatchQueryA1IndustryDeviceBindingRequest
+        @return: BatchQueryA1IndustryDeviceBindingResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.BatchQueryA1IndustryDeviceBindingHeaders()
+        return await self.batch_query_a1industry_device_binding_with_options_async(request, headers, runtime)
+
     def batch_query_user_device_status_with_options(
         self,
         request: dingtalkdvi__1__0_models.BatchQueryUserDeviceStatusRequest,
@@ -139,6 +253,132 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdvi__1__0_models.BatchQueryUserDeviceStatusHeaders()
         return await self.batch_query_user_device_status_with_options_async(request, headers, runtime)
+
+    def batch_update_device_cut_customer_switch_with_options(
+        self,
+        tmp_req: dingtalkdvi__1__0_models.BatchUpdateDeviceCutCustomerSwitchRequest,
+        headers: dingtalkdvi__1__0_models.BatchUpdateDeviceCutCustomerSwitchHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.BatchUpdateDeviceCutCustomerSwitchResponse:
+        """
+        @summary 批量设置设备的切客开关状态
+        
+        @param tmp_req: BatchUpdateDeviceCutCustomerSwitchRequest
+        @param headers: BatchUpdateDeviceCutCustomerSwitchHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchUpdateDeviceCutCustomerSwitchResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkdvi__1__0_models.BatchUpdateDeviceCutCustomerSwitchShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.sn_list):
+            request.sn_list_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.sn_list, 'snList', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.enabled):
+            query['enabled'] = request.enabled
+        if not UtilClient.is_unset(request.sn_list_shrink):
+            query['snList'] = request.sn_list_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='BatchUpdateDeviceCutCustomerSwitch',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/devices/cutcustomer/switch',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.BatchUpdateDeviceCutCustomerSwitchResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def batch_update_device_cut_customer_switch_with_options_async(
+        self,
+        tmp_req: dingtalkdvi__1__0_models.BatchUpdateDeviceCutCustomerSwitchRequest,
+        headers: dingtalkdvi__1__0_models.BatchUpdateDeviceCutCustomerSwitchHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.BatchUpdateDeviceCutCustomerSwitchResponse:
+        """
+        @summary 批量设置设备的切客开关状态
+        
+        @param tmp_req: BatchUpdateDeviceCutCustomerSwitchRequest
+        @param headers: BatchUpdateDeviceCutCustomerSwitchHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchUpdateDeviceCutCustomerSwitchResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkdvi__1__0_models.BatchUpdateDeviceCutCustomerSwitchShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.sn_list):
+            request.sn_list_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.sn_list, 'snList', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.enabled):
+            query['enabled'] = request.enabled
+        if not UtilClient.is_unset(request.sn_list_shrink):
+            query['snList'] = request.sn_list_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='BatchUpdateDeviceCutCustomerSwitch',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/devices/cutcustomer/switch',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.BatchUpdateDeviceCutCustomerSwitchResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def batch_update_device_cut_customer_switch(
+        self,
+        request: dingtalkdvi__1__0_models.BatchUpdateDeviceCutCustomerSwitchRequest,
+    ) -> dingtalkdvi__1__0_models.BatchUpdateDeviceCutCustomerSwitchResponse:
+        """
+        @summary 批量设置设备的切客开关状态
+        
+        @param request: BatchUpdateDeviceCutCustomerSwitchRequest
+        @return: BatchUpdateDeviceCutCustomerSwitchResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.BatchUpdateDeviceCutCustomerSwitchHeaders()
+        return self.batch_update_device_cut_customer_switch_with_options(request, headers, runtime)
+
+    async def batch_update_device_cut_customer_switch_async(
+        self,
+        request: dingtalkdvi__1__0_models.BatchUpdateDeviceCutCustomerSwitchRequest,
+    ) -> dingtalkdvi__1__0_models.BatchUpdateDeviceCutCustomerSwitchResponse:
+        """
+        @summary 批量设置设备的切客开关状态
+        
+        @param request: BatchUpdateDeviceCutCustomerSwitchRequest
+        @return: BatchUpdateDeviceCutCustomerSwitchResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.BatchUpdateDeviceCutCustomerSwitchHeaders()
+        return await self.batch_update_device_cut_customer_switch_with_options_async(request, headers, runtime)
 
     def control_recording_with_options(
         self,
@@ -743,6 +983,234 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdvi__1__0_models.DeleteRecordingScheduleHeaders()
         return await self.delete_recording_schedule_with_options_async(task_id, headers, runtime)
+
+    def get_a1device_binding_with_options(
+        self,
+        request: dingtalkdvi__1__0_models.GetA1DeviceBindingRequest,
+        headers: dingtalkdvi__1__0_models.GetA1DeviceBindingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.GetA1DeviceBindingResponse:
+        """
+        @summary 获取 A1 系列企业设备当前绑定关系
+        
+        @param request: GetA1DeviceBindingRequest
+        @param headers: GetA1DeviceBindingHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetA1DeviceBindingResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.sn):
+            body['sn'] = request.sn
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetA1DeviceBinding',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/a1/devices/binding/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.GetA1DeviceBindingResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_a1device_binding_with_options_async(
+        self,
+        request: dingtalkdvi__1__0_models.GetA1DeviceBindingRequest,
+        headers: dingtalkdvi__1__0_models.GetA1DeviceBindingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.GetA1DeviceBindingResponse:
+        """
+        @summary 获取 A1 系列企业设备当前绑定关系
+        
+        @param request: GetA1DeviceBindingRequest
+        @param headers: GetA1DeviceBindingHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetA1DeviceBindingResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.sn):
+            body['sn'] = request.sn
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetA1DeviceBinding',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/a1/devices/binding/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.GetA1DeviceBindingResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_a1device_binding(
+        self,
+        request: dingtalkdvi__1__0_models.GetA1DeviceBindingRequest,
+    ) -> dingtalkdvi__1__0_models.GetA1DeviceBindingResponse:
+        """
+        @summary 获取 A1 系列企业设备当前绑定关系
+        
+        @param request: GetA1DeviceBindingRequest
+        @return: GetA1DeviceBindingResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.GetA1DeviceBindingHeaders()
+        return self.get_a1device_binding_with_options(request, headers, runtime)
+
+    async def get_a1device_binding_async(
+        self,
+        request: dingtalkdvi__1__0_models.GetA1DeviceBindingRequest,
+    ) -> dingtalkdvi__1__0_models.GetA1DeviceBindingResponse:
+        """
+        @summary 获取 A1 系列企业设备当前绑定关系
+        
+        @param request: GetA1DeviceBindingRequest
+        @return: GetA1DeviceBindingResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.GetA1DeviceBindingHeaders()
+        return await self.get_a1device_binding_with_options_async(request, headers, runtime)
+
+    def get_a1device_detail_with_options(
+        self,
+        request: dingtalkdvi__1__0_models.GetA1DeviceDetailRequest,
+        headers: dingtalkdvi__1__0_models.GetA1DeviceDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.GetA1DeviceDetailResponse:
+        """
+        @summary 获取 A1 系列企业设备详情
+        
+        @param request: GetA1DeviceDetailRequest
+        @param headers: GetA1DeviceDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetA1DeviceDetailResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.sn):
+            body['sn'] = request.sn
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetA1DeviceDetail',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/a1/devices/info/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.GetA1DeviceDetailResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_a1device_detail_with_options_async(
+        self,
+        request: dingtalkdvi__1__0_models.GetA1DeviceDetailRequest,
+        headers: dingtalkdvi__1__0_models.GetA1DeviceDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.GetA1DeviceDetailResponse:
+        """
+        @summary 获取 A1 系列企业设备详情
+        
+        @param request: GetA1DeviceDetailRequest
+        @param headers: GetA1DeviceDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetA1DeviceDetailResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.sn):
+            body['sn'] = request.sn
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetA1DeviceDetail',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/a1/devices/info/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.GetA1DeviceDetailResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_a1device_detail(
+        self,
+        request: dingtalkdvi__1__0_models.GetA1DeviceDetailRequest,
+    ) -> dingtalkdvi__1__0_models.GetA1DeviceDetailResponse:
+        """
+        @summary 获取 A1 系列企业设备详情
+        
+        @param request: GetA1DeviceDetailRequest
+        @return: GetA1DeviceDetailResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.GetA1DeviceDetailHeaders()
+        return self.get_a1device_detail_with_options(request, headers, runtime)
+
+    async def get_a1device_detail_async(
+        self,
+        request: dingtalkdvi__1__0_models.GetA1DeviceDetailRequest,
+    ) -> dingtalkdvi__1__0_models.GetA1DeviceDetailResponse:
+        """
+        @summary 获取 A1 系列企业设备详情
+        
+        @param request: GetA1DeviceDetailRequest
+        @return: GetA1DeviceDetailResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.GetA1DeviceDetailHeaders()
+        return await self.get_a1device_detail_with_options_async(request, headers, runtime)
 
     def get_asr_transcription_with_options(
         self,
@@ -2410,6 +2878,124 @@ class Client(OpenApiClient):
         headers = dingtalkdvi__1__0_models.GetTranscriptSummaryHeaders()
         return await self.get_transcript_summary_with_options_async(request, headers, runtime)
 
+    def list_a1device_with_options(
+        self,
+        request: dingtalkdvi__1__0_models.ListA1DeviceRequest,
+        headers: dingtalkdvi__1__0_models.ListA1DeviceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.ListA1DeviceResponse:
+        """
+        @summary 分页查询 A1 系列企业设备列表
+        
+        @param request: ListA1DeviceRequest
+        @param headers: ListA1DeviceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListA1DeviceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ListA1Device',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/a1/devices/list',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.ListA1DeviceResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def list_a1device_with_options_async(
+        self,
+        request: dingtalkdvi__1__0_models.ListA1DeviceRequest,
+        headers: dingtalkdvi__1__0_models.ListA1DeviceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.ListA1DeviceResponse:
+        """
+        @summary 分页查询 A1 系列企业设备列表
+        
+        @param request: ListA1DeviceRequest
+        @param headers: ListA1DeviceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListA1DeviceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ListA1Device',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/a1/devices/list',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.ListA1DeviceResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def list_a1device(
+        self,
+        request: dingtalkdvi__1__0_models.ListA1DeviceRequest,
+    ) -> dingtalkdvi__1__0_models.ListA1DeviceResponse:
+        """
+        @summary 分页查询 A1 系列企业设备列表
+        
+        @param request: ListA1DeviceRequest
+        @return: ListA1DeviceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.ListA1DeviceHeaders()
+        return self.list_a1device_with_options(request, headers, runtime)
+
+    async def list_a1device_async(
+        self,
+        request: dingtalkdvi__1__0_models.ListA1DeviceRequest,
+    ) -> dingtalkdvi__1__0_models.ListA1DeviceResponse:
+        """
+        @summary 分页查询 A1 系列企业设备列表
+        
+        @param request: ListA1DeviceRequest
+        @return: ListA1DeviceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.ListA1DeviceHeaders()
+        return await self.list_a1device_with_options_async(request, headers, runtime)
+
     def list_customer_with_options(
         self,
         request: dingtalkdvi__1__0_models.ListCustomerRequest,
@@ -3914,6 +4500,258 @@ class Client(OpenApiClient):
         headers = dingtalkdvi__1__0_models.QueryFileInfoByMinutesIdHeaders()
         return await self.query_file_info_by_minutes_id_with_options_async(request, headers, runtime)
 
+    def query_sales_insights_with_options(
+        self,
+        tmp_req: dingtalkdvi__1__0_models.QuerySalesInsightsRequest,
+        headers: dingtalkdvi__1__0_models.QuerySalesInsightsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.QuerySalesInsightsResponse:
+        """
+        @summary 查询销售洞察数据
+        
+        @param tmp_req: QuerySalesInsightsRequest
+        @param headers: QuerySalesInsightsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QuerySalesInsightsResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkdvi__1__0_models.QuerySalesInsightsShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.user_id_list):
+            request.user_id_list_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.user_id_list, 'userIdList', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.analysis_date):
+            query['analysisDate'] = request.analysis_date
+        if not UtilClient.is_unset(request.user_id_list_shrink):
+            query['userIdList'] = request.user_id_list_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QuerySalesInsights',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/sales/insights',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.QuerySalesInsightsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_sales_insights_with_options_async(
+        self,
+        tmp_req: dingtalkdvi__1__0_models.QuerySalesInsightsRequest,
+        headers: dingtalkdvi__1__0_models.QuerySalesInsightsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.QuerySalesInsightsResponse:
+        """
+        @summary 查询销售洞察数据
+        
+        @param tmp_req: QuerySalesInsightsRequest
+        @param headers: QuerySalesInsightsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QuerySalesInsightsResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkdvi__1__0_models.QuerySalesInsightsShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.user_id_list):
+            request.user_id_list_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.user_id_list, 'userIdList', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.analysis_date):
+            query['analysisDate'] = request.analysis_date
+        if not UtilClient.is_unset(request.user_id_list_shrink):
+            query['userIdList'] = request.user_id_list_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QuerySalesInsights',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/sales/insights',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.QuerySalesInsightsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_sales_insights(
+        self,
+        request: dingtalkdvi__1__0_models.QuerySalesInsightsRequest,
+    ) -> dingtalkdvi__1__0_models.QuerySalesInsightsResponse:
+        """
+        @summary 查询销售洞察数据
+        
+        @param request: QuerySalesInsightsRequest
+        @return: QuerySalesInsightsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.QuerySalesInsightsHeaders()
+        return self.query_sales_insights_with_options(request, headers, runtime)
+
+    async def query_sales_insights_async(
+        self,
+        request: dingtalkdvi__1__0_models.QuerySalesInsightsRequest,
+    ) -> dingtalkdvi__1__0_models.QuerySalesInsightsResponse:
+        """
+        @summary 查询销售洞察数据
+        
+        @param request: QuerySalesInsightsRequest
+        @return: QuerySalesInsightsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.QuerySalesInsightsHeaders()
+        return await self.query_sales_insights_with_options_async(request, headers, runtime)
+
+    def query_service_record_location_with_options(
+        self,
+        tmp_req: dingtalkdvi__1__0_models.QueryServiceRecordLocationRequest,
+        headers: dingtalkdvi__1__0_models.QueryServiceRecordLocationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.QueryServiceRecordLocationResponse:
+        """
+        @summary 查询服务记录定位信息
+        
+        @param tmp_req: QueryServiceRecordLocationRequest
+        @param headers: QueryServiceRecordLocationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryServiceRecordLocationResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkdvi__1__0_models.QueryServiceRecordLocationShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.record_id_list):
+            request.record_id_list_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.record_id_list, 'recordIdList', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.location_amount_limit):
+            query['locationAmountLimit'] = request.location_amount_limit
+        if not UtilClient.is_unset(request.record_id_list_shrink):
+            query['recordIdList'] = request.record_id_list_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryServiceRecordLocation',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/service-record/location',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.QueryServiceRecordLocationResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_service_record_location_with_options_async(
+        self,
+        tmp_req: dingtalkdvi__1__0_models.QueryServiceRecordLocationRequest,
+        headers: dingtalkdvi__1__0_models.QueryServiceRecordLocationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.QueryServiceRecordLocationResponse:
+        """
+        @summary 查询服务记录定位信息
+        
+        @param tmp_req: QueryServiceRecordLocationRequest
+        @param headers: QueryServiceRecordLocationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryServiceRecordLocationResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkdvi__1__0_models.QueryServiceRecordLocationShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.record_id_list):
+            request.record_id_list_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.record_id_list, 'recordIdList', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.location_amount_limit):
+            query['locationAmountLimit'] = request.location_amount_limit
+        if not UtilClient.is_unset(request.record_id_list_shrink):
+            query['recordIdList'] = request.record_id_list_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryServiceRecordLocation',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/service-record/location',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.QueryServiceRecordLocationResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_service_record_location(
+        self,
+        request: dingtalkdvi__1__0_models.QueryServiceRecordLocationRequest,
+    ) -> dingtalkdvi__1__0_models.QueryServiceRecordLocationResponse:
+        """
+        @summary 查询服务记录定位信息
+        
+        @param request: QueryServiceRecordLocationRequest
+        @return: QueryServiceRecordLocationResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.QueryServiceRecordLocationHeaders()
+        return self.query_service_record_location_with_options(request, headers, runtime)
+
+    async def query_service_record_location_async(
+        self,
+        request: dingtalkdvi__1__0_models.QueryServiceRecordLocationRequest,
+    ) -> dingtalkdvi__1__0_models.QueryServiceRecordLocationResponse:
+        """
+        @summary 查询服务记录定位信息
+        
+        @param request: QueryServiceRecordLocationRequest
+        @return: QueryServiceRecordLocationResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.QueryServiceRecordLocationHeaders()
+        return await self.query_service_record_location_with_options_async(request, headers, runtime)
+
     def query_staff_statistic_data_with_options(
         self,
         request: dingtalkdvi__1__0_models.QueryStaffStatisticDataRequest,
@@ -4043,6 +4881,128 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdvi__1__0_models.QueryStaffStatisticDataHeaders()
         return await self.query_staff_statistic_data_with_options_async(request, headers, runtime)
+
+    def query_user_bind_device_location_with_options(
+        self,
+        tmp_req: dingtalkdvi__1__0_models.QueryUserBindDeviceLocationRequest,
+        headers: dingtalkdvi__1__0_models.QueryUserBindDeviceLocationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.QueryUserBindDeviceLocationResponse:
+        """
+        @summary 批量查询用户绑定设备位置的信息
+        
+        @param tmp_req: QueryUserBindDeviceLocationRequest
+        @param headers: QueryUserBindDeviceLocationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryUserBindDeviceLocationResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkdvi__1__0_models.QueryUserBindDeviceLocationShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.user_id_list):
+            request.user_id_list_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.user_id_list, 'userIdList', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.user_id_list_shrink):
+            query['userIdList'] = request.user_id_list_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryUserBindDeviceLocation',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/user/location',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.QueryUserBindDeviceLocationResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_user_bind_device_location_with_options_async(
+        self,
+        tmp_req: dingtalkdvi__1__0_models.QueryUserBindDeviceLocationRequest,
+        headers: dingtalkdvi__1__0_models.QueryUserBindDeviceLocationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdvi__1__0_models.QueryUserBindDeviceLocationResponse:
+        """
+        @summary 批量查询用户绑定设备位置的信息
+        
+        @param tmp_req: QueryUserBindDeviceLocationRequest
+        @param headers: QueryUserBindDeviceLocationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryUserBindDeviceLocationResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkdvi__1__0_models.QueryUserBindDeviceLocationShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.user_id_list):
+            request.user_id_list_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.user_id_list, 'userIdList', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.user_id_list_shrink):
+            query['userIdList'] = request.user_id_list_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryUserBindDeviceLocation',
+            version='dvi_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/dvi/user/location',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdvi__1__0_models.QueryUserBindDeviceLocationResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_user_bind_device_location(
+        self,
+        request: dingtalkdvi__1__0_models.QueryUserBindDeviceLocationRequest,
+    ) -> dingtalkdvi__1__0_models.QueryUserBindDeviceLocationResponse:
+        """
+        @summary 批量查询用户绑定设备位置的信息
+        
+        @param request: QueryUserBindDeviceLocationRequest
+        @return: QueryUserBindDeviceLocationResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.QueryUserBindDeviceLocationHeaders()
+        return self.query_user_bind_device_location_with_options(request, headers, runtime)
+
+    async def query_user_bind_device_location_async(
+        self,
+        request: dingtalkdvi__1__0_models.QueryUserBindDeviceLocationRequest,
+    ) -> dingtalkdvi__1__0_models.QueryUserBindDeviceLocationResponse:
+        """
+        @summary 批量查询用户绑定设备位置的信息
+        
+        @param request: QueryUserBindDeviceLocationRequest
+        @return: QueryUserBindDeviceLocationResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdvi__1__0_models.QueryUserBindDeviceLocationHeaders()
+        return await self.query_user_bind_device_location_with_options_async(request, headers, runtime)
 
     def query_user_device_location_with_options(
         self,

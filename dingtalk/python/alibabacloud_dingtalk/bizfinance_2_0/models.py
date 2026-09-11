@@ -2094,6 +2094,449 @@ class CreateCollectionOrderResponse(TeaModel):
         return self
 
 
+class CreatePayableReceiptHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreatePayableReceiptRequestReceiptDangAnDataInfoList(TeaModel):
+    def __init__(
+        self,
+        data_code: str = None,
+        define_code: str = None,
+    ):
+        self.data_code = data_code
+        self.define_code = define_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data_code is not None:
+            result['dataCode'] = self.data_code
+        if self.define_code is not None:
+            result['defineCode'] = self.define_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dataCode') is not None:
+            self.data_code = m.get('dataCode')
+        if m.get('defineCode') is not None:
+            self.define_code = m.get('defineCode')
+        return self
+
+
+class CreatePayableReceiptRequestReceiptReceiptPlans(TeaModel):
+    def __init__(
+        self,
+        plan_amount: str = None,
+        plan_date: int = None,
+        plan_remark: str = None,
+        uuid: str = None,
+    ):
+        self.plan_amount = plan_amount
+        self.plan_date = plan_date
+        self.plan_remark = plan_remark
+        self.uuid = uuid
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.plan_amount is not None:
+            result['planAmount'] = self.plan_amount
+        if self.plan_date is not None:
+            result['planDate'] = self.plan_date
+        if self.plan_remark is not None:
+            result['planRemark'] = self.plan_remark
+        if self.uuid is not None:
+            result['uuid'] = self.uuid
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('planAmount') is not None:
+            self.plan_amount = m.get('planAmount')
+        if m.get('planDate') is not None:
+            self.plan_date = m.get('planDate')
+        if m.get('planRemark') is not None:
+            self.plan_remark = m.get('planRemark')
+        if m.get('uuid') is not None:
+            self.uuid = m.get('uuid')
+        return self
+
+
+class CreatePayableReceiptRequestReceipt(TeaModel):
+    def __init__(
+        self,
+        amount: str = None,
+        category_code: str = None,
+        code: str = None,
+        company_code: str = None,
+        corp_id: str = None,
+        create_time: int = None,
+        customer_code: str = None,
+        dang_an_data_info_list: List[CreatePayableReceiptRequestReceiptDangAnDataInfoList] = None,
+        department_code: str = None,
+        emp_account_user_id: str = None,
+        enterprise_account_code: str = None,
+        form_code: str = None,
+        occur_date: int = None,
+        principal_id: str = None,
+        product_code: str = None,
+        project_code: str = None,
+        receipt_plans: List[CreatePayableReceiptRequestReceiptReceiptPlans] = None,
+        receipt_type: int = None,
+        recode_time: int = None,
+        remark: str = None,
+        supplier_code: str = None,
+        title: str = None,
+        user_id: str = None,
+    ):
+        self.amount = amount
+        self.category_code = category_code
+        self.code = code
+        self.company_code = company_code
+        self.corp_id = corp_id
+        self.create_time = create_time
+        self.customer_code = customer_code
+        self.dang_an_data_info_list = dang_an_data_info_list
+        self.department_code = department_code
+        self.emp_account_user_id = emp_account_user_id
+        self.enterprise_account_code = enterprise_account_code
+        self.form_code = form_code
+        self.occur_date = occur_date
+        self.principal_id = principal_id
+        self.product_code = product_code
+        self.project_code = project_code
+        self.receipt_plans = receipt_plans
+        self.receipt_type = receipt_type
+        self.recode_time = recode_time
+        self.remark = remark
+        self.supplier_code = supplier_code
+        self.title = title
+        self.user_id = user_id
+
+    def validate(self):
+        if self.dang_an_data_info_list:
+            for k in self.dang_an_data_info_list:
+                if k:
+                    k.validate()
+        if self.receipt_plans:
+            for k in self.receipt_plans:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.amount is not None:
+            result['amount'] = self.amount
+        if self.category_code is not None:
+            result['categoryCode'] = self.category_code
+        if self.code is not None:
+            result['code'] = self.code
+        if self.company_code is not None:
+            result['companyCode'] = self.company_code
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.customer_code is not None:
+            result['customerCode'] = self.customer_code
+        result['dangAnDataInfoList'] = []
+        if self.dang_an_data_info_list is not None:
+            for k in self.dang_an_data_info_list:
+                result['dangAnDataInfoList'].append(k.to_map() if k else None)
+        if self.department_code is not None:
+            result['departmentCode'] = self.department_code
+        if self.emp_account_user_id is not None:
+            result['empAccountUserId'] = self.emp_account_user_id
+        if self.enterprise_account_code is not None:
+            result['enterpriseAccountCode'] = self.enterprise_account_code
+        if self.form_code is not None:
+            result['formCode'] = self.form_code
+        if self.occur_date is not None:
+            result['occurDate'] = self.occur_date
+        if self.principal_id is not None:
+            result['principalId'] = self.principal_id
+        if self.product_code is not None:
+            result['productCode'] = self.product_code
+        if self.project_code is not None:
+            result['projectCode'] = self.project_code
+        result['receiptPlans'] = []
+        if self.receipt_plans is not None:
+            for k in self.receipt_plans:
+                result['receiptPlans'].append(k.to_map() if k else None)
+        if self.receipt_type is not None:
+            result['receiptType'] = self.receipt_type
+        if self.recode_time is not None:
+            result['recodeTime'] = self.recode_time
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.supplier_code is not None:
+            result['supplierCode'] = self.supplier_code
+        if self.title is not None:
+            result['title'] = self.title
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('amount') is not None:
+            self.amount = m.get('amount')
+        if m.get('categoryCode') is not None:
+            self.category_code = m.get('categoryCode')
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('companyCode') is not None:
+            self.company_code = m.get('companyCode')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('customerCode') is not None:
+            self.customer_code = m.get('customerCode')
+        self.dang_an_data_info_list = []
+        if m.get('dangAnDataInfoList') is not None:
+            for k in m.get('dangAnDataInfoList'):
+                temp_model = CreatePayableReceiptRequestReceiptDangAnDataInfoList()
+                self.dang_an_data_info_list.append(temp_model.from_map(k))
+        if m.get('departmentCode') is not None:
+            self.department_code = m.get('departmentCode')
+        if m.get('empAccountUserId') is not None:
+            self.emp_account_user_id = m.get('empAccountUserId')
+        if m.get('enterpriseAccountCode') is not None:
+            self.enterprise_account_code = m.get('enterpriseAccountCode')
+        if m.get('formCode') is not None:
+            self.form_code = m.get('formCode')
+        if m.get('occurDate') is not None:
+            self.occur_date = m.get('occurDate')
+        if m.get('principalId') is not None:
+            self.principal_id = m.get('principalId')
+        if m.get('productCode') is not None:
+            self.product_code = m.get('productCode')
+        if m.get('projectCode') is not None:
+            self.project_code = m.get('projectCode')
+        self.receipt_plans = []
+        if m.get('receiptPlans') is not None:
+            for k in m.get('receiptPlans'):
+                temp_model = CreatePayableReceiptRequestReceiptReceiptPlans()
+                self.receipt_plans.append(temp_model.from_map(k))
+        if m.get('receiptType') is not None:
+            self.receipt_type = m.get('receiptType')
+        if m.get('recodeTime') is not None:
+            self.recode_time = m.get('recodeTime')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        if m.get('supplierCode') is not None:
+            self.supplier_code = m.get('supplierCode')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class CreatePayableReceiptRequest(TeaModel):
+    def __init__(
+        self,
+        receipt: CreatePayableReceiptRequestReceipt = None,
+    ):
+        self.receipt = receipt
+
+    def validate(self):
+        if self.receipt:
+            self.receipt.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.receipt is not None:
+            result['receipt'] = self.receipt.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('receipt') is not None:
+            temp_model = CreatePayableReceiptRequestReceipt()
+            self.receipt = temp_model.from_map(m['receipt'])
+        return self
+
+
+class CreatePayableReceiptResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        business_id: str = None,
+        code: str = None,
+        error_code: str = None,
+        error_msg: str = None,
+        success: bool = None,
+        url: str = None,
+    ):
+        self.business_id = business_id
+        self.code = code
+        self.error_code = error_code
+        self.error_msg = error_msg
+        self.success = success
+        self.url = url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.business_id is not None:
+            result['businessId'] = self.business_id
+        if self.code is not None:
+            result['code'] = self.code
+        if self.error_code is not None:
+            result['errorCode'] = self.error_code
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.success is not None:
+            result['success'] = self.success
+        if self.url is not None:
+            result['url'] = self.url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('businessId') is not None:
+            self.business_id = m.get('businessId')
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('errorCode') is not None:
+            self.error_code = m.get('errorCode')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        return self
+
+
+class CreatePayableReceiptResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: CreatePayableReceiptResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = CreatePayableReceiptResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class CreatePayableReceiptResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CreatePayableReceiptResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CreatePayableReceiptResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CreatePaymentOrderHeaders(TeaModel):
     def __init__(
         self,

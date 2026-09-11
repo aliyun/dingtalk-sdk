@@ -1532,6 +1532,120 @@ class Client(OpenApiClient):
         headers = dingtalkbizfinance__2__0_models.CreateCollectionOrderHeaders()
         return await self.create_collection_order_with_options_async(request, headers, runtime)
 
+    def create_payable_receipt_with_options(
+        self,
+        request: dingtalkbizfinance__2__0_models.CreatePayableReceiptRequest,
+        headers: dingtalkbizfinance__2__0_models.CreatePayableReceiptHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.CreatePayableReceiptResponse:
+        """
+        @summary 创建应付单
+        
+        @param request: CreatePayableReceiptRequest
+        @param headers: CreatePayableReceiptHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreatePayableReceiptResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.receipt):
+            body['receipt'] = request.receipt
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreatePayableReceipt',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/createArapReceipt',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.CreatePayableReceiptResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_payable_receipt_with_options_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.CreatePayableReceiptRequest,
+        headers: dingtalkbizfinance__2__0_models.CreatePayableReceiptHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.CreatePayableReceiptResponse:
+        """
+        @summary 创建应付单
+        
+        @param request: CreatePayableReceiptRequest
+        @param headers: CreatePayableReceiptHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreatePayableReceiptResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.receipt):
+            body['receipt'] = request.receipt
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreatePayableReceipt',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/createArapReceipt',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.CreatePayableReceiptResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_payable_receipt(
+        self,
+        request: dingtalkbizfinance__2__0_models.CreatePayableReceiptRequest,
+    ) -> dingtalkbizfinance__2__0_models.CreatePayableReceiptResponse:
+        """
+        @summary 创建应付单
+        
+        @param request: CreatePayableReceiptRequest
+        @return: CreatePayableReceiptResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.CreatePayableReceiptHeaders()
+        return self.create_payable_receipt_with_options(request, headers, runtime)
+
+    async def create_payable_receipt_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.CreatePayableReceiptRequest,
+    ) -> dingtalkbizfinance__2__0_models.CreatePayableReceiptResponse:
+        """
+        @summary 创建应付单
+        
+        @param request: CreatePayableReceiptRequest
+        @return: CreatePayableReceiptResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.CreatePayableReceiptHeaders()
+        return await self.create_payable_receipt_with_options_async(request, headers, runtime)
+
     def create_payment_order_with_options(
         self,
         request: dingtalkbizfinance__2__0_models.CreatePaymentOrderRequest,

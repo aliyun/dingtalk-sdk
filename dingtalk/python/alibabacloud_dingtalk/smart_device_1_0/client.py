@@ -1126,6 +1126,120 @@ class Client(OpenApiClient):
         headers = dingtalksmart_device__1__0_models.QueryDeviceVideoConferenceBookHeaders()
         return await self.query_device_video_conference_book_with_options_async(device_id, book_id, headers, runtime)
 
+    def remove_user_face_with_options(
+        self,
+        request: dingtalksmart_device__1__0_models.RemoveUserFaceRequest,
+        headers: dingtalksmart_device__1__0_models.RemoveUserFaceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalksmart_device__1__0_models.RemoveUserFaceResponse:
+        """
+        @summary 删除用户的人脸底图
+        
+        @param request: RemoveUserFaceRequest
+        @param headers: RemoveUserFaceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RemoveUserFaceResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='RemoveUserFace',
+            version='smartDevice_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/smartDevice/faceRecognitions/feature',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalksmart_device__1__0_models.RemoveUserFaceResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def remove_user_face_with_options_async(
+        self,
+        request: dingtalksmart_device__1__0_models.RemoveUserFaceRequest,
+        headers: dingtalksmart_device__1__0_models.RemoveUserFaceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalksmart_device__1__0_models.RemoveUserFaceResponse:
+        """
+        @summary 删除用户的人脸底图
+        
+        @param request: RemoveUserFaceRequest
+        @param headers: RemoveUserFaceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RemoveUserFaceResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='RemoveUserFace',
+            version='smartDevice_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/smartDevice/faceRecognitions/feature',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalksmart_device__1__0_models.RemoveUserFaceResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def remove_user_face(
+        self,
+        request: dingtalksmart_device__1__0_models.RemoveUserFaceRequest,
+    ) -> dingtalksmart_device__1__0_models.RemoveUserFaceResponse:
+        """
+        @summary 删除用户的人脸底图
+        
+        @param request: RemoveUserFaceRequest
+        @return: RemoveUserFaceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalksmart_device__1__0_models.RemoveUserFaceHeaders()
+        return self.remove_user_face_with_options(request, headers, runtime)
+
+    async def remove_user_face_async(
+        self,
+        request: dingtalksmart_device__1__0_models.RemoveUserFaceRequest,
+    ) -> dingtalksmart_device__1__0_models.RemoveUserFaceResponse:
+        """
+        @summary 删除用户的人脸底图
+        
+        @param request: RemoveUserFaceRequest
+        @return: RemoveUserFaceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalksmart_device__1__0_models.RemoveUserFaceHeaders()
+        return await self.remove_user_face_with_options_async(request, headers, runtime)
+
     def text_to_image_with_options(
         self,
         request: dingtalksmart_device__1__0_models.TextToImageRequest,

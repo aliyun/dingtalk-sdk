@@ -7775,18 +7775,26 @@ class GetContractSubjectRiskResultRequest(TeaModel):
         return self
 
 
-class GetContractSubjectRiskResultResponseBodySubjectRiskResponsesSubjectBaseInfoResponse(TeaModel):
+class GetContractSubjectRiskResultResponseBodySubjectRiskResponsesSubjectBaseInfoResponseIndustryAll(TeaModel):
     def __init__(
         self,
-        credit_code: str = None,
-        establish_time: int = None,
-        legal_person_name: str = None,
-        reg_location: str = None,
+        category: str = None,
+        category_big: str = None,
+        category_code_first: str = None,
+        category_code_fourth: str = None,
+        category_code_second: str = None,
+        category_code_third: str = None,
+        category_middle: str = None,
+        category_small: str = None,
     ):
-        self.credit_code = credit_code
-        self.establish_time = establish_time
-        self.legal_person_name = legal_person_name
-        self.reg_location = reg_location
+        self.category = category
+        self.category_big = category_big
+        self.category_code_first = category_code_first
+        self.category_code_fourth = category_code_fourth
+        self.category_code_second = category_code_second
+        self.category_code_third = category_code_third
+        self.category_middle = category_middle
+        self.category_small = category_small
 
     def validate(self):
         pass
@@ -7797,26 +7805,401 @@ class GetContractSubjectRiskResultResponseBodySubjectRiskResponsesSubjectBaseInf
             return _map
 
         result = dict()
-        if self.credit_code is not None:
-            result['creditCode'] = self.credit_code
-        if self.establish_time is not None:
-            result['establishTime'] = self.establish_time
-        if self.legal_person_name is not None:
-            result['legalPersonName'] = self.legal_person_name
-        if self.reg_location is not None:
-            result['regLocation'] = self.reg_location
+        if self.category is not None:
+            result['category'] = self.category
+        if self.category_big is not None:
+            result['categoryBig'] = self.category_big
+        if self.category_code_first is not None:
+            result['categoryCodeFirst'] = self.category_code_first
+        if self.category_code_fourth is not None:
+            result['categoryCodeFourth'] = self.category_code_fourth
+        if self.category_code_second is not None:
+            result['categoryCodeSecond'] = self.category_code_second
+        if self.category_code_third is not None:
+            result['categoryCodeThird'] = self.category_code_third
+        if self.category_middle is not None:
+            result['categoryMiddle'] = self.category_middle
+        if self.category_small is not None:
+            result['categorySmall'] = self.category_small
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('category') is not None:
+            self.category = m.get('category')
+        if m.get('categoryBig') is not None:
+            self.category_big = m.get('categoryBig')
+        if m.get('categoryCodeFirst') is not None:
+            self.category_code_first = m.get('categoryCodeFirst')
+        if m.get('categoryCodeFourth') is not None:
+            self.category_code_fourth = m.get('categoryCodeFourth')
+        if m.get('categoryCodeSecond') is not None:
+            self.category_code_second = m.get('categoryCodeSecond')
+        if m.get('categoryCodeThird') is not None:
+            self.category_code_third = m.get('categoryCodeThird')
+        if m.get('categoryMiddle') is not None:
+            self.category_middle = m.get('categoryMiddle')
+        if m.get('categorySmall') is not None:
+            self.category_small = m.get('categorySmall')
+        return self
+
+
+class GetContractSubjectRiskResultResponseBodySubjectRiskResponsesSubjectBaseInfoResponse(TeaModel):
+    def __init__(
+        self,
+        above_scale: str = None,
+        actual_capital: str = None,
+        actual_capital_currency: str = None,
+        alias: str = None,
+        approved_time: int = None,
+        base: str = None,
+        ben_number: str = None,
+        bond_name: str = None,
+        bond_num: str = None,
+        bond_type: str = None,
+        business_scope: str = None,
+        cancel_date: int = None,
+        cancel_reason: str = None,
+        city: str = None,
+        company_org_type: str = None,
+        credit_code: str = None,
+        district: str = None,
+        district_code: str = None,
+        economic_function_zone_1: str = None,
+        economic_function_zone_2: str = None,
+        email: str = None,
+        email_list: str = None,
+        establish_time: int = None,
+        from_time: int = None,
+        history_name_list: List[str] = None,
+        history_names: str = None,
+        id: int = None,
+        industry: str = None,
+        industry_all: GetContractSubjectRiskResultResponseBodySubjectRiskResponsesSubjectBaseInfoResponseIndustryAll = None,
+        is_micro_ent: int = None,
+        legal_person_name: str = None,
+        name: str = None,
+        number_source: str = None,
+        number_type: str = None,
+        org_number: str = None,
+        percentile_score: int = None,
+        phone_number: str = None,
+        property_3: str = None,
+        reg_capital: str = None,
+        reg_capital_currency: str = None,
+        reg_institute: str = None,
+        reg_location: str = None,
+        reg_location_half_width: str = None,
+        reg_number: str = None,
+        reg_status: str = None,
+        revoke_date: int = None,
+        revoke_reason: str = None,
+        social_staff_num: int = None,
+        staff_num_range: str = None,
+        tags: str = None,
+        tax_number: str = None,
+        to_time: int = None,
+        type: int = None,
+        update_times: int = None,
+        used_bond_name: str = None,
+        website_list: str = None,
+    ):
+        self.above_scale = above_scale
+        self.actual_capital = actual_capital
+        self.actual_capital_currency = actual_capital_currency
+        self.alias = alias
+        self.approved_time = approved_time
+        self.base = base
+        self.ben_number = ben_number
+        self.bond_name = bond_name
+        self.bond_num = bond_num
+        self.bond_type = bond_type
+        self.business_scope = business_scope
+        self.cancel_date = cancel_date
+        self.cancel_reason = cancel_reason
+        self.city = city
+        self.company_org_type = company_org_type
+        self.credit_code = credit_code
+        self.district = district
+        self.district_code = district_code
+        self.economic_function_zone_1 = economic_function_zone_1
+        self.economic_function_zone_2 = economic_function_zone_2
+        self.email = email
+        self.email_list = email_list
+        self.establish_time = establish_time
+        self.from_time = from_time
+        self.history_name_list = history_name_list
+        self.history_names = history_names
+        self.id = id
+        self.industry = industry
+        self.industry_all = industry_all
+        self.is_micro_ent = is_micro_ent
+        self.legal_person_name = legal_person_name
+        self.name = name
+        self.number_source = number_source
+        self.number_type = number_type
+        self.org_number = org_number
+        self.percentile_score = percentile_score
+        self.phone_number = phone_number
+        self.property_3 = property_3
+        self.reg_capital = reg_capital
+        self.reg_capital_currency = reg_capital_currency
+        self.reg_institute = reg_institute
+        self.reg_location = reg_location
+        self.reg_location_half_width = reg_location_half_width
+        self.reg_number = reg_number
+        self.reg_status = reg_status
+        self.revoke_date = revoke_date
+        self.revoke_reason = revoke_reason
+        self.social_staff_num = social_staff_num
+        self.staff_num_range = staff_num_range
+        self.tags = tags
+        self.tax_number = tax_number
+        self.to_time = to_time
+        self.type = type
+        self.update_times = update_times
+        self.used_bond_name = used_bond_name
+        self.website_list = website_list
+
+    def validate(self):
+        if self.industry_all:
+            self.industry_all.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.above_scale is not None:
+            result['aboveScale'] = self.above_scale
+        if self.actual_capital is not None:
+            result['actualCapital'] = self.actual_capital
+        if self.actual_capital_currency is not None:
+            result['actualCapitalCurrency'] = self.actual_capital_currency
+        if self.alias is not None:
+            result['alias'] = self.alias
+        if self.approved_time is not None:
+            result['approvedTime'] = self.approved_time
+        if self.base is not None:
+            result['base'] = self.base
+        if self.ben_number is not None:
+            result['benNumber'] = self.ben_number
+        if self.bond_name is not None:
+            result['bondName'] = self.bond_name
+        if self.bond_num is not None:
+            result['bondNum'] = self.bond_num
+        if self.bond_type is not None:
+            result['bondType'] = self.bond_type
+        if self.business_scope is not None:
+            result['businessScope'] = self.business_scope
+        if self.cancel_date is not None:
+            result['cancelDate'] = self.cancel_date
+        if self.cancel_reason is not None:
+            result['cancelReason'] = self.cancel_reason
+        if self.city is not None:
+            result['city'] = self.city
+        if self.company_org_type is not None:
+            result['companyOrgType'] = self.company_org_type
+        if self.credit_code is not None:
+            result['creditCode'] = self.credit_code
+        if self.district is not None:
+            result['district'] = self.district
+        if self.district_code is not None:
+            result['districtCode'] = self.district_code
+        if self.economic_function_zone_1 is not None:
+            result['economicFunctionZone1'] = self.economic_function_zone_1
+        if self.economic_function_zone_2 is not None:
+            result['economicFunctionZone2'] = self.economic_function_zone_2
+        if self.email is not None:
+            result['email'] = self.email
+        if self.email_list is not None:
+            result['emailList'] = self.email_list
+        if self.establish_time is not None:
+            result['establishTime'] = self.establish_time
+        if self.from_time is not None:
+            result['fromTime'] = self.from_time
+        if self.history_name_list is not None:
+            result['historyNameList'] = self.history_name_list
+        if self.history_names is not None:
+            result['historyNames'] = self.history_names
+        if self.id is not None:
+            result['id'] = self.id
+        if self.industry is not None:
+            result['industry'] = self.industry
+        if self.industry_all is not None:
+            result['industryAll'] = self.industry_all.to_map()
+        if self.is_micro_ent is not None:
+            result['isMicroEnt'] = self.is_micro_ent
+        if self.legal_person_name is not None:
+            result['legalPersonName'] = self.legal_person_name
+        if self.name is not None:
+            result['name'] = self.name
+        if self.number_source is not None:
+            result['numberSource'] = self.number_source
+        if self.number_type is not None:
+            result['numberType'] = self.number_type
+        if self.org_number is not None:
+            result['orgNumber'] = self.org_number
+        if self.percentile_score is not None:
+            result['percentileScore'] = self.percentile_score
+        if self.phone_number is not None:
+            result['phoneNumber'] = self.phone_number
+        if self.property_3 is not None:
+            result['property3'] = self.property_3
+        if self.reg_capital is not None:
+            result['regCapital'] = self.reg_capital
+        if self.reg_capital_currency is not None:
+            result['regCapitalCurrency'] = self.reg_capital_currency
+        if self.reg_institute is not None:
+            result['regInstitute'] = self.reg_institute
+        if self.reg_location is not None:
+            result['regLocation'] = self.reg_location
+        if self.reg_location_half_width is not None:
+            result['regLocationHalfWidth'] = self.reg_location_half_width
+        if self.reg_number is not None:
+            result['regNumber'] = self.reg_number
+        if self.reg_status is not None:
+            result['regStatus'] = self.reg_status
+        if self.revoke_date is not None:
+            result['revokeDate'] = self.revoke_date
+        if self.revoke_reason is not None:
+            result['revokeReason'] = self.revoke_reason
+        if self.social_staff_num is not None:
+            result['socialStaffNum'] = self.social_staff_num
+        if self.staff_num_range is not None:
+            result['staffNumRange'] = self.staff_num_range
+        if self.tags is not None:
+            result['tags'] = self.tags
+        if self.tax_number is not None:
+            result['taxNumber'] = self.tax_number
+        if self.to_time is not None:
+            result['toTime'] = self.to_time
+        if self.type is not None:
+            result['type'] = self.type
+        if self.update_times is not None:
+            result['updateTimes'] = self.update_times
+        if self.used_bond_name is not None:
+            result['usedBondName'] = self.used_bond_name
+        if self.website_list is not None:
+            result['websiteList'] = self.website_list
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('aboveScale') is not None:
+            self.above_scale = m.get('aboveScale')
+        if m.get('actualCapital') is not None:
+            self.actual_capital = m.get('actualCapital')
+        if m.get('actualCapitalCurrency') is not None:
+            self.actual_capital_currency = m.get('actualCapitalCurrency')
+        if m.get('alias') is not None:
+            self.alias = m.get('alias')
+        if m.get('approvedTime') is not None:
+            self.approved_time = m.get('approvedTime')
+        if m.get('base') is not None:
+            self.base = m.get('base')
+        if m.get('benNumber') is not None:
+            self.ben_number = m.get('benNumber')
+        if m.get('bondName') is not None:
+            self.bond_name = m.get('bondName')
+        if m.get('bondNum') is not None:
+            self.bond_num = m.get('bondNum')
+        if m.get('bondType') is not None:
+            self.bond_type = m.get('bondType')
+        if m.get('businessScope') is not None:
+            self.business_scope = m.get('businessScope')
+        if m.get('cancelDate') is not None:
+            self.cancel_date = m.get('cancelDate')
+        if m.get('cancelReason') is not None:
+            self.cancel_reason = m.get('cancelReason')
+        if m.get('city') is not None:
+            self.city = m.get('city')
+        if m.get('companyOrgType') is not None:
+            self.company_org_type = m.get('companyOrgType')
         if m.get('creditCode') is not None:
             self.credit_code = m.get('creditCode')
+        if m.get('district') is not None:
+            self.district = m.get('district')
+        if m.get('districtCode') is not None:
+            self.district_code = m.get('districtCode')
+        if m.get('economicFunctionZone1') is not None:
+            self.economic_function_zone_1 = m.get('economicFunctionZone1')
+        if m.get('economicFunctionZone2') is not None:
+            self.economic_function_zone_2 = m.get('economicFunctionZone2')
+        if m.get('email') is not None:
+            self.email = m.get('email')
+        if m.get('emailList') is not None:
+            self.email_list = m.get('emailList')
         if m.get('establishTime') is not None:
             self.establish_time = m.get('establishTime')
+        if m.get('fromTime') is not None:
+            self.from_time = m.get('fromTime')
+        if m.get('historyNameList') is not None:
+            self.history_name_list = m.get('historyNameList')
+        if m.get('historyNames') is not None:
+            self.history_names = m.get('historyNames')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('industry') is not None:
+            self.industry = m.get('industry')
+        if m.get('industryAll') is not None:
+            temp_model = GetContractSubjectRiskResultResponseBodySubjectRiskResponsesSubjectBaseInfoResponseIndustryAll()
+            self.industry_all = temp_model.from_map(m['industryAll'])
+        if m.get('isMicroEnt') is not None:
+            self.is_micro_ent = m.get('isMicroEnt')
         if m.get('legalPersonName') is not None:
             self.legal_person_name = m.get('legalPersonName')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('numberSource') is not None:
+            self.number_source = m.get('numberSource')
+        if m.get('numberType') is not None:
+            self.number_type = m.get('numberType')
+        if m.get('orgNumber') is not None:
+            self.org_number = m.get('orgNumber')
+        if m.get('percentileScore') is not None:
+            self.percentile_score = m.get('percentileScore')
+        if m.get('phoneNumber') is not None:
+            self.phone_number = m.get('phoneNumber')
+        if m.get('property3') is not None:
+            self.property_3 = m.get('property3')
+        if m.get('regCapital') is not None:
+            self.reg_capital = m.get('regCapital')
+        if m.get('regCapitalCurrency') is not None:
+            self.reg_capital_currency = m.get('regCapitalCurrency')
+        if m.get('regInstitute') is not None:
+            self.reg_institute = m.get('regInstitute')
         if m.get('regLocation') is not None:
             self.reg_location = m.get('regLocation')
+        if m.get('regLocationHalfWidth') is not None:
+            self.reg_location_half_width = m.get('regLocationHalfWidth')
+        if m.get('regNumber') is not None:
+            self.reg_number = m.get('regNumber')
+        if m.get('regStatus') is not None:
+            self.reg_status = m.get('regStatus')
+        if m.get('revokeDate') is not None:
+            self.revoke_date = m.get('revokeDate')
+        if m.get('revokeReason') is not None:
+            self.revoke_reason = m.get('revokeReason')
+        if m.get('socialStaffNum') is not None:
+            self.social_staff_num = m.get('socialStaffNum')
+        if m.get('staffNumRange') is not None:
+            self.staff_num_range = m.get('staffNumRange')
+        if m.get('tags') is not None:
+            self.tags = m.get('tags')
+        if m.get('taxNumber') is not None:
+            self.tax_number = m.get('taxNumber')
+        if m.get('toTime') is not None:
+            self.to_time = m.get('toTime')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('updateTimes') is not None:
+            self.update_times = m.get('updateTimes')
+        if m.get('usedBondName') is not None:
+            self.used_bond_name = m.get('usedBondName')
+        if m.get('websiteList') is not None:
+            self.website_list = m.get('websiteList')
         return self
 
 

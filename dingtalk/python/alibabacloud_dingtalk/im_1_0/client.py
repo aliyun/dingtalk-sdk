@@ -415,7 +415,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.AddSceneGroupMemberResponse:
         """
-        @summary 场景群加人
+        @summary 添加场景群成员
         
         @param request: AddSceneGroupMemberRequest
         @param headers: AddSceneGroupMemberHeaders
@@ -462,7 +462,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.AddSceneGroupMemberResponse:
         """
-        @summary 场景群加人
+        @summary 添加场景群成员
         
         @param request: AddSceneGroupMemberRequest
         @param headers: AddSceneGroupMemberHeaders
@@ -507,7 +507,7 @@ class Client(OpenApiClient):
         request: dingtalkim__1__0_models.AddSceneGroupMemberRequest,
     ) -> dingtalkim__1__0_models.AddSceneGroupMemberResponse:
         """
-        @summary 场景群加人
+        @summary 添加场景群成员
         
         @param request: AddSceneGroupMemberRequest
         @return: AddSceneGroupMemberResponse
@@ -521,7 +521,7 @@ class Client(OpenApiClient):
         request: dingtalkim__1__0_models.AddSceneGroupMemberRequest,
     ) -> dingtalkim__1__0_models.AddSceneGroupMemberResponse:
         """
-        @summary 场景群加人
+        @summary 添加场景群成员
         
         @param request: AddSceneGroupMemberRequest
         @return: AddSceneGroupMemberResponse
@@ -4986,6 +4986,8 @@ class Client(OpenApiClient):
             body['cool_app_code'] = request.cool_app_code
         if not UtilClient.is_unset(request.open_conversation_id):
             body['open_conversation_id'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.permission_code):
+            body['permissionCode'] = request.permission_code
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -5031,6 +5033,8 @@ class Client(OpenApiClient):
             body['cool_app_code'] = request.cool_app_code
         if not UtilClient.is_unset(request.open_conversation_id):
             body['open_conversation_id'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.permission_code):
+            body['permissionCode'] = request.permission_code
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -10031,7 +10035,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.QueryGroupMuteStatusResponse:
         """
-        @summary 查询群禁言状态
+        @summary 查询场景群禁言状态
         
         @param request: QueryGroupMuteStatusRequest
         @param headers: QueryGroupMuteStatusHeaders
@@ -10042,6 +10046,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.open_conversation_id):
             query['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.permission_code):
+            query['permissionCode'] = request.permission_code
         if not UtilClient.is_unset(request.user_id):
             query['userId'] = request.user_id
         real_headers = {}
@@ -10076,7 +10082,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.QueryGroupMuteStatusResponse:
         """
-        @summary 查询群禁言状态
+        @summary 查询场景群禁言状态
         
         @param request: QueryGroupMuteStatusRequest
         @param headers: QueryGroupMuteStatusHeaders
@@ -10087,6 +10093,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.open_conversation_id):
             query['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.permission_code):
+            query['permissionCode'] = request.permission_code
         if not UtilClient.is_unset(request.user_id):
             query['userId'] = request.user_id
         real_headers = {}
@@ -10119,7 +10127,7 @@ class Client(OpenApiClient):
         request: dingtalkim__1__0_models.QueryGroupMuteStatusRequest,
     ) -> dingtalkim__1__0_models.QueryGroupMuteStatusResponse:
         """
-        @summary 查询群禁言状态
+        @summary 查询场景群禁言状态
         
         @param request: QueryGroupMuteStatusRequest
         @return: QueryGroupMuteStatusResponse
@@ -10133,7 +10141,7 @@ class Client(OpenApiClient):
         request: dingtalkim__1__0_models.QueryGroupMuteStatusRequest,
     ) -> dingtalkim__1__0_models.QueryGroupMuteStatusResponse:
         """
-        @summary 查询群禁言状态
+        @summary 查询场景群禁言状态
         
         @param request: QueryGroupMuteStatusRequest
         @return: QueryGroupMuteStatusResponse
@@ -13009,7 +13017,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.RemoveSceneGroupMemberResponse:
         """
-        @summary 场景群删人
+        @summary 删除场景群成员
         
         @param request: RemoveSceneGroupMemberRequest
         @param headers: RemoveSceneGroupMemberHeaders
@@ -13056,7 +13064,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkim__1__0_models.RemoveSceneGroupMemberResponse:
         """
-        @summary 场景群删人
+        @summary 删除场景群成员
         
         @param request: RemoveSceneGroupMemberRequest
         @param headers: RemoveSceneGroupMemberHeaders
@@ -13101,7 +13109,7 @@ class Client(OpenApiClient):
         request: dingtalkim__1__0_models.RemoveSceneGroupMemberRequest,
     ) -> dingtalkim__1__0_models.RemoveSceneGroupMemberResponse:
         """
-        @summary 场景群删人
+        @summary 删除场景群成员
         
         @param request: RemoveSceneGroupMemberRequest
         @return: RemoveSceneGroupMemberResponse
@@ -13115,7 +13123,7 @@ class Client(OpenApiClient):
         request: dingtalkim__1__0_models.RemoveSceneGroupMemberRequest,
     ) -> dingtalkim__1__0_models.RemoveSceneGroupMemberResponse:
         """
-        @summary 场景群删人
+        @summary 删除场景群成员
         
         @param request: RemoveSceneGroupMemberRequest
         @return: RemoveSceneGroupMemberResponse

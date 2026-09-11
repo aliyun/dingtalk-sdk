@@ -4176,6 +4176,124 @@ class Client(OpenApiClient):
         headers = dingtalkdoc__2__0_models.GetUuidByDentryIdHeaders()
         return await self.get_uuid_by_dentry_id_with_options_async(dentry_id, request, headers, runtime)
 
+    def get_uuid_by_id_or_url_with_options(
+        self,
+        request: dingtalkdoc__2__0_models.GetUuidByIdOrUrlRequest,
+        headers: dingtalkdoc__2__0_models.GetUuidByIdOrUrlHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.GetUuidByIdOrUrlResponse:
+        """
+        @summary 根据文档id或URL获取文件DentryUuid
+        
+        @param request: GetUuidByIdOrUrlRequest
+        @param headers: GetUuidByIdOrUrlHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetUuidByIdOrUrlResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.id_or_url):
+            query['idOrUrl'] = request.id_or_url
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetUuidByIdOrUrl',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/documents/queryDentryUuid',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.GetUuidByIdOrUrlResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_uuid_by_id_or_url_with_options_async(
+        self,
+        request: dingtalkdoc__2__0_models.GetUuidByIdOrUrlRequest,
+        headers: dingtalkdoc__2__0_models.GetUuidByIdOrUrlHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.GetUuidByIdOrUrlResponse:
+        """
+        @summary 根据文档id或URL获取文件DentryUuid
+        
+        @param request: GetUuidByIdOrUrlRequest
+        @param headers: GetUuidByIdOrUrlHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetUuidByIdOrUrlResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.id_or_url):
+            query['idOrUrl'] = request.id_or_url
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetUuidByIdOrUrl',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/documents/queryDentryUuid',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.GetUuidByIdOrUrlResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_uuid_by_id_or_url(
+        self,
+        request: dingtalkdoc__2__0_models.GetUuidByIdOrUrlRequest,
+    ) -> dingtalkdoc__2__0_models.GetUuidByIdOrUrlResponse:
+        """
+        @summary 根据文档id或URL获取文件DentryUuid
+        
+        @param request: GetUuidByIdOrUrlRequest
+        @return: GetUuidByIdOrUrlResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.GetUuidByIdOrUrlHeaders()
+        return self.get_uuid_by_id_or_url_with_options(request, headers, runtime)
+
+    async def get_uuid_by_id_or_url_async(
+        self,
+        request: dingtalkdoc__2__0_models.GetUuidByIdOrUrlRequest,
+    ) -> dingtalkdoc__2__0_models.GetUuidByIdOrUrlResponse:
+        """
+        @summary 根据文档id或URL获取文件DentryUuid
+        
+        @param request: GetUuidByIdOrUrlRequest
+        @return: GetUuidByIdOrUrlResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.GetUuidByIdOrUrlHeaders()
+        return await self.get_uuid_by_id_or_url_with_options_async(request, headers, runtime)
+
     def get_workspace_permission_scopes_with_options(
         self,
         workspace_id: str,

@@ -144,6 +144,120 @@ class Client(OpenApiClient):
         headers = dingtalkapp_market__1__0_models.CreateAppGoodsServiceConversationHeaders()
         return await self.create_app_goods_service_conversation_with_options_async(request, headers, runtime)
 
+    def ensure_user_license_access_with_options(
+        self,
+        request: dingtalkapp_market__1__0_models.EnsureUserLicenseAccessRequest,
+        headers: dingtalkapp_market__1__0_models.EnsureUserLicenseAccessHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkapp_market__1__0_models.EnsureUserLicenseAccessResponse:
+        """
+        @summary 校验访问用户是否拥有应用 License
+        
+        @param request: EnsureUserLicenseAccessRequest
+        @param headers: EnsureUserLicenseAccessHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EnsureUserLicenseAccessResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='EnsureUserLicenseAccess',
+            version='appMarket_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/appMarket/userLicenses/ensure',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkapp_market__1__0_models.EnsureUserLicenseAccessResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def ensure_user_license_access_with_options_async(
+        self,
+        request: dingtalkapp_market__1__0_models.EnsureUserLicenseAccessRequest,
+        headers: dingtalkapp_market__1__0_models.EnsureUserLicenseAccessHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkapp_market__1__0_models.EnsureUserLicenseAccessResponse:
+        """
+        @summary 校验访问用户是否拥有应用 License
+        
+        @param request: EnsureUserLicenseAccessRequest
+        @param headers: EnsureUserLicenseAccessHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EnsureUserLicenseAccessResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='EnsureUserLicenseAccess',
+            version='appMarket_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/appMarket/userLicenses/ensure',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkapp_market__1__0_models.EnsureUserLicenseAccessResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def ensure_user_license_access(
+        self,
+        request: dingtalkapp_market__1__0_models.EnsureUserLicenseAccessRequest,
+    ) -> dingtalkapp_market__1__0_models.EnsureUserLicenseAccessResponse:
+        """
+        @summary 校验访问用户是否拥有应用 License
+        
+        @param request: EnsureUserLicenseAccessRequest
+        @return: EnsureUserLicenseAccessResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkapp_market__1__0_models.EnsureUserLicenseAccessHeaders()
+        return self.ensure_user_license_access_with_options(request, headers, runtime)
+
+    async def ensure_user_license_access_async(
+        self,
+        request: dingtalkapp_market__1__0_models.EnsureUserLicenseAccessRequest,
+    ) -> dingtalkapp_market__1__0_models.EnsureUserLicenseAccessResponse:
+        """
+        @summary 校验访问用户是否拥有应用 License
+        
+        @param request: EnsureUserLicenseAccessRequest
+        @return: EnsureUserLicenseAccessResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkapp_market__1__0_models.EnsureUserLicenseAccessHeaders()
+        return await self.ensure_user_license_access_with_options_async(request, headers, runtime)
+
     def get_cool_app_access_status_with_options(
         self,
         request: dingtalkapp_market__1__0_models.GetCoolAppAccessStatusRequest,
@@ -731,6 +845,132 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkapp_market__1__0_models.QueryMarketOrderHeaders()
         return await self.query_market_order_with_options_async(order_id, headers, runtime)
+
+    def update_app_visible_scope_with_options(
+        self,
+        request: dingtalkapp_market__1__0_models.UpdateAppVisibleScopeRequest,
+        headers: dingtalkapp_market__1__0_models.UpdateAppVisibleScopeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkapp_market__1__0_models.UpdateAppVisibleScopeResponse:
+        """
+        @summary 全量更新第三方应用可见范围
+        
+        @param request: UpdateAppVisibleScopeRequest
+        @param headers: UpdateAppVisibleScopeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateAppVisibleScopeResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.operator_user_id):
+            body['operatorUserId'] = request.operator_user_id
+        if not UtilClient.is_unset(request.visible_dept_ids):
+            body['visibleDeptIds'] = request.visible_dept_ids
+        if not UtilClient.is_unset(request.visible_scope_type):
+            body['visibleScopeType'] = request.visible_scope_type
+        if not UtilClient.is_unset(request.visible_user_ids):
+            body['visibleUserIds'] = request.visible_user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateAppVisibleScope',
+            version='appMarket_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/appMarket/appVisibleScopes',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkapp_market__1__0_models.UpdateAppVisibleScopeResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_app_visible_scope_with_options_async(
+        self,
+        request: dingtalkapp_market__1__0_models.UpdateAppVisibleScopeRequest,
+        headers: dingtalkapp_market__1__0_models.UpdateAppVisibleScopeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkapp_market__1__0_models.UpdateAppVisibleScopeResponse:
+        """
+        @summary 全量更新第三方应用可见范围
+        
+        @param request: UpdateAppVisibleScopeRequest
+        @param headers: UpdateAppVisibleScopeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateAppVisibleScopeResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.operator_user_id):
+            body['operatorUserId'] = request.operator_user_id
+        if not UtilClient.is_unset(request.visible_dept_ids):
+            body['visibleDeptIds'] = request.visible_dept_ids
+        if not UtilClient.is_unset(request.visible_scope_type):
+            body['visibleScopeType'] = request.visible_scope_type
+        if not UtilClient.is_unset(request.visible_user_ids):
+            body['visibleUserIds'] = request.visible_user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateAppVisibleScope',
+            version='appMarket_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/appMarket/appVisibleScopes',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkapp_market__1__0_models.UpdateAppVisibleScopeResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_app_visible_scope(
+        self,
+        request: dingtalkapp_market__1__0_models.UpdateAppVisibleScopeRequest,
+    ) -> dingtalkapp_market__1__0_models.UpdateAppVisibleScopeResponse:
+        """
+        @summary 全量更新第三方应用可见范围
+        
+        @param request: UpdateAppVisibleScopeRequest
+        @return: UpdateAppVisibleScopeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkapp_market__1__0_models.UpdateAppVisibleScopeHeaders()
+        return self.update_app_visible_scope_with_options(request, headers, runtime)
+
+    async def update_app_visible_scope_async(
+        self,
+        request: dingtalkapp_market__1__0_models.UpdateAppVisibleScopeRequest,
+    ) -> dingtalkapp_market__1__0_models.UpdateAppVisibleScopeResponse:
+        """
+        @summary 全量更新第三方应用可见范围
+        
+        @param request: UpdateAppVisibleScopeRequest
+        @return: UpdateAppVisibleScopeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkapp_market__1__0_models.UpdateAppVisibleScopeHeaders()
+        return await self.update_app_visible_scope_with_options_async(request, headers, runtime)
 
     def user_task_report_with_options(
         self,

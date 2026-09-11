@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.model import TeaModel
-from typing import Dict
+from typing import Dict, List
 
 
 class CreateAppGoodsServiceConversationHeaders(TeaModel):
@@ -142,6 +142,150 @@ class CreateAppGoodsServiceConversationResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateAppGoodsServiceConversationResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class EnsureUserLicenseAccessHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class EnsureUserLicenseAccessRequest(TeaModel):
+    def __init__(
+        self,
+        union_id: str = None,
+    ):
+        # This parameter is required.
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class EnsureUserLicenseAccessResponseBody(TeaModel):
+    def __init__(
+        self,
+        allowed: bool = None,
+        decision_code: str = None,
+        license_assigned: bool = None,
+    ):
+        # This parameter is required.
+        self.allowed = allowed
+        # This parameter is required.
+        self.decision_code = decision_code
+        # This parameter is required.
+        self.license_assigned = license_assigned
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.allowed is not None:
+            result['allowed'] = self.allowed
+        if self.decision_code is not None:
+            result['decisionCode'] = self.decision_code
+        if self.license_assigned is not None:
+            result['licenseAssigned'] = self.license_assigned
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('allowed') is not None:
+            self.allowed = m.get('allowed')
+        if m.get('decisionCode') is not None:
+            self.decision_code = m.get('decisionCode')
+        if m.get('licenseAssigned') is not None:
+            self.license_assigned = m.get('licenseAssigned')
+        return self
+
+
+class EnsureUserLicenseAccessResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: EnsureUserLicenseAccessResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = EnsureUserLicenseAccessResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -924,6 +1068,154 @@ class QueryMarketOrderResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryMarketOrderResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateAppVisibleScopeHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateAppVisibleScopeRequest(TeaModel):
+    def __init__(
+        self,
+        operator_user_id: str = None,
+        visible_dept_ids: List[int] = None,
+        visible_scope_type: str = None,
+        visible_user_ids: List[str] = None,
+    ):
+        # This parameter is required.
+        self.operator_user_id = operator_user_id
+        self.visible_dept_ids = visible_dept_ids
+        # This parameter is required.
+        self.visible_scope_type = visible_scope_type
+        self.visible_user_ids = visible_user_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operator_user_id is not None:
+            result['operatorUserId'] = self.operator_user_id
+        if self.visible_dept_ids is not None:
+            result['visibleDeptIds'] = self.visible_dept_ids
+        if self.visible_scope_type is not None:
+            result['visibleScopeType'] = self.visible_scope_type
+        if self.visible_user_ids is not None:
+            result['visibleUserIds'] = self.visible_user_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operatorUserId') is not None:
+            self.operator_user_id = m.get('operatorUserId')
+        if m.get('visibleDeptIds') is not None:
+            self.visible_dept_ids = m.get('visibleDeptIds')
+        if m.get('visibleScopeType') is not None:
+            self.visible_scope_type = m.get('visibleScopeType')
+        if m.get('visibleUserIds') is not None:
+            self.visible_user_ids = m.get('visibleUserIds')
+        return self
+
+
+class UpdateAppVisibleScopeResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class UpdateAppVisibleScopeResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdateAppVisibleScopeResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdateAppVisibleScopeResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

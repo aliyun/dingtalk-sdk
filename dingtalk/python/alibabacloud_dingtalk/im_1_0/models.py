@@ -6996,10 +6996,12 @@ class GetSceneGroupDetailInfoRequest(TeaModel):
         self,
         cool_app_code: str = None,
         open_conversation_id: str = None,
+        permission_code: str = None,
     ):
         self.cool_app_code = cool_app_code
         # This parameter is required.
         self.open_conversation_id = open_conversation_id
+        self.permission_code = permission_code
 
     def validate(self):
         pass
@@ -7014,6 +7016,8 @@ class GetSceneGroupDetailInfoRequest(TeaModel):
             result['cool_app_code'] = self.cool_app_code
         if self.open_conversation_id is not None:
             result['open_conversation_id'] = self.open_conversation_id
+        if self.permission_code is not None:
+            result['permissionCode'] = self.permission_code
         return result
 
     def from_map(self, m: dict = None):
@@ -7022,6 +7026,8 @@ class GetSceneGroupDetailInfoRequest(TeaModel):
             self.cool_app_code = m.get('cool_app_code')
         if m.get('open_conversation_id') is not None:
             self.open_conversation_id = m.get('open_conversation_id')
+        if m.get('permissionCode') is not None:
+            self.permission_code = m.get('permissionCode')
         return self
 
 
@@ -14951,10 +14957,12 @@ class QueryGroupMuteStatusRequest(TeaModel):
     def __init__(
         self,
         open_conversation_id: str = None,
+        permission_code: str = None,
         user_id: str = None,
     ):
         # This parameter is required.
         self.open_conversation_id = open_conversation_id
+        self.permission_code = permission_code
         # This parameter is required.
         self.user_id = user_id
 
@@ -14969,6 +14977,8 @@ class QueryGroupMuteStatusRequest(TeaModel):
         result = dict()
         if self.open_conversation_id is not None:
             result['openConversationId'] = self.open_conversation_id
+        if self.permission_code is not None:
+            result['permissionCode'] = self.permission_code
         if self.user_id is not None:
             result['userId'] = self.user_id
         return result
@@ -14977,6 +14987,8 @@ class QueryGroupMuteStatusRequest(TeaModel):
         m = m or dict()
         if m.get('openConversationId') is not None:
             self.open_conversation_id = m.get('openConversationId')
+        if m.get('permissionCode') is not None:
+            self.permission_code = m.get('permissionCode')
         if m.get('userId') is not None:
             self.user_id = m.get('userId')
         return self

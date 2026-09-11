@@ -2936,9 +2936,11 @@ class QueryUserHonorsRequest(TeaModel):
 class QueryUserHonorsResponseBodyResultHonorsGrantHistory(TeaModel):
     def __init__(
         self,
+        grant_reason: str = None,
         grant_time: int = None,
         sender_userid: str = None,
     ):
+        self.grant_reason = grant_reason
         self.grant_time = grant_time
         self.sender_userid = sender_userid
 
@@ -2951,6 +2953,8 @@ class QueryUserHonorsResponseBodyResultHonorsGrantHistory(TeaModel):
             return _map
 
         result = dict()
+        if self.grant_reason is not None:
+            result['grantReason'] = self.grant_reason
         if self.grant_time is not None:
             result['grantTime'] = self.grant_time
         if self.sender_userid is not None:
@@ -2959,6 +2963,8 @@ class QueryUserHonorsResponseBodyResultHonorsGrantHistory(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('grantReason') is not None:
+            self.grant_reason = m.get('grantReason')
         if m.get('grantTime') is not None:
             self.grant_time = m.get('grantTime')
         if m.get('senderUserid') is not None:

@@ -808,6 +808,8 @@ class Client(OpenApiClient):
             body['description'] = request.description
         if not UtilClient.is_unset(request.end):
             body['end'] = request.end
+        if not UtilClient.is_unset(request.event_config):
+            body['eventConfig'] = request.event_config
         if not UtilClient.is_unset(request.extra):
             body['extra'] = request.extra
         if not UtilClient.is_unset(request.free_busy_status):
@@ -885,6 +887,8 @@ class Client(OpenApiClient):
             body['description'] = request.description
         if not UtilClient.is_unset(request.end):
             body['end'] = request.end
+        if not UtilClient.is_unset(request.event_config):
+            body['eventConfig'] = request.event_config
         if not UtilClient.is_unset(request.extra):
             body['extra'] = request.extra
         if not UtilClient.is_unset(request.free_busy_status):

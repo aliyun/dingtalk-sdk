@@ -1421,6 +1421,142 @@ class DeleteMinutesResponse(TeaModel):
         return self
 
 
+class DeleteMinutesMediaHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeleteMinutesMediaRequest(TeaModel):
+    def __init__(
+        self,
+        task_uuid: str = None,
+        union_id: str = None,
+    ):
+        # This parameter is required.
+        self.task_uuid = task_uuid
+        # This parameter is required.
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.task_uuid is not None:
+            result['taskUuid'] = self.task_uuid
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('taskUuid') is not None:
+            self.task_uuid = m.get('taskUuid')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class DeleteMinutesMediaResponseBody(TeaModel):
+    def __init__(
+        self,
+        task_uuid: str = None,
+    ):
+        self.task_uuid = task_uuid
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.task_uuid is not None:
+            result['taskUuid'] = self.task_uuid
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('taskUuid') is not None:
+            self.task_uuid = m.get('taskUuid')
+        return self
+
+
+class DeleteMinutesMediaResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: DeleteMinutesMediaResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = DeleteMinutesMediaResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class ExportMinutesTaskResultHeaders(TeaModel):
     def __init__(
         self,
@@ -1780,6 +1916,248 @@ class GenerateSummaryResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GenerateSummaryResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ListMinutesAttachmentsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListMinutesAttachmentsRequest(TeaModel):
+    def __init__(
+        self,
+        content_type: int = None,
+        direction: int = None,
+        max_results: int = None,
+        next_token: str = None,
+        type: int = None,
+        union_id: str = None,
+    ):
+        self.content_type = content_type
+        self.direction = direction
+        self.max_results = max_results
+        self.next_token = next_token
+        self.type = type
+        # This parameter is required.
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content_type is not None:
+            result['contentType'] = self.content_type
+        if self.direction is not None:
+            result['direction'] = self.direction
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.type is not None:
+            result['type'] = self.type
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('contentType') is not None:
+            self.content_type = m.get('contentType')
+        if m.get('direction') is not None:
+            self.direction = m.get('direction')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class ListMinutesAttachmentsResponseBodyAttachments(TeaModel):
+    def __init__(
+        self,
+        content: str = None,
+        content_type: int = None,
+        download_url: str = None,
+        note_id: int = None,
+        note_time: int = None,
+        relative_time_ms: int = None,
+        type: int = None,
+    ):
+        self.content = content
+        self.content_type = content_type
+        self.download_url = download_url
+        self.note_id = note_id
+        self.note_time = note_time
+        self.relative_time_ms = relative_time_ms
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        if self.content_type is not None:
+            result['contentType'] = self.content_type
+        if self.download_url is not None:
+            result['downloadUrl'] = self.download_url
+        if self.note_id is not None:
+            result['noteId'] = self.note_id
+        if self.note_time is not None:
+            result['noteTime'] = self.note_time
+        if self.relative_time_ms is not None:
+            result['relativeTimeMs'] = self.relative_time_ms
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('contentType') is not None:
+            self.content_type = m.get('contentType')
+        if m.get('downloadUrl') is not None:
+            self.download_url = m.get('downloadUrl')
+        if m.get('noteId') is not None:
+            self.note_id = m.get('noteId')
+        if m.get('noteTime') is not None:
+            self.note_time = m.get('noteTime')
+        if m.get('relativeTimeMs') is not None:
+            self.relative_time_ms = m.get('relativeTimeMs')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class ListMinutesAttachmentsResponseBody(TeaModel):
+    def __init__(
+        self,
+        attachments: List[ListMinutesAttachmentsResponseBodyAttachments] = None,
+        has_next: bool = None,
+        next_token: str = None,
+    ):
+        self.attachments = attachments
+        self.has_next = has_next
+        self.next_token = next_token
+
+    def validate(self):
+        if self.attachments:
+            for k in self.attachments:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['attachments'] = []
+        if self.attachments is not None:
+            for k in self.attachments:
+                result['attachments'].append(k.to_map() if k else None)
+        if self.has_next is not None:
+            result['hasNext'] = self.has_next
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.attachments = []
+        if m.get('attachments') is not None:
+            for k in m.get('attachments'):
+                temp_model = ListMinutesAttachmentsResponseBodyAttachments()
+                self.attachments.append(temp_model.from_map(k))
+        if m.get('hasNext') is not None:
+            self.has_next = m.get('hasNext')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        return self
+
+
+class ListMinutesAttachmentsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ListMinutesAttachmentsResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ListMinutesAttachmentsResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -6836,6 +7214,205 @@ class RegenerateChaptersResponse(TeaModel):
         return self
 
 
+class SetA1DetailPageCustomTabHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SetA1DetailPageCustomTabRequestCustomTabList(TeaModel):
+    def __init__(
+        self,
+        biz_type: str = None,
+        default_locale: str = None,
+        name_i18n_map: Dict[str, Any] = None,
+        pc_url: str = None,
+        url: str = None,
+    ):
+        # This parameter is required.
+        self.biz_type = biz_type
+        # This parameter is required.
+        self.default_locale = default_locale
+        # This parameter is required.
+        self.name_i18n_map = name_i18n_map
+        self.pc_url = pc_url
+        # This parameter is required.
+        self.url = url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.default_locale is not None:
+            result['defaultLocale'] = self.default_locale
+        if self.name_i18n_map is not None:
+            result['nameI18nMap'] = self.name_i18n_map
+        if self.pc_url is not None:
+            result['pcUrl'] = self.pc_url
+        if self.url is not None:
+            result['url'] = self.url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('defaultLocale') is not None:
+            self.default_locale = m.get('defaultLocale')
+        if m.get('nameI18nMap') is not None:
+            self.name_i18n_map = m.get('nameI18nMap')
+        if m.get('pcUrl') is not None:
+            self.pc_url = m.get('pcUrl')
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        return self
+
+
+class SetA1DetailPageCustomTabRequest(TeaModel):
+    def __init__(
+        self,
+        custom_tab_list: List[SetA1DetailPageCustomTabRequestCustomTabList] = None,
+        preserve_a1analyze_tab: bool = None,
+    ):
+        # This parameter is required.
+        self.custom_tab_list = custom_tab_list
+        # true时保留已有A1分析Tab并替换其它自定义Tab；false或不传时直接使用本次列表覆盖
+        self.preserve_a1analyze_tab = preserve_a1analyze_tab
+
+    def validate(self):
+        if self.custom_tab_list:
+            for k in self.custom_tab_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['customTabList'] = []
+        if self.custom_tab_list is not None:
+            for k in self.custom_tab_list:
+                result['customTabList'].append(k.to_map() if k else None)
+        if self.preserve_a1analyze_tab is not None:
+            result['preserveA1AnalyzeTab'] = self.preserve_a1analyze_tab
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.custom_tab_list = []
+        if m.get('customTabList') is not None:
+            for k in m.get('customTabList'):
+                temp_model = SetA1DetailPageCustomTabRequestCustomTabList()
+                self.custom_tab_list.append(temp_model.from_map(k))
+        if m.get('preserveA1AnalyzeTab') is not None:
+            self.preserve_a1analyze_tab = m.get('preserveA1AnalyzeTab')
+        return self
+
+
+class SetA1DetailPageCustomTabResponseBody(TeaModel):
+    def __init__(
+        self,
+        task_uuid: str = None,
+    ):
+        self.task_uuid = task_uuid
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.task_uuid is not None:
+            result['taskUuid'] = self.task_uuid
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('taskUuid') is not None:
+            self.task_uuid = m.get('taskUuid')
+        return self
+
+
+class SetA1DetailPageCustomTabResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: SetA1DetailPageCustomTabResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = SetA1DetailPageCustomTabResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class SetDetailPageCustomTabHeaders(TeaModel):
     def __init__(
         self,
@@ -7596,21 +8173,120 @@ class UpdatePermissionRequestMemberInfoList(TeaModel):
         return self
 
 
+class UpdatePermissionRequestMemberPermissionOperations(TeaModel):
+    def __init__(
+        self,
+        member_type: int = None,
+        member_union_id: str = None,
+        op_type: int = None,
+        policy_id: int = None,
+        role_sub_resource_ids: List[str] = None,
+    ):
+        # This parameter is required.
+        self.member_type = member_type
+        # This parameter is required.
+        self.member_union_id = member_union_id
+        # This parameter is required.
+        self.op_type = op_type
+        # This parameter is required.
+        self.policy_id = policy_id
+        self.role_sub_resource_ids = role_sub_resource_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.member_type is not None:
+            result['memberType'] = self.member_type
+        if self.member_union_id is not None:
+            result['memberUnionId'] = self.member_union_id
+        if self.op_type is not None:
+            result['opType'] = self.op_type
+        if self.policy_id is not None:
+            result['policyId'] = self.policy_id
+        if self.role_sub_resource_ids is not None:
+            result['roleSubResourceIds'] = self.role_sub_resource_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('memberType') is not None:
+            self.member_type = m.get('memberType')
+        if m.get('memberUnionId') is not None:
+            self.member_union_id = m.get('memberUnionId')
+        if m.get('opType') is not None:
+            self.op_type = m.get('opType')
+        if m.get('policyId') is not None:
+            self.policy_id = m.get('policyId')
+        if m.get('roleSubResourceIds') is not None:
+            self.role_sub_resource_ids = m.get('roleSubResourceIds')
+        return self
+
+
+class UpdatePermissionRequestShareScopeConfig(TeaModel):
+    def __init__(
+        self,
+        role_code: str = None,
+        role_sub_resource_ids: List[str] = None,
+        share_scope: int = None,
+    ):
+        self.role_code = role_code
+        self.role_sub_resource_ids = role_sub_resource_ids
+        # This parameter is required.
+        self.share_scope = share_scope
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.role_code is not None:
+            result['roleCode'] = self.role_code
+        if self.role_sub_resource_ids is not None:
+            result['roleSubResourceIds'] = self.role_sub_resource_ids
+        if self.share_scope is not None:
+            result['shareScope'] = self.share_scope
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('roleCode') is not None:
+            self.role_code = m.get('roleCode')
+        if m.get('roleSubResourceIds') is not None:
+            self.role_sub_resource_ids = m.get('roleSubResourceIds')
+        if m.get('shareScope') is not None:
+            self.share_scope = m.get('shareScope')
+        return self
+
+
 class UpdatePermissionRequest(TeaModel):
     def __init__(
         self,
         member_info_list: List[UpdatePermissionRequestMemberInfoList] = None,
+        member_permission_operations: List[UpdatePermissionRequestMemberPermissionOperations] = None,
         op_type: int = None,
         role_code: str = None,
         role_sub_resource_ids: List[str] = None,
         share_scope: int = None,
+        share_scope_config: UpdatePermissionRequestShareScopeConfig = None,
         union_id: str = None,
     ):
         self.member_info_list = member_info_list
+        self.member_permission_operations = member_permission_operations
         self.op_type = op_type
         self.role_code = role_code
         self.role_sub_resource_ids = role_sub_resource_ids
         self.share_scope = share_scope
+        self.share_scope_config = share_scope_config
         # This parameter is required.
         self.union_id = union_id
 
@@ -7619,6 +8295,12 @@ class UpdatePermissionRequest(TeaModel):
             for k in self.member_info_list:
                 if k:
                     k.validate()
+        if self.member_permission_operations:
+            for k in self.member_permission_operations:
+                if k:
+                    k.validate()
+        if self.share_scope_config:
+            self.share_scope_config.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -7630,6 +8312,10 @@ class UpdatePermissionRequest(TeaModel):
         if self.member_info_list is not None:
             for k in self.member_info_list:
                 result['memberInfoList'].append(k.to_map() if k else None)
+        result['memberPermissionOperations'] = []
+        if self.member_permission_operations is not None:
+            for k in self.member_permission_operations:
+                result['memberPermissionOperations'].append(k.to_map() if k else None)
         if self.op_type is not None:
             result['opType'] = self.op_type
         if self.role_code is not None:
@@ -7638,6 +8324,8 @@ class UpdatePermissionRequest(TeaModel):
             result['roleSubResourceIds'] = self.role_sub_resource_ids
         if self.share_scope is not None:
             result['shareScope'] = self.share_scope
+        if self.share_scope_config is not None:
+            result['shareScopeConfig'] = self.share_scope_config.to_map()
         if self.union_id is not None:
             result['unionId'] = self.union_id
         return result
@@ -7649,6 +8337,11 @@ class UpdatePermissionRequest(TeaModel):
             for k in m.get('memberInfoList'):
                 temp_model = UpdatePermissionRequestMemberInfoList()
                 self.member_info_list.append(temp_model.from_map(k))
+        self.member_permission_operations = []
+        if m.get('memberPermissionOperations') is not None:
+            for k in m.get('memberPermissionOperations'):
+                temp_model = UpdatePermissionRequestMemberPermissionOperations()
+                self.member_permission_operations.append(temp_model.from_map(k))
         if m.get('opType') is not None:
             self.op_type = m.get('opType')
         if m.get('roleCode') is not None:
@@ -7657,6 +8350,9 @@ class UpdatePermissionRequest(TeaModel):
             self.role_sub_resource_ids = m.get('roleSubResourceIds')
         if m.get('shareScope') is not None:
             self.share_scope = m.get('shareScope')
+        if m.get('shareScopeConfig') is not None:
+            temp_model = UpdatePermissionRequestShareScopeConfig()
+            self.share_scope_config = temp_model.from_map(m['shareScopeConfig'])
         if m.get('unionId') is not None:
             self.union_id = m.get('unionId')
         return self
@@ -7701,18 +8397,29 @@ class UpdatePermissionResponseBodyFailMemberInfoList(TeaModel):
         return self
 
 
-class UpdatePermissionResponseBody(TeaModel):
+class UpdatePermissionResponseBodyMemberPermissionOperationResults(TeaModel):
     def __init__(
         self,
-        fail_member_info_list: List[UpdatePermissionResponseBodyFailMemberInfoList] = None,
+        error_code: str = None,
+        error_message: str = None,
+        index: int = None,
+        member_type: int = None,
+        member_union_id: str = None,
+        op_type: int = None,
+        policy_id: int = None,
+        success: bool = None,
     ):
-        self.fail_member_info_list = fail_member_info_list
+        self.error_code = error_code
+        self.error_message = error_message
+        self.index = index
+        self.member_type = member_type
+        self.member_union_id = member_union_id
+        self.op_type = op_type
+        self.policy_id = policy_id
+        self.success = success
 
     def validate(self):
-        if self.fail_member_info_list:
-            for k in self.fail_member_info_list:
-                if k:
-                    k.validate()
+        pass
 
     def to_map(self):
         _map = super().to_map()
@@ -7720,19 +8427,158 @@ class UpdatePermissionResponseBody(TeaModel):
             return _map
 
         result = dict()
-        result['failMemberInfoList'] = []
-        if self.fail_member_info_list is not None:
-            for k in self.fail_member_info_list:
-                result['failMemberInfoList'].append(k.to_map() if k else None)
+        if self.error_code is not None:
+            result['errorCode'] = self.error_code
+        if self.error_message is not None:
+            result['errorMessage'] = self.error_message
+        if self.index is not None:
+            result['index'] = self.index
+        if self.member_type is not None:
+            result['memberType'] = self.member_type
+        if self.member_union_id is not None:
+            result['memberUnionId'] = self.member_union_id
+        if self.op_type is not None:
+            result['opType'] = self.op_type
+        if self.policy_id is not None:
+            result['policyId'] = self.policy_id
+        if self.success is not None:
+            result['success'] = self.success
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('errorCode') is not None:
+            self.error_code = m.get('errorCode')
+        if m.get('errorMessage') is not None:
+            self.error_message = m.get('errorMessage')
+        if m.get('index') is not None:
+            self.index = m.get('index')
+        if m.get('memberType') is not None:
+            self.member_type = m.get('memberType')
+        if m.get('memberUnionId') is not None:
+            self.member_union_id = m.get('memberUnionId')
+        if m.get('opType') is not None:
+            self.op_type = m.get('opType')
+        if m.get('policyId') is not None:
+            self.policy_id = m.get('policyId')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class UpdatePermissionResponseBodyShareScopeResult(TeaModel):
+    def __init__(
+        self,
+        error_code: str = None,
+        error_message: str = None,
+        success: bool = None,
+    ):
+        self.error_code = error_code
+        self.error_message = error_message
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.error_code is not None:
+            result['errorCode'] = self.error_code
+        if self.error_message is not None:
+            result['errorMessage'] = self.error_message
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('errorCode') is not None:
+            self.error_code = m.get('errorCode')
+        if m.get('errorMessage') is not None:
+            self.error_message = m.get('errorMessage')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class UpdatePermissionResponseBody(TeaModel):
+    def __init__(
+        self,
+        all_succeeded: bool = None,
+        fail_member_info_list: List[UpdatePermissionResponseBodyFailMemberInfoList] = None,
+        member_permission_operation_results: List[UpdatePermissionResponseBodyMemberPermissionOperationResults] = None,
+        model_version: str = None,
+        partial_success: bool = None,
+        share_scope_result: UpdatePermissionResponseBodyShareScopeResult = None,
+    ):
+        self.all_succeeded = all_succeeded
+        self.fail_member_info_list = fail_member_info_list
+        self.member_permission_operation_results = member_permission_operation_results
+        self.model_version = model_version
+        self.partial_success = partial_success
+        self.share_scope_result = share_scope_result
+
+    def validate(self):
+        if self.fail_member_info_list:
+            for k in self.fail_member_info_list:
+                if k:
+                    k.validate()
+        if self.member_permission_operation_results:
+            for k in self.member_permission_operation_results:
+                if k:
+                    k.validate()
+        if self.share_scope_result:
+            self.share_scope_result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.all_succeeded is not None:
+            result['allSucceeded'] = self.all_succeeded
+        result['failMemberInfoList'] = []
+        if self.fail_member_info_list is not None:
+            for k in self.fail_member_info_list:
+                result['failMemberInfoList'].append(k.to_map() if k else None)
+        result['memberPermissionOperationResults'] = []
+        if self.member_permission_operation_results is not None:
+            for k in self.member_permission_operation_results:
+                result['memberPermissionOperationResults'].append(k.to_map() if k else None)
+        if self.model_version is not None:
+            result['modelVersion'] = self.model_version
+        if self.partial_success is not None:
+            result['partialSuccess'] = self.partial_success
+        if self.share_scope_result is not None:
+            result['shareScopeResult'] = self.share_scope_result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('allSucceeded') is not None:
+            self.all_succeeded = m.get('allSucceeded')
         self.fail_member_info_list = []
         if m.get('failMemberInfoList') is not None:
             for k in m.get('failMemberInfoList'):
                 temp_model = UpdatePermissionResponseBodyFailMemberInfoList()
                 self.fail_member_info_list.append(temp_model.from_map(k))
+        self.member_permission_operation_results = []
+        if m.get('memberPermissionOperationResults') is not None:
+            for k in m.get('memberPermissionOperationResults'):
+                temp_model = UpdatePermissionResponseBodyMemberPermissionOperationResults()
+                self.member_permission_operation_results.append(temp_model.from_map(k))
+        if m.get('modelVersion') is not None:
+            self.model_version = m.get('modelVersion')
+        if m.get('partialSuccess') is not None:
+            self.partial_success = m.get('partialSuccess')
+        if m.get('shareScopeResult') is not None:
+            temp_model = UpdatePermissionResponseBodyShareScopeResult()
+            self.share_scope_result = temp_model.from_map(m['shareScopeResult'])
         return self
 
 

@@ -22692,6 +22692,200 @@ class SaveProcessResponse(TeaModel):
         return self
 
 
+class SetWorkflowTaskAgentHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SetWorkflowTaskAgentRequest(TeaModel):
+    def __init__(
+        self,
+        agent_staff_id: str = None,
+        all: bool = None,
+        end_date: str = None,
+        from_staff_id: str = None,
+        manager_staff_id: str = None,
+        process_codes: List[str] = None,
+        request_id: str = None,
+        start_date: str = None,
+    ):
+        # This parameter is required.
+        self.agent_staff_id = agent_staff_id
+        # This parameter is required.
+        self.all = all
+        # This parameter is required.
+        self.end_date = end_date
+        # This parameter is required.
+        self.from_staff_id = from_staff_id
+        # This parameter is required.
+        self.manager_staff_id = manager_staff_id
+        self.process_codes = process_codes
+        self.request_id = request_id
+        # This parameter is required.
+        self.start_date = start_date
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.agent_staff_id is not None:
+            result['agentStaffId'] = self.agent_staff_id
+        if self.all is not None:
+            result['all'] = self.all
+        if self.end_date is not None:
+            result['endDate'] = self.end_date
+        if self.from_staff_id is not None:
+            result['fromStaffId'] = self.from_staff_id
+        if self.manager_staff_id is not None:
+            result['managerStaffId'] = self.manager_staff_id
+        if self.process_codes is not None:
+            result['processCodes'] = self.process_codes
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.start_date is not None:
+            result['startDate'] = self.start_date
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('agentStaffId') is not None:
+            self.agent_staff_id = m.get('agentStaffId')
+        if m.get('all') is not None:
+            self.all = m.get('all')
+        if m.get('endDate') is not None:
+            self.end_date = m.get('endDate')
+        if m.get('fromStaffId') is not None:
+            self.from_staff_id = m.get('fromStaffId')
+        if m.get('managerStaffId') is not None:
+            self.manager_staff_id = m.get('managerStaffId')
+        if m.get('processCodes') is not None:
+            self.process_codes = m.get('processCodes')
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('startDate') is not None:
+            self.start_date = m.get('startDate')
+        return self
+
+
+class SetWorkflowTaskAgentResponseBody(TeaModel):
+    def __init__(
+        self,
+        ding_open_errcode: int = None,
+        error_msg: str = None,
+        result: int = None,
+        success: bool = None,
+    ):
+        self.ding_open_errcode = ding_open_errcode
+        self.error_msg = error_msg
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_open_errcode is not None:
+            result['dingOpenErrcode'] = self.ding_open_errcode
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingOpenErrcode') is not None:
+            self.ding_open_errcode = m.get('dingOpenErrcode')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class SetWorkflowTaskAgentResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: SetWorkflowTaskAgentResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = SetWorkflowTaskAgentResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class StartProcessInstanceHeaders(TeaModel):
     def __init__(
         self,

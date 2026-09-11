@@ -1095,6 +1095,45 @@ class CreateEventRequestEnd(TeaModel):
         return self
 
 
+class CreateEventRequestEventConfig(TeaModel):
+    def __init__(
+        self,
+        allow_attendee_add_conference: bool = None,
+        allow_attendee_add_participants: bool = None,
+        allow_attendee_create_comment: bool = None,
+    ):
+        self.allow_attendee_add_conference = allow_attendee_add_conference
+        self.allow_attendee_add_participants = allow_attendee_add_participants
+        self.allow_attendee_create_comment = allow_attendee_create_comment
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.allow_attendee_add_conference is not None:
+            result['allowAttendeeAddConference'] = self.allow_attendee_add_conference
+        if self.allow_attendee_add_participants is not None:
+            result['allowAttendeeAddParticipants'] = self.allow_attendee_add_participants
+        if self.allow_attendee_create_comment is not None:
+            result['allowAttendeeCreateComment'] = self.allow_attendee_create_comment
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('allowAttendeeAddConference') is not None:
+            self.allow_attendee_add_conference = m.get('allowAttendeeAddConference')
+        if m.get('allowAttendeeAddParticipants') is not None:
+            self.allow_attendee_add_participants = m.get('allowAttendeeAddParticipants')
+        if m.get('allowAttendeeCreateComment') is not None:
+            self.allow_attendee_create_comment = m.get('allowAttendeeCreateComment')
+        return self
+
+
 class CreateEventRequestLocation(TeaModel):
     def __init__(
         self,
@@ -1424,6 +1463,7 @@ class CreateEventRequest(TeaModel):
         categories: List[CreateEventRequestCategories] = None,
         description: str = None,
         end: CreateEventRequestEnd = None,
+        event_config: CreateEventRequestEventConfig = None,
         extra: Dict[str, str] = None,
         free_busy_status: str = None,
         is_all_day: bool = None,
@@ -1442,6 +1482,7 @@ class CreateEventRequest(TeaModel):
         self.description = description
         # This parameter is required.
         self.end = end
+        self.event_config = event_config
         self.extra = extra
         self.free_busy_status = free_busy_status
         self.is_all_day = is_all_day
@@ -1471,6 +1512,8 @@ class CreateEventRequest(TeaModel):
                     k.validate()
         if self.end:
             self.end.validate()
+        if self.event_config:
+            self.event_config.validate()
         if self.location:
             self.location.validate()
         if self.online_meeting_info:
@@ -1512,6 +1555,8 @@ class CreateEventRequest(TeaModel):
             result['description'] = self.description
         if self.end is not None:
             result['end'] = self.end.to_map()
+        if self.event_config is not None:
+            result['eventConfig'] = self.event_config.to_map()
         if self.extra is not None:
             result['extra'] = self.extra
         if self.free_busy_status is not None:
@@ -1562,6 +1607,9 @@ class CreateEventRequest(TeaModel):
         if m.get('end') is not None:
             temp_model = CreateEventRequestEnd()
             self.end = temp_model.from_map(m['end'])
+        if m.get('eventConfig') is not None:
+            temp_model = CreateEventRequestEventConfig()
+            self.event_config = temp_model.from_map(m['eventConfig'])
         if m.get('extra') is not None:
             self.extra = m.get('extra')
         if m.get('freeBusyStatus') is not None:
@@ -1751,6 +1799,107 @@ class CreateEventResponseBodyEnd(TeaModel):
             self.date_time = m.get('dateTime')
         if m.get('timeZone') is not None:
             self.time_zone = m.get('timeZone')
+        return self
+
+
+class CreateEventResponseBodyEventConfig(TeaModel):
+    def __init__(
+        self,
+        allow_attendee_add_conference: bool = None,
+        allow_attendee_add_participants: bool = None,
+        allow_attendee_create_comment: bool = None,
+    ):
+        self.allow_attendee_add_conference = allow_attendee_add_conference
+        self.allow_attendee_add_participants = allow_attendee_add_participants
+        self.allow_attendee_create_comment = allow_attendee_create_comment
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.allow_attendee_add_conference is not None:
+            result['allowAttendeeAddConference'] = self.allow_attendee_add_conference
+        if self.allow_attendee_add_participants is not None:
+            result['allowAttendeeAddParticipants'] = self.allow_attendee_add_participants
+        if self.allow_attendee_create_comment is not None:
+            result['allowAttendeeCreateComment'] = self.allow_attendee_create_comment
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('allowAttendeeAddConference') is not None:
+            self.allow_attendee_add_conference = m.get('allowAttendeeAddConference')
+        if m.get('allowAttendeeAddParticipants') is not None:
+            self.allow_attendee_add_participants = m.get('allowAttendeeAddParticipants')
+        if m.get('allowAttendeeCreateComment') is not None:
+            self.allow_attendee_create_comment = m.get('allowAttendeeCreateComment')
+        return self
+
+
+class CreateEventResponseBodyExtendedPropertiesSharedProperties(TeaModel):
+    def __init__(
+        self,
+        belong_corp_id: str = None,
+        source_open_cid: str = None,
+    ):
+        self.belong_corp_id = belong_corp_id
+        self.source_open_cid = source_open_cid
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.belong_corp_id is not None:
+            result['belongCorpId'] = self.belong_corp_id
+        if self.source_open_cid is not None:
+            result['sourceOpenCid'] = self.source_open_cid
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('belongCorpId') is not None:
+            self.belong_corp_id = m.get('belongCorpId')
+        if m.get('sourceOpenCid') is not None:
+            self.source_open_cid = m.get('sourceOpenCid')
+        return self
+
+
+class CreateEventResponseBodyExtendedProperties(TeaModel):
+    def __init__(
+        self,
+        shared_properties: CreateEventResponseBodyExtendedPropertiesSharedProperties = None,
+    ):
+        self.shared_properties = shared_properties
+
+    def validate(self):
+        if self.shared_properties:
+            self.shared_properties.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.shared_properties is not None:
+            result['sharedProperties'] = self.shared_properties.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('sharedProperties') is not None:
+            temp_model = CreateEventResponseBodyExtendedPropertiesSharedProperties()
+            self.shared_properties = temp_model.from_map(m['sharedProperties'])
         return self
 
 
@@ -2147,6 +2296,8 @@ class CreateEventResponseBody(TeaModel):
         create_time: str = None,
         description: str = None,
         end: CreateEventResponseBodyEnd = None,
+        event_config: CreateEventResponseBodyEventConfig = None,
+        extended_properties: CreateEventResponseBodyExtendedProperties = None,
         id: str = None,
         is_all_day: bool = None,
         location: CreateEventResponseBodyLocation = None,
@@ -2167,6 +2318,8 @@ class CreateEventResponseBody(TeaModel):
         self.create_time = create_time
         self.description = description
         self.end = end
+        self.event_config = event_config
+        self.extended_properties = extended_properties
         self.id = id
         self.is_all_day = is_all_day
         self.location = location
@@ -2197,6 +2350,10 @@ class CreateEventResponseBody(TeaModel):
                     k.validate()
         if self.end:
             self.end.validate()
+        if self.event_config:
+            self.event_config.validate()
+        if self.extended_properties:
+            self.extended_properties.validate()
         if self.location:
             self.location.validate()
         if self.online_meeting_info:
@@ -2242,6 +2399,10 @@ class CreateEventResponseBody(TeaModel):
             result['description'] = self.description
         if self.end is not None:
             result['end'] = self.end.to_map()
+        if self.event_config is not None:
+            result['eventConfig'] = self.event_config.to_map()
+        if self.extended_properties is not None:
+            result['extendedProperties'] = self.extended_properties.to_map()
         if self.id is not None:
             result['id'] = self.id
         if self.is_all_day is not None:
@@ -2296,6 +2457,12 @@ class CreateEventResponseBody(TeaModel):
         if m.get('end') is not None:
             temp_model = CreateEventResponseBodyEnd()
             self.end = temp_model.from_map(m['end'])
+        if m.get('eventConfig') is not None:
+            temp_model = CreateEventResponseBodyEventConfig()
+            self.event_config = temp_model.from_map(m['eventConfig'])
+        if m.get('extendedProperties') is not None:
+            temp_model = CreateEventResponseBodyExtendedProperties()
+            self.extended_properties = temp_model.from_map(m['extendedProperties'])
         if m.get('id') is not None:
             self.id = m.get('id')
         if m.get('isAllDay') is not None:
@@ -9129,8 +9296,10 @@ class ListEventsInstancesResponseBodyEventsEnd(TeaModel):
 class ListEventsInstancesResponseBodyEventsExtendedPropertiesSharedProperties(TeaModel):
     def __init__(
         self,
+        belong_corp_id: str = None,
         source_open_cid: str = None,
     ):
+        self.belong_corp_id = belong_corp_id
         self.source_open_cid = source_open_cid
 
     def validate(self):
@@ -9142,12 +9311,16 @@ class ListEventsInstancesResponseBodyEventsExtendedPropertiesSharedProperties(Te
             return _map
 
         result = dict()
+        if self.belong_corp_id is not None:
+            result['belongCorpId'] = self.belong_corp_id
         if self.source_open_cid is not None:
             result['sourceOpenCid'] = self.source_open_cid
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('belongCorpId') is not None:
+            self.belong_corp_id = m.get('belongCorpId')
         if m.get('sourceOpenCid') is not None:
             self.source_open_cid = m.get('sourceOpenCid')
         return self
@@ -13721,6 +13894,68 @@ class PatchEventResponseBodyEnd(TeaModel):
         return self
 
 
+class PatchEventResponseBodyExtendedPropertiesSharedProperties(TeaModel):
+    def __init__(
+        self,
+        belong_corp_id: str = None,
+        source_open_cid: str = None,
+    ):
+        self.belong_corp_id = belong_corp_id
+        self.source_open_cid = source_open_cid
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.belong_corp_id is not None:
+            result['belongCorpId'] = self.belong_corp_id
+        if self.source_open_cid is not None:
+            result['sourceOpenCid'] = self.source_open_cid
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('belongCorpId') is not None:
+            self.belong_corp_id = m.get('belongCorpId')
+        if m.get('sourceOpenCid') is not None:
+            self.source_open_cid = m.get('sourceOpenCid')
+        return self
+
+
+class PatchEventResponseBodyExtendedProperties(TeaModel):
+    def __init__(
+        self,
+        shared_properties: PatchEventResponseBodyExtendedPropertiesSharedProperties = None,
+    ):
+        self.shared_properties = shared_properties
+
+    def validate(self):
+        if self.shared_properties:
+            self.shared_properties.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.shared_properties is not None:
+            result['sharedProperties'] = self.shared_properties.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('sharedProperties') is not None:
+            temp_model = PatchEventResponseBodyExtendedPropertiesSharedProperties()
+            self.shared_properties = temp_model.from_map(m['sharedProperties'])
+        return self
+
+
 class PatchEventResponseBodyLocation(TeaModel):
     def __init__(
         self,
@@ -14116,6 +14351,7 @@ class PatchEventResponseBody(TeaModel):
         create_time: str = None,
         description: str = None,
         end: PatchEventResponseBodyEnd = None,
+        extended_properties: PatchEventResponseBodyExtendedProperties = None,
         id: str = None,
         is_all_day: bool = None,
         location: PatchEventResponseBodyLocation = None,
@@ -14136,6 +14372,7 @@ class PatchEventResponseBody(TeaModel):
         self.create_time = create_time
         self.description = description
         self.end = end
+        self.extended_properties = extended_properties
         self.id = id
         self.is_all_day = is_all_day
         self.location = location
@@ -14166,6 +14403,8 @@ class PatchEventResponseBody(TeaModel):
                     k.validate()
         if self.end:
             self.end.validate()
+        if self.extended_properties:
+            self.extended_properties.validate()
         if self.location:
             self.location.validate()
         if self.online_meeting_info:
@@ -14211,6 +14450,8 @@ class PatchEventResponseBody(TeaModel):
             result['description'] = self.description
         if self.end is not None:
             result['end'] = self.end.to_map()
+        if self.extended_properties is not None:
+            result['extendedProperties'] = self.extended_properties.to_map()
         if self.id is not None:
             result['id'] = self.id
         if self.is_all_day is not None:
@@ -14265,6 +14506,9 @@ class PatchEventResponseBody(TeaModel):
         if m.get('end') is not None:
             temp_model = PatchEventResponseBodyEnd()
             self.end = temp_model.from_map(m['end'])
+        if m.get('extendedProperties') is not None:
+            temp_model = PatchEventResponseBodyExtendedProperties()
+            self.extended_properties = temp_model.from_map(m['extendedProperties'])
         if m.get('id') is not None:
             self.id = m.get('id')
         if m.get('isAllDay') is not None:

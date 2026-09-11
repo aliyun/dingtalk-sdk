@@ -916,6 +916,124 @@ class Client(OpenApiClient):
         headers = dingtalkminutes__1__0_models.DeleteMinutesHeaders()
         return await self.delete_minutes_with_options_async(task_uuid, request, headers, runtime)
 
+    def delete_minutes_media_with_options(
+        self,
+        request: dingtalkminutes__1__0_models.DeleteMinutesMediaRequest,
+        headers: dingtalkminutes__1__0_models.DeleteMinutesMediaHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkminutes__1__0_models.DeleteMinutesMediaResponse:
+        """
+        @summary 删除听记音视频文件释放存储空间
+        
+        @param request: DeleteMinutesMediaRequest
+        @param headers: DeleteMinutesMediaHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteMinutesMediaResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.task_uuid):
+            query['taskUuid'] = request.task_uuid
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DeleteMinutesMedia',
+            version='minutes_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/minutes/flashMinutes/deleteMedia',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkminutes__1__0_models.DeleteMinutesMediaResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def delete_minutes_media_with_options_async(
+        self,
+        request: dingtalkminutes__1__0_models.DeleteMinutesMediaRequest,
+        headers: dingtalkminutes__1__0_models.DeleteMinutesMediaHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkminutes__1__0_models.DeleteMinutesMediaResponse:
+        """
+        @summary 删除听记音视频文件释放存储空间
+        
+        @param request: DeleteMinutesMediaRequest
+        @param headers: DeleteMinutesMediaHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteMinutesMediaResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.task_uuid):
+            query['taskUuid'] = request.task_uuid
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DeleteMinutesMedia',
+            version='minutes_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/minutes/flashMinutes/deleteMedia',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkminutes__1__0_models.DeleteMinutesMediaResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def delete_minutes_media(
+        self,
+        request: dingtalkminutes__1__0_models.DeleteMinutesMediaRequest,
+    ) -> dingtalkminutes__1__0_models.DeleteMinutesMediaResponse:
+        """
+        @summary 删除听记音视频文件释放存储空间
+        
+        @param request: DeleteMinutesMediaRequest
+        @return: DeleteMinutesMediaResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkminutes__1__0_models.DeleteMinutesMediaHeaders()
+        return self.delete_minutes_media_with_options(request, headers, runtime)
+
+    async def delete_minutes_media_async(
+        self,
+        request: dingtalkminutes__1__0_models.DeleteMinutesMediaRequest,
+    ) -> dingtalkminutes__1__0_models.DeleteMinutesMediaResponse:
+        """
+        @summary 删除听记音视频文件释放存储空间
+        
+        @param request: DeleteMinutesMediaRequest
+        @return: DeleteMinutesMediaResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkminutes__1__0_models.DeleteMinutesMediaHeaders()
+        return await self.delete_minutes_media_with_options_async(request, headers, runtime)
+
     def export_minutes_task_result_with_options(
         self,
         request: dingtalkminutes__1__0_models.ExportMinutesTaskResultRequest,
@@ -1191,6 +1309,144 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkminutes__1__0_models.GenerateSummaryHeaders()
         return await self.generate_summary_with_options_async(task_uuid, request, headers, runtime)
+
+    def list_minutes_attachments_with_options(
+        self,
+        task_uuid: str,
+        request: dingtalkminutes__1__0_models.ListMinutesAttachmentsRequest,
+        headers: dingtalkminutes__1__0_models.ListMinutesAttachmentsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkminutes__1__0_models.ListMinutesAttachmentsResponse:
+        """
+        @summary 查询听记笔记内容
+        
+        @param request: ListMinutesAttachmentsRequest
+        @param headers: ListMinutesAttachmentsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListMinutesAttachmentsResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.content_type):
+            query['contentType'] = request.content_type
+        if not UtilClient.is_unset(request.direction):
+            query['direction'] = request.direction
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.type):
+            query['type'] = request.type
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListMinutesAttachments',
+            version='minutes_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/minutes/{task_uuid}/attachments',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkminutes__1__0_models.ListMinutesAttachmentsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def list_minutes_attachments_with_options_async(
+        self,
+        task_uuid: str,
+        request: dingtalkminutes__1__0_models.ListMinutesAttachmentsRequest,
+        headers: dingtalkminutes__1__0_models.ListMinutesAttachmentsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkminutes__1__0_models.ListMinutesAttachmentsResponse:
+        """
+        @summary 查询听记笔记内容
+        
+        @param request: ListMinutesAttachmentsRequest
+        @param headers: ListMinutesAttachmentsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListMinutesAttachmentsResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.content_type):
+            query['contentType'] = request.content_type
+        if not UtilClient.is_unset(request.direction):
+            query['direction'] = request.direction
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.type):
+            query['type'] = request.type
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListMinutesAttachments',
+            version='minutes_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/minutes/{task_uuid}/attachments',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkminutes__1__0_models.ListMinutesAttachmentsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def list_minutes_attachments(
+        self,
+        task_uuid: str,
+        request: dingtalkminutes__1__0_models.ListMinutesAttachmentsRequest,
+    ) -> dingtalkminutes__1__0_models.ListMinutesAttachmentsResponse:
+        """
+        @summary 查询听记笔记内容
+        
+        @param request: ListMinutesAttachmentsRequest
+        @return: ListMinutesAttachmentsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkminutes__1__0_models.ListMinutesAttachmentsHeaders()
+        return self.list_minutes_attachments_with_options(task_uuid, request, headers, runtime)
+
+    async def list_minutes_attachments_async(
+        self,
+        task_uuid: str,
+        request: dingtalkminutes__1__0_models.ListMinutesAttachmentsRequest,
+    ) -> dingtalkminutes__1__0_models.ListMinutesAttachmentsResponse:
+        """
+        @summary 查询听记笔记内容
+        
+        @param request: ListMinutesAttachmentsRequest
+        @return: ListMinutesAttachmentsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkminutes__1__0_models.ListMinutesAttachmentsHeaders()
+        return await self.list_minutes_attachments_with_options_async(task_uuid, request, headers, runtime)
 
     def move_out_temp_storage_with_options(
         self,
@@ -3838,6 +4094,132 @@ class Client(OpenApiClient):
         headers = dingtalkminutes__1__0_models.RegenerateChaptersHeaders()
         return await self.regenerate_chapters_with_options_async(request, headers, runtime)
 
+    def set_a1detail_page_custom_tab_with_options(
+        self,
+        task_uuid: str,
+        request: dingtalkminutes__1__0_models.SetA1DetailPageCustomTabRequest,
+        headers: dingtalkminutes__1__0_models.SetA1DetailPageCustomTabHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkminutes__1__0_models.SetA1DetailPageCustomTabResponse:
+        """
+        @summary 自定义A1相关听记详情页tab
+        
+        @param request: SetA1DetailPageCustomTabRequest
+        @param headers: SetA1DetailPageCustomTabHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SetA1DetailPageCustomTabResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.preserve_a1analyze_tab):
+            query['preserveA1AnalyzeTab'] = request.preserve_a1analyze_tab
+        body = {}
+        if not UtilClient.is_unset(request.custom_tab_list):
+            body['customTabList'] = request.custom_tab_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SetA1DetailPageCustomTab',
+            version='minutes_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/minutes/flashMinutes/tasks/{task_uuid}/a1CustomTabs',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkminutes__1__0_models.SetA1DetailPageCustomTabResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def set_a1detail_page_custom_tab_with_options_async(
+        self,
+        task_uuid: str,
+        request: dingtalkminutes__1__0_models.SetA1DetailPageCustomTabRequest,
+        headers: dingtalkminutes__1__0_models.SetA1DetailPageCustomTabHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkminutes__1__0_models.SetA1DetailPageCustomTabResponse:
+        """
+        @summary 自定义A1相关听记详情页tab
+        
+        @param request: SetA1DetailPageCustomTabRequest
+        @param headers: SetA1DetailPageCustomTabHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SetA1DetailPageCustomTabResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.preserve_a1analyze_tab):
+            query['preserveA1AnalyzeTab'] = request.preserve_a1analyze_tab
+        body = {}
+        if not UtilClient.is_unset(request.custom_tab_list):
+            body['customTabList'] = request.custom_tab_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SetA1DetailPageCustomTab',
+            version='minutes_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/minutes/flashMinutes/tasks/{task_uuid}/a1CustomTabs',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkminutes__1__0_models.SetA1DetailPageCustomTabResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def set_a1detail_page_custom_tab(
+        self,
+        task_uuid: str,
+        request: dingtalkminutes__1__0_models.SetA1DetailPageCustomTabRequest,
+    ) -> dingtalkminutes__1__0_models.SetA1DetailPageCustomTabResponse:
+        """
+        @summary 自定义A1相关听记详情页tab
+        
+        @param request: SetA1DetailPageCustomTabRequest
+        @return: SetA1DetailPageCustomTabResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkminutes__1__0_models.SetA1DetailPageCustomTabHeaders()
+        return self.set_a1detail_page_custom_tab_with_options(task_uuid, request, headers, runtime)
+
+    async def set_a1detail_page_custom_tab_async(
+        self,
+        task_uuid: str,
+        request: dingtalkminutes__1__0_models.SetA1DetailPageCustomTabRequest,
+    ) -> dingtalkminutes__1__0_models.SetA1DetailPageCustomTabResponse:
+        """
+        @summary 自定义A1相关听记详情页tab
+        
+        @param request: SetA1DetailPageCustomTabRequest
+        @return: SetA1DetailPageCustomTabResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkminutes__1__0_models.SetA1DetailPageCustomTabHeaders()
+        return await self.set_a1detail_page_custom_tab_with_options_async(task_uuid, request, headers, runtime)
+
     def set_detail_page_custom_tab_with_options(
         self,
         task_uuid: str,
@@ -4342,7 +4724,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkminutes__1__0_models.UpdatePermissionResponse:
         """
-        @summary 更新闪记权限
+        @summary 更新听记权限
         
         @param request: UpdatePermissionRequest
         @param headers: UpdatePermissionHeaders
@@ -4356,6 +4738,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.member_info_list):
             body['memberInfoList'] = request.member_info_list
+        if not UtilClient.is_unset(request.member_permission_operations):
+            body['memberPermissionOperations'] = request.member_permission_operations
         if not UtilClient.is_unset(request.op_type):
             body['opType'] = request.op_type
         if not UtilClient.is_unset(request.role_code):
@@ -4364,6 +4748,8 @@ class Client(OpenApiClient):
             body['roleSubResourceIds'] = request.role_sub_resource_ids
         if not UtilClient.is_unset(request.share_scope):
             body['shareScope'] = request.share_scope
+        if not UtilClient.is_unset(request.share_scope_config):
+            body['shareScopeConfig'] = request.share_scope_config
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -4398,7 +4784,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkminutes__1__0_models.UpdatePermissionResponse:
         """
-        @summary 更新闪记权限
+        @summary 更新听记权限
         
         @param request: UpdatePermissionRequest
         @param headers: UpdatePermissionHeaders
@@ -4412,6 +4798,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.member_info_list):
             body['memberInfoList'] = request.member_info_list
+        if not UtilClient.is_unset(request.member_permission_operations):
+            body['memberPermissionOperations'] = request.member_permission_operations
         if not UtilClient.is_unset(request.op_type):
             body['opType'] = request.op_type
         if not UtilClient.is_unset(request.role_code):
@@ -4420,6 +4808,8 @@ class Client(OpenApiClient):
             body['roleSubResourceIds'] = request.role_sub_resource_ids
         if not UtilClient.is_unset(request.share_scope):
             body['shareScope'] = request.share_scope
+        if not UtilClient.is_unset(request.share_scope_config):
+            body['shareScopeConfig'] = request.share_scope_config
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -4452,7 +4842,7 @@ class Client(OpenApiClient):
         request: dingtalkminutes__1__0_models.UpdatePermissionRequest,
     ) -> dingtalkminutes__1__0_models.UpdatePermissionResponse:
         """
-        @summary 更新闪记权限
+        @summary 更新听记权限
         
         @param request: UpdatePermissionRequest
         @return: UpdatePermissionResponse
@@ -4467,7 +4857,7 @@ class Client(OpenApiClient):
         request: dingtalkminutes__1__0_models.UpdatePermissionRequest,
     ) -> dingtalkminutes__1__0_models.UpdatePermissionResponse:
         """
-        @summary 更新闪记权限
+        @summary 更新听记权限
         
         @param request: UpdatePermissionRequest
         @return: UpdatePermissionResponse
