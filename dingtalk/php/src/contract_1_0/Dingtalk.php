@@ -20,12 +20,20 @@ use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CancelReviewOrderResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CheckEsignFileHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CheckEsignFileRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CheckEsignFileResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\ConfirmContractReviewHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\ConfirmContractReviewRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\ConfirmContractReviewResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\ConfirmContractReviewShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\ContractAiReviewResultNotifyHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\ContractAiReviewResultNotifyRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\ContractAiReviewResultNotifyResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\ContractBenefitConsumeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\ContractBenefitConsumeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\ContractBenefitConsumeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateChecklistRuleHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateChecklistRuleRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateChecklistRuleResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateChecklistRuleShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateContractAppsCompareTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateContractAppsCompareTaskRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateContractAppsCompareTaskResponse;
@@ -50,12 +58,20 @@ use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateContractReviewResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateContractReviewTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateContractReviewTaskRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateContractReviewTaskResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateReviewChecklistHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateReviewChecklistRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateReviewChecklistResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateReviewChecklistShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateSignFlowHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateSignFlowRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateSignFlowResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateTemplateProcessTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateTemplateProcessTaskRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateTemplateProcessTaskResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\DeleteChecklistRuleHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\DeleteChecklistRuleResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\DeleteReviewChecklistHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\DeleteReviewChecklistResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\EsignQueryApprovalInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\EsignQueryApprovalInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\EsignQueryApprovalInfoResponse;
@@ -86,13 +102,20 @@ use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\GetContractReviewBenefitRespo
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\GetContractReviewResultHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\GetContractReviewResultRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\GetContractReviewResultResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\GetContractReviewResultsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\GetContractReviewResultShrinkRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\GetContractReviewResultsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\GetContractReviewResultsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\GetContractSubjectRiskResultHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\GetContractSubjectRiskResultRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\GetContractSubjectRiskResultResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\GetFileDownloadUrlHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\GetFileDownloadUrlRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\GetFileDownloadUrlResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\GetReviewChecklistHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\GetReviewChecklistResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\ListReviewChecklistsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\ListReviewChecklistsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\OpenEsignFreeTrailHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\OpenEsignFreeTrailRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\OpenEsignFreeTrailResponse;
@@ -147,6 +170,13 @@ use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\SyncSignEventHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\SyncSignEventRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\SyncSignEventResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\SyncSignEventShrinkRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\UpdateChecklistRuleHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\UpdateChecklistRuleRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\UpdateChecklistRuleResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\UpdateReviewChecklistHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\UpdateReviewChecklistRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\UpdateReviewChecklistResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\UpdateReviewChecklistShrinkRequest;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\GatewayDingTalk\Client;
@@ -490,6 +520,89 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 确认发起合同审查
+     *  *
+     * @param ConfirmContractReviewRequest $tmpReq  ConfirmContractReviewRequest
+     * @param ConfirmContractReviewHeaders $headers ConfirmContractReviewHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ConfirmContractReviewResponse ConfirmContractReviewResponse
+     */
+    public function confirmContractReviewWithOptions($tmpReq, $headers, $runtime)
+    {
+        Utils::validateModel($tmpReq);
+        $request = new ConfirmContractReviewShrinkRequest([]);
+        OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->customRules)) {
+            $request->customRulesShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->customRules, 'custom_rules', 'json');
+        }
+        $body = [];
+        if (!Utils::isUnset($request->action)) {
+            $body['action'] = $request->action;
+        }
+        if (!Utils::isUnset($request->checklistId)) {
+            $body['checklist_id'] = $request->checklistId;
+        }
+        if (!Utils::isUnset($request->contractType)) {
+            $body['contract_type'] = $request->contractType;
+        }
+        if (!Utils::isUnset($request->customRulesShrink)) {
+            $body['custom_rules'] = $request->customRulesShrink;
+        }
+        if (!Utils::isUnset($request->reviewId)) {
+            $body['review_id'] = $request->reviewId;
+        }
+        if (!Utils::isUnset($request->scale)) {
+            $body['scale'] = $request->scale;
+        }
+        if (!Utils::isUnset($request->sessionId)) {
+            $body['session_id'] = $request->sessionId;
+        }
+        if (!Utils::isUnset($request->standpoint)) {
+            $body['standpoint'] = $request->standpoint;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'ConfirmContractReview',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/api/review/confirm',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return ConfirmContractReviewResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 确认发起合同审查
+     *  *
+     * @param ConfirmContractReviewRequest $request ConfirmContractReviewRequest
+     *
+     * @return ConfirmContractReviewResponse ConfirmContractReviewResponse
+     */
+    public function confirmContractReview($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ConfirmContractReviewHeaders([]);
+
+        return $this->confirmContractReviewWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary ai合同审查结果回调
      *  *
      * @param ContractAiReviewResultNotifyRequest $request ContractAiReviewResultNotifyRequest
@@ -637,6 +750,88 @@ class Dingtalk extends OpenApiClient
         $headers = new ContractBenefitConsumeHeaders([]);
 
         return $this->contractBenefitConsumeWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 在审查清单里创建自定义规则
+     *  *
+     * @param string                     $checklistId
+     * @param CreateChecklistRuleRequest $tmpReq      CreateChecklistRuleRequest
+     * @param CreateChecklistRuleHeaders $headers     CreateChecklistRuleHeaders
+     * @param RuntimeOptions             $runtime     runtime options for this request RuntimeOptions
+     *
+     * @return CreateChecklistRuleResponse CreateChecklistRuleResponse
+     */
+    public function createChecklistRuleWithOptions($checklistId, $tmpReq, $headers, $runtime)
+    {
+        Utils::validateModel($tmpReq);
+        $request = new CreateChecklistRuleShrinkRequest([]);
+        OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->items)) {
+            $request->itemsShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->items, 'items', 'json');
+        }
+        $body = [];
+        if (!Utils::isUnset($request->contractType)) {
+            $body['contract_type'] = $request->contractType;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corp_id'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->description)) {
+            $body['description'] = $request->description;
+        }
+        if (!Utils::isUnset($request->itemsShrink)) {
+            $body['items'] = $request->itemsShrink;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->riskLevel)) {
+            $body['risk_level'] = $request->riskLevel;
+        }
+        if (!Utils::isUnset($request->standpoint)) {
+            $body['standpoint'] = $request->standpoint;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'CreateChecklistRule',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/api/review-rules/checklists/' . $checklistId . '/rules',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CreateChecklistRuleResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 在审查清单里创建自定义规则
+     *  *
+     * @param string                     $checklistId
+     * @param CreateChecklistRuleRequest $request     CreateChecklistRuleRequest
+     *
+     * @return CreateChecklistRuleResponse CreateChecklistRuleResponse
+     */
+    public function createChecklistRule($checklistId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateChecklistRuleHeaders([]);
+
+        return $this->createChecklistRuleWithOptions($checklistId, $request, $headers, $runtime);
     }
 
     /**
@@ -1255,6 +1450,74 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建自定义审查清单
+     *  *
+     * @param CreateReviewChecklistRequest $tmpReq  CreateReviewChecklistRequest
+     * @param CreateReviewChecklistHeaders $headers CreateReviewChecklistHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateReviewChecklistResponse CreateReviewChecklistResponse
+     */
+    public function createReviewChecklistWithOptions($tmpReq, $headers, $runtime)
+    {
+        Utils::validateModel($tmpReq);
+        $request = new CreateReviewChecklistShrinkRequest([]);
+        OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->rules)) {
+            $request->rulesShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->rules, 'rules', 'json');
+        }
+        $body = [];
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corp_id'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->rulesShrink)) {
+            $body['rules'] = $request->rulesShrink;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'CreateReviewChecklist',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/api/review-rules/checklists',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CreateReviewChecklistResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建自定义审查清单
+     *  *
+     * @param CreateReviewChecklistRequest $request CreateReviewChecklistRequest
+     *
+     * @return CreateReviewChecklistResponse CreateReviewChecklistResponse
+     */
+    public function createReviewChecklist($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateReviewChecklistHeaders([]);
+
+        return $this->createReviewChecklistWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 创建签署流程
      *  *
      * @param CreateSignFlowRequest $request CreateSignFlowRequest
@@ -1387,6 +1650,110 @@ class Dingtalk extends OpenApiClient
         $headers = new CreateTemplateProcessTaskHeaders([]);
 
         return $this->createTemplateProcessTaskWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 删除审查清单里的自定义规则
+     *  *
+     * @param string                     $ruleId
+     * @param string                     $checklistId
+     * @param DeleteChecklistRuleHeaders $headers     DeleteChecklistRuleHeaders
+     * @param RuntimeOptions             $runtime     runtime options for this request RuntimeOptions
+     *
+     * @return DeleteChecklistRuleResponse DeleteChecklistRuleResponse
+     */
+    public function deleteChecklistRuleWithOptions($ruleId, $checklistId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action' => 'DeleteChecklistRule',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/api/review-rules/checklists/' . $checklistId . '/rules/' . $ruleId . '',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return DeleteChecklistRuleResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 删除审查清单里的自定义规则
+     *  *
+     * @param string $ruleId
+     * @param string $checklistId
+     *
+     * @return DeleteChecklistRuleResponse DeleteChecklistRuleResponse
+     */
+    public function deleteChecklistRule($ruleId, $checklistId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteChecklistRuleHeaders([]);
+
+        return $this->deleteChecklistRuleWithOptions($ruleId, $checklistId, $headers, $runtime);
+    }
+
+    /**
+     * @summary 删除自定义审查清单
+     *  *
+     * @param string                       $checklistId
+     * @param DeleteReviewChecklistHeaders $headers     DeleteReviewChecklistHeaders
+     * @param RuntimeOptions               $runtime     runtime options for this request RuntimeOptions
+     *
+     * @return DeleteReviewChecklistResponse DeleteReviewChecklistResponse
+     */
+    public function deleteReviewChecklistWithOptions($checklistId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action' => 'DeleteReviewChecklist',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/api/review-rules/checklists/' . $checklistId . '',
+            'method' => 'DELETE',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return DeleteReviewChecklistResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 删除自定义审查清单
+     *  *
+     * @param string $checklistId
+     *
+     * @return DeleteReviewChecklistResponse DeleteReviewChecklistResponse
+     */
+    public function deleteReviewChecklist($checklistId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteReviewChecklistHeaders([]);
+
+        return $this->deleteReviewChecklistWithOptions($checklistId, $headers, $runtime);
     }
 
     /**
@@ -2013,6 +2380,66 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取合同的审查结果
+     *  *
+     * @param GetContractReviewResultsRequest $request GetContractReviewResultsRequest
+     * @param GetContractReviewResultsHeaders $headers GetContractReviewResultsHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetContractReviewResultsResponse GetContractReviewResultsResponse
+     */
+    public function getContractReviewResultsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->reviewId)) {
+            $query['review_id'] = $request->reviewId;
+        }
+        if (!Utils::isUnset($request->sessionId)) {
+            $query['session_id'] = $request->sessionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'GetContractReviewResults',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/api/review/result',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetContractReviewResultsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取合同的审查结果
+     *  *
+     * @param GetContractReviewResultsRequest $request GetContractReviewResultsRequest
+     *
+     * @return GetContractReviewResultsResponse GetContractReviewResultsResponse
+     */
+    public function getContractReviewResults($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetContractReviewResultsHeaders([]);
+
+        return $this->getContractReviewResultsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 获取合同主体风险结果
      *  *
      * @param GetContractSubjectRiskResultRequest $request GetContractSubjectRiskResultRequest
@@ -2136,6 +2563,105 @@ class Dingtalk extends OpenApiClient
         $headers = new GetFileDownloadUrlHeaders([]);
 
         return $this->getFileDownloadUrlWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取自定义审查清单
+     *  *
+     * @param string                    $checklistId
+     * @param GetReviewChecklistHeaders $headers     GetReviewChecklistHeaders
+     * @param RuntimeOptions            $runtime     runtime options for this request RuntimeOptions
+     *
+     * @return GetReviewChecklistResponse GetReviewChecklistResponse
+     */
+    public function getReviewChecklistWithOptions($checklistId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action' => 'GetReviewChecklist',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/api/review-rules/checklists/' . $checklistId . '',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetReviewChecklistResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取自定义审查清单
+     *  *
+     * @param string $checklistId
+     *
+     * @return GetReviewChecklistResponse GetReviewChecklistResponse
+     */
+    public function getReviewChecklist($checklistId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetReviewChecklistHeaders([]);
+
+        return $this->getReviewChecklistWithOptions($checklistId, $headers, $runtime);
+    }
+
+    /**
+     * @summary 列出企业审查清单
+     *  *
+     * @param ListReviewChecklistsHeaders $headers ListReviewChecklistsHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ListReviewChecklistsResponse ListReviewChecklistsResponse
+     */
+    public function listReviewChecklistsWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action' => 'ListReviewChecklists',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/api/review-rules/checklists',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return ListReviewChecklistsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 列出企业审查清单
+     *  *
+     * @return ListReviewChecklistsResponse ListReviewChecklistsResponse
+     */
+    public function listReviewChecklists()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListReviewChecklistsHeaders([]);
+
+        return $this->listReviewChecklistsWithOptions($headers, $runtime);
     }
 
     /**
@@ -3331,5 +3857,148 @@ class Dingtalk extends OpenApiClient
         $headers = new SyncSignEventHeaders([]);
 
         return $this->syncSignEventWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 修改更新审查清单里的自定义规则
+     *  *
+     * @param string                     $checklistId
+     * @param string                     $ruleId
+     * @param UpdateChecklistRuleRequest $request     UpdateChecklistRuleRequest
+     * @param UpdateChecklistRuleHeaders $headers     UpdateChecklistRuleHeaders
+     * @param RuntimeOptions             $runtime     runtime options for this request RuntimeOptions
+     *
+     * @return UpdateChecklistRuleResponse UpdateChecklistRuleResponse
+     */
+    public function updateChecklistRuleWithOptions($checklistId, $ruleId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corp_id'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->description)) {
+            $body['description'] = $request->description;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->riskLevel)) {
+            $body['risk_level'] = $request->riskLevel;
+        }
+        if (!Utils::isUnset($request->standpoint)) {
+            $body['standpoint'] = $request->standpoint;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'UpdateChecklistRule',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/api/review-rules/checklists/' . $checklistId . '/rules/' . $ruleId . '',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UpdateChecklistRuleResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 修改更新审查清单里的自定义规则
+     *  *
+     * @param string                     $checklistId
+     * @param string                     $ruleId
+     * @param UpdateChecklistRuleRequest $request     UpdateChecklistRuleRequest
+     *
+     * @return UpdateChecklistRuleResponse UpdateChecklistRuleResponse
+     */
+    public function updateChecklistRule($checklistId, $ruleId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateChecklistRuleHeaders([]);
+
+        return $this->updateChecklistRuleWithOptions($checklistId, $ruleId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更新修改自定义审查清单
+     *  *
+     * @param string                       $checklistId
+     * @param UpdateReviewChecklistRequest $tmpReq      UpdateReviewChecklistRequest
+     * @param UpdateReviewChecklistHeaders $headers     UpdateReviewChecklistHeaders
+     * @param RuntimeOptions               $runtime     runtime options for this request RuntimeOptions
+     *
+     * @return UpdateReviewChecklistResponse UpdateReviewChecklistResponse
+     */
+    public function updateReviewChecklistWithOptions($checklistId, $tmpReq, $headers, $runtime)
+    {
+        Utils::validateModel($tmpReq);
+        $request = new UpdateReviewChecklistShrinkRequest([]);
+        OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->rules)) {
+            $request->rulesShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->rules, 'rules', 'json');
+        }
+        $body = [];
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corp_id'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->rulesShrink)) {
+            $body['rules'] = $request->rulesShrink;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'UpdateReviewChecklist',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/api/review-rules/checklists/' . $checklistId . '',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UpdateReviewChecklistResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新修改自定义审查清单
+     *  *
+     * @param string                       $checklistId
+     * @param UpdateReviewChecklistRequest $request     UpdateReviewChecklistRequest
+     *
+     * @return UpdateReviewChecklistResponse UpdateReviewChecklistResponse
+     */
+    public function updateReviewChecklist($checklistId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateReviewChecklistHeaders([]);
+
+        return $this->updateReviewChecklistWithOptions($checklistId, $request, $headers, $runtime);
     }
 }

@@ -171,6 +171,10 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryProvinceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryReceiptForInvoiceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryReceiptForInvoiceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryReceiptForInvoiceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryReceiptsByPageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryReceiptsByPageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryReceiptsByPageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryReceiptsByPageShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QuerySupplierByPageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QuerySupplierByPageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QuerySupplierByPageResponse;
@@ -3716,6 +3720,83 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryReceiptForInvoiceHeaders([]);
 
         return $this->queryReceiptForInvoiceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 分页获取智能财务单据详情列表
+     *  *
+     * @param QueryReceiptsByPageRequest $tmpReq  QueryReceiptsByPageRequest
+     * @param QueryReceiptsByPageHeaders $headers QueryReceiptsByPageHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryReceiptsByPageResponse QueryReceiptsByPageResponse
+     */
+    public function queryReceiptsByPageWithOptions($tmpReq, $headers, $runtime)
+    {
+        Utils::validateModel($tmpReq);
+        $request = new QueryReceiptsByPageShrinkRequest([]);
+        OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->modelIds)) {
+            $request->modelIdsShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->modelIds, 'modelIds', 'json');
+        }
+        $query = [];
+        if (!Utils::isUnset($request->endTime)) {
+            $query['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->modelIdsShrink)) {
+            $query['modelIds'] = $request->modelIdsShrink;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            $query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            $query['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->timeFilterField)) {
+            $query['timeFilterField'] = $request->timeFilterField;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'QueryReceiptsByPage',
+            'version' => 'bizfinance_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/bizfinance/receipts',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryReceiptsByPageResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 分页获取智能财务单据详情列表
+     *  *
+     * @param QueryReceiptsByPageRequest $request QueryReceiptsByPageRequest
+     *
+     * @return QueryReceiptsByPageResponse QueryReceiptsByPageResponse
+     */
+    public function queryReceiptsByPage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryReceiptsByPageHeaders([]);
+
+        return $this->queryReceiptsByPageWithOptions($request, $headers, $runtime);
     }
 
     /**
