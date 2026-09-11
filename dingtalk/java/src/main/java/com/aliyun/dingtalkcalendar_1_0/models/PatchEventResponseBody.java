@@ -25,6 +25,9 @@ public class PatchEventResponseBody extends TeaModel {
     @NameInMap("end")
     public PatchEventResponseBodyEnd end;
 
+    @NameInMap("extendedProperties")
+    public PatchEventResponseBodyExtendedProperties extendedProperties;
+
     @NameInMap("id")
     public String id;
 
@@ -118,6 +121,14 @@ public class PatchEventResponseBody extends TeaModel {
     }
     public PatchEventResponseBodyEnd getEnd() {
         return this.end;
+    }
+
+    public PatchEventResponseBody setExtendedProperties(PatchEventResponseBodyExtendedProperties extendedProperties) {
+        this.extendedProperties = extendedProperties;
+        return this;
+    }
+    public PatchEventResponseBodyExtendedProperties getExtendedProperties() {
+        return this.extendedProperties;
     }
 
     public PatchEventResponseBody setId(String id) {
@@ -376,6 +387,55 @@ public class PatchEventResponseBody extends TeaModel {
         }
         public String getTimeZone() {
             return this.timeZone;
+        }
+
+    }
+
+    public static class PatchEventResponseBodyExtendedPropertiesSharedProperties extends TeaModel {
+        @NameInMap("belongCorpId")
+        public String belongCorpId;
+
+        @NameInMap("sourceOpenCid")
+        public String sourceOpenCid;
+
+        public static PatchEventResponseBodyExtendedPropertiesSharedProperties build(java.util.Map<String, ?> map) throws Exception {
+            PatchEventResponseBodyExtendedPropertiesSharedProperties self = new PatchEventResponseBodyExtendedPropertiesSharedProperties();
+            return TeaModel.build(map, self);
+        }
+
+        public PatchEventResponseBodyExtendedPropertiesSharedProperties setBelongCorpId(String belongCorpId) {
+            this.belongCorpId = belongCorpId;
+            return this;
+        }
+        public String getBelongCorpId() {
+            return this.belongCorpId;
+        }
+
+        public PatchEventResponseBodyExtendedPropertiesSharedProperties setSourceOpenCid(String sourceOpenCid) {
+            this.sourceOpenCid = sourceOpenCid;
+            return this;
+        }
+        public String getSourceOpenCid() {
+            return this.sourceOpenCid;
+        }
+
+    }
+
+    public static class PatchEventResponseBodyExtendedProperties extends TeaModel {
+        @NameInMap("sharedProperties")
+        public PatchEventResponseBodyExtendedPropertiesSharedProperties sharedProperties;
+
+        public static PatchEventResponseBodyExtendedProperties build(java.util.Map<String, ?> map) throws Exception {
+            PatchEventResponseBodyExtendedProperties self = new PatchEventResponseBodyExtendedProperties();
+            return TeaModel.build(map, self);
+        }
+
+        public PatchEventResponseBodyExtendedProperties setSharedProperties(PatchEventResponseBodyExtendedPropertiesSharedProperties sharedProperties) {
+            this.sharedProperties = sharedProperties;
+            return this;
+        }
+        public PatchEventResponseBodyExtendedPropertiesSharedProperties getSharedProperties() {
+            return this.sharedProperties;
         }
 
     }

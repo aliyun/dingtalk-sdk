@@ -25,6 +25,12 @@ public class CreateEventResponseBody extends TeaModel {
     @NameInMap("end")
     public CreateEventResponseBodyEnd end;
 
+    @NameInMap("eventConfig")
+    public CreateEventResponseBodyEventConfig eventConfig;
+
+    @NameInMap("extendedProperties")
+    public CreateEventResponseBodyExtendedProperties extendedProperties;
+
     @NameInMap("id")
     public String id;
 
@@ -118,6 +124,22 @@ public class CreateEventResponseBody extends TeaModel {
     }
     public CreateEventResponseBodyEnd getEnd() {
         return this.end;
+    }
+
+    public CreateEventResponseBody setEventConfig(CreateEventResponseBodyEventConfig eventConfig) {
+        this.eventConfig = eventConfig;
+        return this;
+    }
+    public CreateEventResponseBodyEventConfig getEventConfig() {
+        return this.eventConfig;
+    }
+
+    public CreateEventResponseBody setExtendedProperties(CreateEventResponseBodyExtendedProperties extendedProperties) {
+        this.extendedProperties = extendedProperties;
+        return this;
+    }
+    public CreateEventResponseBodyExtendedProperties getExtendedProperties() {
+        return this.extendedProperties;
     }
 
     public CreateEventResponseBody setId(String id) {
@@ -376,6 +398,96 @@ public class CreateEventResponseBody extends TeaModel {
         }
         public String getTimeZone() {
             return this.timeZone;
+        }
+
+    }
+
+    public static class CreateEventResponseBodyEventConfig extends TeaModel {
+        @NameInMap("allowAttendeeAddConference")
+        public Boolean allowAttendeeAddConference;
+
+        @NameInMap("allowAttendeeAddParticipants")
+        public Boolean allowAttendeeAddParticipants;
+
+        @NameInMap("allowAttendeeCreateComment")
+        public Boolean allowAttendeeCreateComment;
+
+        public static CreateEventResponseBodyEventConfig build(java.util.Map<String, ?> map) throws Exception {
+            CreateEventResponseBodyEventConfig self = new CreateEventResponseBodyEventConfig();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateEventResponseBodyEventConfig setAllowAttendeeAddConference(Boolean allowAttendeeAddConference) {
+            this.allowAttendeeAddConference = allowAttendeeAddConference;
+            return this;
+        }
+        public Boolean getAllowAttendeeAddConference() {
+            return this.allowAttendeeAddConference;
+        }
+
+        public CreateEventResponseBodyEventConfig setAllowAttendeeAddParticipants(Boolean allowAttendeeAddParticipants) {
+            this.allowAttendeeAddParticipants = allowAttendeeAddParticipants;
+            return this;
+        }
+        public Boolean getAllowAttendeeAddParticipants() {
+            return this.allowAttendeeAddParticipants;
+        }
+
+        public CreateEventResponseBodyEventConfig setAllowAttendeeCreateComment(Boolean allowAttendeeCreateComment) {
+            this.allowAttendeeCreateComment = allowAttendeeCreateComment;
+            return this;
+        }
+        public Boolean getAllowAttendeeCreateComment() {
+            return this.allowAttendeeCreateComment;
+        }
+
+    }
+
+    public static class CreateEventResponseBodyExtendedPropertiesSharedProperties extends TeaModel {
+        @NameInMap("belongCorpId")
+        public String belongCorpId;
+
+        @NameInMap("sourceOpenCid")
+        public String sourceOpenCid;
+
+        public static CreateEventResponseBodyExtendedPropertiesSharedProperties build(java.util.Map<String, ?> map) throws Exception {
+            CreateEventResponseBodyExtendedPropertiesSharedProperties self = new CreateEventResponseBodyExtendedPropertiesSharedProperties();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateEventResponseBodyExtendedPropertiesSharedProperties setBelongCorpId(String belongCorpId) {
+            this.belongCorpId = belongCorpId;
+            return this;
+        }
+        public String getBelongCorpId() {
+            return this.belongCorpId;
+        }
+
+        public CreateEventResponseBodyExtendedPropertiesSharedProperties setSourceOpenCid(String sourceOpenCid) {
+            this.sourceOpenCid = sourceOpenCid;
+            return this;
+        }
+        public String getSourceOpenCid() {
+            return this.sourceOpenCid;
+        }
+
+    }
+
+    public static class CreateEventResponseBodyExtendedProperties extends TeaModel {
+        @NameInMap("sharedProperties")
+        public CreateEventResponseBodyExtendedPropertiesSharedProperties sharedProperties;
+
+        public static CreateEventResponseBodyExtendedProperties build(java.util.Map<String, ?> map) throws Exception {
+            CreateEventResponseBodyExtendedProperties self = new CreateEventResponseBodyExtendedProperties();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateEventResponseBodyExtendedProperties setSharedProperties(CreateEventResponseBodyExtendedPropertiesSharedProperties sharedProperties) {
+            this.sharedProperties = sharedProperties;
+            return this;
+        }
+        public CreateEventResponseBodyExtendedPropertiesSharedProperties getSharedProperties() {
+            return this.sharedProperties;
         }
 
     }

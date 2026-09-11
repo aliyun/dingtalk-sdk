@@ -494,6 +494,66 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>删除听记音视频文件释放存储空间</p>
+     * 
+     * @param request DeleteMinutesMediaRequest
+     * @param headers DeleteMinutesMediaHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteMinutesMediaResponse
+     */
+    public DeleteMinutesMediaResponse deleteMinutesMediaWithOptions(DeleteMinutesMediaRequest request, DeleteMinutesMediaHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.taskUuid)) {
+            query.put("taskUuid", request.taskUuid);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            query.put("unionId", request.unionId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DeleteMinutesMedia"),
+            new TeaPair("version", "minutes_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/minutes/flashMinutes/deleteMedia"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DeleteMinutesMediaResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除听记音视频文件释放存储空间</p>
+     * 
+     * @param request DeleteMinutesMediaRequest
+     * @return DeleteMinutesMediaResponse
+     */
+    public DeleteMinutesMediaResponse deleteMinutesMedia(DeleteMinutesMediaRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DeleteMinutesMediaHeaders headers = new DeleteMinutesMediaHeaders();
+        return this.deleteMinutesMediaWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>导出闪记任务结果</p>
      * 
      * @param request ExportMinutesTaskResultRequest
@@ -642,6 +702,82 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GenerateSummaryHeaders headers = new GenerateSummaryHeaders();
         return this.generateSummaryWithOptions(taskUuid, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询听记笔记内容</p>
+     * 
+     * @param request ListMinutesAttachmentsRequest
+     * @param headers ListMinutesAttachmentsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ListMinutesAttachmentsResponse
+     */
+    public ListMinutesAttachmentsResponse listMinutesAttachmentsWithOptions(String taskUuid, ListMinutesAttachmentsRequest request, ListMinutesAttachmentsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.contentType)) {
+            query.put("contentType", request.contentType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.direction)) {
+            query.put("direction", request.direction);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
+            query.put("maxResults", request.maxResults);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
+            query.put("nextToken", request.nextToken);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.type)) {
+            query.put("type", request.type);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            query.put("unionId", request.unionId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ListMinutesAttachments"),
+            new TeaPair("version", "minutes_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/minutes/" + taskUuid + "/attachments"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ListMinutesAttachmentsResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询听记笔记内容</p>
+     * 
+     * @param request ListMinutesAttachmentsRequest
+     * @return ListMinutesAttachmentsResponse
+     */
+    public ListMinutesAttachmentsResponse listMinutesAttachments(String taskUuid, ListMinutesAttachmentsRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ListMinutesAttachmentsHeaders headers = new ListMinutesAttachmentsHeaders();
+        return this.listMinutesAttachmentsWithOptions(taskUuid, request, headers, runtime);
     }
 
     /**
@@ -1978,6 +2114,68 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>自定义A1相关听记详情页tab</p>
+     * 
+     * @param request SetA1DetailPageCustomTabRequest
+     * @param headers SetA1DetailPageCustomTabHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SetA1DetailPageCustomTabResponse
+     */
+    public SetA1DetailPageCustomTabResponse setA1DetailPageCustomTabWithOptions(String taskUuid, SetA1DetailPageCustomTabRequest request, SetA1DetailPageCustomTabHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.preserveA1AnalyzeTab)) {
+            query.put("preserveA1AnalyzeTab", request.preserveA1AnalyzeTab);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.customTabList)) {
+            body.put("customTabList", request.customTabList);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SetA1DetailPageCustomTab"),
+            new TeaPair("version", "minutes_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/minutes/flashMinutes/tasks/" + taskUuid + "/a1CustomTabs"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SetA1DetailPageCustomTabResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>自定义A1相关听记详情页tab</p>
+     * 
+     * @param request SetA1DetailPageCustomTabRequest
+     * @return SetA1DetailPageCustomTabResponse
+     */
+    public SetA1DetailPageCustomTabResponse setA1DetailPageCustomTab(String taskUuid, SetA1DetailPageCustomTabRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SetA1DetailPageCustomTabHeaders headers = new SetA1DetailPageCustomTabHeaders();
+        return this.setA1DetailPageCustomTabWithOptions(taskUuid, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>自定义听记详情页tab</p>
      * 
      * @param request SetDetailPageCustomTabRequest
@@ -2224,7 +2422,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
-     * <p>更新闪记权限</p>
+     * <p>更新听记权限</p>
      * 
      * @param request UpdatePermissionRequest
      * @param headers UpdatePermissionHeaders
@@ -2243,6 +2441,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("memberInfoList", request.memberInfoList);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.memberPermissionOperations)) {
+            body.put("memberPermissionOperations", request.memberPermissionOperations);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.opType)) {
             body.put("opType", request.opType);
         }
@@ -2257,6 +2459,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.shareScope)) {
             body.put("shareScope", request.shareScope);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.shareScopeConfig)) {
+            body.put("shareScopeConfig", request.shareScopeConfig);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -2289,7 +2495,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
-     * <p>更新闪记权限</p>
+     * <p>更新听记权限</p>
      * 
      * @param request UpdatePermissionRequest
      * @return UpdatePermissionResponse

@@ -32,6 +32,9 @@ public class QueryUserHonorsResponseBody extends TeaModel {
     }
 
     public static class QueryUserHonorsResponseBodyResultHonorsGrantHistory extends TeaModel {
+        @NameInMap("grantReason")
+        public String grantReason;
+
         @NameInMap("grantTime")
         public Long grantTime;
 
@@ -41,6 +44,14 @@ public class QueryUserHonorsResponseBody extends TeaModel {
         public static QueryUserHonorsResponseBodyResultHonorsGrantHistory build(java.util.Map<String, ?> map) throws Exception {
             QueryUserHonorsResponseBodyResultHonorsGrantHistory self = new QueryUserHonorsResponseBodyResultHonorsGrantHistory();
             return TeaModel.build(map, self);
+        }
+
+        public QueryUserHonorsResponseBodyResultHonorsGrantHistory setGrantReason(String grantReason) {
+            this.grantReason = grantReason;
+            return this;
+        }
+        public String getGrantReason() {
+            return this.grantReason;
         }
 
         public QueryUserHonorsResponseBodyResultHonorsGrantHistory setGrantTime(Long grantTime) {

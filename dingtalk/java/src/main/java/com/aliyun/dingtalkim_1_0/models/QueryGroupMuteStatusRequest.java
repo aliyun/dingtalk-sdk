@@ -13,6 +13,9 @@ public class QueryGroupMuteStatusRequest extends TeaModel {
     @NameInMap("openConversationId")
     public String openConversationId;
 
+    @NameInMap("permissionCode")
+    public String permissionCode;
+
     /**
      * <p>This parameter is required.</p>
      * 
@@ -33,6 +36,14 @@ public class QueryGroupMuteStatusRequest extends TeaModel {
     }
     public String getOpenConversationId() {
         return this.openConversationId;
+    }
+
+    public QueryGroupMuteStatusRequest setPermissionCode(String permissionCode) {
+        this.permissionCode = permissionCode;
+        return this;
+    }
+    public String getPermissionCode() {
+        return this.permissionCode;
     }
 
     public QueryGroupMuteStatusRequest setUserId(String userId) {

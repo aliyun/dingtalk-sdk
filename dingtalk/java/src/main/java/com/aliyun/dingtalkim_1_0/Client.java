@@ -228,7 +228,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
-     * <p>场景群加人</p>
+     * <p>添加场景群成员</p>
      * 
      * @param request AddSceneGroupMemberRequest
      * @param headers AddSceneGroupMemberHeaders
@@ -279,7 +279,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
-     * <p>场景群加人</p>
+     * <p>添加场景群成员</p>
      * 
      * @param request AddSceneGroupMemberRequest
      * @return AddSceneGroupMemberResponse
@@ -2688,6 +2688,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
             body.put("open_conversation_id", request.openConversationId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.permissionCode)) {
+            body.put("permissionCode", request.permissionCode);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -5364,7 +5368,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
-     * <p>查询群禁言状态</p>
+     * <p>查询场景群禁言状态</p>
      * 
      * @param request QueryGroupMuteStatusRequest
      * @param headers QueryGroupMuteStatusHeaders
@@ -5376,6 +5380,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
             query.put("openConversationId", request.openConversationId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.permissionCode)) {
+            query.put("permissionCode", request.permissionCode);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
@@ -5411,7 +5419,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
-     * <p>查询群禁言状态</p>
+     * <p>查询场景群禁言状态</p>
      * 
      * @param request QueryGroupMuteStatusRequest
      * @return QueryGroupMuteStatusResponse
@@ -6892,7 +6900,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
-     * <p>场景群删人</p>
+     * <p>删除场景群成员</p>
      * 
      * @param request RemoveSceneGroupMemberRequest
      * @param headers RemoveSceneGroupMemberHeaders
@@ -6943,7 +6951,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
-     * <p>场景群删人</p>
+     * <p>删除场景群成员</p>
      * 
      * @param request RemoveSceneGroupMemberRequest
      * @return RemoveSceneGroupMemberResponse

@@ -64,6 +64,80 @@ public class QueryStaffStatisticDataResponseBody extends TeaModel {
         return this.totalCount;
     }
 
+    public static class QueryStaffStatisticDataResponseBodyResultQualityInspectL1Data extends TeaModel {
+        @NameInMap("hitRate")
+        public String hitRate;
+
+        @NameInMap("level1Code")
+        public String level1Code;
+
+        @NameInMap("level1Name")
+        public String level1Name;
+
+        @NameInMap("recordCount")
+        public String recordCount;
+
+        @NameInMap("sceneCode")
+        public String sceneCode;
+
+        @NameInMap("totalScore")
+        public String totalScore;
+
+        public static QueryStaffStatisticDataResponseBodyResultQualityInspectL1Data build(java.util.Map<String, ?> map) throws Exception {
+            QueryStaffStatisticDataResponseBodyResultQualityInspectL1Data self = new QueryStaffStatisticDataResponseBodyResultQualityInspectL1Data();
+            return TeaModel.build(map, self);
+        }
+
+        public QueryStaffStatisticDataResponseBodyResultQualityInspectL1Data setHitRate(String hitRate) {
+            this.hitRate = hitRate;
+            return this;
+        }
+        public String getHitRate() {
+            return this.hitRate;
+        }
+
+        public QueryStaffStatisticDataResponseBodyResultQualityInspectL1Data setLevel1Code(String level1Code) {
+            this.level1Code = level1Code;
+            return this;
+        }
+        public String getLevel1Code() {
+            return this.level1Code;
+        }
+
+        public QueryStaffStatisticDataResponseBodyResultQualityInspectL1Data setLevel1Name(String level1Name) {
+            this.level1Name = level1Name;
+            return this;
+        }
+        public String getLevel1Name() {
+            return this.level1Name;
+        }
+
+        public QueryStaffStatisticDataResponseBodyResultQualityInspectL1Data setRecordCount(String recordCount) {
+            this.recordCount = recordCount;
+            return this;
+        }
+        public String getRecordCount() {
+            return this.recordCount;
+        }
+
+        public QueryStaffStatisticDataResponseBodyResultQualityInspectL1Data setSceneCode(String sceneCode) {
+            this.sceneCode = sceneCode;
+            return this;
+        }
+        public String getSceneCode() {
+            return this.sceneCode;
+        }
+
+        public QueryStaffStatisticDataResponseBodyResultQualityInspectL1Data setTotalScore(String totalScore) {
+            this.totalScore = totalScore;
+            return this;
+        }
+        public String getTotalScore() {
+            return this.totalScore;
+        }
+
+    }
+
     public static class QueryStaffStatisticDataResponseBodyResult extends TeaModel {
         @NameInMap("averageQualityInspectionScorePerService")
         public Double averageQualityInspectionScorePerService;
@@ -73,6 +147,9 @@ public class QueryStaffStatisticDataResponseBody extends TeaModel {
 
         @NameInMap("highestQualityInspectionScore")
         public Double highestQualityInspectionScore;
+
+        @NameInMap("qualityInspectL1Data")
+        public java.util.List<QueryStaffStatisticDataResponseBodyResultQualityInspectL1Data> qualityInspectL1Data;
 
         @NameInMap("saleSopPercentage")
         public java.util.Map<String, ?> saleSopPercentage;
@@ -122,6 +199,14 @@ public class QueryStaffStatisticDataResponseBody extends TeaModel {
         }
         public Double getHighestQualityInspectionScore() {
             return this.highestQualityInspectionScore;
+        }
+
+        public QueryStaffStatisticDataResponseBodyResult setQualityInspectL1Data(java.util.List<QueryStaffStatisticDataResponseBodyResultQualityInspectL1Data> qualityInspectL1Data) {
+            this.qualityInspectL1Data = qualityInspectL1Data;
+            return this;
+        }
+        public java.util.List<QueryStaffStatisticDataResponseBodyResultQualityInspectL1Data> getQualityInspectL1Data() {
+            return this.qualityInspectL1Data;
         }
 
         public QueryStaffStatisticDataResponseBodyResult setSaleSopPercentage(java.util.Map<String, ?> saleSopPercentage) {

@@ -349,6 +349,96 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>确认发起合同审查</p>
+     * 
+     * @param tmpReq ConfirmContractReviewRequest
+     * @param headers ConfirmContractReviewHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ConfirmContractReviewResponse
+     */
+    public ConfirmContractReviewResponse confirmContractReviewWithOptions(ConfirmContractReviewRequest tmpReq, ConfirmContractReviewHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(tmpReq);
+        ConfirmContractReviewShrinkRequest request = new ConfirmContractReviewShrinkRequest();
+        com.aliyun.openapiutil.Client.convert(tmpReq, request);
+        if (!com.aliyun.teautil.Common.isUnset(tmpReq.customRules)) {
+            request.customRulesShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(tmpReq.customRules, "custom_rules", "json");
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.action)) {
+            body.put("action", request.action);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.checklistId)) {
+            body.put("checklist_id", request.checklistId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.contractType)) {
+            body.put("contract_type", request.contractType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.customRulesShrink)) {
+            body.put("custom_rules", request.customRulesShrink);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.reviewId)) {
+            body.put("review_id", request.reviewId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.scale)) {
+            body.put("scale", request.scale);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.sessionId)) {
+            body.put("session_id", request.sessionId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.standpoint)) {
+            body.put("standpoint", request.standpoint);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ConfirmContractReview"),
+            new TeaPair("version", "contract_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contract/api/review/confirm"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ConfirmContractReviewResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>确认发起合同审查</p>
+     * 
+     * @param request ConfirmContractReviewRequest
+     * @return ConfirmContractReviewResponse
+     */
+    public ConfirmContractReviewResponse confirmContractReview(ConfirmContractReviewRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ConfirmContractReviewHeaders headers = new ConfirmContractReviewHeaders();
+        return this.confirmContractReviewWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>ai合同审查结果回调</p>
      * 
      * @param request ContractAiReviewResultNotifyRequest
@@ -505,6 +595,92 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ContractBenefitConsumeHeaders headers = new ContractBenefitConsumeHeaders();
         return this.contractBenefitConsumeWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>在审查清单里创建自定义规则</p>
+     * 
+     * @param tmpReq CreateChecklistRuleRequest
+     * @param headers CreateChecklistRuleHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateChecklistRuleResponse
+     */
+    public CreateChecklistRuleResponse createChecklistRuleWithOptions(String checklistId, CreateChecklistRuleRequest tmpReq, CreateChecklistRuleHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(tmpReq);
+        CreateChecklistRuleShrinkRequest request = new CreateChecklistRuleShrinkRequest();
+        com.aliyun.openapiutil.Client.convert(tmpReq, request);
+        if (!com.aliyun.teautil.Common.isUnset(tmpReq.items)) {
+            request.itemsShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(tmpReq.items, "items", "json");
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.contractType)) {
+            body.put("contract_type", request.contractType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.corpId)) {
+            body.put("corp_id", request.corpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.description)) {
+            body.put("description", request.description);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.itemsShrink)) {
+            body.put("items", request.itemsShrink);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
+            body.put("name", request.name);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.riskLevel)) {
+            body.put("risk_level", request.riskLevel);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.standpoint)) {
+            body.put("standpoint", request.standpoint);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateChecklistRule"),
+            new TeaPair("version", "contract_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contract/api/review-rules/checklists/" + checklistId + "/rules"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateChecklistRuleResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>在审查清单里创建自定义规则</p>
+     * 
+     * @param request CreateChecklistRuleRequest
+     * @return CreateChecklistRuleResponse
+     */
+    public CreateChecklistRuleResponse createChecklistRule(String checklistId, CreateChecklistRuleRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CreateChecklistRuleHeaders headers = new CreateChecklistRuleHeaders();
+        return this.createChecklistRuleWithOptions(checklistId, request, headers, runtime);
     }
 
     /**
@@ -1169,6 +1345,76 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>创建自定义审查清单</p>
+     * 
+     * @param tmpReq CreateReviewChecklistRequest
+     * @param headers CreateReviewChecklistHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateReviewChecklistResponse
+     */
+    public CreateReviewChecklistResponse createReviewChecklistWithOptions(CreateReviewChecklistRequest tmpReq, CreateReviewChecklistHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(tmpReq);
+        CreateReviewChecklistShrinkRequest request = new CreateReviewChecklistShrinkRequest();
+        com.aliyun.openapiutil.Client.convert(tmpReq, request);
+        if (!com.aliyun.teautil.Common.isUnset(tmpReq.rules)) {
+            request.rulesShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(tmpReq.rules, "rules", "json");
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.corpId)) {
+            body.put("corp_id", request.corpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
+            body.put("name", request.name);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.rulesShrink)) {
+            body.put("rules", request.rulesShrink);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateReviewChecklist"),
+            new TeaPair("version", "contract_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contract/api/review-rules/checklists"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateReviewChecklistResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>创建自定义审查清单</p>
+     * 
+     * @param request CreateReviewChecklistRequest
+     * @return CreateReviewChecklistResponse
+     */
+    public CreateReviewChecklistResponse createReviewChecklist(CreateReviewChecklistRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CreateReviewChecklistHeaders headers = new CreateReviewChecklistHeaders();
+        return this.createReviewChecklistWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>创建签署流程</p>
      * 
      * @param request CreateSignFlowRequest
@@ -1305,6 +1551,98 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateTemplateProcessTaskHeaders headers = new CreateTemplateProcessTaskHeaders();
         return this.createTemplateProcessTaskWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除审查清单里的自定义规则</p>
+     * 
+     * @param headers DeleteChecklistRuleHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteChecklistRuleResponse
+     */
+    public DeleteChecklistRuleResponse deleteChecklistRuleWithOptions(String ruleId, String checklistId, DeleteChecklistRuleHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DeleteChecklistRule"),
+            new TeaPair("version", "contract_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contract/api/review-rules/checklists/" + checklistId + "/rules/" + ruleId + ""),
+            new TeaPair("method", "DELETE"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DeleteChecklistRuleResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除审查清单里的自定义规则</p>
+     * @return DeleteChecklistRuleResponse
+     */
+    public DeleteChecklistRuleResponse deleteChecklistRule(String ruleId, String checklistId) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DeleteChecklistRuleHeaders headers = new DeleteChecklistRuleHeaders();
+        return this.deleteChecklistRuleWithOptions(ruleId, checklistId, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除自定义审查清单</p>
+     * 
+     * @param headers DeleteReviewChecklistHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteReviewChecklistResponse
+     */
+    public DeleteReviewChecklistResponse deleteReviewChecklistWithOptions(String checklistId, DeleteReviewChecklistHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DeleteReviewChecklist"),
+            new TeaPair("version", "contract_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contract/api/review-rules/checklists/" + checklistId + ""),
+            new TeaPair("method", "DELETE"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DeleteReviewChecklistResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除自定义审查清单</p>
+     * @return DeleteReviewChecklistResponse
+     */
+    public DeleteReviewChecklistResponse deleteReviewChecklist(String checklistId) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DeleteReviewChecklistHeaders headers = new DeleteReviewChecklistHeaders();
+        return this.deleteReviewChecklistWithOptions(checklistId, headers, runtime);
     }
 
     /**
@@ -1939,6 +2277,66 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>获取合同的审查结果</p>
+     * 
+     * @param request GetContractReviewResultsRequest
+     * @param headers GetContractReviewResultsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetContractReviewResultsResponse
+     */
+    public GetContractReviewResultsResponse getContractReviewResultsWithOptions(GetContractReviewResultsRequest request, GetContractReviewResultsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.reviewId)) {
+            query.put("review_id", request.reviewId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.sessionId)) {
+            query.put("session_id", request.sessionId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetContractReviewResults"),
+            new TeaPair("version", "contract_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contract/api/review/result"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetContractReviewResultsResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取合同的审查结果</p>
+     * 
+     * @param request GetContractReviewResultsRequest
+     * @return GetContractReviewResultsResponse
+     */
+    public GetContractReviewResultsResponse getContractReviewResults(GetContractReviewResultsRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetContractReviewResultsHeaders headers = new GetContractReviewResultsHeaders();
+        return this.getContractReviewResultsWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>获取合同主体风险结果</p>
      * 
      * @param request GetContractSubjectRiskResultRequest
@@ -2063,6 +2461,98 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetFileDownloadUrlHeaders headers = new GetFileDownloadUrlHeaders();
         return this.getFileDownloadUrlWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取自定义审查清单</p>
+     * 
+     * @param headers GetReviewChecklistHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetReviewChecklistResponse
+     */
+    public GetReviewChecklistResponse getReviewChecklistWithOptions(String checklistId, GetReviewChecklistHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetReviewChecklist"),
+            new TeaPair("version", "contract_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contract/api/review-rules/checklists/" + checklistId + ""),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetReviewChecklistResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取自定义审查清单</p>
+     * @return GetReviewChecklistResponse
+     */
+    public GetReviewChecklistResponse getReviewChecklist(String checklistId) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetReviewChecklistHeaders headers = new GetReviewChecklistHeaders();
+        return this.getReviewChecklistWithOptions(checklistId, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>列出企业审查清单</p>
+     * 
+     * @param headers ListReviewChecklistsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ListReviewChecklistsResponse
+     */
+    public ListReviewChecklistsResponse listReviewChecklistsWithOptions(ListReviewChecklistsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ListReviewChecklists"),
+            new TeaPair("version", "contract_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contract/api/review-rules/checklists"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ListReviewChecklistsResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>列出企业审查清单</p>
+     * @return ListReviewChecklistsResponse
+     */
+    public ListReviewChecklistsResponse listReviewChecklists() throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ListReviewChecklistsHeaders headers = new ListReviewChecklistsHeaders();
+        return this.listReviewChecklistsWithOptions(headers, runtime);
     }
 
     /**
@@ -3296,5 +3786,147 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SyncSignEventHeaders headers = new SyncSignEventHeaders();
         return this.syncSignEventWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>修改更新审查清单里的自定义规则</p>
+     * 
+     * @param request UpdateChecklistRuleRequest
+     * @param headers UpdateChecklistRuleHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateChecklistRuleResponse
+     */
+    public UpdateChecklistRuleResponse updateChecklistRuleWithOptions(String checklistId, String ruleId, UpdateChecklistRuleRequest request, UpdateChecklistRuleHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.corpId)) {
+            body.put("corp_id", request.corpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.description)) {
+            body.put("description", request.description);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
+            body.put("name", request.name);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.riskLevel)) {
+            body.put("risk_level", request.riskLevel);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.standpoint)) {
+            body.put("standpoint", request.standpoint);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateChecklistRule"),
+            new TeaPair("version", "contract_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contract/api/review-rules/checklists/" + checklistId + "/rules/" + ruleId + ""),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateChecklistRuleResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>修改更新审查清单里的自定义规则</p>
+     * 
+     * @param request UpdateChecklistRuleRequest
+     * @return UpdateChecklistRuleResponse
+     */
+    public UpdateChecklistRuleResponse updateChecklistRule(String checklistId, String ruleId, UpdateChecklistRuleRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateChecklistRuleHeaders headers = new UpdateChecklistRuleHeaders();
+        return this.updateChecklistRuleWithOptions(checklistId, ruleId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新修改自定义审查清单</p>
+     * 
+     * @param tmpReq UpdateReviewChecklistRequest
+     * @param headers UpdateReviewChecklistHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateReviewChecklistResponse
+     */
+    public UpdateReviewChecklistResponse updateReviewChecklistWithOptions(String checklistId, UpdateReviewChecklistRequest tmpReq, UpdateReviewChecklistHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(tmpReq);
+        UpdateReviewChecklistShrinkRequest request = new UpdateReviewChecklistShrinkRequest();
+        com.aliyun.openapiutil.Client.convert(tmpReq, request);
+        if (!com.aliyun.teautil.Common.isUnset(tmpReq.rules)) {
+            request.rulesShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(tmpReq.rules, "rules", "json");
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.corpId)) {
+            body.put("corp_id", request.corpId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
+            body.put("name", request.name);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.rulesShrink)) {
+            body.put("rules", request.rulesShrink);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateReviewChecklist"),
+            new TeaPair("version", "contract_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contract/api/review-rules/checklists/" + checklistId + ""),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateReviewChecklistResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新修改自定义审查清单</p>
+     * 
+     * @param request UpdateReviewChecklistRequest
+     * @return UpdateReviewChecklistResponse
+     */
+    public UpdateReviewChecklistResponse updateReviewChecklist(String checklistId, UpdateReviewChecklistRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateReviewChecklistHeaders headers = new UpdateReviewChecklistHeaders();
+        return this.updateReviewChecklistWithOptions(checklistId, request, headers, runtime);
     }
 }

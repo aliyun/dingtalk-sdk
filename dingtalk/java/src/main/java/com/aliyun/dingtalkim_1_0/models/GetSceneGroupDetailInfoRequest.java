@@ -16,6 +16,9 @@ public class GetSceneGroupDetailInfoRequest extends TeaModel {
     @NameInMap("open_conversation_id")
     public String openConversationId;
 
+    @NameInMap("permissionCode")
+    public String permissionCode;
+
     public static GetSceneGroupDetailInfoRequest build(java.util.Map<String, ?> map) throws Exception {
         GetSceneGroupDetailInfoRequest self = new GetSceneGroupDetailInfoRequest();
         return TeaModel.build(map, self);
@@ -35,6 +38,14 @@ public class GetSceneGroupDetailInfoRequest extends TeaModel {
     }
     public String getOpenConversationId() {
         return this.openConversationId;
+    }
+
+    public GetSceneGroupDetailInfoRequest setPermissionCode(String permissionCode) {
+        this.permissionCode = permissionCode;
+        return this;
+    }
+    public String getPermissionCode() {
+        return this.permissionCode;
     }
 
 }

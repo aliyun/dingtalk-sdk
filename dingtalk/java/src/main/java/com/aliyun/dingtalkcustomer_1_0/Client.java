@@ -24,11 +24,11 @@ public class Client extends com.aliyun.teaopenapi.Client {
      * <p>大客户ltcPRC接口调用</p>
      * 
      * @param tmpReq CustomeRpcCallRequest
-     * @param headers map
+     * @param headers CustomeRpcCallHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return CustomeRpcCallResponse
      */
-    public CustomeRpcCallResponse customeRpcCallWithOptions(CustomeRpcCallRequest tmpReq, java.util.Map<String, String> headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+    public CustomeRpcCallResponse customeRpcCallWithOptions(CustomeRpcCallRequest tmpReq, CustomeRpcCallHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(tmpReq);
         CustomeRpcCallShrinkRequest request = new CustomeRpcCallShrinkRequest();
         com.aliyun.openapiutil.Client.convert(tmpReq, request);
@@ -45,8 +45,17 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("params", request.paramsShrink);
         }
 
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
-            new TeaPair("headers", headers),
+            new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
         com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
@@ -55,7 +64,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("protocol", "HTTP"),
             new TeaPair("pathname", "/v1.0/customer/rpcCall"),
             new TeaPair("method", "POST"),
-            new TeaPair("authType", "Anonymous"),
+            new TeaPair("authType", "AK"),
             new TeaPair("style", "ROA"),
             new TeaPair("reqBodyType", "none"),
             new TeaPair("bodyType", "json")
@@ -72,7 +81,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
      */
     public CustomeRpcCallResponse customeRpcCall(CustomeRpcCallRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        java.util.Map<String, String> headers = new java.util.HashMap<>();
+        CustomeRpcCallHeaders headers = new CustomeRpcCallHeaders();
         return this.customeRpcCallWithOptions(request, headers, runtime);
     }
 

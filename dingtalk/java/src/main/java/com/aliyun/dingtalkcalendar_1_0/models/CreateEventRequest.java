@@ -22,6 +22,9 @@ public class CreateEventRequest extends TeaModel {
     @NameInMap("end")
     public CreateEventRequestEnd end;
 
+    @NameInMap("eventConfig")
+    public CreateEventRequestEventConfig eventConfig;
+
     @NameInMap("extra")
     public java.util.Map<String, String> extra;
 
@@ -104,6 +107,14 @@ public class CreateEventRequest extends TeaModel {
     }
     public CreateEventRequestEnd getEnd() {
         return this.end;
+    }
+
+    public CreateEventRequest setEventConfig(CreateEventRequestEventConfig eventConfig) {
+        this.eventConfig = eventConfig;
+        return this;
+    }
+    public CreateEventRequestEventConfig getEventConfig() {
+        return this.eventConfig;
     }
 
     public CreateEventRequest setExtra(java.util.Map<String, String> extra) {
@@ -333,6 +344,47 @@ public class CreateEventRequest extends TeaModel {
         }
         public String getTimeZone() {
             return this.timeZone;
+        }
+
+    }
+
+    public static class CreateEventRequestEventConfig extends TeaModel {
+        @NameInMap("allowAttendeeAddConference")
+        public Boolean allowAttendeeAddConference;
+
+        @NameInMap("allowAttendeeAddParticipants")
+        public Boolean allowAttendeeAddParticipants;
+
+        @NameInMap("allowAttendeeCreateComment")
+        public Boolean allowAttendeeCreateComment;
+
+        public static CreateEventRequestEventConfig build(java.util.Map<String, ?> map) throws Exception {
+            CreateEventRequestEventConfig self = new CreateEventRequestEventConfig();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateEventRequestEventConfig setAllowAttendeeAddConference(Boolean allowAttendeeAddConference) {
+            this.allowAttendeeAddConference = allowAttendeeAddConference;
+            return this;
+        }
+        public Boolean getAllowAttendeeAddConference() {
+            return this.allowAttendeeAddConference;
+        }
+
+        public CreateEventRequestEventConfig setAllowAttendeeAddParticipants(Boolean allowAttendeeAddParticipants) {
+            this.allowAttendeeAddParticipants = allowAttendeeAddParticipants;
+            return this;
+        }
+        public Boolean getAllowAttendeeAddParticipants() {
+            return this.allowAttendeeAddParticipants;
+        }
+
+        public CreateEventRequestEventConfig setAllowAttendeeCreateComment(Boolean allowAttendeeCreateComment) {
+            this.allowAttendeeCreateComment = allowAttendeeCreateComment;
+            return this;
+        }
+        public Boolean getAllowAttendeeCreateComment() {
+            return this.allowAttendeeCreateComment;
         }
 
     }
