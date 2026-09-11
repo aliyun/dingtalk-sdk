@@ -39,6 +39,56 @@ namespace AlibabaCloud.SDK.Dingtalkminutes_1_0.Models
 
         }
 
+        [NameInMap("memberPermissionOperations")]
+        [Validation(Required=false)]
+        public List<UpdatePermissionRequestMemberPermissionOperations> MemberPermissionOperations { get; set; }
+        public class UpdatePermissionRequestMemberPermissionOperations : TeaModel {
+            /// <summary>
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>2</para>
+            /// </summary>
+            [NameInMap("memberType")]
+            [Validation(Required=false)]
+            public int? MemberType { get; set; }
+
+            /// <summary>
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>lJcRnm39OsU4jlFVmRGXXXXX</para>
+            /// </summary>
+            [NameInMap("memberUnionId")]
+            [Validation(Required=false)]
+            public string MemberUnionId { get; set; }
+
+            /// <summary>
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>0</para>
+            /// </summary>
+            [NameInMap("opType")]
+            [Validation(Required=false)]
+            public int? OpType { get; set; }
+
+            /// <summary>
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>2</para>
+            /// </summary>
+            [NameInMap("policyId")]
+            [Validation(Required=false)]
+            public long? PolicyId { get; set; }
+
+            [NameInMap("roleSubResourceIds")]
+            [Validation(Required=false)]
+            public List<string> RoleSubResourceIds { get; set; }
+
+        }
+
         /// <summary>
         /// <b>Example:</b>
         /// <para>0</para>
@@ -66,6 +116,34 @@ namespace AlibabaCloud.SDK.Dingtalkminutes_1_0.Models
         [NameInMap("shareScope")]
         [Validation(Required=false)]
         public int? ShareScope { get; set; }
+
+        [NameInMap("shareScopeConfig")]
+        [Validation(Required=false)]
+        public UpdatePermissionRequestShareScopeConfig ShareScopeConfig { get; set; }
+        public class UpdatePermissionRequestShareScopeConfig : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>1000</para>
+            /// </summary>
+            [NameInMap("roleCode")]
+            [Validation(Required=false)]
+            public string RoleCode { get; set; }
+
+            [NameInMap("roleSubResourceIds")]
+            [Validation(Required=false)]
+            public List<string> RoleSubResourceIds { get; set; }
+
+            /// <summary>
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>1</para>
+            /// </summary>
+            [NameInMap("shareScope")]
+            [Validation(Required=false)]
+            public int? ShareScope { get; set; }
+
+        }
 
         /// <summary>
         /// <para>This parameter is required.</para>

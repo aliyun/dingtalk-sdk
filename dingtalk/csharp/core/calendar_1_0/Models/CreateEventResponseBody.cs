@@ -92,6 +92,44 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 
         }
 
+        [NameInMap("eventConfig")]
+        [Validation(Required=false)]
+        public CreateEventResponseBodyEventConfig EventConfig { get; set; }
+        public class CreateEventResponseBodyEventConfig : TeaModel {
+            [NameInMap("allowAttendeeAddConference")]
+            [Validation(Required=false)]
+            public bool? AllowAttendeeAddConference { get; set; }
+
+            [NameInMap("allowAttendeeAddParticipants")]
+            [Validation(Required=false)]
+            public bool? AllowAttendeeAddParticipants { get; set; }
+
+            [NameInMap("allowAttendeeCreateComment")]
+            [Validation(Required=false)]
+            public bool? AllowAttendeeCreateComment { get; set; }
+
+        }
+
+        [NameInMap("extendedProperties")]
+        [Validation(Required=false)]
+        public CreateEventResponseBodyExtendedProperties ExtendedProperties { get; set; }
+        public class CreateEventResponseBodyExtendedProperties : TeaModel {
+            [NameInMap("sharedProperties")]
+            [Validation(Required=false)]
+            public CreateEventResponseBodyExtendedPropertiesSharedProperties SharedProperties { get; set; }
+            public class CreateEventResponseBodyExtendedPropertiesSharedProperties : TeaModel {
+                [NameInMap("belongCorpId")]
+                [Validation(Required=false)]
+                public string BelongCorpId { get; set; }
+
+                [NameInMap("sourceOpenCid")]
+                [Validation(Required=false)]
+                public string SourceOpenCid { get; set; }
+
+            }
+
+        }
+
         [NameInMap("id")]
         [Validation(Required=false)]
         public string Id { get; set; }

@@ -1230,6 +1230,162 @@ namespace AlibabaCloud.SDK.Dingtalkminutes_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>删除听记音视频文件释放存储空间</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteMinutesMediaRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteMinutesMediaHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteMinutesMediaResponse
+        /// </returns>
+        public DeleteMinutesMediaResponse DeleteMinutesMediaWithOptions(DeleteMinutesMediaRequest request, DeleteMinutesMediaHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskUuid))
+            {
+                query["taskUuid"] = request.TaskUuid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteMinutesMedia",
+                Version = "minutes_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/minutes/flashMinutes/deleteMedia",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteMinutesMediaResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除听记音视频文件释放存储空间</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteMinutesMediaRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteMinutesMediaHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteMinutesMediaResponse
+        /// </returns>
+        public async Task<DeleteMinutesMediaResponse> DeleteMinutesMediaWithOptionsAsync(DeleteMinutesMediaRequest request, DeleteMinutesMediaHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskUuid))
+            {
+                query["taskUuid"] = request.TaskUuid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteMinutesMedia",
+                Version = "minutes_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/minutes/flashMinutes/deleteMedia",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteMinutesMediaResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除听记音视频文件释放存储空间</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteMinutesMediaRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteMinutesMediaResponse
+        /// </returns>
+        public DeleteMinutesMediaResponse DeleteMinutesMedia(DeleteMinutesMediaRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteMinutesMediaHeaders headers = new DeleteMinutesMediaHeaders();
+            return DeleteMinutesMediaWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除听记音视频文件释放存储空间</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteMinutesMediaRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteMinutesMediaResponse
+        /// </returns>
+        public async Task<DeleteMinutesMediaResponse> DeleteMinutesMediaAsync(DeleteMinutesMediaRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteMinutesMediaHeaders headers = new DeleteMinutesMediaHeaders();
+            return await DeleteMinutesMediaWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>导出闪记任务结果</para>
         /// </summary>
         /// 
@@ -1602,6 +1758,194 @@ namespace AlibabaCloud.SDK.Dingtalkminutes_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GenerateSummaryHeaders headers = new GenerateSummaryHeaders();
             return await GenerateSummaryWithOptionsAsync(taskUuid, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询听记笔记内容</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListMinutesAttachmentsRequest
+        /// </param>
+        /// <param name="headers">
+        /// ListMinutesAttachmentsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListMinutesAttachmentsResponse
+        /// </returns>
+        public ListMinutesAttachmentsResponse ListMinutesAttachmentsWithOptions(string taskUuid, ListMinutesAttachmentsRequest request, ListMinutesAttachmentsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContentType))
+            {
+                query["contentType"] = request.ContentType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Direction))
+            {
+                query["direction"] = request.Direction;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                query["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Type))
+            {
+                query["type"] = request.Type;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ListMinutesAttachments",
+                Version = "minutes_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/minutes/" + taskUuid + "/attachments",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ListMinutesAttachmentsResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询听记笔记内容</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListMinutesAttachmentsRequest
+        /// </param>
+        /// <param name="headers">
+        /// ListMinutesAttachmentsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListMinutesAttachmentsResponse
+        /// </returns>
+        public async Task<ListMinutesAttachmentsResponse> ListMinutesAttachmentsWithOptionsAsync(string taskUuid, ListMinutesAttachmentsRequest request, ListMinutesAttachmentsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContentType))
+            {
+                query["contentType"] = request.ContentType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Direction))
+            {
+                query["direction"] = request.Direction;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                query["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Type))
+            {
+                query["type"] = request.Type;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ListMinutesAttachments",
+                Version = "minutes_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/minutes/" + taskUuid + "/attachments",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ListMinutesAttachmentsResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询听记笔记内容</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListMinutesAttachmentsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListMinutesAttachmentsResponse
+        /// </returns>
+        public ListMinutesAttachmentsResponse ListMinutesAttachments(string taskUuid, ListMinutesAttachmentsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListMinutesAttachmentsHeaders headers = new ListMinutesAttachmentsHeaders();
+            return ListMinutesAttachmentsWithOptions(taskUuid, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询听记笔记内容</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListMinutesAttachmentsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListMinutesAttachmentsResponse
+        /// </returns>
+        public async Task<ListMinutesAttachmentsResponse> ListMinutesAttachmentsAsync(string taskUuid, ListMinutesAttachmentsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListMinutesAttachmentsHeaders headers = new ListMinutesAttachmentsHeaders();
+            return await ListMinutesAttachmentsWithOptionsAsync(taskUuid, request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>
@@ -5054,6 +5398,166 @@ namespace AlibabaCloud.SDK.Dingtalkminutes_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>自定义A1相关听记详情页tab</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetA1DetailPageCustomTabRequest
+        /// </param>
+        /// <param name="headers">
+        /// SetA1DetailPageCustomTabHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetA1DetailPageCustomTabResponse
+        /// </returns>
+        public SetA1DetailPageCustomTabResponse SetA1DetailPageCustomTabWithOptions(string taskUuid, SetA1DetailPageCustomTabRequest request, SetA1DetailPageCustomTabHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PreserveA1AnalyzeTab))
+            {
+                query["preserveA1AnalyzeTab"] = request.PreserveA1AnalyzeTab;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CustomTabList))
+            {
+                body["customTabList"] = request.CustomTabList;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SetA1DetailPageCustomTab",
+                Version = "minutes_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/minutes/flashMinutes/tasks/" + taskUuid + "/a1CustomTabs",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SetA1DetailPageCustomTabResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>自定义A1相关听记详情页tab</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetA1DetailPageCustomTabRequest
+        /// </param>
+        /// <param name="headers">
+        /// SetA1DetailPageCustomTabHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetA1DetailPageCustomTabResponse
+        /// </returns>
+        public async Task<SetA1DetailPageCustomTabResponse> SetA1DetailPageCustomTabWithOptionsAsync(string taskUuid, SetA1DetailPageCustomTabRequest request, SetA1DetailPageCustomTabHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PreserveA1AnalyzeTab))
+            {
+                query["preserveA1AnalyzeTab"] = request.PreserveA1AnalyzeTab;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CustomTabList))
+            {
+                body["customTabList"] = request.CustomTabList;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SetA1DetailPageCustomTab",
+                Version = "minutes_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/minutes/flashMinutes/tasks/" + taskUuid + "/a1CustomTabs",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SetA1DetailPageCustomTabResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>自定义A1相关听记详情页tab</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetA1DetailPageCustomTabRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetA1DetailPageCustomTabResponse
+        /// </returns>
+        public SetA1DetailPageCustomTabResponse SetA1DetailPageCustomTab(string taskUuid, SetA1DetailPageCustomTabRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SetA1DetailPageCustomTabHeaders headers = new SetA1DetailPageCustomTabHeaders();
+            return SetA1DetailPageCustomTabWithOptions(taskUuid, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>自定义A1相关听记详情页tab</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetA1DetailPageCustomTabRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetA1DetailPageCustomTabResponse
+        /// </returns>
+        public async Task<SetA1DetailPageCustomTabResponse> SetA1DetailPageCustomTabAsync(string taskUuid, SetA1DetailPageCustomTabRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SetA1DetailPageCustomTabHeaders headers = new SetA1DetailPageCustomTabHeaders();
+            return await SetA1DetailPageCustomTabWithOptionsAsync(taskUuid, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>自定义听记详情页tab</para>
         /// </summary>
         /// 
@@ -5690,7 +6194,7 @@ namespace AlibabaCloud.SDK.Dingtalkminutes_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>更新闪记权限</para>
+        /// <para>更新听记权限</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -5719,6 +6223,10 @@ namespace AlibabaCloud.SDK.Dingtalkminutes_1_0
             {
                 body["memberInfoList"] = request.MemberInfoList;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MemberPermissionOperations))
+            {
+                body["memberPermissionOperations"] = request.MemberPermissionOperations;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpType))
             {
                 body["opType"] = request.OpType;
@@ -5734,6 +6242,10 @@ namespace AlibabaCloud.SDK.Dingtalkminutes_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShareScope))
             {
                 body["shareScope"] = request.ShareScope;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShareScopeConfig))
+            {
+                body["shareScopeConfig"] = request.ShareScopeConfig;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -5767,7 +6279,7 @@ namespace AlibabaCloud.SDK.Dingtalkminutes_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>更新闪记权限</para>
+        /// <para>更新听记权限</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -5796,6 +6308,10 @@ namespace AlibabaCloud.SDK.Dingtalkminutes_1_0
             {
                 body["memberInfoList"] = request.MemberInfoList;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MemberPermissionOperations))
+            {
+                body["memberPermissionOperations"] = request.MemberPermissionOperations;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpType))
             {
                 body["opType"] = request.OpType;
@@ -5811,6 +6327,10 @@ namespace AlibabaCloud.SDK.Dingtalkminutes_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShareScope))
             {
                 body["shareScope"] = request.ShareScope;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShareScopeConfig))
+            {
+                body["shareScopeConfig"] = request.ShareScopeConfig;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -5844,7 +6364,7 @@ namespace AlibabaCloud.SDK.Dingtalkminutes_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>更新闪记权限</para>
+        /// <para>更新听记权限</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -5863,7 +6383,7 @@ namespace AlibabaCloud.SDK.Dingtalkminutes_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>更新闪记权限</para>
+        /// <para>更新听记权限</para>
         /// </summary>
         /// 
         /// <param name="request">

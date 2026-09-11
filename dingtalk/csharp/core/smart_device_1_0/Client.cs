@@ -1462,6 +1462,154 @@ namespace AlibabaCloud.SDK.Dingtalksmart_device_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>删除用户的人脸底图</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RemoveUserFaceRequest
+        /// </param>
+        /// <param name="headers">
+        /// RemoveUserFaceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// RemoveUserFaceResponse
+        /// </returns>
+        public RemoveUserFaceResponse RemoveUserFaceWithOptions(RemoveUserFaceRequest request, RemoveUserFaceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "RemoveUserFace",
+                Version = "smartDevice_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/smartDevice/faceRecognitions/feature",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<RemoveUserFaceResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除用户的人脸底图</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RemoveUserFaceRequest
+        /// </param>
+        /// <param name="headers">
+        /// RemoveUserFaceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// RemoveUserFaceResponse
+        /// </returns>
+        public async Task<RemoveUserFaceResponse> RemoveUserFaceWithOptionsAsync(RemoveUserFaceRequest request, RemoveUserFaceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "RemoveUserFace",
+                Version = "smartDevice_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/smartDevice/faceRecognitions/feature",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<RemoveUserFaceResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除用户的人脸底图</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RemoveUserFaceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// RemoveUserFaceResponse
+        /// </returns>
+        public RemoveUserFaceResponse RemoveUserFace(RemoveUserFaceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            RemoveUserFaceHeaders headers = new RemoveUserFaceHeaders();
+            return RemoveUserFaceWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除用户的人脸底图</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RemoveUserFaceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// RemoveUserFaceResponse
+        /// </returns>
+        public async Task<RemoveUserFaceResponse> RemoveUserFaceAsync(RemoveUserFaceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            RemoveUserFaceHeaders headers = new RemoveUserFaceHeaders();
+            return await RemoveUserFaceWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>文生图开放接口</para>
         /// </summary>
         /// 

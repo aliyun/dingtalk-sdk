@@ -38,7 +38,7 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_1_0
         /// CustomeRpcCallRequest
         /// </param>
         /// <param name="headers">
-        /// map
+        /// CustomeRpcCallHeaders
         /// </param>
         /// <param name="runtime">
         /// runtime options for this request RuntimeOptions
@@ -47,7 +47,7 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_1_0
         /// <returns>
         /// CustomeRpcCallResponse
         /// </returns>
-        public CustomeRpcCallResponse CustomeRpcCallWithOptions(CustomeRpcCallRequest tmpReq, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public CustomeRpcCallResponse CustomeRpcCallWithOptions(CustomeRpcCallRequest tmpReq, CustomeRpcCallHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
             CustomeRpcCallShrinkRequest request = new CustomeRpcCallShrinkRequest();
@@ -65,9 +65,18 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_1_0
             {
                 query["params"] = request.ParamsShrink;
             }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
-                Headers = headers,
+                Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
             AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
@@ -77,7 +86,7 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_1_0
                 Protocol = "HTTP",
                 Pathname = "/v1.0/customer/rpcCall",
                 Method = "POST",
-                AuthType = "Anonymous",
+                AuthType = "AK",
                 Style = "ROA",
                 ReqBodyType = "none",
                 BodyType = "json",
@@ -94,7 +103,7 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_1_0
         /// CustomeRpcCallRequest
         /// </param>
         /// <param name="headers">
-        /// map
+        /// CustomeRpcCallHeaders
         /// </param>
         /// <param name="runtime">
         /// runtime options for this request RuntimeOptions
@@ -103,7 +112,7 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_1_0
         /// <returns>
         /// CustomeRpcCallResponse
         /// </returns>
-        public async Task<CustomeRpcCallResponse> CustomeRpcCallWithOptionsAsync(CustomeRpcCallRequest tmpReq, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<CustomeRpcCallResponse> CustomeRpcCallWithOptionsAsync(CustomeRpcCallRequest tmpReq, CustomeRpcCallHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
             CustomeRpcCallShrinkRequest request = new CustomeRpcCallShrinkRequest();
@@ -121,9 +130,18 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_1_0
             {
                 query["params"] = request.ParamsShrink;
             }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
-                Headers = headers,
+                Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
             AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
@@ -133,7 +151,7 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_1_0
                 Protocol = "HTTP",
                 Pathname = "/v1.0/customer/rpcCall",
                 Method = "POST",
-                AuthType = "Anonymous",
+                AuthType = "AK",
                 Style = "ROA",
                 ReqBodyType = "none",
                 BodyType = "json",
@@ -156,7 +174,7 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_1_0
         public CustomeRpcCallResponse CustomeRpcCall(CustomeRpcCallRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            CustomeRpcCallHeaders headers = new CustomeRpcCallHeaders();
             return CustomeRpcCallWithOptions(request, headers, runtime);
         }
 
@@ -175,7 +193,7 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_1_0
         public async Task<CustomeRpcCallResponse> CustomeRpcCallAsync(CustomeRpcCallRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            CustomeRpcCallHeaders headers = new CustomeRpcCallHeaders();
             return await CustomeRpcCallWithOptionsAsync(request, headers, runtime);
         }
 

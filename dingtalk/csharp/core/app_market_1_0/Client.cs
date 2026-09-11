@@ -186,6 +186,154 @@ namespace AlibabaCloud.SDK.Dingtalkapp_market_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>校验访问用户是否拥有应用 License</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// EnsureUserLicenseAccessRequest
+        /// </param>
+        /// <param name="headers">
+        /// EnsureUserLicenseAccessHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// EnsureUserLicenseAccessResponse
+        /// </returns>
+        public EnsureUserLicenseAccessResponse EnsureUserLicenseAccessWithOptions(EnsureUserLicenseAccessRequest request, EnsureUserLicenseAccessHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                body["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "EnsureUserLicenseAccess",
+                Version = "appMarket_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/appMarket/userLicenses/ensure",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<EnsureUserLicenseAccessResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>校验访问用户是否拥有应用 License</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// EnsureUserLicenseAccessRequest
+        /// </param>
+        /// <param name="headers">
+        /// EnsureUserLicenseAccessHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// EnsureUserLicenseAccessResponse
+        /// </returns>
+        public async Task<EnsureUserLicenseAccessResponse> EnsureUserLicenseAccessWithOptionsAsync(EnsureUserLicenseAccessRequest request, EnsureUserLicenseAccessHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                body["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "EnsureUserLicenseAccess",
+                Version = "appMarket_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/appMarket/userLicenses/ensure",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<EnsureUserLicenseAccessResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>校验访问用户是否拥有应用 License</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// EnsureUserLicenseAccessRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// EnsureUserLicenseAccessResponse
+        /// </returns>
+        public EnsureUserLicenseAccessResponse EnsureUserLicenseAccess(EnsureUserLicenseAccessRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            EnsureUserLicenseAccessHeaders headers = new EnsureUserLicenseAccessHeaders();
+            return EnsureUserLicenseAccessWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>校验访问用户是否拥有应用 License</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// EnsureUserLicenseAccessRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// EnsureUserLicenseAccessResponse
+        /// </returns>
+        public async Task<EnsureUserLicenseAccessResponse> EnsureUserLicenseAccessAsync(EnsureUserLicenseAccessRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            EnsureUserLicenseAccessHeaders headers = new EnsureUserLicenseAccessHeaders();
+            return await EnsureUserLicenseAccessWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>获取酷应用访问状态</para>
         /// </summary>
         /// 
@@ -958,6 +1106,178 @@ namespace AlibabaCloud.SDK.Dingtalkapp_market_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             QueryMarketOrderHeaders headers = new QueryMarketOrderHeaders();
             return await QueryMarketOrderWithOptionsAsync(orderId, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>全量更新第三方应用可见范围</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateAppVisibleScopeRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateAppVisibleScopeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateAppVisibleScopeResponse
+        /// </returns>
+        public UpdateAppVisibleScopeResponse UpdateAppVisibleScopeWithOptions(UpdateAppVisibleScopeRequest request, UpdateAppVisibleScopeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorUserId))
+            {
+                body["operatorUserId"] = request.OperatorUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VisibleDeptIds))
+            {
+                body["visibleDeptIds"] = request.VisibleDeptIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VisibleScopeType))
+            {
+                body["visibleScopeType"] = request.VisibleScopeType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VisibleUserIds))
+            {
+                body["visibleUserIds"] = request.VisibleUserIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateAppVisibleScope",
+                Version = "appMarket_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/appMarket/appVisibleScopes",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateAppVisibleScopeResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>全量更新第三方应用可见范围</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateAppVisibleScopeRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateAppVisibleScopeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateAppVisibleScopeResponse
+        /// </returns>
+        public async Task<UpdateAppVisibleScopeResponse> UpdateAppVisibleScopeWithOptionsAsync(UpdateAppVisibleScopeRequest request, UpdateAppVisibleScopeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorUserId))
+            {
+                body["operatorUserId"] = request.OperatorUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VisibleDeptIds))
+            {
+                body["visibleDeptIds"] = request.VisibleDeptIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VisibleScopeType))
+            {
+                body["visibleScopeType"] = request.VisibleScopeType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.VisibleUserIds))
+            {
+                body["visibleUserIds"] = request.VisibleUserIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateAppVisibleScope",
+                Version = "appMarket_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/appMarket/appVisibleScopes",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateAppVisibleScopeResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>全量更新第三方应用可见范围</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateAppVisibleScopeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateAppVisibleScopeResponse
+        /// </returns>
+        public UpdateAppVisibleScopeResponse UpdateAppVisibleScope(UpdateAppVisibleScopeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateAppVisibleScopeHeaders headers = new UpdateAppVisibleScopeHeaders();
+            return UpdateAppVisibleScopeWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>全量更新第三方应用可见范围</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateAppVisibleScopeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateAppVisibleScopeResponse
+        /// </returns>
+        public async Task<UpdateAppVisibleScopeResponse> UpdateAppVisibleScopeAsync(UpdateAppVisibleScopeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateAppVisibleScopeHeaders headers = new UpdateAppVisibleScopeHeaders();
+            return await UpdateAppVisibleScopeWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

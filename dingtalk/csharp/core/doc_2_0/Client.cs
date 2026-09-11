@@ -5458,6 +5458,162 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>根据文档id或URL获取文件DentryUuid</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetUuidByIdOrUrlRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetUuidByIdOrUrlHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetUuidByIdOrUrlResponse
+        /// </returns>
+        public GetUuidByIdOrUrlResponse GetUuidByIdOrUrlWithOptions(GetUuidByIdOrUrlRequest request, GetUuidByIdOrUrlHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IdOrUrl))
+            {
+                query["idOrUrl"] = request.IdOrUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetUuidByIdOrUrl",
+                Version = "doc_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/doc/documents/queryDentryUuid",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetUuidByIdOrUrlResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据文档id或URL获取文件DentryUuid</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetUuidByIdOrUrlRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetUuidByIdOrUrlHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetUuidByIdOrUrlResponse
+        /// </returns>
+        public async Task<GetUuidByIdOrUrlResponse> GetUuidByIdOrUrlWithOptionsAsync(GetUuidByIdOrUrlRequest request, GetUuidByIdOrUrlHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IdOrUrl))
+            {
+                query["idOrUrl"] = request.IdOrUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetUuidByIdOrUrl",
+                Version = "doc_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/doc/documents/queryDentryUuid",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetUuidByIdOrUrlResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据文档id或URL获取文件DentryUuid</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetUuidByIdOrUrlRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetUuidByIdOrUrlResponse
+        /// </returns>
+        public GetUuidByIdOrUrlResponse GetUuidByIdOrUrl(GetUuidByIdOrUrlRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetUuidByIdOrUrlHeaders headers = new GetUuidByIdOrUrlHeaders();
+            return GetUuidByIdOrUrlWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据文档id或URL获取文件DentryUuid</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetUuidByIdOrUrlRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetUuidByIdOrUrlResponse
+        /// </returns>
+        public async Task<GetUuidByIdOrUrlResponse> GetUuidByIdOrUrlAsync(GetUuidByIdOrUrlRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetUuidByIdOrUrlHeaders headers = new GetUuidByIdOrUrlHeaders();
+            return await GetUuidByIdOrUrlWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>获取知识库权限范围</para>
         /// </summary>
         /// 

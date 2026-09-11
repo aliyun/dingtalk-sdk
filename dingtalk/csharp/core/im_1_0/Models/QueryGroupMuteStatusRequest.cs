@@ -19,6 +19,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         [Validation(Required=false)]
         public string OpenConversationId { get; set; }
 
+        [NameInMap("permissionCode")]
+        [Validation(Required=false)]
+        public string PermissionCode { get; set; }
+
         /// <summary>
         /// <para>This parameter is required.</para>
         /// 

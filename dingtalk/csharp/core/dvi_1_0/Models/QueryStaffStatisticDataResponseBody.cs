@@ -33,6 +33,36 @@ namespace AlibabaCloud.SDK.Dingtalkdvi_1_0.Models
             [Validation(Required=false)]
             public double? HighestQualityInspectionScore { get; set; }
 
+            [NameInMap("qualityInspectL1Data")]
+            [Validation(Required=false)]
+            public List<QueryStaffStatisticDataResponseBodyResultQualityInspectL1Data> QualityInspectL1Data { get; set; }
+            public class QueryStaffStatisticDataResponseBodyResultQualityInspectL1Data : TeaModel {
+                [NameInMap("hitRate")]
+                [Validation(Required=false)]
+                public string HitRate { get; set; }
+
+                [NameInMap("level1Code")]
+                [Validation(Required=false)]
+                public string Level1Code { get; set; }
+
+                [NameInMap("level1Name")]
+                [Validation(Required=false)]
+                public string Level1Name { get; set; }
+
+                [NameInMap("recordCount")]
+                [Validation(Required=false)]
+                public string RecordCount { get; set; }
+
+                [NameInMap("sceneCode")]
+                [Validation(Required=false)]
+                public string SceneCode { get; set; }
+
+                [NameInMap("totalScore")]
+                [Validation(Required=false)]
+                public string TotalScore { get; set; }
+
+            }
+
             [NameInMap("saleSopPercentage")]
             [Validation(Required=false)]
             public Dictionary<string, object> SaleSopPercentage { get; set; }

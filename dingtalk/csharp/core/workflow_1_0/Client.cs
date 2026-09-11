@@ -12946,6 +12946,210 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>设置审批任务代理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetWorkflowTaskAgentRequest
+        /// </param>
+        /// <param name="headers">
+        /// SetWorkflowTaskAgentHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetWorkflowTaskAgentResponse
+        /// </returns>
+        public SetWorkflowTaskAgentResponse SetWorkflowTaskAgentWithOptions(SetWorkflowTaskAgentRequest request, SetWorkflowTaskAgentHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AgentStaffId))
+            {
+                body["agentStaffId"] = request.AgentStaffId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.All))
+            {
+                body["all"] = request.All;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndDate))
+            {
+                body["endDate"] = request.EndDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FromStaffId))
+            {
+                body["fromStaffId"] = request.FromStaffId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ManagerStaffId))
+            {
+                body["managerStaffId"] = request.ManagerStaffId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessCodes))
+            {
+                body["processCodes"] = request.ProcessCodes;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RequestId))
+            {
+                body["requestId"] = request.RequestId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartDate))
+            {
+                body["startDate"] = request.StartDate;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SetWorkflowTaskAgent",
+                Version = "workflow_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/workflow/tasks/agent",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SetWorkflowTaskAgentResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>设置审批任务代理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetWorkflowTaskAgentRequest
+        /// </param>
+        /// <param name="headers">
+        /// SetWorkflowTaskAgentHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetWorkflowTaskAgentResponse
+        /// </returns>
+        public async Task<SetWorkflowTaskAgentResponse> SetWorkflowTaskAgentWithOptionsAsync(SetWorkflowTaskAgentRequest request, SetWorkflowTaskAgentHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AgentStaffId))
+            {
+                body["agentStaffId"] = request.AgentStaffId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.All))
+            {
+                body["all"] = request.All;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndDate))
+            {
+                body["endDate"] = request.EndDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FromStaffId))
+            {
+                body["fromStaffId"] = request.FromStaffId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ManagerStaffId))
+            {
+                body["managerStaffId"] = request.ManagerStaffId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessCodes))
+            {
+                body["processCodes"] = request.ProcessCodes;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RequestId))
+            {
+                body["requestId"] = request.RequestId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartDate))
+            {
+                body["startDate"] = request.StartDate;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SetWorkflowTaskAgent",
+                Version = "workflow_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/workflow/tasks/agent",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SetWorkflowTaskAgentResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>设置审批任务代理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetWorkflowTaskAgentRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetWorkflowTaskAgentResponse
+        /// </returns>
+        public SetWorkflowTaskAgentResponse SetWorkflowTaskAgent(SetWorkflowTaskAgentRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SetWorkflowTaskAgentHeaders headers = new SetWorkflowTaskAgentHeaders();
+            return SetWorkflowTaskAgentWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>设置审批任务代理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetWorkflowTaskAgentRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetWorkflowTaskAgentResponse
+        /// </returns>
+        public async Task<SetWorkflowTaskAgentResponse> SetWorkflowTaskAgentAsync(SetWorkflowTaskAgentRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SetWorkflowTaskAgentHeaders headers = new SetWorkflowTaskAgentHeaders();
+            return await SetWorkflowTaskAgentWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>创建审批实例</para>
         /// </summary>
         /// 

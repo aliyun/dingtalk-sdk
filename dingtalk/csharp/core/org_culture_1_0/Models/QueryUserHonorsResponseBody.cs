@@ -25,6 +25,10 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0.Models
                 [Validation(Required=false)]
                 public List<QueryUserHonorsResponseBodyResultHonorsGrantHistory> GrantHistory { get; set; }
                 public class QueryUserHonorsResponseBodyResultHonorsGrantHistory : TeaModel {
+                    [NameInMap("grantReason")]
+                    [Validation(Required=false)]
+                    public string GrantReason { get; set; }
+
                     [NameInMap("grantTime")]
                     [Validation(Required=false)]
                     public long? GrantTime { get; set; }

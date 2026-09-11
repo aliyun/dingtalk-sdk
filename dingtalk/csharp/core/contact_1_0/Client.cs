@@ -4124,6 +4124,202 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>更新部门群设置</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeptGroupSettingUpdateRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeptGroupSettingUpdateHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeptGroupSettingUpdateResponse
+        /// </returns>
+        public DeptGroupSettingUpdateResponse DeptGroupSettingUpdateWithOptions(DeptGroupSettingUpdateRequest request, DeptGroupSettingUpdateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptId))
+            {
+                body["deptId"] = request.DeptId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupContainHiddenDept))
+            {
+                body["groupContainHiddenDept"] = request.GroupContainHiddenDept;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupContainHrmEmployeeTypeLabels))
+            {
+                body["groupContainHrmEmployeeTypeLabels"] = request.GroupContainHrmEmployeeTypeLabels;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupContainOuterDept))
+            {
+                body["groupContainOuterDept"] = request.GroupContainOuterDept;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupContainSubDept))
+            {
+                body["groupContainSubDept"] = request.GroupContainSubDept;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PermissionCode))
+            {
+                body["permissionCode"] = request.PermissionCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SyncMembers))
+            {
+                body["syncMembers"] = request.SyncMembers;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeptGroupSettingUpdate",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/departmentGroup/update",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeptGroupSettingUpdateResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新部门群设置</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeptGroupSettingUpdateRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeptGroupSettingUpdateHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeptGroupSettingUpdateResponse
+        /// </returns>
+        public async Task<DeptGroupSettingUpdateResponse> DeptGroupSettingUpdateWithOptionsAsync(DeptGroupSettingUpdateRequest request, DeptGroupSettingUpdateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptId))
+            {
+                body["deptId"] = request.DeptId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupContainHiddenDept))
+            {
+                body["groupContainHiddenDept"] = request.GroupContainHiddenDept;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupContainHrmEmployeeTypeLabels))
+            {
+                body["groupContainHrmEmployeeTypeLabels"] = request.GroupContainHrmEmployeeTypeLabels;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupContainOuterDept))
+            {
+                body["groupContainOuterDept"] = request.GroupContainOuterDept;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupContainSubDept))
+            {
+                body["groupContainSubDept"] = request.GroupContainSubDept;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PermissionCode))
+            {
+                body["permissionCode"] = request.PermissionCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SyncMembers))
+            {
+                body["syncMembers"] = request.SyncMembers;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeptGroupSettingUpdate",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/departmentGroup/update",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeptGroupSettingUpdateResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新部门群设置</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeptGroupSettingUpdateRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeptGroupSettingUpdateResponse
+        /// </returns>
+        public DeptGroupSettingUpdateResponse DeptGroupSettingUpdate(DeptGroupSettingUpdateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeptGroupSettingUpdateHeaders headers = new DeptGroupSettingUpdateHeaders();
+            return DeptGroupSettingUpdateWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新部门群设置</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeptGroupSettingUpdateRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeptGroupSettingUpdateResponse
+        /// </returns>
+        public async Task<DeptGroupSettingUpdateResponse> DeptGroupSettingUpdateAsync(DeptGroupSettingUpdateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeptGroupSettingUpdateHeaders headers = new DeptGroupSettingUpdateHeaders();
+            return await DeptGroupSettingUpdateWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>获取账号映射</para>
         /// </summary>
         /// 

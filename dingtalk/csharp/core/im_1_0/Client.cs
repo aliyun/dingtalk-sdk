@@ -554,7 +554,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>场景群加人</para>
+        /// <para>添加场景群成员</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -617,7 +617,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>场景群加人</para>
+        /// <para>添加场景群成员</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -680,7 +680,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>场景群加人</para>
+        /// <para>添加场景群成员</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -699,7 +699,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>场景群加人</para>
+        /// <para>添加场景群成员</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -6770,6 +6770,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             {
                 body["open_conversation_id"] = request.OpenConversationId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PermissionCode))
+            {
+                body["permissionCode"] = request.PermissionCode;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -6828,6 +6832,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
             {
                 body["open_conversation_id"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PermissionCode))
+            {
+                body["permissionCode"] = request.PermissionCode;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -13586,7 +13594,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>查询群禁言状态</para>
+        /// <para>查询场景群禁言状态</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -13609,6 +13617,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
             {
                 query["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PermissionCode))
+            {
+                query["permissionCode"] = request.PermissionCode;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
@@ -13645,7 +13657,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>查询群禁言状态</para>
+        /// <para>查询场景群禁言状态</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -13668,6 +13680,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
             {
                 query["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PermissionCode))
+            {
+                query["permissionCode"] = request.PermissionCode;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
@@ -13704,7 +13720,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>查询群禁言状态</para>
+        /// <para>查询场景群禁言状态</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -13723,7 +13739,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>查询群禁言状态</para>
+        /// <para>查询场景群禁言状态</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -17542,7 +17558,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>场景群删人</para>
+        /// <para>删除场景群成员</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -17605,7 +17621,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>场景群删人</para>
+        /// <para>删除场景群成员</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -17668,7 +17684,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>场景群删人</para>
+        /// <para>删除场景群成员</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -17687,7 +17703,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>场景群删人</para>
+        /// <para>删除场景群成员</para>
         /// </summary>
         /// 
         /// <param name="request">

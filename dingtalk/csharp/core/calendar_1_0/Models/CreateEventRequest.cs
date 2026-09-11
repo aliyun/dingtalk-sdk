@@ -88,6 +88,24 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 
         }
 
+        [NameInMap("eventConfig")]
+        [Validation(Required=false)]
+        public CreateEventRequestEventConfig EventConfig { get; set; }
+        public class CreateEventRequestEventConfig : TeaModel {
+            [NameInMap("allowAttendeeAddConference")]
+            [Validation(Required=false)]
+            public bool? AllowAttendeeAddConference { get; set; }
+
+            [NameInMap("allowAttendeeAddParticipants")]
+            [Validation(Required=false)]
+            public bool? AllowAttendeeAddParticipants { get; set; }
+
+            [NameInMap("allowAttendeeCreateComment")]
+            [Validation(Required=false)]
+            public bool? AllowAttendeeCreateComment { get; set; }
+
+        }
+
         [NameInMap("extra")]
         [Validation(Required=false)]
         public Dictionary<string, string> Extra { get; set; }

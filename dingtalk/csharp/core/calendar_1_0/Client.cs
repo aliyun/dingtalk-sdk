@@ -986,6 +986,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             {
                 body["end"] = request.End;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EventConfig))
+            {
+                body["eventConfig"] = request.EventConfig;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extra))
             {
                 body["extra"] = request.Extra;
@@ -1104,6 +1108,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.End))
             {
                 body["end"] = request.End;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EventConfig))
+            {
+                body["eventConfig"] = request.EventConfig;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extra))
             {
