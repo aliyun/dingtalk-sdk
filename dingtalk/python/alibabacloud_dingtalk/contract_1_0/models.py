@@ -1432,6 +1432,461 @@ class CheckEsignFileResponse(TeaModel):
         return self
 
 
+class ConfirmContractReviewHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ConfirmContractReviewRequestCustomRulesItems(TeaModel):
+    def __init__(
+        self,
+        criteria: str = None,
+        enabled: bool = None,
+        id: str = None,
+        name: str = None,
+        severity: str = None,
+    ):
+        self.criteria = criteria
+        self.enabled = enabled
+        self.id = id
+        self.name = name
+        self.severity = severity
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.criteria is not None:
+            result['criteria'] = self.criteria
+        if self.enabled is not None:
+            result['enabled'] = self.enabled
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.severity is not None:
+            result['severity'] = self.severity
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('criteria') is not None:
+            self.criteria = m.get('criteria')
+        if m.get('enabled') is not None:
+            self.enabled = m.get('enabled')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('severity') is not None:
+            self.severity = m.get('severity')
+        return self
+
+
+class ConfirmContractReviewRequestCustomRules(TeaModel):
+    def __init__(
+        self,
+        contract_type: str = None,
+        description: str = None,
+        id: str = None,
+        items: List[ConfirmContractReviewRequestCustomRulesItems] = None,
+        name: str = None,
+        risk_level: str = None,
+        standpoint: str = None,
+    ):
+        self.contract_type = contract_type
+        self.description = description
+        self.id = id
+        self.items = items
+        self.name = name
+        self.risk_level = risk_level
+        self.standpoint = standpoint
+
+    def validate(self):
+        if self.items:
+            for k in self.items:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.contract_type is not None:
+            result['contract_type'] = self.contract_type
+        if self.description is not None:
+            result['description'] = self.description
+        if self.id is not None:
+            result['id'] = self.id
+        result['items'] = []
+        if self.items is not None:
+            for k in self.items:
+                result['items'].append(k.to_map() if k else None)
+        if self.name is not None:
+            result['name'] = self.name
+        if self.risk_level is not None:
+            result['risk_level'] = self.risk_level
+        if self.standpoint is not None:
+            result['standpoint'] = self.standpoint
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('contract_type') is not None:
+            self.contract_type = m.get('contract_type')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        self.items = []
+        if m.get('items') is not None:
+            for k in m.get('items'):
+                temp_model = ConfirmContractReviewRequestCustomRulesItems()
+                self.items.append(temp_model.from_map(k))
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('risk_level') is not None:
+            self.risk_level = m.get('risk_level')
+        if m.get('standpoint') is not None:
+            self.standpoint = m.get('standpoint')
+        return self
+
+
+class ConfirmContractReviewRequest(TeaModel):
+    def __init__(
+        self,
+        action: str = None,
+        checklist_id: str = None,
+        contract_type: str = None,
+        custom_rules: List[ConfirmContractReviewRequestCustomRules] = None,
+        review_id: str = None,
+        scale: str = None,
+        session_id: str = None,
+        standpoint: str = None,
+    ):
+        self.action = action
+        self.checklist_id = checklist_id
+        self.contract_type = contract_type
+        self.custom_rules = custom_rules
+        # This parameter is required.
+        self.review_id = review_id
+        self.scale = scale
+        # This parameter is required.
+        self.session_id = session_id
+        self.standpoint = standpoint
+
+    def validate(self):
+        if self.custom_rules:
+            for k in self.custom_rules:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action is not None:
+            result['action'] = self.action
+        if self.checklist_id is not None:
+            result['checklist_id'] = self.checklist_id
+        if self.contract_type is not None:
+            result['contract_type'] = self.contract_type
+        result['custom_rules'] = []
+        if self.custom_rules is not None:
+            for k in self.custom_rules:
+                result['custom_rules'].append(k.to_map() if k else None)
+        if self.review_id is not None:
+            result['review_id'] = self.review_id
+        if self.scale is not None:
+            result['scale'] = self.scale
+        if self.session_id is not None:
+            result['session_id'] = self.session_id
+        if self.standpoint is not None:
+            result['standpoint'] = self.standpoint
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('action') is not None:
+            self.action = m.get('action')
+        if m.get('checklist_id') is not None:
+            self.checklist_id = m.get('checklist_id')
+        if m.get('contract_type') is not None:
+            self.contract_type = m.get('contract_type')
+        self.custom_rules = []
+        if m.get('custom_rules') is not None:
+            for k in m.get('custom_rules'):
+                temp_model = ConfirmContractReviewRequestCustomRules()
+                self.custom_rules.append(temp_model.from_map(k))
+        if m.get('review_id') is not None:
+            self.review_id = m.get('review_id')
+        if m.get('scale') is not None:
+            self.scale = m.get('scale')
+        if m.get('session_id') is not None:
+            self.session_id = m.get('session_id')
+        if m.get('standpoint') is not None:
+            self.standpoint = m.get('standpoint')
+        return self
+
+
+class ConfirmContractReviewShrinkRequest(TeaModel):
+    def __init__(
+        self,
+        action: str = None,
+        checklist_id: str = None,
+        contract_type: str = None,
+        custom_rules_shrink: str = None,
+        review_id: str = None,
+        scale: str = None,
+        session_id: str = None,
+        standpoint: str = None,
+    ):
+        self.action = action
+        self.checklist_id = checklist_id
+        self.contract_type = contract_type
+        self.custom_rules_shrink = custom_rules_shrink
+        # This parameter is required.
+        self.review_id = review_id
+        self.scale = scale
+        # This parameter is required.
+        self.session_id = session_id
+        self.standpoint = standpoint
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action is not None:
+            result['action'] = self.action
+        if self.checklist_id is not None:
+            result['checklist_id'] = self.checklist_id
+        if self.contract_type is not None:
+            result['contract_type'] = self.contract_type
+        if self.custom_rules_shrink is not None:
+            result['custom_rules'] = self.custom_rules_shrink
+        if self.review_id is not None:
+            result['review_id'] = self.review_id
+        if self.scale is not None:
+            result['scale'] = self.scale
+        if self.session_id is not None:
+            result['session_id'] = self.session_id
+        if self.standpoint is not None:
+            result['standpoint'] = self.standpoint
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('action') is not None:
+            self.action = m.get('action')
+        if m.get('checklist_id') is not None:
+            self.checklist_id = m.get('checklist_id')
+        if m.get('contract_type') is not None:
+            self.contract_type = m.get('contract_type')
+        if m.get('custom_rules') is not None:
+            self.custom_rules_shrink = m.get('custom_rules')
+        if m.get('review_id') is not None:
+            self.review_id = m.get('review_id')
+        if m.get('scale') is not None:
+            self.scale = m.get('scale')
+        if m.get('session_id') is not None:
+            self.session_id = m.get('session_id')
+        if m.get('standpoint') is not None:
+            self.standpoint = m.get('standpoint')
+        return self
+
+
+class ConfirmContractReviewResponseBodyDataRecommended(TeaModel):
+    def __init__(
+        self,
+        contract_type: str = None,
+        scale: str = None,
+        standpoint: str = None,
+    ):
+        self.contract_type = contract_type
+        self.scale = scale
+        self.standpoint = standpoint
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.contract_type is not None:
+            result['contract_type'] = self.contract_type
+        if self.scale is not None:
+            result['scale'] = self.scale
+        if self.standpoint is not None:
+            result['standpoint'] = self.standpoint
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('contract_type') is not None:
+            self.contract_type = m.get('contract_type')
+        if m.get('scale') is not None:
+            self.scale = m.get('scale')
+        if m.get('standpoint') is not None:
+            self.standpoint = m.get('standpoint')
+        return self
+
+
+class ConfirmContractReviewResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        recommended: ConfirmContractReviewResponseBodyDataRecommended = None,
+        review_id: str = None,
+        status: str = None,
+    ):
+        self.recommended = recommended
+        self.review_id = review_id
+        self.status = status
+
+    def validate(self):
+        if self.recommended:
+            self.recommended.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.recommended is not None:
+            result['recommended'] = self.recommended.to_map()
+        if self.review_id is not None:
+            result['review_id'] = self.review_id
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('recommended') is not None:
+            temp_model = ConfirmContractReviewResponseBodyDataRecommended()
+            self.recommended = temp_model.from_map(m['recommended'])
+        if m.get('review_id') is not None:
+            self.review_id = m.get('review_id')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class ConfirmContractReviewResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: ConfirmContractReviewResponseBodyData = None,
+    ):
+        self.data = data
+
+    def validate(self):
+        if self.data:
+            self.data.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data is not None:
+            result['data'] = self.data.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('data') is not None:
+            temp_model = ConfirmContractReviewResponseBodyData()
+            self.data = temp_model.from_map(m['data'])
+        return self
+
+
+class ConfirmContractReviewResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ConfirmContractReviewResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ConfirmContractReviewResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class ContractAiReviewResultNotifyHeaders(TeaModel):
     def __init__(
         self,
@@ -1910,6 +2365,445 @@ class ContractBenefitConsumeResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ContractBenefitConsumeResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CreateChecklistRuleHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateChecklistRuleRequestItems(TeaModel):
+    def __init__(
+        self,
+        criteria: str = None,
+        enabled: bool = None,
+        id: str = None,
+        name: str = None,
+        severity: str = None,
+    ):
+        self.criteria = criteria
+        self.enabled = enabled
+        self.id = id
+        self.name = name
+        self.severity = severity
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.criteria is not None:
+            result['criteria'] = self.criteria
+        if self.enabled is not None:
+            result['enabled'] = self.enabled
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.severity is not None:
+            result['severity'] = self.severity
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('criteria') is not None:
+            self.criteria = m.get('criteria')
+        if m.get('enabled') is not None:
+            self.enabled = m.get('enabled')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('severity') is not None:
+            self.severity = m.get('severity')
+        return self
+
+
+class CreateChecklistRuleRequest(TeaModel):
+    def __init__(
+        self,
+        contract_type: str = None,
+        corp_id: str = None,
+        description: str = None,
+        items: List[CreateChecklistRuleRequestItems] = None,
+        name: str = None,
+        risk_level: str = None,
+        standpoint: str = None,
+    ):
+        self.contract_type = contract_type
+        self.corp_id = corp_id
+        self.description = description
+        self.items = items
+        self.name = name
+        self.risk_level = risk_level
+        self.standpoint = standpoint
+
+    def validate(self):
+        if self.items:
+            for k in self.items:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.contract_type is not None:
+            result['contract_type'] = self.contract_type
+        if self.corp_id is not None:
+            result['corp_id'] = self.corp_id
+        if self.description is not None:
+            result['description'] = self.description
+        result['items'] = []
+        if self.items is not None:
+            for k in self.items:
+                result['items'].append(k.to_map() if k else None)
+        if self.name is not None:
+            result['name'] = self.name
+        if self.risk_level is not None:
+            result['risk_level'] = self.risk_level
+        if self.standpoint is not None:
+            result['standpoint'] = self.standpoint
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('contract_type') is not None:
+            self.contract_type = m.get('contract_type')
+        if m.get('corp_id') is not None:
+            self.corp_id = m.get('corp_id')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        self.items = []
+        if m.get('items') is not None:
+            for k in m.get('items'):
+                temp_model = CreateChecklistRuleRequestItems()
+                self.items.append(temp_model.from_map(k))
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('risk_level') is not None:
+            self.risk_level = m.get('risk_level')
+        if m.get('standpoint') is not None:
+            self.standpoint = m.get('standpoint')
+        return self
+
+
+class CreateChecklistRuleShrinkRequest(TeaModel):
+    def __init__(
+        self,
+        contract_type: str = None,
+        corp_id: str = None,
+        description: str = None,
+        items_shrink: str = None,
+        name: str = None,
+        risk_level: str = None,
+        standpoint: str = None,
+    ):
+        self.contract_type = contract_type
+        self.corp_id = corp_id
+        self.description = description
+        self.items_shrink = items_shrink
+        self.name = name
+        self.risk_level = risk_level
+        self.standpoint = standpoint
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.contract_type is not None:
+            result['contract_type'] = self.contract_type
+        if self.corp_id is not None:
+            result['corp_id'] = self.corp_id
+        if self.description is not None:
+            result['description'] = self.description
+        if self.items_shrink is not None:
+            result['items'] = self.items_shrink
+        if self.name is not None:
+            result['name'] = self.name
+        if self.risk_level is not None:
+            result['risk_level'] = self.risk_level
+        if self.standpoint is not None:
+            result['standpoint'] = self.standpoint
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('contract_type') is not None:
+            self.contract_type = m.get('contract_type')
+        if m.get('corp_id') is not None:
+            self.corp_id = m.get('corp_id')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('items') is not None:
+            self.items_shrink = m.get('items')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('risk_level') is not None:
+            self.risk_level = m.get('risk_level')
+        if m.get('standpoint') is not None:
+            self.standpoint = m.get('standpoint')
+        return self
+
+
+class CreateChecklistRuleResponseBodyDataRuleItems(TeaModel):
+    def __init__(
+        self,
+        criteria: str = None,
+        enabled: bool = None,
+        id: str = None,
+        name: str = None,
+        severity: str = None,
+    ):
+        self.criteria = criteria
+        self.enabled = enabled
+        self.id = id
+        self.name = name
+        self.severity = severity
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.criteria is not None:
+            result['criteria'] = self.criteria
+        if self.enabled is not None:
+            result['enabled'] = self.enabled
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.severity is not None:
+            result['severity'] = self.severity
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('criteria') is not None:
+            self.criteria = m.get('criteria')
+        if m.get('enabled') is not None:
+            self.enabled = m.get('enabled')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('severity') is not None:
+            self.severity = m.get('severity')
+        return self
+
+
+class CreateChecklistRuleResponseBodyDataRule(TeaModel):
+    def __init__(
+        self,
+        custom: bool = None,
+        description: str = None,
+        id: str = None,
+        items: List[CreateChecklistRuleResponseBodyDataRuleItems] = None,
+        name: str = None,
+        risk_level: str = None,
+        standpoint: str = None,
+    ):
+        self.custom = custom
+        self.description = description
+        self.id = id
+        self.items = items
+        self.name = name
+        self.risk_level = risk_level
+        self.standpoint = standpoint
+
+    def validate(self):
+        if self.items:
+            for k in self.items:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.custom is not None:
+            result['custom'] = self.custom
+        if self.description is not None:
+            result['description'] = self.description
+        if self.id is not None:
+            result['id'] = self.id
+        result['items'] = []
+        if self.items is not None:
+            for k in self.items:
+                result['items'].append(k.to_map() if k else None)
+        if self.name is not None:
+            result['name'] = self.name
+        if self.risk_level is not None:
+            result['risk_level'] = self.risk_level
+        if self.standpoint is not None:
+            result['standpoint'] = self.standpoint
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('custom') is not None:
+            self.custom = m.get('custom')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        self.items = []
+        if m.get('items') is not None:
+            for k in m.get('items'):
+                temp_model = CreateChecklistRuleResponseBodyDataRuleItems()
+                self.items.append(temp_model.from_map(k))
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('risk_level') is not None:
+            self.risk_level = m.get('risk_level')
+        if m.get('standpoint') is not None:
+            self.standpoint = m.get('standpoint')
+        return self
+
+
+class CreateChecklistRuleResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        rule: CreateChecklistRuleResponseBodyDataRule = None,
+    ):
+        self.rule = rule
+
+    def validate(self):
+        if self.rule:
+            self.rule.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.rule is not None:
+            result['rule'] = self.rule.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('rule') is not None:
+            temp_model = CreateChecklistRuleResponseBodyDataRule()
+            self.rule = temp_model.from_map(m['rule'])
+        return self
+
+
+class CreateChecklistRuleResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: CreateChecklistRuleResponseBodyData = None,
+    ):
+        self.data = data
+
+    def validate(self):
+        if self.data:
+            self.data.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data is not None:
+            result['data'] = self.data.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('data') is not None:
+            temp_model = CreateChecklistRuleResponseBodyData()
+            self.data = temp_model.from_map(m['data'])
+        return self
+
+
+class CreateChecklistRuleResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CreateChecklistRuleResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CreateChecklistRuleResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -4556,6 +5450,533 @@ class CreateContractReviewTaskResponse(TeaModel):
         return self
 
 
+class CreateReviewChecklistHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateReviewChecklistRequestRulesItems(TeaModel):
+    def __init__(
+        self,
+        criteria: str = None,
+        enabled: bool = None,
+        id: str = None,
+        name: str = None,
+        severity: str = None,
+    ):
+        self.criteria = criteria
+        self.enabled = enabled
+        self.id = id
+        self.name = name
+        self.severity = severity
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.criteria is not None:
+            result['criteria'] = self.criteria
+        if self.enabled is not None:
+            result['enabled'] = self.enabled
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.severity is not None:
+            result['severity'] = self.severity
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('criteria') is not None:
+            self.criteria = m.get('criteria')
+        if m.get('enabled') is not None:
+            self.enabled = m.get('enabled')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('severity') is not None:
+            self.severity = m.get('severity')
+        return self
+
+
+class CreateReviewChecklistRequestRules(TeaModel):
+    def __init__(
+        self,
+        custom: bool = None,
+        description: str = None,
+        id: str = None,
+        items: List[CreateReviewChecklistRequestRulesItems] = None,
+        name: str = None,
+        risk_level: str = None,
+        standpoint: str = None,
+    ):
+        self.custom = custom
+        self.description = description
+        self.id = id
+        self.items = items
+        self.name = name
+        self.risk_level = risk_level
+        self.standpoint = standpoint
+
+    def validate(self):
+        if self.items:
+            for k in self.items:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.custom is not None:
+            result['custom'] = self.custom
+        if self.description is not None:
+            result['description'] = self.description
+        if self.id is not None:
+            result['id'] = self.id
+        result['items'] = []
+        if self.items is not None:
+            for k in self.items:
+                result['items'].append(k.to_map() if k else None)
+        if self.name is not None:
+            result['name'] = self.name
+        if self.risk_level is not None:
+            result['risk_level'] = self.risk_level
+        if self.standpoint is not None:
+            result['standpoint'] = self.standpoint
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('custom') is not None:
+            self.custom = m.get('custom')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        self.items = []
+        if m.get('items') is not None:
+            for k in m.get('items'):
+                temp_model = CreateReviewChecklistRequestRulesItems()
+                self.items.append(temp_model.from_map(k))
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('risk_level') is not None:
+            self.risk_level = m.get('risk_level')
+        if m.get('standpoint') is not None:
+            self.standpoint = m.get('standpoint')
+        return self
+
+
+class CreateReviewChecklistRequest(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        name: str = None,
+        rules: List[CreateReviewChecklistRequestRules] = None,
+    ):
+        self.corp_id = corp_id
+        self.name = name
+        self.rules = rules
+
+    def validate(self):
+        if self.rules:
+            for k in self.rules:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corp_id'] = self.corp_id
+        if self.name is not None:
+            result['name'] = self.name
+        result['rules'] = []
+        if self.rules is not None:
+            for k in self.rules:
+                result['rules'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corp_id') is not None:
+            self.corp_id = m.get('corp_id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        self.rules = []
+        if m.get('rules') is not None:
+            for k in m.get('rules'):
+                temp_model = CreateReviewChecklistRequestRules()
+                self.rules.append(temp_model.from_map(k))
+        return self
+
+
+class CreateReviewChecklistShrinkRequest(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        name: str = None,
+        rules_shrink: str = None,
+    ):
+        self.corp_id = corp_id
+        self.name = name
+        self.rules_shrink = rules_shrink
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corp_id'] = self.corp_id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.rules_shrink is not None:
+            result['rules'] = self.rules_shrink
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corp_id') is not None:
+            self.corp_id = m.get('corp_id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('rules') is not None:
+            self.rules_shrink = m.get('rules')
+        return self
+
+
+class CreateReviewChecklistResponseBodyDataChecklistRulesItems(TeaModel):
+    def __init__(
+        self,
+        criteria: str = None,
+        enabled: bool = None,
+        id: str = None,
+        name: str = None,
+        severity: str = None,
+    ):
+        self.criteria = criteria
+        self.enabled = enabled
+        self.id = id
+        self.name = name
+        self.severity = severity
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.criteria is not None:
+            result['criteria'] = self.criteria
+        if self.enabled is not None:
+            result['enabled'] = self.enabled
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.severity is not None:
+            result['severity'] = self.severity
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('criteria') is not None:
+            self.criteria = m.get('criteria')
+        if m.get('enabled') is not None:
+            self.enabled = m.get('enabled')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('severity') is not None:
+            self.severity = m.get('severity')
+        return self
+
+
+class CreateReviewChecklistResponseBodyDataChecklistRules(TeaModel):
+    def __init__(
+        self,
+        custom: bool = None,
+        description: str = None,
+        id: str = None,
+        items: List[CreateReviewChecklistResponseBodyDataChecklistRulesItems] = None,
+        name: str = None,
+        risk_level: str = None,
+        standpoint: str = None,
+    ):
+        self.custom = custom
+        self.description = description
+        self.id = id
+        self.items = items
+        self.name = name
+        self.risk_level = risk_level
+        self.standpoint = standpoint
+
+    def validate(self):
+        if self.items:
+            for k in self.items:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.custom is not None:
+            result['custom'] = self.custom
+        if self.description is not None:
+            result['description'] = self.description
+        if self.id is not None:
+            result['id'] = self.id
+        result['items'] = []
+        if self.items is not None:
+            for k in self.items:
+                result['items'].append(k.to_map() if k else None)
+        if self.name is not None:
+            result['name'] = self.name
+        if self.risk_level is not None:
+            result['risk_level'] = self.risk_level
+        if self.standpoint is not None:
+            result['standpoint'] = self.standpoint
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('custom') is not None:
+            self.custom = m.get('custom')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        self.items = []
+        if m.get('items') is not None:
+            for k in m.get('items'):
+                temp_model = CreateReviewChecklistResponseBodyDataChecklistRulesItems()
+                self.items.append(temp_model.from_map(k))
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('risk_level') is not None:
+            self.risk_level = m.get('risk_level')
+        if m.get('standpoint') is not None:
+            self.standpoint = m.get('standpoint')
+        return self
+
+
+class CreateReviewChecklistResponseBodyDataChecklist(TeaModel):
+    def __init__(
+        self,
+        created_at: str = None,
+        id: str = None,
+        name: str = None,
+        rules: List[CreateReviewChecklistResponseBodyDataChecklistRules] = None,
+        updated_at: str = None,
+        version: int = None,
+    ):
+        self.created_at = created_at
+        self.id = id
+        self.name = name
+        self.rules = rules
+        self.updated_at = updated_at
+        self.version = version
+
+    def validate(self):
+        if self.rules:
+            for k in self.rules:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.created_at is not None:
+            result['created_at'] = self.created_at
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        result['rules'] = []
+        if self.rules is not None:
+            for k in self.rules:
+                result['rules'].append(k.to_map() if k else None)
+        if self.updated_at is not None:
+            result['updated_at'] = self.updated_at
+        if self.version is not None:
+            result['version'] = self.version
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('created_at') is not None:
+            self.created_at = m.get('created_at')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        self.rules = []
+        if m.get('rules') is not None:
+            for k in m.get('rules'):
+                temp_model = CreateReviewChecklistResponseBodyDataChecklistRules()
+                self.rules.append(temp_model.from_map(k))
+        if m.get('updated_at') is not None:
+            self.updated_at = m.get('updated_at')
+        if m.get('version') is not None:
+            self.version = m.get('version')
+        return self
+
+
+class CreateReviewChecklistResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        checklist: CreateReviewChecklistResponseBodyDataChecklist = None,
+    ):
+        self.checklist = checklist
+
+    def validate(self):
+        if self.checklist:
+            self.checklist.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.checklist is not None:
+            result['checklist'] = self.checklist.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('checklist') is not None:
+            temp_model = CreateReviewChecklistResponseBodyDataChecklist()
+            self.checklist = temp_model.from_map(m['checklist'])
+        return self
+
+
+class CreateReviewChecklistResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: CreateReviewChecklistResponseBodyData = None,
+    ):
+        self.data = data
+
+    def validate(self):
+        if self.data:
+            self.data.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data is not None:
+            result['data'] = self.data.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('data') is not None:
+            temp_model = CreateReviewChecklistResponseBodyData()
+            self.data = temp_model.from_map(m['data'])
+        return self
+
+
+class CreateReviewChecklistResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CreateReviewChecklistResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CreateReviewChecklistResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CreateSignFlowHeaders(TeaModel):
     def __init__(
         self,
@@ -5538,6 +6959,208 @@ class CreateTemplateProcessTaskResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateTemplateProcessTaskResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DeleteChecklistRuleHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeleteChecklistRuleResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: str = None,
+    ):
+        self.data = data
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data is not None:
+            result['data'] = self.data
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('data') is not None:
+            self.data = m.get('data')
+        return self
+
+
+class DeleteChecklistRuleResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: DeleteChecklistRuleResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = DeleteChecklistRuleResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DeleteReviewChecklistHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeleteReviewChecklistResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: str = None,
+    ):
+        self.data = data
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data is not None:
+            result['data'] = self.data
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('data') is not None:
+            self.data = m.get('data')
+        return self
+
+
+class DeleteReviewChecklistResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: DeleteReviewChecklistResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = DeleteReviewChecklistResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -7709,6 +9332,593 @@ class GetContractReviewResultResponse(TeaModel):
         return self
 
 
+class GetContractReviewResultsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetContractReviewResultsRequest(TeaModel):
+    def __init__(
+        self,
+        review_id: str = None,
+        session_id: str = None,
+    ):
+        self.review_id = review_id
+        self.session_id = session_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.review_id is not None:
+            result['review_id'] = self.review_id
+        if self.session_id is not None:
+            result['session_id'] = self.session_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('review_id') is not None:
+            self.review_id = m.get('review_id')
+        if m.get('session_id') is not None:
+            self.session_id = m.get('session_id')
+        return self
+
+
+class GetContractReviewResultsResponseBodyDataReportAllIssues(TeaModel):
+    def __init__(
+        self,
+        builtin: bool = None,
+        check_type: str = None,
+        clause_location: str = None,
+        clause_quote: str = None,
+        custom: bool = None,
+        fallback: str = None,
+        id: str = None,
+        impact: str = None,
+        legal_basis: str = None,
+        pack: str = None,
+        practice_reference: str = None,
+        problem: str = None,
+        revision_text: str = None,
+        risk_level: str = None,
+        rule_name: str = None,
+        source: str = None,
+        suggestion: str = None,
+        tier: str = None,
+    ):
+        self.builtin = builtin
+        self.check_type = check_type
+        self.clause_location = clause_location
+        self.clause_quote = clause_quote
+        self.custom = custom
+        self.fallback = fallback
+        self.id = id
+        self.impact = impact
+        self.legal_basis = legal_basis
+        self.pack = pack
+        self.practice_reference = practice_reference
+        self.problem = problem
+        self.revision_text = revision_text
+        self.risk_level = risk_level
+        self.rule_name = rule_name
+        self.source = source
+        self.suggestion = suggestion
+        self.tier = tier
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.builtin is not None:
+            result['builtin'] = self.builtin
+        if self.check_type is not None:
+            result['check_type'] = self.check_type
+        if self.clause_location is not None:
+            result['clause_location'] = self.clause_location
+        if self.clause_quote is not None:
+            result['clause_quote'] = self.clause_quote
+        if self.custom is not None:
+            result['custom'] = self.custom
+        if self.fallback is not None:
+            result['fallback'] = self.fallback
+        if self.id is not None:
+            result['id'] = self.id
+        if self.impact is not None:
+            result['impact'] = self.impact
+        if self.legal_basis is not None:
+            result['legal_basis'] = self.legal_basis
+        if self.pack is not None:
+            result['pack'] = self.pack
+        if self.practice_reference is not None:
+            result['practice_reference'] = self.practice_reference
+        if self.problem is not None:
+            result['problem'] = self.problem
+        if self.revision_text is not None:
+            result['revision_text'] = self.revision_text
+        if self.risk_level is not None:
+            result['riskLevel'] = self.risk_level
+        if self.rule_name is not None:
+            result['rule_name'] = self.rule_name
+        if self.source is not None:
+            result['source'] = self.source
+        if self.suggestion is not None:
+            result['suggestion'] = self.suggestion
+        if self.tier is not None:
+            result['tier'] = self.tier
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('builtin') is not None:
+            self.builtin = m.get('builtin')
+        if m.get('check_type') is not None:
+            self.check_type = m.get('check_type')
+        if m.get('clause_location') is not None:
+            self.clause_location = m.get('clause_location')
+        if m.get('clause_quote') is not None:
+            self.clause_quote = m.get('clause_quote')
+        if m.get('custom') is not None:
+            self.custom = m.get('custom')
+        if m.get('fallback') is not None:
+            self.fallback = m.get('fallback')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('impact') is not None:
+            self.impact = m.get('impact')
+        if m.get('legal_basis') is not None:
+            self.legal_basis = m.get('legal_basis')
+        if m.get('pack') is not None:
+            self.pack = m.get('pack')
+        if m.get('practice_reference') is not None:
+            self.practice_reference = m.get('practice_reference')
+        if m.get('problem') is not None:
+            self.problem = m.get('problem')
+        if m.get('revision_text') is not None:
+            self.revision_text = m.get('revision_text')
+        if m.get('riskLevel') is not None:
+            self.risk_level = m.get('riskLevel')
+        if m.get('rule_name') is not None:
+            self.rule_name = m.get('rule_name')
+        if m.get('source') is not None:
+            self.source = m.get('source')
+        if m.get('suggestion') is not None:
+            self.suggestion = m.get('suggestion')
+        if m.get('tier') is not None:
+            self.tier = m.get('tier')
+        return self
+
+
+class GetContractReviewResultsResponseBodyDataReportSummary(TeaModel):
+    def __init__(
+        self,
+        contract_type: str = None,
+        cross_clause_count: int = None,
+        deterministic_count: int = None,
+        formal_hint_count: int = None,
+        hard_issue_count: int = None,
+        high: int = None,
+        issue_count: int = None,
+        low: int = None,
+        medium: int = None,
+        missing_clause_count: int = None,
+        overall_risk_level: str = None,
+        risk_issue_count: int = None,
+        scale: str = None,
+        standpoint: str = None,
+    ):
+        self.contract_type = contract_type
+        self.cross_clause_count = cross_clause_count
+        self.deterministic_count = deterministic_count
+        self.formal_hint_count = formal_hint_count
+        self.hard_issue_count = hard_issue_count
+        self.high = high
+        self.issue_count = issue_count
+        self.low = low
+        self.medium = medium
+        self.missing_clause_count = missing_clause_count
+        self.overall_risk_level = overall_risk_level
+        self.risk_issue_count = risk_issue_count
+        self.scale = scale
+        self.standpoint = standpoint
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.contract_type is not None:
+            result['contract_type'] = self.contract_type
+        if self.cross_clause_count is not None:
+            result['cross_clause_count'] = self.cross_clause_count
+        if self.deterministic_count is not None:
+            result['deterministic_count'] = self.deterministic_count
+        if self.formal_hint_count is not None:
+            result['formal_hint_count'] = self.formal_hint_count
+        if self.hard_issue_count is not None:
+            result['hard_issue_count'] = self.hard_issue_count
+        if self.high is not None:
+            result['high'] = self.high
+        if self.issue_count is not None:
+            result['issue_count'] = self.issue_count
+        if self.low is not None:
+            result['low'] = self.low
+        if self.medium is not None:
+            result['medium'] = self.medium
+        if self.missing_clause_count is not None:
+            result['missing_clause_count'] = self.missing_clause_count
+        if self.overall_risk_level is not None:
+            result['overall_risk_level'] = self.overall_risk_level
+        if self.risk_issue_count is not None:
+            result['risk_issue_count'] = self.risk_issue_count
+        if self.scale is not None:
+            result['scale'] = self.scale
+        if self.standpoint is not None:
+            result['standpoint'] = self.standpoint
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('contract_type') is not None:
+            self.contract_type = m.get('contract_type')
+        if m.get('cross_clause_count') is not None:
+            self.cross_clause_count = m.get('cross_clause_count')
+        if m.get('deterministic_count') is not None:
+            self.deterministic_count = m.get('deterministic_count')
+        if m.get('formal_hint_count') is not None:
+            self.formal_hint_count = m.get('formal_hint_count')
+        if m.get('hard_issue_count') is not None:
+            self.hard_issue_count = m.get('hard_issue_count')
+        if m.get('high') is not None:
+            self.high = m.get('high')
+        if m.get('issue_count') is not None:
+            self.issue_count = m.get('issue_count')
+        if m.get('low') is not None:
+            self.low = m.get('low')
+        if m.get('medium') is not None:
+            self.medium = m.get('medium')
+        if m.get('missing_clause_count') is not None:
+            self.missing_clause_count = m.get('missing_clause_count')
+        if m.get('overall_risk_level') is not None:
+            self.overall_risk_level = m.get('overall_risk_level')
+        if m.get('risk_issue_count') is not None:
+            self.risk_issue_count = m.get('risk_issue_count')
+        if m.get('scale') is not None:
+            self.scale = m.get('scale')
+        if m.get('standpoint') is not None:
+            self.standpoint = m.get('standpoint')
+        return self
+
+
+class GetContractReviewResultsResponseBodyDataReport(TeaModel):
+    def __init__(
+        self,
+        all_issues: List[GetContractReviewResultsResponseBodyDataReportAllIssues] = None,
+        conclusion: str = None,
+        cross_clause_findings: List[str] = None,
+        deterministic_findings: List[str] = None,
+        file_name: str = None,
+        generated_at: str = None,
+        missing_clauses: List[str] = None,
+        review_id: str = None,
+        risk_issues: List[str] = None,
+        summary: GetContractReviewResultsResponseBodyDataReportSummary = None,
+        version: str = None,
+    ):
+        self.all_issues = all_issues
+        self.conclusion = conclusion
+        self.cross_clause_findings = cross_clause_findings
+        self.deterministic_findings = deterministic_findings
+        self.file_name = file_name
+        self.generated_at = generated_at
+        self.missing_clauses = missing_clauses
+        self.review_id = review_id
+        self.risk_issues = risk_issues
+        self.summary = summary
+        self.version = version
+
+    def validate(self):
+        if self.all_issues:
+            for k in self.all_issues:
+                if k:
+                    k.validate()
+        if self.summary:
+            self.summary.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['all_issues'] = []
+        if self.all_issues is not None:
+            for k in self.all_issues:
+                result['all_issues'].append(k.to_map() if k else None)
+        if self.conclusion is not None:
+            result['conclusion'] = self.conclusion
+        if self.cross_clause_findings is not None:
+            result['cross_clause_findings'] = self.cross_clause_findings
+        if self.deterministic_findings is not None:
+            result['deterministic_findings'] = self.deterministic_findings
+        if self.file_name is not None:
+            result['file_name'] = self.file_name
+        if self.generated_at is not None:
+            result['generated_at'] = self.generated_at
+        if self.missing_clauses is not None:
+            result['missing_clauses'] = self.missing_clauses
+        if self.review_id is not None:
+            result['review_id'] = self.review_id
+        if self.risk_issues is not None:
+            result['risk_issues'] = self.risk_issues
+        if self.summary is not None:
+            result['summary'] = self.summary.to_map()
+        if self.version is not None:
+            result['version'] = self.version
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.all_issues = []
+        if m.get('all_issues') is not None:
+            for k in m.get('all_issues'):
+                temp_model = GetContractReviewResultsResponseBodyDataReportAllIssues()
+                self.all_issues.append(temp_model.from_map(k))
+        if m.get('conclusion') is not None:
+            self.conclusion = m.get('conclusion')
+        if m.get('cross_clause_findings') is not None:
+            self.cross_clause_findings = m.get('cross_clause_findings')
+        if m.get('deterministic_findings') is not None:
+            self.deterministic_findings = m.get('deterministic_findings')
+        if m.get('file_name') is not None:
+            self.file_name = m.get('file_name')
+        if m.get('generated_at') is not None:
+            self.generated_at = m.get('generated_at')
+        if m.get('missing_clauses') is not None:
+            self.missing_clauses = m.get('missing_clauses')
+        if m.get('review_id') is not None:
+            self.review_id = m.get('review_id')
+        if m.get('risk_issues') is not None:
+            self.risk_issues = m.get('risk_issues')
+        if m.get('summary') is not None:
+            temp_model = GetContractReviewResultsResponseBodyDataReportSummary()
+            self.summary = temp_model.from_map(m['summary'])
+        if m.get('version') is not None:
+            self.version = m.get('version')
+        return self
+
+
+class GetContractReviewResultsResponseBodyDataRiskCounts(TeaModel):
+    def __init__(
+        self,
+        high: int = None,
+        low: int = None,
+        medium: int = None,
+    ):
+        self.high = high
+        self.low = low
+        self.medium = medium
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.high is not None:
+            result['high'] = self.high
+        if self.low is not None:
+            result['low'] = self.low
+        if self.medium is not None:
+            result['medium'] = self.medium
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('high') is not None:
+            self.high = m.get('high')
+        if m.get('low') is not None:
+            self.low = m.get('low')
+        if m.get('medium') is not None:
+            self.medium = m.get('medium')
+        return self
+
+
+class GetContractReviewResultsResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        annotated_export_url: str = None,
+        message: str = None,
+        report: GetContractReviewResultsResponseBodyDataReport = None,
+        report_export_url: str = None,
+        review_id: str = None,
+        risk_counts: GetContractReviewResultsResponseBodyDataRiskCounts = None,
+        status: str = None,
+        total_risks: int = None,
+        weboffice_url: str = None,
+    ):
+        self.annotated_export_url = annotated_export_url
+        self.message = message
+        self.report = report
+        self.report_export_url = report_export_url
+        self.review_id = review_id
+        self.risk_counts = risk_counts
+        self.status = status
+        self.total_risks = total_risks
+        self.weboffice_url = weboffice_url
+
+    def validate(self):
+        if self.report:
+            self.report.validate()
+        if self.risk_counts:
+            self.risk_counts.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.annotated_export_url is not None:
+            result['annotated_export_url'] = self.annotated_export_url
+        if self.message is not None:
+            result['message'] = self.message
+        if self.report is not None:
+            result['report'] = self.report.to_map()
+        if self.report_export_url is not None:
+            result['report_export_url'] = self.report_export_url
+        if self.review_id is not None:
+            result['review_id'] = self.review_id
+        if self.risk_counts is not None:
+            result['risk_counts'] = self.risk_counts.to_map()
+        if self.status is not None:
+            result['status'] = self.status
+        if self.total_risks is not None:
+            result['total_risks'] = self.total_risks
+        if self.weboffice_url is not None:
+            result['weboffice_url'] = self.weboffice_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('annotated_export_url') is not None:
+            self.annotated_export_url = m.get('annotated_export_url')
+        if m.get('message') is not None:
+            self.message = m.get('message')
+        if m.get('report') is not None:
+            temp_model = GetContractReviewResultsResponseBodyDataReport()
+            self.report = temp_model.from_map(m['report'])
+        if m.get('report_export_url') is not None:
+            self.report_export_url = m.get('report_export_url')
+        if m.get('review_id') is not None:
+            self.review_id = m.get('review_id')
+        if m.get('risk_counts') is not None:
+            temp_model = GetContractReviewResultsResponseBodyDataRiskCounts()
+            self.risk_counts = temp_model.from_map(m['risk_counts'])
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('total_risks') is not None:
+            self.total_risks = m.get('total_risks')
+        if m.get('weboffice_url') is not None:
+            self.weboffice_url = m.get('weboffice_url')
+        return self
+
+
+class GetContractReviewResultsResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: GetContractReviewResultsResponseBodyData = None,
+    ):
+        self.data = data
+
+    def validate(self):
+        if self.data:
+            self.data.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data is not None:
+            result['data'] = self.data.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('data') is not None:
+            temp_model = GetContractReviewResultsResponseBodyData()
+            self.data = temp_model.from_map(m['data'])
+        return self
+
+
+class GetContractReviewResultsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetContractReviewResultsResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetContractReviewResultsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetContractSubjectRiskResultHeaders(TeaModel):
     def __init__(
         self,
@@ -8717,6 +10927,656 @@ class GetFileDownloadUrlResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetFileDownloadUrlResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetReviewChecklistHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetReviewChecklistResponseBodyDataChecklistRulesItems(TeaModel):
+    def __init__(
+        self,
+        criteria: str = None,
+        enabled: bool = None,
+        id: str = None,
+        name: str = None,
+        severity: str = None,
+    ):
+        self.criteria = criteria
+        self.enabled = enabled
+        self.id = id
+        self.name = name
+        self.severity = severity
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.criteria is not None:
+            result['criteria'] = self.criteria
+        if self.enabled is not None:
+            result['enabled'] = self.enabled
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.severity is not None:
+            result['severity'] = self.severity
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('criteria') is not None:
+            self.criteria = m.get('criteria')
+        if m.get('enabled') is not None:
+            self.enabled = m.get('enabled')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('severity') is not None:
+            self.severity = m.get('severity')
+        return self
+
+
+class GetReviewChecklistResponseBodyDataChecklistRules(TeaModel):
+    def __init__(
+        self,
+        custom: bool = None,
+        description: str = None,
+        id: str = None,
+        items: List[GetReviewChecklistResponseBodyDataChecklistRulesItems] = None,
+        name: str = None,
+        risk_level: str = None,
+        standpoint: str = None,
+    ):
+        self.custom = custom
+        self.description = description
+        self.id = id
+        self.items = items
+        self.name = name
+        self.risk_level = risk_level
+        self.standpoint = standpoint
+
+    def validate(self):
+        if self.items:
+            for k in self.items:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.custom is not None:
+            result['custom'] = self.custom
+        if self.description is not None:
+            result['description'] = self.description
+        if self.id is not None:
+            result['id'] = self.id
+        result['items'] = []
+        if self.items is not None:
+            for k in self.items:
+                result['items'].append(k.to_map() if k else None)
+        if self.name is not None:
+            result['name'] = self.name
+        if self.risk_level is not None:
+            result['risk_level'] = self.risk_level
+        if self.standpoint is not None:
+            result['standpoint'] = self.standpoint
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('custom') is not None:
+            self.custom = m.get('custom')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        self.items = []
+        if m.get('items') is not None:
+            for k in m.get('items'):
+                temp_model = GetReviewChecklistResponseBodyDataChecklistRulesItems()
+                self.items.append(temp_model.from_map(k))
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('risk_level') is not None:
+            self.risk_level = m.get('risk_level')
+        if m.get('standpoint') is not None:
+            self.standpoint = m.get('standpoint')
+        return self
+
+
+class GetReviewChecklistResponseBodyDataChecklist(TeaModel):
+    def __init__(
+        self,
+        created_at: str = None,
+        id: str = None,
+        name: str = None,
+        rules: List[GetReviewChecklistResponseBodyDataChecklistRules] = None,
+        updated_at: str = None,
+        version: int = None,
+    ):
+        self.created_at = created_at
+        self.id = id
+        self.name = name
+        self.rules = rules
+        self.updated_at = updated_at
+        self.version = version
+
+    def validate(self):
+        if self.rules:
+            for k in self.rules:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.created_at is not None:
+            result['created_at'] = self.created_at
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        result['rules'] = []
+        if self.rules is not None:
+            for k in self.rules:
+                result['rules'].append(k.to_map() if k else None)
+        if self.updated_at is not None:
+            result['updated_at'] = self.updated_at
+        if self.version is not None:
+            result['version'] = self.version
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('created_at') is not None:
+            self.created_at = m.get('created_at')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        self.rules = []
+        if m.get('rules') is not None:
+            for k in m.get('rules'):
+                temp_model = GetReviewChecklistResponseBodyDataChecklistRules()
+                self.rules.append(temp_model.from_map(k))
+        if m.get('updated_at') is not None:
+            self.updated_at = m.get('updated_at')
+        if m.get('version') is not None:
+            self.version = m.get('version')
+        return self
+
+
+class GetReviewChecklistResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        checklist: GetReviewChecklistResponseBodyDataChecklist = None,
+    ):
+        self.checklist = checklist
+
+    def validate(self):
+        if self.checklist:
+            self.checklist.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.checklist is not None:
+            result['checklist'] = self.checklist.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('checklist') is not None:
+            temp_model = GetReviewChecklistResponseBodyDataChecklist()
+            self.checklist = temp_model.from_map(m['checklist'])
+        return self
+
+
+class GetReviewChecklistResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: GetReviewChecklistResponseBodyData = None,
+    ):
+        self.data = data
+
+    def validate(self):
+        if self.data:
+            self.data.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data is not None:
+            result['data'] = self.data.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('data') is not None:
+            temp_model = GetReviewChecklistResponseBodyData()
+            self.data = temp_model.from_map(m['data'])
+        return self
+
+
+class GetReviewChecklistResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetReviewChecklistResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetReviewChecklistResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ListReviewChecklistsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListReviewChecklistsResponseBodyDataChecklistsRulesItems(TeaModel):
+    def __init__(
+        self,
+        criteria: str = None,
+        enabled: bool = None,
+        id: str = None,
+        name: str = None,
+        severity: str = None,
+    ):
+        self.criteria = criteria
+        self.enabled = enabled
+        self.id = id
+        self.name = name
+        self.severity = severity
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.criteria is not None:
+            result['criteria'] = self.criteria
+        if self.enabled is not None:
+            result['enabled'] = self.enabled
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.severity is not None:
+            result['severity'] = self.severity
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('criteria') is not None:
+            self.criteria = m.get('criteria')
+        if m.get('enabled') is not None:
+            self.enabled = m.get('enabled')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('severity') is not None:
+            self.severity = m.get('severity')
+        return self
+
+
+class ListReviewChecklistsResponseBodyDataChecklistsRules(TeaModel):
+    def __init__(
+        self,
+        custom: bool = None,
+        description: str = None,
+        id: str = None,
+        items: List[ListReviewChecklistsResponseBodyDataChecklistsRulesItems] = None,
+        name: str = None,
+        risk_level: str = None,
+        standpoint: str = None,
+    ):
+        self.custom = custom
+        self.description = description
+        self.id = id
+        self.items = items
+        self.name = name
+        self.risk_level = risk_level
+        self.standpoint = standpoint
+
+    def validate(self):
+        if self.items:
+            for k in self.items:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.custom is not None:
+            result['custom'] = self.custom
+        if self.description is not None:
+            result['description'] = self.description
+        if self.id is not None:
+            result['id'] = self.id
+        result['items'] = []
+        if self.items is not None:
+            for k in self.items:
+                result['items'].append(k.to_map() if k else None)
+        if self.name is not None:
+            result['name'] = self.name
+        if self.risk_level is not None:
+            result['risk_level'] = self.risk_level
+        if self.standpoint is not None:
+            result['standpoint'] = self.standpoint
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('custom') is not None:
+            self.custom = m.get('custom')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        self.items = []
+        if m.get('items') is not None:
+            for k in m.get('items'):
+                temp_model = ListReviewChecklistsResponseBodyDataChecklistsRulesItems()
+                self.items.append(temp_model.from_map(k))
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('risk_level') is not None:
+            self.risk_level = m.get('risk_level')
+        if m.get('standpoint') is not None:
+            self.standpoint = m.get('standpoint')
+        return self
+
+
+class ListReviewChecklistsResponseBodyDataChecklists(TeaModel):
+    def __init__(
+        self,
+        created_at: str = None,
+        id: str = None,
+        name: str = None,
+        rules: List[ListReviewChecklistsResponseBodyDataChecklistsRules] = None,
+        updated_at: str = None,
+        version: int = None,
+    ):
+        self.created_at = created_at
+        self.id = id
+        self.name = name
+        self.rules = rules
+        self.updated_at = updated_at
+        self.version = version
+
+    def validate(self):
+        if self.rules:
+            for k in self.rules:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.created_at is not None:
+            result['created_at'] = self.created_at
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        result['rules'] = []
+        if self.rules is not None:
+            for k in self.rules:
+                result['rules'].append(k.to_map() if k else None)
+        if self.updated_at is not None:
+            result['updated_at'] = self.updated_at
+        if self.version is not None:
+            result['version'] = self.version
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('created_at') is not None:
+            self.created_at = m.get('created_at')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        self.rules = []
+        if m.get('rules') is not None:
+            for k in m.get('rules'):
+                temp_model = ListReviewChecklistsResponseBodyDataChecklistsRules()
+                self.rules.append(temp_model.from_map(k))
+        if m.get('updated_at') is not None:
+            self.updated_at = m.get('updated_at')
+        if m.get('version') is not None:
+            self.version = m.get('version')
+        return self
+
+
+class ListReviewChecklistsResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        checklists: List[ListReviewChecklistsResponseBodyDataChecklists] = None,
+        corp_id: str = None,
+    ):
+        self.checklists = checklists
+        self.corp_id = corp_id
+
+    def validate(self):
+        if self.checklists:
+            for k in self.checklists:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['checklists'] = []
+        if self.checklists is not None:
+            for k in self.checklists:
+                result['checklists'].append(k.to_map() if k else None)
+        if self.corp_id is not None:
+            result['corp_id'] = self.corp_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.checklists = []
+        if m.get('checklists') is not None:
+            for k in m.get('checklists'):
+                temp_model = ListReviewChecklistsResponseBodyDataChecklists()
+                self.checklists.append(temp_model.from_map(k))
+        if m.get('corp_id') is not None:
+            self.corp_id = m.get('corp_id')
+        return self
+
+
+class ListReviewChecklistsResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: ListReviewChecklistsResponseBodyData = None,
+    ):
+        self.data = data
+
+    def validate(self):
+        if self.data:
+            self.data.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data is not None:
+            result['data'] = self.data.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('data') is not None:
+            temp_model = ListReviewChecklistsResponseBodyData()
+            self.data = temp_model.from_map(m['data'])
+        return self
+
+
+class ListReviewChecklistsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ListReviewChecklistsResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ListReviewChecklistsResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -15891,6 +18751,838 @@ class SyncSignEventResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SyncSignEventResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateChecklistRuleHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateChecklistRuleRequest(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        description: str = None,
+        name: str = None,
+        risk_level: str = None,
+        standpoint: str = None,
+    ):
+        self.corp_id = corp_id
+        self.description = description
+        self.name = name
+        self.risk_level = risk_level
+        self.standpoint = standpoint
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corp_id'] = self.corp_id
+        if self.description is not None:
+            result['description'] = self.description
+        if self.name is not None:
+            result['name'] = self.name
+        if self.risk_level is not None:
+            result['risk_level'] = self.risk_level
+        if self.standpoint is not None:
+            result['standpoint'] = self.standpoint
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corp_id') is not None:
+            self.corp_id = m.get('corp_id')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('risk_level') is not None:
+            self.risk_level = m.get('risk_level')
+        if m.get('standpoint') is not None:
+            self.standpoint = m.get('standpoint')
+        return self
+
+
+class UpdateChecklistRuleResponseBodyDataRuleItems(TeaModel):
+    def __init__(
+        self,
+        criteria: str = None,
+        enabled: bool = None,
+        id: str = None,
+        name: str = None,
+        severity: str = None,
+    ):
+        self.criteria = criteria
+        self.enabled = enabled
+        self.id = id
+        self.name = name
+        self.severity = severity
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.criteria is not None:
+            result['criteria'] = self.criteria
+        if self.enabled is not None:
+            result['enabled'] = self.enabled
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.severity is not None:
+            result['severity'] = self.severity
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('criteria') is not None:
+            self.criteria = m.get('criteria')
+        if m.get('enabled') is not None:
+            self.enabled = m.get('enabled')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('severity') is not None:
+            self.severity = m.get('severity')
+        return self
+
+
+class UpdateChecklistRuleResponseBodyDataRule(TeaModel):
+    def __init__(
+        self,
+        custom: bool = None,
+        description: str = None,
+        id: str = None,
+        items: List[UpdateChecklistRuleResponseBodyDataRuleItems] = None,
+        name: str = None,
+        risk_level: str = None,
+        standpoint: str = None,
+    ):
+        self.custom = custom
+        self.description = description
+        self.id = id
+        self.items = items
+        self.name = name
+        self.risk_level = risk_level
+        self.standpoint = standpoint
+
+    def validate(self):
+        if self.items:
+            for k in self.items:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.custom is not None:
+            result['custom'] = self.custom
+        if self.description is not None:
+            result['description'] = self.description
+        if self.id is not None:
+            result['id'] = self.id
+        result['items'] = []
+        if self.items is not None:
+            for k in self.items:
+                result['items'].append(k.to_map() if k else None)
+        if self.name is not None:
+            result['name'] = self.name
+        if self.risk_level is not None:
+            result['risk_level'] = self.risk_level
+        if self.standpoint is not None:
+            result['standpoint'] = self.standpoint
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('custom') is not None:
+            self.custom = m.get('custom')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        self.items = []
+        if m.get('items') is not None:
+            for k in m.get('items'):
+                temp_model = UpdateChecklistRuleResponseBodyDataRuleItems()
+                self.items.append(temp_model.from_map(k))
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('risk_level') is not None:
+            self.risk_level = m.get('risk_level')
+        if m.get('standpoint') is not None:
+            self.standpoint = m.get('standpoint')
+        return self
+
+
+class UpdateChecklistRuleResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        rule: UpdateChecklistRuleResponseBodyDataRule = None,
+    ):
+        self.rule = rule
+
+    def validate(self):
+        if self.rule:
+            self.rule.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.rule is not None:
+            result['rule'] = self.rule.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('rule') is not None:
+            temp_model = UpdateChecklistRuleResponseBodyDataRule()
+            self.rule = temp_model.from_map(m['rule'])
+        return self
+
+
+class UpdateChecklistRuleResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: UpdateChecklistRuleResponseBodyData = None,
+    ):
+        self.data = data
+
+    def validate(self):
+        if self.data:
+            self.data.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data is not None:
+            result['data'] = self.data.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('data') is not None:
+            temp_model = UpdateChecklistRuleResponseBodyData()
+            self.data = temp_model.from_map(m['data'])
+        return self
+
+
+class UpdateChecklistRuleResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdateChecklistRuleResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdateChecklistRuleResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateReviewChecklistHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateReviewChecklistRequestRulesItems(TeaModel):
+    def __init__(
+        self,
+        criteria: str = None,
+        enabled: bool = None,
+        id: str = None,
+        name: str = None,
+        severity: str = None,
+    ):
+        self.criteria = criteria
+        self.enabled = enabled
+        self.id = id
+        self.name = name
+        self.severity = severity
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.criteria is not None:
+            result['criteria'] = self.criteria
+        if self.enabled is not None:
+            result['enabled'] = self.enabled
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.severity is not None:
+            result['severity'] = self.severity
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('criteria') is not None:
+            self.criteria = m.get('criteria')
+        if m.get('enabled') is not None:
+            self.enabled = m.get('enabled')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('severity') is not None:
+            self.severity = m.get('severity')
+        return self
+
+
+class UpdateReviewChecklistRequestRules(TeaModel):
+    def __init__(
+        self,
+        custom: bool = None,
+        description: str = None,
+        id: str = None,
+        items: List[UpdateReviewChecklistRequestRulesItems] = None,
+        name: str = None,
+        risk_level: str = None,
+        standpoint: str = None,
+    ):
+        self.custom = custom
+        self.description = description
+        self.id = id
+        self.items = items
+        self.name = name
+        self.risk_level = risk_level
+        self.standpoint = standpoint
+
+    def validate(self):
+        if self.items:
+            for k in self.items:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.custom is not None:
+            result['custom'] = self.custom
+        if self.description is not None:
+            result['description'] = self.description
+        if self.id is not None:
+            result['id'] = self.id
+        result['items'] = []
+        if self.items is not None:
+            for k in self.items:
+                result['items'].append(k.to_map() if k else None)
+        if self.name is not None:
+            result['name'] = self.name
+        if self.risk_level is not None:
+            result['risk_level'] = self.risk_level
+        if self.standpoint is not None:
+            result['standpoint'] = self.standpoint
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('custom') is not None:
+            self.custom = m.get('custom')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        self.items = []
+        if m.get('items') is not None:
+            for k in m.get('items'):
+                temp_model = UpdateReviewChecklistRequestRulesItems()
+                self.items.append(temp_model.from_map(k))
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('risk_level') is not None:
+            self.risk_level = m.get('risk_level')
+        if m.get('standpoint') is not None:
+            self.standpoint = m.get('standpoint')
+        return self
+
+
+class UpdateReviewChecklistRequest(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        name: str = None,
+        rules: List[UpdateReviewChecklistRequestRules] = None,
+    ):
+        self.corp_id = corp_id
+        self.name = name
+        self.rules = rules
+
+    def validate(self):
+        if self.rules:
+            for k in self.rules:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corp_id'] = self.corp_id
+        if self.name is not None:
+            result['name'] = self.name
+        result['rules'] = []
+        if self.rules is not None:
+            for k in self.rules:
+                result['rules'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corp_id') is not None:
+            self.corp_id = m.get('corp_id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        self.rules = []
+        if m.get('rules') is not None:
+            for k in m.get('rules'):
+                temp_model = UpdateReviewChecklistRequestRules()
+                self.rules.append(temp_model.from_map(k))
+        return self
+
+
+class UpdateReviewChecklistShrinkRequest(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        name: str = None,
+        rules_shrink: str = None,
+    ):
+        self.corp_id = corp_id
+        self.name = name
+        self.rules_shrink = rules_shrink
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corp_id'] = self.corp_id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.rules_shrink is not None:
+            result['rules'] = self.rules_shrink
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corp_id') is not None:
+            self.corp_id = m.get('corp_id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('rules') is not None:
+            self.rules_shrink = m.get('rules')
+        return self
+
+
+class UpdateReviewChecklistResponseBodyDataChecklistRulesItems(TeaModel):
+    def __init__(
+        self,
+        criteria: str = None,
+        enabled: bool = None,
+        id: str = None,
+        name: str = None,
+        severity: str = None,
+    ):
+        self.criteria = criteria
+        self.enabled = enabled
+        self.id = id
+        self.name = name
+        self.severity = severity
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.criteria is not None:
+            result['criteria'] = self.criteria
+        if self.enabled is not None:
+            result['enabled'] = self.enabled
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.severity is not None:
+            result['severity'] = self.severity
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('criteria') is not None:
+            self.criteria = m.get('criteria')
+        if m.get('enabled') is not None:
+            self.enabled = m.get('enabled')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('severity') is not None:
+            self.severity = m.get('severity')
+        return self
+
+
+class UpdateReviewChecklistResponseBodyDataChecklistRules(TeaModel):
+    def __init__(
+        self,
+        custom: bool = None,
+        description: str = None,
+        id: str = None,
+        items: List[UpdateReviewChecklistResponseBodyDataChecklistRulesItems] = None,
+        name: str = None,
+        risk_level: str = None,
+        standpoint: str = None,
+    ):
+        self.custom = custom
+        self.description = description
+        self.id = id
+        self.items = items
+        self.name = name
+        self.risk_level = risk_level
+        self.standpoint = standpoint
+
+    def validate(self):
+        if self.items:
+            for k in self.items:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.custom is not None:
+            result['custom'] = self.custom
+        if self.description is not None:
+            result['description'] = self.description
+        if self.id is not None:
+            result['id'] = self.id
+        result['items'] = []
+        if self.items is not None:
+            for k in self.items:
+                result['items'].append(k.to_map() if k else None)
+        if self.name is not None:
+            result['name'] = self.name
+        if self.risk_level is not None:
+            result['risk_level'] = self.risk_level
+        if self.standpoint is not None:
+            result['standpoint'] = self.standpoint
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('custom') is not None:
+            self.custom = m.get('custom')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        self.items = []
+        if m.get('items') is not None:
+            for k in m.get('items'):
+                temp_model = UpdateReviewChecklistResponseBodyDataChecklistRulesItems()
+                self.items.append(temp_model.from_map(k))
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('risk_level') is not None:
+            self.risk_level = m.get('risk_level')
+        if m.get('standpoint') is not None:
+            self.standpoint = m.get('standpoint')
+        return self
+
+
+class UpdateReviewChecklistResponseBodyDataChecklist(TeaModel):
+    def __init__(
+        self,
+        created_at: str = None,
+        id: str = None,
+        name: str = None,
+        rules: List[UpdateReviewChecklistResponseBodyDataChecklistRules] = None,
+        updated_at: str = None,
+        version: int = None,
+    ):
+        self.created_at = created_at
+        self.id = id
+        self.name = name
+        self.rules = rules
+        self.updated_at = updated_at
+        self.version = version
+
+    def validate(self):
+        if self.rules:
+            for k in self.rules:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.created_at is not None:
+            result['created_at'] = self.created_at
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        result['rules'] = []
+        if self.rules is not None:
+            for k in self.rules:
+                result['rules'].append(k.to_map() if k else None)
+        if self.updated_at is not None:
+            result['updated_at'] = self.updated_at
+        if self.version is not None:
+            result['version'] = self.version
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('created_at') is not None:
+            self.created_at = m.get('created_at')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        self.rules = []
+        if m.get('rules') is not None:
+            for k in m.get('rules'):
+                temp_model = UpdateReviewChecklistResponseBodyDataChecklistRules()
+                self.rules.append(temp_model.from_map(k))
+        if m.get('updated_at') is not None:
+            self.updated_at = m.get('updated_at')
+        if m.get('version') is not None:
+            self.version = m.get('version')
+        return self
+
+
+class UpdateReviewChecklistResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        checklist: UpdateReviewChecklistResponseBodyDataChecklist = None,
+    ):
+        self.checklist = checklist
+
+    def validate(self):
+        if self.checklist:
+            self.checklist.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.checklist is not None:
+            result['checklist'] = self.checklist.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('checklist') is not None:
+            temp_model = UpdateReviewChecklistResponseBodyDataChecklist()
+            self.checklist = temp_model.from_map(m['checklist'])
+        return self
+
+
+class UpdateReviewChecklistResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: UpdateReviewChecklistResponseBodyData = None,
+    ):
+        self.data = data
+
+    def validate(self):
+        if self.data:
+            self.data.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data is not None:
+            result['data'] = self.data.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('data') is not None:
+            temp_model = UpdateReviewChecklistResponseBodyData()
+            self.data = temp_model.from_map(m['data'])
+        return self
+
+
+class UpdateReviewChecklistResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdateReviewChecklistResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdateReviewChecklistResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

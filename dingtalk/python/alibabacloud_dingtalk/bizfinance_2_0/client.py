@@ -6774,6 +6774,148 @@ class Client(OpenApiClient):
         headers = dingtalkbizfinance__2__0_models.QueryReceiptForInvoiceHeaders()
         return await self.query_receipt_for_invoice_with_options_async(request, headers, runtime)
 
+    def query_receipts_by_page_with_options(
+        self,
+        tmp_req: dingtalkbizfinance__2__0_models.QueryReceiptsByPageRequest,
+        headers: dingtalkbizfinance__2__0_models.QueryReceiptsByPageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.QueryReceiptsByPageResponse:
+        """
+        @summary 分页获取智能财务单据详情列表
+        
+        @param tmp_req: QueryReceiptsByPageRequest
+        @param headers: QueryReceiptsByPageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryReceiptsByPageResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkbizfinance__2__0_models.QueryReceiptsByPageShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.model_ids):
+            request.model_ids_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.model_ids, 'modelIds', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.end_time):
+            query['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.model_ids_shrink):
+            query['modelIds'] = request.model_ids_shrink
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.start_time):
+            query['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.time_filter_field):
+            query['timeFilterField'] = request.time_filter_field
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryReceiptsByPage',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/receipts',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.QueryReceiptsByPageResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_receipts_by_page_with_options_async(
+        self,
+        tmp_req: dingtalkbizfinance__2__0_models.QueryReceiptsByPageRequest,
+        headers: dingtalkbizfinance__2__0_models.QueryReceiptsByPageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.QueryReceiptsByPageResponse:
+        """
+        @summary 分页获取智能财务单据详情列表
+        
+        @param tmp_req: QueryReceiptsByPageRequest
+        @param headers: QueryReceiptsByPageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryReceiptsByPageResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkbizfinance__2__0_models.QueryReceiptsByPageShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.model_ids):
+            request.model_ids_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.model_ids, 'modelIds', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.end_time):
+            query['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.model_ids_shrink):
+            query['modelIds'] = request.model_ids_shrink
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.start_time):
+            query['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.time_filter_field):
+            query['timeFilterField'] = request.time_filter_field
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryReceiptsByPage',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/receipts',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.QueryReceiptsByPageResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_receipts_by_page(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryReceiptsByPageRequest,
+    ) -> dingtalkbizfinance__2__0_models.QueryReceiptsByPageResponse:
+        """
+        @summary 分页获取智能财务单据详情列表
+        
+        @param request: QueryReceiptsByPageRequest
+        @return: QueryReceiptsByPageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.QueryReceiptsByPageHeaders()
+        return self.query_receipts_by_page_with_options(request, headers, runtime)
+
+    async def query_receipts_by_page_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryReceiptsByPageRequest,
+    ) -> dingtalkbizfinance__2__0_models.QueryReceiptsByPageResponse:
+        """
+        @summary 分页获取智能财务单据详情列表
+        
+        @param request: QueryReceiptsByPageRequest
+        @return: QueryReceiptsByPageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.QueryReceiptsByPageHeaders()
+        return await self.query_receipts_by_page_with_options_async(request, headers, runtime)
+
     def query_supplier_by_page_with_options(
         self,
         request: dingtalkbizfinance__2__0_models.QuerySupplierByPageRequest,

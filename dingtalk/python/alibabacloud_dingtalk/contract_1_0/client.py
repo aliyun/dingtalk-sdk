@@ -646,6 +646,156 @@ class Client(OpenApiClient):
         headers = dingtalkcontract__1__0_models.CheckEsignFileHeaders()
         return await self.check_esign_file_with_options_async(request, headers, runtime)
 
+    def confirm_contract_review_with_options(
+        self,
+        tmp_req: dingtalkcontract__1__0_models.ConfirmContractReviewRequest,
+        headers: dingtalkcontract__1__0_models.ConfirmContractReviewHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.ConfirmContractReviewResponse:
+        """
+        @summary 确认发起合同审查
+        
+        @param tmp_req: ConfirmContractReviewRequest
+        @param headers: ConfirmContractReviewHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ConfirmContractReviewResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkcontract__1__0_models.ConfirmContractReviewShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.custom_rules):
+            request.custom_rules_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.custom_rules, 'custom_rules', 'json')
+        body = {}
+        if not UtilClient.is_unset(request.action):
+            body['action'] = request.action
+        if not UtilClient.is_unset(request.checklist_id):
+            body['checklist_id'] = request.checklist_id
+        if not UtilClient.is_unset(request.contract_type):
+            body['contract_type'] = request.contract_type
+        if not UtilClient.is_unset(request.custom_rules_shrink):
+            body['custom_rules'] = request.custom_rules_shrink
+        if not UtilClient.is_unset(request.review_id):
+            body['review_id'] = request.review_id
+        if not UtilClient.is_unset(request.scale):
+            body['scale'] = request.scale
+        if not UtilClient.is_unset(request.session_id):
+            body['session_id'] = request.session_id
+        if not UtilClient.is_unset(request.standpoint):
+            body['standpoint'] = request.standpoint
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ConfirmContractReview',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/api/review/confirm',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.ConfirmContractReviewResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def confirm_contract_review_with_options_async(
+        self,
+        tmp_req: dingtalkcontract__1__0_models.ConfirmContractReviewRequest,
+        headers: dingtalkcontract__1__0_models.ConfirmContractReviewHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.ConfirmContractReviewResponse:
+        """
+        @summary 确认发起合同审查
+        
+        @param tmp_req: ConfirmContractReviewRequest
+        @param headers: ConfirmContractReviewHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ConfirmContractReviewResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkcontract__1__0_models.ConfirmContractReviewShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.custom_rules):
+            request.custom_rules_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.custom_rules, 'custom_rules', 'json')
+        body = {}
+        if not UtilClient.is_unset(request.action):
+            body['action'] = request.action
+        if not UtilClient.is_unset(request.checklist_id):
+            body['checklist_id'] = request.checklist_id
+        if not UtilClient.is_unset(request.contract_type):
+            body['contract_type'] = request.contract_type
+        if not UtilClient.is_unset(request.custom_rules_shrink):
+            body['custom_rules'] = request.custom_rules_shrink
+        if not UtilClient.is_unset(request.review_id):
+            body['review_id'] = request.review_id
+        if not UtilClient.is_unset(request.scale):
+            body['scale'] = request.scale
+        if not UtilClient.is_unset(request.session_id):
+            body['session_id'] = request.session_id
+        if not UtilClient.is_unset(request.standpoint):
+            body['standpoint'] = request.standpoint
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ConfirmContractReview',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/api/review/confirm',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.ConfirmContractReviewResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def confirm_contract_review(
+        self,
+        request: dingtalkcontract__1__0_models.ConfirmContractReviewRequest,
+    ) -> dingtalkcontract__1__0_models.ConfirmContractReviewResponse:
+        """
+        @summary 确认发起合同审查
+        
+        @param request: ConfirmContractReviewRequest
+        @return: ConfirmContractReviewResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.ConfirmContractReviewHeaders()
+        return self.confirm_contract_review_with_options(request, headers, runtime)
+
+    async def confirm_contract_review_async(
+        self,
+        request: dingtalkcontract__1__0_models.ConfirmContractReviewRequest,
+    ) -> dingtalkcontract__1__0_models.ConfirmContractReviewResponse:
+        """
+        @summary 确认发起合同审查
+        
+        @param request: ConfirmContractReviewRequest
+        @return: ConfirmContractReviewResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.ConfirmContractReviewHeaders()
+        return await self.confirm_contract_review_with_options_async(request, headers, runtime)
+
     def contract_ai_review_result_notify_with_options(
         self,
         request: dingtalkcontract__1__0_models.ContractAiReviewResultNotifyRequest,
@@ -921,6 +1071,156 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcontract__1__0_models.ContractBenefitConsumeHeaders()
         return await self.contract_benefit_consume_with_options_async(request, headers, runtime)
+
+    def create_checklist_rule_with_options(
+        self,
+        checklist_id: str,
+        tmp_req: dingtalkcontract__1__0_models.CreateChecklistRuleRequest,
+        headers: dingtalkcontract__1__0_models.CreateChecklistRuleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.CreateChecklistRuleResponse:
+        """
+        @summary 在审查清单里创建自定义规则
+        
+        @param tmp_req: CreateChecklistRuleRequest
+        @param headers: CreateChecklistRuleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateChecklistRuleResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkcontract__1__0_models.CreateChecklistRuleShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.items):
+            request.items_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.items, 'items', 'json')
+        body = {}
+        if not UtilClient.is_unset(request.contract_type):
+            body['contract_type'] = request.contract_type
+        if not UtilClient.is_unset(request.corp_id):
+            body['corp_id'] = request.corp_id
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.items_shrink):
+            body['items'] = request.items_shrink
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.risk_level):
+            body['risk_level'] = request.risk_level
+        if not UtilClient.is_unset(request.standpoint):
+            body['standpoint'] = request.standpoint
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateChecklistRule',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/api/review-rules/checklists/{checklist_id}/rules',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.CreateChecklistRuleResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_checklist_rule_with_options_async(
+        self,
+        checklist_id: str,
+        tmp_req: dingtalkcontract__1__0_models.CreateChecklistRuleRequest,
+        headers: dingtalkcontract__1__0_models.CreateChecklistRuleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.CreateChecklistRuleResponse:
+        """
+        @summary 在审查清单里创建自定义规则
+        
+        @param tmp_req: CreateChecklistRuleRequest
+        @param headers: CreateChecklistRuleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateChecklistRuleResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkcontract__1__0_models.CreateChecklistRuleShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.items):
+            request.items_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.items, 'items', 'json')
+        body = {}
+        if not UtilClient.is_unset(request.contract_type):
+            body['contract_type'] = request.contract_type
+        if not UtilClient.is_unset(request.corp_id):
+            body['corp_id'] = request.corp_id
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.items_shrink):
+            body['items'] = request.items_shrink
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.risk_level):
+            body['risk_level'] = request.risk_level
+        if not UtilClient.is_unset(request.standpoint):
+            body['standpoint'] = request.standpoint
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateChecklistRule',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/api/review-rules/checklists/{checklist_id}/rules',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.CreateChecklistRuleResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_checklist_rule(
+        self,
+        checklist_id: str,
+        request: dingtalkcontract__1__0_models.CreateChecklistRuleRequest,
+    ) -> dingtalkcontract__1__0_models.CreateChecklistRuleResponse:
+        """
+        @summary 在审查清单里创建自定义规则
+        
+        @param request: CreateChecklistRuleRequest
+        @return: CreateChecklistRuleResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.CreateChecklistRuleHeaders()
+        return self.create_checklist_rule_with_options(checklist_id, request, headers, runtime)
+
+    async def create_checklist_rule_async(
+        self,
+        checklist_id: str,
+        request: dingtalkcontract__1__0_models.CreateChecklistRuleRequest,
+    ) -> dingtalkcontract__1__0_models.CreateChecklistRuleResponse:
+        """
+        @summary 在审查清单里创建自定义规则
+        
+        @param request: CreateChecklistRuleRequest
+        @return: CreateChecklistRuleResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.CreateChecklistRuleHeaders()
+        return await self.create_checklist_rule_with_options_async(checklist_id, request, headers, runtime)
 
     def create_contract_apps_compare_task_with_options(
         self,
@@ -2046,6 +2346,136 @@ class Client(OpenApiClient):
         headers = dingtalkcontract__1__0_models.CreateContractReviewTaskHeaders()
         return await self.create_contract_review_task_with_options_async(request, headers, runtime)
 
+    def create_review_checklist_with_options(
+        self,
+        tmp_req: dingtalkcontract__1__0_models.CreateReviewChecklistRequest,
+        headers: dingtalkcontract__1__0_models.CreateReviewChecklistHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.CreateReviewChecklistResponse:
+        """
+        @summary 创建自定义审查清单
+        
+        @param tmp_req: CreateReviewChecklistRequest
+        @param headers: CreateReviewChecklistHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateReviewChecklistResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkcontract__1__0_models.CreateReviewChecklistShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.rules):
+            request.rules_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.rules, 'rules', 'json')
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corp_id'] = request.corp_id
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.rules_shrink):
+            body['rules'] = request.rules_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateReviewChecklist',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/api/review-rules/checklists',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.CreateReviewChecklistResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_review_checklist_with_options_async(
+        self,
+        tmp_req: dingtalkcontract__1__0_models.CreateReviewChecklistRequest,
+        headers: dingtalkcontract__1__0_models.CreateReviewChecklistHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.CreateReviewChecklistResponse:
+        """
+        @summary 创建自定义审查清单
+        
+        @param tmp_req: CreateReviewChecklistRequest
+        @param headers: CreateReviewChecklistHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateReviewChecklistResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkcontract__1__0_models.CreateReviewChecklistShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.rules):
+            request.rules_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.rules, 'rules', 'json')
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corp_id'] = request.corp_id
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.rules_shrink):
+            body['rules'] = request.rules_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateReviewChecklist',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/api/review-rules/checklists',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.CreateReviewChecklistResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_review_checklist(
+        self,
+        request: dingtalkcontract__1__0_models.CreateReviewChecklistRequest,
+    ) -> dingtalkcontract__1__0_models.CreateReviewChecklistResponse:
+        """
+        @summary 创建自定义审查清单
+        
+        @param request: CreateReviewChecklistRequest
+        @return: CreateReviewChecklistResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.CreateReviewChecklistHeaders()
+        return self.create_review_checklist_with_options(request, headers, runtime)
+
+    async def create_review_checklist_async(
+        self,
+        request: dingtalkcontract__1__0_models.CreateReviewChecklistRequest,
+    ) -> dingtalkcontract__1__0_models.CreateReviewChecklistResponse:
+        """
+        @summary 创建自定义审查清单
+        
+        @param request: CreateReviewChecklistRequest
+        @return: CreateReviewChecklistResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.CreateReviewChecklistHeaders()
+        return await self.create_review_checklist_with_options_async(request, headers, runtime)
+
     def create_sign_flow_with_options(
         self,
         request: dingtalkcontract__1__0_models.CreateSignFlowRequest,
@@ -2301,6 +2731,210 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcontract__1__0_models.CreateTemplateProcessTaskHeaders()
         return await self.create_template_process_task_with_options_async(request, headers, runtime)
+
+    def delete_checklist_rule_with_options(
+        self,
+        rule_id: str,
+        checklist_id: str,
+        headers: dingtalkcontract__1__0_models.DeleteChecklistRuleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.DeleteChecklistRuleResponse:
+        """
+        @summary 删除审查清单里的自定义规则
+        
+        @param headers: DeleteChecklistRuleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteChecklistRuleResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='DeleteChecklistRule',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/api/review-rules/checklists/{checklist_id}/rules/{rule_id}',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.DeleteChecklistRuleResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def delete_checklist_rule_with_options_async(
+        self,
+        rule_id: str,
+        checklist_id: str,
+        headers: dingtalkcontract__1__0_models.DeleteChecklistRuleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.DeleteChecklistRuleResponse:
+        """
+        @summary 删除审查清单里的自定义规则
+        
+        @param headers: DeleteChecklistRuleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteChecklistRuleResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='DeleteChecklistRule',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/api/review-rules/checklists/{checklist_id}/rules/{rule_id}',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.DeleteChecklistRuleResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def delete_checklist_rule(
+        self,
+        rule_id: str,
+        checklist_id: str,
+    ) -> dingtalkcontract__1__0_models.DeleteChecklistRuleResponse:
+        """
+        @summary 删除审查清单里的自定义规则
+        
+        @return: DeleteChecklistRuleResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.DeleteChecklistRuleHeaders()
+        return self.delete_checklist_rule_with_options(rule_id, checklist_id, headers, runtime)
+
+    async def delete_checklist_rule_async(
+        self,
+        rule_id: str,
+        checklist_id: str,
+    ) -> dingtalkcontract__1__0_models.DeleteChecklistRuleResponse:
+        """
+        @summary 删除审查清单里的自定义规则
+        
+        @return: DeleteChecklistRuleResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.DeleteChecklistRuleHeaders()
+        return await self.delete_checklist_rule_with_options_async(rule_id, checklist_id, headers, runtime)
+
+    def delete_review_checklist_with_options(
+        self,
+        checklist_id: str,
+        headers: dingtalkcontract__1__0_models.DeleteReviewChecklistHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.DeleteReviewChecklistResponse:
+        """
+        @summary 删除自定义审查清单
+        
+        @param headers: DeleteReviewChecklistHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteReviewChecklistResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='DeleteReviewChecklist',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/api/review-rules/checklists/{checklist_id}',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.DeleteReviewChecklistResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def delete_review_checklist_with_options_async(
+        self,
+        checklist_id: str,
+        headers: dingtalkcontract__1__0_models.DeleteReviewChecklistHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.DeleteReviewChecklistResponse:
+        """
+        @summary 删除自定义审查清单
+        
+        @param headers: DeleteReviewChecklistHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteReviewChecklistResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='DeleteReviewChecklist',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/api/review-rules/checklists/{checklist_id}',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.DeleteReviewChecklistResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def delete_review_checklist(
+        self,
+        checklist_id: str,
+    ) -> dingtalkcontract__1__0_models.DeleteReviewChecklistResponse:
+        """
+        @summary 删除自定义审查清单
+        
+        @return: DeleteReviewChecklistResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.DeleteReviewChecklistHeaders()
+        return self.delete_review_checklist_with_options(checklist_id, headers, runtime)
+
+    async def delete_review_checklist_async(
+        self,
+        checklist_id: str,
+    ) -> dingtalkcontract__1__0_models.DeleteReviewChecklistResponse:
+        """
+        @summary 删除自定义审查清单
+        
+        @return: DeleteReviewChecklistResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.DeleteReviewChecklistHeaders()
+        return await self.delete_review_checklist_with_options_async(checklist_id, headers, runtime)
 
     def esign_query_approval_info_with_options(
         self,
@@ -3514,6 +4148,124 @@ class Client(OpenApiClient):
         headers = dingtalkcontract__1__0_models.GetContractReviewResultHeaders()
         return await self.get_contract_review_result_with_options_async(request, headers, runtime)
 
+    def get_contract_review_results_with_options(
+        self,
+        request: dingtalkcontract__1__0_models.GetContractReviewResultsRequest,
+        headers: dingtalkcontract__1__0_models.GetContractReviewResultsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.GetContractReviewResultsResponse:
+        """
+        @summary 获取合同的审查结果
+        
+        @param request: GetContractReviewResultsRequest
+        @param headers: GetContractReviewResultsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetContractReviewResultsResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.review_id):
+            query['review_id'] = request.review_id
+        if not UtilClient.is_unset(request.session_id):
+            query['session_id'] = request.session_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetContractReviewResults',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/api/review/result',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.GetContractReviewResultsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_contract_review_results_with_options_async(
+        self,
+        request: dingtalkcontract__1__0_models.GetContractReviewResultsRequest,
+        headers: dingtalkcontract__1__0_models.GetContractReviewResultsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.GetContractReviewResultsResponse:
+        """
+        @summary 获取合同的审查结果
+        
+        @param request: GetContractReviewResultsRequest
+        @param headers: GetContractReviewResultsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetContractReviewResultsResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.review_id):
+            query['review_id'] = request.review_id
+        if not UtilClient.is_unset(request.session_id):
+            query['session_id'] = request.session_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetContractReviewResults',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/api/review/result',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.GetContractReviewResultsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_contract_review_results(
+        self,
+        request: dingtalkcontract__1__0_models.GetContractReviewResultsRequest,
+    ) -> dingtalkcontract__1__0_models.GetContractReviewResultsResponse:
+        """
+        @summary 获取合同的审查结果
+        
+        @param request: GetContractReviewResultsRequest
+        @return: GetContractReviewResultsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.GetContractReviewResultsHeaders()
+        return self.get_contract_review_results_with_options(request, headers, runtime)
+
+    async def get_contract_review_results_async(
+        self,
+        request: dingtalkcontract__1__0_models.GetContractReviewResultsRequest,
+    ) -> dingtalkcontract__1__0_models.GetContractReviewResultsResponse:
+        """
+        @summary 获取合同的审查结果
+        
+        @param request: GetContractReviewResultsRequest
+        @return: GetContractReviewResultsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.GetContractReviewResultsHeaders()
+        return await self.get_contract_review_results_with_options_async(request, headers, runtime)
+
     def get_contract_subject_risk_result_with_options(
         self,
         request: dingtalkcontract__1__0_models.GetContractSubjectRiskResultRequest,
@@ -3757,6 +4509,198 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcontract__1__0_models.GetFileDownloadUrlHeaders()
         return await self.get_file_download_url_with_options_async(request, headers, runtime)
+
+    def get_review_checklist_with_options(
+        self,
+        checklist_id: str,
+        headers: dingtalkcontract__1__0_models.GetReviewChecklistHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.GetReviewChecklistResponse:
+        """
+        @summary 获取自定义审查清单
+        
+        @param headers: GetReviewChecklistHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetReviewChecklistResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetReviewChecklist',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/api/review-rules/checklists/{checklist_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.GetReviewChecklistResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_review_checklist_with_options_async(
+        self,
+        checklist_id: str,
+        headers: dingtalkcontract__1__0_models.GetReviewChecklistHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.GetReviewChecklistResponse:
+        """
+        @summary 获取自定义审查清单
+        
+        @param headers: GetReviewChecklistHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetReviewChecklistResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetReviewChecklist',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/api/review-rules/checklists/{checklist_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.GetReviewChecklistResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_review_checklist(
+        self,
+        checklist_id: str,
+    ) -> dingtalkcontract__1__0_models.GetReviewChecklistResponse:
+        """
+        @summary 获取自定义审查清单
+        
+        @return: GetReviewChecklistResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.GetReviewChecklistHeaders()
+        return self.get_review_checklist_with_options(checklist_id, headers, runtime)
+
+    async def get_review_checklist_async(
+        self,
+        checklist_id: str,
+    ) -> dingtalkcontract__1__0_models.GetReviewChecklistResponse:
+        """
+        @summary 获取自定义审查清单
+        
+        @return: GetReviewChecklistResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.GetReviewChecklistHeaders()
+        return await self.get_review_checklist_with_options_async(checklist_id, headers, runtime)
+
+    def list_review_checklists_with_options(
+        self,
+        headers: dingtalkcontract__1__0_models.ListReviewChecklistsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.ListReviewChecklistsResponse:
+        """
+        @summary 列出企业审查清单
+        
+        @param headers: ListReviewChecklistsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListReviewChecklistsResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='ListReviewChecklists',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/api/review-rules/checklists',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.ListReviewChecklistsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def list_review_checklists_with_options_async(
+        self,
+        headers: dingtalkcontract__1__0_models.ListReviewChecklistsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.ListReviewChecklistsResponse:
+        """
+        @summary 列出企业审查清单
+        
+        @param headers: ListReviewChecklistsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListReviewChecklistsResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='ListReviewChecklists',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/api/review-rules/checklists',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.ListReviewChecklistsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def list_review_checklists(self) -> dingtalkcontract__1__0_models.ListReviewChecklistsResponse:
+        """
+        @summary 列出企业审查清单
+        
+        @return: ListReviewChecklistsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.ListReviewChecklistsHeaders()
+        return self.list_review_checklists_with_options(headers, runtime)
+
+    async def list_review_checklists_async(self) -> dingtalkcontract__1__0_models.ListReviewChecklistsResponse:
+        """
+        @summary 列出企业审查清单
+        
+        @return: ListReviewChecklistsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.ListReviewChecklistsHeaders()
+        return await self.list_review_checklists_with_options_async(headers, runtime)
 
     def open_esign_free_trail_with_options(
         self,
@@ -6035,3 +6979,275 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcontract__1__0_models.SyncSignEventHeaders()
         return await self.sync_sign_event_with_options_async(request, headers, runtime)
+
+    def update_checklist_rule_with_options(
+        self,
+        checklist_id: str,
+        rule_id: str,
+        request: dingtalkcontract__1__0_models.UpdateChecklistRuleRequest,
+        headers: dingtalkcontract__1__0_models.UpdateChecklistRuleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.UpdateChecklistRuleResponse:
+        """
+        @summary 修改更新审查清单里的自定义规则
+        
+        @param request: UpdateChecklistRuleRequest
+        @param headers: UpdateChecklistRuleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateChecklistRuleResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corp_id'] = request.corp_id
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.risk_level):
+            body['risk_level'] = request.risk_level
+        if not UtilClient.is_unset(request.standpoint):
+            body['standpoint'] = request.standpoint
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateChecklistRule',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/api/review-rules/checklists/{checklist_id}/rules/{rule_id}',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.UpdateChecklistRuleResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_checklist_rule_with_options_async(
+        self,
+        checklist_id: str,
+        rule_id: str,
+        request: dingtalkcontract__1__0_models.UpdateChecklistRuleRequest,
+        headers: dingtalkcontract__1__0_models.UpdateChecklistRuleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.UpdateChecklistRuleResponse:
+        """
+        @summary 修改更新审查清单里的自定义规则
+        
+        @param request: UpdateChecklistRuleRequest
+        @param headers: UpdateChecklistRuleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateChecklistRuleResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corp_id'] = request.corp_id
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.risk_level):
+            body['risk_level'] = request.risk_level
+        if not UtilClient.is_unset(request.standpoint):
+            body['standpoint'] = request.standpoint
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateChecklistRule',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/api/review-rules/checklists/{checklist_id}/rules/{rule_id}',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.UpdateChecklistRuleResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_checklist_rule(
+        self,
+        checklist_id: str,
+        rule_id: str,
+        request: dingtalkcontract__1__0_models.UpdateChecklistRuleRequest,
+    ) -> dingtalkcontract__1__0_models.UpdateChecklistRuleResponse:
+        """
+        @summary 修改更新审查清单里的自定义规则
+        
+        @param request: UpdateChecklistRuleRequest
+        @return: UpdateChecklistRuleResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.UpdateChecklistRuleHeaders()
+        return self.update_checklist_rule_with_options(checklist_id, rule_id, request, headers, runtime)
+
+    async def update_checklist_rule_async(
+        self,
+        checklist_id: str,
+        rule_id: str,
+        request: dingtalkcontract__1__0_models.UpdateChecklistRuleRequest,
+    ) -> dingtalkcontract__1__0_models.UpdateChecklistRuleResponse:
+        """
+        @summary 修改更新审查清单里的自定义规则
+        
+        @param request: UpdateChecklistRuleRequest
+        @return: UpdateChecklistRuleResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.UpdateChecklistRuleHeaders()
+        return await self.update_checklist_rule_with_options_async(checklist_id, rule_id, request, headers, runtime)
+
+    def update_review_checklist_with_options(
+        self,
+        checklist_id: str,
+        tmp_req: dingtalkcontract__1__0_models.UpdateReviewChecklistRequest,
+        headers: dingtalkcontract__1__0_models.UpdateReviewChecklistHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.UpdateReviewChecklistResponse:
+        """
+        @summary 更新修改自定义审查清单
+        
+        @param tmp_req: UpdateReviewChecklistRequest
+        @param headers: UpdateReviewChecklistHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateReviewChecklistResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkcontract__1__0_models.UpdateReviewChecklistShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.rules):
+            request.rules_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.rules, 'rules', 'json')
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corp_id'] = request.corp_id
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.rules_shrink):
+            body['rules'] = request.rules_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateReviewChecklist',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/api/review-rules/checklists/{checklist_id}',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.UpdateReviewChecklistResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_review_checklist_with_options_async(
+        self,
+        checklist_id: str,
+        tmp_req: dingtalkcontract__1__0_models.UpdateReviewChecklistRequest,
+        headers: dingtalkcontract__1__0_models.UpdateReviewChecklistHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.UpdateReviewChecklistResponse:
+        """
+        @summary 更新修改自定义审查清单
+        
+        @param tmp_req: UpdateReviewChecklistRequest
+        @param headers: UpdateReviewChecklistHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateReviewChecklistResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkcontract__1__0_models.UpdateReviewChecklistShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.rules):
+            request.rules_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.rules, 'rules', 'json')
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corp_id'] = request.corp_id
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.rules_shrink):
+            body['rules'] = request.rules_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateReviewChecklist',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/api/review-rules/checklists/{checklist_id}',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.UpdateReviewChecklistResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_review_checklist(
+        self,
+        checklist_id: str,
+        request: dingtalkcontract__1__0_models.UpdateReviewChecklistRequest,
+    ) -> dingtalkcontract__1__0_models.UpdateReviewChecklistResponse:
+        """
+        @summary 更新修改自定义审查清单
+        
+        @param request: UpdateReviewChecklistRequest
+        @return: UpdateReviewChecklistResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.UpdateReviewChecklistHeaders()
+        return self.update_review_checklist_with_options(checklist_id, request, headers, runtime)
+
+    async def update_review_checklist_async(
+        self,
+        checklist_id: str,
+        request: dingtalkcontract__1__0_models.UpdateReviewChecklistRequest,
+    ) -> dingtalkcontract__1__0_models.UpdateReviewChecklistResponse:
+        """
+        @summary 更新修改自定义审查清单
+        
+        @param request: UpdateReviewChecklistRequest
+        @return: UpdateReviewChecklistResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.UpdateReviewChecklistHeaders()
+        return await self.update_review_checklist_with_options_async(checklist_id, request, headers, runtime)
