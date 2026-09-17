@@ -10,6 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0.Models
 {
     public class OpenAgoalPeriodDTO : TeaModel {
         /// <summary>
+        /// <b>Example:</b>
+        /// <para>6a5db73efa2a9558286f29e5xxx</para>
+        /// </summary>
+        [NameInMap("bizCode")]
+        [Validation(Required=false)]
+        public string BizCode { get; set; }
+
+        /// <summary>
         /// <para>This parameter is required.</para>
         /// 
         /// <b>Example:</b>

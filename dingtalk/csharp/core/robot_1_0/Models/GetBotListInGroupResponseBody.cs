@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkrobot_1_0.Models
         [Validation(Required=false)]
         public List<GetBotListInGroupResponseBodyChatbotInstanceVOList> ChatbotInstanceVOList { get; set; }
         public class GetBotListInGroupResponseBodyChatbotInstanceVOList : TeaModel {
+            [NameInMap("creatorUserId")]
+            [Validation(Required=false)]
+            public string CreatorUserId { get; set; }
+
             [NameInMap("downloadIconURL")]
             [Validation(Required=false)]
             public string DownloadIconURL { get; set; }

@@ -818,6 +818,126 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>agoal财年方案列表</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// AgoalFiscalYearschemeListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalFiscalYearschemeListResponse
+        /// </returns>
+        public AgoalFiscalYearschemeListResponse AgoalFiscalYearschemeListWithOptions(AgoalFiscalYearschemeListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AgoalFiscalYearschemeList",
+                Version = "agoal_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/agoal/period/scheme/list",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AgoalFiscalYearschemeListResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>agoal财年方案列表</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// AgoalFiscalYearschemeListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalFiscalYearschemeListResponse
+        /// </returns>
+        public async Task<AgoalFiscalYearschemeListResponse> AgoalFiscalYearschemeListWithOptionsAsync(AgoalFiscalYearschemeListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AgoalFiscalYearschemeList",
+                Version = "agoal_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/agoal/period/scheme/list",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AgoalFiscalYearschemeListResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>agoal财年方案列表</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// AgoalFiscalYearschemeListResponse
+        /// </returns>
+        public AgoalFiscalYearschemeListResponse AgoalFiscalYearschemeList()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AgoalFiscalYearschemeListHeaders headers = new AgoalFiscalYearschemeListHeaders();
+            return AgoalFiscalYearschemeListWithOptions(headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>agoal财年方案列表</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// AgoalFiscalYearschemeListResponse
+        /// </returns>
+        public async Task<AgoalFiscalYearschemeListResponse> AgoalFiscalYearschemeListAsync()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AgoalFiscalYearschemeListHeaders headers = new AgoalFiscalYearschemeListHeaders();
+            return await AgoalFiscalYearschemeListWithOptionsAsync(headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>通过指标编码批量查询指标列表</para>
         /// </summary>
         /// 

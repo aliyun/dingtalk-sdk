@@ -23,6 +23,14 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0.Models
         public class AgoalIndicatorDataPushRequestData : TeaModel {
             /// <summary>
             /// <b>Example:</b>
+            /// <para>6a5db73efa2a9558286f29e5</para>
+            /// </summary>
+            [NameInMap("bizCode")]
+            [Validation(Required=false)]
+            public string BizCode { get; set; }
+
+            /// <summary>
+            /// <b>Example:</b>
             /// <para>111</para>
             /// </summary>
             [NameInMap("data")]

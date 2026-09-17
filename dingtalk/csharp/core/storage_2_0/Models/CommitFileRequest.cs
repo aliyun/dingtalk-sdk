@@ -61,6 +61,14 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_2_0.Models
 
             /// <summary>
             /// <b>Example:</b>
+            /// <para>7e0f2ec5-1d22-4d8a-a1c7-7b608f401f17</para>
+            /// </summary>
+            [NameInMap("classificationLabelId")]
+            [Validation(Required=false)]
+            public string ClassificationLabelId { get; set; }
+
+            /// <summary>
+            /// <b>Example:</b>
             /// <para>AUTO_RENAME</para>
             /// </summary>
             [NameInMap("conflictStrategy")]

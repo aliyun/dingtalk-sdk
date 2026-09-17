@@ -5580,6 +5580,170 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>查询审批单上的附件和发票</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryAttachmentRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryAttachmentHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryAttachmentResponse
+        /// </returns>
+        public QueryAttachmentResponse QueryAttachmentWithOptions(QueryAttachmentRequest request, QueryAttachmentHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AttachmentType))
+            {
+                query["attachmentType"] = request.AttachmentType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BusinessId))
+            {
+                query["businessId"] = request.BusinessId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryAttachment",
+                Version = "bizfinance_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/bizfinance/receipts/attachment",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryAttachmentResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询审批单上的附件和发票</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryAttachmentRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryAttachmentHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryAttachmentResponse
+        /// </returns>
+        public async Task<QueryAttachmentResponse> QueryAttachmentWithOptionsAsync(QueryAttachmentRequest request, QueryAttachmentHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AttachmentType))
+            {
+                query["attachmentType"] = request.AttachmentType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BusinessId))
+            {
+                query["businessId"] = request.BusinessId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryAttachment",
+                Version = "bizfinance_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/bizfinance/receipts/attachment",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryAttachmentResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询审批单上的附件和发票</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryAttachmentRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryAttachmentResponse
+        /// </returns>
+        public QueryAttachmentResponse QueryAttachment(QueryAttachmentRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryAttachmentHeaders headers = new QueryAttachmentHeaders();
+            return QueryAttachmentWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询审批单上的附件和发票</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryAttachmentRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryAttachmentResponse
+        /// </returns>
+        public async Task<QueryAttachmentResponse> QueryAttachmentAsync(QueryAttachmentRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryAttachmentHeaders headers = new QueryAttachmentHeaders();
+            return await QueryAttachmentWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>查询银行列表</para>
         /// </summary>
         /// 
@@ -9126,9 +9290,9 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0
             {
                 query["modelIds"] = request.ModelIdsShrink;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageIndex))
             {
-                query["pageNumber"] = request.PageNumber;
+                query["pageIndex"] = request.PageIndex;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
             {
@@ -9207,9 +9371,9 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0
             {
                 query["modelIds"] = request.ModelIdsShrink;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageIndex))
             {
-                query["pageNumber"] = request.PageNumber;
+                query["pageIndex"] = request.PageIndex;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
             {

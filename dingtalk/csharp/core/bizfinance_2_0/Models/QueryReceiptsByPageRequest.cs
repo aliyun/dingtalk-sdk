@@ -17,9 +17,9 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0.Models
         [Validation(Required=false)]
         public List<string> ModelIds { get; set; }
 
-        [NameInMap("pageNumber")]
+        [NameInMap("pageIndex")]
         [Validation(Required=false)]
-        public long? PageNumber { get; set; }
+        public long? PageIndex { get; set; }
 
         [NameInMap("pageSize")]
         [Validation(Required=false)]
