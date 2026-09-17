@@ -1300,12 +1300,14 @@ class OpenAgoalOrgObjectiveListDTO(TeaModel):
 class OpenAgoalPeriodDTO(TeaModel):
     def __init__(
         self,
+        biz_code: str = None,
         end_date: int = None,
         name: str = None,
         period_id: str = None,
         period_type: str = None,
         start_date: int = None,
     ):
+        self.biz_code = biz_code
         # This parameter is required.
         self.end_date = end_date
         # This parameter is required.
@@ -1326,6 +1328,8 @@ class OpenAgoalPeriodDTO(TeaModel):
             return _map
 
         result = dict()
+        if self.biz_code is not None:
+            result['bizCode'] = self.biz_code
         if self.end_date is not None:
             result['endDate'] = self.end_date
         if self.name is not None:
@@ -1340,6 +1344,8 @@ class OpenAgoalPeriodDTO(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('bizCode') is not None:
+            self.biz_code = m.get('bizCode')
         if m.get('endDate') is not None:
             self.end_date = m.get('endDate')
         if m.get('name') is not None:
@@ -1441,6 +1447,104 @@ class OpenAgoalProgressDTO(TeaModel):
             self.progress_id = m.get('progressId')
         if m.get('updated') is not None:
             self.updated = m.get('updated')
+        return self
+
+
+class OpenFiscalYearSchemeDTOSubPeriodConfigs(TeaModel):
+    def __init__(
+        self,
+        enabled: bool = None,
+        interval_month: int = None,
+        sub_period_type: str = None,
+    ):
+        self.enabled = enabled
+        self.interval_month = interval_month
+        self.sub_period_type = sub_period_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.enabled is not None:
+            result['enabled'] = self.enabled
+        if self.interval_month is not None:
+            result['intervalMonth'] = self.interval_month
+        if self.sub_period_type is not None:
+            result['subPeriodType'] = self.sub_period_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('enabled') is not None:
+            self.enabled = m.get('enabled')
+        if m.get('intervalMonth') is not None:
+            self.interval_month = m.get('intervalMonth')
+        if m.get('subPeriodType') is not None:
+            self.sub_period_type = m.get('subPeriodType')
+        return self
+
+
+class OpenFiscalYearSchemeDTO(TeaModel):
+    def __init__(
+        self,
+        enabled: bool = None,
+        scheme_name: str = None,
+        scheme_uid: str = None,
+        start_month: int = None,
+        sub_period_configs: List[OpenFiscalYearSchemeDTOSubPeriodConfigs] = None,
+    ):
+        self.enabled = enabled
+        self.scheme_name = scheme_name
+        self.scheme_uid = scheme_uid
+        self.start_month = start_month
+        self.sub_period_configs = sub_period_configs
+
+    def validate(self):
+        if self.sub_period_configs:
+            for k in self.sub_period_configs:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.enabled is not None:
+            result['enabled'] = self.enabled
+        if self.scheme_name is not None:
+            result['schemeName'] = self.scheme_name
+        if self.scheme_uid is not None:
+            result['schemeUid'] = self.scheme_uid
+        if self.start_month is not None:
+            result['startMonth'] = self.start_month
+        result['subPeriodConfigs'] = []
+        if self.sub_period_configs is not None:
+            for k in self.sub_period_configs:
+                result['subPeriodConfigs'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('enabled') is not None:
+            self.enabled = m.get('enabled')
+        if m.get('schemeName') is not None:
+            self.scheme_name = m.get('schemeName')
+        if m.get('schemeUid') is not None:
+            self.scheme_uid = m.get('schemeUid')
+        if m.get('startMonth') is not None:
+            self.start_month = m.get('startMonth')
+        self.sub_period_configs = []
+        if m.get('subPeriodConfigs') is not None:
+            for k in m.get('subPeriodConfigs'):
+                temp_model = OpenFiscalYearSchemeDTOSubPeriodConfigs()
+                self.sub_period_configs.append(temp_model.from_map(k))
         return self
 
 
@@ -2833,6 +2937,127 @@ class AgoalFieldUpdateResponse(TeaModel):
         return self
 
 
+class AgoalFiscalYearschemeListHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AgoalFiscalYearschemeListResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: List[OpenFiscalYearSchemeDTO] = None,
+        success: bool = None,
+        trace_id: str = None,
+    ):
+        self.content = content
+        self.success = success
+        self.trace_id = trace_id
+
+    def validate(self):
+        if self.content:
+            for k in self.content:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['content'] = []
+        if self.content is not None:
+            for k in self.content:
+                result['content'].append(k.to_map() if k else None)
+        if self.success is not None:
+            result['success'] = self.success
+        if self.trace_id is not None:
+            result['traceId'] = self.trace_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.content = []
+        if m.get('content') is not None:
+            for k in m.get('content'):
+                temp_model = OpenFiscalYearSchemeDTO()
+                self.content.append(temp_model.from_map(k))
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        if m.get('traceId') is not None:
+            self.trace_id = m.get('traceId')
+        return self
+
+
+class AgoalFiscalYearschemeListResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: AgoalFiscalYearschemeListResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = AgoalFiscalYearschemeListResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class AgoalIndicatorBatchQueryHeaders(TeaModel):
     def __init__(
         self,
@@ -3083,10 +3308,12 @@ class AgoalIndicatorDataPushHeaders(TeaModel):
 class AgoalIndicatorDataPushRequestData(TeaModel):
     def __init__(
         self,
+        biz_code: str = None,
         data: str = None,
         period: str = None,
         period_type: str = None,
     ):
+        self.biz_code = biz_code
         self.data = data
         self.period = period
         self.period_type = period_type
@@ -3100,6 +3327,8 @@ class AgoalIndicatorDataPushRequestData(TeaModel):
             return _map
 
         result = dict()
+        if self.biz_code is not None:
+            result['bizCode'] = self.biz_code
         if self.data is not None:
             result['data'] = self.data
         if self.period is not None:
@@ -3110,6 +3339,8 @@ class AgoalIndicatorDataPushRequestData(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('bizCode') is not None:
+            self.biz_code = m.get('bizCode')
         if m.get('data') is not None:
             self.data = m.get('data')
         if m.get('period') is not None:

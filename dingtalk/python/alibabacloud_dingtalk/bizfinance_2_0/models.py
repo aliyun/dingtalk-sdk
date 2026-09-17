@@ -6718,6 +6718,219 @@ class QueryAlipayUserIdResponse(TeaModel):
         return self
 
 
+class QueryAttachmentHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryAttachmentRequest(TeaModel):
+    def __init__(
+        self,
+        attachment_type: str = None,
+        business_id: str = None,
+        user_id: str = None,
+    ):
+        self.attachment_type = attachment_type
+        # This parameter is required.
+        self.business_id = business_id
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.attachment_type is not None:
+            result['attachmentType'] = self.attachment_type
+        if self.business_id is not None:
+            result['businessId'] = self.business_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('attachmentType') is not None:
+            self.attachment_type = m.get('attachmentType')
+        if m.get('businessId') is not None:
+            self.business_id = m.get('businessId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class QueryAttachmentResponseBodyAttachmentList(TeaModel):
+    def __init__(
+        self,
+        attachment_type: str = None,
+        download_url: str = None,
+        file_name: str = None,
+        file_size: str = None,
+        file_type: str = None,
+        location: str = None,
+    ):
+        self.attachment_type = attachment_type
+        self.download_url = download_url
+        self.file_name = file_name
+        self.file_size = file_size
+        self.file_type = file_type
+        self.location = location
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.attachment_type is not None:
+            result['attachmentType'] = self.attachment_type
+        if self.download_url is not None:
+            result['downloadUrl'] = self.download_url
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.file_size is not None:
+            result['fileSize'] = self.file_size
+        if self.file_type is not None:
+            result['fileType'] = self.file_type
+        if self.location is not None:
+            result['location'] = self.location
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('attachmentType') is not None:
+            self.attachment_type = m.get('attachmentType')
+        if m.get('downloadUrl') is not None:
+            self.download_url = m.get('downloadUrl')
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('fileSize') is not None:
+            self.file_size = m.get('fileSize')
+        if m.get('fileType') is not None:
+            self.file_type = m.get('fileType')
+        if m.get('location') is not None:
+            self.location = m.get('location')
+        return self
+
+
+class QueryAttachmentResponseBody(TeaModel):
+    def __init__(
+        self,
+        attachment_list: List[QueryAttachmentResponseBodyAttachmentList] = None,
+        process_instance_id: str = None,
+    ):
+        self.attachment_list = attachment_list
+        self.process_instance_id = process_instance_id
+
+    def validate(self):
+        if self.attachment_list:
+            for k in self.attachment_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['attachmentList'] = []
+        if self.attachment_list is not None:
+            for k in self.attachment_list:
+                result['attachmentList'].append(k.to_map() if k else None)
+        if self.process_instance_id is not None:
+            result['processInstanceId'] = self.process_instance_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.attachment_list = []
+        if m.get('attachmentList') is not None:
+            for k in m.get('attachmentList'):
+                temp_model = QueryAttachmentResponseBodyAttachmentList()
+                self.attachment_list.append(temp_model.from_map(k))
+        if m.get('processInstanceId') is not None:
+            self.process_instance_id = m.get('processInstanceId')
+        return self
+
+
+class QueryAttachmentResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryAttachmentResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryAttachmentResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryBankHeaders(TeaModel):
     def __init__(
         self,
@@ -12095,14 +12308,14 @@ class QueryReceiptsByPageRequest(TeaModel):
         self,
         end_time: int = None,
         model_ids: List[str] = None,
-        page_number: int = None,
+        page_index: int = None,
         page_size: int = None,
         start_time: int = None,
         time_filter_field: str = None,
     ):
         self.end_time = end_time
         self.model_ids = model_ids
-        self.page_number = page_number
+        self.page_index = page_index
         self.page_size = page_size
         self.start_time = start_time
         self.time_filter_field = time_filter_field
@@ -12120,8 +12333,8 @@ class QueryReceiptsByPageRequest(TeaModel):
             result['endTime'] = self.end_time
         if self.model_ids is not None:
             result['modelIds'] = self.model_ids
-        if self.page_number is not None:
-            result['pageNumber'] = self.page_number
+        if self.page_index is not None:
+            result['pageIndex'] = self.page_index
         if self.page_size is not None:
             result['pageSize'] = self.page_size
         if self.start_time is not None:
@@ -12136,8 +12349,8 @@ class QueryReceiptsByPageRequest(TeaModel):
             self.end_time = m.get('endTime')
         if m.get('modelIds') is not None:
             self.model_ids = m.get('modelIds')
-        if m.get('pageNumber') is not None:
-            self.page_number = m.get('pageNumber')
+        if m.get('pageIndex') is not None:
+            self.page_index = m.get('pageIndex')
         if m.get('pageSize') is not None:
             self.page_size = m.get('pageSize')
         if m.get('startTime') is not None:
@@ -12152,14 +12365,14 @@ class QueryReceiptsByPageShrinkRequest(TeaModel):
         self,
         end_time: int = None,
         model_ids_shrink: str = None,
-        page_number: int = None,
+        page_index: int = None,
         page_size: int = None,
         start_time: int = None,
         time_filter_field: str = None,
     ):
         self.end_time = end_time
         self.model_ids_shrink = model_ids_shrink
-        self.page_number = page_number
+        self.page_index = page_index
         self.page_size = page_size
         self.start_time = start_time
         self.time_filter_field = time_filter_field
@@ -12177,8 +12390,8 @@ class QueryReceiptsByPageShrinkRequest(TeaModel):
             result['endTime'] = self.end_time
         if self.model_ids_shrink is not None:
             result['modelIds'] = self.model_ids_shrink
-        if self.page_number is not None:
-            result['pageNumber'] = self.page_number
+        if self.page_index is not None:
+            result['pageIndex'] = self.page_index
         if self.page_size is not None:
             result['pageSize'] = self.page_size
         if self.start_time is not None:
@@ -12193,8 +12406,8 @@ class QueryReceiptsByPageShrinkRequest(TeaModel):
             self.end_time = m.get('endTime')
         if m.get('modelIds') is not None:
             self.model_ids_shrink = m.get('modelIds')
-        if m.get('pageNumber') is not None:
-            self.page_number = m.get('pageNumber')
+        if m.get('pageIndex') is not None:
+            self.page_index = m.get('pageIndex')
         if m.get('pageSize') is not None:
             self.page_size = m.get('pageSize')
         if m.get('startTime') is not None:

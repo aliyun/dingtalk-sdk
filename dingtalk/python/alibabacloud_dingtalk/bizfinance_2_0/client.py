@@ -4112,6 +4112,128 @@ class Client(OpenApiClient):
         headers = dingtalkbizfinance__2__0_models.QueryAlipayUserIdHeaders()
         return await self.query_alipay_user_id_with_options_async(request, headers, runtime)
 
+    def query_attachment_with_options(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryAttachmentRequest,
+        headers: dingtalkbizfinance__2__0_models.QueryAttachmentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.QueryAttachmentResponse:
+        """
+        @summary 查询审批单上的附件和发票
+        
+        @param request: QueryAttachmentRequest
+        @param headers: QueryAttachmentHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryAttachmentResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.attachment_type):
+            query['attachmentType'] = request.attachment_type
+        if not UtilClient.is_unset(request.business_id):
+            query['businessId'] = request.business_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryAttachment',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/receipts/attachment',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.QueryAttachmentResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_attachment_with_options_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryAttachmentRequest,
+        headers: dingtalkbizfinance__2__0_models.QueryAttachmentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.QueryAttachmentResponse:
+        """
+        @summary 查询审批单上的附件和发票
+        
+        @param request: QueryAttachmentRequest
+        @param headers: QueryAttachmentHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryAttachmentResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.attachment_type):
+            query['attachmentType'] = request.attachment_type
+        if not UtilClient.is_unset(request.business_id):
+            query['businessId'] = request.business_id
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryAttachment',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/receipts/attachment',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.QueryAttachmentResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_attachment(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryAttachmentRequest,
+    ) -> dingtalkbizfinance__2__0_models.QueryAttachmentResponse:
+        """
+        @summary 查询审批单上的附件和发票
+        
+        @param request: QueryAttachmentRequest
+        @return: QueryAttachmentResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.QueryAttachmentHeaders()
+        return self.query_attachment_with_options(request, headers, runtime)
+
+    async def query_attachment_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryAttachmentRequest,
+    ) -> dingtalkbizfinance__2__0_models.QueryAttachmentResponse:
+        """
+        @summary 查询审批单上的附件和发票
+        
+        @param request: QueryAttachmentRequest
+        @return: QueryAttachmentResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.QueryAttachmentHeaders()
+        return await self.query_attachment_with_options_async(request, headers, runtime)
+
     def query_bank_with_options(
         self,
         headers: dingtalkbizfinance__2__0_models.QueryBankHeaders,
@@ -6798,8 +6920,8 @@ class Client(OpenApiClient):
             query['endTime'] = request.end_time
         if not UtilClient.is_unset(request.model_ids_shrink):
             query['modelIds'] = request.model_ids_shrink
-        if not UtilClient.is_unset(request.page_number):
-            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_index):
+            query['pageIndex'] = request.page_index
         if not UtilClient.is_unset(request.page_size):
             query['pageSize'] = request.page_size
         if not UtilClient.is_unset(request.start_time):
@@ -6855,8 +6977,8 @@ class Client(OpenApiClient):
             query['endTime'] = request.end_time
         if not UtilClient.is_unset(request.model_ids_shrink):
             query['modelIds'] = request.model_ids_shrink
-        if not UtilClient.is_unset(request.page_number):
-            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_index):
+            query['pageIndex'] = request.page_index
         if not UtilClient.is_unset(request.page_size):
             query['pageSize'] = request.page_size
         if not UtilClient.is_unset(request.start_time):

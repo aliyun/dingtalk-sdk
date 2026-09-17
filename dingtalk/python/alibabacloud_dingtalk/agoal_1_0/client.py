@@ -620,6 +620,98 @@ class Client(OpenApiClient):
         headers = dingtalkagoal__1__0_models.AgoalFieldUpdateHeaders()
         return await self.agoal_field_update_with_options_async(request, headers, runtime)
 
+    def agoal_fiscal_yearscheme_list_with_options(
+        self,
+        headers: dingtalkagoal__1__0_models.AgoalFiscalYearschemeListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkagoal__1__0_models.AgoalFiscalYearschemeListResponse:
+        """
+        @summary agoal财年方案列表
+        
+        @param headers: AgoalFiscalYearschemeListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AgoalFiscalYearschemeListResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='AgoalFiscalYearschemeList',
+            version='agoal_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/agoal/period/scheme/list',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkagoal__1__0_models.AgoalFiscalYearschemeListResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def agoal_fiscal_yearscheme_list_with_options_async(
+        self,
+        headers: dingtalkagoal__1__0_models.AgoalFiscalYearschemeListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkagoal__1__0_models.AgoalFiscalYearschemeListResponse:
+        """
+        @summary agoal财年方案列表
+        
+        @param headers: AgoalFiscalYearschemeListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AgoalFiscalYearschemeListResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='AgoalFiscalYearschemeList',
+            version='agoal_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/agoal/period/scheme/list',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkagoal__1__0_models.AgoalFiscalYearschemeListResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def agoal_fiscal_yearscheme_list(self) -> dingtalkagoal__1__0_models.AgoalFiscalYearschemeListResponse:
+        """
+        @summary agoal财年方案列表
+        
+        @return: AgoalFiscalYearschemeListResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkagoal__1__0_models.AgoalFiscalYearschemeListHeaders()
+        return self.agoal_fiscal_yearscheme_list_with_options(headers, runtime)
+
+    async def agoal_fiscal_yearscheme_list_async(self) -> dingtalkagoal__1__0_models.AgoalFiscalYearschemeListResponse:
+        """
+        @summary agoal财年方案列表
+        
+        @return: AgoalFiscalYearschemeListResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkagoal__1__0_models.AgoalFiscalYearschemeListHeaders()
+        return await self.agoal_fiscal_yearscheme_list_with_options_async(headers, runtime)
+
     def agoal_indicator_batch_query_with_options(
         self,
         tmp_req: dingtalkagoal__1__0_models.AgoalIndicatorBatchQueryRequest,

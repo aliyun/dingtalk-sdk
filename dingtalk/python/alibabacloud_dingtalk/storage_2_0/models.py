@@ -659,12 +659,14 @@ class CommitFileRequestOption(TeaModel):
     def __init__(
         self,
         app_properties: List[CommitFileRequestOptionAppProperties] = None,
+        classification_label_id: str = None,
         conflict_strategy: str = None,
         convert_to_online_doc: bool = None,
         convert_to_online_doc_target_document_type: str = None,
         size: int = None,
     ):
         self.app_properties = app_properties
+        self.classification_label_id = classification_label_id
         self.conflict_strategy = conflict_strategy
         self.convert_to_online_doc = convert_to_online_doc
         self.convert_to_online_doc_target_document_type = convert_to_online_doc_target_document_type
@@ -686,6 +688,8 @@ class CommitFileRequestOption(TeaModel):
         if self.app_properties is not None:
             for k in self.app_properties:
                 result['appProperties'].append(k.to_map() if k else None)
+        if self.classification_label_id is not None:
+            result['classificationLabelId'] = self.classification_label_id
         if self.conflict_strategy is not None:
             result['conflictStrategy'] = self.conflict_strategy
         if self.convert_to_online_doc is not None:
@@ -703,6 +707,8 @@ class CommitFileRequestOption(TeaModel):
             for k in m.get('appProperties'):
                 temp_model = CommitFileRequestOptionAppProperties()
                 self.app_properties.append(temp_model.from_map(k))
+        if m.get('classificationLabelId') is not None:
+            self.classification_label_id = m.get('classificationLabelId')
         if m.get('conflictStrategy') is not None:
             self.conflict_strategy = m.get('conflictStrategy')
         if m.get('convertToOnlineDoc') is not None:
