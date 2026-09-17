@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
+     * @example 6a5db73efa2a9558286f29e5
+     *
+     * @var string
+     */
+    public $bizCode;
+
+    /**
      * @example 111
      *
      * @var string
@@ -29,6 +36,7 @@ class data extends Model
      */
     public $periodType;
     protected $_name = [
+        'bizCode' => 'bizCode',
         'data' => 'data',
         'period' => 'period',
         'periodType' => 'periodType',
@@ -39,6 +47,9 @@ class data extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->bizCode) {
+            $res['bizCode'] = $this->bizCode;
+        }
         if (null !== $this->data) {
             $res['data'] = $this->data;
         }
@@ -60,6 +71,9 @@ class data extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['bizCode'])) {
+            $model->bizCode = $map['bizCode'];
+        }
         if (isset($map['data'])) {
             $model->data = $map['data'];
         }

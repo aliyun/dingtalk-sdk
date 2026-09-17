@@ -103,6 +103,9 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryAccountTradeByPageResp
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryAlipayUserIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryAlipayUserIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryAlipayUserIdResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryAttachmentHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryAttachmentRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryAttachmentResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryBankHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryBankResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryBranchHeaders;
@@ -2358,6 +2361,69 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询审批单上的附件和发票
+     *  *
+     * @param QueryAttachmentRequest $request QueryAttachmentRequest
+     * @param QueryAttachmentHeaders $headers QueryAttachmentHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryAttachmentResponse QueryAttachmentResponse
+     */
+    public function queryAttachmentWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->attachmentType)) {
+            $query['attachmentType'] = $request->attachmentType;
+        }
+        if (!Utils::isUnset($request->businessId)) {
+            $query['businessId'] = $request->businessId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'QueryAttachment',
+            'version' => 'bizfinance_2.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v2.0/bizfinance/receipts/attachment',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return QueryAttachmentResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询审批单上的附件和发票
+     *  *
+     * @param QueryAttachmentRequest $request QueryAttachmentRequest
+     *
+     * @return QueryAttachmentResponse QueryAttachmentResponse
+     */
+    public function queryAttachment($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryAttachmentHeaders([]);
+
+        return $this->queryAttachmentWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 查询银行列表
      *  *
      * @param QueryBankHeaders $headers QueryBankHeaders
@@ -3746,8 +3812,8 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->modelIdsShrink)) {
             $query['modelIds'] = $request->modelIdsShrink;
         }
-        if (!Utils::isUnset($request->pageNumber)) {
-            $query['pageNumber'] = $request->pageNumber;
+        if (!Utils::isUnset($request->pageIndex)) {
+            $query['pageIndex'] = $request->pageIndex;
         }
         if (!Utils::isUnset($request->pageSize)) {
             $query['pageSize'] = $request->pageSize;

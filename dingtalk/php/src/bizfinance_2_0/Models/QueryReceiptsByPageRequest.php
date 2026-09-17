@@ -21,7 +21,7 @@ class QueryReceiptsByPageRequest extends Model
     /**
      * @var int
      */
-    public $pageNumber;
+    public $pageIndex;
 
     /**
      * @var int
@@ -40,7 +40,7 @@ class QueryReceiptsByPageRequest extends Model
     protected $_name = [
         'endTime' => 'endTime',
         'modelIds' => 'modelIds',
-        'pageNumber' => 'pageNumber',
+        'pageIndex' => 'pageIndex',
         'pageSize' => 'pageSize',
         'startTime' => 'startTime',
         'timeFilterField' => 'timeFilterField',
@@ -57,8 +57,8 @@ class QueryReceiptsByPageRequest extends Model
         if (null !== $this->modelIds) {
             $res['modelIds'] = $this->modelIds;
         }
-        if (null !== $this->pageNumber) {
-            $res['pageNumber'] = $this->pageNumber;
+        if (null !== $this->pageIndex) {
+            $res['pageIndex'] = $this->pageIndex;
         }
         if (null !== $this->pageSize) {
             $res['pageSize'] = $this->pageSize;
@@ -89,8 +89,8 @@ class QueryReceiptsByPageRequest extends Model
                 $model->modelIds = $map['modelIds'];
             }
         }
-        if (isset($map['pageNumber'])) {
-            $model->pageNumber = $map['pageNumber'];
+        if (isset($map['pageIndex'])) {
+            $model->pageIndex = $map['pageIndex'];
         }
         if (isset($map['pageSize'])) {
             $model->pageSize = $map['pageSize'];

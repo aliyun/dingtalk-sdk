@@ -106,6 +106,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\GetContractReviewResultsHeade
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\GetContractReviewResultShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\GetContractReviewResultsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\GetContractReviewResultsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\GetContractReviewStatusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\GetContractReviewStatusRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\GetContractReviewStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\GetContractSubjectRiskResultHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\GetContractSubjectRiskResultRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\GetContractSubjectRiskResultResponse;
@@ -177,6 +180,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\UpdateReviewChecklistHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\UpdateReviewChecklistRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\UpdateReviewChecklistResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\UpdateReviewChecklistShrinkRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\UploadContractReviewByUrlHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\UploadContractReviewByUrlRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\UploadContractReviewByUrlResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\GatewayDingTalk\Client;
@@ -2440,6 +2446,66 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取合同的审查状态
+     *  *
+     * @param GetContractReviewStatusRequest $request GetContractReviewStatusRequest
+     * @param GetContractReviewStatusHeaders $headers GetContractReviewStatusHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetContractReviewStatusResponse GetContractReviewStatusResponse
+     */
+    public function getContractReviewStatusWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->reviewId)) {
+            $query['review_id'] = $request->reviewId;
+        }
+        if (!Utils::isUnset($request->sessionId)) {
+            $query['session_id'] = $request->sessionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'GetContractReviewStatus',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/api/review/status',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetContractReviewStatusResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取合同的审查状态
+     *  *
+     * @param GetContractReviewStatusRequest $request GetContractReviewStatusRequest
+     *
+     * @return GetContractReviewStatusResponse GetContractReviewStatusResponse
+     */
+    public function getContractReviewStatus($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetContractReviewStatusHeaders([]);
+
+        return $this->getContractReviewStatusWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 获取合同主体风险结果
      *  *
      * @param GetContractSubjectRiskResultRequest $request GetContractSubjectRiskResultRequest
@@ -4000,5 +4066,68 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateReviewChecklistHeaders([]);
 
         return $this->updateReviewChecklistWithOptions($checklistId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 用户上传合同文件，发起解析
+     *  *
+     * @param UploadContractReviewByUrlRequest $request UploadContractReviewByUrlRequest
+     * @param UploadContractReviewByUrlHeaders $headers UploadContractReviewByUrlHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UploadContractReviewByUrlResponse UploadContractReviewByUrlResponse
+     */
+    public function uploadContractReviewByUrlWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->fileUrl)) {
+            $body['file_url'] = $request->fileUrl;
+        }
+        if (!Utils::isUnset($request->filename)) {
+            $body['filename'] = $request->filename;
+        }
+        if (!Utils::isUnset($request->sessionId)) {
+            $body['session_id'] = $request->sessionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'UploadContractReviewByUrl',
+            'version' => 'contract_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contract/api/review/upload-by-url',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UploadContractReviewByUrlResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 用户上传合同文件，发起解析
+     *  *
+     * @param UploadContractReviewByUrlRequest $request UploadContractReviewByUrlRequest
+     *
+     * @return UploadContractReviewByUrlResponse UploadContractReviewByUrlResponse
+     */
+    public function uploadContractReviewByUrl($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UploadContractReviewByUrlHeaders([]);
+
+        return $this->uploadContractReviewByUrlWithOptions($request, $headers, $runtime);
     }
 }

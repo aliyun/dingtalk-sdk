@@ -15,6 +15,13 @@ class option extends Model
     public $appProperties;
 
     /**
+     * @example 7e0f2ec5-1d22-4d8a-a1c7-7b608f401f17
+     *
+     * @var string
+     */
+    public $classificationLabelId;
+
+    /**
      * @example AUTO_RENAME
      *
      * @var string
@@ -43,6 +50,7 @@ class option extends Model
     public $size;
     protected $_name = [
         'appProperties' => 'appProperties',
+        'classificationLabelId' => 'classificationLabelId',
         'conflictStrategy' => 'conflictStrategy',
         'convertToOnlineDoc' => 'convertToOnlineDoc',
         'convertToOnlineDocTargetDocumentType' => 'convertToOnlineDocTargetDocumentType',
@@ -62,6 +70,9 @@ class option extends Model
                     $res['appProperties'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->classificationLabelId) {
+            $res['classificationLabelId'] = $this->classificationLabelId;
         }
         if (null !== $this->conflictStrategy) {
             $res['conflictStrategy'] = $this->conflictStrategy;
@@ -95,6 +106,9 @@ class option extends Model
                     $model->appProperties[$n++] = null !== $item ? appProperties::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['classificationLabelId'])) {
+            $model->classificationLabelId = $map['classificationLabelId'];
         }
         if (isset($map['conflictStrategy'])) {
             $model->conflictStrategy = $map['conflictStrategy'];

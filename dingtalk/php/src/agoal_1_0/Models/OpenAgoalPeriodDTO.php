@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class OpenAgoalPeriodDTO extends Model
 {
     /**
+     * @example 6a5db73efa2a9558286f29e5xxx
+     *
+     * @var string
+     */
+    public $bizCode;
+
+    /**
      * @description This parameter is required.
      *
      * @example 1743436799000
@@ -53,6 +60,7 @@ class OpenAgoalPeriodDTO extends Model
      */
     public $startDate;
     protected $_name = [
+        'bizCode' => 'bizCode',
         'endDate' => 'endDate',
         'name' => 'name',
         'periodId' => 'periodId',
@@ -65,6 +73,9 @@ class OpenAgoalPeriodDTO extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->bizCode) {
+            $res['bizCode'] = $this->bizCode;
+        }
         if (null !== $this->endDate) {
             $res['endDate'] = $this->endDate;
         }
@@ -92,6 +103,9 @@ class OpenAgoalPeriodDTO extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['bizCode'])) {
+            $model->bizCode = $map['bizCode'];
+        }
         if (isset($map['endDate'])) {
             $model->endDate = $map['endDate'];
         }

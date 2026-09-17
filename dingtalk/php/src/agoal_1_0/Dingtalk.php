@@ -21,6 +21,8 @@ use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalFieldUpdateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalFieldUpdateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalFieldUpdateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalFieldUpdateShrinkRequest;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalFiscalYearschemeListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalFiscalYearschemeListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalIndicatorBatchQueryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalIndicatorBatchQueryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalIndicatorBatchQueryResponse;
@@ -408,6 +410,54 @@ class Dingtalk extends OpenApiClient
         $headers = new AgoalFieldUpdateHeaders([]);
 
         return $this->agoalFieldUpdateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary agoal财年方案列表
+     *  *
+     * @param AgoalFiscalYearschemeListHeaders $headers AgoalFiscalYearschemeListHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AgoalFiscalYearschemeListResponse AgoalFiscalYearschemeListResponse
+     */
+    public function agoalFiscalYearschemeListWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action' => 'AgoalFiscalYearschemeList',
+            'version' => 'agoal_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/agoal/period/scheme/list',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return AgoalFiscalYearschemeListResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary agoal财年方案列表
+     *  *
+     * @return AgoalFiscalYearschemeListResponse AgoalFiscalYearschemeListResponse
+     */
+    public function agoalFiscalYearschemeList()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AgoalFiscalYearschemeListHeaders([]);
+
+        return $this->agoalFiscalYearschemeListWithOptions($headers, $runtime);
     }
 
     /**

@@ -29,6 +29,9 @@ use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\ClearRobotPluginResponse;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\DeleteCustomRobotHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\DeleteCustomRobotRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\DeleteCustomRobotResponse;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\EnableCustomRobotHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\EnableCustomRobotRequest;
+use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\EnableCustomRobotResponse;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\ExecuteRobotAiSkillHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\ExecuteRobotAiSkillRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrobot_1_0\Models\ExecuteRobotAiSkillResponse;
@@ -602,6 +605,69 @@ class Dingtalk extends OpenApiClient
         $headers = new DeleteCustomRobotHeaders([]);
 
         return $this->deleteCustomRobotWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 启用自定义机器人
+     *  *
+     * @param EnableCustomRobotRequest $request EnableCustomRobotRequest
+     * @param EnableCustomRobotHeaders $headers EnableCustomRobotHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return EnableCustomRobotResponse EnableCustomRobotResponse
+     */
+    public function enableCustomRobotWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->actionType)) {
+            $body['actionType'] = $request->actionType;
+        }
+        if (!Utils::isUnset($request->sendNotification)) {
+            $body['sendNotification'] = $request->sendNotification;
+        }
+        if (!Utils::isUnset($request->token)) {
+            $body['token'] = $request->token;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'EnableCustomRobot',
+            'version' => 'robot_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/robot/custom/enable',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return EnableCustomRobotResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 启用自定义机器人
+     *  *
+     * @param EnableCustomRobotRequest $request EnableCustomRobotRequest
+     *
+     * @return EnableCustomRobotResponse EnableCustomRobotResponse
+     */
+    public function enableCustomRobot($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new EnableCustomRobotHeaders([]);
+
+        return $this->enableCustomRobotWithOptions($request, $headers, $runtime);
     }
 
     /**

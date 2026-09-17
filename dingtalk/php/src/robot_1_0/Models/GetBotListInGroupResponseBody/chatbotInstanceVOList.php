@@ -11,6 +11,11 @@ class chatbotInstanceVOList extends Model
     /**
      * @var string
      */
+    public $creatorUserId;
+
+    /**
+     * @var string
+     */
     public $downloadIconURL;
 
     /**
@@ -28,6 +33,7 @@ class chatbotInstanceVOList extends Model
      */
     public $robotCode;
     protected $_name = [
+        'creatorUserId' => 'creatorUserId',
         'downloadIconURL' => 'downloadIconURL',
         'name' => 'name',
         'openRobotType' => 'openRobotType',
@@ -39,6 +45,9 @@ class chatbotInstanceVOList extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->creatorUserId) {
+            $res['creatorUserId'] = $this->creatorUserId;
+        }
         if (null !== $this->downloadIconURL) {
             $res['downloadIconURL'] = $this->downloadIconURL;
         }
@@ -63,6 +72,9 @@ class chatbotInstanceVOList extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['creatorUserId'])) {
+            $model->creatorUserId = $map['creatorUserId'];
+        }
         if (isset($map['downloadIconURL'])) {
             $model->downloadIconURL = $map['downloadIconURL'];
         }
