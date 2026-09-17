@@ -10,8 +10,8 @@ public class QueryReceiptsByPageShrinkRequest extends TeaModel {
     @NameInMap("modelIds")
     public String modelIdsShrink;
 
-    @NameInMap("pageNumber")
-    public Long pageNumber;
+    @NameInMap("pageIndex")
+    public Long pageIndex;
 
     @NameInMap("pageSize")
     public Long pageSize;
@@ -43,12 +43,12 @@ public class QueryReceiptsByPageShrinkRequest extends TeaModel {
         return this.modelIdsShrink;
     }
 
-    public QueryReceiptsByPageShrinkRequest setPageNumber(Long pageNumber) {
-        this.pageNumber = pageNumber;
+    public QueryReceiptsByPageShrinkRequest setPageIndex(Long pageIndex) {
+        this.pageIndex = pageIndex;
         return this;
     }
-    public Long getPageNumber() {
-        return this.pageNumber;
+    public Long getPageIndex() {
+        return this.pageIndex;
     }
 
     public QueryReceiptsByPageShrinkRequest setPageSize(Long pageSize) {

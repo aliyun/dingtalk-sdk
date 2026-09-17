@@ -324,6 +324,52 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>agoal财年方案列表</p>
+     * 
+     * @param headers AgoalFiscalYearschemeListHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AgoalFiscalYearschemeListResponse
+     */
+    public AgoalFiscalYearschemeListResponse agoalFiscalYearschemeListWithOptions(AgoalFiscalYearschemeListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AgoalFiscalYearschemeList"),
+            new TeaPair("version", "agoal_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/agoal/period/scheme/list"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AgoalFiscalYearschemeListResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>agoal财年方案列表</p>
+     * @return AgoalFiscalYearschemeListResponse
+     */
+    public AgoalFiscalYearschemeListResponse agoalFiscalYearschemeList() throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AgoalFiscalYearschemeListHeaders headers = new AgoalFiscalYearschemeListHeaders();
+        return this.agoalFiscalYearschemeListWithOptions(headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>通过指标编码批量查询指标列表</p>
      * 
      * @param tmpReq AgoalIndicatorBatchQueryRequest

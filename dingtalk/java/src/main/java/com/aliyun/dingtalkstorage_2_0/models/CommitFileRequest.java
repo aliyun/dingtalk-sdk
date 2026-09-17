@@ -136,6 +136,13 @@ public class CommitFileRequest extends TeaModel {
 
         /**
          * <strong>example:</strong>
+         * <p>7e0f2ec5-1d22-4d8a-a1c7-7b608f401f17</p>
+         */
+        @NameInMap("classificationLabelId")
+        public String classificationLabelId;
+
+        /**
+         * <strong>example:</strong>
          * <p>AUTO_RENAME</p>
          */
         @NameInMap("conflictStrategy")
@@ -173,6 +180,14 @@ public class CommitFileRequest extends TeaModel {
         }
         public java.util.List<CommitFileRequestOptionAppProperties> getAppProperties() {
             return this.appProperties;
+        }
+
+        public CommitFileRequestOption setClassificationLabelId(String classificationLabelId) {
+            this.classificationLabelId = classificationLabelId;
+            return this;
+        }
+        public String getClassificationLabelId() {
+            return this.classificationLabelId;
         }
 
         public CommitFileRequestOption setConflictStrategy(String conflictStrategy) {

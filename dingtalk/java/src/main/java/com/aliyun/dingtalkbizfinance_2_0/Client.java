@@ -2205,6 +2205,70 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>查询审批单上的附件和发票</p>
+     * 
+     * @param request QueryAttachmentRequest
+     * @param headers QueryAttachmentHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryAttachmentResponse
+     */
+    public QueryAttachmentResponse queryAttachmentWithOptions(QueryAttachmentRequest request, QueryAttachmentHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.attachmentType)) {
+            query.put("attachmentType", request.attachmentType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.businessId)) {
+            query.put("businessId", request.businessId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryAttachment"),
+            new TeaPair("version", "bizfinance_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/bizfinance/receipts/attachment"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryAttachmentResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询审批单上的附件和发票</p>
+     * 
+     * @param request QueryAttachmentRequest
+     * @return QueryAttachmentResponse
+     */
+    public QueryAttachmentResponse queryAttachment(QueryAttachmentRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryAttachmentHeaders headers = new QueryAttachmentHeaders();
+        return this.queryAttachmentWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>查询银行列表</p>
      * 
      * @param headers QueryBankHeaders
@@ -3587,8 +3651,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("modelIds", request.modelIdsShrink);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {
-            query.put("pageNumber", request.pageNumber);
+        if (!com.aliyun.teautil.Common.isUnset(request.pageIndex)) {
+            query.put("pageIndex", request.pageIndex);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {

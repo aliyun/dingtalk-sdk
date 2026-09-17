@@ -38,6 +38,13 @@ public class AgoalIndicatorDataPushRequest extends TeaModel {
     public static class AgoalIndicatorDataPushRequestData extends TeaModel {
         /**
          * <strong>example:</strong>
+         * <p>6a5db73efa2a9558286f29e5</p>
+         */
+        @NameInMap("bizCode")
+        public String bizCode;
+
+        /**
+         * <strong>example:</strong>
          * <p>111</p>
          */
         @NameInMap("data")
@@ -60,6 +67,14 @@ public class AgoalIndicatorDataPushRequest extends TeaModel {
         public static AgoalIndicatorDataPushRequestData build(java.util.Map<String, ?> map) throws Exception {
             AgoalIndicatorDataPushRequestData self = new AgoalIndicatorDataPushRequestData();
             return TeaModel.build(map, self);
+        }
+
+        public AgoalIndicatorDataPushRequestData setBizCode(String bizCode) {
+            this.bizCode = bizCode;
+            return this;
+        }
+        public String getBizCode() {
+            return this.bizCode;
         }
 
         public AgoalIndicatorDataPushRequestData setData(String data) {

@@ -5,6 +5,13 @@ import com.aliyun.tea.*;
 
 public class OpenAgoalPeriodDTO extends TeaModel {
     /**
+     * <strong>example:</strong>
+     * <p>6a5db73efa2a9558286f29e5xxx</p>
+     */
+    @NameInMap("bizCode")
+    public String bizCode;
+
+    /**
      * <p>This parameter is required.</p>
      * 
      * <strong>example:</strong>
@@ -52,6 +59,14 @@ public class OpenAgoalPeriodDTO extends TeaModel {
     public static OpenAgoalPeriodDTO build(java.util.Map<String, ?> map) throws Exception {
         OpenAgoalPeriodDTO self = new OpenAgoalPeriodDTO();
         return TeaModel.build(map, self);
+    }
+
+    public OpenAgoalPeriodDTO setBizCode(String bizCode) {
+        this.bizCode = bizCode;
+        return this;
+    }
+    public String getBizCode() {
+        return this.bizCode;
     }
 
     public OpenAgoalPeriodDTO setEndDate(Long endDate) {

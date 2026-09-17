@@ -2337,6 +2337,66 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>获取合同的审查状态</p>
+     * 
+     * @param request GetContractReviewStatusRequest
+     * @param headers GetContractReviewStatusHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetContractReviewStatusResponse
+     */
+    public GetContractReviewStatusResponse getContractReviewStatusWithOptions(GetContractReviewStatusRequest request, GetContractReviewStatusHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.reviewId)) {
+            query.put("review_id", request.reviewId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.sessionId)) {
+            query.put("session_id", request.sessionId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetContractReviewStatus"),
+            new TeaPair("version", "contract_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contract/api/review/status"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetContractReviewStatusResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取合同的审查状态</p>
+     * 
+     * @param request GetContractReviewStatusRequest
+     * @return GetContractReviewStatusResponse
+     */
+    public GetContractReviewStatusResponse getContractReviewStatus(GetContractReviewStatusRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetContractReviewStatusHeaders headers = new GetContractReviewStatusHeaders();
+        return this.getContractReviewStatusWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>获取合同主体风险结果</p>
      * 
      * @param request GetContractSubjectRiskResultRequest
@@ -3928,5 +3988,69 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateReviewChecklistHeaders headers = new UpdateReviewChecklistHeaders();
         return this.updateReviewChecklistWithOptions(checklistId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>用户上传合同文件，发起解析</p>
+     * 
+     * @param request UploadContractReviewByUrlRequest
+     * @param headers UploadContractReviewByUrlHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UploadContractReviewByUrlResponse
+     */
+    public UploadContractReviewByUrlResponse uploadContractReviewByUrlWithOptions(UploadContractReviewByUrlRequest request, UploadContractReviewByUrlHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.fileUrl)) {
+            body.put("file_url", request.fileUrl);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.filename)) {
+            body.put("filename", request.filename);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.sessionId)) {
+            body.put("session_id", request.sessionId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UploadContractReviewByUrl"),
+            new TeaPair("version", "contract_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contract/api/review/upload-by-url"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UploadContractReviewByUrlResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>用户上传合同文件，发起解析</p>
+     * 
+     * @param request UploadContractReviewByUrlRequest
+     * @return UploadContractReviewByUrlResponse
+     */
+    public UploadContractReviewByUrlResponse uploadContractReviewByUrl(UploadContractReviewByUrlRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UploadContractReviewByUrlHeaders headers = new UploadContractReviewByUrlHeaders();
+        return this.uploadContractReviewByUrlWithOptions(request, headers, runtime);
     }
 }

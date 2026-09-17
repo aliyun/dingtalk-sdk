@@ -10,8 +10,8 @@ public class QueryReceiptsByPageRequest extends TeaModel {
     @NameInMap("modelIds")
     public java.util.List<String> modelIds;
 
-    @NameInMap("pageNumber")
-    public Long pageNumber;
+    @NameInMap("pageIndex")
+    public Long pageIndex;
 
     @NameInMap("pageSize")
     public Long pageSize;
@@ -43,12 +43,12 @@ public class QueryReceiptsByPageRequest extends TeaModel {
         return this.modelIds;
     }
 
-    public QueryReceiptsByPageRequest setPageNumber(Long pageNumber) {
-        this.pageNumber = pageNumber;
+    public QueryReceiptsByPageRequest setPageIndex(Long pageIndex) {
+        this.pageIndex = pageIndex;
         return this;
     }
-    public Long getPageNumber() {
-        return this.pageNumber;
+    public Long getPageIndex() {
+        return this.pageIndex;
     }
 
     public QueryReceiptsByPageRequest setPageSize(Long pageSize) {

@@ -21,6 +21,9 @@ public class GetBotListInGroupResponseBody extends TeaModel {
     }
 
     public static class GetBotListInGroupResponseBodyChatbotInstanceVOList extends TeaModel {
+        @NameInMap("creatorUserId")
+        public String creatorUserId;
+
         @NameInMap("downloadIconURL")
         public String downloadIconURL;
 
@@ -36,6 +39,14 @@ public class GetBotListInGroupResponseBody extends TeaModel {
         public static GetBotListInGroupResponseBodyChatbotInstanceVOList build(java.util.Map<String, ?> map) throws Exception {
             GetBotListInGroupResponseBodyChatbotInstanceVOList self = new GetBotListInGroupResponseBodyChatbotInstanceVOList();
             return TeaModel.build(map, self);
+        }
+
+        public GetBotListInGroupResponseBodyChatbotInstanceVOList setCreatorUserId(String creatorUserId) {
+            this.creatorUserId = creatorUserId;
+            return this;
+        }
+        public String getCreatorUserId() {
+            return this.creatorUserId;
         }
 
         public GetBotListInGroupResponseBodyChatbotInstanceVOList setDownloadIconURL(String downloadIconURL) {
