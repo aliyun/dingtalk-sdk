@@ -1,0 +1,56 @@
+// This file is auto-generated, don't edit it. Thanks.
+package com.aliyun.domain20180129.models;
+
+import com.aliyun.tea.*;
+
+public class QueryIntlFixedPriceOrderListRequest extends TeaModel {
+    @NameInMap("BizId")
+    public String bizId;
+
+    @NameInMap("CurrentPage")
+    public Long currentPage;
+
+    @NameInMap("PageSize")
+    public Long pageSize;
+
+    @NameInMap("Status")
+    public Long status;
+
+    public static QueryIntlFixedPriceOrderListRequest build(java.util.Map<String, ?> map) throws Exception {
+        QueryIntlFixedPriceOrderListRequest self = new QueryIntlFixedPriceOrderListRequest();
+        return TeaModel.build(map, self);
+    }
+
+    public QueryIntlFixedPriceOrderListRequest setBizId(String bizId) {
+        this.bizId = bizId;
+        return this;
+    }
+    public String getBizId() {
+        return this.bizId;
+    }
+
+    public QueryIntlFixedPriceOrderListRequest setCurrentPage(Long currentPage) {
+        this.currentPage = currentPage;
+        return this;
+    }
+    public Long getCurrentPage() {
+        return this.currentPage;
+    }
+
+    public QueryIntlFixedPriceOrderListRequest setPageSize(Long pageSize) {
+        this.pageSize = pageSize;
+        return this;
+    }
+    public Long getPageSize() {
+        return this.pageSize;
+    }
+
+    public QueryIntlFixedPriceOrderListRequest setStatus(Long status) {
+        this.status = status;
+        return this;
+    }
+    public Long getStatus() {
+        return this.status;
+    }
+
+}
