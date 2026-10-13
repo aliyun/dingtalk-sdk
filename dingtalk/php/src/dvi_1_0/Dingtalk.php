@@ -572,6 +572,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->name)) {
             $body['name'] = $request->name;
         }
+        if (!Utils::isUnset($request->parentTeamCode)) {
+            $body['parentTeamCode'] = $request->parentTeamCode;
+        }
         if (!Utils::isUnset($request->sceneCodes)) {
             $body['sceneCodes'] = $request->sceneCodes;
         }
@@ -3221,6 +3224,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->name)) {
             $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->parentTeamCode)) {
+            $body['parentTeamCode'] = $request->parentTeamCode;
         }
         if (!Utils::isUnset($request->sceneCodes)) {
             $body['sceneCodes'] = $request->sceneCodes;

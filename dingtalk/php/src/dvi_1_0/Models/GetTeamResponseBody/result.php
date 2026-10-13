@@ -31,6 +31,11 @@ class result extends Model
     public $name;
 
     /**
+     * @var string
+     */
+    public $parentTeamCode;
+
+    /**
      * @var sceneList[]
      */
     public $sceneList;
@@ -54,6 +59,7 @@ class result extends Model
         'dialectCode' => 'dialectCode',
         'dialectName' => 'dialectName',
         'name' => 'name',
+        'parentTeamCode' => 'parentTeamCode',
         'sceneList' => 'sceneList',
         'solutionCode' => 'solutionCode',
         'solutionName' => 'solutionName',
@@ -76,6 +82,9 @@ class result extends Model
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
+        }
+        if (null !== $this->parentTeamCode) {
+            $res['parentTeamCode'] = $this->parentTeamCode;
         }
         if (null !== $this->sceneList) {
             $res['sceneList'] = [];
@@ -124,6 +133,9 @@ class result extends Model
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];
+        }
+        if (isset($map['parentTeamCode'])) {
+            $model->parentTeamCode = $map['parentTeamCode'];
         }
         if (isset($map['sceneList'])) {
             if (!empty($map['sceneList'])) {

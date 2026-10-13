@@ -19,6 +19,11 @@ class UpdateTeamRequest extends Model
     public $name;
 
     /**
+     * @var string
+     */
+    public $parentTeamCode;
+
+    /**
      * @var string[]
      */
     public $sceneCodes;
@@ -32,6 +37,7 @@ class UpdateTeamRequest extends Model
     protected $_name = [
         'dialectCode' => 'dialectCode',
         'name' => 'name',
+        'parentTeamCode' => 'parentTeamCode',
         'sceneCodes' => 'sceneCodes',
         'teamCode' => 'teamCode',
     ];
@@ -46,6 +52,9 @@ class UpdateTeamRequest extends Model
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
+        }
+        if (null !== $this->parentTeamCode) {
+            $res['parentTeamCode'] = $this->parentTeamCode;
         }
         if (null !== $this->sceneCodes) {
             $res['sceneCodes'] = $this->sceneCodes;
@@ -70,6 +79,9 @@ class UpdateTeamRequest extends Model
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];
+        }
+        if (isset($map['parentTeamCode'])) {
+            $model->parentTeamCode = $map['parentTeamCode'];
         }
         if (isset($map['sceneCodes'])) {
             if (!empty($map['sceneCodes'])) {

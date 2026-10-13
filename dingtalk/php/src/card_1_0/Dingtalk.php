@@ -17,6 +17,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CloseTopCardResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CopyTemplateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CopyTemplateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CopyTemplateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverAICardHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverAICardRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverAICardResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverResponse;
@@ -62,6 +65,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\SaveTemplateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\StreamingUpdateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\StreamingUpdateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\StreamingUpdateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\UpdateAICardHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\UpdateAICardRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\UpdateAICardResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\UpdateCardHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\UpdateCardRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\UpdateCardResponse;
@@ -464,6 +470,114 @@ class Dingtalk extends OpenApiClient
         $headers = new CreateAndDeliverHeaders([]);
 
         return $this->createAndDeliverWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 创建并投放 AI 卡片
+     *  *
+     * @param CreateAndDeliverAICardRequest $request CreateAndDeliverAICardRequest
+     * @param CreateAndDeliverAICardHeaders $headers CreateAndDeliverAICardHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateAndDeliverAICardResponse CreateAndDeliverAICardResponse
+     */
+    public function createAndDeliverAICardWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->a2uiAnnotations)) {
+            $body['a2uiAnnotations'] = $request->a2uiAnnotations;
+        }
+        if (!Utils::isUnset($request->a2uiMessages)) {
+            $body['a2uiMessages'] = $request->a2uiMessages;
+        }
+        if (!Utils::isUnset($request->atAll)) {
+            $body['atAll'] = $request->atAll;
+        }
+        if (!Utils::isUnset($request->bizContext)) {
+            $body['bizContext'] = $request->bizContext;
+        }
+        if (!Utils::isUnset($request->callbackRouteKey)) {
+            $body['callbackRouteKey'] = $request->callbackRouteKey;
+        }
+        if (!Utils::isUnset($request->callbackType)) {
+            $body['callbackType'] = $request->callbackType;
+        }
+        if (!Utils::isUnset($request->cardAtUserIds)) {
+            $body['cardAtUserIds'] = $request->cardAtUserIds;
+        }
+        if (!Utils::isUnset($request->flowStatus)) {
+            $body['flowStatus'] = $request->flowStatus;
+        }
+        if (!Utils::isUnset($request->imGroupOpenDeliverModel)) {
+            $body['imGroupOpenDeliverModel'] = $request->imGroupOpenDeliverModel;
+        }
+        if (!Utils::isUnset($request->imGroupOpenSpaceModel)) {
+            $body['imGroupOpenSpaceModel'] = $request->imGroupOpenSpaceModel;
+        }
+        if (!Utils::isUnset($request->imRobotOpenDeliverModel)) {
+            $body['imRobotOpenDeliverModel'] = $request->imRobotOpenDeliverModel;
+        }
+        if (!Utils::isUnset($request->imRobotOpenSpaceModel)) {
+            $body['imRobotOpenSpaceModel'] = $request->imRobotOpenSpaceModel;
+        }
+        if (!Utils::isUnset($request->openSpaceId)) {
+            $body['openSpaceId'] = $request->openSpaceId;
+        }
+        if (!Utils::isUnset($request->outTrackId)) {
+            $body['outTrackId'] = $request->outTrackId;
+        }
+        if (!Utils::isUnset($request->protocolVersion)) {
+            $body['protocolVersion'] = $request->protocolVersion;
+        }
+        if (!Utils::isUnset($request->summary)) {
+            $body['summary'] = $request->summary;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->userIdType)) {
+            $body['userIdType'] = $request->userIdType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'CreateAndDeliverAICard',
+            'version' => 'card_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/card/ai/instances/createAndDeliver',
+            'method' => 'POST',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return CreateAndDeliverAICardResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建并投放 AI 卡片
+     *  *
+     * @param CreateAndDeliverAICardRequest $request CreateAndDeliverAICardRequest
+     *
+     * @return CreateAndDeliverAICardResponse CreateAndDeliverAICardResponse
+     */
+    public function createAndDeliverAICard($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateAndDeliverAICardHeaders([]);
+
+        return $this->createAndDeliverAICardWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -1514,6 +1628,75 @@ class Dingtalk extends OpenApiClient
         $headers = new StreamingUpdateHeaders([]);
 
         return $this->streamingUpdateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更新 AI 卡片
+     *  *
+     * @param UpdateAICardRequest $request UpdateAICardRequest
+     * @param UpdateAICardHeaders $headers UpdateAICardHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateAICardResponse UpdateAICardResponse
+     */
+    public function updateAICardWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->a2uiAnnotations)) {
+            $body['a2uiAnnotations'] = $request->a2uiAnnotations;
+        }
+        if (!Utils::isUnset($request->a2uiMessages)) {
+            $body['a2uiMessages'] = $request->a2uiMessages;
+        }
+        if (!Utils::isUnset($request->flowStatus)) {
+            $body['flowStatus'] = $request->flowStatus;
+        }
+        if (!Utils::isUnset($request->outTrackId)) {
+            $body['outTrackId'] = $request->outTrackId;
+        }
+        if (!Utils::isUnset($request->outUpdateId)) {
+            $body['outUpdateId'] = $request->outUpdateId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body' => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action' => 'UpdateAICard',
+            'version' => 'card_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/card/ai/instances/update',
+            'method' => 'PUT',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return UpdateAICardResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新 AI 卡片
+     *  *
+     * @param UpdateAICardRequest $request UpdateAICardRequest
+     *
+     * @return UpdateAICardResponse UpdateAICardResponse
+     */
+    public function updateAICard($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateAICardHeaders([]);
+
+        return $this->updateAICardWithOptions($request, $headers, $runtime);
     }
 
     /**

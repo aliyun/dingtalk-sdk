@@ -24,10 +24,16 @@ class QueryUserMinutesPermissionResponseBody extends Model
      * @var string
      */
     public $roleType;
+
+    /**
+     * @var int
+     */
+    public $shareScopeVersion;
     protected $_name = [
         'hasPermission' => 'hasPermission',
         'roleSubResourceIds' => 'roleSubResourceIds',
         'roleType' => 'roleType',
+        'shareScopeVersion' => 'shareScopeVersion',
     ];
 
     public function validate() {}
@@ -43,6 +49,9 @@ class QueryUserMinutesPermissionResponseBody extends Model
         }
         if (null !== $this->roleType) {
             $res['roleType'] = $this->roleType;
+        }
+        if (null !== $this->shareScopeVersion) {
+            $res['shareScopeVersion'] = $this->shareScopeVersion;
         }
 
         return $res;
@@ -66,6 +75,9 @@ class QueryUserMinutesPermissionResponseBody extends Model
         }
         if (isset($map['roleType'])) {
             $model->roleType = $map['roleType'];
+        }
+        if (isset($map['shareScopeVersion'])) {
+            $model->shareScopeVersion = $map['shareScopeVersion'];
         }
 
         return $model;

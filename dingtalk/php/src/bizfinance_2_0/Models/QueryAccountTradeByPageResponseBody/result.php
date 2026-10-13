@@ -17,6 +17,11 @@ class result extends Model
     /**
      * @var string
      */
+    public $comments;
+
+    /**
+     * @var string
+     */
     public $detailId;
 
     /**
@@ -57,6 +62,11 @@ class result extends Model
     /**
      * @var string
      */
+    public $summary;
+
+    /**
+     * @var string
+     */
     public $tradeAmount;
 
     /**
@@ -80,6 +90,7 @@ class result extends Model
     public $usage;
     protected $_name = [
         'balance' => 'balance',
+        'comments' => 'comments',
         'detailId' => 'detailId',
         'instanceId' => 'instanceId',
         'instanceTitle' => 'instanceTitle',
@@ -88,6 +99,7 @@ class result extends Model
         'otherAccountNo' => 'otherAccountNo',
         'receiptFile' => 'receiptFile',
         'remark' => 'remark',
+        'summary' => 'summary',
         'tradeAmount' => 'tradeAmount',
         'tradeNo' => 'tradeNo',
         'tradeTime' => 'tradeTime',
@@ -102,6 +114,9 @@ class result extends Model
         $res = [];
         if (null !== $this->balance) {
             $res['balance'] = $this->balance;
+        }
+        if (null !== $this->comments) {
+            $res['comments'] = $this->comments;
         }
         if (null !== $this->detailId) {
             $res['detailId'] = $this->detailId;
@@ -126,6 +141,9 @@ class result extends Model
         }
         if (null !== $this->remark) {
             $res['remark'] = $this->remark;
+        }
+        if (null !== $this->summary) {
+            $res['summary'] = $this->summary;
         }
         if (null !== $this->tradeAmount) {
             $res['tradeAmount'] = $this->tradeAmount;
@@ -157,6 +175,9 @@ class result extends Model
         if (isset($map['balance'])) {
             $model->balance = $map['balance'];
         }
+        if (isset($map['comments'])) {
+            $model->comments = $map['comments'];
+        }
         if (isset($map['detailId'])) {
             $model->detailId = $map['detailId'];
         }
@@ -180,6 +201,9 @@ class result extends Model
         }
         if (isset($map['remark'])) {
             $model->remark = $map['remark'];
+        }
+        if (isset($map['summary'])) {
+            $model->summary = $map['summary'];
         }
         if (isset($map['tradeAmount'])) {
             $model->tradeAmount = $map['tradeAmount'];

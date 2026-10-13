@@ -9,6 +9,11 @@ use AlibabaCloud\Tea\Model;
 class MarkExternalAuthControlledSheetRequest extends Model
 {
     /**
+     * @var string
+     */
+    public $dataLevel;
+
+    /**
      * @description This parameter is required.
      *
      * @var string
@@ -34,6 +39,7 @@ class MarkExternalAuthControlledSheetRequest extends Model
      */
     public $operatorId;
     protected $_name = [
+        'dataLevel' => 'dataLevel',
         'externalAuthType' => 'externalAuthType',
         'externalConfig' => 'externalConfig',
         'clientToken' => 'clientToken',
@@ -45,6 +51,9 @@ class MarkExternalAuthControlledSheetRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->dataLevel) {
+            $res['dataLevel'] = $this->dataLevel;
+        }
         if (null !== $this->externalAuthType) {
             $res['externalAuthType'] = $this->externalAuthType;
         }
@@ -69,6 +78,9 @@ class MarkExternalAuthControlledSheetRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['dataLevel'])) {
+            $model->dataLevel = $map['dataLevel'];
+        }
         if (isset($map['externalAuthType'])) {
             $model->externalAuthType = $map['externalAuthType'];
         }

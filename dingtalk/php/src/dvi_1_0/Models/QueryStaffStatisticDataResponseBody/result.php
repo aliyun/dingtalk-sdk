@@ -40,6 +40,11 @@ class result extends Model
     public $serviceRecordCount;
 
     /**
+     * @var int
+     */
+    public $serviceRecordWithInvalidCount;
+
+    /**
      * @var string
      */
     public $staffName;
@@ -70,6 +75,7 @@ class result extends Model
         'qualityInspectL1Data' => 'qualityInspectL1Data',
         'saleSopPercentage' => 'saleSopPercentage',
         'serviceRecordCount' => 'serviceRecordCount',
+        'serviceRecordWithInvalidCount' => 'serviceRecordWithInvalidCount',
         'staffName' => 'staffName',
         'teamCode' => 'teamCode',
         'teamName' => 'teamName',
@@ -105,6 +111,9 @@ class result extends Model
         }
         if (null !== $this->serviceRecordCount) {
             $res['serviceRecordCount'] = $this->serviceRecordCount;
+        }
+        if (null !== $this->serviceRecordWithInvalidCount) {
+            $res['serviceRecordWithInvalidCount'] = $this->serviceRecordWithInvalidCount;
         }
         if (null !== $this->staffName) {
             $res['staffName'] = $this->staffName;
@@ -156,6 +165,9 @@ class result extends Model
         }
         if (isset($map['serviceRecordCount'])) {
             $model->serviceRecordCount = $map['serviceRecordCount'];
+        }
+        if (isset($map['serviceRecordWithInvalidCount'])) {
+            $model->serviceRecordWithInvalidCount = $map['serviceRecordWithInvalidCount'];
         }
         if (isset($map['staffName'])) {
             $model->staffName = $map['staffName'];

@@ -26,6 +26,11 @@ class CreateTeamRequest extends Model
     public $name;
 
     /**
+     * @var string
+     */
+    public $parentTeamCode;
+
+    /**
      * @description This parameter is required.
      *
      * @var string[]
@@ -47,6 +52,7 @@ class CreateTeamRequest extends Model
         'adminUserIds' => 'adminUserIds',
         'dialectCode' => 'dialectCode',
         'name' => 'name',
+        'parentTeamCode' => 'parentTeamCode',
         'sceneCodes' => 'sceneCodes',
         'solutionCode' => 'solutionCode',
         'userIds' => 'userIds',
@@ -65,6 +71,9 @@ class CreateTeamRequest extends Model
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
+        }
+        if (null !== $this->parentTeamCode) {
+            $res['parentTeamCode'] = $this->parentTeamCode;
         }
         if (null !== $this->sceneCodes) {
             $res['sceneCodes'] = $this->sceneCodes;
@@ -97,6 +106,9 @@ class CreateTeamRequest extends Model
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];
+        }
+        if (isset($map['parentTeamCode'])) {
+            $model->parentTeamCode = $map['parentTeamCode'];
         }
         if (isset($map['sceneCodes'])) {
             if (!empty($map['sceneCodes'])) {

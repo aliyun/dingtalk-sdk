@@ -1419,7 +1419,7 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 获取应用可见范围
+     * @summary 获取企业应用的可使用范围
      *  *
      * @param string                  $agentId
      * @param GetMicroAppScopeHeaders $headers GetMicroAppScopeHeaders
@@ -1455,7 +1455,7 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 获取应用可见范围
+     * @summary 获取企业应用的可使用范围
      *  *
      * @param string $agentId
      *
@@ -2865,7 +2865,7 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 设置应用可见范围
+     * @summary 设置企业应用的可使用范围
      *  *
      * @param string                  $agentId
      * @param SetMicroAppScopeRequest $request SetMicroAppScopeRequest
@@ -2926,7 +2926,7 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 设置应用可见范围
+     * @summary 设置企业应用的可使用范围
      *  *
      * @param string                  $agentId
      * @param SetMicroAppScopeRequest $request SetMicroAppScopeRequest

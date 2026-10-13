@@ -42,6 +42,11 @@ class UpdatePermissionResponseBody extends Model
      * @var shareScopeResult
      */
     public $shareScopeResult;
+
+    /**
+     * @var int
+     */
+    public $shareScopeVersion;
     protected $_name = [
         'allSucceeded' => 'allSucceeded',
         'failMemberInfoList' => 'failMemberInfoList',
@@ -49,6 +54,7 @@ class UpdatePermissionResponseBody extends Model
         'modelVersion' => 'modelVersion',
         'partialSuccess' => 'partialSuccess',
         'shareScopeResult' => 'shareScopeResult',
+        'shareScopeVersion' => 'shareScopeVersion',
     ];
 
     public function validate() {}
@@ -85,6 +91,9 @@ class UpdatePermissionResponseBody extends Model
         }
         if (null !== $this->shareScopeResult) {
             $res['shareScopeResult'] = null !== $this->shareScopeResult ? $this->shareScopeResult->toMap() : null;
+        }
+        if (null !== $this->shareScopeVersion) {
+            $res['shareScopeVersion'] = $this->shareScopeVersion;
         }
 
         return $res;
@@ -127,6 +136,9 @@ class UpdatePermissionResponseBody extends Model
         }
         if (isset($map['shareScopeResult'])) {
             $model->shareScopeResult = shareScopeResult::fromMap($map['shareScopeResult']);
+        }
+        if (isset($map['shareScopeVersion'])) {
+            $model->shareScopeVersion = $map['shareScopeVersion'];
         }
 
         return $model;

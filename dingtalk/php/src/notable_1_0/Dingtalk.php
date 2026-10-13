@@ -1793,6 +1793,9 @@ class Dingtalk extends OpenApiClient
             $query['operatorId'] = $request->operatorId;
         }
         $body = [];
+        if (!Utils::isUnset($request->dataLevel)) {
+            $body['dataLevel'] = $request->dataLevel;
+        }
         if (!Utils::isUnset($request->externalAuthType)) {
             $body['externalAuthType'] = $request->externalAuthType;
         }

@@ -125,6 +125,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUserByDingTalkIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUserCardHolderListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUserCardHolderListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUserCardHolderListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUserGroupHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUserGroupRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUserGroupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUserHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUserResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\InitVerifyEventHeaders;
@@ -3064,6 +3067,63 @@ class Dingtalk extends OpenApiClient
         $headers = new GetUserCardHolderListHeaders([]);
 
         return $this->getUserCardHolderListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询用户组详情
+     *  *
+     * @param GetUserGroupRequest $request GetUserGroupRequest
+     * @param GetUserGroupHeaders $headers GetUserGroupHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetUserGroupResponse GetUserGroupResponse
+     */
+    public function getUserGroupWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->groupCode)) {
+            $query['groupCode'] = $request->groupCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query' => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action' => 'GetUserGroup',
+            'version' => 'contact_1.0',
+            'protocol' => 'HTTP',
+            'pathname' => '/v1.0/contact/userGroups/getUserGroup',
+            'method' => 'GET',
+            'authType' => 'AK',
+            'style' => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType' => 'json',
+        ]);
+
+        return GetUserGroupResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询用户组详情
+     *  *
+     * @param GetUserGroupRequest $request GetUserGroupRequest
+     *
+     * @return GetUserGroupResponse GetUserGroupResponse
+     */
+    public function getUserGroup($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetUserGroupHeaders([]);
+
+        return $this->getUserGroupWithOptions($request, $headers, $runtime);
     }
 
     /**

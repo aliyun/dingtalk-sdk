@@ -20,12 +20,18 @@ class result extends Model
     public $name;
 
     /**
+     * @var string
+     */
+    public $parentTeamCode;
+
+    /**
      * @var tagList[]
      */
     public $tagList;
     protected $_name = [
         'code' => 'code',
         'name' => 'name',
+        'parentTeamCode' => 'parentTeamCode',
         'tagList' => 'tagList',
     ];
 
@@ -39,6 +45,9 @@ class result extends Model
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
+        }
+        if (null !== $this->parentTeamCode) {
+            $res['parentTeamCode'] = $this->parentTeamCode;
         }
         if (null !== $this->tagList) {
             $res['tagList'] = [];
@@ -66,6 +75,9 @@ class result extends Model
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];
+        }
+        if (isset($map['parentTeamCode'])) {
+            $model->parentTeamCode = $map['parentTeamCode'];
         }
         if (isset($map['tagList'])) {
             if (!empty($map['tagList'])) {
