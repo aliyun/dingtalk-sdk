@@ -25,6 +25,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0.Models
             [Validation(Required=false)]
             public string Balance { get; set; }
 
+            [NameInMap("comments")]
+            [Validation(Required=false)]
+            public string Comments { get; set; }
+
             [NameInMap("detailId")]
             [Validation(Required=false)]
             public string DetailId { get; set; }
@@ -82,6 +86,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0.Models
             [NameInMap("remark")]
             [Validation(Required=false)]
             public string Remark { get; set; }
+
+            [NameInMap("summary")]
+            [Validation(Required=false)]
+            public string Summary { get; set; }
 
             [NameInMap("tradeAmount")]
             [Validation(Required=false)]

@@ -3185,7 +3185,7 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>获取应用可见范围</para>
+        /// <para>获取企业应用的可使用范围</para>
         /// </summary>
         /// 
         /// <param name="headers">
@@ -3230,7 +3230,7 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>获取应用可见范围</para>
+        /// <para>获取企业应用的可使用范围</para>
         /// </summary>
         /// 
         /// <param name="headers">
@@ -3275,7 +3275,7 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>获取应用可见范围</para>
+        /// <para>获取企业应用的可使用范围</para>
         /// </summary>
         /// 
         /// <returns>
@@ -3290,7 +3290,7 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>获取应用可见范围</para>
+        /// <para>获取企业应用的可使用范围</para>
         /// </summary>
         /// 
         /// <returns>
@@ -6799,7 +6799,7 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>设置应用可见范围</para>
+        /// <para>设置企业应用的可使用范围</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -6878,7 +6878,7 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>设置应用可见范围</para>
+        /// <para>设置企业应用的可使用范围</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -6957,7 +6957,7 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>设置应用可见范围</para>
+        /// <para>设置企业应用的可使用范围</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -6976,7 +6976,7 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>设置应用可见范围</para>
+        /// <para>设置企业应用的可使用范围</para>
         /// </summary>
         /// 
         /// <param name="request">

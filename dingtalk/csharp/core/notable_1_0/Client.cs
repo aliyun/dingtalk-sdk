@@ -4079,6 +4079,10 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
                 query["operatorId"] = request.OperatorId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DataLevel))
+            {
+                body["dataLevel"] = request.DataLevel;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExternalAuthType))
             {
                 body["externalAuthType"] = request.ExternalAuthType;
@@ -4148,6 +4152,10 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
                 query["operatorId"] = request.OperatorId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DataLevel))
+            {
+                body["dataLevel"] = request.DataLevel;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExternalAuthType))
             {
                 body["externalAuthType"] = request.ExternalAuthType;

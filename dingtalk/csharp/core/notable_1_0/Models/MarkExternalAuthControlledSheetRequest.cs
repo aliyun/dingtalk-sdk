@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalknotable_1_0.Models
 {
     public class MarkExternalAuthControlledSheetRequest : TeaModel {
+        [NameInMap("dataLevel")]
+        [Validation(Required=false)]
+        public string DataLevel { get; set; }
+
         /// <summary>
         /// <para>This parameter is required.</para>
         /// </summary>

@@ -111,6 +111,10 @@ namespace AlibabaCloud.SDK.Dingtalkminutes_1_0.Models
 
         }
 
+        [NameInMap("shareScopeVersion")]
+        [Validation(Required=false)]
+        public int? ShareScopeVersion { get; set; }
+
     }
 
 }

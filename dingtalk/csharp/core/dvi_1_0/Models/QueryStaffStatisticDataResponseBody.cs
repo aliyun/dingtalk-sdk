@@ -71,6 +71,10 @@ namespace AlibabaCloud.SDK.Dingtalkdvi_1_0.Models
             [Validation(Required=false)]
             public long? ServiceRecordCount { get; set; }
 
+            [NameInMap("serviceRecordWithInvalidCount")]
+            [Validation(Required=false)]
+            public long? ServiceRecordWithInvalidCount { get; set; }
+
             [NameInMap("staffName")]
             [Validation(Required=false)]
             public string StaffName { get; set; }

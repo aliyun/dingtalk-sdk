@@ -29,6 +29,10 @@ namespace AlibabaCloud.SDK.Dingtalkdvi_1_0.Models
             [Validation(Required=false)]
             public string Name { get; set; }
 
+            [NameInMap("parentTeamCode")]
+            [Validation(Required=false)]
+            public string ParentTeamCode { get; set; }
+
             [NameInMap("sceneList")]
             [Validation(Required=false)]
             public List<GetTeamResponseBodyResultSceneList> SceneList { get; set; }
