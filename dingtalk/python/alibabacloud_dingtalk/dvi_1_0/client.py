@@ -772,6 +772,8 @@ class Client(OpenApiClient):
             body['dialectCode'] = request.dialect_code
         if not UtilClient.is_unset(request.name):
             body['name'] = request.name
+        if not UtilClient.is_unset(request.parent_team_code):
+            body['parentTeamCode'] = request.parent_team_code
         if not UtilClient.is_unset(request.scene_codes):
             body['sceneCodes'] = request.scene_codes
         if not UtilClient.is_unset(request.solution_code):
@@ -825,6 +827,8 @@ class Client(OpenApiClient):
             body['dialectCode'] = request.dialect_code
         if not UtilClient.is_unset(request.name):
             body['name'] = request.name
+        if not UtilClient.is_unset(request.parent_team_code):
+            body['parentTeamCode'] = request.parent_team_code
         if not UtilClient.is_unset(request.scene_codes):
             body['sceneCodes'] = request.scene_codes
         if not UtilClient.is_unset(request.solution_code):
@@ -5914,6 +5918,8 @@ class Client(OpenApiClient):
             body['dialectCode'] = request.dialect_code
         if not UtilClient.is_unset(request.name):
             body['name'] = request.name
+        if not UtilClient.is_unset(request.parent_team_code):
+            body['parentTeamCode'] = request.parent_team_code
         if not UtilClient.is_unset(request.scene_codes):
             body['sceneCodes'] = request.scene_codes
         if not UtilClient.is_unset(request.team_code):
@@ -5963,6 +5969,8 @@ class Client(OpenApiClient):
             body['dialectCode'] = request.dialect_code
         if not UtilClient.is_unset(request.name):
             body['name'] = request.name
+        if not UtilClient.is_unset(request.parent_team_code):
+            body['parentTeamCode'] = request.parent_team_code
         if not UtilClient.is_unset(request.scene_codes):
             body['sceneCodes'] = request.scene_codes
         if not UtilClient.is_unset(request.team_code):

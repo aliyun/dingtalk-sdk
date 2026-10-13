@@ -6352,6 +6352,7 @@ class QueryAccountTradeByPageResponseBodyResult(TeaModel):
     def __init__(
         self,
         balance: str = None,
+        comments: str = None,
         detail_id: str = None,
         instance_id: str = None,
         instance_title: str = None,
@@ -6360,6 +6361,7 @@ class QueryAccountTradeByPageResponseBodyResult(TeaModel):
         other_account_no: str = None,
         receipt_file: QueryAccountTradeByPageResponseBodyResultReceiptFile = None,
         remark: str = None,
+        summary: str = None,
         trade_amount: str = None,
         trade_no: str = None,
         trade_time: int = None,
@@ -6367,6 +6369,7 @@ class QueryAccountTradeByPageResponseBodyResult(TeaModel):
         usage: str = None,
     ):
         self.balance = balance
+        self.comments = comments
         self.detail_id = detail_id
         self.instance_id = instance_id
         self.instance_title = instance_title
@@ -6375,6 +6378,7 @@ class QueryAccountTradeByPageResponseBodyResult(TeaModel):
         self.other_account_no = other_account_no
         self.receipt_file = receipt_file
         self.remark = remark
+        self.summary = summary
         self.trade_amount = trade_amount
         self.trade_no = trade_no
         self.trade_time = trade_time
@@ -6393,6 +6397,8 @@ class QueryAccountTradeByPageResponseBodyResult(TeaModel):
         result = dict()
         if self.balance is not None:
             result['balance'] = self.balance
+        if self.comments is not None:
+            result['comments'] = self.comments
         if self.detail_id is not None:
             result['detailId'] = self.detail_id
         if self.instance_id is not None:
@@ -6409,6 +6415,8 @@ class QueryAccountTradeByPageResponseBodyResult(TeaModel):
             result['receiptFile'] = self.receipt_file.to_map()
         if self.remark is not None:
             result['remark'] = self.remark
+        if self.summary is not None:
+            result['summary'] = self.summary
         if self.trade_amount is not None:
             result['tradeAmount'] = self.trade_amount
         if self.trade_no is not None:
@@ -6425,6 +6433,8 @@ class QueryAccountTradeByPageResponseBodyResult(TeaModel):
         m = m or dict()
         if m.get('balance') is not None:
             self.balance = m.get('balance')
+        if m.get('comments') is not None:
+            self.comments = m.get('comments')
         if m.get('detailId') is not None:
             self.detail_id = m.get('detailId')
         if m.get('instanceId') is not None:
@@ -6442,6 +6452,8 @@ class QueryAccountTradeByPageResponseBodyResult(TeaModel):
             self.receipt_file = temp_model.from_map(m['receiptFile'])
         if m.get('remark') is not None:
             self.remark = m.get('remark')
+        if m.get('summary') is not None:
+            self.summary = m.get('summary')
         if m.get('tradeAmount') is not None:
             self.trade_amount = m.get('tradeAmount')
         if m.get('tradeNo') is not None:

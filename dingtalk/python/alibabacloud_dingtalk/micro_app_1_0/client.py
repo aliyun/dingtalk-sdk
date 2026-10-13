@@ -2469,7 +2469,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkmicro_app__1__0_models.GetMicroAppScopeResponse:
         """
-        @summary 获取应用可见范围
+        @summary 获取企业应用的可使用范围
         
         @param headers: GetMicroAppScopeHeaders
         @param runtime: runtime options for this request RuntimeOptions
@@ -2506,7 +2506,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkmicro_app__1__0_models.GetMicroAppScopeResponse:
         """
-        @summary 获取应用可见范围
+        @summary 获取企业应用的可使用范围
         
         @param headers: GetMicroAppScopeHeaders
         @param runtime: runtime options for this request RuntimeOptions
@@ -2541,7 +2541,7 @@ class Client(OpenApiClient):
         agent_id: str,
     ) -> dingtalkmicro_app__1__0_models.GetMicroAppScopeResponse:
         """
-        @summary 获取应用可见范围
+        @summary 获取企业应用的可使用范围
         
         @return: GetMicroAppScopeResponse
         """
@@ -2554,7 +2554,7 @@ class Client(OpenApiClient):
         agent_id: str,
     ) -> dingtalkmicro_app__1__0_models.GetMicroAppScopeResponse:
         """
-        @summary 获取应用可见范围
+        @summary 获取企业应用的可使用范围
         
         @return: GetMicroAppScopeResponse
         """
@@ -5296,7 +5296,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkmicro_app__1__0_models.SetMicroAppScopeResponse:
         """
-        @summary 设置应用可见范围
+        @summary 设置企业应用的可使用范围
         
         @param request: SetMicroAppScopeRequest
         @param headers: SetMicroAppScopeHeaders
@@ -5352,7 +5352,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkmicro_app__1__0_models.SetMicroAppScopeResponse:
         """
-        @summary 设置应用可见范围
+        @summary 设置企业应用的可使用范围
         
         @param request: SetMicroAppScopeRequest
         @param headers: SetMicroAppScopeHeaders
@@ -5406,7 +5406,7 @@ class Client(OpenApiClient):
         request: dingtalkmicro_app__1__0_models.SetMicroAppScopeRequest,
     ) -> dingtalkmicro_app__1__0_models.SetMicroAppScopeResponse:
         """
-        @summary 设置应用可见范围
+        @summary 设置企业应用的可使用范围
         
         @param request: SetMicroAppScopeRequest
         @return: SetMicroAppScopeResponse
@@ -5421,7 +5421,7 @@ class Client(OpenApiClient):
         request: dingtalkmicro_app__1__0_models.SetMicroAppScopeRequest,
     ) -> dingtalkmicro_app__1__0_models.SetMicroAppScopeResponse:
         """
-        @summary 设置应用可见范围
+        @summary 设置企业应用的可使用范围
         
         @param request: SetMicroAppScopeRequest
         @return: SetMicroAppScopeResponse

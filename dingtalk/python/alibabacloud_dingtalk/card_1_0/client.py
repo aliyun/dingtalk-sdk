@@ -720,6 +720,188 @@ class Client(OpenApiClient):
         headers = dingtalkcard__1__0_models.CreateAndDeliverHeaders()
         return await self.create_and_deliver_with_options_async(request, headers, runtime)
 
+    def create_and_deliver_aicard_with_options(
+        self,
+        request: dingtalkcard__1__0_models.CreateAndDeliverAICardRequest,
+        headers: dingtalkcard__1__0_models.CreateAndDeliverAICardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcard__1__0_models.CreateAndDeliverAICardResponse:
+        """
+        @summary 创建并投放 AI 卡片
+        
+        @param request: CreateAndDeliverAICardRequest
+        @param headers: CreateAndDeliverAICardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateAndDeliverAICardResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.a_2ui_annotations):
+            body['a2uiAnnotations'] = request.a_2ui_annotations
+        if not UtilClient.is_unset(request.a_2ui_messages):
+            body['a2uiMessages'] = request.a_2ui_messages
+        if not UtilClient.is_unset(request.at_all):
+            body['atAll'] = request.at_all
+        if not UtilClient.is_unset(request.biz_context):
+            body['bizContext'] = request.biz_context
+        if not UtilClient.is_unset(request.callback_route_key):
+            body['callbackRouteKey'] = request.callback_route_key
+        if not UtilClient.is_unset(request.callback_type):
+            body['callbackType'] = request.callback_type
+        if not UtilClient.is_unset(request.card_at_user_ids):
+            body['cardAtUserIds'] = request.card_at_user_ids
+        if not UtilClient.is_unset(request.flow_status):
+            body['flowStatus'] = request.flow_status
+        if not UtilClient.is_unset(request.im_group_open_deliver_model):
+            body['imGroupOpenDeliverModel'] = request.im_group_open_deliver_model
+        if not UtilClient.is_unset(request.im_group_open_space_model):
+            body['imGroupOpenSpaceModel'] = request.im_group_open_space_model
+        if not UtilClient.is_unset(request.im_robot_open_deliver_model):
+            body['imRobotOpenDeliverModel'] = request.im_robot_open_deliver_model
+        if not UtilClient.is_unset(request.im_robot_open_space_model):
+            body['imRobotOpenSpaceModel'] = request.im_robot_open_space_model
+        if not UtilClient.is_unset(request.open_space_id):
+            body['openSpaceId'] = request.open_space_id
+        if not UtilClient.is_unset(request.out_track_id):
+            body['outTrackId'] = request.out_track_id
+        if not UtilClient.is_unset(request.protocol_version):
+            body['protocolVersion'] = request.protocol_version
+        if not UtilClient.is_unset(request.summary):
+            body['summary'] = request.summary
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.user_id_type):
+            body['userIdType'] = request.user_id_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateAndDeliverAICard',
+            version='card_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/card/ai/instances/createAndDeliver',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcard__1__0_models.CreateAndDeliverAICardResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_and_deliver_aicard_with_options_async(
+        self,
+        request: dingtalkcard__1__0_models.CreateAndDeliverAICardRequest,
+        headers: dingtalkcard__1__0_models.CreateAndDeliverAICardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcard__1__0_models.CreateAndDeliverAICardResponse:
+        """
+        @summary 创建并投放 AI 卡片
+        
+        @param request: CreateAndDeliverAICardRequest
+        @param headers: CreateAndDeliverAICardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateAndDeliverAICardResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.a_2ui_annotations):
+            body['a2uiAnnotations'] = request.a_2ui_annotations
+        if not UtilClient.is_unset(request.a_2ui_messages):
+            body['a2uiMessages'] = request.a_2ui_messages
+        if not UtilClient.is_unset(request.at_all):
+            body['atAll'] = request.at_all
+        if not UtilClient.is_unset(request.biz_context):
+            body['bizContext'] = request.biz_context
+        if not UtilClient.is_unset(request.callback_route_key):
+            body['callbackRouteKey'] = request.callback_route_key
+        if not UtilClient.is_unset(request.callback_type):
+            body['callbackType'] = request.callback_type
+        if not UtilClient.is_unset(request.card_at_user_ids):
+            body['cardAtUserIds'] = request.card_at_user_ids
+        if not UtilClient.is_unset(request.flow_status):
+            body['flowStatus'] = request.flow_status
+        if not UtilClient.is_unset(request.im_group_open_deliver_model):
+            body['imGroupOpenDeliverModel'] = request.im_group_open_deliver_model
+        if not UtilClient.is_unset(request.im_group_open_space_model):
+            body['imGroupOpenSpaceModel'] = request.im_group_open_space_model
+        if not UtilClient.is_unset(request.im_robot_open_deliver_model):
+            body['imRobotOpenDeliverModel'] = request.im_robot_open_deliver_model
+        if not UtilClient.is_unset(request.im_robot_open_space_model):
+            body['imRobotOpenSpaceModel'] = request.im_robot_open_space_model
+        if not UtilClient.is_unset(request.open_space_id):
+            body['openSpaceId'] = request.open_space_id
+        if not UtilClient.is_unset(request.out_track_id):
+            body['outTrackId'] = request.out_track_id
+        if not UtilClient.is_unset(request.protocol_version):
+            body['protocolVersion'] = request.protocol_version
+        if not UtilClient.is_unset(request.summary):
+            body['summary'] = request.summary
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.user_id_type):
+            body['userIdType'] = request.user_id_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateAndDeliverAICard',
+            version='card_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/card/ai/instances/createAndDeliver',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcard__1__0_models.CreateAndDeliverAICardResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_and_deliver_aicard(
+        self,
+        request: dingtalkcard__1__0_models.CreateAndDeliverAICardRequest,
+    ) -> dingtalkcard__1__0_models.CreateAndDeliverAICardResponse:
+        """
+        @summary 创建并投放 AI 卡片
+        
+        @param request: CreateAndDeliverAICardRequest
+        @return: CreateAndDeliverAICardResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcard__1__0_models.CreateAndDeliverAICardHeaders()
+        return self.create_and_deliver_aicard_with_options(request, headers, runtime)
+
+    async def create_and_deliver_aicard_async(
+        self,
+        request: dingtalkcard__1__0_models.CreateAndDeliverAICardRequest,
+    ) -> dingtalkcard__1__0_models.CreateAndDeliverAICardResponse:
+        """
+        @summary 创建并投放 AI 卡片
+        
+        @param request: CreateAndDeliverAICardRequest
+        @return: CreateAndDeliverAICardResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcard__1__0_models.CreateAndDeliverAICardHeaders()
+        return await self.create_and_deliver_aicard_with_options_async(request, headers, runtime)
+
     def create_and_deliver_with_delegate_with_options(
         self,
         request: dingtalkcard__1__0_models.CreateAndDeliverWithDelegateRequest,
@@ -2651,6 +2833,136 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcard__1__0_models.StreamingUpdateHeaders()
         return await self.streaming_update_with_options_async(request, headers, runtime)
+
+    def update_aicard_with_options(
+        self,
+        request: dingtalkcard__1__0_models.UpdateAICardRequest,
+        headers: dingtalkcard__1__0_models.UpdateAICardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcard__1__0_models.UpdateAICardResponse:
+        """
+        @summary 更新 AI 卡片
+        
+        @param request: UpdateAICardRequest
+        @param headers: UpdateAICardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateAICardResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.a_2ui_annotations):
+            body['a2uiAnnotations'] = request.a_2ui_annotations
+        if not UtilClient.is_unset(request.a_2ui_messages):
+            body['a2uiMessages'] = request.a_2ui_messages
+        if not UtilClient.is_unset(request.flow_status):
+            body['flowStatus'] = request.flow_status
+        if not UtilClient.is_unset(request.out_track_id):
+            body['outTrackId'] = request.out_track_id
+        if not UtilClient.is_unset(request.out_update_id):
+            body['outUpdateId'] = request.out_update_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateAICard',
+            version='card_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/card/ai/instances/update',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcard__1__0_models.UpdateAICardResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_aicard_with_options_async(
+        self,
+        request: dingtalkcard__1__0_models.UpdateAICardRequest,
+        headers: dingtalkcard__1__0_models.UpdateAICardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcard__1__0_models.UpdateAICardResponse:
+        """
+        @summary 更新 AI 卡片
+        
+        @param request: UpdateAICardRequest
+        @param headers: UpdateAICardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateAICardResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.a_2ui_annotations):
+            body['a2uiAnnotations'] = request.a_2ui_annotations
+        if not UtilClient.is_unset(request.a_2ui_messages):
+            body['a2uiMessages'] = request.a_2ui_messages
+        if not UtilClient.is_unset(request.flow_status):
+            body['flowStatus'] = request.flow_status
+        if not UtilClient.is_unset(request.out_track_id):
+            body['outTrackId'] = request.out_track_id
+        if not UtilClient.is_unset(request.out_update_id):
+            body['outUpdateId'] = request.out_update_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateAICard',
+            version='card_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/card/ai/instances/update',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcard__1__0_models.UpdateAICardResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_aicard(
+        self,
+        request: dingtalkcard__1__0_models.UpdateAICardRequest,
+    ) -> dingtalkcard__1__0_models.UpdateAICardResponse:
+        """
+        @summary 更新 AI 卡片
+        
+        @param request: UpdateAICardRequest
+        @return: UpdateAICardResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcard__1__0_models.UpdateAICardHeaders()
+        return self.update_aicard_with_options(request, headers, runtime)
+
+    async def update_aicard_async(
+        self,
+        request: dingtalkcard__1__0_models.UpdateAICardRequest,
+    ) -> dingtalkcard__1__0_models.UpdateAICardResponse:
+        """
+        @summary 更新 AI 卡片
+        
+        @param request: UpdateAICardRequest
+        @return: UpdateAICardResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcard__1__0_models.UpdateAICardHeaders()
+        return await self.update_aicard_with_options_async(request, headers, runtime)
 
     def update_card_with_options(
         self,

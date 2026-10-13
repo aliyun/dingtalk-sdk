@@ -3239,6 +3239,8 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(request.operator_id):
             query['operatorId'] = request.operator_id
         body = {}
+        if not UtilClient.is_unset(request.data_level):
+            body['dataLevel'] = request.data_level
         if not UtilClient.is_unset(request.external_auth_type):
             body['externalAuthType'] = request.external_auth_type
         if not UtilClient.is_unset(request.external_config):
@@ -3292,6 +3294,8 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(request.operator_id):
             query['operatorId'] = request.operator_id
         body = {}
+        if not UtilClient.is_unset(request.data_level):
+            body['dataLevel'] = request.data_level
         if not UtilClient.is_unset(request.external_auth_type):
             body['externalAuthType'] = request.external_auth_type
         if not UtilClient.is_unset(request.external_config):

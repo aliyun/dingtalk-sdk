@@ -1244,6 +1244,7 @@ class CreateTeamRequest(TeaModel):
         admin_user_ids: List[str] = None,
         dialect_code: str = None,
         name: str = None,
+        parent_team_code: str = None,
         scene_codes: List[str] = None,
         solution_code: str = None,
         user_ids: List[str] = None,
@@ -1252,6 +1253,7 @@ class CreateTeamRequest(TeaModel):
         self.dialect_code = dialect_code
         # This parameter is required.
         self.name = name
+        self.parent_team_code = parent_team_code
         # This parameter is required.
         self.scene_codes = scene_codes
         # This parameter is required.
@@ -1273,6 +1275,8 @@ class CreateTeamRequest(TeaModel):
             result['dialectCode'] = self.dialect_code
         if self.name is not None:
             result['name'] = self.name
+        if self.parent_team_code is not None:
+            result['parentTeamCode'] = self.parent_team_code
         if self.scene_codes is not None:
             result['sceneCodes'] = self.scene_codes
         if self.solution_code is not None:
@@ -1289,6 +1293,8 @@ class CreateTeamRequest(TeaModel):
             self.dialect_code = m.get('dialectCode')
         if m.get('name') is not None:
             self.name = m.get('name')
+        if m.get('parentTeamCode') is not None:
+            self.parent_team_code = m.get('parentTeamCode')
         if m.get('sceneCodes') is not None:
             self.scene_codes = m.get('sceneCodes')
         if m.get('solutionCode') is not None:
@@ -5128,6 +5134,7 @@ class GetTeamResponseBodyResult(TeaModel):
         dialect_code: str = None,
         dialect_name: str = None,
         name: str = None,
+        parent_team_code: str = None,
         scene_list: List[GetTeamResponseBodyResultSceneList] = None,
         solution_code: str = None,
         solution_name: str = None,
@@ -5137,6 +5144,7 @@ class GetTeamResponseBodyResult(TeaModel):
         self.dialect_code = dialect_code
         self.dialect_name = dialect_name
         self.name = name
+        self.parent_team_code = parent_team_code
         self.scene_list = scene_list
         self.solution_code = solution_code
         self.solution_name = solution_name
@@ -5166,6 +5174,8 @@ class GetTeamResponseBodyResult(TeaModel):
             result['dialectName'] = self.dialect_name
         if self.name is not None:
             result['name'] = self.name
+        if self.parent_team_code is not None:
+            result['parentTeamCode'] = self.parent_team_code
         result['sceneList'] = []
         if self.scene_list is not None:
             for k in self.scene_list:
@@ -5190,6 +5200,8 @@ class GetTeamResponseBodyResult(TeaModel):
             self.dialect_name = m.get('dialectName')
         if m.get('name') is not None:
             self.name = m.get('name')
+        if m.get('parentTeamCode') is not None:
+            self.parent_team_code = m.get('parentTeamCode')
         self.scene_list = []
         if m.get('sceneList') is not None:
             for k in m.get('sceneList'):
@@ -7361,10 +7373,12 @@ class ListTeamResponseBodyResult(TeaModel):
         self,
         code: str = None,
         name: str = None,
+        parent_team_code: str = None,
         tag_list: List[ListTeamResponseBodyResultTagList] = None,
     ):
         self.code = code
         self.name = name
+        self.parent_team_code = parent_team_code
         self.tag_list = tag_list
 
     def validate(self):
@@ -7383,6 +7397,8 @@ class ListTeamResponseBodyResult(TeaModel):
             result['code'] = self.code
         if self.name is not None:
             result['name'] = self.name
+        if self.parent_team_code is not None:
+            result['parentTeamCode'] = self.parent_team_code
         result['tagList'] = []
         if self.tag_list is not None:
             for k in self.tag_list:
@@ -7395,6 +7411,8 @@ class ListTeamResponseBodyResult(TeaModel):
             self.code = m.get('code')
         if m.get('name') is not None:
             self.name = m.get('name')
+        if m.get('parentTeamCode') is not None:
+            self.parent_team_code = m.get('parentTeamCode')
         self.tag_list = []
         if m.get('tagList') is not None:
             for k in m.get('tagList'):
@@ -9882,6 +9900,7 @@ class QueryStaffStatisticDataResponseBodyResult(TeaModel):
         quality_inspect_l1data: List[QueryStaffStatisticDataResponseBodyResultQualityInspectL1Data] = None,
         sale_sop_percentage: Dict[str, Any] = None,
         service_record_count: int = None,
+        service_record_with_invalid_count: int = None,
         staff_name: str = None,
         team_code: str = None,
         team_name: str = None,
@@ -9894,6 +9913,7 @@ class QueryStaffStatisticDataResponseBodyResult(TeaModel):
         self.quality_inspect_l1data = quality_inspect_l1data
         self.sale_sop_percentage = sale_sop_percentage
         self.service_record_count = service_record_count
+        self.service_record_with_invalid_count = service_record_with_invalid_count
         self.staff_name = staff_name
         self.team_code = team_code
         self.team_name = team_name
@@ -9926,6 +9946,8 @@ class QueryStaffStatisticDataResponseBodyResult(TeaModel):
             result['saleSopPercentage'] = self.sale_sop_percentage
         if self.service_record_count is not None:
             result['serviceRecordCount'] = self.service_record_count
+        if self.service_record_with_invalid_count is not None:
+            result['serviceRecordWithInvalidCount'] = self.service_record_with_invalid_count
         if self.staff_name is not None:
             result['staffName'] = self.staff_name
         if self.team_code is not None:
@@ -9955,6 +9977,8 @@ class QueryStaffStatisticDataResponseBodyResult(TeaModel):
             self.sale_sop_percentage = m.get('saleSopPercentage')
         if m.get('serviceRecordCount') is not None:
             self.service_record_count = m.get('serviceRecordCount')
+        if m.get('serviceRecordWithInvalidCount') is not None:
+            self.service_record_with_invalid_count = m.get('serviceRecordWithInvalidCount')
         if m.get('staffName') is not None:
             self.staff_name = m.get('staffName')
         if m.get('teamCode') is not None:
@@ -11841,11 +11865,13 @@ class UpdateTeamRequest(TeaModel):
         self,
         dialect_code: str = None,
         name: str = None,
+        parent_team_code: str = None,
         scene_codes: List[str] = None,
         team_code: str = None,
     ):
         self.dialect_code = dialect_code
         self.name = name
+        self.parent_team_code = parent_team_code
         self.scene_codes = scene_codes
         # This parameter is required.
         self.team_code = team_code
@@ -11863,6 +11889,8 @@ class UpdateTeamRequest(TeaModel):
             result['dialectCode'] = self.dialect_code
         if self.name is not None:
             result['name'] = self.name
+        if self.parent_team_code is not None:
+            result['parentTeamCode'] = self.parent_team_code
         if self.scene_codes is not None:
             result['sceneCodes'] = self.scene_codes
         if self.team_code is not None:
@@ -11875,6 +11903,8 @@ class UpdateTeamRequest(TeaModel):
             self.dialect_code = m.get('dialectCode')
         if m.get('name') is not None:
             self.name = m.get('name')
+        if m.get('parentTeamCode') is not None:
+            self.parent_team_code = m.get('parentTeamCode')
         if m.get('sceneCodes') is not None:
             self.scene_codes = m.get('sceneCodes')
         if m.get('teamCode') is not None:

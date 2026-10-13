@@ -4752,11 +4752,13 @@ class MarkExternalAuthControlledSheetHeaders(TeaModel):
 class MarkExternalAuthControlledSheetRequest(TeaModel):
     def __init__(
         self,
+        data_level: str = None,
         external_auth_type: str = None,
         external_config: str = None,
         client_token: str = None,
         operator_id: str = None,
     ):
+        self.data_level = data_level
         # This parameter is required.
         self.external_auth_type = external_auth_type
         self.external_config = external_config
@@ -4773,6 +4775,8 @@ class MarkExternalAuthControlledSheetRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.data_level is not None:
+            result['dataLevel'] = self.data_level
         if self.external_auth_type is not None:
             result['externalAuthType'] = self.external_auth_type
         if self.external_config is not None:
@@ -4785,6 +4789,8 @@ class MarkExternalAuthControlledSheetRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('dataLevel') is not None:
+            self.data_level = m.get('dataLevel')
         if m.get('externalAuthType') is not None:
             self.external_auth_type = m.get('externalAuthType')
         if m.get('externalConfig') is not None:

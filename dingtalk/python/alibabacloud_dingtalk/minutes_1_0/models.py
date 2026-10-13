@@ -6997,11 +6997,13 @@ class QueryUserMinutesPermissionResponseBody(TeaModel):
         has_permission: bool = None,
         role_sub_resource_ids: List[str] = None,
         role_type: str = None,
+        share_scope_version: int = None,
     ):
         self.has_permission = has_permission
         self.role_sub_resource_ids = role_sub_resource_ids
         # 角色类型：manager-管理员, owner-所有者, editor-可编辑, read_download-可查看/下载, read-仅查看, none-无权限
         self.role_type = role_type
+        self.share_scope_version = share_scope_version
 
     def validate(self):
         pass
@@ -7018,6 +7020,8 @@ class QueryUserMinutesPermissionResponseBody(TeaModel):
             result['roleSubResourceIds'] = self.role_sub_resource_ids
         if self.role_type is not None:
             result['roleType'] = self.role_type
+        if self.share_scope_version is not None:
+            result['shareScopeVersion'] = self.share_scope_version
         return result
 
     def from_map(self, m: dict = None):
@@ -7028,6 +7032,8 @@ class QueryUserMinutesPermissionResponseBody(TeaModel):
             self.role_sub_resource_ids = m.get('roleSubResourceIds')
         if m.get('roleType') is not None:
             self.role_type = m.get('roleType')
+        if m.get('shareScopeVersion') is not None:
+            self.share_scope_version = m.get('shareScopeVersion')
         return self
 
 
@@ -8514,6 +8520,7 @@ class UpdatePermissionResponseBody(TeaModel):
         model_version: str = None,
         partial_success: bool = None,
         share_scope_result: UpdatePermissionResponseBodyShareScopeResult = None,
+        share_scope_version: int = None,
     ):
         self.all_succeeded = all_succeeded
         self.fail_member_info_list = fail_member_info_list
@@ -8521,6 +8528,7 @@ class UpdatePermissionResponseBody(TeaModel):
         self.model_version = model_version
         self.partial_success = partial_success
         self.share_scope_result = share_scope_result
+        self.share_scope_version = share_scope_version
 
     def validate(self):
         if self.fail_member_info_list:
@@ -8556,6 +8564,8 @@ class UpdatePermissionResponseBody(TeaModel):
             result['partialSuccess'] = self.partial_success
         if self.share_scope_result is not None:
             result['shareScopeResult'] = self.share_scope_result.to_map()
+        if self.share_scope_version is not None:
+            result['shareScopeVersion'] = self.share_scope_version
         return result
 
     def from_map(self, m: dict = None):
@@ -8579,6 +8589,8 @@ class UpdatePermissionResponseBody(TeaModel):
         if m.get('shareScopeResult') is not None:
             temp_model = UpdatePermissionResponseBodyShareScopeResult()
             self.share_scope_result = temp_model.from_map(m['shareScopeResult'])
+        if m.get('shareScopeVersion') is not None:
+            self.share_scope_version = m.get('shareScopeVersion')
         return self
 
 

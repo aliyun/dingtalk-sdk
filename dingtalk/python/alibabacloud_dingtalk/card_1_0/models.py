@@ -2468,6 +2468,737 @@ class CreateAndDeliverResponse(TeaModel):
         return self
 
 
+class CreateAndDeliverAICardHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateAndDeliverAICardRequestA2uiAnnotations(TeaModel):
+    def __init__(
+        self,
+        component_id: str = None,
+        surface_id: str = None,
+        type: str = None,
+    ):
+        # This parameter is required.
+        self.component_id = component_id
+        # This parameter is required.
+        self.surface_id = surface_id
+        # This parameter is required.
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.component_id is not None:
+            result['componentId'] = self.component_id
+        if self.surface_id is not None:
+            result['surfaceId'] = self.surface_id
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('componentId') is not None:
+            self.component_id = m.get('componentId')
+        if m.get('surfaceId') is not None:
+            self.surface_id = m.get('surfaceId')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class CreateAndDeliverAICardRequestImGroupOpenDeliverModel(TeaModel):
+    def __init__(
+        self,
+        at_user_ids: Dict[str, str] = None,
+        extension: Dict[str, str] = None,
+        recipients: List[str] = None,
+        robot_code: str = None,
+    ):
+        self.at_user_ids = at_user_ids
+        self.extension = extension
+        self.recipients = recipients
+        # This parameter is required.
+        self.robot_code = robot_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.at_user_ids is not None:
+            result['atUserIds'] = self.at_user_ids
+        if self.extension is not None:
+            result['extension'] = self.extension
+        if self.recipients is not None:
+            result['recipients'] = self.recipients
+        if self.robot_code is not None:
+            result['robotCode'] = self.robot_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('atUserIds') is not None:
+            self.at_user_ids = m.get('atUserIds')
+        if m.get('extension') is not None:
+            self.extension = m.get('extension')
+        if m.get('recipients') is not None:
+            self.recipients = m.get('recipients')
+        if m.get('robotCode') is not None:
+            self.robot_code = m.get('robotCode')
+        return self
+
+
+class CreateAndDeliverAICardRequestImGroupOpenSpaceModelNotification(TeaModel):
+    def __init__(
+        self,
+        alert_content: str = None,
+        notification_off: bool = None,
+    ):
+        self.alert_content = alert_content
+        self.notification_off = notification_off
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.alert_content is not None:
+            result['alertContent'] = self.alert_content
+        if self.notification_off is not None:
+            result['notificationOff'] = self.notification_off
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('alertContent') is not None:
+            self.alert_content = m.get('alertContent')
+        if m.get('notificationOff') is not None:
+            self.notification_off = m.get('notificationOff')
+        return self
+
+
+class CreateAndDeliverAICardRequestImGroupOpenSpaceModelSearchSupport(TeaModel):
+    def __init__(
+        self,
+        search_desc: str = None,
+        search_icon: str = None,
+        search_type_name: str = None,
+    ):
+        self.search_desc = search_desc
+        self.search_icon = search_icon
+        self.search_type_name = search_type_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.search_desc is not None:
+            result['searchDesc'] = self.search_desc
+        if self.search_icon is not None:
+            result['searchIcon'] = self.search_icon
+        if self.search_type_name is not None:
+            result['searchTypeName'] = self.search_type_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('searchDesc') is not None:
+            self.search_desc = m.get('searchDesc')
+        if m.get('searchIcon') is not None:
+            self.search_icon = m.get('searchIcon')
+        if m.get('searchTypeName') is not None:
+            self.search_type_name = m.get('searchTypeName')
+        return self
+
+
+class CreateAndDeliverAICardRequestImGroupOpenSpaceModel(TeaModel):
+    def __init__(
+        self,
+        last_message_i18n: Dict[str, str] = None,
+        notification: CreateAndDeliverAICardRequestImGroupOpenSpaceModelNotification = None,
+        search_support: CreateAndDeliverAICardRequestImGroupOpenSpaceModelSearchSupport = None,
+        support_forward: bool = None,
+    ):
+        self.last_message_i18n = last_message_i18n
+        self.notification = notification
+        self.search_support = search_support
+        self.support_forward = support_forward
+
+    def validate(self):
+        if self.notification:
+            self.notification.validate()
+        if self.search_support:
+            self.search_support.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.last_message_i18n is not None:
+            result['lastMessageI18n'] = self.last_message_i18n
+        if self.notification is not None:
+            result['notification'] = self.notification.to_map()
+        if self.search_support is not None:
+            result['searchSupport'] = self.search_support.to_map()
+        if self.support_forward is not None:
+            result['supportForward'] = self.support_forward
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('lastMessageI18n') is not None:
+            self.last_message_i18n = m.get('lastMessageI18n')
+        if m.get('notification') is not None:
+            temp_model = CreateAndDeliverAICardRequestImGroupOpenSpaceModelNotification()
+            self.notification = temp_model.from_map(m['notification'])
+        if m.get('searchSupport') is not None:
+            temp_model = CreateAndDeliverAICardRequestImGroupOpenSpaceModelSearchSupport()
+            self.search_support = temp_model.from_map(m['searchSupport'])
+        if m.get('supportForward') is not None:
+            self.support_forward = m.get('supportForward')
+        return self
+
+
+class CreateAndDeliverAICardRequestImRobotOpenDeliverModel(TeaModel):
+    def __init__(
+        self,
+        at_user_ids: Dict[str, str] = None,
+        extension: Dict[str, str] = None,
+        recipients: List[str] = None,
+        robot_code: str = None,
+    ):
+        self.at_user_ids = at_user_ids
+        self.extension = extension
+        self.recipients = recipients
+        self.robot_code = robot_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.at_user_ids is not None:
+            result['atUserIds'] = self.at_user_ids
+        if self.extension is not None:
+            result['extension'] = self.extension
+        if self.recipients is not None:
+            result['recipients'] = self.recipients
+        if self.robot_code is not None:
+            result['robotCode'] = self.robot_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('atUserIds') is not None:
+            self.at_user_ids = m.get('atUserIds')
+        if m.get('extension') is not None:
+            self.extension = m.get('extension')
+        if m.get('recipients') is not None:
+            self.recipients = m.get('recipients')
+        if m.get('robotCode') is not None:
+            self.robot_code = m.get('robotCode')
+        return self
+
+
+class CreateAndDeliverAICardRequestImRobotOpenSpaceModelNotification(TeaModel):
+    def __init__(
+        self,
+        alert_content: str = None,
+        notification_off: bool = None,
+    ):
+        self.alert_content = alert_content
+        self.notification_off = notification_off
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.alert_content is not None:
+            result['alertContent'] = self.alert_content
+        if self.notification_off is not None:
+            result['notificationOff'] = self.notification_off
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('alertContent') is not None:
+            self.alert_content = m.get('alertContent')
+        if m.get('notificationOff') is not None:
+            self.notification_off = m.get('notificationOff')
+        return self
+
+
+class CreateAndDeliverAICardRequestImRobotOpenSpaceModelSearchSupport(TeaModel):
+    def __init__(
+        self,
+        search_desc: str = None,
+        search_icon: str = None,
+        search_type_name: str = None,
+    ):
+        self.search_desc = search_desc
+        self.search_icon = search_icon
+        self.search_type_name = search_type_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.search_desc is not None:
+            result['searchDesc'] = self.search_desc
+        if self.search_icon is not None:
+            result['searchIcon'] = self.search_icon
+        if self.search_type_name is not None:
+            result['searchTypeName'] = self.search_type_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('searchDesc') is not None:
+            self.search_desc = m.get('searchDesc')
+        if m.get('searchIcon') is not None:
+            self.search_icon = m.get('searchIcon')
+        if m.get('searchTypeName') is not None:
+            self.search_type_name = m.get('searchTypeName')
+        return self
+
+
+class CreateAndDeliverAICardRequestImRobotOpenSpaceModel(TeaModel):
+    def __init__(
+        self,
+        last_message_i18n: Dict[str, str] = None,
+        notification: CreateAndDeliverAICardRequestImRobotOpenSpaceModelNotification = None,
+        search_support: CreateAndDeliverAICardRequestImRobotOpenSpaceModelSearchSupport = None,
+        support_forward: bool = None,
+    ):
+        self.last_message_i18n = last_message_i18n
+        self.notification = notification
+        self.search_support = search_support
+        self.support_forward = support_forward
+
+    def validate(self):
+        if self.notification:
+            self.notification.validate()
+        if self.search_support:
+            self.search_support.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.last_message_i18n is not None:
+            result['lastMessageI18n'] = self.last_message_i18n
+        if self.notification is not None:
+            result['notification'] = self.notification.to_map()
+        if self.search_support is not None:
+            result['searchSupport'] = self.search_support.to_map()
+        if self.support_forward is not None:
+            result['supportForward'] = self.support_forward
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('lastMessageI18n') is not None:
+            self.last_message_i18n = m.get('lastMessageI18n')
+        if m.get('notification') is not None:
+            temp_model = CreateAndDeliverAICardRequestImRobotOpenSpaceModelNotification()
+            self.notification = temp_model.from_map(m['notification'])
+        if m.get('searchSupport') is not None:
+            temp_model = CreateAndDeliverAICardRequestImRobotOpenSpaceModelSearchSupport()
+            self.search_support = temp_model.from_map(m['searchSupport'])
+        if m.get('supportForward') is not None:
+            self.support_forward = m.get('supportForward')
+        return self
+
+
+class CreateAndDeliverAICardRequest(TeaModel):
+    def __init__(
+        self,
+        a_2ui_annotations: List[CreateAndDeliverAICardRequestA2uiAnnotations] = None,
+        a_2ui_messages: List[str] = None,
+        at_all: bool = None,
+        biz_context: Dict[str, str] = None,
+        callback_route_key: str = None,
+        callback_type: str = None,
+        card_at_user_ids: List[str] = None,
+        flow_status: str = None,
+        im_group_open_deliver_model: CreateAndDeliverAICardRequestImGroupOpenDeliverModel = None,
+        im_group_open_space_model: CreateAndDeliverAICardRequestImGroupOpenSpaceModel = None,
+        im_robot_open_deliver_model: CreateAndDeliverAICardRequestImRobotOpenDeliverModel = None,
+        im_robot_open_space_model: CreateAndDeliverAICardRequestImRobotOpenSpaceModel = None,
+        open_space_id: str = None,
+        out_track_id: str = None,
+        protocol_version: str = None,
+        summary: str = None,
+        user_id: str = None,
+        user_id_type: int = None,
+    ):
+        self.a_2ui_annotations = a_2ui_annotations
+        # This parameter is required.
+        self.a_2ui_messages = a_2ui_messages
+        self.at_all = at_all
+        self.biz_context = biz_context
+        self.callback_route_key = callback_route_key
+        self.callback_type = callback_type
+        self.card_at_user_ids = card_at_user_ids
+        # This parameter is required.
+        self.flow_status = flow_status
+        self.im_group_open_deliver_model = im_group_open_deliver_model
+        self.im_group_open_space_model = im_group_open_space_model
+        self.im_robot_open_deliver_model = im_robot_open_deliver_model
+        self.im_robot_open_space_model = im_robot_open_space_model
+        # This parameter is required.
+        self.open_space_id = open_space_id
+        # This parameter is required.
+        self.out_track_id = out_track_id
+        self.protocol_version = protocol_version
+        self.summary = summary
+        self.user_id = user_id
+        self.user_id_type = user_id_type
+
+    def validate(self):
+        if self.a_2ui_annotations:
+            for k in self.a_2ui_annotations:
+                if k:
+                    k.validate()
+        if self.im_group_open_deliver_model:
+            self.im_group_open_deliver_model.validate()
+        if self.im_group_open_space_model:
+            self.im_group_open_space_model.validate()
+        if self.im_robot_open_deliver_model:
+            self.im_robot_open_deliver_model.validate()
+        if self.im_robot_open_space_model:
+            self.im_robot_open_space_model.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['a2uiAnnotations'] = []
+        if self.a_2ui_annotations is not None:
+            for k in self.a_2ui_annotations:
+                result['a2uiAnnotations'].append(k.to_map() if k else None)
+        if self.a_2ui_messages is not None:
+            result['a2uiMessages'] = self.a_2ui_messages
+        if self.at_all is not None:
+            result['atAll'] = self.at_all
+        if self.biz_context is not None:
+            result['bizContext'] = self.biz_context
+        if self.callback_route_key is not None:
+            result['callbackRouteKey'] = self.callback_route_key
+        if self.callback_type is not None:
+            result['callbackType'] = self.callback_type
+        if self.card_at_user_ids is not None:
+            result['cardAtUserIds'] = self.card_at_user_ids
+        if self.flow_status is not None:
+            result['flowStatus'] = self.flow_status
+        if self.im_group_open_deliver_model is not None:
+            result['imGroupOpenDeliverModel'] = self.im_group_open_deliver_model.to_map()
+        if self.im_group_open_space_model is not None:
+            result['imGroupOpenSpaceModel'] = self.im_group_open_space_model.to_map()
+        if self.im_robot_open_deliver_model is not None:
+            result['imRobotOpenDeliverModel'] = self.im_robot_open_deliver_model.to_map()
+        if self.im_robot_open_space_model is not None:
+            result['imRobotOpenSpaceModel'] = self.im_robot_open_space_model.to_map()
+        if self.open_space_id is not None:
+            result['openSpaceId'] = self.open_space_id
+        if self.out_track_id is not None:
+            result['outTrackId'] = self.out_track_id
+        if self.protocol_version is not None:
+            result['protocolVersion'] = self.protocol_version
+        if self.summary is not None:
+            result['summary'] = self.summary
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        if self.user_id_type is not None:
+            result['userIdType'] = self.user_id_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.a_2ui_annotations = []
+        if m.get('a2uiAnnotations') is not None:
+            for k in m.get('a2uiAnnotations'):
+                temp_model = CreateAndDeliverAICardRequestA2uiAnnotations()
+                self.a_2ui_annotations.append(temp_model.from_map(k))
+        if m.get('a2uiMessages') is not None:
+            self.a_2ui_messages = m.get('a2uiMessages')
+        if m.get('atAll') is not None:
+            self.at_all = m.get('atAll')
+        if m.get('bizContext') is not None:
+            self.biz_context = m.get('bizContext')
+        if m.get('callbackRouteKey') is not None:
+            self.callback_route_key = m.get('callbackRouteKey')
+        if m.get('callbackType') is not None:
+            self.callback_type = m.get('callbackType')
+        if m.get('cardAtUserIds') is not None:
+            self.card_at_user_ids = m.get('cardAtUserIds')
+        if m.get('flowStatus') is not None:
+            self.flow_status = m.get('flowStatus')
+        if m.get('imGroupOpenDeliverModel') is not None:
+            temp_model = CreateAndDeliverAICardRequestImGroupOpenDeliverModel()
+            self.im_group_open_deliver_model = temp_model.from_map(m['imGroupOpenDeliverModel'])
+        if m.get('imGroupOpenSpaceModel') is not None:
+            temp_model = CreateAndDeliverAICardRequestImGroupOpenSpaceModel()
+            self.im_group_open_space_model = temp_model.from_map(m['imGroupOpenSpaceModel'])
+        if m.get('imRobotOpenDeliverModel') is not None:
+            temp_model = CreateAndDeliverAICardRequestImRobotOpenDeliverModel()
+            self.im_robot_open_deliver_model = temp_model.from_map(m['imRobotOpenDeliverModel'])
+        if m.get('imRobotOpenSpaceModel') is not None:
+            temp_model = CreateAndDeliverAICardRequestImRobotOpenSpaceModel()
+            self.im_robot_open_space_model = temp_model.from_map(m['imRobotOpenSpaceModel'])
+        if m.get('openSpaceId') is not None:
+            self.open_space_id = m.get('openSpaceId')
+        if m.get('outTrackId') is not None:
+            self.out_track_id = m.get('outTrackId')
+        if m.get('protocolVersion') is not None:
+            self.protocol_version = m.get('protocolVersion')
+        if m.get('summary') is not None:
+            self.summary = m.get('summary')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        if m.get('userIdType') is not None:
+            self.user_id_type = m.get('userIdType')
+        return self
+
+
+class CreateAndDeliverAICardResponseBodyResultDeliverResults(TeaModel):
+    def __init__(
+        self,
+        carrier_id: str = None,
+        error_msg: str = None,
+        space_id: str = None,
+        space_type: str = None,
+        success: bool = None,
+    ):
+        self.carrier_id = carrier_id
+        self.error_msg = error_msg
+        self.space_id = space_id
+        self.space_type = space_type
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.carrier_id is not None:
+            result['carrierId'] = self.carrier_id
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        if self.space_type is not None:
+            result['spaceType'] = self.space_type
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('carrierId') is not None:
+            self.carrier_id = m.get('carrierId')
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        if m.get('spaceType') is not None:
+            self.space_type = m.get('spaceType')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class CreateAndDeliverAICardResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        deliver_results: List[CreateAndDeliverAICardResponseBodyResultDeliverResults] = None,
+        out_track_id: str = None,
+    ):
+        self.deliver_results = deliver_results
+        self.out_track_id = out_track_id
+
+    def validate(self):
+        if self.deliver_results:
+            for k in self.deliver_results:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['deliverResults'] = []
+        if self.deliver_results is not None:
+            for k in self.deliver_results:
+                result['deliverResults'].append(k.to_map() if k else None)
+        if self.out_track_id is not None:
+            result['outTrackId'] = self.out_track_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.deliver_results = []
+        if m.get('deliverResults') is not None:
+            for k in m.get('deliverResults'):
+                temp_model = CreateAndDeliverAICardResponseBodyResultDeliverResults()
+                self.deliver_results.append(temp_model.from_map(k))
+        if m.get('outTrackId') is not None:
+            self.out_track_id = m.get('outTrackId')
+        return self
+
+
+class CreateAndDeliverAICardResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: CreateAndDeliverAICardResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = CreateAndDeliverAICardResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class CreateAndDeliverAICardResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CreateAndDeliverAICardResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CreateAndDeliverAICardResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CreateAndDeliverWithDelegateHeaders(TeaModel):
     def __init__(
         self,
@@ -8089,6 +8820,259 @@ class StreamingUpdateResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = StreamingUpdateResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateAICardHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateAICardRequestA2uiAnnotations(TeaModel):
+    def __init__(
+        self,
+        component_id: str = None,
+        surface_id: str = None,
+        type: str = None,
+    ):
+        # This parameter is required.
+        self.component_id = component_id
+        # This parameter is required.
+        self.surface_id = surface_id
+        # This parameter is required.
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.component_id is not None:
+            result['componentId'] = self.component_id
+        if self.surface_id is not None:
+            result['surfaceId'] = self.surface_id
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('componentId') is not None:
+            self.component_id = m.get('componentId')
+        if m.get('surfaceId') is not None:
+            self.surface_id = m.get('surfaceId')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class UpdateAICardRequest(TeaModel):
+    def __init__(
+        self,
+        a_2ui_annotations: List[UpdateAICardRequestA2uiAnnotations] = None,
+        a_2ui_messages: List[str] = None,
+        flow_status: str = None,
+        out_track_id: str = None,
+        out_update_id: str = None,
+    ):
+        self.a_2ui_annotations = a_2ui_annotations
+        # This parameter is required.
+        self.a_2ui_messages = a_2ui_messages
+        # This parameter is required.
+        self.flow_status = flow_status
+        # This parameter is required.
+        self.out_track_id = out_track_id
+        # This parameter is required.
+        self.out_update_id = out_update_id
+
+    def validate(self):
+        if self.a_2ui_annotations:
+            for k in self.a_2ui_annotations:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['a2uiAnnotations'] = []
+        if self.a_2ui_annotations is not None:
+            for k in self.a_2ui_annotations:
+                result['a2uiAnnotations'].append(k.to_map() if k else None)
+        if self.a_2ui_messages is not None:
+            result['a2uiMessages'] = self.a_2ui_messages
+        if self.flow_status is not None:
+            result['flowStatus'] = self.flow_status
+        if self.out_track_id is not None:
+            result['outTrackId'] = self.out_track_id
+        if self.out_update_id is not None:
+            result['outUpdateId'] = self.out_update_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.a_2ui_annotations = []
+        if m.get('a2uiAnnotations') is not None:
+            for k in m.get('a2uiAnnotations'):
+                temp_model = UpdateAICardRequestA2uiAnnotations()
+                self.a_2ui_annotations.append(temp_model.from_map(k))
+        if m.get('a2uiMessages') is not None:
+            self.a_2ui_messages = m.get('a2uiMessages')
+        if m.get('flowStatus') is not None:
+            self.flow_status = m.get('flowStatus')
+        if m.get('outTrackId') is not None:
+            self.out_track_id = m.get('outTrackId')
+        if m.get('outUpdateId') is not None:
+            self.out_update_id = m.get('outUpdateId')
+        return self
+
+
+class UpdateAICardResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        flow_status: str = None,
+        out_track_id: str = None,
+        out_update_id: str = None,
+    ):
+        self.flow_status = flow_status
+        self.out_track_id = out_track_id
+        self.out_update_id = out_update_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.flow_status is not None:
+            result['flowStatus'] = self.flow_status
+        if self.out_track_id is not None:
+            result['outTrackId'] = self.out_track_id
+        if self.out_update_id is not None:
+            result['outUpdateId'] = self.out_update_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('flowStatus') is not None:
+            self.flow_status = m.get('flowStatus')
+        if m.get('outTrackId') is not None:
+            self.out_track_id = m.get('outTrackId')
+        if m.get('outUpdateId') is not None:
+            self.out_update_id = m.get('outUpdateId')
+        return self
+
+
+class UpdateAICardResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: UpdateAICardResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = UpdateAICardResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class UpdateAICardResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdateAICardResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdateAICardResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
