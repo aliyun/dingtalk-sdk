@@ -44,6 +44,13 @@ class topCalculateApproveDurationParam extends Model
     public $leaveCode;
 
     /**
+     * @example Asia/Shanghai
+     *
+     * @var string
+     */
+    public $timeZoneId;
+
+    /**
      * @example 2019-08-15
      *
      * @var string
@@ -55,6 +62,7 @@ class topCalculateApproveDurationParam extends Model
         'durationUnit' => 'durationUnit',
         'fromTime' => 'fromTime',
         'leaveCode' => 'leaveCode',
+        'timeZoneId' => 'timeZoneId',
         'toTime' => 'toTime',
     ];
 
@@ -77,6 +85,9 @@ class topCalculateApproveDurationParam extends Model
         }
         if (null !== $this->leaveCode) {
             $res['leaveCode'] = $this->leaveCode;
+        }
+        if (null !== $this->timeZoneId) {
+            $res['timeZoneId'] = $this->timeZoneId;
         }
         if (null !== $this->toTime) {
             $res['toTime'] = $this->toTime;
@@ -107,6 +118,9 @@ class topCalculateApproveDurationParam extends Model
         }
         if (isset($map['leaveCode'])) {
             $model->leaveCode = $map['leaveCode'];
+        }
+        if (isset($map['timeZoneId'])) {
+            $model->timeZoneId = $map['timeZoneId'];
         }
         if (isset($map['toTime'])) {
             $model->toTime = $map['toTime'];
