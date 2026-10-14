@@ -10548,6 +10548,7 @@ class ProcessApproveFinishRequestTopCalculateApproveDurationParam(TeaModel):
         duration_unit: str = None,
         from_time: str = None,
         leave_code: str = None,
+        time_zone_id: str = None,
         to_time: str = None,
     ):
         self.biz_type = biz_type
@@ -10555,6 +10556,7 @@ class ProcessApproveFinishRequestTopCalculateApproveDurationParam(TeaModel):
         self.duration_unit = duration_unit
         self.from_time = from_time
         self.leave_code = leave_code
+        self.time_zone_id = time_zone_id
         self.to_time = to_time
 
     def validate(self):
@@ -10576,6 +10578,8 @@ class ProcessApproveFinishRequestTopCalculateApproveDurationParam(TeaModel):
             result['fromTime'] = self.from_time
         if self.leave_code is not None:
             result['leaveCode'] = self.leave_code
+        if self.time_zone_id is not None:
+            result['timeZoneId'] = self.time_zone_id
         if self.to_time is not None:
             result['toTime'] = self.to_time
         return result
@@ -10592,6 +10596,8 @@ class ProcessApproveFinishRequestTopCalculateApproveDurationParam(TeaModel):
             self.from_time = m.get('fromTime')
         if m.get('leaveCode') is not None:
             self.leave_code = m.get('leaveCode')
+        if m.get('timeZoneId') is not None:
+            self.time_zone_id = m.get('timeZoneId')
         if m.get('toTime') is not None:
             self.to_time = m.get('toTime')
         return self
