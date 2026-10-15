@@ -70,6 +70,11 @@ class GetClassTagResponseBody extends Model
     public $rank;
 
     /**
+     * @var int
+     */
+    public $securityLevel;
+
+    /**
      * @example 1
      *
      * @var int
@@ -92,6 +97,7 @@ class GetClassTagResponseBody extends Model
         'name' => 'name',
         'outOp' => 'outOp',
         'rank' => 'rank',
+        'securityLevel' => 'securityLevel',
         'status' => 'status',
         'updateTime' => 'updateTime',
     ];
@@ -127,6 +133,9 @@ class GetClassTagResponseBody extends Model
         }
         if (null !== $this->rank) {
             $res['rank'] = $this->rank;
+        }
+        if (null !== $this->securityLevel) {
+            $res['securityLevel'] = $this->securityLevel;
         }
         if (null !== $this->status) {
             $res['status'] = $this->status;
@@ -172,6 +181,9 @@ class GetClassTagResponseBody extends Model
         }
         if (isset($map['rank'])) {
             $model->rank = $map['rank'];
+        }
+        if (isset($map['securityLevel'])) {
+            $model->securityLevel = $map['securityLevel'];
         }
         if (isset($map['status'])) {
             $model->status = $map['status'];
