@@ -6967,6 +6967,7 @@ class GetClassTagResponseBody(TeaModel):
         name: str = None,
         out_op: str = None,
         rank: int = None,
+        security_level: int = None,
         status: int = None,
         update_time: int = None,
     ):
@@ -6979,6 +6980,7 @@ class GetClassTagResponseBody(TeaModel):
         self.name = name
         self.out_op = out_op
         self.rank = rank
+        self.security_level = security_level
         self.status = status
         self.update_time = update_time
 
@@ -7009,6 +7011,8 @@ class GetClassTagResponseBody(TeaModel):
             result['outOp'] = self.out_op
         if self.rank is not None:
             result['rank'] = self.rank
+        if self.security_level is not None:
+            result['securityLevel'] = self.security_level
         if self.status is not None:
             result['status'] = self.status
         if self.update_time is not None:
@@ -7035,6 +7039,8 @@ class GetClassTagResponseBody(TeaModel):
             self.out_op = m.get('outOp')
         if m.get('rank') is not None:
             self.rank = m.get('rank')
+        if m.get('securityLevel') is not None:
+            self.security_level = m.get('securityLevel')
         if m.get('status') is not None:
             self.status = m.get('status')
         if m.get('updateTime') is not None:
