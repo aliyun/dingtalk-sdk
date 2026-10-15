@@ -103,6 +103,14 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
 
             /// <summary>
             /// <b>Example:</b>
+            /// <para>Asia/Shanghai</para>
+            /// </summary>
+            [NameInMap("timeZoneId")]
+            [Validation(Required=false)]
+            public string TimeZoneId { get; set; }
+
+            /// <summary>
+            /// <b>Example:</b>
             /// <para>2019-08-15</para>
             /// </summary>
             [NameInMap("toTime")]

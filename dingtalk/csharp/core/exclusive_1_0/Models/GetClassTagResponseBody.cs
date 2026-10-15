@@ -77,6 +77,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         [Validation(Required=false)]
         public int? Rank { get; set; }
 
+        [NameInMap("securityLevel")]
+        [Validation(Required=false)]
+        public int? SecurityLevel { get; set; }
+
         /// <summary>
         /// <b>Example:</b>
         /// <para>1</para>
